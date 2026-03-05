@@ -1,51 +1,99 @@
-// Данные меню с сайта pizzanapolirsc.ru
+// Реальные данные с pizzanapolirsc.ru
 const menuData = [
     {
         id: 1,
         title: 'Маргарита',
-        description: 'Томатный соус сан-марцано, моцарелла фиор ди латте, базилик, оливковое масло',
-        price: 590,
-        image: 'https://images.unsplash.com/photo-1604068549290-dea0e4a305ca?w=600',
+        description: 'Томатный соус, моцарелла, базилик — классика неаполитанской пиццы',
+        price: 450,
+        image: 'https://static.tildacdn.com/tild3738-3363-4566-a137-303836336662/_1.jpg',
         category: 'pizza'
     },
     {
         id: 2,
         title: 'Пепперони',
-        description: 'Томатный соус, моцарелла, пепперони, острый перец',
-        price: 690,
-        image: 'https://images.unsplash.com/photo-1628840042765-356cda07504e?w=600',
+        description: 'Томатный соус, моцарелла, пикантная колбаса пепперони',
+        price: 550,
+        image: 'https://static.tildacdn.com/tild3063-3137-4464-b134-623164326237/_.jpg',
         category: 'pizza'
     },
     {
         id: 3,
         title: 'Четыре сыра',
-        description: 'Моцарелла, пармезан, горгонзола, рикотта, мед',
-        price: 750,
-        image: 'https://images.unsplash.com/photo-1513104890138-7c749659a591?w=600',
+        description: 'Моцарелла, пармезан, горгонзола, рикотта — насыщенный сливочный вкус',
+        price: 600,
+        image: 'https://static.tildacdn.com/tild3739-3130-4837-a566-653734303832/__.jpg',
         category: 'pizza'
     },
     {
         id: 4,
         title: 'Диабло',
-        description: 'Томатный соус, моцарелла, халапеньо, чоризо, лук красный',
-        price: 720,
-        image: 'https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=600',
+        description: 'Томатный соус, моцарелла, халапеньо, острая чоризо — для любителей острого',
+        price: 590,
+        image: 'https://static.tildacdn.com/tild3462-3164-4566-b862-316438396430/_.jpg',
         category: 'pizza'
     },
     {
         id: 5,
-        title: 'Кальцоне классический',
-        description: 'Томатный соус, моцарелла, ветчина, грибы, запечённый в конверте',
-        price: 650,
-        image: 'https://images.unsplash.com/photo-1606313564200-e75d5e30476d?w=600',
-        category: 'calzone'
+        title: 'BBQ Чикен',
+        description: 'Куриная грудка, соус BBQ, красный лук, моцарелла',
+        price: 570,
+        image: 'https://static.tildacdn.com/tild3437-3836-4264-a238-643734393364/_Chicken_BBQ.jpg',
+        category: 'pizza'
     },
     {
         id: 6,
-        title: 'Цезарь',
-        description: 'Салат романо, куриная грудка, пармезан, томаты, соус цезарь',
-        price: 450,
-        image: 'https://images.unsplash.com/photo-1574071318508-1cdbab80d002?w=600',
+        title: 'Морепродукты',
+        description: 'Креветки, мидии, кальмары, томатный соус, моцарелла',
+        price: 690,
+        image: 'https://static.tildacdn.com/tild3739-3334-4165-a463-633662326532/_seafood_mix.png',
+        category: 'pizza'
+    },
+    {
+        id: 7,
+        title: 'Кальцоне с ветчиной и грибами',
+        description: 'Закрытая пицца с ветчиной, шампиньонами, моцареллой и томатным соусом',
+        price: 520,
+        image: 'https://static.tildacdn.com/tild3466-3536-4838-a238-326238313131/_1.jpg',
+        category: 'calzone'
+    },
+    {
+        id: 8,
+        title: 'Кальцоне с рикоттой',
+        description: 'Рикотта, моцарелла, шпинат, кедровые орешки',
+        price: 540,
+        image: 'https://static.tildacdn.com/tild6162-3361-4262-a661-376664633965/_1.jpg',
+        category: 'calzone'
+    },
+    {
+        id: 9,
+        title: 'Фокачча классическая',
+        description: 'Итальянский хлеб с оливковым маслом, розмарином и морской солью',
+        price: 250,
+        image: 'https://static.tildacdn.com/tild3139-6136-4561-b138-623336656165/8B744C66-0140-444F-8.JPG',
+        category: 'sides'
+    },
+    {
+        id: 10,
+        title: 'Фокачча с томатами',
+        description: 'Фокачча с вялеными томатами, оливками и прованскими травами',
+        price: 280,
+        image: 'https://static.tildacdn.com/tild6132-3534-4434-a439-376137323161/04Y7o57-s9g.jpg',
+        category: 'sides'
+    },
+    {
+        id: 11,
+        title: 'Соус Маринара',
+        description: 'Фирменный томатный соус с чесноком и орегано',
+        price: 90,
+        image: 'https://static.tildacdn.com/tild3833-3439-4331-b733-653363643933/___.jpg',
+        category: 'sides'
+    },
+    {
+        id: 12,
+        title: 'Соус Альфредо',
+        description: 'Сливочный соус с пармезаном и чесноком',
+        price: 100,
+        image: 'https://static.tildacdn.com/tild6335-6433-4762-b238-336566306233/photo.jpeg',
         category: 'sides'
     }
 ];
