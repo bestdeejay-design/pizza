@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pizza Napoli — Неаполитанская пицца</title>
+    <link rel="stylesheet" href="css/style-new.css">
+</head>
+<body>
+    <!-- Навигация -->
+    <nav class="navbar">
+        <div class="container nav-container">
+            <div class="logo">
+                <span class="logo-icon">🍕</span>
+                <span class="logo-text">Pizza<span class="highlight">Napoli</span></span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#menu">Меню</a></li>
+                <li><a href="#about">О нас</a></li>
+                <li><a href="#delivery">Доставка</a></li>
+                <li><a href="#contacts">Контакты</a></li>
+            </ul>
+            <button class="cart-btn">
+                <span class="cart-icon">🛒</span>
+                <span class="cart-count">0</span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero секция -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1 class="hero-title">
+                Настоящая<br>
+                <span class="gradient-text">неаполитанская</span><br>
+                пицца
+            </h1>
+            <p class="hero-subtitle">Тонкое тесто, сан-марцано, моцарелла фиор ди латте</p>
+            <div class="hero-buttons">
+                <a href="#menu" class="btn btn-primary">Выбрать пиццу</a>
+                <a href="#about" class="btn btn-secondary">Узнать больше</a>
+            </div>
+        </div>
+        <div class="hero-image">
+            <img src="https://images.unsplash.com/photo-1604068549290-dea0e4a305ca?w=800" alt="Pizza Napoli">
+        </div>
+    </section>
+
+    <!-- Меню -->
+    <section id="menu" class="menu section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Наше меню</h2>
+                <p class="section-subtitle">Классические рецепты из Неаполя</p>
+            </div>
+            
+            <div class="menu-filters">
+                <button class="filter-btn active" data-filter="all">Все</button>
+                <button class="filter-btn" data-filter="pizza">Пицца</button>
+                <button class="filter-btn" data-filter="calzone">Кальцоне</button>
+                <button class="filter-btn" data-filter="sides">Закуски</button>
+            </div>
+
+            <div class="menu-grid" id="menu-grid">
+                <!-- Карточки товаров будут добавлены через JS -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Акция -->
+    <section class="promo section">
+        <div class="container">
+            <div class="promo-card">
+                <div class="promo-content">
+                    <h2>Каждая 13-я пицца <span class="highlight-text">БЕСПЛАТНО</span></h2>
+                    <p>При покупке 12 пицц вы получаете 13-ю в подарок. Акция действует постоянно!</p>
+                    <button class="btn btn-white">Заказать сейчас</button>
+                </div>
+                <div class="promo-visual">
+                    <div class="pizza-ring"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- О нас -->
+    <section id="about" class="about section">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-images">
+                    <img src="https://images.unsplash.com/photo-1574071318508-1cdbab80d002?w=600" alt="Chef" class="about-img-1">
+                    <img src="https://images.unsplash.com/photo-1513104890138-7c749659a591?w=600" alt="Oven" class="about-img-2">
+                </div>
+                <div class="about-content">
+                    <h2>Традиции Неаполя</h2>
+                    <p>Мы готовим пиццу по старинным неаполитанским рецептам. Используем только импортные ингредиенты: томаты Сан-Марцано, моцареллу Фиор ди Латте, оливковое масло первого отжима.</p>
+                    <div class="features">
+                        <div class="feature">
+                            <span class="feature-icon">🌾</span>
+                            <span class="feature-text">Мука типа 00</span>
+                        </div>
+                        <div class="feature">
+                            <span class="feature-icon">🍅</span>
+                            <span class="feature-text">Томаты Сан-Марцано</span>
+                        </div>
+                        <div class="feature">
+                            <span class="feature-icon">🔥</span>
+                            <span class="feature-text">Дровяная печь</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Доставка -->
+    <section id="delivery" class="delivery section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Зоны доставки</h2>
+                <p class="section-subtitle">Бесплатная доставка при заказе от определённой суммы</p>
+            </div>
+            
+            <div class="delivery-info">
+                <div class="delivery-card">
+                    <div class="delivery-zone zone-moskovsky"></div>
+                    <h3>Московский район</h3>
+                    <p>Доставка: 450 ₽</p>
+                    <p>Бесплатно от: 2500 ₽</p>
+                </div>
+                <div class="delivery-card">
+                    <div class="delivery-zone zone-nevsky1"></div>
+                    <h3>Невский район 1</h3>
+                    <p>Доставка: 450 ₽</p>
+                    <p>Бесплатно от: 2500 ₽</p>
+                </div>
+                <div class="delivery-card">
+                    <div class="delivery-zone zone-nevsky2"></div>
+                    <h3>Невский район 2</h3>
+                    <p>Доставка: 550 ₽</p>
+                    <p>Бесплатно от: 3000 ₽</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Контакты -->
+    <section id="contacts" class="contacts section">
+        <div class="container">
+            <div class="contacts-wrapper">
+                <div class="contacts-info">
+                    <h2>Контакты</h2>
+                    <div class="contact-item">
+                        <span class="contact-icon">📞</span>
+                        <a href="tel:+79990000000">+7 (999) 000-00-00</a>
+                    </div>
+                    <div class="contact-item">
+                        <span class="contact-icon">📍</span>
+                        <p>Санкт-Петербург, Невский район</p>
+                    </div>
+                    <div class="contact-item">
+                        <span class="contact-icon">⏰</span>
+                        <p>Ежедневно с 11:00 до 23:00</p>
+                    </div>
+                </div>
+                <div class="map" id="map"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <span class="logo-text">Pizza<span class="highlight">Napoli</span></span>
+                    <p>Неаполитанская пицца в Санкт-Петербурге</p>
+                </div>
+                <div class="footer-links">
+                    <a href="#">Политика конфиденциальности</a>
+                    <a href="#">Публичная оферта</a>
+                </div>
+                <div class="social-links">
+                    <a href="#" class="social-link">VK</a>
+                    <a href="#" class="social-link">Telegram</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/app-new.js"></script>
+</body>
+</html>
