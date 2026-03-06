@@ -9,15 +9,21 @@ async function loadMenu() {
         const response = await fetch('menu-complete.json');
         const data = await response.json();
         
-        // Flatten all products
+        // Flatten all products from new structure
         const allProducts = [
-            ...data.menu.pizza,
-            ...data.menu.calzone,
-            ...data.menu.rolls || [],
-            ...data.menu.bread,
-            ...data.menu.focaccia,
-            ...data.menu.sauce,
-            ...data.menu.drinks || []
+            ...(data.menu['pizza-30cm'] || []),
+            ...(data.menu['piccolo-20cm'] || []),
+            ...(data.menu['calzone'] || []),
+            ...(data.menu['bread-focaccia'] || []),
+            ...(data.menu['sauce'] || []),
+            ...(data.menu['rolls'] || []),
+            ...(data.menu['combo'] || []),
+            ...(data.menu['confectionery'] || []),
+            ...(data.menu['beverages'] || []),
+            ...(data.menu['frozen'] || []),
+            ...(data.menu['aromatic-oils'] || []),
+            ...(data.menu['masterclass'] || []),
+            ...(data.menu['franchise'] || [])
         ];
         
         renderProducts(allProducts);
@@ -36,10 +42,18 @@ function renderProducts(products) {
     grid.innerHTML = '';
     
     const filtered = products.filter(product => {
-        const matchesFilter = currentFilter === 'all' || 
-            currentFilter === 'piccolo' ? product.title.toLowerCase().includes('piccolo') : product.category === currentFilter;
-        const matchesSearch = !searchQuery || 
-            product.title.toLowerCase().includes(searchQuery.toLowerCase());
+        if (currentFilter === 'all') {
+            return !searchQuery || product.title.toLowerCase().includes(searchQuery.toLowerCase());
+        }
+        
+        // Special handling for combined categories
+        if (currentFilter === 'bread-focaccia') {
+            return product.category === 'bread-focaccia';
+        }
+        
+        // Match category or subcategory
+        const matchesFilter = product.category === currentFilter;
+        const matchesSearch = !searchQuery || product.title.toLowerCase().includes(searchQuery.toLowerCase());
         return matchesFilter && matchesSearch;
     });
     
