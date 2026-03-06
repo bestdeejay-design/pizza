@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pizza Napoli - Modern Delivery</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Manrope', sans-serif;
+            background: #f5f5f7;
+            color: #1d1d1f;
+            min-height: 100vh;
+        }
+
+        /* Header */
+        .header {
+            background: white;
+            padding: 20px 40px;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.08);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo h1 {
+            font-size: 28px;
+            font-weight: 800;
+            background: linear-gradient(135deg, #ff2e55 0%, #ff6b6b 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .header-actions {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
+
+        .search-mini {
+            padding: 10px 16px;
+            border: 2px solid #e5e5ea;
+            border-radius: 12px;
+            font-size: 14px;
+            width: 280px;
+            transition: all 0.3s;
+        }
+
+        .search-mini:focus {
+            outline: none;
+            border-color: #ff2e55;
+            width: 320px;
+        }
+
+        .cart-mini {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 10px 20px;
+            background: linear-gradient(135deg, #ff2e55 0%, #ff6b6b 100%);
+            color: white;
+            border-radius: 12px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .cart-mini:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 20px rgba(255,46,85,0.3);
+        }
+
+        /* Main Layout */
+        .main-container {
+            display: grid;
+            grid-template-columns: 280px 1fr;
+            gap: 0;
+            max-width: 1600px;
+            margin: 0 auto;
+        }
+
+        /* Sidebar Navigation */
+        .sidebar {
+            background: white;
+            padding: 30px 20px;
+            height: calc(100vh - 80px);
+            position: sticky;
+            top: 80px;
+            overflow-y: auto;
+            border-right: 1px solid #e5e5ea;
+        }
+
+        .nav-category {
+            padding: 14px 20px;
+            margin-bottom: 8px;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-weight: 600;
+            font-size: 15px;
+            color: #6e6e73;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-category:hover {
+            background: #f5f5f7;
+            color: #1d1d1f;
+        }
+
+        .nav-category.active {
+            background: linear-gradient(135deg, #ff2e55 0%, #ff6b6b 100%);
+            color: white;
+            box-shadow: 0 4px 15px rgba(255,46,85,0.3);
+        }
+
+        .nav-count {
+            background: rgba(0,0,0,0.1);
+            padding: 4px 10px;
+            border-radius: 8px;
+            font-size: 12px;
+            font-weight: 700;
+        }
+
+        .nav-category.active .nav-count {
+            background: rgba(255,255,255,0.3);
+        }
+
+        /* Content Area */
+        .content {
+            padding: 40px;
+        }
+
+        .category-section {
+            margin-bottom: 60px;
+        }
+
+        .category-header {
+            margin-bottom: 30px;
+        }
+
+        .category-title {
+            font-size: 32px;
+            font-weight: 800;
+            color: #1d1d1f;
+            margin-bottom: 8px;
+        }
+
+        .category-subtitle {
+            font-size: 15px;
+            color: #86868b;
+        }
+
+        /* Products Grid */
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+            gap: 24px;
+        }
+
+        .product-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            cursor: pointer;
+            position: relative;
+        }
+
+        .product-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.12);
+        }
+
+        .product-image-wrapper {
+            position: relative;
+            width: 100%;
+            height: 200px;
+            overflow: hidden;
+            background: #f5f5f7;
+        }
+
+        .product-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.4s;
+        }
+
+        .product-card:hover .product-image {
+            transform: scale(1.1);
+        }
+
+        .product-info {
+            padding: 20px;
+        }
+
+        .product-name {
+            font-size: 18px;
+            font-weight: 700;
+            color: #1d1d1f;
+            margin-bottom: 8px;
+        }
+
+        .product-description {
+            font-size: 13px;
+            color: #86868b;
+            line-height: 1.5;
+            margin-bottom: 16px;
+            min-height: 39px;
+        }
+
+        .product-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .product-price {
+            font-size: 22px;
+            font-weight: 800;
+            color: #ff2e55;
+        }
+
+        .add-btn {
+            background: #f5f5f7;
+            color: #1d1d1f;
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 12px;
+            cursor: pointer;
+            font-size: 20px;
+            font-weight: 700;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .add-btn:hover {
+            background: linear-gradient(135deg, #ff2e55 0%, #ff6b6b 100%);
+            color: white;
+            transform: scale(1.1);
+        }
+
+        /* Loading Animation */
+        .loading {
+            text-align: center;
+            padding: 60px 20px;
+            color: #86868b;
+            font-size: 16px;
+        }
+
+        .spinner {
+            width: 40px;
+            height: 40px;
+            border: 4px solid #f5f5f7;
+            border-top-color: #ff2e55;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 20px;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        /* Modal */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0,0,0,0.7);
+            backdrop-filter: blur(8px);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 2000;
+        }
+
+        .modal-content {
+            background: white;
+            padding: 40px;
+            border-radius: 24px;
+            max-width: 600px;
+            width: 90%;
+            max-height: 80vh;
+            overflow-y: auto;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+        }
+
+        .modal-title {
+            font-size: 32px;
+            font-weight: 800;
+            color: #1d1d1f;
+            margin-bottom: 25px;
+            text-align: center;
+        }
+
+        .cart-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 16px 0;
+            border-bottom: 2px solid #f5f5f7;
+        }
+
+        .close-modal {
+            background: linear-gradient(135deg, #ff2e55 0%, #ff6b6b 100%);
+            color: white;
+            border: none;
+            padding: 16px 32px;
+            border-radius: 16px;
+            cursor: pointer;
+            font-weight: 700;
+            margin-top: 20px;
+            width: 100%;
+            transition: all 0.3s;
+            font-size: 16px;
+        }
+
+        .close-modal:hover {
+            transform: scale(1.03);
+            box-shadow: 0 8px 24px rgba(255,46,85,0.3);
+        }
+
+        @media (max-width: 1024px) {
+            .main-container {
+                grid-template-columns: 1fr;
+            }
+
+            .sidebar {
+                display: none;
+            }
+
+            .content {
+                padding: 20px;
+            }
+
+            .products-grid {
+                grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="logo">
+            <h1>Pizza Napoli</h1>
+        </div>
+        <div class="header-actions">
+            <input type="text" class="search-mini" placeholder="Поиск блюд...">
+            <div class="cart-mini" onclick="showCart()">
+                🛒 <span id="cart-total">0 ₽</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="main-container">
+        <div class="sidebar" id="sidebar">
+            <!-- Navigation will be inserted here -->
+        </div>
+
+        <div class="content" id="content">
+            <!-- Products will be inserted here -->
+        </div>
+    </div>
+
+    <div class="modal-overlay" id="cart-modal">
+        <div class="modal-content">
+            <h2 class="modal-title">Ваш заказ</h2>
+            <div id="cart-items"></div>
+            <button class="close-modal" onclick="hideCart()">Закрыть</button>
+        </div>
+    </div>
+
+    <script src="js/app-delivery.js"></script>
+</body>
+</html>
