@@ -5,10 +5,13 @@ Thumbs.db
 # IDE
 .vscode/
 .idea/
-*.swp
+.swp
 *.swo
 *~
 
 # Logs
 *.log
 npm-debug.log*
+
+# Dependencies
+node_modules/
