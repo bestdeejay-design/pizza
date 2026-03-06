@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pizza Napoli RSC — Итальянский каталог</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lato:wght@300;400;700&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Lato', sans-serif;
+            background: #faf8f5;
+            color: #2c2c2c;
+        }
+
+        .back-nav {
+            background: #fff;
+            border-bottom: 3px solid #009246;
+            padding: 20px 40px;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .back-nav a {
+            color: #ce2b37;
+            text-decoration: none;
+            font-weight: 700;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 16px;
+            transition: all 0.3s;
+        }
+
+        .back-nav a:hover {
+            color: #009246;
+            transform: translateX(-5px);
+        }
+
+        .header {
+            background: linear-gradient(135deg, #009246 0%, #ffffff 50%, #ce2b37 100%);
+            padding: 40px 20px;
+            text-align: center;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+
+        .logo h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 56px;
+            font-weight: 700;
+            color: #fff;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+            font-style: italic;
+        }
+
+        .hero {
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><rect fill="%23f5f5f5" width="1200" height="600"/><circle cx="600" cy="300" r="200" fill="%23e8e8e8"/></svg>') center/cover;
+            padding: 100px 20px;
+            text-align: center;
+        }
+
+        .hero-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 64px;
+            font-weight: 700;
+            color: #ce2b37;
+            margin-bottom: 20px;
+            font-style: italic;
+        }
+
+        .hero-subtitle {
+            font-size: 24px;
+            color: #666;
+            margin-bottom: 40px;
+            font-weight: 300;
+        }
+
+        .menu-section {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 80px 20px;
+        }
+
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            text-align: center;
+            font-size: 56px;
+            font-weight: 700;
+            color: #009246;
+            margin-bottom: 60px;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '◆ ◆ ◆';
+            display: block;
+            font-size: 24px;
+            color: #ce2b37;
+            margin-top: 20px;
+            letter-spacing: 10px;
+        }
+
+        .filters {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-bottom: 50px;
+            justify-content: center;
+        }
+
+        .filter-btn {
+            padding: 14px 28px;
+            border: 2px solid #009246;
+            background: white;
+            color: #009246;
+            border-radius: 0;
+            cursor: pointer;
+            font-weight: 700;
+            font-size: 15px;
+            transition: all 0.3s;
+            font-family: 'Lato', sans-serif;
+        }
+
+        .filter-btn:hover,
+        .filter-btn.active {
+            background: #009246;
+            color: white;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0,146,70,0.3);
+        }
+
+        .search-box {
+            max-width: 700px;
+            margin: 0 auto 60px;
+        }
+
+        .search-box input {
+            width: 100%;
+            padding: 18px 30px;
+            border: 2px solid #ce2b37;
+            background: white;
+            font-size: 16px;
+            outline: none;
+            transition: all 0.3s;
+        }
+
+        .search-box input:focus {
+            border-color: #009246;
+            box-shadow: 0 4px 20px rgba(0,146,70,0.2);
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 40px;
+        }
+
+        .product-card {
+            background: white;
+            border: 1px solid #e0e0e0;
+            border-radius: 0;
+            overflow: hidden;
+            transition: all 0.3s;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+        }
+
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 50px rgba(0,146,70,0.2);
+            border-color: #009246;
+        }
+
+        .product-image {
+            width: 100%;
+            height: 260px;
+            object-fit: cover;
+            background: #f5f5f5;
+            border-bottom: 3px solid #ce2b37;
+        }
+
+        .product-info {
+            padding: 25px;
+        }
+
+        .product-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 22px;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: #2c2c2c;
+            line-height: 1.4;
+        }
+
+        .product-price {
+            font-size: 32px;
+            font-weight: 700;
+            color: #ce2b37;
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        .add-to-cart {
+            width: 100%;
+            padding: 15px;
+            background: #009246;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-weight: 700;
+            font-size: 16px;
+            transition: all 0.3s;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .add-to-cart:hover {
+            background: #ce2b37;
+            transform: scale(1.02);
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.7);
+        }
+
+        .modal-content {
+            background: white;
+            margin: 10% auto;
+            padding: 40px;
+            max-width: 700px;
+            max-height: 70vh;
+            overflow-y: auto;
+            position: relative;
+            border: 3px solid #009246;
+        }
+
+        .close {
+            position: absolute;
+            right: 20px;
+            top: 20px;
+            font-size: 32px;
+            cursor: pointer;
+            color: #999;
+            transition: color 0.3s;
+        }
+
+        .close:hover {
+            color: #ce2b37;
+        }
+
+        .footer {
+            background: #2c2c2c;
+            color: white;
+            padding: 50px 20px;
+            text-align: center;
+            margin-top: 80px;
+            border-top: 5px solid #009246;
+        }
+
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 42px;
+            }
+            
+            .products-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="back-nav">
+        <a href="index.html">← На главную</a>
+    </div>
+
+    <header class="header">
+        <div class="logo">
+            <h1>🇮🇹 Pizza Napoli</h1>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h2 class="hero-title">Tradizione Italiana</h2>
+            <p class="hero-subtitle">333 позиции настоящего итальянского вкуса</p>
+        </div>
+    </section>
+
+    <section class="menu-section" id="menu">
+        <h2 class="section-title">Il Nostro Menu</h2>
+        
+        <div class="filters">
+            <button class="filter-btn active" data-filter="all">Tutti</button>
+            <button class="filter-btn" data-filter="pizza-30cm">🍕 Пицца 30 см</button>
+            <button class="filter-btn" data-filter="piccolo-20cm">🍕 Piccolo</button>
+            <button class="filter-btn" data-filter="calzone">🥟 Кальцоне</button>
+            <button class="filter-btn" data-filter="bread-focaccia">🍞 Хлеб</button>
+            <button class="filter-btn" data-filter="sauce">🥫 Соусы</button>
+            <button class="filter-btn" data-filter="rolls">🍣 Роллы</button>
+            <button class="filter-btn" data-filter="combo">🎁 Комбо</button>
+            <button class="filter-btn" data-filter="confectionery">🍰 Десерты</button>
+            <button class="filter-btn" data-filter="beverages">🍹 Напитки</button>
+            <button class="filter-btn" data-filter="frozen">❄️ Заморозка</button>
+            <button class="filter-btn" data-filter="aromatic-oils">🫒 Масла</button>
+            <button class="filter-btn" data-filter="masterclass">👨‍🍳 Мастер-класс</button>
+            <button class="filter-btn" data-filter="franchise">💼 Франшиза</button>
+        </div>
+
+        <div class="search-box">
+            <input type="text" id="searchInput" placeholder="Cerca nel menu...">
+        </div>
+
+        <div class="products-grid" id="productsGrid"></div>
+    </section>
+
+    <div class="modal" id="cartModal">
+        <div class="modal-content">
+            <span class="close" id="closeCart">&times;</span>
+            <h2 style="font-family: 'Playfair Display', serif; font-size: 36px; color: #009246; margin-bottom: 30px;">Il Tuo Ordine</h2>
+            <div id="cartItems"></div>
+            <div style="margin-top: 30px; padding-top: 30px; border-top: 3px solid #ce2b37;">
+                <p style="font-size: 28px; font-weight: 700; color: #ce2b37;">Totale: <span id="cartTotal">0</span> ₽</p>
+                <p style="color: #666; margin-top: 15px; font-size: 16px;">Fino alla posizione gratuita: <span id="freeProgress">12</span></p>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <p>&copy; 2026 Pizza Napoli RSC. Tradizione Italiana dal 1990.</p>
+        <p style="margin-top: 15px; font-size: 14px; opacity: 0.7;">Made with ❤️ in Italy</p>
+    </footer>
+
+    <script src="js/app-italian.js"></script>
+</body>
+</html>
