@@ -6,7 +6,12 @@ let visibleCategories = new Set();
 async function loadMenu() {
     try {
         const response = await fetch('menu-complete.json');
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
         const data = await response.json();
+        
+        console.log('Menu loaded:', Object.keys(data.menu).length, 'categories');
         
         // Flatten all products from nested structure
         menu = [
@@ -24,6 +29,8 @@ async function loadMenu() {
             ...(data.menu['masterclass'] || []),
             ...(data.menu['franchise'] || [])
         ];
+        
+        console.log('Total products:', menu.length);
         
         initSidebar();
         renderContent();
@@ -144,14 +151,15 @@ function renderProducts(products) {
 function setupIntersectionObserver() {
     const options = {
         root: null,
-        rootMargin: '-100px',
-        threshold: 0
+        rootMargin: '-20% 0px -80% 0px', // Более узкая зона для точного определения
+        threshold: 0.1
     };
     
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 const categoryId = entry.target.id.replace('category-', '');
+                console.log('Active category:', categoryId); // Лог для отладки
                 setActiveNav(categoryId);
             }
         });
@@ -174,6 +182,9 @@ function setActiveNav(categoryId) {
 function scrollToCategory(categoryId) {
     const element = document.getElementById(`category-${categoryId}`);
     if (element) {
+        // Активируем навигацию сразу при клике
+        setActiveNav(categoryId);
+        
         const offset = 100;
         const bodyRect = document.body.getBoundingClientRect().top;
         const elementRect = element.getBoundingClientRect().top;
