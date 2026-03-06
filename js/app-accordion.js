@@ -53,13 +53,32 @@ function renderAccordion() {
         
         const icon = icons[index % icons.length];
         
+        // Map Russian names to English keys
+        const categoryMap = {
+            'pizza-30cm': 'Пицца 30 см',
+            'piccolo-20cm': 'Pizza Piccolo 20 см',
+            'calzone': 'Кальцоне',
+            'bread-focaccia': 'Хлеб и Фокачча',
+            'sauce': 'Соусы',
+            'rolls': 'Роллы',
+            'combo': 'Комбо наборы',
+            'confectionery': 'Кондитерские изделия',
+            'beverages': 'Напитки',
+            'frozen': 'Замороженная продукция',
+            'aromatic-oils': 'Ароматное масло',
+            'masterclass': 'Мастер класс',
+            'franchise': 'Франшиза'
+        };
+        
+        const displayName = categoryMap[cat] || cat;
+        
         return `
             <div class="accordion-item" data-category="${cat}">
                 <div class="accordion-header" onclick="toggleAccordion('${cat}')">
                     <div class="accordion-title">
                         <div class="category-icon">${icon}</div>
                         <div class="category-info">
-                            <h3>${cat}</h3>
+                            <h3>${displayName}</h3>
                             <div class="category-count">${productsInCategory.length} товаров</div>
                         </div>
                     </div>

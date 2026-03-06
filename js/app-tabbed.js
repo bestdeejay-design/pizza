@@ -36,10 +36,27 @@ function initTabs() {
     const tabsContainer = document.getElementById('category-tabs');
     const categories = getUniqueCategories();
     
+    // Map Russian names to English keys
+    const categoryMap = {
+        'pizza-30cm': 'Пицца 30 см',
+        'piccolo-20cm': 'Pizza Piccolo 20 см',
+        'calzone': 'Кальцоне',
+        'bread-focaccia': 'Хлеб и Фокачча',
+        'sauce': 'Соусы',
+        'rolls': 'Роллы',
+        'combo': 'Комбо наборы',
+        'confectionery': 'Кондитерские изделия',
+        'beverages': 'Напитки',
+        'frozen': 'Замороженная продукция',
+        'aromatic-oils': 'Ароматное масло',
+        'masterclass': 'Мастер класс',
+        'franchise': 'Франшиза'
+    };
+    
     tabsContainer.innerHTML = `
         <button class="tab-btn active" data-category="all">Все</button>
         ${categories.map(cat => `
-            <button class="tab-btn" data-category="${cat}">${cat}</button>
+            <button class="tab-btn" data-category="${cat}">${categoryMap[cat] || cat}</button>
         `).join('')}
     `;
     
@@ -78,15 +95,34 @@ function renderAllCategories() {
     const container = document.getElementById('categories-container');
     const categories = getUniqueCategories();
     
+    // Map Russian names to English keys
+    const categoryMap = {
+        'pizza-30cm': 'Пицца 30 см',
+        'piccolo-20cm': 'Pizza Piccolo 20 см',
+        'calzone': 'Кальцоне',
+        'bread-focaccia': 'Хлеб и Фокачча',
+        'sauce': 'Соусы',
+        'rolls': 'Роллы',
+        'combo': 'Комбо наборы',
+        'confectionery': 'Кондитерские изделия',
+        'beverages': 'Напитки',
+        'frozen': 'Замороженная продукция',
+        'aromatic-oils': 'Ароматное масло',
+        'masterclass': 'Мастер класс',
+        'franchise': 'Франшиза'
+    };
+    
     container.innerHTML = categories.map((cat, index) => {
         const productsInCategory = menu.filter(item => {
             return item.category === cat;
         });
         
+        const displayName = categoryMap[cat] || cat;
+        
         return `
             <div class="category-section ${index === 0 ? 'active' : ''}" id="category-${cat}">
                 <div class="category-header">
-                    <h2 class="category-title">${cat}</h2>
+                    <h2 class="category-title">${displayName}</h2>
                     <p class="category-count">${productsInCategory.length} товаров</p>
                 </div>
                 <div class="products-list" id="products-${cat}">

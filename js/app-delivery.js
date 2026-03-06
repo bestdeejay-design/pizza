@@ -48,14 +48,33 @@ function initSidebar() {
     const sidebar = document.getElementById('sidebar');
     const categories = getUniqueCategories();
     
+    // Map Russian names to English keys
+    const categoryMap = {
+        'pizza-30cm': 'Пицца 30 см',
+        'piccolo-20cm': 'Pizza Piccolo 20 см',
+        'calzone': 'Кальцоне',
+        'bread-focaccia': 'Хлеб и Фокачча',
+        'sauce': 'Соусы',
+        'rolls': 'Роллы',
+        'combo': 'Комбо наборы',
+        'confectionery': 'Кондитерские изделия',
+        'beverages': 'Напитки',
+        'frozen': 'Замороженная продукция',
+        'aromatic-oils': 'Ароматное масло',
+        'masterclass': 'Мастер класс',
+        'franchise': 'Франшиза'
+    };
+    
     sidebar.innerHTML = categories.map(cat => {
         const count = menu.filter(item => {
             return item.category === cat;
         }).length;
         
+        const displayName = categoryMap[cat] || cat;
+        
         return `
             <div class="nav-category" data-category="${cat}" onclick="scrollToCategory('${cat}')">
-                <span>${cat}</span>
+                <span>${displayName}</span>
                 <span class="nav-count">${count}</span>
             </div>
         `;
@@ -66,15 +85,34 @@ function renderContent() {
     const content = document.getElementById('content');
     const categories = getUniqueCategories();
     
+    // Map Russian names to English keys
+    const categoryMap = {
+        'pizza-30cm': 'Пицца 30 см',
+        'piccolo-20cm': 'Pizza Piccolo 20 см',
+        'calzone': 'Кальцоне',
+        'bread-focaccia': 'Хлеб и Фокачча',
+        'sauce': 'Соусы',
+        'rolls': 'Роллы',
+        'combo': 'Комбо наборы',
+        'confectionery': 'Кондитерские изделия',
+        'beverages': 'Напитки',
+        'frozen': 'Замороженная продукция',
+        'aromatic-oils': 'Ароматное масло',
+        'masterclass': 'Мастер класс',
+        'franchise': 'Франшиза'
+    };
+    
     content.innerHTML = categories.map(cat => {
         const productsInCategory = menu.filter(item => {
             return item.category === cat;
         });
         
+        const displayName = categoryMap[cat] || cat;
+        
         return `
             <div class="category-section" id="category-${cat}">
                 <div class="category-header">
-                    <h2 class="category-title">${cat}</h2>
+                    <h2 class="category-title">${displayName}</h2>
                     <p class="category-subtitle">${productsInCategory.length} товаров</p>
                 </div>
                 <div class="products-grid">
