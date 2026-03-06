@@ -1,0 +1,2595 @@
+{
+  "metadata": {
+    "project": "Pizza Napoli RSC",
+    "source": "https://pizzanapolirsc.ru/",
+    "collectedAt": "2026-03-05T21:56:19.251Z",
+    "totalProducts": 333,
+    "description": "Полное меню пиццерии Pizza Napoli - ВСЕ КАТЕГОРИИ С ФОТО"
+  },
+  "statistics": {
+    "pizza-30cm": 49,
+    "piccolo-20cm": 39,
+    "calzone": 69,
+    "bread-focaccia": 44,
+    "sauce": 11,
+    "rolls": 55,
+    "confectionery": 3,
+    "beverages": 12,
+    "frozen": 7,
+    "masterclass": 1,
+    "franchise": 3,
+    "aromatic-oils": 5,
+    "combo": 35
+  },
+  "categories": [
+    {
+      "id": "pizza-30cm",
+      "name": "Пицца 30 см",
+      "count": 49,
+      "description": "Классическая неаполитанская пицца диаметром 30 см"
+    },
+    {
+      "id": "piccolo-20cm",
+      "name": "Pizza Piccolo 20 см",
+      "count": 39,
+      "description": "Мини пицца диаметром 20 см"
+    },
+    {
+      "id": "calzone",
+      "name": "Кальцоне",
+      "count": 69,
+      "description": "Закрытая пицца с различными начинками (обычная и мини)"
+    },
+    {
+      "id": "bread-focaccia",
+      "name": "Хлеб и Фокачча",
+      "count": 44,
+      "description": "Неаполитанский хлеб и итальянская фокачча"
+    },
+    {
+      "id": "sauce",
+      "name": "Соус к корочкам",
+      "count": 11,
+      "description": "Соусы для подачи с бортиками пиццы"
+    },
+    {
+      "id": "rolls",
+      "name": "Suchi & Rolls",
+      "count": 55,
+      "description": "Японские роллы, суши, гунканы"
+    },
+    {
+      "id": "combo",
+      "name": "Комбо наборы",
+      "count": 35,
+      "description": "Наборы пицц и роллов"
+    },
+    {
+      "id": "confectionery",
+      "name": "Кондитерские изделия",
+      "count": 3,
+      "description": "Итальянские десерты и печенья"
+    },
+    {
+      "id": "beverages",
+      "name": "Напитки",
+      "count": 12,
+      "description": "Безалкогольные напитки"
+    },
+    {
+      "id": "frozen",
+      "name": "Замороженная продукция",
+      "count": 7,
+      "description": "Замороженные полуфабрикаты"
+    },
+    {
+      "id": "aromatic-oils",
+      "name": "Ароматное масло",
+      "count": 5,
+      "description": "Ароматизированные масла"
+    },
+    {
+      "id": "masterclass",
+      "name": "Мастер класс",
+      "count": 1,
+      "description": "Обучение приготовлению пиццы"
+    },
+    {
+      "id": "franchise",
+      "name": "Франшиза",
+      "count": 3,
+      "description": "Информация о франшизе"
+    }
+  ],
+  "menu": {
+    "pizza-30cm": [
+      {
+        "title": "Пицца месяца с 01-31 марта : Пицца \"Болоньеза\"",
+        "price": 950,
+        "image": "https://static.tildacdn.com/stor3364-3538-4261-b365-353463373234/f0530b993edeb20e72e555caddc7fbde.png",
+        "id": 1,
+        "category": "pizza-30cm"
+      },
+      {
+        "title": "Пицца месяца с 01-28 февраля: Pizza alla Diavola",
+        "price": 950,
+        "image": "https://static.tildacdn.com/stor3231-3833-4364-a232-623135313565/f8f29b6a93fa6e1194828d74a7d08aa2.jpg",
+        "id": 2,
+        "category": "pizza-30cm"
+      },
+      {
+        "title": "Пицца Маргарита 1/4",
+        "price": 200,
+        "image": "https://static.tildacdn.com/stor3133-3136-4731-b535-653532336231/57836abce33e460be8c6f13d6c39806b.jpg",
+        "id": 3,
+        "category": "pizza-30cm"
+      },
+      {
+        "title": "Пицца Пепперони 1/4",
+        "price": 200,
+        "image": "https://static.tildacdn.com/stor3030-3734-4131-b337-326362323464/9f6cad1f7ee1c2d7cbcbb0e32ee886d8.jpg",
+        "id": 4,
+        "category": "pizza-30cm"
+      },
+      {
+        "title": "Пицца кура/перец 1/4",
+        "price": 200,
+        "image": "https://static.tildacdn.com/stor3233-3435-4561-a539-336135326162/03edfe5754b9fcfecfda85ac3fd985d0.jpg",
+        "id": 5,
+        "category": "pizza-30cm"
+      },
+      {
+        "title": "Пицца 4 сыра 1/4",
+        "price": 200,
+        "image": "https://static.tildacdn.com/stor3533-3335-4862-b630-376262643561/be693f514bc635136042f7ceaf0dfbce.jpg",
+        "id": 6,
+        "category": "pizza-30cm"
+      },
+      {
+        "title": "Пицца Суприм 1/4",
+        "price": 200,
+        "image": "https://static.tildacdn.com/stor6534-6166-4535-a635-373733366565/dd3ceb8390ae20da2a5ecea3f5b2ec43.jpg",
+        "id": 7,
+        "category": "pizza-30cm"
+      },
+      {
+        "title": "Пицца \"Я сам Шеф\"",
+        "price": 450,
+        "image": "https://static.tildacdn.com/stor3134-3930-4532-a464-316332336236/33609650.jpg",
+        "id": 10,
+        "category": "pizza-30cm"
+      },
+      {
+        "title": "Пицца \"Маргарита\"",
+        "price": 750,
+        "image": "https://static.tildacdn.com/stor3866-3032-4665-b537-623866366164/ead3882745fa013324b56844cf2a560a.jpg",
+        "id": 11,
+        "category": "pizza-30cm"
+      },
+      {
+        "title": "Пицца Пепперони",
+        "price": 750,
+        "image": "https://static.tildacdn.com/stor6465-3565-4430-b139-663464383339/18027452e983e6723778dd66f82e6753.jpg",
+        "id": 12,
+        "category": "pizza-30cm"
+      },
+      {
+        "title": "Пицца Ветчина/грибы",
+        "price": 750,
+        "image": "https://static.tildacdn.com/stor3966-6330-4934-a563-663834663232/5f09de652ff7d0ed82dd9195c1e4348c.jpg",
+        "id": 13,
+        "category": "pizza-30cm"
+      },
+      {
+        "title": "Пицца Кура с печеным перцем",
+        "price": 750,
+        "image": "https://static.tildacdn.com/stor3562-3730-4264-b765-343930373633/d94e5c9e3cfa2008875ee4fa491c65b9.jpg",
+        "id": 14,
+        "category": "pizza-30cm"
+      },
+      {
+        "title": "Pizza Salvata Mila",
+        "price": 850,
+        "image": "https://static.tildacdn.com/stor3164-6163-4636-b035-386665653230/e24d8343f20719050b97495b5a292f0a.jpg",
+        "id": 15,
+        "category": "pizza-30cm"
+      },
+      {
+        "title": "Пицца с лисичками, шампиньонами и красным луком",
+        "price": 850,
+        "image": "https://static.tildacdn.com/stor6362-6633-4765-b564-656133386235/30ee7ddeb445e3cb717bf2f37c1d037f.jpg",
+        "id": 16,
+        "category": "pizza-30cm"
+      },
+      {
+        "title": "Pizza Chicken BBQ",
+        "price": 850,
+        "image": "https://static.tildacdn.com/stor3132-3030-4362-b438-623362353431/20b3067fe1bdf345a778e05ad4e0d672.jpg",
+        "id": 17,
+        "category": "pizza-30cm"
+      },
+      {
+        "title": "Пицца \"Капричоза\"",
+        "price": 850,
+        "image": "https://static.tildacdn.com/stor3339-3061-4862-a533-393332646464/e03df4dca0692e3279e80e7345802bc7.jpg",
+        "id": 18,
+        "category": "pizza-30cm"
+      },
+      {
+        "title": "Пицца \"Классическая Маргарита\"",
+        "price": 850,
+        "image": "https://static.tildacdn.com/stor3531-6136-4535-a261-626162653161/960c8e8e9376a4b8564d6b2dbc217f66.jpg",
+        "id": 19,
+        "category": "pizza-30cm"
+      },
+      {
+        "title": "Пицца \"4 сыра\"",
+        "price": 850,
+        "image": "https://static.tildacdn.com/stor3937-6130-4364-b431-643132633432/719c04e0f6486ad575c942b9dcfa187e.jpg",
+        "id": 20,
+        "category": "pizza-30cm"
+      },
+      {
+        "title": "Пицца Свинина BBQ с ананасами",
+        "price": 850,
+        "image": "https://static.tildacdn.com/stor6631-3364-4234-b362-356539626563/bac95b9185dd75f27d4c0c3dfa9bb07f.jpg",
+        "id": 21,
+        "category": "pizza-30cm"
+      },
+      {
+        "title": "Пицца Говядина «Терияки»",
+        "price": 850,
+        "image": "https://static.tildacdn.com/stor3864-3961-4336-b161-653266666131/8d915ce130b1ef0bdb802fc375702b67.jpg",
+        "id": 22,
+        "category": "pizza-30cm"
+      },
+      {
+        "title": "Пицца \"Карбонара\"",
+        "price": 850,
+        "image": "https://static.tildacdn.com/stor3261-3035-4866-b834-353435333936/8f8b471cf7e79bcafa8c88a3338fab8f.jpg",
+        "id": 23,
+        "category": "pizza-30cm"
+      },
+      {
+        "title": "Пицца с мясными шариками",
+        "price": 850,
+        "image": "https://static.tildacdn.com/stor3131-3232-4262-b565-386264303162/0b063ec4b2940340d4539f2c946365d1.jpg",
+        "id": 24,
+        "category": "pizza-30cm"
+      },
+      {
+        "title": "Пицца \"Пера\" с грушей и сыром Горгонзола",
+        "price": 850,
+        "image": "https://static.tildacdn.com/stor6161-3836-4431-b034-613533653466/02cc88ff553b6528572e666c4b96fec3.jpg",
+        "id": 25,
+        "category": "pizza-30cm"
+      },
+      {
+        "title": "Пицца \"Монтенегро\"",
+        "price": 850,
+        "image": "https://static.tildacdn.com/stor3364-6463-4464-b535-383735646466/f7ce1267caff557596b7760cf6ddda5f.jpg",
+        "id": 26,
+        "category": "pizza-30cm"
+      },
+      {
+        "title": "Пицца \"Суприм\"",
+        "price": 850,
+        "image": "https://static.tildacdn.com/stor3334-3831-4562-a433-313561656637/656a331b6abbf7889da0e7611bbe47e0.jpg",
+        "id": 27,
+        "category": "pizza-30cm"
+      },
+      {
+        "title": "Пицца \"Вегетариано\"",
+        "price": 850,
+        "image": "https://static.tildacdn.com/stor3265-3164-4864-b132-626639313464/8ed85445f59c25b1226d809afcaf140e.jpg",
+        "id": 28,
+        "category": "pizza-30cm"
+      },
+      {
+        "title": "Пицца \"Кокорита\"",
+        "price": 850,
+        "image": "https://static.tildacdn.com/stor6433-6539-4363-b565-376565626636/3454e4b0028e82eb434cc06397fa4fd0.jpg",
+        "id": 29,
+        "category": "pizza-30cm"
+      },
+      {
+        "title": "Пицца \"4 сезона: Ультра\"",
+        "price": 850,
+        "image": "https://static.tildacdn.com/stor3639-3162-4430-b362-343135656139/cf95bfe4a1c8b0cfcd84f15319c193a4.jpg",
+        "id": 30,
+        "category": "pizza-30cm"
+      },
+      {
+        "title": "Пицца \"Salsicciotti\"",
+        "price": 950,
+        "image": "https://static.tildacdn.com/stor6261-6130-4561-b464-343238613337/2d5028b683e6348c6ba3e8a6bab0997c.jpg",
+        "id": 31,
+        "category": "pizza-30cm"
+      },
+      {
+        "title": "Пицца с колбасой Мортаделла, сыром Страчателла и жареными фисташками",
+        "price": 950,
+        "image": "https://static.tildacdn.com/stor6335-6663-4330-b731-323762373163/4d3d66e3a82fd2d98db2866207832ba0.jpg",
+        "id": 32,
+        "category": "pizza-30cm"
+      },
+      {
+        "title": "Пицца \"Italy\"",
+        "price": 950,
+        "image": "https://static.tildacdn.com/stor6130-6664-4165-b864-316538306130/d988119e6ba116c16a3d2a8588ab8359.jpg",
+        "id": 33,
+        "category": "pizza-30cm"
+      },
+      {
+        "title": "Пицца «Мехико»",
+        "price": 950,
+        "image": "https://static.tildacdn.com/stor6136-3835-4139-b232-633662656334/16de1e7574ba0a632a2b5a07abaa2c1f.jpg",
+        "id": 34,
+        "category": "pizza-30cm"
+      },
+      {
+        "title": "Пицца \"Реджина\"",
+        "price": 950,
+        "image": "https://static.tildacdn.com/stor6432-6138-4534-b232-373031383636/7a6ab42747f9d5b00dd03e698efc45ca.jpg",
+        "id": 35,
+        "category": "pizza-30cm"
+      },
+      {
+        "title": "Пицца \"4 сезона: Мясная\"",
+        "price": 950,
+        "image": "https://static.tildacdn.com/stor6566-3232-4334-a564-383031643838/32f5dacf4cf62b9bd951b778d7d34795.jpg",
+        "id": 36,
+        "category": "pizza-30cm"
+      },
+      {
+        "title": "Пицца с тунцом Блюфин",
+        "price": 950,
+        "image": "https://static.tildacdn.com/stor3534-3461-4730-a235-653830326638/f4e7a05a55f82f4819965efc409bc63e.jpg",
+        "id": 37,
+        "category": "pizza-30cm"
+      },
+      {
+        "title": "Пицца с Лососем и сыром Бри и зеленой спаржей",
+        "price": 950,
+        "image": "https://static.tildacdn.com/stor6631-6439-4966-b364-666130346430/65cfa584968acd44853f77d6477b9840.jpg",
+        "id": 38,
+        "category": "pizza-30cm"
+      },
+      {
+        "title": "Пицца «Ди Парма»",
+        "price": 1100,
+        "image": "https://static.tildacdn.com/stor3031-3036-4564-a566-326536376662/8b377ec68bcfc9d10d0d7ee7c144d1ad.jpg",
+        "id": 39,
+        "category": "pizza-30cm"
+      },
+      {
+        "title": "Пицца \"Сицилийская\" с анчоусами и каперсами",
+        "price": 1100,
+        "image": "https://static.tildacdn.com/stor3733-6364-4362-b765-343932626533/27e771f4b24f5ff50d94159e6a6e3a40.jpg",
+        "id": 40,
+        "category": "pizza-30cm"
+      },
+      {
+        "title": "Пицца с Олениной",
+        "price": 1100,
+        "image": "https://static.tildacdn.com/stor3233-3137-4133-b835-306536643138/15f9fa1767eacd6734826c8bd98cc1aa.jpg",
+        "id": 41,
+        "category": "pizza-30cm"
+      },
+      {
+        "title": "Пицца \"Frutti di Mare\" с морепродуктами",
+        "price": 1100,
+        "image": "https://static.tildacdn.com/stor3563-6165-4934-b633-646431346165/f7b4e026d5c86c5390631323688e1af6.jpg",
+        "id": 42,
+        "category": "pizza-30cm"
+      },
+      {
+        "title": "Пицца с Камчатскими крабами, морскими гребешками, креветками и раками",
+        "price": 2500,
+        "image": "https://static.tildacdn.com/stor3231-3139-4639-b035-626132393333/edaf502f8ce2a73456a0bd23d96fc483.jpg",
+        "id": 44,
+        "category": "pizza-30cm"
+      },
+      {
+        "title": "Пицца с Уткой и Фуа гра",
+        "price": 2500,
+        "image": "https://static.tildacdn.com/stor6539-6135-4365-b439-636339326465/7255ecf4820bade14b286284f4f26f1d.jpg",
+        "id": 45,
+        "category": "pizza-30cm"
+      },
+      {
+        "title": "Пицца с чесночными креветками, вялеными томатами, сыром Пармезан и петрушкой",
+        "price": 2500,
+        "image": "https://static.tildacdn.com/stor6338-3239-4236-b261-376232353465/e06ea73d9d3510a34a39ec7619637805.jpg",
+        "id": 46,
+        "category": "pizza-30cm"
+      },
+      {
+        "title": "Пицца с сыром Буратто и прошутто",
+        "price": 2500,
+        "image": "https://static.tildacdn.com/stor3735-3661-4335-b063-666331383763/13412f63e62355514e1714338d177098.jpg",
+        "id": 48,
+        "category": "pizza-30cm"
+      },
+      {
+        "title": "Пицца с форелью, шпинатом, сыром Пармезан, красной икрой и сыром Страчателла",
+        "price": 2500,
+        "image": "https://static.tildacdn.com/stor3534-3030-4134-b134-616463643862/e7644983c9cd42936e8679e380c633f2.jpg",
+        "id": 49,
+        "category": "pizza-30cm"
+      },
+      {
+        "title": "Pizza Piccola alla Diavola 20 см",
+        "price": 800,
+        "image": "https://static.tildacdn.com/stor3231-3833-4364-a232-623135313565/f8f29b6a93fa6e1194828d74a7d08aa2.jpg",
+        "id": 51,
+        "category": "pizza-30cm"
+      },
+      {
+        "title": "Pizza Piccola с Уткой и Фуа гра",
+        "price": 2000,
+        "image": "https://static.tildacdn.com/stor6539-6135-4365-b439-636339326465/7255ecf4820bade14b286284f4f26f1d.jpg",
+        "id": 85,
+        "category": "pizza-30cm"
+      },
+      {
+        "title": "Пицца с ягненком в кокосовом соусе Карри",
+        "price": 2500,
+        "image": "https://static.tildacdn.com/stor6464-3030-4466-b335-313338383861/07bad0766e0878d9d24eba16629e3faa.jpg",
+        "id": 47,
+        "category": "pizza-30cm"
+      },
+      {
+        "title": "Пицца с мраморной говядиной маринованное в соусе Ворчестер с лисичками",
+        "price": 2500,
+        "image": "https://static.tildacdn.com/stor6639-3265-4663-a135-323366393137/6ac84b8930c5e532bf30184bfe407cb8.jpg",
+        "id": 50,
+        "category": "pizza-30cm"
+      }
+    ],
+    "piccolo-20cm": [
+      {
+        "title": "Pizza Piccolo Пепперони",
+        "price": 600,
+        "image": "https://static.tildacdn.com/stor6465-3565-4430-b139-663464383339/18027452e983e6723778dd66f82e6753.jpg",
+        "id": 52,
+        "category": "piccolo-20cm"
+      },
+      {
+        "title": "Pizza Piccolo Маргарита",
+        "price": 600,
+        "image": "https://static.tildacdn.com/stor3866-3032-4665-b537-623866366164/ead3882745fa013324b56844cf2a560a.jpg",
+        "id": 53,
+        "category": "piccolo-20cm"
+      },
+      {
+        "title": "Pizza Piccolo Ветчина/грибы",
+        "price": 600,
+        "image": "https://static.tildacdn.com/stor3966-6330-4934-a563-663834663232/5f09de652ff7d0ed82dd9195c1e4348c.jpg",
+        "id": 54,
+        "category": "piccolo-20cm"
+      },
+      {
+        "title": "Pizza Piccolo Кура/Перец",
+        "price": 600,
+        "image": "https://static.tildacdn.com/stor3562-3730-4264-b765-343930373633/d94e5c9e3cfa2008875ee4fa491c65b9.jpg",
+        "id": 55,
+        "category": "piccolo-20cm"
+      },
+      {
+        "title": "Pizza Piccolo Chicken BBQ",
+        "price": 700,
+        "image": "https://static.tildacdn.com/stor3132-3030-4362-b438-623362353431/20b3067fe1bdf345a778e05ad4e0d672.jpg",
+        "id": 56,
+        "category": "piccolo-20cm"
+      },
+      {
+        "title": "Pizza Piccolo Карбонара",
+        "price": 700,
+        "image": "https://static.tildacdn.com/stor3261-3035-4866-b834-353435333936/8f8b471cf7e79bcafa8c88a3338fab8f.jpg",
+        "id": 57,
+        "category": "piccolo-20cm"
+      },
+      {
+        "title": "Pizza Piccolo 4 сыра",
+        "price": 700,
+        "image": "https://static.tildacdn.com/stor3937-6130-4364-b431-643132633432/719c04e0f6486ad575c942b9dcfa187e.jpg",
+        "id": 59,
+        "category": "piccolo-20cm"
+      },
+      {
+        "title": "Pizza Piccolo 4 сезона: Ультра",
+        "price": 700,
+        "image": "https://static.tildacdn.com/stor3639-3162-4430-b362-343135656139/cf95bfe4a1c8b0cfcd84f15319c193a4.jpg",
+        "id": 60,
+        "category": "piccolo-20cm"
+      },
+      {
+        "title": "Pizza Piccolo Вегетариано",
+        "price": 700,
+        "image": "https://static.tildacdn.com/stor3265-3164-4864-b132-626639313464/8ed85445f59c25b1226d809afcaf140e.jpg",
+        "id": 61,
+        "category": "piccolo-20cm"
+      },
+      {
+        "title": "Pizza Piccolo Кокорита",
+        "price": 700,
+        "image": "https://static.tildacdn.com/stor6433-6539-4363-b565-376565626636/3454e4b0028e82eb434cc06397fa4fd0.jpg",
+        "id": 62,
+        "category": "piccolo-20cm"
+      },
+      {
+        "title": "Pizza Piccolo Капричоза",
+        "price": 700,
+        "image": "https://static.tildacdn.com/stor3339-3061-4862-a533-393332646464/e03df4dca0692e3279e80e7345802bc7.jpg",
+        "id": 63,
+        "category": "piccolo-20cm"
+      },
+      {
+        "title": "Pizza Piccolo Классическая Маргарита",
+        "price": 700,
+        "image": "https://static.tildacdn.com/stor3531-6136-4535-a261-626162653161/960c8e8e9376a4b8564d6b2dbc217f66.jpg",
+        "id": 64,
+        "category": "piccolo-20cm"
+      },
+      {
+        "title": "Pizza Piccolo Salvata Mila",
+        "price": 700,
+        "image": "https://static.tildacdn.com/stor3164-6163-4636-b035-386665653230/e24d8343f20719050b97495b5a292f0a.jpg",
+        "id": 65,
+        "category": "piccolo-20cm"
+      },
+      {
+        "title": "Pizza Piccolo Монтенегро",
+        "price": 700,
+        "image": "https://static.tildacdn.com/stor3364-6463-4464-b535-383735646466/f7ce1267caff557596b7760cf6ddda5f.jpg",
+        "id": 66,
+        "category": "piccolo-20cm"
+      },
+      {
+        "title": "Pizza Piccolo Говядина Терияки",
+        "price": 700,
+        "image": "https://static.tildacdn.com/stor3864-3961-4336-b161-653266666131/8d915ce130b1ef0bdb802fc375702b67.jpg",
+        "id": 67,
+        "category": "piccolo-20cm"
+      },
+      {
+        "title": "Pizza Piccolo Пера с грушей и Горгонзолой",
+        "price": 700,
+        "image": "https://static.tildacdn.com/stor6161-3836-4431-b034-613533653466/02cc88ff553b6528572e666c4b96fec3.jpg",
+        "id": 68,
+        "category": "piccolo-20cm"
+      },
+      {
+        "title": "Pizza Piccolo с мясными шариками",
+        "price": 700,
+        "image": "https://static.tildacdn.com/stor3131-3232-4262-b565-386264303162/0b063ec4b2940340d4539f2c946365d1.jpg",
+        "id": 69,
+        "category": "piccolo-20cm"
+      },
+      {
+        "title": "Pizza Piccolo Суприм",
+        "price": 700,
+        "image": "https://static.tildacdn.com/stor3334-3831-4562-a433-313561656637/656a331b6abbf7889da0e7611bbe47e0.jpg",
+        "id": 70,
+        "category": "piccolo-20cm"
+      },
+      {
+        "title": "Pizza Piccolo Italy",
+        "price": 800,
+        "image": "https://static.tildacdn.com/stor6130-6664-4165-b864-316538306130/d988119e6ba116c16a3d2a8588ab8359.jpg",
+        "id": 71,
+        "category": "piccolo-20cm"
+      },
+      {
+        "title": "Pizza piccolo 4 сезона: Мясная",
+        "price": 800,
+        "image": "https://static.tildacdn.com/stor6566-3232-4334-a564-383031643838/32f5dacf4cf62b9bd951b778d7d34795.jpg",
+        "id": 72,
+        "category": "piccolo-20cm"
+      },
+      {
+        "title": "Pizza Piccolo Мортаделла с сыром Страчателла и жареными фисташками",
+        "price": 800,
+        "image": "https://static.tildacdn.com/stor6335-6663-4330-b731-323762373163/4d3d66e3a82fd2d98db2866207832ba0.jpg",
+        "id": 73,
+        "category": "piccolo-20cm"
+      },
+      {
+        "title": "Pizza Piccolo с Олениной",
+        "price": 900,
+        "image": "https://static.tildacdn.com/stor3233-3137-4133-b835-306536643138/15f9fa1767eacd6734826c8bd98cc1aa.jpg",
+        "id": 74,
+        "category": "piccolo-20cm"
+      },
+      {
+        "title": "Pizza Piccolo с лососем и зеленый спаржей",
+        "price": 800,
+        "image": "https://static.tildacdn.com/stor6631-6439-4966-b364-666130346430/65cfa584968acd44853f77d6477b9840.jpg",
+        "id": 75,
+        "category": "piccolo-20cm"
+      },
+      {
+        "title": "Pizza Piccolo Salsicciotti",
+        "price": 800,
+        "image": "https://static.tildacdn.com/stor6261-6130-4561-b464-343238613337/2d5028b683e6348c6ba3e8a6bab0997c.jpg",
+        "id": 76,
+        "category": "piccolo-20cm"
+      },
+      {
+        "title": "Pizza Piccolo Мехико",
+        "price": 800,
+        "image": "https://static.tildacdn.com/stor6136-3835-4139-b232-633662656334/16de1e7574ba0a632a2b5a07abaa2c1f.jpg",
+        "id": 77,
+        "category": "piccolo-20cm"
+      },
+      {
+        "title": "Pizza Piccolo с Тунцом",
+        "price": 800,
+        "image": "https://static.tildacdn.com/stor3534-3461-4730-a235-653830326638/f4e7a05a55f82f4819965efc409bc63e.jpg",
+        "id": 78,
+        "category": "piccolo-20cm"
+      },
+      {
+        "title": "Pizza Piccolo Реджина",
+        "price": 800,
+        "image": "https://static.tildacdn.com/stor6432-6138-4534-b232-373031383636/7a6ab42747f9d5b00dd03e698efc45ca.jpg",
+        "id": 79,
+        "category": "piccolo-20cm"
+      },
+      {
+        "title": "Pizza Piccolo Ди Парма",
+        "price": 900,
+        "image": "https://static.tildacdn.com/stor3031-3036-4564-a566-326536376662/8b377ec68bcfc9d10d0d7ee7c144d1ad.jpg",
+        "id": 80,
+        "category": "piccolo-20cm"
+      },
+      {
+        "title": "Pizza Piccolo Сицилийская с анчоусами и каперсами",
+        "price": 900,
+        "image": "https://static.tildacdn.com/stor3733-6364-4362-b765-343932626533/27e771f4b24f5ff50d94159e6a6e3a40.jpg",
+        "id": 81,
+        "category": "piccolo-20cm"
+      },
+      {
+        "title": "Pizza Piccolo Fruti de Mare",
+        "price": 900,
+        "image": "https://static.tildacdn.com/stor3563-6165-4934-b633-646431346165/f7b4e026d5c86c5390631323688e1af6.jpg",
+        "id": 82,
+        "category": "piccolo-20cm"
+      },
+      {
+        "title": "Pizza Piccolo с черным итальянским трюфелем",
+        "price": 2000,
+        "image": "https://static.tildacdn.com/stor3738-6237-4339-b334-656565666166/1822a00bcffa8c6e1fb80faa2b1eb463.jpg",
+        "id": 83,
+        "category": "piccolo-20cm"
+      },
+      {
+        "title": "Pizza Piccolo с Камчатскими крабами, морскими гребешками, креветками и раками",
+        "price": 2000,
+        "image": "https://static.tildacdn.com/stor3231-3139-4639-b035-626132393333/edaf502f8ce2a73456a0bd23d96fc483.jpg",
+        "id": 84,
+        "category": "piccolo-20cm"
+      },
+      {
+        "title": "Pizza Piccolo с форелью, шпинатом, красной икрой и сыром Страчателла",
+        "price": 2000,
+        "image": "https://static.tildacdn.com/stor3534-3030-4134-b134-616463643862/e7644983c9cd42936e8679e380c633f2.jpg",
+        "id": 86,
+        "category": "piccolo-20cm"
+      },
+      {
+        "title": "Pizza Piccolo с чесночными креветками и петрушкой",
+        "price": 2000,
+        "image": "https://static.tildacdn.com/stor6338-3239-4236-b261-376232353465/e06ea73d9d3510a34a39ec7619637805.jpg",
+        "id": 88,
+        "category": "piccolo-20cm"
+      },
+      {
+        "title": "Pizza Piccolo с сыром Буратто и Прошутто",
+        "price": 2000,
+        "image": "https://static.tildacdn.com/stor3735-3661-4335-b063-666331383763/13412f63e62355514e1714338d177098.jpg",
+        "id": 90,
+        "category": "piccolo-20cm"
+      },
+      {
+        "title": "Pizza Piccolo \"Болоньеза\"",
+        "price": 800,
+        "image": "https://static.tildacdn.com/stor6637-6434-4761-a466-336235343161/18403d3ed6ef44c144f00bf19034fc50.jpg",
+        "id": 91,
+        "category": "piccolo-20cm"
+      },
+      {
+        "title": "Pizza Piccolo свинина с ананасами и соусом BBQ",
+        "price": 700,
+        "image": "https://static.tildacdn.com/stor6631-3364-4234-b362-356539626563/bac95b9185dd75f27d4c0c3dfa9bb07f.jpg",
+        "id": 58,
+        "category": "piccolo-20cm"
+      },
+      {
+        "title": "Pizza Piccolo с ягненком(баранина) в кокосовом соусе Карри",
+        "price": 2000,
+        "image": "https://static.tildacdn.com/stor6464-3030-4466-b335-313338383861/07bad0766e0878d9d24eba16629e3faa.jpg",
+        "id": 87,
+        "category": "piccolo-20cm"
+      },
+      {
+        "title": "Pizza Piccolo с Мраморной говядиной, маринованной в соусе Ворчестер, и лисичками",
+        "price": 2000,
+        "image": "https://static.tildacdn.com/stor6639-3265-4663-a135-323366393137/6ac84b8930c5e532bf30184bfe407cb8.jpg",
+        "id": 89,
+        "category": "piccolo-20cm"
+      }
+    ],
+    "calzone": [
+      {
+        "title": "Кальцоне \"Маргарита\"",
+        "price": 750,
+        "image": "https://static.tildacdn.com/stor6130-3135-4839-b865-656232626639/4c20faeea22fd46d18e656e75f382a98.jpg",
+        "id": 92,
+        "category": "calzone"
+      },
+      {
+        "title": "Кальцоне-мини \"Маргарита\"",
+        "price": 350,
+        "image": "https://static.tildacdn.com/stor6130-3135-4839-b865-656232626639/4c20faeea22fd46d18e656e75f382a98.jpg",
+        "id": 93,
+        "category": "calzone"
+      },
+      {
+        "title": "Кальцоне \"Пепперони\"",
+        "price": 750,
+        "image": "https://static.tildacdn.com/stor3136-6535-4431-b831-383932653637/69a1a1536e27d8f96c4ca40246b47ac2.jpg",
+        "id": 94,
+        "category": "calzone"
+      },
+      {
+        "title": "Кальцоне-мини \"Пепперони\"",
+        "price": 350,
+        "image": "https://static.tildacdn.com/stor3136-6535-4431-b831-383932653637/69a1a1536e27d8f96c4ca40246b47ac2.jpg",
+        "id": 95,
+        "category": "calzone"
+      },
+      {
+        "title": "Кальцоне \"Ветчина/грибы\"",
+        "price": 750,
+        "image": "https://static.tildacdn.com/stor3766-3835-4136-b330-383531326162/945072c9bfdbc04ea31fec906a4f2524.jpg",
+        "id": 96,
+        "category": "calzone"
+      },
+      {
+        "title": "Кальцоне-мини \"Ветчина/грибы\"",
+        "price": 350,
+        "image": "https://static.tildacdn.com/stor3766-3835-4136-b330-383531326162/945072c9bfdbc04ea31fec906a4f2524.jpg",
+        "id": 97,
+        "category": "calzone"
+      },
+      {
+        "title": "Кальцоне \"Кура/печенный перец\"",
+        "price": 750,
+        "image": "https://static.tildacdn.com/stor6166-3863-4134-a136-363639613932/66f79304a001f94743d4a17d69fc79dc.jpg",
+        "id": 98,
+        "category": "calzone"
+      },
+      {
+        "title": "Кальцоне-мини Кура/печенный перец",
+        "price": 350,
+        "image": "https://static.tildacdn.com/stor6166-3863-4134-a136-363639613932/66f79304a001f94743d4a17d69fc79dc.jpg",
+        "id": 99,
+        "category": "calzone"
+      },
+      {
+        "title": "Кальцоне Капричоза",
+        "price": 850,
+        "image": "https://static.tildacdn.com/stor3031-3635-4236-b063-613839663963/29abe073cd5e1881ade176d7e7d0ea1d.jpg",
+        "id": 100,
+        "category": "calzone"
+      },
+      {
+        "title": "Мини кальцоне Капричоза",
+        "price": 400,
+        "image": "https://static.tildacdn.com/stor3031-3635-4236-b063-613839663963/29abe073cd5e1881ade176d7e7d0ea1d.jpg",
+        "id": 101,
+        "category": "calzone"
+      },
+      {
+        "title": "Кальцоне с Лисичками",
+        "price": 850,
+        "image": "https://static.tildacdn.com/stor3533-3964-4161-b133-313930343233/7b19a7919eb49bb6a4a8aece4edc81d1.jpg",
+        "id": 102,
+        "category": "calzone"
+      },
+      {
+        "title": "Мини кальцоне с лисичками",
+        "price": 400,
+        "image": "https://static.tildacdn.com/stor3533-3964-4161-b133-313930343233/7b19a7919eb49bb6a4a8aece4edc81d1.jpg",
+        "id": 103,
+        "category": "calzone"
+      },
+      {
+        "title": "Кальцоне \"4 сыра\"",
+        "price": 850,
+        "image": "https://static.tildacdn.com/stor3064-6238-4062-a465-633866373761/7888bbb63b1a544730e09c892674fe61.jpg",
+        "id": 104,
+        "category": "calzone"
+      },
+      {
+        "title": "Кальцоне-мини \"4 сыра\"",
+        "price": 400,
+        "image": "https://static.tildacdn.com/stor3064-6238-4062-a465-633866373761/7888bbb63b1a544730e09c892674fe61.jpg",
+        "id": 105,
+        "category": "calzone"
+      },
+      {
+        "title": "Кальцоне \"Карбонара\"",
+        "price": 850,
+        "image": "https://static.tildacdn.com/stor3130-6331-4936-a231-633964363031/9a228495dcd80452e101b652d9a26279.jpg",
+        "id": 106,
+        "category": "calzone"
+      },
+      {
+        "title": "Кальцоне-мини \"Карбонара\"",
+        "price": 400,
+        "image": "https://static.tildacdn.com/stor3130-6331-4936-a231-633964363031/9a228495dcd80452e101b652d9a26279.jpg",
+        "id": 107,
+        "category": "calzone"
+      },
+      {
+        "title": "Кальцоне с мясными шариками",
+        "price": 850,
+        "image": "https://static.tildacdn.com/stor3334-6665-4964-b165-633338346161/ee9f8cab31ccb36c762966094f657823.jpg",
+        "id": 108,
+        "category": "calzone"
+      },
+      {
+        "title": "Кальцоне Salvata Mila",
+        "price": 850,
+        "image": "https://static.tildacdn.com/stor3534-3730-4532-b566-656236646132/175a10ea08f4a2162fb62669e64cc52a.jpg",
+        "id": 109,
+        "category": "calzone"
+      },
+      {
+        "title": "Кальцоне-мини Salvata Mila",
+        "price": 400,
+        "image": "https://static.tildacdn.com/stor3534-3730-4532-b566-656236646132/175a10ea08f4a2162fb62669e64cc52a.jpg",
+        "id": 110,
+        "category": "calzone"
+      },
+      {
+        "title": "Кальцоне-мини с мясными шариками",
+        "price": 400,
+        "image": "https://static.tildacdn.com/stor3334-6665-4964-b165-633338346161/ee9f8cab31ccb36c762966094f657823.jpg",
+        "id": 111,
+        "category": "calzone"
+      },
+      {
+        "title": "Кальцоне \"Вегетариано\"",
+        "price": 850,
+        "image": "https://static.tildacdn.com/stor3331-3531-4132-b038-366436396133/47fbb3a3712e4cc85c15d9b1ca14e3e9.jpg",
+        "id": 112,
+        "category": "calzone"
+      },
+      {
+        "title": "Кальцоне-мини \"Вегетариано\"",
+        "price": 400,
+        "image": "https://static.tildacdn.com/stor3331-3531-4132-b038-366436396133/47fbb3a3712e4cc85c15d9b1ca14e3e9.jpg",
+        "id": 113,
+        "category": "calzone"
+      },
+      {
+        "title": "Кальцоне \"Свинина BBQ с ананасами\"",
+        "price": 850,
+        "image": "https://static.tildacdn.com/stor3034-6538-4430-a461-306434623633/90e6d7745cfef26011b70523b75cdc41.jpg",
+        "id": 114,
+        "category": "calzone"
+      },
+      {
+        "title": "Кальцоне-мини \"Свинина BBQ с ананасами\"",
+        "price": 400,
+        "image": "https://static.tildacdn.com/stor3034-6538-4430-a461-306434623633/90e6d7745cfef26011b70523b75cdc41.jpg",
+        "id": 115,
+        "category": "calzone"
+      },
+      {
+        "title": "Кальцоне \"Говядина Терияки\"",
+        "price": 850,
+        "image": "https://static.tildacdn.com/stor6439-3265-4666-b134-636135373662/1e382c734ba8063fda315b7bda533f5f.jpg",
+        "id": 116,
+        "category": "calzone"
+      },
+      {
+        "title": "Кальцоне-мини \"Говядина Терияки\"",
+        "price": 400,
+        "image": "https://static.tildacdn.com/stor6439-3265-4666-b134-636135373662/1e382c734ba8063fda315b7bda533f5f.jpg",
+        "id": 117,
+        "category": "calzone"
+      },
+      {
+        "title": "Кальцоне \"Пера\" с грушей и горгонзолой",
+        "price": 850,
+        "image": "https://static.tildacdn.com/stor3234-3061-4466-b334-643766636236/ee6ef6b5af689241364a6b7a90e1cb55.jpg",
+        "id": 118,
+        "category": "calzone"
+      },
+      {
+        "title": "Кальцоне-мини \"Пера\" с грушей и Горгонзолой",
+        "price": 400,
+        "image": "https://static.tildacdn.com/stor3234-3061-4466-b334-643766636236/ee6ef6b5af689241364a6b7a90e1cb55.jpg",
+        "id": 119,
+        "category": "calzone"
+      },
+      {
+        "title": "Кальцоне \"Кокорита\"",
+        "price": 850,
+        "image": "https://static.tildacdn.com/stor3836-3661-4665-a430-343139336364/cceb6721a2bc7eb8dd6998e80b41c5e5.jpg",
+        "id": 120,
+        "category": "calzone"
+      },
+      {
+        "title": "Кальцоне-мини \"Кокорита\"",
+        "price": 400,
+        "image": "https://static.tildacdn.com/stor3836-3661-4665-a430-343139336364/cceb6721a2bc7eb8dd6998e80b41c5e5.jpg",
+        "id": 121,
+        "category": "calzone"
+      },
+      {
+        "title": "Кальцоне \"Суприм\"",
+        "price": 850,
+        "image": "https://static.tildacdn.com/stor3137-6539-4561-b934-303936326531/b4dae0f030a92ffabc85d3871ca046f9.jpg",
+        "id": 122,
+        "category": "calzone"
+      },
+      {
+        "title": "Кальцоне-мини \"Суприм\"",
+        "price": 400,
+        "image": "https://static.tildacdn.com/stor3137-6539-4561-b934-303936326531/b4dae0f030a92ffabc85d3871ca046f9.jpg",
+        "id": 123,
+        "category": "calzone"
+      },
+      {
+        "title": "Кальцоне \"Монтенегро\"",
+        "price": 850,
+        "image": "https://static.tildacdn.com/stor3630-3964-4530-b666-353366316561/528bea7fb6c75a1f8f3143cd6fafb177.jpg",
+        "id": 124,
+        "category": "calzone"
+      },
+      {
+        "title": "Кальцоне-мини \"Монтенегро\"",
+        "price": 400,
+        "image": "https://static.tildacdn.com/stor3630-3964-4530-b666-353366316561/528bea7fb6c75a1f8f3143cd6fafb177.jpg",
+        "id": 125,
+        "category": "calzone"
+      },
+      {
+        "title": "Кальцоне \"Классическая Маргарита\"",
+        "price": 850,
+        "image": "https://static.tildacdn.com/stor3931-3639-4032-b165-653432303936/90fd997acd439aff63797d17e7ef1770.jpg",
+        "id": 126,
+        "category": "calzone"
+      },
+      {
+        "title": "Кальцоне-мини \"Классическая Маргарита\"",
+        "price": 400,
+        "image": "https://static.tildacdn.com/stor3931-3639-4032-b165-653432303936/90fd997acd439aff63797d17e7ef1770.jpg",
+        "id": 127,
+        "category": "calzone"
+      },
+      {
+        "title": "Кальцоне «Salsicciotti»",
+        "price": 950,
+        "image": "https://static.tildacdn.com/stor6531-3234-4531-b639-343066623962/bddecf8036c09db1df36d9768f1383e5.jpg",
+        "id": 128,
+        "category": "calzone"
+      },
+      {
+        "title": "Кальцоне-мини «Salsicciotti»",
+        "price": 450,
+        "image": "https://static.tildacdn.com/stor6531-3234-4531-b639-343066623962/bddecf8036c09db1df36d9768f1383e5.jpg",
+        "id": 129,
+        "category": "calzone"
+      },
+      {
+        "title": "Кальцоне \"Мехико\"",
+        "price": 950,
+        "image": "https://static.tildacdn.com/stor3561-6135-4332-b136-356364336563/4de58ce697b6cd3161044a65b416272a.jpg",
+        "id": 130,
+        "category": "calzone"
+      },
+      {
+        "title": "Кальцоне-мини \"Мехико\"",
+        "price": 450,
+        "image": "https://static.tildacdn.com/stor3561-6135-4332-b136-356364336563/4de58ce697b6cd3161044a65b416272a.jpg",
+        "id": 131,
+        "category": "calzone"
+      },
+      {
+        "title": "Кальцоне \"Italy\"",
+        "price": 950,
+        "image": "https://static.tildacdn.com/stor3066-3235-4531-b064-313362393466/e65342eb67c4c90d17d86a55a4bc8e39.jpg",
+        "id": 132,
+        "category": "calzone"
+      },
+      {
+        "title": "Кальцоне мини Italy",
+        "price": 450,
+        "image": "https://static.tildacdn.com/stor3066-3235-4531-b064-313362393466/e65342eb67c4c90d17d86a55a4bc8e39.jpg",
+        "id": 133,
+        "category": "calzone"
+      },
+      {
+        "title": "Кальцоне с колбасой Мортаделла, сыром Страчателла и жареными фисташками",
+        "price": 950,
+        "image": "https://static.tildacdn.com/stor3335-3666-4364-b038-343963303963/c6007c2da52dd285f99acd9c85be6315.jpg",
+        "id": 134,
+        "category": "calzone"
+      },
+      {
+        "title": "Кальцоне-Мини колбасой Мортаделла , сыром Страчателла и жареными фисташками",
+        "price": 450,
+        "image": "https://static.tildacdn.com/stor3335-3666-4364-b038-343963303963/c6007c2da52dd285f99acd9c85be6315.jpg",
+        "id": 135,
+        "category": "calzone"
+      },
+      {
+        "title": "Кальцоне с тунцом",
+        "price": 950,
+        "image": "https://static.tildacdn.com/stor3439-3164-4032-a636-366636366234/72801bc91272b14848b8dbadc55320de.jpg",
+        "id": 136,
+        "category": "calzone"
+      },
+      {
+        "title": "Кальцоне-мини с тунцом Блюфин",
+        "price": 450,
+        "image": "https://static.tildacdn.com/stor3439-3164-4032-a636-366636366234/72801bc91272b14848b8dbadc55320de.jpg",
+        "id": 137,
+        "category": "calzone"
+      },
+      {
+        "title": "Кальцоне с лососем сыром Бри и зеленой спаржей",
+        "price": 950,
+        "image": "https://static.tildacdn.com/stor6361-6563-4565-b530-336236373831/88903722ecbf3a9ae1b81cbc0d62b91b.jpg",
+        "id": 138,
+        "category": "calzone"
+      },
+      {
+        "title": "Кальцоне-мини с лососем сыром Бри и спаржей",
+        "price": 450,
+        "image": "https://static.tildacdn.com/stor6361-6563-4565-b530-336236373831/88903722ecbf3a9ae1b81cbc0d62b91b.jpg",
+        "id": 139,
+        "category": "calzone"
+      },
+      {
+        "title": "Кальцоне \"Реджина\"",
+        "price": 950,
+        "image": "https://static.tildacdn.com/stor6531-6234-4234-b261-663633306438/fac66171427a91795b1465687d24eb46.jpg",
+        "id": 140,
+        "category": "calzone"
+      },
+      {
+        "title": "Кальцоне-мини \"Реджина\"",
+        "price": 450,
+        "image": "https://static.tildacdn.com/stor6531-6234-4234-b261-663633306438/fac66171427a91795b1465687d24eb46.jpg",
+        "id": 141,
+        "category": "calzone"
+      },
+      {
+        "title": "Кальцоне \"Ди Парма\"",
+        "price": 1100,
+        "image": "https://static.tildacdn.com/stor3237-6435-4564-a236-333031353931/6eebf52bc2ae2a26e63313478abf46e7.jpg",
+        "id": 142,
+        "category": "calzone"
+      },
+      {
+        "title": "Кальцоне-мини \"Ди Парма\"",
+        "price": 550,
+        "image": "https://static.tildacdn.com/stor3237-6435-4564-a236-333031353931/6eebf52bc2ae2a26e63313478abf46e7.jpg",
+        "id": 143,
+        "category": "calzone"
+      },
+      {
+        "title": "Кальцоне с Олениной",
+        "price": 1100,
+        "image": "https://static.tildacdn.com/stor6662-6235-4963-b864-643366313635/d7c2bee58f662079b34e3329cfe0db75.jpg",
+        "id": 144,
+        "category": "calzone"
+      },
+      {
+        "title": "Кальцоне-мини с олениной",
+        "price": 550,
+        "image": "https://static.tildacdn.com/stor6662-6235-4963-b864-643366313635/d7c2bee58f662079b34e3329cfe0db75.jpg",
+        "id": 145,
+        "category": "calzone"
+      },
+      {
+        "title": "Кальцоне \"Frutti di Mare\" с морепродуктами",
+        "price": 1100,
+        "image": "https://static.tildacdn.com/stor6533-3565-4539-a135-613233633361/37f0741fae1b941cbb7e5bc0df00377e.jpg",
+        "id": 146,
+        "category": "calzone"
+      },
+      {
+        "title": "Кальцоне-мини \"Frutti di Mare\" с морепродуктами",
+        "price": 550,
+        "image": "https://static.tildacdn.com/stor6533-3565-4539-a135-613233633361/37f0741fae1b941cbb7e5bc0df00377e.jpg",
+        "id": 147,
+        "category": "calzone"
+      },
+      {
+        "title": "Кальцоне alla Diavola 300*200",
+        "price": 950,
+        "image": "https://static.tildacdn.com/stor6464-3065-4535-b139-373635646465/5f4a16d442a29e922952a47b391b5f4e.jpg",
+        "id": 148,
+        "category": "calzone"
+      },
+      {
+        "title": "Кальцоне-мини alla Diavola 250*120",
+        "price": 450,
+        "image": "https://static.tildacdn.com/stor6464-3065-4535-b139-373635646465/5f4a16d442a29e922952a47b391b5f4e.jpg",
+        "id": 149,
+        "category": "calzone"
+      },
+      {
+        "title": "Кальцоне с Мраморной говядиной, маринованной в соусе Ворчестер, и лисичками",
+        "price": 2500,
+        "image": "https://static.tildacdn.com/stor3761-3165-4137-b038-613662326164/6366f3a3a3779382caea655ac4b2f89c.jpg",
+        "id": 150,
+        "category": "calzone"
+      },
+      {
+        "title": "Кальцоне-мини с Мраморной говядиной, маринованной в соусе Ворчестер, и лисичками",
+        "price": 1250,
+        "image": "https://static.tildacdn.com/stor3761-3165-4137-b038-613662326164/6366f3a3a3779382caea655ac4b2f89c.jpg",
+        "id": 151,
+        "category": "calzone"
+      },
+      {
+        "title": "Кальцоне с черным трюфелем, сыром пармезан и трюфельным маслом",
+        "price": 2500,
+        "image": "https://static.tildacdn.com/stor3038-3739-4038-a465-633265333639/6740db5f7d9b9a9449e0d40f191d09b3.jpg",
+        "id": 152,
+        "category": "calzone"
+      },
+      {
+        "title": "Кальцоне мини с черным трюфелем, сыром Пармезан и трюфельным маслом",
+        "price": 1250,
+        "image": "https://static.tildacdn.com/stor3038-3739-4038-a465-633265333639/6740db5f7d9b9a9449e0d40f191d09b3.jpg",
+        "id": 153,
+        "category": "calzone"
+      },
+      {
+        "title": "Кальцоне \"Сицилийская\" с анчоусами и каперсами",
+        "price": 1100,
+        "image": "https://static.tildacdn.com/stor3239-6237-4666-b437-393231366463/b6a22d742089771cf73ea4d21b72a793.jpg",
+        "id": 154,
+        "category": "calzone"
+      },
+      {
+        "title": "Кальцоне мини \"Сицилийская\" с анчоусами и каперсами",
+        "price": 550,
+        "image": "https://static.tildacdn.com/stor3239-6237-4666-b437-393231366463/b6a22d742089771cf73ea4d21b72a793.jpg",
+        "id": 155,
+        "category": "calzone"
+      },
+      {
+        "title": "Кальцоне с сыром Буратто и Прошутто",
+        "price": 2500,
+        "image": "https://static.tildacdn.com/stor3563-3432-4238-b136-633034646337/02f22713bb64c986ba0702befbc34e25.jpg",
+        "id": 156,
+        "category": "calzone"
+      },
+      {
+        "title": "Кальцоне с ягненком в кокосовом соусе Карри",
+        "price": 2500,
+        "image": "https://static.tildacdn.com/stor6130-3832-4034-b063-326634376230/f6bc676f95e35c1e703260c7e05af0a3.jpg",
+        "id": 157,
+        "category": "calzone"
+      },
+      {
+        "title": "Кальцоне мини с ягненком в кокосовом соусе Карри",
+        "price": 1250,
+        "image": "https://static.tildacdn.com/stor6130-3832-4034-b063-326634376230/f6bc676f95e35c1e703260c7e05af0a3.jpg",
+        "id": 158,
+        "category": "calzone"
+      },
+      {
+        "title": "Кальцоне с чесночными креветками, вялеными томатами и петрушкой",
+        "price": 2500,
+        "image": "https://static.tildacdn.com/stor3039-3839-4362-b434-666230363432/03560306615fbd2ae66e2fff7372f57d.jpg",
+        "id": 159,
+        "category": "calzone"
+      },
+      {
+        "title": "Кальцоне мини с чесночными креветками, вялеными томатами и петрушкой",
+        "price": 1250,
+        "image": "https://static.tildacdn.com/stor3039-3839-4362-b434-666230363432/03560306615fbd2ae66e2fff7372f57d.jpg",
+        "id": 160,
+        "category": "calzone"
+      }
+    ],
+    "bread-focaccia": [
+      {
+        "title": "Набор классических хлебушков",
+        "price": 250,
+        "category": "bread-focaccia",
+        "image": "https://static.tildacdn.com/stor6463-3134-4662-b666-626463346638/d30036f5844615f953e278f10cd8108b.jpg",
+        "id": 167
+      },
+      {
+        "title": "Набор сладких хлебушков",
+        "price": 350,
+        "category": "bread-focaccia",
+        "image": "https://static.tildacdn.com/stor3866-6365-4539-b832-393965363430/5aae14e5fe8c7e39f6fe22a6ce70b584.jpg",
+        "id": 168
+      },
+      {
+        "title": "Набор сырных хлебушков",
+        "price": 350,
+        "category": "bread-focaccia",
+        "image": "https://static.tildacdn.com/stor6636-6437-4737-b136-353061373766/ca3c0ae12e7f9201853b0707931319a0.jpg",
+        "id": 169
+      },
+      {
+        "title": "Набор мясных хлебушков",
+        "price": 350,
+        "category": "bread-focaccia",
+        "image": "https://static.tildacdn.com/stor6561-3736-4037-b936-353332623265/2cf70b52cc264869945d4d4c4a15994b.jpg",
+        "id": 170
+      },
+      {
+        "title": "Набор итальянских хлебушков",
+        "price": 350,
+        "category": "bread-focaccia",
+        "image": "https://static.tildacdn.com/stor3734-3763-4035-b730-656538613631/cb9bbab6403053a4896a47562dc16824.jpg",
+        "id": 171
+      },
+      {
+        "title": "Набор вегетарианских хлебушков",
+        "price": 350,
+        "category": "bread-focaccia",
+        "image": "https://static.tildacdn.com/stor6162-3266-4233-b133-663230313264/99240fa6c0b05e819cd0d290c552ba86.jpg",
+        "id": 173
+      },
+      {
+        "title": "Набор Итальяно хлебушков",
+        "price": 350,
+        "category": "bread-focaccia",
+        "image": "https://static.tildacdn.com/stor3935-6433-4462-b930-643030653239/a7964b12e7b1773a8b739819418ee81a.jpg",
+        "id": 174
+      },
+      {
+        "title": "Набор мясо/сыр хлебушков",
+        "price": 350,
+        "category": "bread-focaccia",
+        "image": "https://static.tildacdn.com/stor6230-3138-4562-b734-306330613139/120c7ddbf1c515e3c84c36e06a651698.jpg",
+        "id": 175
+      },
+      {
+        "title": "Неаполитанский хлеб Классический",
+        "price": 100,
+        "category": "bread-focaccia",
+        "image": "https://static.tildacdn.com/stor3437-6536-4536-b531-366238366431/c00c7078bc0b82dceb29e0a9bdbc587e.jpg",
+        "id": 176
+      },
+      {
+        "title": "Неаполитанский ржаной хлебушек",
+        "price": 100,
+        "category": "bread-focaccia",
+        "image": "https://static.tildacdn.com/stor6164-3366-4666-b636-386666613166/7b87511971a74c9e8607116af74a83a9.jpg",
+        "id": 177
+      },
+      {
+        "title": "Неаполитанский томатный хлеб",
+        "price": 100,
+        "category": "bread-focaccia",
+        "image": "https://static.tildacdn.com/stor3363-3239-4336-b737-353232396235/b18f0d18c5998fa832cf24439510654b.jpg",
+        "id": 178
+      },
+      {
+        "title": "Неаполитанский хлеб с семечками подсолнуха",
+        "price": 110,
+        "category": "bread-focaccia",
+        "image": "https://static.tildacdn.com/stor3434-6361-4137-b230-373638386132/92866f0b7cd43e95ec7ae8539fb6bd9e.jpg",
+        "id": 179
+      },
+      {
+        "title": "Неаполитанский хлеб с тыквенными семечками",
+        "price": 110,
+        "category": "bread-focaccia",
+        "image": "https://static.tildacdn.com/stor3830-3166-4664-a165-643434393936/cb600cbae2cd92a2e0ffd9a48e7997f3.jpg",
+        "id": 180
+      },
+      {
+        "title": "Неаполитанский хлеб с фисташками",
+        "price": 110,
+        "category": "bread-focaccia",
+        "image": "https://static.tildacdn.com/stor6561-3864-4633-b565-343966326535/cffb1b986a86885b5d1687027c231c3a.jpg",
+        "id": 181
+      },
+      {
+        "title": "Неаполитанский хлеб с кунжутом",
+        "price": 110,
+        "category": "bread-focaccia",
+        "image": "https://static.tildacdn.com/stor6261-3862-4162-a537-633933383031/2a0ce427a64ebcce01bbbdcf5b2facb9.jpg",
+        "id": 182
+      },
+      {
+        "title": "Неаполитанский хлеб с розмарином",
+        "price": 110,
+        "category": "bread-focaccia",
+        "image": "https://static.tildacdn.com/stor3239-3766-4135-b737-656363626432/2821dcf7585703eba239e716d697a9b8.jpg",
+        "id": 183
+      },
+      {
+        "title": "Неаполитанский хлеб с тимьяном",
+        "price": 110,
+        "category": "bread-focaccia",
+        "image": "https://static.tildacdn.com/stor6261-6463-4333-a363-303430363061/7f5c6a18edf89f8b6da6b90c1712cef0.jpg",
+        "id": 184
+      },
+      {
+        "title": "Неаполитанский хлеб с сыром Моцарелла",
+        "price": 110,
+        "category": "bread-focaccia",
+        "image": "https://static.tildacdn.com/stor6139-3136-4235-b564-636234363738/73bb42cc401399cb2e47aea0c0f29121.jpg",
+        "id": 185
+      },
+      {
+        "title": "Неаполитанский хлеб с сыром Бри",
+        "price": 110,
+        "category": "bread-focaccia",
+        "image": "https://static.tildacdn.com/stor3731-6565-4035-b333-333562353861/da8ac45eff0c5a846cbfa588d7d36f41.jpg",
+        "id": 186
+      },
+      {
+        "title": "Неаполитанский хлеб с сыром Чеддер",
+        "price": 110,
+        "category": "bread-focaccia",
+        "image": "https://static.tildacdn.com/stor3066-3065-4934-b665-653138363764/2590ab502e9ca73c5f2ff5d55436f82a.jpg",
+        "id": 187
+      },
+      {
+        "title": "Неаполитанский хлеб с сыром Пармезан",
+        "price": 110,
+        "category": "bread-focaccia",
+        "image": "https://static.tildacdn.com/stor3561-6536-4136-a532-613635656438/0594dc336be0d1656b7addadd35c96ae.jpg",
+        "id": 188
+      },
+      {
+        "title": "Неаполитанский хлеб с сыром Горгонзола",
+        "price": 110,
+        "category": "bread-focaccia",
+        "image": "https://static.tildacdn.com/stor3333-6531-4139-b838-346239356532/c83cfe35a5181d74844998032b2c1555.jpg",
+        "id": 189
+      },
+      {
+        "title": "Неаполитанский хлеб с лисичками",
+        "price": 110,
+        "category": "bread-focaccia",
+        "image": "https://static.tildacdn.com/stor3330-3262-4139-b666-613665356461/f9c4ea4af9799a4253a539eedea90fc7.jpg",
+        "id": 190
+      },
+      {
+        "title": "Неаполитанский хлеб с шампиньонами",
+        "price": 110,
+        "category": "bread-focaccia",
+        "image": "https://static.tildacdn.com/stor6439-6339-4332-a465-353738336238/7a40cd9b0f0c4dd5fb1e14455a7000f1.jpg",
+        "id": 191
+      },
+      {
+        "title": "Неаполитанский хлеб с маслинами",
+        "price": 110,
+        "category": "bread-focaccia",
+        "image": "https://static.tildacdn.com/stor3430-6634-4038-a335-656661353638/6758d5408b7b48464b8317235407256c.jpg",
+        "id": 192
+      },
+      {
+        "title": "Неаполитанский хлеб с вялеными помидорами",
+        "price": 110,
+        "category": "bread-focaccia",
+        "image": "https://static.tildacdn.com/stor3038-3530-4061-b838-306166643765/589b8a8b2ae031045e631c47f556468b.jpg",
+        "id": 193
+      },
+      {
+        "title": "Неаполитанский хлеб с артишоками",
+        "price": 110,
+        "category": "bread-focaccia",
+        "image": "https://static.tildacdn.com/stor6635-3336-4232-a262-386263616233/39460f03a7f36cfc392e0b267216edcc.jpg",
+        "id": 194
+      },
+      {
+        "title": "Неаполитанский хлеб с каперсами",
+        "price": 110,
+        "category": "bread-focaccia",
+        "image": "https://static.tildacdn.com/stor3565-3333-4762-a330-633763366234/16ba1dc9a0ed1ff339082613bedfb2c9.jpg",
+        "id": 195
+      },
+      {
+        "title": "Неаполитанский хлеб с Халапеньо",
+        "price": 110,
+        "category": "bread-focaccia",
+        "image": "https://static.tildacdn.com/stor3330-6666-4839-a337-333835663266/d3c7e2b4c7820c6d6988f502a8f1beff.jpg",
+        "id": 196
+      },
+      {
+        "title": "Неаполитанский хлеб с охотничьими колбасками",
+        "price": 110,
+        "category": "bread-focaccia",
+        "image": "https://static.tildacdn.com/stor3733-3433-4231-b032-663231666632/5cbcff5aea4e4df9fce4cce2fc2f2a43.jpg",
+        "id": 197
+      },
+      {
+        "title": "Неаполитанский хлеб с беконом",
+        "price": 110,
+        "category": "bread-focaccia",
+        "image": "https://static.tildacdn.com/stor6436-6430-4730-b364-636533366535/4d0874db9d6c8e90b7e774bf9a06dcdf.jpg",
+        "id": 198
+      },
+      {
+        "title": "Неаполитанский хлеб с ветчиной",
+        "price": 110,
+        "category": "bread-focaccia",
+        "image": "https://static.tildacdn.com/stor3130-3631-4039-b932-653638386166/cfec41931fbfe2744e749e0aacb4ea26.jpg",
+        "id": 199
+      },
+      {
+        "title": "Неаполитанский хлеб с пепперони",
+        "price": 110,
+        "category": "bread-focaccia",
+        "image": "https://static.tildacdn.com/stor3465-6136-4563-a639-386530346336/bb48e89a7f8c2a70f46388e1d184ee80.jpg",
+        "id": 200
+      },
+      {
+        "title": "Неаполитанский хлеб с грушей",
+        "price": 110,
+        "category": "bread-focaccia",
+        "image": "https://static.tildacdn.com/stor3032-6366-4561-b034-333765316131/6b641b1575d49bd93d9a28ecc2b48459.jpg",
+        "id": 201
+      },
+      {
+        "title": "Неаполитанский хлеб с бананом",
+        "price": 110,
+        "category": "bread-focaccia",
+        "image": "https://static.tildacdn.com/stor3137-6166-4336-b737-653065643962/3064d4e96b395362548fb4b8f24400be.jpg",
+        "id": 202
+      },
+      {
+        "title": "Неаполитанский хлеб с темным шоколадом",
+        "price": 110,
+        "category": "bread-focaccia",
+        "image": "https://static.tildacdn.com/stor3563-6565-4632-a137-303535353634/5a8f7a09e72bd89b858f829e6e8c8550.jpg",
+        "id": 203
+      },
+      {
+        "title": "Неаполитанский хлеб с яблоками, изюмом и корицей",
+        "price": 110,
+        "category": "bread-focaccia",
+        "image": "https://static.tildacdn.com/stor3636-6238-4136-a266-653037373738/71c172fd38fdf225d16963c7dc0ddcbf.jpg",
+        "id": 204
+      },
+      {
+        "title": "Неаполитанский хлебушек с маком",
+        "price": 110,
+        "category": "bread-focaccia",
+        "image": "https://static.tildacdn.com/stor3931-3430-4033-b035-373630626232/5db2ef34a8d64028fe51aae44d5fe596.jpg",
+        "id": 205
+      },
+      {
+        "title": "Фокачча с оливковым маслом",
+        "price": 100,
+        "category": "bread-focaccia",
+        "image": "https://static.tildacdn.com/stor6466-3963-4537-a639-366339313634/4dbb8d83355dd6f919a812378fd79699.jpg",
+        "id": 161
+      },
+      {
+        "title": "Фокачча с чесноком",
+        "price": 100,
+        "category": "bread-focaccia",
+        "image": "https://static.tildacdn.com/stor3536-3361-4665-a335-623339633265/66e417cba82383e922440ddbdfef71e9.jpg",
+        "id": 162
+      },
+      {
+        "title": "Фокачча с розмарином",
+        "price": 100,
+        "category": "bread-focaccia",
+        "image": "https://static.tildacdn.com/stor3161-6361-4364-b231-323231643139/3f7bb7c67125804a84d06075fa0a999c.jpg",
+        "id": 163
+      },
+      {
+        "title": "Фокачча с тимьяном",
+        "price": 100,
+        "category": "bread-focaccia",
+        "image": "https://static.tildacdn.com/stor6164-3638-4138-a337-393037323731/8babbfaa39d161b88a3f19f162bc7d85.jpg",
+        "id": 164
+      },
+      {
+        "title": "Фокачча красная",
+        "price": 200,
+        "category": "bread-focaccia",
+        "image": "https://static.tildacdn.com/stor6132-3633-4639-b666-303031303138/1147f80fdfc2072e419e6ad3c4f5c53c.jpg",
+        "id": 165
+      },
+      {
+        "title": "Фокачча зеленая",
+        "price": 200,
+        "category": "bread-focaccia",
+        "image": "https://static.tildacdn.com/stor3863-3031-4139-b933-333964326265/37ab02a70e241e9f93d6b5e031e71c0b.jpg",
+        "id": 166
+      }
+    ],
+    "sauce": [
+      {
+        "title": "Соус Унаги",
+        "price": 60,
+        "category": "sauce",
+        "image": "https://static.tildacdn.com/stor6133-6534-4839-b939-663738373162/beb93595addc3b4a86dca78697accfa7.jpg",
+        "id": 206
+      },
+      {
+        "title": "Соус для корочек \"Песто\"",
+        "price": 60,
+        "category": "sauce",
+        "image": "https://static.tildacdn.com/stor6164-3337-4731-b463-313130636561/38cbd3a2d18bf74faaf38831d539e252.jpg",
+        "id": 207
+      },
+      {
+        "title": "Соус для корочек \"Кунжутный\"",
+        "price": 60,
+        "category": "sauce",
+        "image": "https://static.tildacdn.com/stor6533-3633-4234-a538-353761336666/cc62efc3570afdb809e972ba4fab9a40.jpg",
+        "id": 208
+      },
+      {
+        "title": "Соус для корочек \"Чесночный\"",
+        "price": 60,
+        "category": "sauce",
+        "image": "https://static.tildacdn.com/stor6430-6130-4161-a266-346261373131/f8ee8a0189ed1ce5e51ffb82b9daf0f0.jpg",
+        "id": 209
+      },
+      {
+        "title": "Соус для корочек \"BBQ\"",
+        "price": 60,
+        "category": "sauce",
+        "image": "https://static.tildacdn.com/stor3362-3739-4833-a238-636630663936/5ed32c15ab47af0736b024a431489ae8.jpg",
+        "id": 210
+      },
+      {
+        "title": "Соус для корочек \"Терияки\"",
+        "price": 60,
+        "category": "sauce",
+        "image": "https://static.tildacdn.com/stor6265-3437-4164-a164-336164646463/eaa969849b4315ae9314fe8a34bacd8c.jpg",
+        "id": 211
+      },
+      {
+        "title": "Соус для корочек Спайси",
+        "price": 60,
+        "category": "sauce",
+        "image": "https://static.tildacdn.com/stor6439-3430-4661-a536-653631633865/71937ba4dd7b90aed961a247edf59dd4.jpg",
+        "id": 212
+      },
+      {
+        "title": "Соус для корочек \"Медово-горчичный\"",
+        "price": 60,
+        "category": "sauce",
+        "image": "https://static.tildacdn.com/stor3234-3561-4331-a563-396361653936/2dd8d2746fac8c6a75b5665a6a2f3201.jpg",
+        "id": 213
+      },
+      {
+        "title": "Соус для корочек \"Томатный\"",
+        "price": 60,
+        "category": "sauce",
+        "image": "https://static.tildacdn.com/stor3834-3132-4134-b634-633363376538/c2dc12f066db38c3e91e25534e96077a.jpg",
+        "id": 214
+      },
+      {
+        "title": "Соус для корочек \"Сырный\"",
+        "price": 60,
+        "category": "sauce",
+        "image": "https://static.tildacdn.com/stor3262-3831-4264-a364-363166396232/31f3a0bea3d9330589be265933f2cefa.jpg",
+        "id": 215
+      },
+      {
+        "title": "Соевый соус",
+        "price": 60,
+        "category": "sauce",
+        "image": "https://static.tildacdn.com/stor3436-3631-4131-b737-336230613737/fa39cb2eb262c6afc951b168e3d25080.jpg",
+        "id": 216
+      }
+    ],
+    "rolls": [
+      {
+        "title": "Ролл Калифорния с анчоусом",
+        "price": 850,
+        "category": "rolls",
+        "image": "https://static.tildacdn.com/stor6231-3434-4238-b962-333737386334/8d949b570a027e9101d97e69f108cb6b.jpg",
+        "id": 217
+      },
+      {
+        "title": "Люкс Ролл Филадельфия с лососем и тунцом, итальянским черным трюфелем и красной икрой",
+        "price": 2500,
+        "category": "rolls",
+        "image": "https://static.tildacdn.com/stor3035-6563-4134-b032-616263376165/9ffe3325a07b6bcb39b3cf28d81bfc69.jpg",
+        "id": 218
+      },
+      {
+        "title": "Люкс ролл Филадельфия с Тунцом и лососем с итальянским черным трюфелем и красной икрой",
+        "price": 2500,
+        "category": "rolls",
+        "image": "https://static.tildacdn.com/stor3333-6532-4335-b236-313431323939/99547acc3e7c9a5208ed2a4a952675cb.jpg",
+        "id": 219
+      },
+      {
+        "title": "Суши Нигири с лососем",
+        "price": 150,
+        "category": "rolls",
+        "image": "https://static.tildacdn.com/stor3730-3839-4639-b135-636466346164/b6883db400b64368d6dc419762f539d6.jpg",
+        "id": 220
+      },
+      {
+        "title": "Суши Нигири с угрем",
+        "price": 150,
+        "category": "rolls",
+        "image": "https://static.tildacdn.com/stor3066-3461-4863-b839-613165323031/71501a91d69a583d8171bc210279eee0.jpg",
+        "id": 221
+      },
+      {
+        "title": "Суши Нигири с осьминогом",
+        "price": 150,
+        "category": "rolls",
+        "image": "https://static.tildacdn.com/stor3761-3431-4666-a637-303062383430/047ff5d2db7efcb5a2d455c59f94eaab.jpg",
+        "id": 222
+      },
+      {
+        "title": "Суши Нигири с креветкой",
+        "price": 150,
+        "category": "rolls",
+        "image": "https://static.tildacdn.com/stor3062-3339-4963-a366-636631343130/f774a995889f749e12cbf2f7f9db4532.jpg",
+        "id": 223
+      },
+      {
+        "title": "Суши Нигири с тунцом",
+        "price": 150,
+        "category": "rolls",
+        "image": "https://static.tildacdn.com/stor6639-6661-4237-b235-633531666563/ffad9a7631d15208d12f3b78bfe83271.jpg",
+        "id": 224
+      },
+      {
+        "title": "Суши Гункан с красной икрой",
+        "price": 450,
+        "category": "rolls",
+        "image": "https://static.tildacdn.com/stor3663-3731-4634-b362-626531323837/d34383a59566515fbc5c18f0e304b1b5.jpg",
+        "id": 225
+      },
+      {
+        "title": "Суши Гункан с анчоусами",
+        "price": 150,
+        "category": "rolls",
+        "image": "https://static.tildacdn.com/stor3166-3063-4033-b037-623061666466/127522b3625e07884d6363ffbd12f7e4.jpg",
+        "id": 226
+      },
+      {
+        "title": "Суши Гункан с икрой Масага",
+        "price": 150,
+        "category": "rolls",
+        "image": "https://static.tildacdn.com/stor3234-3565-4566-b538-613231646161/3320fc6ab6987e398764f2c27b44a322.png",
+        "id": 227
+      },
+      {
+        "title": "Суши Гункан с черной икрой",
+        "price": 150,
+        "category": "rolls",
+        "image": "https://static.tildacdn.com/stor6662-3230-4034-b162-303363396563/772169c8fe43bbc908e06569224a8443.jpg",
+        "id": 228
+      },
+      {
+        "title": "Суши Гункан с лососем",
+        "price": 150,
+        "category": "rolls",
+        "image": "https://static.tildacdn.com/stor3761-6334-4633-b030-373161643364/01d670f9bdfbd8cb7a76283224bcd447.jpg",
+        "id": 229
+      },
+      {
+        "title": "Суши Гункан с крабом",
+        "price": 150,
+        "category": "rolls",
+        "image": "https://static.tildacdn.com/stor6232-6466-4465-b833-613666643636/06bc0d4450edb7e2a787fbe810c8c1bd.jpg",
+        "id": 230
+      },
+      {
+        "title": "Суши Гункан с тунцом",
+        "price": 150,
+        "category": "rolls",
+        "image": "https://static.tildacdn.com/stor3264-6535-4465-b033-336635333131/6bf98f9c9b7aed6c3f035cf92dc1ec62.jpg",
+        "id": 231
+      },
+      {
+        "title": "Суши Гункан с угрем",
+        "price": 150,
+        "category": "rolls",
+        "image": "https://static.tildacdn.com/stor3335-3635-4165-a539-636539383435/404fb047a0485c01eed3137f0749f45b.jpg",
+        "id": 232
+      },
+      {
+        "title": "Суши Гункан с креветкой",
+        "price": 150,
+        "category": "rolls",
+        "image": "https://static.tildacdn.com/stor3061-3337-4536-a630-666566373339/5f6dc0527d5c2fc8c618888c91cdc548.jpg",
+        "id": 233
+      },
+      {
+        "title": "Суши Гункан с осьминогом",
+        "price": 150,
+        "category": "rolls",
+        "image": "https://static.tildacdn.com/stor6435-6564-4130-b066-333736633033/3768f4f49cf4f4e7e8acfd47f66c1bfb.jpg",
+        "id": 234
+      },
+      {
+        "title": "Суши Темаки с огурцом и авокадо",
+        "price": 250,
+        "category": "rolls",
+        "image": "https://static.tildacdn.com/stor3262-6261-4164-a533-383265356534/d2132452bdd820b1f06ea1532035bed6.png",
+        "id": 235
+      },
+      {
+        "title": "Суши Темаки с анчоусами",
+        "price": 250,
+        "category": "rolls",
+        "image": "https://static.tildacdn.com/stor6231-6339-4537-a263-383434646463/ceb8895746150b75e62ad911f2ea86d7.jpg",
+        "id": 236
+      },
+      {
+        "title": "Суши Темаки с лососем",
+        "price": 250,
+        "category": "rolls",
+        "image": "https://static.tildacdn.com/stor3037-3465-4561-b664-633438653435/f8d157fd373cd36a3bf51147deba1c8d.jpg",
+        "id": 237
+      },
+      {
+        "title": "Суши Темаки с угрем",
+        "price": 250,
+        "category": "rolls",
+        "image": "https://static.tildacdn.com/stor3632-3063-4235-a661-633838376562/46400a95681caee7e71f09bd0942fb70.jpg",
+        "id": 238
+      },
+      {
+        "title": "Суши Темаки с тунцом",
+        "price": 250,
+        "category": "rolls",
+        "image": "https://static.tildacdn.com/stor3433-3664-4439-a661-303735333035/cda94b3a5509bcea17cb9d102e595814.jpg",
+        "id": 239
+      },
+      {
+        "title": "Суши Темаки с крабами",
+        "price": 250,
+        "category": "rolls",
+        "image": "https://static.tildacdn.com/stor3833-3566-4433-b930-336137323035/3741123e9a245b26bb882611d1b1e78e.jpg",
+        "id": 240
+      },
+      {
+        "title": "Суши Темаки с осьминогом",
+        "price": 250,
+        "category": "rolls",
+        "image": "https://static.tildacdn.com/stor3762-3435-4262-b938-306136663133/0ef1326d4c03edb1d3027c0a5f5833b1.jpg",
+        "id": 241
+      },
+      {
+        "title": "Суши Темаки с креветками",
+        "price": 250,
+        "category": "rolls",
+        "image": "https://static.tildacdn.com/stor3538-3764-4165-b261-376639613530/bc654322c33cc8870c6f8aae8c5f744b.jpg",
+        "id": 242
+      },
+      {
+        "title": "Маки ролл огурец",
+        "price": 350,
+        "category": "rolls",
+        "image": "https://static.tildacdn.com/stor6237-6539-4263-b736-306630343366/0acfb8b02d71fc2f490e8e46b4c9cbd4.jpg",
+        "id": 243
+      },
+      {
+        "title": "Маки ролл с авокадо",
+        "price": 350,
+        "category": "rolls",
+        "image": "https://static.tildacdn.com/stor3631-3632-4161-b237-333135633562/6d61f3957ba4b8e586934bd06372415a.jpg",
+        "id": 244
+      },
+      {
+        "title": "Маки ролл с анчоусом",
+        "price": 450,
+        "category": "rolls",
+        "image": "https://static.tildacdn.com/stor3162-6230-4234-b064-303730373936/901091ca0582382c9d98a6e6d816d7b0.jpg",
+        "id": 245
+      },
+      {
+        "title": "Маки ролл лосось",
+        "price": 450,
+        "category": "rolls",
+        "image": "https://static.tildacdn.com/stor6134-6466-4236-a662-313161383764/3ae808bd2558b467d538d5846cbd7fa4.jpg",
+        "id": 246
+      },
+      {
+        "title": "Маки ролл с Угрем",
+        "price": 450,
+        "category": "rolls",
+        "image": "https://static.tildacdn.com/stor6466-3932-4364-b661-303661616663/a50ac9cdfbe9079385b7d6b6865d3177.jpg",
+        "id": 247
+      },
+      {
+        "title": "Маки ролл с креветкой",
+        "price": 450,
+        "category": "rolls",
+        "image": "https://static.tildacdn.com/stor6135-3133-4364-b461-356133616334/948ad550bcef70b1914126e7d0beb867.jpg",
+        "id": 248
+      },
+      {
+        "title": "Маки ролл с крабами",
+        "price": 450,
+        "category": "rolls",
+        "image": "https://static.tildacdn.com/stor3161-3761-4938-a563-393166626437/2e2da577619861781d5c1dcd3b74f18d.jpg",
+        "id": 249
+      },
+      {
+        "title": "Маки ролл тунец",
+        "price": 450,
+        "category": "rolls",
+        "image": "https://static.tildacdn.com/stor3461-3766-4161-b536-303739346437/b40f59fdc0e48db5979745ab9b7538ab.jpg",
+        "id": 250
+      },
+      {
+        "title": "Ролл Филадельфия с лососем",
+        "price": 850,
+        "category": "rolls",
+        "image": "https://static.tildacdn.com/stor6235-3338-4233-a564-316531383565/fa915e52ffa93eddd7b9c9f80ac31cc8.jpg",
+        "id": 251
+      },
+      {
+        "title": "Ролл Филадельфия с тунцом",
+        "price": 850,
+        "category": "rolls",
+        "image": "https://static.tildacdn.com/stor3866-6134-4632-a335-646663613539/3ae36605eda6d2e11c310121130b018e.jpg",
+        "id": 252
+      },
+      {
+        "title": "Ролл Филадельфия с креветками",
+        "price": 850,
+        "category": "rolls",
+        "image": "https://static.tildacdn.com/stor3437-6232-4831-b763-376532663838/071c533a8b39bfb48c0f03c37bf6fc83.jpg",
+        "id": 253
+      },
+      {
+        "title": "Ролл Калифорния с крабами",
+        "price": 850,
+        "category": "rolls",
+        "image": "https://static.tildacdn.com/stor3432-3432-4830-a333-333639306135/d02847e7019a4643a64fcf4a1be8ca1a.jpg",
+        "id": 254
+      },
+      {
+        "title": "Ролл Калифорния с тунцом",
+        "price": 850,
+        "category": "rolls",
+        "image": "https://static.tildacdn.com/stor3666-3830-4664-a435-633936373936/48ad5ddd9aa0776f90d8358b898d0dee.jpg",
+        "id": 255
+      },
+      {
+        "title": "Ролл Калифорния с лососем",
+        "price": 850,
+        "category": "rolls",
+        "image": "https://static.tildacdn.com/stor3362-3766-4864-b834-663034323730/a295370a274017574d2871b1d158d0a8.jpg",
+        "id": 256
+      },
+      {
+        "title": "Ролл Калифорния с копченным угрем",
+        "price": 850,
+        "category": "rolls",
+        "image": "https://static.tildacdn.com/stor3962-6439-4330-b761-633135646239/b8a548861b24d1a13871f8e243d6c947.jpg",
+        "id": 257
+      },
+      {
+        "title": "Запеченный ролл с мидиями",
+        "price": 800,
+        "category": "rolls",
+        "image": "https://static.tildacdn.com/stor6236-6135-4661-a535-646463356435/9d911ed480fd82c212580abcbe3607e6.jpg",
+        "id": 258
+      },
+      {
+        "title": "Запеченный ролл с анчоусом",
+        "price": 800,
+        "category": "rolls",
+        "image": "https://static.tildacdn.com/stor3935-3439-4664-a232-653233623134/3812fd49bda1497c76b426069e6d89d3.jpg",
+        "id": 259
+      },
+      {
+        "title": "Запеченный ролл Лосось",
+        "price": 800,
+        "category": "rolls",
+        "image": "https://static.tildacdn.com/stor6663-6232-4135-b435-336636646630/06115474575f9ab8e17c61dd526cf56d.jpg",
+        "id": 260
+      },
+      {
+        "title": "Запеченный ролл с Угрем",
+        "price": 800,
+        "category": "rolls",
+        "image": "https://static.tildacdn.com/stor3065-3734-4463-b363-323662393762/955e8c36ef1652a062b9df569e358514.jpg",
+        "id": 261
+      },
+      {
+        "title": "Запеченный ролл с крабами",
+        "price": 800,
+        "category": "rolls",
+        "image": "https://static.tildacdn.com/stor3162-3130-4235-a331-336364616433/f67a32f427a4d421243f470174745bec.jpg",
+        "id": 262
+      },
+      {
+        "title": "Запеченный ролл с тунцом",
+        "price": 800,
+        "category": "rolls",
+        "image": "https://static.tildacdn.com/stor6361-3936-4866-a235-303234623936/609753294fcda1685defd271bfe632c3.jpg",
+        "id": 263
+      },
+      {
+        "title": "Запеченный ролл с осьминогом",
+        "price": 800,
+        "category": "rolls",
+        "image": "https://static.tildacdn.com/stor3838-6137-4635-b530-616138386163/84baf58b89514e259415c2c6cf2db228.jpg",
+        "id": 264
+      },
+      {
+        "title": "Запеченный ролл с креветкой",
+        "price": 800,
+        "category": "rolls",
+        "image": "https://static.tildacdn.com/stor3664-3432-4434-a666-323364323935/df37b96ec1be0909bce6481d7270ffe7.jpg",
+        "id": 265
+      },
+      {
+        "title": "Спайси ролл с лососем",
+        "price": 700,
+        "category": "rolls",
+        "image": "https://static.tildacdn.com/stor6564-3761-4830-a534-373265333334/7b572f21cf2b864e76bec85a5bd08113.png",
+        "id": 266
+      },
+      {
+        "title": "Спайси-ролл с анчоусом",
+        "price": 700,
+        "category": "rolls",
+        "image": "https://static.tildacdn.com/stor6630-3038-4934-b266-356636353131/55628cae461851be3b7da87e4b2f8aa6.png",
+        "id": 267
+      },
+      {
+        "title": "Спайси ролл с креветкой",
+        "price": 700,
+        "category": "rolls",
+        "image": "https://static.tildacdn.com/stor3536-3964-4365-a135-393636623163/0abd87a0fca9019a6d94af625ba578c4.png",
+        "id": 268
+      },
+      {
+        "title": "Спайси ролл с угрем",
+        "price": 700,
+        "category": "rolls",
+        "image": "https://static.tildacdn.com/stor6533-3363-4637-a131-306565346633/5e0302b59e4e6c17cf2c37696f210a0f.png",
+        "id": 269
+      },
+      {
+        "title": "Спайси ролл с тунцом",
+        "price": 700,
+        "category": "rolls",
+        "image": "https://static.tildacdn.com/stor6630-3038-4934-b266-356636353131/55628cae461851be3b7da87e4b2f8aa6.png",
+        "id": 270
+      },
+      {
+        "title": "Спайси ролл с осьминогом",
+        "price": 700,
+        "category": "rolls",
+        "image": "https://static.tildacdn.com/stor6236-3736-4933-a239-623138613161/379c3434c23e2fe7d6c467382d6a9d8c.png",
+        "id": 271
+      }
+    ],
+    "confectionery": [
+      {
+        "id": 1,
+        "uid": "520870277152",
+        "title": "Шоколадный трюфель с миндальным амаретто",
+        "description": "",
+        "price": 500,
+        "category": "confectionery",
+        "image": "https://static.tildacdn.com/stor6136-3132-4434-a366-396562373461/1dcd9c5fbbd711e4f0a4a05bcac84e09.jpg"
+      },
+      {
+        "id": 2,
+        "uid": "275664641432",
+        "title": "Итальянские печенья Бискотти с миндальными лепестками и изюмом",
+        "description": "",
+        "price": 250,
+        "category": "confectionery",
+        "image": "https://static.tildacdn.com/stor6262-3533-4461-a235-363539383765/e2fe52f5e5d97f4c6477541a8a3d09e4.jpg"
+      },
+      {
+        "id": 3,
+        "uid": "714442533612",
+        "title": "Тесто для бискотти",
+        "description": "",
+        "price": 400,
+        "category": "confectionery",
+        "image": "https://static.tildacdn.com/stor3033-3136-4136-b236-623231613336/c5f600192306658f946824eb0e1f7abc.jpg"
+      }
+    ],
+    "beverages": [
+      {
+        "id": 1,
+        "uid": "721187513602",
+        "title": "Морс клюквенный собственного производства",
+        "description": "",
+        "price": 150,
+        "category": "beverages",
+        "image": "https://static.tildacdn.com/stor6535-3266-4563-a439-353638616561/e681b6ffb61fc9cbe2d436b55944c91c.jpg"
+      },
+      {
+        "id": 2,
+        "uid": "596352071852",
+        "title": "Морс Ягодный микс собственного производства",
+        "description": "",
+        "price": 150,
+        "category": "beverages",
+        "image": "https://static.tildacdn.com/stor3639-3638-4763-b638-643666393163/d1d47ce7d22f8633f5a026d92434a87e.jpg"
+      },
+      {
+        "id": 3,
+        "uid": "955220342672",
+        "title": "Морс Апельсин-имбирь собственного производства",
+        "description": "",
+        "price": 150,
+        "category": "beverages",
+        "image": "https://static.tildacdn.com/stor3431-6365-4631-b936-393163653632/ced58a46f3396e1a95b9d0c8ef70843a.jpg"
+      },
+      {
+        "id": 4,
+        "uid": "836717342192",
+        "title": "Морс Тархун собственного производства",
+        "description": "",
+        "price": 150,
+        "category": "beverages",
+        "image": "https://static.tildacdn.com/stor3830-3339-4436-a631-396465366663/6f7d91f58f46b0e5ecd2d16fad1c17dc.jpg"
+      },
+      {
+        "id": 5,
+        "uid": "638812746902",
+        "title": "Морс облепиховый собственного производства",
+        "description": "",
+        "price": 150,
+        "category": "beverages",
+        "image": "https://static.tildacdn.com/stor3336-6132-4030-a563-623566373636/5f73206ecfc665a4419ce7159194e603.jpg"
+      },
+      {
+        "id": 6,
+        "uid": "817420996982",
+        "title": "Морс Глинтвейн б/а собственного производства",
+        "description": "",
+        "price": 150,
+        "category": "beverages",
+        "image": "https://static.tildacdn.com/stor3235-3461-4163-a336-326164333930/35108a55daf03bbb265be05c37af5645.jpg"
+      },
+      {
+        "id": 7,
+        "uid": "723332730132",
+        "title": "Сок Мультифрут собственного производства",
+        "description": "",
+        "price": 150,
+        "category": "beverages",
+        "image": "https://static.tildacdn.com/stor3465-3437-4630-b234-346530616262/2e67105f1eeec7a147b9cb049319e60a.jpg"
+      },
+      {
+        "id": 8,
+        "uid": "442141560172",
+        "title": "Сок яблочный собственного производства",
+        "description": "",
+        "price": 150,
+        "category": "beverages",
+        "image": "https://static.tildacdn.com/stor3433-6164-4435-b038-356561626339/3717b13ee13cd2b2813ffc6f1be16fe8.jpg"
+      },
+      {
+        "id": 9,
+        "uid": "654017543772",
+        "title": "Сок Апельсиновый собственного производства",
+        "description": "",
+        "price": 150,
+        "category": "beverages",
+        "image": "https://static.tildacdn.com/stor6636-3037-4533-b431-613738613165/61955f1b3c198c5090de413cb0ddc296.jpg"
+      },
+      {
+        "id": 10,
+        "uid": "393861642742",
+        "title": "Вода с газом",
+        "description": "",
+        "price": 100,
+        "category": "beverages",
+        "image": "https://static.tildacdn.com/stor6162-6437-4333-a562-336538643639/b047a6ea418465642d5c71fb76ded4b0.png"
+      },
+      {
+        "id": 11,
+        "uid": "735995745592",
+        "title": "Вода без газа",
+        "description": "",
+        "price": 100,
+        "category": "beverages",
+        "image": "https://static.tildacdn.com/stor6233-3436-4135-b561-643465393661/580edc8de2d3fd0d2cd42b0a6f900c5f.png"
+      },
+      {
+        "id": 12,
+        "uid": "533695195712",
+        "title": "Кока кола",
+        "description": "",
+        "price": 150,
+        "category": "beverages",
+        "image": "https://static.tildacdn.com/stor3439-6336-4536-a136-613565323063/30b30f68968af990afb5ece56bffe277.png"
+      }
+    ],
+    "frozen": [
+      {
+        "id": 272,
+        "uid": "862848375532",
+        "title": "Пицца Маргарита",
+        "description": "",
+        "price": 750,
+        "category": "frozen",
+        "image": "https://static.tildacdn.com/stor3866-3032-4665-b537-623866366164/ead3882745fa013324b56844cf2a560a.jpg"
+      },
+      {
+        "id": 273,
+        "uid": "385329827342",
+        "title": "Пицца Пепперони",
+        "description": "",
+        "price": 750,
+        "category": "frozen",
+        "image": "https://static.tildacdn.com/stor6465-3565-4430-b139-663464383339/18027452e983e6723778dd66f82e6753.jpg"
+      },
+      {
+        "id": 274,
+        "uid": "232224053222",
+        "title": "Пицца 4 сыра",
+        "description": "",
+        "price": 850,
+        "category": "frozen",
+        "image": "https://static.tildacdn.com/stor3937-6130-4364-b431-643132633432/719c04e0f6486ad575c942b9dcfa187e.jpg"
+      },
+      {
+        "id": 275,
+        "uid": "665761144762",
+        "title": "Тосканский томатный крем-суп с говядиной, сыром Пармезан и чесночными гренками",
+        "description": "",
+        "price": 450,
+        "category": "frozen",
+        "image": "https://static.tildacdn.com/stor6434-3863-4365-b765-633134653937/54971df1329825abfc9de18450a88786.jpg"
+      },
+      {
+        "id": 276,
+        "uid": "551303705632",
+        "title": "Неаполитанское классическое тесто",
+        "description": "",
+        "price": 90,
+        "category": "frozen",
+        "image": "https://static.tildacdn.com/stor3162-6431-4537-b038-653231386339/1e58c303fdbbd79cd3c8fc4a371a5eea.jpg"
+      },
+      {
+        "id": 277,
+        "uid": "838280564862",
+        "title": "Неаполитанское томатное тесто",
+        "description": "",
+        "price": 90,
+        "category": "frozen",
+        "image": "https://static.tildacdn.com/stor6461-3261-4466-a264-616563323566/a660f31e1483210e709617a57bffe0cb.jpg"
+      },
+      {
+        "id": 278,
+        "uid": "345488478762",
+        "title": "Соус томатный для пиццы",
+        "description": "",
+        "price": 300,
+        "category": "frozen",
+        "image": "https://static.tildacdn.com/stor3834-3132-4134-b634-633363376538/c2dc12f066db38c3e91e25534e96077a.jpg"
+      }
+    ],
+    "masterclass": [
+      {
+        "id": 284,
+        "uid": "837673681662",
+        "title": "Мастер класс по приготовлению Неаполитанской пиццы",
+        "description": "",
+        "price": 2500,
+        "category": "masterclass",
+        "image": "https://static.tildacdn.com/stor6237-6332-4166-a537-323739376533/18598516.jpg"
+      }
+    ],
+    "franchise": [
+      {
+        "id": 285,
+        "uid": "488110691602",
+        "title": "Франшиза Pizza Napoli Вариант №1",
+        "description": "",
+        "price": 250000,
+        "category": "franchise",
+        "image": "https://static.tildacdn.com/stor3737-6463-4361-b464-326662626334/23531454.jpg"
+      },
+      {
+        "id": 286,
+        "uid": "579475673402",
+        "title": "Франшиза Pizza Napoli Вариант №2",
+        "description": "",
+        "price": 350000,
+        "category": "franchise",
+        "image": "https://static.tildacdn.com/stor3532-6238-4635-a233-313163313466/92491393.jpg"
+      },
+      {
+        "id": 287,
+        "uid": "741350560532",
+        "title": "Франшиза Pizza Napoli Вариант №3",
+        "description": "",
+        "price": 550000,
+        "category": "franchise",
+        "image": "https://static.tildacdn.com/stor6562-6232-4066-b963-366339363832/62040519.jpg"
+      }
+    ],
+    "aromatic-oils": [
+      {
+        "id": 279,
+        "uid": "680538349362",
+        "title": "Ароматное масло с розмарином",
+        "description": "",
+        "price": 500,
+        "category": "aromatic-oils",
+        "image": "https://static.tildacdn.com/stor6638-3666-4431-b862-383730313234/c293246704e149995443ebb3649cd824.jpg"
+      },
+      {
+        "id": 280,
+        "uid": "408782506402",
+        "title": "Ароматное оливковое масло с тимьяном",
+        "description": "",
+        "price": 500,
+        "category": "aromatic-oils",
+        "image": "https://static.tildacdn.com/stor3262-3233-4833-a333-373330393937/7061f1c25d22c694da9ca7619f1a84cd.jpg"
+      },
+      {
+        "id": 281,
+        "uid": "582509657602",
+        "title": "Ароматное масло с чили перцем",
+        "description": "",
+        "price": 500,
+        "category": "aromatic-oils",
+        "image": "https://static.tildacdn.com/stor3437-3532-4438-a538-363037383631/f5c55987083c294ea4e1d144fc89769e.jpg"
+      },
+      {
+        "id": 282,
+        "uid": "398357653272",
+        "title": "Ароматное масло с чесноком и имбирем",
+        "description": "",
+        "price": 500,
+        "category": "aromatic-oils",
+        "image": "https://static.tildacdn.com/stor3439-6330-4538-b630-663963316465/a3e230f849b401d1e01637dd98694ad7.jpg"
+      },
+      {
+        "id": 283,
+        "uid": "375315789912",
+        "title": "Кунжутная заправка",
+        "description": "",
+        "price": 500,
+        "category": "aromatic-oils",
+        "image": "https://static.tildacdn.com/stor3861-3835-4631-a563-363763636534/b9f1bd1087e11441dbdb12e61b75c106.jpg"
+      }
+    ],
+    "combo": [
+      {
+        "id": 288,
+        "uid": "734756487852",
+        "title": "Сэт Суши Нигири",
+        "description": "",
+        "price": 1250,
+        "category": "combo",
+        "image": "https://static.tildacdn.com/stor3537-3363-4439-a233-313761663032/8c1aa33248b79a057e8d80e2777eccc2.jpg"
+      },
+      {
+        "id": 289,
+        "uid": "688392091772",
+        "title": "Сэт суши Гункан",
+        "description": "",
+        "price": 1150,
+        "category": "combo",
+        "image": "https://static.tildacdn.com/stor3637-3733-4539-b137-316535623731/3801ca919174ffd6045fe0edb507b47c.jpg"
+      },
+      {
+        "id": 290,
+        "uid": "399784081402",
+        "title": "Сэт Темаки",
+        "description": "",
+        "price": 1250,
+        "category": "combo",
+        "image": "https://static.tildacdn.com/stor3664-3366-4833-b531-343436643830/f096ed60b1f8dd72865677d4d0ff7674.jpg"
+      },
+      {
+        "id": 291,
+        "uid": "959047117282",
+        "title": "Ручной Сэт №1",
+        "description": "",
+        "price": 750,
+        "category": "combo",
+        "image": "https://static.tildacdn.com/stor3466-3266-4136-b434-383531373133/e064dd90b4f38e484b96fca4d8d95ec9.jpg"
+      },
+      {
+        "id": 292,
+        "uid": "362225979622",
+        "title": "Ручной Сэт №2",
+        "description": "",
+        "price": 750,
+        "category": "combo",
+        "image": "https://static.tildacdn.com/stor6565-6233-4736-b637-613831623433/af9584c457ed271c151999d1aeb57020.jpg"
+      },
+      {
+        "id": 293,
+        "uid": "627724721542",
+        "title": "Ручной Сэт №3",
+        "description": "",
+        "price": 750,
+        "category": "combo",
+        "image": "https://static.tildacdn.com/stor3133-3038-4265-a436-343730656465/5821fd4b195ca5428e30c6d656ab56cd.jpg"
+      },
+      {
+        "id": 294,
+        "uid": "973350434242",
+        "title": "Ручной Сэт №4",
+        "description": "",
+        "price": 750,
+        "category": "combo",
+        "image": "https://static.tildacdn.com/stor3139-6137-4333-b165-383566383661/10d733cd3cf3e613060c1f9c96335b8b.jpg"
+      },
+      {
+        "id": 295,
+        "uid": "161835716272",
+        "title": "Ручной Сэт №5",
+        "description": "",
+        "price": 750,
+        "category": "combo",
+        "image": "https://static.tildacdn.com/stor3333-3938-4263-a662-333566316562/43ee41a1d696934f555cef51775edf1d.jpg"
+      },
+      {
+        "id": 296,
+        "uid": "223515413652",
+        "title": "Сэт Маки Вегетариано",
+        "description": "",
+        "price": 800,
+        "category": "combo",
+        "image": "https://static.tildacdn.com/stor6335-3634-4335-b534-646333386236/57d6302eb372273e08c786f204e22641.jpg"
+      },
+      {
+        "id": 297,
+        "uid": "198195044962",
+        "title": "Сэт Маки роллы",
+        "description": "",
+        "price": 2025,
+        "category": "combo",
+        "image": "https://static.tildacdn.com/stor3165-3562-4662-b762-633430616239/a65222ed91c68946230038f26d78565e.jpg"
+      },
+      {
+        "id": 298,
+        "uid": "630978891482",
+        "title": "Сэт Love",
+        "description": "",
+        "price": 1850,
+        "category": "combo",
+        "image": "https://static.tildacdn.com/stor3535-3966-4839-a162-303034663462/ea352d947e4747e72d6ff545174bda6f.jpg"
+      },
+      {
+        "id": 299,
+        "uid": "509025125542",
+        "title": "Сэт на двоих №1",
+        "description": "",
+        "price": 1700,
+        "category": "combo",
+        "image": "https://static.tildacdn.com/stor3161-3432-4632-a439-343061393063/1badc276c66a4cf5ac4f477bf589af77.png"
+      },
+      {
+        "id": 300,
+        "uid": "594442864192",
+        "title": "Сэт на двоих №2",
+        "description": "",
+        "price": 1700,
+        "category": "combo",
+        "image": "https://static.tildacdn.com/stor3766-3733-4264-b431-333062613861/0f7bc57f50f4539bfafb367d83e67fc6.png"
+      },
+      {
+        "id": 301,
+        "uid": "488804236122",
+        "title": "Сэт на двоих №3",
+        "description": "",
+        "price": 1700,
+        "category": "combo",
+        "image": "https://static.tildacdn.com/stor3238-6539-4462-b737-653662363034/6ed098e899a26f2d0f41fea520564c50.png"
+      },
+      {
+        "id": 302,
+        "uid": "783089342042",
+        "title": "Сэт Филадельфия",
+        "description": "",
+        "price": 3800,
+        "category": "combo",
+        "image": "https://static.tildacdn.com/stor3430-3061-4334-b165-633431626134/aa0c89d6ecb718d94b7bdcd414eb9231.jpg"
+      },
+      {
+        "id": 303,
+        "uid": "701986595742",
+        "title": "Сэт Калифорния на двоих",
+        "description": "",
+        "price": 1950,
+        "category": "combo",
+        "image": "https://static.tildacdn.com/stor6466-6233-4435-a335-643730313866/1a2366f6b9ba529c19cda00a21028269.jpg"
+      },
+      {
+        "id": 304,
+        "uid": "541608756702",
+        "title": "Сэт Запеченных роллов №2",
+        "description": "",
+        "price": 3700,
+        "category": "combo",
+        "image": "https://static.tildacdn.com/stor3565-3835-4665-a366-646264663932/f8922552aba4ca4d9c87cdbef52d219e.jpg"
+      },
+      {
+        "id": 305,
+        "uid": "934238718022",
+        "title": "Сэт Ассорти Классика",
+        "description": "",
+        "price": 1900,
+        "category": "combo",
+        "image": "https://static.tildacdn.com/stor3733-6163-4439-b538-336263346133/98e2d81f6ed5c7b4abef670ba5c24fbd.jpg"
+      },
+      {
+        "id": 306,
+        "uid": "579763777452",
+        "title": "Сэт ассорти запеченные роллы №1",
+        "description": "",
+        "price": 1800,
+        "category": "combo",
+        "image": "https://static.tildacdn.com/stor3238-3566-4933-a166-376334396239/9da6049d0d62e187a7134629823d55a1.jpg"
+      },
+      {
+        "id": 307,
+        "uid": "381946825422",
+        "title": "Сэт Пицца-Роллы Классика",
+        "description": "",
+        "price": 3550,
+        "category": "combo",
+        "image": "https://static.tildacdn.com/stor3761-6138-4665-a666-633231336133/aaeecb65bcf784956bff2fb0f2352602.png"
+      },
+      {
+        "id": 308,
+        "uid": "405637986232",
+        "title": "Сэт Мужской",
+        "description": "",
+        "price": 4750,
+        "category": "combo",
+        "image": "https://static.tildacdn.com/stor6362-6432-4830-a665-633564316665/86a9a885f13ffc896eb0678fce0a4ac1.png"
+      },
+      {
+        "id": 309,
+        "uid": "642062950332",
+        "title": "Сэт для Милых Дам",
+        "description": "",
+        "price": 4100,
+        "category": "combo",
+        "image": "https://static.tildacdn.com/stor3034-3832-4137-b939-366539373236/e9de2fca8e6447e62c0ccede4e2154d0.png"
+      },
+      {
+        "id": 310,
+        "uid": "944048830672",
+        "title": "Сэт Seafood mix",
+        "description": "",
+        "price": 5100,
+        "category": "combo",
+        "image": "https://static.tildacdn.com/stor3232-3364-4564-a634-626364316462/8ec381c89bcc8b37338ad0a58e3d770f.png"
+      },
+      {
+        "id": 311,
+        "uid": "965971876722",
+        "title": "Мега Сэт на большую компанию",
+        "description": "",
+        "price": 7200,
+        "category": "combo",
+        "image": "https://static.tildacdn.com/stor3433-6666-4638-a562-373833393664/3ba4216ec72ec0114b148710534c2b67.png"
+      },
+      {
+        "id": 312,
+        "uid": "580335844562",
+        "title": "Сет Калифорния",
+        "description": "",
+        "price": 3900,
+        "category": "combo",
+        "image": "https://static.tildacdn.com/stor6463-6539-4135-b365-326265396130/d7338567965dd8e1f45830388f9943a2.jpg"
+      },
+      {
+        "id": 313,
+        "uid": "558263433892",
+        "title": "Набор №1 Pizza Piccolo 20 см",
+        "description": "",
+        "price": 2500,
+        "category": "combo",
+        "image": "https://static.tildacdn.com/stor3033-3164-4538-a261-663465383230/f349902bb3daa42a4146f5868ea3d8c0.jpg"
+      },
+      {
+        "id": 314,
+        "uid": "911961408942",
+        "title": "Набор №2 Pizza Piccolo 20 см",
+        "description": "",
+        "price": 2700,
+        "category": "combo",
+        "image": "https://static.tildacdn.com/stor6530-3535-4530-b363-653731303031/2bf74b1971b9bb9beddfeff8c8bcee8a.jpg"
+      },
+      {
+        "id": 315,
+        "uid": "459056471502",
+        "title": "Набор №3 Pizza Piccolo 20см",
+        "description": "",
+        "price": 2900,
+        "category": "combo",
+        "image": "https://static.tildacdn.com/stor6632-3838-4930-a362-323231373432/8707ab9ab776c6fe484c10b510126449.jpg"
+      },
+      {
+        "id": 316,
+        "uid": "736305654572",
+        "title": "Набор №5 Pizza Piccolo 20см",
+        "description": "",
+        "price": 3300,
+        "category": "combo",
+        "image": "https://static.tildacdn.com/stor3066-6662-4532-b765-393535363464/2bd889f07063dec59105bb8aa5972c50.png"
+      },
+      {
+        "id": 317,
+        "uid": "135683037232",
+        "title": "Набор №4 Pizza Piccolo 20 см",
+        "description": "",
+        "price": 2900,
+        "category": "combo",
+        "image": "https://static.tildacdn.com/stor3335-3530-4130-b135-313361663864/28a13ac7a5aae8a264fc10ab36b25d3b.png"
+      },
+      {
+        "id": 318,
+        "uid": "841697101892",
+        "title": "Набор №1 Пиццы 30см",
+        "description": "",
+        "price": 1700,
+        "category": "combo",
+        "image": "https://static.tildacdn.com/stor6636-6130-4533-a334-376663623334/a5ba31328e65bc1be823b04ff2ec6b6c.png"
+      },
+      {
+        "id": 319,
+        "uid": "303519918092",
+        "title": "Набор №2 Пиццы 30см",
+        "description": "",
+        "price": 1800,
+        "category": "combo",
+        "image": "https://static.tildacdn.com/stor3039-3637-4133-b966-653334623463/8dfb89c3fb7625bf27558e48d64889c3.png"
+      },
+      {
+        "id": 320,
+        "uid": "533919711752",
+        "title": "Набор №3 Пиццы 30 см",
+        "description": "",
+        "price": 1900,
+        "category": "combo",
+        "image": "https://static.tildacdn.com/stor6131-3037-4435-b737-633435313265/c94bb8197067ecf1f767205b60740cf0.png"
+      },
+      {
+        "id": 321,
+        "uid": "265589476582",
+        "title": "Набор №4 Пиццы 30 см",
+        "description": "",
+        "price": 1900,
+        "category": "combo",
+        "image": "https://static.tildacdn.com/stor3039-6131-4930-a661-363462366239/fb4ebe16e54f6d78b3f6182d2987ff13.png"
+      },
+      {
+        "id": 322,
+        "uid": "832529188022",
+        "title": "Набор №5 Пиццы 30 см",
+        "description": "",
+        "price": 2300,
+        "category": "combo",
+        "image": "https://static.tildacdn.com/stor6134-6666-4537-b637-633163363131/eea5f304b6bf5d9bd18ed25f63f4689c.png"
+      }
+    ]
+  }
+}
