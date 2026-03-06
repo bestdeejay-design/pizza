@@ -92,6 +92,8 @@ function renderContent() {
     const content = document.getElementById('content');
     const categories = getUniqueCategories();
     
+    console.log('Rendering categories:', categories.length);
+    
     // Map Russian names to English keys
     const categoryMap = {
         'pizza-30cm': 'Пицца 30 см',
@@ -114,6 +116,8 @@ function renderContent() {
             return item.category === cat;
         });
         
+        console.log(`Category ${cat}: ${productsInCategory.length} products`);
+        
         const displayName = categoryMap[cat] || cat;
         
         return `
@@ -131,21 +135,33 @@ function renderContent() {
 }
 
 function renderProducts(products) {
-    return products.map(product => `
-        <div class="product-card" data-id="${product.id}">
-            <div class="product-image-wrapper">
-                <img src="${product.image}" alt="${product.title}" class="product-image" onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 260 200%22><rect fill=%22%23f5f5f7%22 width=%22260%22 height=%22200%22/><text x=%22130%22 y=%22105%22 text-anchor=%22middle%22 fill=%22%2386868b%22 font-size=%2214%22>No Photo</text></svg>'">
-            </div>
-            <div class="product-info">
-                <h3 class="product-name">${product.title}</h3>
-                <p class="product-description">${product.description || 'Вкусное блюдо из нашего меню'}</p>
-                <div class="product-footer">
-                    <span class="product-price">${product.price} ₽</span>
-                    <button class="add-btn" onclick="addToCart(${product.id})">+</button>
+    if (!products || products.length === 0) {
+        console.warn('No products to render!');
+        return '<p style="color: #86868b; padding: 40px;">В этой категории пока нет товаров</p>';
+    }
+    
+    console.log(`Rendering ${products.length} products`);
+    
+    return products.map((product, idx) => {
+        if (idx < 2) {
+            console.log('Product sample:', product);
+        }
+        return `
+            <div class="product-card" data-id="${product.id}">
+                <div class="product-image-wrapper">
+                    <img src="${product.image}" alt="${product.title}" class="product-image" onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 260 200%22><rect fill=%22%23f5f5f7%22 width=%22260%22 height=%22200%22/><text x=%22130%22 y=%22105%22 text-anchor=%22middle%22 fill=%22%2386868b%22 font-size=%2214%22>No Photo</text></svg>'">
+                </div>
+                <div class="product-info">
+                    <h3 class="product-name">${product.title}</h3>
+                    <p class="product-description">${product.description || ''}</p>
+                    <div class="product-footer">
+                        <span class="product-price">${product.price} ₽</span>
+                        <button class="add-btn" onclick="addToCart(${product.id})">+</button>
+                    </div>
                 </div>
             </div>
-        </div>
-    `).join('');
+        `;
+    }).join('');
 }
 
 function setupIntersectionObserver() {
