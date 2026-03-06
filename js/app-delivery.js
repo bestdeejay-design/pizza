@@ -127,10 +127,10 @@ function renderProducts(products) {
     return products.map(product => `
         <div class="product-card" data-id="${product.id}">
             <div class="product-image-wrapper">
-                <img src="${product.image}" alt="${product.name}" class="product-image" onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 260 200%22><rect fill=%22%23f5f5f7%22 width=%22260%22 height=%22200%22/><text x=%22130%22 y=%22105%22 text-anchor=%22middle%22 fill=%22%2386868b%22 font-size=%2214%22>No Photo</text></svg>'">
+                <img src="${product.image}" alt="${product.title}" class="product-image" onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 260 200%22><rect fill=%22%23f5f5f7%22 width=%22260%22 height=%22200%22/><text x=%22130%22 y=%22105%22 text-anchor=%22middle%22 fill=%22%2386868b%22 font-size=%2214%22>No Photo</text></svg>'">
             </div>
             <div class="product-info">
-                <h3 class="product-name">${product.name}</h3>
+                <h3 class="product-name">${product.title}</h3>
                 <p class="product-description">${product.description || 'Вкусное блюдо из нашего меню'}</p>
                 <div class="product-footer">
                     <span class="product-price">${product.price} ₽</span>
@@ -225,7 +225,7 @@ function showCart() {
         itemsContainer.innerHTML = cart.map(item => `
             <div class="cart-item">
                 <div>
-                    <div style="font-weight: 700; font-size: 16px; margin-bottom: 4px;">${item.name}</div>
+                    <div style="font-weight: 700; font-size: 16px; margin-bottom: 4px;">${item.title}</div>
                     <div style="color: #86868b; font-size: 14px;">${item.quantity} × ${item.price} ₽</div>
                 </div>
                 <div style="font-weight: 800; color: #ff2e55;">${item.quantity * item.price} ₽</div>
