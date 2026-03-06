@@ -3,40 +3,68 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Пиццерия</title>
+    <title>Pizza Napoli RSC — Неаполитанская пицца и авторские кальцоне</title>
+    <meta name="description" content="234 позиции меню: пицца, кальцоне, роллы, неаполитанский хлеб. Акция: 13-я позиция бесплатно!">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <header>
-        <nav class="container">
-            <div class="logo">🍕 Pizza</div>
-            <ul class="nav-links">
-                <li><a href="#menu">Меню</a></li>
-                <li><a href="#about">О нас</a></li>
-                <li><a href="#contacts">Контакты</a></li>
-            </ul>
-        </nav>
+    <header class="header">
+        <div class="container header-content">
+            <div class="logo">
+                <h1>🍕 Pizza Napoli</h1>
+            </div>
+            <nav class="nav">
+                <a href="#menu">Меню</a>
+                <a href="#promo">Акция</a>
+                <a href="#contacts">Контакты</a>
+            </nav>
+            <button class="cart-btn" id="cartBtn">
+                🛒 <span class="cart-count">0</span>
+            </button>
+        </div>
     </header>
 
     <main>
-        <section class="hero">
-            <div class="container">
-                <h1>Самая вкусная пицца в городе</h1>
-                <p>Готовим с любовью с 1995 года</p>
-                <button class="btn-primary">Заказать сейчас</button>
-            </div>
-        </section>
+    <section class="hero">
+        <div class="container">
+            <h2 class="hero-title">Неаполитанская пицца<br>и авторские кальцоне</h2>
+            <p class="hero-subtitle">234 позиции настоящего итальянского вкуса</p>
+            <a href="#menu" class="btn btn-primary">Смотреть меню</a>
+        </div>
+    </section>
 
         <section id="menu" class="menu container">
-            <h2>Наше меню</h2>
-            <div class="pizza-grid">
-                <!-- Пиццы будут добавлены через JS -->
+            <h2 class="section-title">Наше меню</h2>
+            
+            <!-- Filters -->
+            <div class="filters">
+                <button class="filter-btn active" data-filter="all">Все</button>
+                <button class="filter-btn" data-filter="pizza">🍕 Пицца</button>
+                <button class="filter-btn" data-filter="piccolo">🍕 Piccolo</button>
+                <button class="filter-btn" data-filter="calzone">🥟 Кальцоне</button>
+                <button class="filter-btn" data-filter="rolls">🍣 Роллы</button>
+                <button class="filter-btn" data-filter="bread">🍞 Хлеб</button>
+                <button class="filter-btn" data-filter="focaccia">🫓 Фокачча</button>
+                <button class="filter-btn" data-filter="sauce">🥫 Соусы</button>
             </div>
+
+            <!-- Search -->
+            <div class="search-box">
+                <input type="text" id="searchInput" placeholder="Поиск по меню...">
+            </div>
+
+            <!-- Products Grid -->
+            <div class="products-grid" id="productsGrid"></div>
         </section>
 
-        <section id="about" class="about container">
-            <h2>О нас</h2>
-            <p>Мы готовим лучшую пиццу используя традиционные итальянские рецепты и свежие ингредиенты.</p>
+        <!-- Promo Section -->
+        <section class="promo" id="promo">
+            <div class="container">
+                <div class="promo-content">
+                    <h3>🎉 13-я пицца или маки ролл БЕСПЛАТНО</h3>
+                    <p>При покупке 12 любых позиций вы получаете 13-ю бесплатно!<br>Акция действует постоянно.</p>
+                </div>
+            </div>
         </section>
 
         <section id="contacts" class="contacts container">
@@ -46,9 +74,22 @@
         </section>
     </main>
 
-    <footer>
+    <!-- Cart Modal -->
+    <div class="modal" id="cartModal">
+        <div class="modal-content">
+            <span class="close" id="closeCart">&times;</span>
+            <h2>Корзина</h2>
+            <div id="cartItems"></div>
+            <div class="cart-total">
+                <p>Итого: <span id="cartTotal">0</span> ₽</p>
+                <p class="promo-info" id="promoInfo">До бесплатной позиции: <span id="freeProgress">12</span></p>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer" id="contacts">
         <div class="container">
-            <p>&copy; 2026 Пиццерия. Все права защищены.</p>
+            <p>&copy; 2026 Pizza Napoli RSC. Все права защищены.</p>
         </div>
     </footer>
 
