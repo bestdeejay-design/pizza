@@ -3,102 +3,252 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pizza Napoli RSC — Неаполитанская пицца и авторские кальцоне</title>
-    <meta name="description" content="234 позиции меню: пицца, кальцоне, роллы, неаполитанский хлеб. Акция: 13-я позиция бесплатно!">
-    <link rel="stylesheet" href="css/style.css">
+    <title>Pizza Napoli RSC — Каталог дизайнов</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .header {
+            text-align: center;
+            color: white;
+            margin-bottom: 60px;
+        }
+
+        .header h1 {
+            font-size: 48px;
+            margin-bottom: 10px;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.2);
+        }
+
+        .header p {
+            font-size: 20px;
+            opacity: 0.9;
+        }
+
+        .stats {
+            background: rgba(255,255,255,0.2);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 40px;
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .stat-item {
+            text-align: center;
+            color: white;
+        }
+
+        .stat-number {
+            font-size: 48px;
+            font-weight: 700;
+            display: block;
+        }
+
+        .stat-label {
+            font-size: 16px;
+            opacity: 0.9;
+        }
+
+        .designs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+        }
+
+        .design-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            transition: transform 0.3s, box-shadow 0.3s;
+            cursor: pointer;
+        }
+
+        .design-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+
+        .card-preview {
+            height: 250px;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 80px;
+        }
+
+        .card-content {
+            padding: 30px;
+        }
+
+        .card-title {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: #1a1a1a;
+        }
+
+        .card-description {
+            font-size: 16px;
+            color: #666;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+
+        .card-features {
+            list-style: none;
+            margin-bottom: 25px;
+        }
+
+        .card-features li {
+            padding: 8px 0;
+            color: #333;
+            font-size: 14px;
+        }
+
+        .card-features li:before {
+            content: "✓ ";
+            color: #4CAF50;
+            font-weight: bold;
+            margin-right: 8px;
+        }
+
+        .card-button {
+            display: inline-block;
+            padding: 15px 40px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: 600;
+            transition: transform 0.3s;
+        }
+
+        .card-button:hover {
+            transform: scale(1.05);
+        }
+
+        .footer {
+            text-align: center;
+            color: white;
+            margin-top: 60px;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255,255,255,0.2);
+        }
+    </style>
 </head>
 <body>
-    <header class="header">
-        <div class="container header-content">
-            <div class="logo">
-                <h1>🍕 Pizza Napoli</h1>
-            </div>
-            <nav class="nav">
-                <a href="#menu">Меню</a>
-                <a href="#promo">Акция</a>
-                <a href="#contacts">Контакты</a>
-            </nav>
-            <button class="cart-btn" id="cartBtn">
-                🛒 <span class="cart-count">0</span>
-            </button>
+    <div class="container">
+        <div class="header">
+            <h1>🍕 Pizza Napoli RSC</h1>
+            <p>Выберите дизайн каталога</p>
         </div>
-    </header>
 
-    <main>
-    <section class="hero">
-        <div class="container">
-            <h2 class="hero-title">Неаполитанская пицца<br>и авторские кальцоне</h2>
-            <p class="hero-subtitle">234 позиции настоящего итальянского вкуса</p>
-            <a href="#menu" class="btn btn-primary">Смотреть меню</a>
+        <div class="stats">
+            <div class="stat-item">
+                <span class="stat-number">333</span>
+                <span class="stat-label">Товара</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number">13</span>
+                <span class="stat-label">Категорий</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number">100%</span>
+                <span class="stat-label">С фото</span>
+            </div>
         </div>
-    </section>
 
-        <section id="menu" class="menu container">
-            <h2 class="section-title">Наше меню</h2>
-            
-            <!-- Filters -->
-            <div class="filters">
-                <button class="filter-btn active" data-filter="all">Все</button>
-                <button class="filter-btn" data-filter="pizza-30cm">🍕 Пицца 30 см</button>
-                <button class="filter-btn" data-filter="piccolo-20cm">🍕 Piccolo 20 см</button>
-                <button class="filter-btn" data-filter="calzone">🥟 Кальцоне</button>
-                <button class="filter-btn" data-filter="bread-focaccia">🍞 Хлеб и Фокачча</button>
-                <button class="filter-btn" data-filter="sauce">🥫 Соус к корочкам</button>
-                <button class="filter-btn" data-filter="rolls">🍣 Suchi & Rolls</button>
-                <button class="filter-btn" data-filter="combo">🎁 Комбо наборы</button>
-                <button class="filter-btn" data-filter="confectionery">🍰 Кондитерские изделия</button>
-                <button class="filter-btn" data-filter="beverages">🍹 Напитки</button>
-                <button class="filter-btn" data-filter="frozen">❄️ Замороженная продукция</button>
-                <button class="filter-btn" data-filter="aromatic-oils">🫒 Ароматное масло</button>
-                <button class="filter-btn" data-filter="masterclass">👨‍🍳 Мастер класс</button>
-                <button class="filter-btn" data-filter="franchise">💼 Франшиза</button>
-            </div>
-
-            <!-- Search -->
-            <div class="search-box">
-                <input type="text" id="searchInput" placeholder="Поиск по меню...">
-            </div>
-
-            <!-- Products Grid -->
-            <div class="products-grid" id="productsGrid"></div>
-        </section>
-
-        <!-- Promo Section -->
-        <section class="promo" id="promo">
-            <div class="container">
-                <div class="promo-content">
-                    <h3>🎉 13-я пицца или маки ролл БЕСПЛАТНО</h3>
-                    <p>При покупке 12 любых позиций вы получаете 13-ю бесплатно!<br>Акция действует постоянно.</p>
+        <div class="designs-grid">
+            <!-- Classic Design -->
+            <div class="design-card">
+                <div class="card-preview" style="background: linear-gradient(135deg, #2a582c 0%, #1e4220 100%);">
+                    🎨
+                </div>
+                <div class="card-content">
+                    <h3 class="card-title">Classic Green</h3>
+                    <p class="card-description">
+                        Классический дизайн в зелёных тонах. Строгий и профессиональный интерфейс для пиццерии.
+                    </p>
+                    <ul class="card-features">
+                        <li>Зелёная цветовая схема</li>
+                        <li>Карточки товаров с тенями</li>
+                        <li>Фильтры по категориям</li>
+                        <li>Поиск по меню</li>
+                        <li>Корзина с промо-акцией</li>
+                    </ul>
+                    <a href="catalog-classic.html" class="card-button">Открыть каталог</a>
                 </div>
             </div>
-        </section>
 
-        <section id="contacts" class="contacts container">
-            <h2>Контакты</h2>
-            <p>📞 +7 (999) 000-00-00</p>
-            <p>📍 ул. Примерная, д. 1</p>
-        </section>
-    </main>
+            <!-- Modern Design -->
+            <div class="design-card">
+                <div class="card-preview" style="background: linear-gradient(135deg, #ff6b6b 0%, #ee5a6f 100%);">
+                    ⚡
+                </div>
+                <div class="card-content">
+                    <h3 class="card-title">Modern Minimal</h3>
+                    <p class="card-description">
+                        Современный минималистичный дизайн с акцентом на контент и удобство использования.
+                    </p>
+                    <ul class="card-features">
+                        <li>Светлая тема с акцентами</li>
+                        <li>Крупные изображения</li>
+                        <li>Быстрый просмотр</li>
+                        <li>Умные фильтры</li>
+                        <li>Адаптивная сетка</li>
+                    </ul>
+                    <a href="catalog-modern.html" class="card-button">Открыть каталог</a>
+                </div>
+            </div>
 
-    <!-- Cart Modal -->
-    <div class="modal" id="cartModal">
-        <div class="modal-content">
-            <span class="close" id="closeCart">&times;</span>
-            <h2>Корзина</h2>
-            <div id="cartItems"></div>
-            <div class="cart-total">
-                <p>Итого: <span id="cartTotal">0</span> ₽</p>
-                <p class="promo-info" id="promoInfo">До бесплатной позиции: <span id="freeProgress">12</span></p>
+            <!-- Premium Design -->
+            <div class="design-card">
+                <div class="card-preview" style="background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);">
+                    💎
+                </div>
+                <div class="card-content">
+                    <h3 class="card-title">Premium Dark</h3>
+                    <p class="card-description">
+                        Премиальный тёмный дизайн с плавными анимациями и эффектным呈现лением товаров.
+                    </p>
+                    <ul class="card-features">
+                        <li>Тёмная тема</li>
+                        <li>Параллакс эффекты</li>
+                        <li>Анимации при скролле</li>
+                        <li>Премиум типографика</li>
+                        <li>Интерактивные элементы</li>
+                    </ul>
+                    <a href="catalog-premium.html" class="card-button">Открыть каталог</a>
+                </div>
             </div>
         </div>
-    </div>
 
-    <footer class="footer" id="contacts">
-        <div class="container">
+        <div class="footer">
             <p>&copy; 2026 Pizza Napoli RSC. Все права защищены.</p>
+            <p style="margin-top: 10px; opacity: 0.7; font-size: 14px;">
+                Единая база данных: menu-complete.json (333 товара, 13 категорий)
+            </p>
         </div>
-    </footer>
-
-    <script src="js/app.js"></script>
+    </div>
 </body>
 </html>
