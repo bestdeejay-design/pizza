@@ -10,19 +10,19 @@ async function loadMenu() {
         
         // Flatten all products from nested structure
         menu = [
-            ...(data['pizza-30cm'] || []),
-            ...(data['piccolo-20cm'] || []),
-            ...(data['calzone'] || []),
-            ...(data['bread-focaccia'] || []),
-            ...(data['sauce'] || []),
-            ...(data['rolls'] || []),
-            ...(data['combo'] || []),
-            ...(data['confectionery'] || []),
-            ...(data['beverages'] || []),
-            ...(data['frozen'] || []),
-            ...(data['aromatic-oils'] || []),
-            ...(data['masterclass'] || []),
-            ...(data['franchise'] || [])
+            ...(data.menu['pizza-30cm'] || []),
+            ...(data.menu['piccolo-20cm'] || []),
+            ...(data.menu['calzone'] || []),
+            ...(data.menu['bread-focaccia'] || []),
+            ...(data.menu['sauce'] || []),
+            ...(data.menu['rolls'] || []),
+            ...(data.menu['combo'] || []),
+            ...(data.menu['confectionery'] || []),
+            ...(data.menu['beverages'] || []),
+            ...(data.menu['frozen'] || []),
+            ...(data.menu['aromatic-oils'] || []),
+            ...(data.menu['masterclass'] || []),
+            ...(data.menu['franchise'] || [])
         ];
         
         renderAccordion();
