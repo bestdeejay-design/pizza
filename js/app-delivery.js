@@ -6,7 +6,25 @@ let visibleCategories = new Set();
 async function loadMenu() {
     try {
         const response = await fetch('menu-complete.json');
-        menu = await response.json();
+        const data = await response.json();
+        
+        // Flatten all products from nested structure
+        menu = [
+            ...(data['pizza-30cm'] || []),
+            ...(data['piccolo-20cm'] || []),
+            ...(data['calzone'] || []),
+            ...(data['bread-focaccia'] || []),
+            ...(data['sauce'] || []),
+            ...(data['rolls'] || []),
+            ...(data['combo'] || []),
+            ...(data['confectionery'] || []),
+            ...(data['beverages'] || []),
+            ...(data['frozen'] || []),
+            ...(data['aromatic-oils'] || []),
+            ...(data['masterclass'] || []),
+            ...(data['franchise'] || [])
+        ];
+        
         initSidebar();
         renderContent();
         setupIntersectionObserver();
@@ -20,8 +38,7 @@ function getUniqueCategories() {
     const categories = new Set();
     menu.forEach(item => {
         if (item.category) {
-            const mainCat = item.category.split(':')[0].trim();
-            categories.add(mainCat);
+            categories.add(item.category);
         }
     });
     return Array.from(categories).sort();
@@ -33,8 +50,7 @@ function initSidebar() {
     
     sidebar.innerHTML = categories.map(cat => {
         const count = menu.filter(item => {
-            const itemCat = item.category ? item.category.split(':')[0].trim() : '';
-            return itemCat === cat;
+            return item.category === cat;
         }).length;
         
         return `
@@ -52,8 +68,7 @@ function renderContent() {
     
     content.innerHTML = categories.map(cat => {
         const productsInCategory = menu.filter(item => {
-            const itemCat = item.category ? item.category.split(':')[0].trim() : '';
-            return itemCat === cat;
+            return item.category === cat;
         });
         
         return `

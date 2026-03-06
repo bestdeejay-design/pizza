@@ -6,7 +6,25 @@ const INITIAL_ITEMS = 6;
 async function loadMenu() {
     try {
         const response = await fetch('menu-complete.json');
-        menu = await response.json();
+        const data = await response.json();
+        
+        // Flatten all products from nested structure
+        menu = [
+            ...(data['pizza-30cm'] || []),
+            ...(data['piccolo-20cm'] || []),
+            ...(data['calzone'] || []),
+            ...(data['bread-focaccia'] || []),
+            ...(data['sauce'] || []),
+            ...(data['rolls'] || []),
+            ...(data['combo'] || []),
+            ...(data['confectionery'] || []),
+            ...(data['beverages'] || []),
+            ...(data['frozen'] || []),
+            ...(data['aromatic-oils'] || []),
+            ...(data['masterclass'] || []),
+            ...(data['franchise'] || [])
+        ];
+        
         renderAccordion();
     } catch (error) {
         console.error('Error loading menu:', error);
@@ -17,8 +35,7 @@ function getUniqueCategories() {
     const categories = new Set();
     menu.forEach(item => {
         if (item.category) {
-            const mainCat = item.category.split(':')[0].trim();
-            categories.add(mainCat);
+            categories.add(item.category);
         }
     });
     return Array.from(categories).sort();
@@ -31,8 +48,7 @@ function renderAccordion() {
     
     accordion.innerHTML = categories.map((cat, index) => {
         const productsInCategory = menu.filter(item => {
-            const itemCat = item.category ? item.category.split(':')[0].trim() : '';
-            return itemCat === cat;
+            return item.category === cat;
         });
         
         const icon = icons[index % icons.length];
@@ -107,8 +123,7 @@ function loadMore(category) {
     const increment = 6;
     
     const productsInCategory = menu.filter(item => {
-        const itemCat = item.category ? item.category.split(':')[0].trim() : '';
-        return itemCat === category;
+        return item.category === category;
     });
     
     const nextVisible = Math.min(currentVisible + increment, productsInCategory.length);

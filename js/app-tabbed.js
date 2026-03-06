@@ -6,7 +6,25 @@ const ITEMS_PER_PAGE = 8;
 async function loadMenu() {
     try {
         const response = await fetch('menu-complete.json');
-        menu = await response.json();
+        const data = await response.json();
+        
+        // Flatten all products from nested structure
+        menu = [
+            ...(data['pizza-30cm'] || []),
+            ...(data['piccolo-20cm'] || []),
+            ...(data['calzone'] || []),
+            ...(data['bread-focaccia'] || []),
+            ...(data['sauce'] || []),
+            ...(data['rolls'] || []),
+            ...(data['combo'] || []),
+            ...(data['confectionery'] || []),
+            ...(data['beverages'] || []),
+            ...(data['frozen'] || []),
+            ...(data['aromatic-oils'] || []),
+            ...(data['masterclass'] || []),
+            ...(data['franchise'] || [])
+        ];
+        
         initTabs();
         renderAllCategories();
     } catch (error) {
@@ -38,9 +56,7 @@ function getUniqueCategories() {
     const categories = new Set();
     menu.forEach(item => {
         if (item.category) {
-            // Extract main category (before colon if exists)
-            const mainCat = item.category.split(':')[0].trim();
-            categories.add(mainCat);
+            categories.add(item.category);
         }
     });
     return Array.from(categories).sort();
@@ -64,8 +80,7 @@ function renderAllCategories() {
     
     container.innerHTML = categories.map((cat, index) => {
         const productsInCategory = menu.filter(item => {
-            const itemCat = item.category ? item.category.split(':')[0].trim() : '';
-            return itemCat === cat;
+            return item.category === cat;
         });
         
         return `
@@ -143,8 +158,7 @@ function handlePaginationClick(e) {
     if (newPage < 1 || newPage > totalPages) return;
     
     const productsInCategory = menu.filter(item => {
-        const itemCat = item.category ? item.category.split(':')[0].trim() : '';
-        return itemCat === category;
+        return item.category === category;
     });
     
     const startIndex = (newPage - 1) * ITEMS_PER_PAGE;
