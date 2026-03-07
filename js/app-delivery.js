@@ -69,10 +69,6 @@ function initSidebar() {
     // Логическая группировка категорий пиццерии
     const menuGroups = [
         {
-            title: '📋 МЕНЮ',
-            categories: ['all-menu'] // Все товары одной лентой
-        },
-        {
             title: '🍕 ПИЦЦА',
             categories: ['pizza-30cm', 'piccolo-20cm', 'calzone']
         },
@@ -413,74 +409,8 @@ function setActiveNav(categoryId) {
     });
 }
 
-// Кнопка возврата к общему меню
-function showBackToAllMenuButton() {
-    let backBtn = document.getElementById('back-to-all-menu');
-    if (!backBtn) {
-        // Создаем кнопку если её нет
-        backBtn = document.createElement('div');
-        backBtn.id = 'back-to-all-menu';
-        backBtn.innerHTML = '<i class="fas fa-list"></i> Все меню';
-        backBtn.onclick = () => scrollToCategory('all-menu');
-        backBtn.style.cssText = `
-            position: fixed;
-            bottom: 90px;
-            right: 20px;
-            background: linear-gradient(135deg, #ff2e55 0%, #ff6b6b 100%);
-            color: white;
-            padding: 12px 24px;
-            border-radius: 50px;
-            cursor: pointer;
-            font-weight: 700;
-            font-size: 14px;
-            z-index: 999;
-            box-shadow: 0 8px 30px rgba(255, 46, 85, 0.4);
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            transition: all 0.3s;
-            backdrop-filter: blur(10px);
-        `;
-        backBtn.onmouseenter = () => {
-            backBtn.style.transform = 'scale(1.05)';
-            backBtn.style.boxShadow = '0 12px 40px rgba(255, 46, 85, 0.5)';
-        };
-        backBtn.onmouseleave = () => {
-            backBtn.style.transform = 'scale(1)';
-            backBtn.style.boxShadow = '0 8px 30px rgba(255, 46, 85, 0.4)';
-        };
-        document.body.appendChild(backBtn);
-    }
-    backBtn.style.display = 'flex';
-}
-
 function scrollToCategory(categoryId) {
     console.log('Scrolling to category:', categoryId);
-    
-    // Специальная обработка для all-menu
-    if (categoryId === 'all-menu') {
-        const element = document.getElementById(`category-${categoryId}`);
-        if (element) {
-            setActiveNav(categoryId);
-            document.querySelectorAll('.category-section').forEach(section => {
-                section.style.display = 'none';
-            });
-            element.style.display = '';
-            console.log('All-menu category displayed');
-            
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
-            
-            // Скрываем кнопку "Все меню" когда в общем меню
-            const backToAllMenuBtn = document.getElementById('back-to-all-menu');
-            if (backToAllMenuBtn) {
-                backToAllMenuBtn.style.display = 'none';
-            }
-        }
-        return;
-    }
     
     const element = document.getElementById(`category-${categoryId}`);
     if (element) {
@@ -494,9 +424,6 @@ function scrollToCategory(categoryId) {
         });
         element.style.display = '';
         console.log('Category displayed:', categoryId);
-        
-        // Показываем кнопку "Все меню" когда в конкретной категории
-        showBackToAllMenuButton();
         
         const offset = 100;
         const bodyRect = document.body.getBoundingClientRect().top;
@@ -602,10 +529,6 @@ function initMobileMenu() {
     
     // Логическая группировка категорий пиццерии
     const menuGroups = [
-        {
-            title: '📋 МЕНЮ',
-            categories: ['all-menu'] // Все товары одной лентой
-        },
         {
             title: '🍕 ПИЦЦА',
             categories: ['pizza-30cm', 'piccolo-20cm', 'calzone']
@@ -799,12 +722,8 @@ window.addEventListener('beforeunload', saveState);
 function renderContentWithLazyLoad() {
     const content = document.getElementById('content');
     
-    // Используем тот же порядок, что и в сайдбаре (с all-menu)
+    // Используем тот же порядок, что и в сайдбаре
     const menuGroups = [
-        {
-            title: '📋 МЕНЮ',
-            categories: ['all-menu'] // Все товары одной лентой
-        },
         {
             title: '🍕 ПИЦЦА',
             categories: ['pizza-30cm', 'piccolo-20cm', 'calzone']
@@ -859,7 +778,7 @@ function renderContentWithLazyLoad() {
     const orderedCategories = [];
     menuGroups.forEach(group => {
         group.categories.forEach(cat => {
-            if (cat === 'contacts' || cat === 'all-menu' || menu.some(item => item.category === cat)) {
+            if (cat === 'contacts' || menu.some(item => item.category === cat)) {
                 orderedCategories.push(cat);
             }
         });
@@ -869,20 +788,13 @@ function renderContentWithLazyLoad() {
     
     // Рендерим все категории с display:none кроме первой
     content.innerHTML = orderedCategories.map((cat, index) => {
-        let productsInCategory = [];
-        
-        // Специальная обработка для "all-menu" - все товары одной лентой
-        if (cat === 'all-menu') {
-            productsInCategory = menu; // Все товары подряд
-        } else {
-            productsInCategory = menu.filter(item => {
-                return item.category === cat;
-            });
-        }
+        const productsInCategory = menu.filter(item => {
+            return item.category === cat;
+        });
         
         console.log(`Category ${cat}: ${productsInCategory.length} products`);
         
-        const displayName = cat === 'all-menu' ? '📋 Общее меню' : (categoryMap[cat] || cat);
+        const displayName = categoryMap[cat] || cat;
         const isActive = index === 0 ? '' : 'display: none;';
         
         // Для контактов - специальный рендеринг (лента карточек)
