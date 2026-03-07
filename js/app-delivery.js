@@ -1113,34 +1113,52 @@ function showProductModal(productId) {
     const modalElement = document.getElementById('product-modal');
     const contentDiv = document.getElementById('product-modal-content');
     
-    // Формируем расширенную карточку
+    // Формируем расширенную карточку с горизонтальной компоновкой
     contentDiv.innerHTML = `
-        <div style="max-width: 600px; margin: 0 auto;">
-            <div style="position: relative; width: 100%; height: 400px; margin-bottom: 24px; border-radius: 20px; overflow: hidden; background: var(--color-bg-card-hover);">
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px; max-width: 900px; margin: 0 auto;">
+            <!-- Левая колонка - Картинка -->
+            <div style="position: relative; width: 100%; height: 500px; border-radius: 20px; overflow: hidden; background: var(--color-bg-card-hover);">
                 <img src="${product.image}" alt="${product.title}" style="width: 100%; height: 100%; object-fit: cover;">
                 <button onclick="closeProductModal()" style="position: absolute; top: 16px; right: 16px; background: rgba(0,0,0,0.7); border: none; border-radius: 50%; width: 40px; height: 40px; cursor: pointer; display: flex; align-items: center; justify-content: center; color: white; font-size: 20px; backdrop-filter: blur(10px); z-index: 10;">✕</button>
             </div>
             
-            <h2 style="font-size: 28px; font-weight: 800; color: var(--color-text-heading); margin-bottom: 16px;">${product.title}</h2>
-            
-            ${product.description ? `<p style="font-size: 16px; line-height: 1.6; color: var(--color-text-secondary); margin-bottom: 24px;">${product.description}</p>` : ''}
-            
-            <div style="display: flex; justify-content: space-between; align-items: center; padding: 20px; background: var(--color-bg-card); border-radius: 16px; margin-bottom: 24px;">
-                <div>
-                    <div style="font-size: 14px; color: var(--color-text-secondary); margin-bottom: 4px;">Цена</div>
-                    <div style="font-size: 32px; font-weight: 800; color: var(--color-primary);">${product.price} ₽</div>
+            <!-- Правая колонка - Информация -->
+            <div style="display: flex; flex-direction: column; justify-content: center;">
+                <h2 style="font-size: 32px; font-weight: 800; color: var(--color-text-heading); margin-bottom: 20px; line-height: 1.2;">${product.title}</h2>
+                
+                ${product.description ? `<p style="font-size: 16px; line-height: 1.6; color: var(--color-text-secondary); margin-bottom: 24px;">${product.description}</p>` : ''}
+                
+                <div style="display: flex; gap: 20px; margin-bottom: 30px;">
+                    <div style="flex: 1; padding: 20px; background: var(--color-bg-card); border-radius: 16px;">
+                        <div style="font-size: 14px; color: var(--color-text-secondary); margin-bottom: 8px;">Цена</div>
+                        <div style="font-size: 36px; font-weight: 800; color: var(--color-primary);">${product.price} ₽</div>
+                    </div>
+                    ${product.weight ? `
+                    <div style="flex: 1; padding: 20px; background: var(--color-bg-card); border-radius: 16px;">
+                        <div style="font-size: 14px; color: var(--color-text-secondary); margin-bottom: 8px;">Вес</div>
+                        <div style="font-size: 24px; font-weight: 700; color: var(--color-text-heading);">${product.weight} г</div>
+                    </div>
+                    ` : ''}
                 </div>
-                ${product.weight ? `
-                <div style="text-align: right;">
-                    <div style="font-size: 14px; color: var(--color-text-secondary); margin-bottom: 4px;">Вес</div>
-                    <div style="font-size: 18px; font-weight: 700; color: var(--color-text-heading);">${product.weight} г</div>
+                
+                <!-- Дополнения (если есть) -->
+                ${product.addons ? `
+                <div style="margin-bottom: 30px;">
+                    <h3 style="font-size: 18px; font-weight: 700; color: var(--color-text-heading); margin-bottom: 12px;">Дополнения:</h3>
+                    <div style="display: flex; flex-wrap: wrap; gap: 8px;">
+                        ${product.addons.map(addon => `
+                            <span style="padding: 8px 16px; background: var(--color-bg-card-hover); border-radius: 20px; font-size: 14px; color: var(--color-text-secondary);">
+                                ${addon}
+                            </span>
+                        `).join('')}
+                    </div>
                 </div>
                 ` : ''}
+                
+                <button onclick="addToCart(${product.id}); closeProductModal();" style="width: 100%; padding: 20px; background: var(--gradient-primary); color: white; border: none; border-radius: 16px; font-weight: 700; font-size: 18px; cursor: pointer; box-shadow: var(--shadow-glow); transition: all 0.3s;" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 8px 25px rgba(255, 46, 85, 0.45)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='var(--shadow-glow)';">
+                    Добавить в корзину • ${product.price} ₽
+                </button>
             </div>
-            
-            <button onclick="addToCart(${product.id}); closeProductModal();" style="width: 100%; padding: 18px; background: var(--gradient-primary); color: white; border: none; border-radius: 16px; font-weight: 700; font-size: 18px; cursor: pointer; box-shadow: var(--shadow-glow); transition: all 0.3s;" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 8px 25px rgba(255, 46, 85, 0.45)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='var(--shadow-glow)';">
-                Добавить в корзину • ${product.price} ₽
-            </button>
         </div>
     `;
     
@@ -1181,12 +1199,26 @@ function createProductModal() {
         background: var(--color-bg-card);
         border-radius: 24px;
         padding: 40px;
-        max-width: 600px;
+        max-width: 900px;
         width: 100%;
         max-height: 90vh;
         overflow-y: auto;
         box-shadow: 0 20px 60px rgba(0,0,0,0.5);
     `;
+    
+    // Добавляем медиа-запрос для мобильных
+    const style = document.createElement('style');
+    style.textContent = `
+        @media (max-width: 768px) {
+            #product-modal-content > div {
+                grid-template-columns: 1fr !important;
+            }
+            #product-modal-content img {
+                height: 300px !important;
+            }
+        }
+    `;
+    modalContent.appendChild(style);
     
     modal.appendChild(modalContent);
     document.body.appendChild(modal);
