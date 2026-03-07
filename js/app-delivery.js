@@ -86,6 +86,8 @@ function initSidebar() {
             </div>
         `;
     }).join('');
+    
+    console.log('Sidebar initialized with', categories.length, 'categories');
 }
 
 function renderContent() {
@@ -187,19 +189,26 @@ function setupIntersectionObserver() {
 }
 
 function setActiveNav(categoryId) {
-    document.querySelectorAll('.nav-category').forEach(nav => {
+    console.log('Setting active nav:', categoryId);
+    const navs = document.querySelectorAll('.nav-category');
+    console.log('Found nav items:', navs.length);
+    
+    navs.forEach(nav => {
         nav.classList.remove('active');
         if (nav.dataset.category === categoryId) {
             nav.classList.add('active');
+            console.log('Activated nav for:', categoryId);
         }
     });
 }
 
 function scrollToCategory(categoryId) {
+    console.log('Scrolling to category:', categoryId);
     const element = document.getElementById(`category-${categoryId}`);
     if (element) {
         // Активируем навигацию сразу при клике
         setActiveNav(categoryId);
+        console.log('Navigation activated for:', categoryId);
         
         const offset = 100;
         const bodyRect = document.body.getBoundingClientRect().top;
@@ -211,6 +220,8 @@ function scrollToCategory(categoryId) {
             top: offsetPosition,
             behavior: 'smooth'
         });
+    } else {
+        console.error('Category element not found:', categoryId);
     }
 }
 
