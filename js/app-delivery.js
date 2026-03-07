@@ -36,12 +36,9 @@ async function loadMenu() {
         renderContent();
         setupSearch();
         
-        // Активируем первую категорию при загрузке
-        const firstCategory = getUniqueCategories()[0];
-        if (firstCategory) {
-            setActiveNav(firstCategory);
-            console.log('First category activated:', firstCategory);
-        }
+        // Активируем первую категорию (Пицца 30 см)
+        setActiveNav('pizza-30cm');
+        console.log('First category activated: pizza-30cm');
     } catch (error) {
         console.error('Error loading menu:', error);
     }
@@ -61,7 +58,35 @@ function initSidebar() {
     const sidebar = document.getElementById('sidebar');
     const categories = getUniqueCategories();
     
-    // Map Russian names to English keys
+    // Логическая группировка категорий пиццерии
+    const menuGroups = [
+        {
+            title: '🍕 ПИЦЦА',
+            categories: ['pizza-30cm', 'piccolo-20cm', 'calzone']
+        },
+        {
+            title: '🥗 ЗАКУСКИ',
+            categories: ['bread-focaccia', 'sauce', 'rolls']
+        },
+        {
+            title: '🍱 КОМБО НАБОРЫ',
+            categories: ['combo']
+        },
+        {
+            title: '🍰 ДЕССЕРТЫ',
+            categories: ['confectionery']
+        },
+        {
+            title: '🥤 НАПИТКИ',
+            categories: ['beverages']
+        },
+        {
+            title: 'ℹ️ ИНФОРМАЦИЯ',
+            categories: ['frozen', 'aromatic-oils', 'masterclass', 'franchise']
+        }
+    ];
+    
+    // Карта русских названий
     const categoryMap = {
         'pizza-30cm': 'Пицца 30 см',
         'piccolo-20cm': 'Pizza Piccolo 20 см',
@@ -78,31 +103,68 @@ function initSidebar() {
         'franchise': 'Франшиза'
     };
     
-    sidebar.innerHTML = categories.map(cat => {
-        const count = menu.filter(item => {
-            return item.category === cat;
-        }).length;
+    // Рендерим сгруппированное меню
+    let html = '';
+    menuGroups.forEach(group => {
+        // Добавляем заголовок группы
+        html += `<div style="padding: 16px 20px 8px; font-size: 13px; font-weight: 700; color: #ff2e55; text-transform: uppercase; letter-spacing: 0.5px;">${group.title}</div>`;
         
-        const displayName = categoryMap[cat] || cat;
+        // Добавляем категории группы
+        group.categories.forEach(cat => {
+            if (categories.includes(cat)) {
+                const count = menu.filter(item => item.category === cat).length;
+                const displayName = categoryMap[cat] || cat;
+                
+                html += `
+                    <div class="nav-category" data-category="${cat}" onclick="scrollToCategory('${cat}')">
+                        <span>${displayName}</span>
+                        <span class="nav-count">${count}</span>
+                    </div>
+                `;
+            }
+        });
         
-        return `
-            <div class="nav-category" data-category="${cat}" onclick="scrollToCategory('${cat}')">
-                <span>${displayName}</span>
-                <span class="nav-count">${count}</span>
-            </div>
-        `;
-    }).join('');
+        // Добавляем разделитель между группами
+        html += `<div style="height: 1px; background: #e5e5ea; margin: 12px 20px;"></div>`;
+    });
     
-    console.log('Sidebar initialized with', categories.length, 'categories');
+    sidebar.innerHTML = html;
+    
+    console.log('Sidebar initialized with grouped menu');
 }
 
 function renderContent() {
     const content = document.getElementById('content');
-    const categories = getUniqueCategories();
     
-    console.log('Rendering categories:', categories.length);
+    // Используем тот же порядок, что и в сайдбаре
+    const menuGroups = [
+        {
+            title: '🍕 ПИЦЦА',
+            categories: ['pizza-30cm', 'piccolo-20cm', 'calzone']
+        },
+        {
+            title: '🥗 ЗАКУСКИ',
+            categories: ['bread-focaccia', 'sauce', 'rolls']
+        },
+        {
+            title: '🍱 КОМБО НАБОРЫ',
+            categories: ['combo']
+        },
+        {
+            title: '🍰 ДЕССЕРТЫ',
+            categories: ['confectionery']
+        },
+        {
+            title: '🥤 НАПИТКИ',
+            categories: ['beverages']
+        },
+        {
+            title: 'ℹ️ ИНФОРМАЦИЯ',
+            categories: ['frozen', 'aromatic-oils', 'masterclass', 'franchise']
+        }
+    ];
     
-    // Map Russian names to English keys
+    // Карта русских названий
     const categoryMap = {
         'pizza-30cm': 'Пицца 30 см',
         'piccolo-20cm': 'Pizza Piccolo 20 см',
@@ -119,8 +181,20 @@ function renderContent() {
         'franchise': 'Франшиза'
     };
     
+    // Собираем все категории в правильном порядке
+    const orderedCategories = [];
+    menuGroups.forEach(group => {
+        group.categories.forEach(cat => {
+            if (menu.some(item => item.category === cat)) {
+                orderedCategories.push(cat);
+            }
+        });
+    });
+    
+    console.log('Rendering categories in order:', orderedCategories.length);
+    
     // Рендерим все категории с display:none кроме первой
-    content.innerHTML = categories.map((cat, index) => {
+    content.innerHTML = orderedCategories.map((cat, index) => {
         const productsInCategory = menu.filter(item => {
             return item.category === cat;
         });
