@@ -425,6 +425,11 @@ function scrollToCategory(categoryId) {
         element.style.display = '';
         console.log('Category displayed:', categoryId);
         
+        // СБРОС ПЕРЕМЕННЫХ НАВИГАЦИИ ПРИ ПЕРЕКЛЮЧЕНИИ КАТЕГОРИИ
+        scrollAttemptCount = 0;
+        reachedEndTimestamp = null;
+        autoNavigateEnabled = true;
+        
         const offset = 100;
         const bodyRect = document.body.getBoundingClientRect().top;
         const elementRect = element.getBoundingClientRect().top;
