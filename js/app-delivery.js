@@ -18,12 +18,18 @@ async function loadMenu() {
             ...(data.menu['pizza-30cm'] || []),
             ...(data.menu['piccolo-20cm'] || []),
             ...(data.menu['calzone'] || []),
-            ...(data.menu['bread-focaccia'] || []),
+            ...(data.menu['bread-focaccia-bread'] || []),
+            ...(data.menu['bread-focaccia-focaccia'] || []),
             ...(data.menu['sauce'] || []),
-            ...(data.menu['rolls'] || []),
+            ...(data.menu['rolls-sushi'] || []),
+            ...(data.menu['rolls-rolls'] || []),
             ...(data.menu['combo'] || []),
             ...(data.menu['confectionery'] || []),
-            ...(data.menu['beverages'] || []),
+            ...(data.menu['mors'] || []),
+            ...(data.menu['juice'] || []),
+            ...(data.menu['water'] || []),
+            ...(data.menu['soda'] || []),
+            ...(data.menu['beverages-other'] || []),
             ...(data.menu['frozen'] || []),
             ...(data.menu['aromatic-oils'] || []),
             ...(data.menu['masterclass'] || []),
@@ -70,8 +76,8 @@ function initSidebar() {
             categories: ['rolls-sushi', 'rolls-rolls']
         },
         {
-            title: '🍞 ХЛЕБ',
-            categories: ['bread-focaccia']
+            title: '🍞 ХЛЕБ И ФОКАЧЧА',
+            categories: ['bread-focaccia-bread', 'bread-focaccia-focaccia']
         },
         {
             title: '🍱 НАБОРЫ',
@@ -100,7 +106,8 @@ function initSidebar() {
         'pizza-30cm': 'Пицца 30 см',
         'piccolo-20cm': 'Pizza Piccolo 20 см',
         'calzone': 'Кальцоне',
-        'bread-focaccia': 'Хлеб и Фокачча',
+        'bread-focaccia-bread': 'Хлеб',
+        'bread-focaccia-focaccia': 'Фокачча',
         'sauce': 'Соусы',
         'rolls-sushi': 'Суши',
         'rolls-rolls': 'Роллы',
@@ -160,7 +167,7 @@ function renderContent() {
         },
         {
             title: '🥗 ЗАКУСКИ',
-            categories: ['bread-focaccia', 'sauce', 'rolls']
+            categories: ['bread-focaccia-bread', 'bread-focaccia-focaccia', 'sauce', 'rolls-sushi', 'rolls-rolls']
         },
         {
             title: '🍱 КОМБО НАБОРЫ',
@@ -172,7 +179,7 @@ function renderContent() {
         },
         {
             title: '🥤 НАПИТКИ',
-            categories: ['beverages']
+            categories: ['mors', 'juice', 'water', 'soda', 'beverages-other']
         },
         {
             title: 'ℹ️ ИНФОРМАЦИЯ',
@@ -185,7 +192,8 @@ function renderContent() {
         'pizza-30cm': 'Пицца 30 см',
         'piccolo-20cm': 'Pizza Piccolo 20 см',
         'calzone': 'Кальцоне',
-        'bread-focaccia': 'Хлеб и Фокачча',
+        'bread-focaccia-bread': 'Хлеб',
+        'bread-focaccia-focaccia': 'Фокачча',
         'sauce': 'Соусы',
         'rolls-sushi': 'Суши',
         'rolls-rolls': 'Роллы',
@@ -528,8 +536,8 @@ function initMobileMenu() {
             categories: ['rolls-sushi', 'rolls-rolls']
         },
         {
-            title: '🍞 ХЛЕБ',
-            categories: ['bread-focaccia']
+            title: '🍞 ХЛЕБ И ФОКАЧЧА',
+            categories: ['bread-focaccia-bread', 'bread-focaccia-focaccia']
         },
         {
             title: '🍱 НАБОРЫ',
@@ -558,7 +566,8 @@ function initMobileMenu() {
         'pizza-30cm': 'Пицца 30 см',
         'piccolo-20cm': 'Pizza Piccolo 20 см',
         'calzone': 'Кальцоне',
-        'bread-focaccia': 'Хлеб и Фокачча',
+        'bread-focaccia-bread': 'Хлеб',
+        'bread-focaccia-focaccia': 'Фокачча',
         'sauce': 'Соусы',
         'rolls-sushi': 'Суши',
         'rolls-rolls': 'Роллы',

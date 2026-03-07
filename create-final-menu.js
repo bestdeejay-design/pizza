@@ -47,6 +47,13 @@ function getBeverageType(title) {
     return 'beverages'; // по умолчанию
 }
 
+function getBreadType(title) {
+    const titleLower = title.toLowerCase();
+    if (titleLower.includes('фокачча')) return 'focaccia';
+    if (titleLower.includes('хлеб') || titleLower.includes('хлебушк')) return 'bread';
+    return 'bread'; // по умолчанию
+}
+
 // Обрабатываем каждую категорию
 Object.entries(menuData.menu).forEach(([category, products]) => {
     if (!Array.isArray(products)) return;
@@ -111,6 +118,32 @@ Object.entries(menuData.menu).forEach(([category, products]) => {
             }
         });
         
+    } else if (category === 'bread-focaccia') {
+        // Разделяем Хлеб и Фокачча на подкатегории
+        const subcategories = {
+            bread: [],
+            focaccia: []
+        };
+        
+        products.forEach((product, index) => {
+            const type = getBreadType(product.title);
+            subcategories[type].push({
+                ...product,
+                category: `${category}-${type}`,
+                id: product.id || (index + 1)
+            });
+        });
+        
+        // Добавляем в новое меню
+        Object.entries(subcategories).forEach(([type, items]) => {
+            if (items.length > 0) {
+                const newCategory = `${category}-${type}`;
+                newMenu.menu[newCategory] = items;
+                newMenu.statistics[newCategory] = items.length;
+                console.log(`   ✅ ${newCategory}: ${items.length} товаров`);
+            }
+        });
+        
     } else {
         // Остальные категории оставляем как есть
         newMenu.menu[category] = products.map((product, index) => ({
@@ -127,7 +160,8 @@ const categoryDescriptions = {
     'pizza-30cm': 'Классическая неаполитанская пицца диаметром 30 см',
     'piccolo-20cm': 'Мини пицца диаметром 20 см',
     'calzone': 'Закрытая пицца с различными начинками',
-    'bread-focaccia': 'Неаполитанский хлеб и итальянская фокачча',
+    'bread-focaccia-bread': 'Неаполитанский хлеб различных видов',
+    'bread-focaccia-focaccia': 'Итальянская фокачча с разными начинками',
     'sauce': 'Соусы для подачи с бортиками пиццы',
     'sushi': 'Традиционные японские суши и сашими',
     'rolls': 'Классические и авторские роллы',
@@ -153,7 +187,8 @@ Object.entries(newMenu.statistics).forEach(([id, count]) => {
         'pizza-30cm': 'Пицца 30 см',
         'piccolo-20cm': 'Pizza Piccolo 20 см',
         'calzone': 'Кальцоне',
-        'bread-focaccia': 'Хлеб и Фокачча',
+        'bread-focaccia-bread': 'Хлеб',
+        'bread-focaccia-focaccia': 'Фокачча',
         'sauce': 'Соус к корочкам',
         'sushi': 'Суши',
         'rolls': 'Роллы',

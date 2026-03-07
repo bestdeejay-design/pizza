@@ -5,13 +5,14 @@
     "collectedAt": "2026-03-05T21:56:19.251Z",
     "totalProducts": 333,
     "description": "Финальное меню с разделением по типам товаров",
-    "processedAt": "2026-03-07T15:57:47.028Z"
+    "processedAt": "2026-03-07T16:01:52.929Z"
   },
   "statistics": {
     "pizza-30cm": 49,
     "piccolo-20cm": 39,
     "calzone": 69,
-    "bread-focaccia": 44,
+    "bread-focaccia-bread": 38,
+    "bread-focaccia-focaccia": 6,
     "sauce": 11,
     "rolls-sushi": 23,
     "rolls-rolls": 32,
@@ -118,16 +119,22 @@
       "description": "Соусы для подачи с бортиками пиццы"
     },
     {
+      "id": "bread-focaccia-focaccia",
+      "name": "Фокачча",
+      "count": 6,
+      "description": "Итальянская фокачча с разными начинками"
+    },
+    {
       "id": "franchise",
       "name": "Франшиза",
       "count": 3,
       "description": "Информация о франшизе"
     },
     {
-      "id": "bread-focaccia",
-      "name": "Хлеб и Фокачча",
-      "count": 44,
-      "description": "Неаполитанский хлеб и итальянская фокачча"
+      "id": "bread-focaccia-bread",
+      "name": "Хлеб",
+      "count": 38,
+      "description": "Неаполитанский хлеб различных видов"
     }
   ],
   "menu": {
@@ -1236,312 +1243,314 @@
         "category": "calzone"
       }
     ],
-    "bread-focaccia": [
+    "bread-focaccia-bread": [
       {
         "title": "Набор классических хлебушков",
         "price": 250,
-        "category": "bread-focaccia",
+        "category": "bread-focaccia-bread",
         "image": "img/0084-d30036f5844615f953e278f10cd8108b.jpg",
         "id": 167
       },
       {
         "title": "Набор сладких хлебушков",
         "price": 350,
-        "category": "bread-focaccia",
+        "category": "bread-focaccia-bread",
         "image": "img/0085-5aae14e5fe8c7e39f6fe22a6ce70b584.jpg",
         "id": 168
       },
       {
         "title": "Набор сырных хлебушков",
         "price": 350,
-        "category": "bread-focaccia",
+        "category": "bread-focaccia-bread",
         "image": "img/0086-ca3c0ae12e7f9201853b0707931319a0.jpg",
         "id": 169
       },
       {
         "title": "Набор мясных хлебушков",
         "price": 350,
-        "category": "bread-focaccia",
+        "category": "bread-focaccia-bread",
         "image": "img/0087-2cf70b52cc264869945d4d4c4a15994b.jpg",
         "id": 170
       },
       {
         "title": "Набор итальянских хлебушков",
         "price": 350,
-        "category": "bread-focaccia",
+        "category": "bread-focaccia-bread",
         "image": "img/0088-cb9bbab6403053a4896a47562dc16824.jpg",
         "id": 171
       },
       {
         "title": "Набор вегетарианских хлебушков",
         "price": 350,
-        "category": "bread-focaccia",
+        "category": "bread-focaccia-bread",
         "image": "img/0089-99240fa6c0b05e819cd0d290c552ba86.jpg",
         "id": 173
       },
       {
         "title": "Набор Итальяно хлебушков",
         "price": 350,
-        "category": "bread-focaccia",
+        "category": "bread-focaccia-bread",
         "image": "img/0090-a7964b12e7b1773a8b739819418ee81a.jpg",
         "id": 174
       },
       {
         "title": "Набор мясо/сыр хлебушков",
         "price": 350,
-        "category": "bread-focaccia",
+        "category": "bread-focaccia-bread",
         "image": "img/0091-120c7ddbf1c515e3c84c36e06a651698.jpg",
         "id": 175
       },
       {
         "title": "Неаполитанский хлеб Классический",
         "price": 100,
-        "category": "bread-focaccia",
+        "category": "bread-focaccia-bread",
         "image": "img/0092-c00c7078bc0b82dceb29e0a9bdbc587e.jpg",
         "id": 176
       },
       {
         "title": "Неаполитанский ржаной хлебушек",
         "price": 100,
-        "category": "bread-focaccia",
+        "category": "bread-focaccia-bread",
         "image": "img/0093-7b87511971a74c9e8607116af74a83a9.jpg",
         "id": 177
       },
       {
         "title": "Неаполитанский томатный хлеб",
         "price": 100,
-        "category": "bread-focaccia",
+        "category": "bread-focaccia-bread",
         "image": "img/0094-b18f0d18c5998fa832cf24439510654b.jpg",
         "id": 178
       },
       {
         "title": "Неаполитанский хлеб с семечками подсолнуха",
         "price": 110,
-        "category": "bread-focaccia",
+        "category": "bread-focaccia-bread",
         "image": "img/0095-92866f0b7cd43e95ec7ae8539fb6bd9e.jpg",
         "id": 179
       },
       {
         "title": "Неаполитанский хлеб с тыквенными семечками",
         "price": 110,
-        "category": "bread-focaccia",
+        "category": "bread-focaccia-bread",
         "image": "img/0096-cb600cbae2cd92a2e0ffd9a48e7997f3.jpg",
         "id": 180
       },
       {
         "title": "Неаполитанский хлеб с фисташками",
         "price": 110,
-        "category": "bread-focaccia",
+        "category": "bread-focaccia-bread",
         "image": "img/0097-cffb1b986a86885b5d1687027c231c3a.jpg",
         "id": 181
       },
       {
         "title": "Неаполитанский хлеб с кунжутом",
         "price": 110,
-        "category": "bread-focaccia",
+        "category": "bread-focaccia-bread",
         "image": "img/0098-2a0ce427a64ebcce01bbbdcf5b2facb9.jpg",
         "id": 182
       },
       {
         "title": "Неаполитанский хлеб с розмарином",
         "price": 110,
-        "category": "bread-focaccia",
+        "category": "bread-focaccia-bread",
         "image": "img/0099-2821dcf7585703eba239e716d697a9b8.jpg",
         "id": 183
       },
       {
         "title": "Неаполитанский хлеб с тимьяном",
         "price": 110,
-        "category": "bread-focaccia",
+        "category": "bread-focaccia-bread",
         "image": "img/0100-7f5c6a18edf89f8b6da6b90c1712cef0.jpg",
         "id": 184
       },
       {
         "title": "Неаполитанский хлеб с сыром Моцарелла",
         "price": 110,
-        "category": "bread-focaccia",
+        "category": "bread-focaccia-bread",
         "image": "img/0101-73bb42cc401399cb2e47aea0c0f29121.jpg",
         "id": 185
       },
       {
         "title": "Неаполитанский хлеб с сыром Бри",
         "price": 110,
-        "category": "bread-focaccia",
+        "category": "bread-focaccia-bread",
         "image": "img/0102-da8ac45eff0c5a846cbfa588d7d36f41.jpg",
         "id": 186
       },
       {
         "title": "Неаполитанский хлеб с сыром Чеддер",
         "price": 110,
-        "category": "bread-focaccia",
+        "category": "bread-focaccia-bread",
         "image": "img/0103-2590ab502e9ca73c5f2ff5d55436f82a.jpg",
         "id": 187
       },
       {
         "title": "Неаполитанский хлеб с сыром Пармезан",
         "price": 110,
-        "category": "bread-focaccia",
+        "category": "bread-focaccia-bread",
         "image": "img/0104-0594dc336be0d1656b7addadd35c96ae.jpg",
         "id": 188
       },
       {
         "title": "Неаполитанский хлеб с сыром Горгонзола",
         "price": 110,
-        "category": "bread-focaccia",
+        "category": "bread-focaccia-bread",
         "image": "img/0105-c83cfe35a5181d74844998032b2c1555.jpg",
         "id": 189
       },
       {
         "title": "Неаполитанский хлеб с лисичками",
         "price": 110,
-        "category": "bread-focaccia",
+        "category": "bread-focaccia-bread",
         "image": "img/0106-f9c4ea4af9799a4253a539eedea90fc7.jpg",
         "id": 190
       },
       {
         "title": "Неаполитанский хлеб с шампиньонами",
         "price": 110,
-        "category": "bread-focaccia",
+        "category": "bread-focaccia-bread",
         "image": "img/0107-7a40cd9b0f0c4dd5fb1e14455a7000f1.jpg",
         "id": 191
       },
       {
         "title": "Неаполитанский хлеб с маслинами",
         "price": 110,
-        "category": "bread-focaccia",
+        "category": "bread-focaccia-bread",
         "image": "img/0108-6758d5408b7b48464b8317235407256c.jpg",
         "id": 192
       },
       {
         "title": "Неаполитанский хлеб с вялеными помидорами",
         "price": 110,
-        "category": "bread-focaccia",
+        "category": "bread-focaccia-bread",
         "image": "img/0109-589b8a8b2ae031045e631c47f556468b.jpg",
         "id": 193
       },
       {
         "title": "Неаполитанский хлеб с артишоками",
         "price": 110,
-        "category": "bread-focaccia",
+        "category": "bread-focaccia-bread",
         "image": "img/0110-39460f03a7f36cfc392e0b267216edcc.jpg",
         "id": 194
       },
       {
         "title": "Неаполитанский хлеб с каперсами",
         "price": 110,
-        "category": "bread-focaccia",
+        "category": "bread-focaccia-bread",
         "image": "img/0111-16ba1dc9a0ed1ff339082613bedfb2c9.jpg",
         "id": 195
       },
       {
         "title": "Неаполитанский хлеб с Халапеньо",
         "price": 110,
-        "category": "bread-focaccia",
+        "category": "bread-focaccia-bread",
         "image": "img/0112-d3c7e2b4c7820c6d6988f502a8f1beff.jpg",
         "id": 196
       },
       {
         "title": "Неаполитанский хлеб с охотничьими колбасками",
         "price": 110,
-        "category": "bread-focaccia",
+        "category": "bread-focaccia-bread",
         "image": "img/0113-5cbcff5aea4e4df9fce4cce2fc2f2a43.jpg",
         "id": 197
       },
       {
         "title": "Неаполитанский хлеб с беконом",
         "price": 110,
-        "category": "bread-focaccia",
+        "category": "bread-focaccia-bread",
         "image": "img/0114-4d0874db9d6c8e90b7e774bf9a06dcdf.jpg",
         "id": 198
       },
       {
         "title": "Неаполитанский хлеб с ветчиной",
         "price": 110,
-        "category": "bread-focaccia",
+        "category": "bread-focaccia-bread",
         "image": "img/0115-cfec41931fbfe2744e749e0aacb4ea26.jpg",
         "id": 199
       },
       {
         "title": "Неаполитанский хлеб с пепперони",
         "price": 110,
-        "category": "bread-focaccia",
+        "category": "bread-focaccia-bread",
         "image": "img/0116-bb48e89a7f8c2a70f46388e1d184ee80.jpg",
         "id": 200
       },
       {
         "title": "Неаполитанский хлеб с грушей",
         "price": 110,
-        "category": "bread-focaccia",
+        "category": "bread-focaccia-bread",
         "image": "img/0117-6b641b1575d49bd93d9a28ecc2b48459.jpg",
         "id": 201
       },
       {
         "title": "Неаполитанский хлеб с бананом",
         "price": 110,
-        "category": "bread-focaccia",
+        "category": "bread-focaccia-bread",
         "image": "img/0118-3064d4e96b395362548fb4b8f24400be.jpg",
         "id": 202
       },
       {
         "title": "Неаполитанский хлеб с темным шоколадом",
         "price": 110,
-        "category": "bread-focaccia",
+        "category": "bread-focaccia-bread",
         "image": "img/0119-5a8f7a09e72bd89b858f829e6e8c8550.jpg",
         "id": 203
       },
       {
         "title": "Неаполитанский хлеб с яблоками, изюмом и корицей",
         "price": 110,
-        "category": "bread-focaccia",
+        "category": "bread-focaccia-bread",
         "image": "img/0120-71c172fd38fdf225d16963c7dc0ddcbf.jpg",
         "id": 204
       },
       {
         "title": "Неаполитанский хлебушек с маком",
         "price": 110,
-        "category": "bread-focaccia",
+        "category": "bread-focaccia-bread",
         "image": "img/0121-5db2ef34a8d64028fe51aae44d5fe596.jpg",
         "id": 205
-      },
+      }
+    ],
+    "bread-focaccia-focaccia": [
       {
         "title": "Фокачча с оливковым маслом",
         "price": 100,
-        "category": "bread-focaccia",
+        "category": "bread-focaccia-focaccia",
         "image": "img/0122-4dbb8d83355dd6f919a812378fd79699.jpg",
         "id": 161
       },
       {
         "title": "Фокачча с чесноком",
         "price": 100,
-        "category": "bread-focaccia",
+        "category": "bread-focaccia-focaccia",
         "image": "img/0123-66e417cba82383e922440ddbdfef71e9.jpg",
         "id": 162
       },
       {
         "title": "Фокачча с розмарином",
         "price": 100,
-        "category": "bread-focaccia",
+        "category": "bread-focaccia-focaccia",
         "image": "img/0124-3f7bb7c67125804a84d06075fa0a999c.jpg",
         "id": 163
       },
       {
         "title": "Фокачча с тимьяном",
         "price": 100,
-        "category": "bread-focaccia",
+        "category": "bread-focaccia-focaccia",
         "image": "img/0125-8babbfaa39d161b88a3f19f162bc7d85.jpg",
         "id": 164
       },
       {
         "title": "Фокачча красная",
         "price": 200,
-        "category": "bread-focaccia",
+        "category": "bread-focaccia-focaccia",
         "image": "img/0126-1147f80fdfc2072e419e6ad3c4f5c53c.jpg",
         "id": 165
       },
       {
         "title": "Фокачча зеленая",
         "price": 200,
-        "category": "bread-focaccia",
+        "category": "bread-focaccia-focaccia",
         "image": "img/0127-37ab02a70e241e9f93d6b5e031e71c0b.jpg",
         "id": 166
       }
