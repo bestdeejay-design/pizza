@@ -206,8 +206,7 @@ body {
     transition: transform 0.3s, box-shadow 0.3s;
     display: flex;
     flex-direction: column;
-    height: 100%; /* Фиксированная высота для всех карточек */
-    position: relative; /* Для абсолютного позиционирования кнопки и цены */
+    height: 100%;
 }
 
 .product-card:hover {
@@ -224,7 +223,6 @@ body {
 
 .product-info {
     padding: 20px;
-    padding-bottom: 70px; /* Отступ для блока цена+кнопка */
     display: flex;
     flex-direction: column;
     flex: 1;
@@ -252,13 +250,7 @@ body {
 }
 
 .product-actions {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    padding: 20px;
-    background: white;
-    border-top: 1px solid #f0f0f0;
+    margin-top: auto; /* Прижимает цену и кнопку к низу карточки */
 }
 
 .product-price {
@@ -266,6 +258,7 @@ body {
     font-weight: 700;
     color: #2a582c;
     margin-bottom: 10px;
+    display: block;
 }
 
 .add-to-cart {
@@ -278,6 +271,7 @@ body {
     cursor: pointer;
     font-weight: 600;
     transition: background 0.3s;
+    display: block;
 }
 
 .add-to-cart:hover {
@@ -395,18 +389,20 @@ body {
         min-height: 36px; /* Адаптировано для мобильных */
     }
     
+    .product-actions {
+        margin-top: auto; /* Прижимает цену и кнопку к низу на мобильных */
+    }
+    
     .product-price {
         font-size: 16px;
         font-weight: 700;
-        margin-top: auto; /* Прижимает цену к низу на мобильных */
-        margin-bottom: 8px; /* Фиксированный отступ до кнопки */
+        margin-bottom: 8px;
     }
     
     .add-btn {
         padding: 6px 12px;
         font-size: 16px;
         min-width: 32px;
-        margin-top: 0; /* Кнопка всегда в конце */
     }
 }
 
