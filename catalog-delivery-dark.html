@@ -104,8 +104,9 @@
 
         .header-actions {
             display: flex;
-            gap: 16px;
+            gap: 12px;
             align-items: center;
+            flex-wrap: nowrap;
         }
 
         .search-mini {
@@ -149,7 +150,7 @@
             background: var(--color-bg-card);
             border: 1px solid var(--border-subtle);
             border-radius: 40px;
-            padding: 10px 20px;
+            padding: 10px 16px;
             cursor: pointer;
             color: var(--color-text-primary);
             font-weight: 600;
@@ -159,6 +160,8 @@
             box-shadow: var(--shadow-card);
             transition: 0.3s;
             font-size: 14px;
+            white-space: nowrap;
+            flex-shrink: 0;
         }
 
         .theme-toggle:hover {
@@ -425,9 +428,32 @@
         }
 
         .mobile-sidebar-header {
-            margin-bottom: 30px;
+            margin-bottom: 20px;
             padding-bottom: 20px;
             border-bottom: 1px solid var(--border-subtle);
+        }
+
+        .mobile-theme-toggle {
+            background: var(--color-bg-card);
+            border: 1px solid var(--border-subtle);
+            border-radius: 12px;
+            padding: 14px 16px;
+            cursor: pointer;
+            color: var(--color-text-primary);
+            font-weight: 600;
+            font-size: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+            box-shadow: var(--shadow-card);
+            transition: 0.3s;
+            margin-bottom: 20px;
+        }
+
+        .mobile-theme-toggle:hover {
+            background: var(--color-bg-card-hover);
+            border-color: var(--color-primary);
         }
 
         .mobile-sidebar-title {
@@ -780,6 +806,11 @@
             <h2 class="mobile-sidebar-title">🍕 Pizza Napoli</h2>
             <p class="mobile-sidebar-subtitle">Выберите категорию</p>
         </div>
+        <!-- Кнопка смены темы для мобильных -->
+        <button class="mobile-theme-toggle" id="mobileThemeToggle">
+            <span><i class="fas fa-sun" id="mobileThemeIcon"></i> Тема</span>
+            <span id="mobileThemeText">Светлая</span>
+        </button>
         <div id="mobile-menu-content">
             <!-- Mobile menu will be inserted here -->
         </div>
@@ -800,31 +831,56 @@
     <script src="js/menu-final.json"></script>
     <script src="js/app-delivery.js"></script>
     <script>
-        // Theme Toggle
+        // Theme Toggle - Desktop
         const themeToggle = document.getElementById('themeToggle');
         const themeIcon = document.getElementById('themeIcon');
         const themeText = document.getElementById('themeText');
         
-        // Load saved theme
+        // Mobile Theme Toggle
+        const mobileThemeToggle = document.getElementById('mobileThemeToggle');
+        const mobileThemeIcon = document.getElementById('mobileThemeIcon');
+        const mobileThemeText = document.getElementById('mobileThemeText');
+        
+        // Load saved theme (dark by default for mobile)
         const savedTheme = localStorage.getItem('pizzaTheme') || 'dark';
         document.documentElement.setAttribute('data-theme', savedTheme);
         updateThemeUI(savedTheme);
         
-        themeToggle.addEventListener('click', () => {
+        // Desktop toggle
+        if (themeToggle) {
+            themeToggle.addEventListener('click', () => {
+                toggleTheme();
+            });
+        }
+        
+        // Mobile toggle
+        if (mobileThemeToggle) {
+            mobileThemeToggle.addEventListener('click', () => {
+                toggleTheme();
+            });
+        }
+        
+        function toggleTheme() {
             const currentTheme = document.documentElement.getAttribute('data-theme');
             const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
             document.documentElement.setAttribute('data-theme', newTheme);
             localStorage.setItem('pizzaTheme', newTheme);
             updateThemeUI(newTheme);
-        });
+        }
         
         function updateThemeUI(theme) {
-            if (theme === 'dark') {
-                themeIcon.className = 'fas fa-sun';
-                themeText.textContent = 'Светлая';
-            } else {
-                themeIcon.className = 'fas fa-moon';
-                themeText.textContent = 'Темная';
+            const isDark = theme === 'dark';
+            
+            // Desktop
+            if (themeIcon && themeText) {
+                themeIcon.className = isDark ? 'fas fa-sun' : 'fas fa-moon';
+                themeText.textContent = isDark ? 'Светлая' : 'Темная';
+            }
+            
+            // Mobile
+            if (mobileThemeIcon && mobileThemeText) {
+                mobileThemeIcon.className = isDark ? 'fas fa-sun' : 'fas fa-moon';
+                mobileThemeText.textContent = isDark ? 'Светлая' : 'Темная';
             }
         }
     </script>

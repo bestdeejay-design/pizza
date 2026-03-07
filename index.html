@@ -104,8 +104,9 @@
 
         .header-actions {
             display: flex;
-            gap: 16px;
+            gap: 12px;
             align-items: center;
+            flex-wrap: nowrap;
         }
 
         .search-mini {
@@ -149,7 +150,7 @@
             background: var(--color-bg-card);
             border: 1px solid var(--border-subtle);
             border-radius: 40px;
-            padding: 10px 20px;
+            padding: 10px 16px;
             cursor: pointer;
             color: var(--color-text-primary);
             font-weight: 600;
@@ -159,6 +160,8 @@
             box-shadow: var(--shadow-card);
             transition: 0.3s;
             font-size: 14px;
+            white-space: nowrap;
+            flex-shrink: 0;
         }
 
         .theme-toggle:hover {
