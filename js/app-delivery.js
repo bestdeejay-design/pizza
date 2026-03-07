@@ -1,9 +1,100 @@
-// Modern Delivery App - Two-column layout with sticky navigation
+// ========================================
+// MODERN DELIVERY APP
+// Two-column layout with sticky navigation
+// ========================================
+
+// ========================================
+// GLOBAL CONSTANTS
+// ========================================
+
+// Menu groups structure (used in sidebar, mobile menu, content rendering)
+const MENU_GROUPS = [
+    {
+        title: '🍕 ПИЦЦА',
+        categories: ['pizza-30cm', 'piccolo-20cm', 'calzone']
+    },
+    {
+        title: '🍣 СУШИ & РОЛЛЫ',
+        categories: ['rolls-sushi', 'rolls-rolls']
+    },
+    {
+        title: '🍞 ХЛЕБ И ФОКАЧЧА',
+        categories: ['bread-focaccia-bread', 'bread-focaccia-focaccia']
+    },
+    {
+        title: '🍱 НАБОРЫ',
+        categories: ['combo']
+    },
+    {
+        title: '🍰 ДЕСЕРТЫ',
+        categories: ['confectionery']
+    },
+    {
+        title: '🥤 НАПИТКИ',
+        categories: ['mors', 'juice', 'water', 'soda', 'beverages-other']
+    },
+    {
+        title: '👨‍🍳 ГОТОВИМ ДОМА',
+        categories: ['frozen', 'aromatic-oils']
+    },
+    {
+        title: 'ℹ️ ИНФОРМАЦИЯ',
+        categories: ['masterclass', 'franchise', 'contacts']
+    }
+];
+
+// Category display names mapping
+const CATEGORY_MAP = {
+    'pizza-30cm': 'Пицца 30 см',
+    'piccolo-20cm': 'Pizza Piccolo 20 см',
+    'calzone': 'Кальцоне',
+    'bread-focaccia-bread': 'Хлеб',
+    'bread-focaccia-focaccia': 'Фокачча',
+    'sauce': 'Соусы',
+    'rolls-sushi': 'Суши',
+    'rolls-rolls': 'Роллы',
+    'combo': 'Комбо наборы',
+    'confectionery': 'Кондитерские изделия',
+    'mors': 'Морсы',
+    'juice': 'Соки',
+    'water': 'Вода',
+    'soda': 'Газировка',
+    'beverages-other': 'Другие напитки',
+    'frozen': 'Замороженная продукция',
+    'aromatic-oils': 'Ароматное масло',
+    'masterclass': 'Мастер класс',
+    'franchise': 'Франшиза',
+    'contacts': 'Контакты'
+};
+
+// Expected menu categories for validation
+const EXPECTED_CATEGORIES = [
+    'pizza-30cm', 'piccolo-20cm', 'calzone',
+    'bread-focaccia-bread', 'bread-focaccia-focaccia', 'sauce',
+    'rolls-sushi', 'rolls-rolls',
+    'combo', 'confectionery',
+    'mors', 'juice', 'water', 'soda', 'beverages-other',
+    'frozen', 'aromatic-oils',
+    'masterclass', 'franchise', 'contacts'
+];
+
+// Lazy loading configuration
+const PRODUCTS_PER_LOAD = 12;
+const SCROLL_THRESHOLD = 50;
+const DELAY_BEFORE_NAVIGATE = 1500;
+
+// ========================================
+// GLOBAL VARIABLES
+// ========================================
 let menu = [];
 let cart = [];
-let visibleCategories = new Set();
 let lazyLoadObservers = new Map(); // Хранилище для IntersectionObserver
-const PRODUCTS_PER_LOAD = 12; // Количество товаров для первоначальной загрузки
+
+// Auto-navigation state
+let lastScrollY = window.scrollY;
+let autoNavigateEnabled = true;
+let scrollAttemptCount = 0;
+let reachedEndTimestamp = null;
 
 async function loadMenu() {
     try {
@@ -160,61 +251,9 @@ function initSidebar() {
 function renderContent() {
     const content = document.getElementById('content');
     
-    // Используем тот же порядок, что и в сайдбаре
-    const menuGroups = [
-        {
-            title: '🍕 ПИЦЦА',
-            categories: ['pizza-30cm', 'piccolo-20cm', 'calzone']
-        },
-        {
-            title: '🥗 ЗАКУСКИ',
-            categories: ['bread-focaccia-bread', 'bread-focaccia-focaccia', 'sauce', 'rolls-sushi', 'rolls-rolls']
-        },
-        {
-            title: '🍱 КОМБО НАБОРЫ',
-            categories: ['combo']
-        },
-        {
-            title: '🍰 ДЕССЕРТЫ',
-            categories: ['confectionery']
-        },
-        {
-            title: '🥤 НАПИТКИ',
-            categories: ['mors', 'juice', 'water', 'soda', 'beverages-other']
-        },
-        {
-            title: 'ℹ️ ИНФОРМАЦИЯ',
-            categories: ['frozen', 'aromatic-oils', 'masterclass', 'franchise', 'contacts']
-        }
-    ];
-    
-    // Карта русских названий
-    const categoryMap = {
-        'pizza-30cm': 'Пицца 30 см',
-        'piccolo-20cm': 'Pizza Piccolo 20 см',
-        'calzone': 'Кальцоне',
-        'bread-focaccia-bread': 'Хлеб',
-        'bread-focaccia-focaccia': 'Фокачча',
-        'sauce': 'Соусы',
-        'rolls-sushi': 'Суши',
-        'rolls-rolls': 'Роллы',
-        'combo': 'Комбо наборы',
-        'confectionery': 'Кондитерские изделия',
-        'mors': 'Морсы',
-        'juice': 'Соки',
-        'water': 'Вода',
-        'soda': 'Газировка',
-        'beverages-other': 'Другие напитки',
-        'frozen': 'Замороженная продукция',
-        'aromatic-oils': 'Ароматное масло',
-        'masterclass': 'Мастер класс',
-        'franchise': 'Франшиза',
-        'contacts': 'Контакты'
-    };
-    
     // Собираем все категории в правильном порядке
     const orderedCategories = [];
-    menuGroups.forEach(group => {
+    MENU_GROUPS.forEach(group => {
         group.categories.forEach(cat => {
             if (cat === 'contacts' || menu.some(item => item.category === cat)) {
                 orderedCategories.push(cat);
@@ -1281,12 +1320,7 @@ style.textContent = `
 document.head.appendChild(style);
 
 // Отслеживание скролла для авто-перехода между категориями
-let lastScrollY = window.scrollY;
-let autoNavigateEnabled = true;
-let scrollAttemptCount = 0; // Счетчик попыток скролла за пределы
-let reachedEndTimestamp = null; // Когда достигли конца категории
-const SCROLL_THRESHOLD = 50; // Насколько далеко нужно проскроллить за пределы
-const DELAY_BEFORE_NAVIGATE = 1500; // Задержка перед переходом (мс)
+// Переменные уже объявлены в глобальной области (строки 94-97)
 
 window.addEventListener('scroll', () => {
     const currentScrollY = window.scrollY;
