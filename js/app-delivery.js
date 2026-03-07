@@ -34,8 +34,19 @@ async function loadMenu() {
         
         initSidebar();
         renderContent();
-        setupIntersectionObserver();
-        setupSearch();
+        
+        // Небольшая задержка для Observer
+        setTimeout(() => {
+            setupIntersectionObserver();
+            setupSearch();
+            
+            // Активируем первую категорию при загрузке
+            const firstCategory = getUniqueCategories()[0];
+            if (firstCategory) {
+                setActiveNav(firstCategory);
+                console.log('First category activated:', firstCategory);
+            }
+        }, 100);
     } catch (error) {
         console.error('Error loading menu:', error);
     }
@@ -167,15 +178,19 @@ function renderProducts(products) {
 }
 
 function setupIntersectionObserver() {
+    console.log('Setting up Intersection Observer');
+    
     const options = {
         root: null,
-        rootMargin: '-20% 0px -80% 0px', // Более узкая зона для точного определения
-        threshold: 0.1
+        rootMargin: '0px', // Убрал отрицательный margin
+        threshold: [0, 0.1, 0.5, 1] // Несколько порогов для лучшей чувствительности
     };
     
     const observer = new IntersectionObserver((entries) => {
+        console.log('Observer triggered, entries:', entries.length);
         entries.forEach(entry => {
-            if (entry.isIntersecting) {
+            console.log('Entry:', entry.target.id, 'isIntersecting:', entry.isIntersecting, 'ratio:', entry.intersectionRatio);
+            if (entry.isIntersecting && entry.intersectionRatio > 0.1) {
                 const categoryId = entry.target.id.replace('category-', '');
                 console.log('Active category:', categoryId); // Лог для отладки
                 setActiveNav(categoryId);
@@ -183,7 +198,9 @@ function setupIntersectionObserver() {
         });
     }, options);
     
-    document.querySelectorAll('.category-section').forEach(section => {
+    const sections = document.querySelectorAll('.category-section');
+    console.log('Observing', sections.length, 'sections');
+    sections.forEach(section => {
         observer.observe(section);
     });
 }
