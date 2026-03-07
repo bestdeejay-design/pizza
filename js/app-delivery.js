@@ -2,6 +2,22 @@
 // MODERN DELIVERY APP
 // Two-column layout with sticky navigation
 // ========================================
+//
+// 📚 DOCUMENTATION:
+// - AI_DEVELOPER_HANDBOOK.md - Полное описание архитектуры
+// - AUDIT_REPORT.md - Отчет об аудите кода
+// - README.md - Краткая инструкция по проекту
+//
+// 🔧 CRITICAL FILES:
+// - menu-final.json - Канонические данные меню (333 товара, 18 категорий)
+// - js/app-delivery.js - Вся логика приложения (1420 строк)
+// - index.html - Главная страница
+//
+// ⚠️ DO NOT TOUCH:
+// - archive/* - Архив старых версий
+// - fix-duplicate-ids.js - Уже выполнен
+//
+// ========================================
 
 // ========================================
 // GLOBAL CONSTANTS
@@ -96,6 +112,23 @@ let autoNavigateEnabled = true;
 let scrollAttemptCount = 0;
 let reachedEndTimestamp = null;
 
+/**
+ * ЗАГРУЗКА МЕНЮ
+ * 
+ * @async
+ * @description Fetches menu-final.json, validates structure, flattens to array,
+ *              initializes UI components (sidebar, mobile menu, content),
+ *              restores state from localStorage.
+ * 
+ * 📚 SEE ALSO: AI_DEVELOPER_HANDBOOK.md → Section 1: "Загрузка Данных"
+ * 
+ * ⚠️ CRITICAL:
+ * - Uses data.menu[category] NOT data[category]
+ * - Flattens nested structure to flat array
+ * - Error handling via try/catch
+ * 
+ * @returns {Promise<void>}
+ */
 async function loadMenu() {
     try {
         const response = await fetch('menu-final.json');
@@ -982,6 +1015,26 @@ function renderContactsLazy() {
     `).join('');
 }
 
+/**
+ * ЛЕНИВАЯ ЗАГРУЗКА ТОВАРОВ
+ * 
+ * @param {string} categoryId - Category key (e.g., 'pizza-30cm')
+ * @description Loads products in batches of PRODUCTS_PER_LOAD (12).
+ *              Creates IntersectionObserver on "Load More" button.
+ *              Marks category as ready for auto-navigation when complete.
+ * 
+ * 📚 SEE ALSO: AI_DEVELOPER_HANDBOOK.md → Section 3: "Ленивая Загрузка"
+ * 
+ * ⚙️ CONFIGURATION:
+ * - PRODUCTS_PER_LOAD = 12 items per batch
+ * - rootMargin = '100px' (start loading before button visible)
+ * - threshold = 0.1 (trigger when 10% of button visible)
+ * 
+ * 🔧 CRITICAL:
+ * - Uses lazyLoadObservers Map to store observers
+ * - Sets dataset.readyToNavigate = 'true' when all loaded
+ * - Removes load more button when complete
+ */
 function setupLazyLoading(categoryId) {
     const gridElement = document.getElementById(`grid-${categoryId}`);
     if (!gridElement) return;
