@@ -935,7 +935,6 @@ function renderProductsLazy(products) {
                 </div>
                 <div class="product-info">
                     <h3 class="product-name">${product.title}</h3>
-                    <p class="product-description">${product.description || ''}</p>
                     <div class="product-footer">
                         <span class="product-price">${product.price} ₽</span>
                         <button class="add-btn" onclick="event.stopPropagation(); addToCart(${product.id})">+</button>
@@ -1104,7 +1103,6 @@ function loadMoreProducts(categoryId, event = null) {
             </div>
             <div class="product-info">
                 <h3 class="product-name">${product.title}</h3>
-                <p class="product-description">${product.description || ''}</p>
                 <div class="product-footer">
                     <span class="product-price">${product.price} ₽</span>
                     <button class="add-btn" onclick="event.stopPropagation(); addToCart(${product.id})">+</button>
