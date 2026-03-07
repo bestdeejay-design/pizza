@@ -80,7 +80,7 @@
             });
         }
         
-        // Theme Toggle
+        // Theme Toggle (Desktop)
         const themeToggle = document.getElementById('themeToggle');
         const themeIcon = document.getElementById('themeIcon');
         const themeText = document.getElementById('themeText');
@@ -88,15 +88,21 @@
         // Load saved theme
         const savedTheme = localStorage.getItem('pizzaTheme') || 'dark';
         document.documentElement.setAttribute('data-theme', savedTheme);
-        updateThemeUI(savedTheme);
         
-        themeToggle.addEventListener('click', () => {
-            const currentTheme = document.documentElement.getAttribute('data-theme');
-            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-            document.documentElement.setAttribute('data-theme', newTheme);
-            localStorage.setItem('pizzaTheme', newTheme);
-            updateThemeUI(newTheme);
-        });
+        // Update desktop UI only if elements exist
+        if (themeIcon && themeText) {
+            updateThemeUI(savedTheme);
+        }
+        
+        if (themeToggle) {
+            themeToggle.addEventListener('click', () => {
+                const currentTheme = document.documentElement.getAttribute('data-theme');
+                const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+                document.documentElement.setAttribute('data-theme', newTheme);
+                localStorage.setItem('pizzaTheme', newTheme);
+                updateThemeUI(newTheme);
+            });
+        }
         
         function updateThemeUI(theme) {
             if (theme === 'dark') {
