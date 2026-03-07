@@ -413,6 +413,47 @@ function setActiveNav(categoryId) {
     });
 }
 
+// Кнопка возврата к общему меню
+function showBackToAllMenuButton() {
+    let backBtn = document.getElementById('back-to-all-menu');
+    if (!backBtn) {
+        // Создаем кнопку если её нет
+        backBtn = document.createElement('div');
+        backBtn.id = 'back-to-all-menu';
+        backBtn.innerHTML = '<i class="fas fa-list"></i> Все меню';
+        backBtn.onclick = () => scrollToCategory('all-menu');
+        backBtn.style.cssText = `
+            position: fixed;
+            bottom: 90px;
+            right: 20px;
+            background: linear-gradient(135deg, #ff2e55 0%, #ff6b6b 100%);
+            color: white;
+            padding: 12px 24px;
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: 700;
+            font-size: 14px;
+            z-index: 999;
+            box-shadow: 0 8px 30px rgba(255, 46, 85, 0.4);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.3s;
+            backdrop-filter: blur(10px);
+        `;
+        backBtn.onmouseenter = () => {
+            backBtn.style.transform = 'scale(1.05)';
+            backBtn.style.boxShadow = '0 12px 40px rgba(255, 46, 85, 0.5)';
+        };
+        backBtn.onmouseleave = () => {
+            backBtn.style.transform = 'scale(1)';
+            backBtn.style.boxShadow = '0 8px 30px rgba(255, 46, 85, 0.4)';
+        };
+        document.body.appendChild(backBtn);
+    }
+    backBtn.style.display = 'flex';
+}
+
 function scrollToCategory(categoryId) {
     console.log('Scrolling to category:', categoryId);
     
@@ -431,6 +472,12 @@ function scrollToCategory(categoryId) {
                 top: 0,
                 behavior: 'smooth'
             });
+            
+            // Скрываем кнопку "Все меню" когда в общем меню
+            const backToAllMenuBtn = document.getElementById('back-to-all-menu');
+            if (backToAllMenuBtn) {
+                backToAllMenuBtn.style.display = 'none';
+            }
         }
         return;
     }
@@ -447,6 +494,9 @@ function scrollToCategory(categoryId) {
         });
         element.style.display = '';
         console.log('Category displayed:', categoryId);
+        
+        // Показываем кнопку "Все меню" когда в конкретной категории
+        showBackToAllMenuButton();
         
         const offset = 100;
         const bodyRect = document.body.getBoundingClientRect().top;
