@@ -1032,15 +1032,16 @@ function loadMoreProducts(categoryId, event = null) {
     // Пересоздаем observer для новых карточек
     setupLazyLoading(categoryId);
     
-    // Если загрузили все товары - убираем кнопку и переходим к следующей категории
+    // Если загрузили все товары - убираем кнопку и разрешаем авто-переход
     if (loadedCount >= totalProducts) {
         const loadMoreContainer = gridElement.parentElement.querySelector('.lazy-load-more');
         if (loadMoreContainer) {
             loadMoreContainer.remove();
             console.log(`Removed load more button for ${categoryId} - all products loaded`);
         }
-        // Все товары загружены - переходим к следующей категории
-        navigateToNextCategory(categoryId);
+        // Помечаем категорию как "готовую к переходу"
+        gridElement.dataset.readyToNavigate = 'true';
+        console.log(`Category ${categoryId} ready to auto-navigate`);
     }
 }
 
@@ -1053,10 +1054,21 @@ function navigateToNextCategory(currentCategoryId) {
         const nextCategoryId = orderedCategories[currentIndex + 1];
         console.log(`Auto-navigating to next category: ${nextCategoryId}`);
         
+        // Сбрасываем флаг готовности для текущей категории
+        const currentGrid = document.getElementById(`grid-${currentCategoryId}`);
+        if (currentGrid) {
+            currentGrid.dataset.readyToNavigate = 'false';
+        }
+        
+        // Разблокируем авто-навигацию для следующей категории
+        autoNavigateEnabled = true;
+        
         // Небольшая задержка для плавности
         setTimeout(() => {
             scrollToCategory(nextCategoryId);
         }, 800);
+    } else {
+        console.log('This is the last category - no more auto-navigation');
     }
 }
 
@@ -1202,5 +1214,54 @@ style.textContent = `
     }
 `;
 document.head.appendChild(style);
+
+// Отслеживание скролла для авто-перехода между категориями
+let lastScrollY = window.scrollY;
+let autoNavigateEnabled = true;
+
+window.addEventListener('scroll', () => {
+    const currentScrollY = window.scrollY;
+    const isScrollingDown = currentScrollY > lastScrollY;
+    
+    // Проверяем только если скроллим вниз
+    if (isScrollingDown && autoNavigateEnabled) {
+        // Ищем текущую видимую категорию
+        const visibleCategory = getVisibleCategory();
+        
+        if (visibleCategory) {
+            const gridElement = document.getElementById(`grid-${visibleCategory}`);
+            
+            // Если категория готова к переходу и пользователь скроллит в самый низ
+            if (gridElement && gridElement.dataset.readyToNavigate === 'true') {
+                const gridBottom = gridElement.getBoundingClientRect().bottom;
+                const windowHeight = window.innerHeight;
+                
+                // Если низ категории почти достигнут (осталось < 100px)
+                if (gridBottom <= windowHeight + 100) {
+                    console.log(`User scrolled to end of ${visibleCategory} - triggering auto-navigation`);
+                    autoNavigateEnabled = false; // Блокируем повторные срабатывания
+                    navigateToNextCategory(visibleCategory);
+                }
+            }
+        }
+    }
+    
+    lastScrollY = currentScrollY;
+}, { passive: true });
+
+// Получение текущей видимой категории
+function getVisibleCategory() {
+    const categories = document.querySelectorAll('.category-section:not([style*="display: none"])');
+    
+    for (const category of categories) {
+        const rect = category.getBoundingClientRect();
+        // Категория видима хотя бы частично
+        if (rect.top < window.innerHeight && rect.bottom > 0) {
+            return category.dataset.category;
+        }
+    }
+    
+    return null;
+}
 
 document.addEventListener('DOMContentLoaded', loadMenu);
