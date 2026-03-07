@@ -1063,11 +1063,12 @@ function loadMoreProducts(categoryId, event = null) {
     // Пересоздаем observer для новых карточек
     setupLazyLoading(categoryId);
     
-    // Если загрузили все товары - убираем кнопку (только если вызвано через клик)
-    if (loadedCount >= totalProducts && event !== false) {
+    // Если загрузили все товары - убираем кнопку
+    if (loadedCount >= totalProducts) {
         const loadMoreContainer = gridElement.parentElement.querySelector('.lazy-load-more');
         if (loadMoreContainer) {
             loadMoreContainer.remove();
+            console.log(`Removed load more button for ${categoryId} - all products loaded`);
         }
     }
 }
