@@ -677,10 +677,9 @@ function saveState() {
 function restoreState() {
     const savedCategory = localStorage.getItem('pizzaMenu_activeCategory');
     const savedPosition = localStorage.getItem('pizzaMenu_scrollPosition');
-    const hasVisitedBefore = sessionStorage.getItem('pizzaMenu_visited');
     
-    // Если пользователь зашел не в первый раз - восстанавливаем категорию
-    if (savedCategory && hasVisitedBefore) {
+    // Если есть сохраненная категория - восстанавливаем
+    if (savedCategory) {
         console.log('Restoring category:', savedCategory);
         setActiveNav(savedCategory);
         
@@ -691,12 +690,14 @@ function restoreState() {
         const activeSection = document.getElementById(`category-${savedCategory}`);
         if (activeSection) {
             activeSection.style.display = '';
+            console.log('Restored category:', savedCategory);
+        } else {
+            console.warn('Saved category not found in DOM:', savedCategory);
         }
     } else {
         // Первый вход - открываем первую категорию (пицца)
         console.log('First visit - showing first category (pizza-30cm)');
         setActiveNav('pizza-30cm');
-        sessionStorage.setItem('pizzaMenu_visited', 'true');
         
         // Скрываем все категории кроме первой
         document.querySelectorAll('.category-section').forEach((section, index) => {
@@ -706,7 +707,7 @@ function restoreState() {
         });
     }
     
-    if (savedPosition && hasVisitedBefore) {
+    if (savedPosition) {
         console.log('Restoring scroll position:', savedPosition);
         setTimeout(() => {
             window.scrollTo({
