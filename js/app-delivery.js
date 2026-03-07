@@ -215,6 +215,94 @@ function renderContent() {
         const displayName = categoryMap[cat] || cat;
         const isActive = index === 0 ? '' : 'display: none;';
         
+        // Для контактов - специальный рендеринг
+        if (cat === 'contacts') {
+            return `
+                <div class="category-section" id="category-${cat}" style="${isActive}">
+                    <div class="category-header">
+                        <h2 class="category-title">📍 Контакты</h2>
+                        <p class="category-subtitle">Наши пиццерии и способы связи</p>
+                    </div>
+                    <div class="contacts-grid">
+                        <!-- Location 1 (Main) -->
+                        <div class="contact-card primary">
+                            <h3 class="contact-card-title">🍕 Pizza Napoli 1</h3>
+                            <div class="contact-info-item">
+                                <span class="contact-icon">📞</span>
+                                <div>
+                                    <div class="contact-label">Телефон:</div>
+                                    <div class="contact-value"><a href="tel:+79991699839" style="color: inherit; text-decoration: none;">+7 (999) 169-98-39</a></div>
+                                </div>
+                            </div>
+                            <div class="contact-info-item">
+                                <span class="contact-icon">📍</span>
+                                <div>
+                                    <div class="contact-label">Адрес:</div>
+                                    <div class="contact-value">Санкт-Петербург, улица Бабушкина 53, стр. 1, Невский район</div>
+                                </div>
+                            </div>
+                            <div class="contact-info-item">
+                                <span class="contact-icon">⏰</span>
+                                <div>
+                                    <div class="contact-label">Режим работы:</div>
+                                    <div class="contact-value">с 10:00 до 22:00 без выходных</div>
+                                </div>
+                            </div>
+                            <div class="contact-info-item">
+                                <span class="contact-icon">💳</span>
+                                <div>
+                                    <div class="contact-label">Оплата:</div>
+                                    <div class="payment-methods">
+                                        <span class="payment-badge">Наличными</span>
+                                        <span class="payment-badge">Картой</span>
+                                        <span class="payment-badge">Переводом</span>
+                                        <span class="payment-badge">Безналичным платежом</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Location 2 (Opening Soon) -->
+                        <div class="contact-card opening-soon">
+                            <div class="opening-badge">🎉 Скоро открытие!</div>
+                            <h3 class="contact-card-title">🍕 Pizza Napoli 2.0</h3>
+                            <div class="contact-info-item">
+                                <span class="contact-icon">📍</span>
+                                <div>
+                                    <div class="contact-label">Адрес:</div>
+                                    <div class="contact-value">Санкт-Петербург, Московский район</div>
+                                </div>
+                            </div>
+                            <div class="contact-info-item">
+                                <span class="contact-icon">🎯</span>
+                                <div>
+                                    <div class="contact-label">Особенности:</div>
+                                    <div class="contact-value">Большой зал, летняя веранда, детская комната</div>
+                                </div>
+                            </div>
+                            <div class="contact-info-item">
+                                <span class="contact-icon">🎁</span>
+                                <div>
+                                    <div class="contact-label">Открытие:</div>
+                                    <div class="contact-value">Следите за новостями! Скидки до 50% в день открытия</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Map -->
+                        <div class="map-container">
+                            <div class="map-placeholder">
+                                <div class="map-pin location-1" title="Pizza Napoli 1 - ул. Бабушкина 53">📍</div>
+                                <div class="map-pin location-2" title="Pizza Napoli 2.0 - Московский район (скоро)">📍</div>
+                                <span>Интерактивная карта с локациями пиццерий</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `;
+        }
+        
+        // Обычный рендеринг для категорий с товарами
         return `
             <div class="category-section" id="category-${cat}" style="${isActive}">
                 <div class="category-header">
@@ -309,18 +397,11 @@ function scrollToCategory(categoryId) {
         setActiveNav(categoryId);
         console.log('Navigation activated for:', categoryId);
         
-        // Показываем только выбранную категорию (кроме контактов)
-        if (categoryId !== 'contacts') {
-            document.querySelectorAll('.category-section').forEach(section => {
-                section.style.display = 'none';
-            });
-            element.style.display = '';
-        } else {
-            // Для контактов - показаем все меню и скроллим вниз
-            document.querySelectorAll('.category-section').forEach(section => {
-                section.style.display = '';
-            });
-        }
+        // Показываем только выбранную категорию
+        document.querySelectorAll('.category-section').forEach(section => {
+            section.style.display = 'none';
+        });
+        element.style.display = '';
         console.log('Category displayed:', categoryId);
         
         const offset = 100;
