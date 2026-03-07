@@ -47,22 +47,23 @@ def scrape_products():
     try:
         response = requests.get(BASE_URL, headers=HEADERS, timeout=15)
         response.raise_for_status()
+        print("✅ Сайт доступен")
     except requests.RequestException as e:
         print(f"❌ Ошибка доступа к сайту: {e}")
         return []
     
-    soup = BeautifulSoup(response.text, 'lxml')
+    soup = BeautifulSoup(response.text, 'html.parser')  # Используем html.parser вместо lxml
     products = []
     
-    # Ищем карточки товаров (Tilda использует стандартные классы)
-    # Пробуем разные селекторы
+    # Tilda часто использует классы t-store__card или просто card
+    # Ищем по всем возможным селекторам
     product_selectors = [
-        '.js-product-card',
         '.t-store__card',
-        '.product-item',
-        '[data-product-id]',
+        '.js-product-card',
+        '.product-card',
         '.prodcard',
-        '.catalog-item'
+        '[class*="product"]',
+        '[class*="card"]'
     ]
     
     product_cards = []
@@ -74,32 +75,35 @@ def scrape_products():
             break
     
     if not product_cards:
-        # Если не нашли по стандартным классам, ищем по структуре
-        print("⚠️  Стандартные селекторы не сработали, пробуем альтернативные...")
+        # Если не нашли, пробуем найти все div с текстом похожим на товары
+        print("⚠️  Стандартные селекторы не сработали")
+        print("🔍 Пробуем найти товары по структуре...")
         
-        # Ищем элементы с ценами (обычно рядом с товарами)
-        price_elements = soup.select('.t-store__card__price, .price, .js-product-price')
-        if price_elements:
-            print(f"✅ Найдено элементов с ценами: {len(price_elements)}")
-            # Поднимаемся к родительским карточкам
-            for price_el in price_elements[:20]:  # Первые 20 для теста
-                parent = price_el.find_parent(['div', 'article', 'section'])
-                if parent:
-                    product_cards.append(parent)
+        # Ищем элементы содержащие цены (обязательно есть у товаров)
+        all_divs = soup.find_all('div')
+        for div in all_divs:
+            text = div.get_text()
+            # Если есть цена (цифры с ₽ или руб) и текст > 20 символов
+            if re.search(r'\d+\s*[₽руб]', text) and 20 < len(text) < 500:
+                product_cards.append(div)
+        
+        print(f"✅ Найдено потенциальных товаров: {len(product_cards)}")
     
     print(f"\n📦 Всего найдено товаров: {len(product_cards)}")
     
     # Обрабатываем каждую карточку
     for i, card in enumerate(product_cards[:350], 1):  # Максимум 350 товаров
         try:
-            # Извлекаем название
+            # Извлекаем название - используем больше селекторов
             title_selectors = [
-                '.js-product-title',
                 '.t-store__card__title',
+                '.js-product-title',
                 '.product-title',
+                '.prodcard-title',
                 'h3',
-                '.name',
-                '.prodcard-title'
+                'h4',
+                '[class*="title"]',
+                '.name'
             ]
             
             title = ''
@@ -109,19 +113,23 @@ def scrape_products():
                     title = normalize_text(el.get_text())
                     break
             
-            # Если не нашли, пробуем просто текст из карточки
+            # Если не нашли, берем первый короткий текст (названия обычно короткие)
             if not title:
-                title_elem = card.find(['h3', 'h4', 'div'], class_=re.compile(r'title|name', re.I))
-                if title_elem:
-                    title = normalize_text(title_elem.get_text())
+                for elem in card.find_all(['h3', 'h4', 'div', 'span']):
+                    text = normalize_text(elem.get_text())
+                    if 5 < len(text) < 100 and '₽' not in text:
+                        title = text
+                        break
             
-            # Извлекаем описание
+            # Извлекаем описание - больше вариантов
             desc_selectors = [
-                '.js-product-desc',
                 '.t-store__card__desc',
+                '.js-product-desc',
                 '.product-description',
+                '.prodcard-desc',
                 '.description',
-                '.prodcard-desc'
+                '[class*="desc"]',
+                'p[class*="text"]'
             ]
             
             description = ''
@@ -129,7 +137,11 @@ def scrape_products():
                 el = card.select_one(selector)
                 if el:
                     description = normalize_text(el.get_text())
-                    break
+                    # Проверяем что это действительно описание (не цена и не название)
+                    if len(description) > 20 and not re.match(r'^\d+\s*[₽руб]', description):
+                        break
+                    else:
+                        description = ''
             
             # Если не нашли, пробуем найти текст после заголовка
             if not description:
