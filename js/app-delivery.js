@@ -429,9 +429,9 @@ function renderProducts(products) {
                 <div class="product-info">
                     <h3 class="product-name">${product.title}</h3>
                     <p class="product-description">${product.description || ''}</p>
-                    <div class="product-footer">
-                        <span class="product-price">${product.price} ₽</span>
-                        <button class="add-btn" onclick="addToCart(${product.id})">+</button>
+                    <div class="product-actions">
+                        <div class="product-price">${product.price} ₽</div>
+                        <button class="add-to-cart" onclick="addToCart(${product.id})">В корзину</button>
                     </div>
                 </div>
             </div>
