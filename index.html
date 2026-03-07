@@ -410,11 +410,14 @@
             top: 0;
             left: 0;
             width: 100%;
-            height: 100vh;
+            height: 100dvh; /* Dynamic viewport height для мобильных */
+            min-height: -webkit-fill-available; /* Для iOS Safari */
             background: var(--color-bg-dark);
             z-index: 999;
             padding: 20px;
+            padding-bottom: calc(20px + env(safe-area-inset-bottom, 0px)); /* Учет safe area для iPhone */
             overflow-y: auto;
+            -webkit-overflow-scrolling: touch; /* Плавный скролл на iOS */
         }
 
         .mobile-sidebar.active {
