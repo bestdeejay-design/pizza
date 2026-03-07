@@ -1062,6 +1062,8 @@ function navigateToNextCategory(currentCategoryId) {
         
         // Разблокируем авто-навигацию для следующей категории
         autoNavigateEnabled = true;
+        scrollAttemptCount = 0;
+        reachedEndTimestamp = null;
         
         // Небольшая задержка для плавности
         setTimeout(() => {
@@ -1069,6 +1071,31 @@ function navigateToNextCategory(currentCategoryId) {
         }, 800);
     } else {
         console.log('This is the last category - no more auto-navigation');
+    }
+}
+
+// Переход к предыдущей категории при скролле вверх
+function navigateToPreviousCategory(currentCategoryId) {
+    const orderedCategories = getOrderedCategories();
+    const currentIndex = orderedCategories.indexOf(currentCategoryId);
+    
+    if (currentIndex > 0) {
+        const prevCategoryId = orderedCategories[currentIndex - 1];
+        console.log(`Navigating to previous category: ${prevCategoryId}`);
+        
+        // Проверяем готова ли предыдущая категория (все ли товары загружены)
+        const prevGrid = document.getElementById(`grid-${prevCategoryId}`);
+        if (prevGrid) {
+            scrollToCategory(prevCategoryId);
+            
+            // Если предыдущая категория еще не полностью загружена - помечаем что можно вернуться
+            const loadedCount = parseInt(prevGrid.dataset.loaded || 0);
+            const totalInCategory = menu.filter(item => item.category === prevCategoryId).length;
+            
+            if (loadedCount < totalInCategory) {
+                console.log(`Previous category ${prevCategoryId} not fully loaded yet (${loadedCount}/${totalInCategory})`);
+            }
+        }
     }
 }
 
@@ -1250,32 +1277,86 @@ document.head.appendChild(style);
 // Отслеживание скролла для авто-перехода между категориями
 let lastScrollY = window.scrollY;
 let autoNavigateEnabled = true;
+let scrollAttemptCount = 0; // Счетчик попыток скролла за пределы
+let reachedEndTimestamp = null; // Когда достигли конца категории
+const SCROLL_THRESHOLD = 50; // Насколько далеко нужно проскроллить за пределы
+const DELAY_BEFORE_NAVIGATE = 1500; // Задержка перед переходом (мс)
 
 window.addEventListener('scroll', () => {
     const currentScrollY = window.scrollY;
     const isScrollingDown = currentScrollY > lastScrollY;
+    const isScrollingUp = currentScrollY < lastScrollY;
     
-    // Проверяем только если скроллим вниз
-    if (isScrollingDown && autoNavigateEnabled) {
-        // Ищем текущую видимую категорию
-        const visibleCategory = getVisibleCategory();
+    // Ищем текущую видимую категорию
+    const visibleCategory = getVisibleCategory();
+    
+    if (visibleCategory && autoNavigateEnabled) {
+        const gridElement = document.getElementById(`grid-${visibleCategory}`);
         
-        if (visibleCategory) {
-            const gridElement = document.getElementById(`grid-${visibleCategory}`);
+        if (gridElement && gridElement.dataset.readyToNavigate === 'true') {
+            const rect = gridElement.getBoundingClientRect();
+            const windowHeight = window.innerHeight;
+            const scrollHeight = document.documentElement.scrollHeight;
+            const maxScroll = scrollHeight - windowHeight;
             
-            // Если категория готова к переходу и пользователь скроллит в самый низ
-            if (gridElement && gridElement.dataset.readyToNavigate === 'true') {
-                const gridBottom = gridElement.getBoundingClientRect().bottom;
-                const windowHeight = window.innerHeight;
+            // Проверка: достигли ли мы конца категории
+            const atEndOfCategory = rect.bottom <= windowHeight + 100;
+            
+            if (atEndOfCategory) {
+                // Достигли конца категории - запоминаем время
+                if (!reachedEndTimestamp) {
+                    reachedEndTimestamp = Date.now();
+                    console.log(`Reached end of ${visibleCategory}, waiting for user intent...`);
+                }
                 
-                // Если низ категории почти достигнут (осталось < 100px)
-                if (gridBottom <= windowHeight + 100) {
-                    console.log(`User scrolled to end of ${visibleCategory} - triggering auto-navigation`);
+                // Если прошло достаточно времени и пользователь все еще пытается скроллить вниз
+                const timeSinceReached = Date.now() - reachedEndTimestamp;
+                
+                if (isScrollingDown && timeSinceReached > DELAY_BEFORE_NAVIGATE) {
+                    // Проверяем насколько далеко за пределами
+                    const distancePastEnd = currentScrollY - (maxScroll - 100);
+                    
+                    if (distancePastEnd > SCROLL_THRESHOLD) {
+                        scrollAttemptCount++;
+                        console.log(`Scroll attempt ${scrollAttemptCount} past end of ${visibleCategory}`);
+                        
+                        // Если несколько попыток - переходим
+                        if (scrollAttemptCount >= 2) {
+                            console.log(`User confirmed intent - navigating to next category`);
+                            autoNavigateEnabled = false;
+                            navigateToNextCategory(visibleCategory);
+                            scrollAttemptCount = 0;
+                            reachedEndTimestamp = null;
+                        }
+                    }
+                }
+            } else {
+                // Ушли с конца категории - сбрасываем
+                reachedEndTimestamp = null;
+                scrollAttemptCount = 0;
+            }
+            
+            // Проверка для возврата к предыдущей категории (скролл вверх)
+            if (isScrollingUp && rect.top > -100) {
+                const orderedCategories = getOrderedCategories();
+                const currentIndex = orderedCategories.indexOf(visibleCategory);
+                
+                // Если это не первая категория и мы у самого начала текущей
+                if (currentIndex > 0 && rect.top > 0) {
+                    console.log(`User scrolled to top of ${visibleCategory} - navigating to previous`);
                     autoNavigateEnabled = false; // Блокируем повторные срабатывания
-                    navigateToNextCategory(visibleCategory);
+                    navigateToPreviousCategory(visibleCategory);
                 }
             }
+        } else if (gridElement && gridElement.dataset.readyToNavigate !== 'true') {
+            // Категория еще не готова к переходу
+            reachedEndTimestamp = null;
+            scrollAttemptCount = 0;
         }
+    } else if (!visibleCategory) {
+        // Нет видимой категории - сброс
+        reachedEndTimestamp = null;
+        scrollAttemptCount = 0;
     }
     
     lastScrollY = currentScrollY;
