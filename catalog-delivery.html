@@ -874,6 +874,26 @@
             transition: all 0.3s;
         }
 
+        /* Стили для карточек контактов в формате lazy loading */
+        .contact-card-lazy {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            border-radius: 20px;
+            padding: 0;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            transition: all 0.3s;
+            overflow: hidden;
+        }
+
+        .contact-card-lazy:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+        }
+
+        .contact-card-lazy .product-info {
+            padding: 20px;
+        }
+
         .contact-card:hover {
             transform: translateY(-5px);
             box-shadow: 0 12px 40px rgba(0,0,0,0.15);

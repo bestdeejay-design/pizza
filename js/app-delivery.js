@@ -415,6 +415,26 @@ function setActiveNav(categoryId) {
 
 function scrollToCategory(categoryId) {
     console.log('Scrolling to category:', categoryId);
+    
+    // Специальная обработка для all-menu
+    if (categoryId === 'all-menu') {
+        const element = document.getElementById(`category-${categoryId}`);
+        if (element) {
+            setActiveNav(categoryId);
+            document.querySelectorAll('.category-section').forEach(section => {
+                section.style.display = 'none';
+            });
+            element.style.display = '';
+            console.log('All-menu category displayed');
+            
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        }
+        return;
+    }
+    
     const element = document.getElementById(`category-${categoryId}`);
     if (element) {
         // Активируем навигацию сразу при клике
@@ -638,6 +658,22 @@ function toggleMobileMenu() {
     }
 }
 
+// Закрытие мобильного меню при клике на контент
+document.addEventListener('DOMContentLoaded', () => {
+    const content = document.getElementById('content');
+    const sidebar = document.getElementById('mobile-sidebar');
+    const menuBtn = document.querySelector('.mobile-menu-btn');
+    
+    if (content && sidebar) {
+        content.addEventListener('click', (e) => {
+            // Закрываем меню если клик не по кнопке меню
+            if (sidebar.classList.contains('active') && !menuBtn.contains(e.target)) {
+                toggleMobileMenu();
+            }
+        });
+    }
+});
+
 function selectMobileCategory(categoryId) {
     // Закрываем меню
     toggleMobileMenu();
@@ -663,8 +699,10 @@ function saveState() {
 function restoreState() {
     const savedCategory = localStorage.getItem('pizzaMenu_activeCategory');
     const savedPosition = localStorage.getItem('pizzaMenu_scrollPosition');
+    const hasVisitedBefore = sessionStorage.getItem('pizzaMenu_visited');
     
-    if (savedCategory) {
+    // Если пользователь зашел не в первый раз - восстанавливаем категорию
+    if (savedCategory && hasVisitedBefore) {
         console.log('Restoring category:', savedCategory);
         setActiveNav(savedCategory);
         
@@ -676,9 +714,14 @@ function restoreState() {
         if (activeSection) {
             activeSection.style.display = '';
         }
+    } else {
+        // Первый вход - открываем all-menu по умолчанию
+        console.log('First visit - showing all-menu by default');
+        setActiveNav('all-menu');
+        sessionStorage.setItem('pizzaMenu_visited', 'true');
     }
     
-    if (savedPosition) {
+    if (savedPosition && hasVisitedBefore) {
         console.log('Restoring scroll position:', savedPosition);
         setTimeout(() => {
             window.scrollTo({
@@ -785,7 +828,7 @@ function renderContentWithLazyLoad() {
         const displayName = cat === 'all-menu' ? '📋 Общее меню' : (categoryMap[cat] || cat);
         const isActive = index === 0 ? '' : 'display: none;';
         
-        // Для контактов - специальный рендеринг
+        // Для контактов - специальный рендеринг (лента карточек)
         if (cat === 'contacts') {
             return `
                 <div class="category-section" id="category-${cat}" style="${isActive}">
@@ -793,107 +836,8 @@ function renderContentWithLazyLoad() {
                         <h2 class="category-title">📍 Контакты</h2>
                         <p class="category-subtitle">Наши пиццерии и способы связи</p>
                     </div>
-                    <div class="contacts-grid">
-                        <!-- Location 1 (Main) -->
-                        <div class="contact-card primary">
-                            <h3 class="contact-card-title">🍕 Pizza Napoli 1</h3>
-                            <div class="contact-info-item">
-                                <span class="contact-icon">📞</span>
-                                <div>
-                                    <div class="contact-label">Телефон:</div>
-                                    <div class="contact-value"><a href="tel:+79991699839" style="color: inherit; text-decoration: none;">+7 (999) 169-98-39</a></div>
-                                </div>
-                            </div>
-                            <div class="contact-info-item">
-                                <span class="contact-icon">📍</span>
-                                <div>
-                                    <div class="contact-label">Адрес:</div>
-                                    <div class="contact-value">Санкт-Петербург, улица Бабушкина 53, стр. 1, Невский район</div>
-                                </div>
-                            </div>
-                            <div class="contact-info-item">
-                                <span class="contact-icon">⏰</span>
-                                <div>
-                                    <div class="contact-label">Режим работы:</div>
-                                    <div class="contact-value">с 10:00 до 22:00 без выходных</div>
-                                </div>
-                            </div>
-                            <div class="contact-info-item">
-                                <span class="contact-icon">💳</span>
-                                <div>
-                                    <div class="contact-label">Оплата:</div>
-                                    <div class="payment-methods">
-                                        <span class="payment-badge">Наличными</span>
-                                        <span class="payment-badge">Картой</span>
-                                        <span class="payment-badge">Переводом</span>
-                                        <span class="payment-badge">Безналичным платежом</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Location 2 (Opening Soon) -->
-                        <div class="contact-card opening-soon">
-                            <div class="opening-badge">🎉 Скоро открытие!</div>
-                            <h3 class="contact-card-title">🍕 Pizza Napoli 2.0</h3>
-                            <div class="contact-info-item">
-                                <span class="contact-icon">📍</span>
-                                <div>
-                                    <div class="contact-label">Адрес:</div>
-                                    <div class="contact-value">Санкт-Петербург, Московский район</div>
-                                </div>
-                            </div>
-                            <div class="contact-info-item">
-                                <span class="contact-icon">🎯</span>
-                                <div>
-                                    <div class="contact-label">Особенности:</div>
-                                    <div class="contact-value">Большой зал, летняя веранда, детская комната</div>
-                                </div>
-                            </div>
-                            <div class="contact-info-item">
-                                <span class="contact-icon">🎁</span>
-                                <div>
-                                    <div class="contact-label">Открытие:</div>
-                                    <div class="contact-value">Следите за новостями! Скидки до 50% в день открытия</div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Location 3 (New) -->
-                        <div class="contact-card">
-                            <h3 class="contact-card-title">🍕 Pizza Napoli 3</h3>
-                            <div class="contact-info-item">
-                                <span class="contact-icon">📍</span>
-                                <div>
-                                    <div class="contact-label">Адрес:</div>
-                                    <div class="contact-value">Санкт-Петербург, Приморский район</div>
-                                </div>
-                            </div>
-                            <div class="contact-info-item">
-                                <span class="contact-icon">🎯</span>
-                                <div>
-                                    <div class="contact-label">Особенности:</div>
-                                    <div class="contact-value">Просторный зал, панорамные окна, уютная атмосфера</div>
-                                </div>
-                            </div>
-                            <div class="contact-info-item">
-                                <span class="contact-icon">⏰</span>
-                                <div>
-                                    <div class="contact-label">Режим работы:</div>
-                                    <div class="contact-value">с 10:00 до 23:00 без выходных</div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Map -->
-                        <div class="map-container">
-                            <div class="map-placeholder">
-                                <div class="map-pin location-1" title="Pizza Napoli 1 - ул. Бабушкина 53">📍</div>
-                                <div class="map-pin location-2" title="Pizza Napoli 2.0 - Московский район (скоро)">📍</div>
-                                <div class="map-pin location-3" title="Pizza Napoli 3 - Приморский район">📍</div>
-                                <span>Интерактивная карта с локациями пиццерий</span>
-                            </div>
-                        </div>
+                    <div class="products-grid" id="grid-${cat}" data-loaded="0">
+                        ${renderContactsLazy()}
                     </div>
                 </div>
             `;
@@ -914,9 +858,9 @@ function renderContentWithLazyLoad() {
         `;
     }).join('');
     
-    // Инициализируем lazy loading для каждой категории
+    // Инициализируем lazy loading для каждой категории кроме контактов
     orderedCategories.forEach(cat => {
-        if (cat !== 'contacts') {
+        if (cat !== 'contacts' && cat !== 'all-menu') {
             setupLazyLoading(cat);
         }
     });
@@ -953,6 +897,75 @@ function renderProductsLazy(products) {
             </div>
         `;
     }).join('');
+}
+
+function renderContactsLazy() {
+    const contacts = [
+        {
+            id: 'contact-1',
+            title: '🍕 Pizza Napoli 1',
+            subtitle: 'Основная пиццерия',
+            image: 'data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 260 200%22><rect fill=%22%23ff2e55%22 width=%22260%22 height=%22200%22/><text x=%22130%22 y=%2290%22 text-anchor=%22middle%22 fill=%22white%22 font-size=%2260%22 font-weight=%22bold%22>🍕</text><text x=%22130%22 y=%22140%22 text-anchor=%22middle%22 fill=%22white%22 font-size=%2216%22>Pizza Napoli 1</text></svg>',
+            description: 'ул. Бабушкина 53, стр. 1, Невский район',
+            phone: '+7 (999) 169-98-39',
+            hours: 'с 10:00 до 22:00 без выходных',
+            payment: 'Наличными • Картой • Переводом • Безналичным платежом',
+            badge: null
+        },
+        {
+            id: 'contact-2',
+            title: '🍕 Pizza Napoli 2.0',
+            subtitle: 'Скоро открытие!',
+            image: 'data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 260 200%22><rect fill=%22%23ff6b6b%22 width=%22260%22 height=%22200%22/><text x=%22130%22 y=%2290%22 text-anchor=%22middle%22 fill=%22white%22 font-size=%2260%22 font-weight=%22bold%22>🎉</text><text x=%22130%22 y=%22140%22 text-anchor=%22middle%22 fill=%22white%22 font-size=%2216%22>Скоро!</text></svg>',
+            description: 'Московский район • Большой зал, летняя веранда, детская комната',
+            phone: null,
+            hours: 'Открытие скоро!',
+            payment: 'Следите за новостями! Скидки до 50%',
+            badge: '🎉 Скоро открытие!'
+        },
+        {
+            id: 'contact-3',
+            title: '🍕 Pizza Napoli 3',
+            subtitle: 'Новая локация',
+            image: 'data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 260 200%22><rect fill=%22%232a582c%22 width=%22260%22 height=%22200%22/><text x=%22130%22 y=%2290%22 text-anchor=%22middle%22 fill=%22white%22 font-size=%2260%22 font-weight=%22bold%22>🍕</text><text x=%22130%22 y=%22140%22 text-anchor=%22middle%22 fill=%22white%22 font-size=%2216%22>Pizza Napoli 3</text></svg>',
+            description: 'Приморский район • Просторный зал, панорамные окна, уютная атмосфера',
+            phone: null,
+            hours: 'с 10:00 до 23:00 без выходных',
+            payment: null,
+            badge: null
+        }
+    ];
+    
+    return contacts.map((contact, idx) => `
+        <div class="product-card contact-card-lazy" style="opacity: 0; transform: translateY(20px); animation: fadeInUp 0.5s ease forwards; animation-delay: ${idx * 0.1}s;">
+            <div class="product-image-wrapper" style="height: 160px; position: relative;">
+                <img src="${contact.image}" alt="${contact.title}" class="product-image">
+                ${contact.badge ? `<div class="opening-badge" style="position: absolute; top: 10px; right: 10px;">${contact.badge}</div>` : ''}
+            </div>
+            <div class="product-info">
+                <h3 class="product-name" style="font-size: 18px; margin-bottom: 4px;">${contact.title}</h3>
+                <p style="color: #86868b; font-size: 13px; margin-bottom: 12px;">${contact.subtitle}</p>
+                <p style="margin-bottom: 12px; line-height: 1.5;">${contact.description}</p>
+                ${contact.phone ? `
+                    <div style="margin-bottom: 8px;">
+                        <strong style="color: #ff2e55;">📞 </strong>
+                        <a href="tel:${contact.phone.replace(/\s/g, '')}" style="color: inherit; text-decoration: none; font-weight: 600;">${contact.phone}</a>
+                    </div>
+                ` : ''}
+                ${contact.hours ? `
+                    <div style="margin-bottom: 8px;">
+                        <strong style="color: #ff2e55;">⏰ </strong>
+                        <span>${contact.hours}</span>
+                    </div>
+                ` : ''}
+                ${contact.payment ? `
+                    <div style="margin-top: 12px; padding-top: 12px; border-top: 1px solid rgba(0,0,0,0.1); font-size: 12px; color: #86868b; line-height: 1.6;">
+                        <strong style="color: #ff2e55;">💳 Оплата:</strong> ${contact.payment}
+                    </div>
+                ` : ''}
+            </div>
+        </div>
+    `).join('');
 }
 
 function setupLazyLoading(categoryId) {
@@ -1050,8 +1063,8 @@ function loadMoreProducts(categoryId, event = null) {
     // Пересоздаем observer для новых карточек
     setupLazyLoading(categoryId);
     
-    // Если загрузили все товары - убираем кнопку
-    if (loadedCount >= totalProducts && manual) {
+    // Если загрузили все товары - убираем кнопку (только если вызвано через клик)
+    if (loadedCount >= totalProducts && event !== false) {
         const loadMoreContainer = gridElement.parentElement.querySelector('.lazy-load-more');
         if (loadMoreContainer) {
             loadMoreContainer.remove();
