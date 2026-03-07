@@ -356,6 +356,165 @@
                 grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
             }
         }
+
+        /* Mobile Menu Button */
+        .mobile-menu-btn {
+            display: none;
+            position: fixed;
+            top: 50%;
+            right: 20px;
+            transform: translateY(-50%);
+            z-index: 999;
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #ff2e55 0%, #ff6b6b 100%);
+            border-radius: 50%;
+            cursor: pointer;
+            box-shadow: 0 8px 30px rgba(255,46,85,0.4);
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .mobile-menu-btn:hover {
+            transform: translateY(-50%) scale(1.05);
+            box-shadow: 0 12px 40px rgba(255,46,85,0.5);
+        }
+
+        .burger-icon {
+            width: 24px;
+            height: 2px;
+            background: white;
+            position: relative;
+            transition: all 0.3s;
+        }
+
+        .burger-icon:before,
+        .burger-icon:after {
+            content: '';
+            position: absolute;
+            width: 24px;
+            height: 2px;
+            background: white;
+            transition: all 0.3s;
+        }
+
+        .burger-icon:before {
+            top: -7px;
+        }
+
+        .burger-icon:after {
+            bottom: -7px;
+        }
+
+        .mobile-menu-btn.active .burger-icon {
+            background: transparent;
+        }
+
+        .mobile-menu-btn.active .burger-icon:before {
+            transform: rotate(45deg);
+            top: 0;
+        }
+
+        .mobile-menu-btn.active .burger-icon:after {
+            transform: rotate(-45deg);
+            bottom: 0;
+        }
+
+        /* Mobile Sidebar */
+        .mobile-sidebar {
+            display: none;
+            position: fixed;
+            top: 0;
+            right: -100%;
+            width: 100%;
+            max-width: 400px;
+            height: 100vh;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            box-shadow: -10px 0 40px rgba(0,0,0,0.2);
+            z-index: 1000;
+            overflow-y: auto;
+            transition: right 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .mobile-sidebar.active {
+            display: block;
+            right: 0;
+        }
+
+        .mobile-sidebar-header {
+            padding: 20px;
+            background: linear-gradient(135deg, #ff2e55 0%, #ff6b6b 100%);
+            color: white;
+        }
+
+        .mobile-sidebar-title {
+            font-size: 24px;
+            font-weight: 800;
+            margin-bottom: 8px;
+        }
+
+        .mobile-sidebar-subtitle {
+            font-size: 14px;
+            opacity: 0.9;
+        }
+
+        .mobile-nav-category {
+            padding: 16px 20px;
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+            cursor: pointer;
+            transition: all 0.3s;
+            font-weight: 600;
+            font-size: 16px;
+            color: #1d1d1f;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .mobile-nav-category:hover {
+            background: rgba(255,46,85,0.05);
+        }
+
+        .mobile-nav-category.active {
+            background: linear-gradient(135deg, rgba(255,46,85,0.1) 0%, rgba(255,107,107,0.1) 100%);
+            color: #ff2e55;
+        }
+
+        .mobile-nav-count {
+            background: rgba(0,0,0,0.1);
+            padding: 4px 12px;
+            border-radius: 12px;
+            font-size: 13px;
+            font-weight: 700;
+        }
+
+        .mobile-nav-category.active .mobile-nav-count {
+            background: rgba(255,46,85,0.2);
+        }
+
+        .mobile-group-title {
+            padding: 16px 20px 8px;
+            font-size: 13px;
+            font-weight: 700;
+            color: #ff2e55;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .mobile-divider {
+            height: 1px;
+            background: rgba(0,0,0,0.05);
+            margin: 12px 20px;
+        }
+
+        @media (max-width: 1024px) {
+            .mobile-menu-btn {
+                display: flex;
+            }
+        }
     </style>
 </head>
 <body>
@@ -378,6 +537,22 @@
 
         <div class="content" id="content">
             <!-- Products will be inserted here -->
+        </div>
+    </div>
+
+    <!-- Mobile Menu Button -->
+    <div class="mobile-menu-btn" onclick="toggleMobileMenu()">
+        <div class="burger-icon"></div>
+    </div>
+
+    <!-- Mobile Sidebar -->
+    <div class="mobile-sidebar" id="mobile-sidebar">
+        <div class="mobile-sidebar-header">
+            <h2 class="mobile-sidebar-title">🍕 Pizza Napoli</h2>
+            <p class="mobile-sidebar-subtitle">Выберите категорию</p>
+        </div>
+        <div id="mobile-menu-content">
+            <!-- Mobile menu will be inserted here -->
         </div>
     </div>
 

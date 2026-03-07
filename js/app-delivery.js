@@ -33,6 +33,7 @@ async function loadMenu() {
         console.log('Total products:', menu.length);
         
         initSidebar();
+        initMobileMenu(); // Инициализация мобильного меню
         renderContent();
         setupSearch();
         
@@ -400,6 +401,107 @@ function setupSearch() {
             card.style.display = matches ? '' : 'none';
         });
     });
+}
+
+// Mobile Menu Functions
+function initMobileMenu() {
+    const mobileMenuContent = document.getElementById('mobile-menu-content');
+    const categories = getUniqueCategories();
+    
+    // Логическая группировка категорий пиццерии
+    const menuGroups = [
+        {
+            title: '🍕 ПИЦЦА',
+            categories: ['pizza-30cm', 'piccolo-20cm', 'calzone']
+        },
+        {
+            title: '🥗 ЗАКУСКИ',
+            categories: ['bread-focaccia', 'sauce', 'rolls']
+        },
+        {
+            title: '🍱 КОМБО НАБОРЫ',
+            categories: ['combo']
+        },
+        {
+            title: '🍰 ДЕССЕРТЫ',
+            categories: ['confectionery']
+        },
+        {
+            title: '🥤 НАПИТКИ',
+            categories: ['beverages']
+        },
+        {
+            title: 'ℹ️ ИНФОРМАЦИЯ',
+            categories: ['frozen', 'aromatic-oils', 'masterclass', 'franchise']
+        }
+    ];
+    
+    // Карта русских названий
+    const categoryMap = {
+        'pizza-30cm': 'Пицца 30 см',
+        'piccolo-20cm': 'Pizza Piccolo 20 см',
+        'calzone': 'Кальцоне',
+        'bread-focaccia': 'Хлеб и Фокачча',
+        'sauce': 'Соусы',
+        'rolls': 'Роллы',
+        'combo': 'Комбо наборы',
+        'confectionery': 'Кондитерские изделия',
+        'beverages': 'Напитки',
+        'frozen': 'Замороженная продукция',
+        'aromatic-oils': 'Ароматное масло',
+        'masterclass': 'Мастер класс',
+        'franchise': 'Франшиза'
+    };
+    
+    // Рендерим мобильное меню
+    let html = '';
+    menuGroups.forEach(group => {
+        // Добавляем заголовок группы
+        html += `<div class="mobile-group-title">${group.title}</div>`;
+        
+        // Добавляем категории группы
+        group.categories.forEach(cat => {
+            if (categories.includes(cat)) {
+                const count = menu.filter(item => item.category === cat).length;
+                const displayName = categoryMap[cat] || cat;
+                
+                html += `
+                    <div class="mobile-nav-category" data-category="${cat}" onclick="selectMobileCategory('${cat}')">
+                        <span>${displayName}</span>
+                        <span class="mobile-nav-count">${count}</span>
+                    </div>
+                `;
+            }
+        });
+        
+        // Добавляем разделитель между группами
+        html += `<div class="mobile-divider"></div>`;
+    });
+    
+    mobileMenuContent.innerHTML = html;
+}
+
+function toggleMobileMenu() {
+    const btn = document.querySelector('.mobile-menu-btn');
+    const sidebar = document.getElementById('mobile-sidebar');
+    
+    btn.classList.toggle('active');
+    sidebar.classList.toggle('active');
+    
+    // Блокируем скролл body когда меню открыто
+    if (sidebar.classList.contains('active')) {
+        document.body.style.overflow = 'hidden';
+    } else {
+        document.body.style.overflow = '';
+    }
+}
+
+function selectMobileCategory(categoryId) {
+    // Закрываем меню
+    toggleMobileMenu();
+    
+    // Переключаем категорию
+    scrollToCategory(categoryId);
 }
 
 document.addEventListener('DOMContentLoaded', loadMenu);
