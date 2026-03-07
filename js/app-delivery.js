@@ -140,7 +140,7 @@ function initSidebar() {
         group.categories.forEach(cat => {
             // Контакты всегда показываем, остальные только если есть товары
             if (cat === 'contacts' || categories.includes(cat)) {
-                const count = cat === 'contacts' ? 0 : menu.filter(item => item.category === cat).length;
+                const count = cat === 'contacts' ? 3 : menu.filter(item => item.category === cat).length;
                 const displayName = categoryMap[cat] || cat;
                 
                 html += `
@@ -624,7 +624,7 @@ function initMobileMenu() {
         group.categories.forEach(cat => {
             // Контакты всегда показываем, остальные только если есть товары
             if (cat === 'contacts' || categories.includes(cat)) {
-                const count = cat === 'contacts' ? 0 : menu.filter(item => item.category === cat).length;
+                const count = cat === 'contacts' ? 3 : menu.filter(item => item.category === cat).length;
                 const displayName = categoryMap[cat] || cat;
                 
                 html += `
