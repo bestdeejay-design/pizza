@@ -5,7 +5,7 @@ let visibleCategories = new Set();
 
 async function loadMenu() {
     try {
-        const response = await fetch('menu-complete.json');
+        const response = await fetch('menu-final.json');
         if (!response.ok) {
             throw new Error(`HTTP error! status: ${response.status}`);
         }
@@ -67,7 +67,7 @@ function initSidebar() {
         },
         {
             title: '🍣 СУШИ & РОЛЛЫ',
-            categories: ['rolls']  // В JSON все роллы+суши в одной категории
+            categories: ['rolls-sushi', 'rolls-rolls']
         },
         {
             title: '🍞 ХЛЕБ',
@@ -83,7 +83,7 @@ function initSidebar() {
         },
         {
             title: '🥤 НАПИТКИ',
-            categories: ['beverages']  // В JSON все напитки в одной категории
+            categories: ['mors', 'juice', 'water', 'soda', 'beverages-other']
         },
         {
             title: '👨‍🍳 ГОТОВИМ ДОМА',
@@ -102,10 +102,15 @@ function initSidebar() {
         'calzone': 'Кальцоне',
         'bread-focaccia': 'Хлеб и Фокачча',
         'sauce': 'Соусы',
-        'rolls': 'Роллы',
+        'rolls-sushi': 'Суши',
+        'rolls-rolls': 'Роллы',
         'combo': 'Комбо наборы',
         'confectionery': 'Кондитерские изделия',
-        'beverages': 'Напитки',
+        'mors': 'Морсы',
+        'juice': 'Соки',
+        'water': 'Вода',
+        'soda': 'Газировка',
+        'beverages-other': 'Другие напитки',
         'frozen': 'Замороженная продукция',
         'aromatic-oils': 'Ароматное масло',
         'masterclass': 'Мастер класс',
@@ -182,10 +187,15 @@ function renderContent() {
         'calzone': 'Кальцоне',
         'bread-focaccia': 'Хлеб и Фокачча',
         'sauce': 'Соусы',
-        'rolls': 'Роллы',
+        'rolls-sushi': 'Суши',
+        'rolls-rolls': 'Роллы',
         'combo': 'Комбо наборы',
         'confectionery': 'Кондитерские изделия',
-        'beverages': 'Напитки',
+        'mors': 'Морсы',
+        'juice': 'Соки',
+        'water': 'Вода',
+        'soda': 'Газировка',
+        'beverages-other': 'Другие напитки',
         'frozen': 'Замороженная продукция',
         'aromatic-oils': 'Ароматное масло',
         'masterclass': 'Мастер класс',
@@ -515,7 +525,7 @@ function initMobileMenu() {
         },
         {
             title: '🍣 СУШИ & РОЛЛЫ',
-            categories: ['rolls']  // В JSON все роллы+суши в одной категории
+            categories: ['rolls-sushi', 'rolls-rolls']
         },
         {
             title: '🍞 ХЛЕБ',
@@ -531,7 +541,7 @@ function initMobileMenu() {
         },
         {
             title: '🥤 НАПИТКИ',
-            categories: ['beverages']  // В JSON все напитки в одной категории
+            categories: ['mors', 'juice', 'water', 'soda', 'beverages-other']
         },
         {
             title: '👨‍🍳 ГОТОВИМ ДОМА',
@@ -550,10 +560,15 @@ function initMobileMenu() {
         'calzone': 'Кальцоне',
         'bread-focaccia': 'Хлеб и Фокачча',
         'sauce': 'Соусы',
-        'rolls': 'Роллы',
+        'rolls-sushi': 'Суши',
+        'rolls-rolls': 'Роллы',
         'combo': 'Комбо наборы',
         'confectionery': 'Кондитерские изделия',
-        'beverages': 'Напитки',
+        'mors': 'Морсы',
+        'juice': 'Соки',
+        'water': 'Вода',
+        'soda': 'Газировка',
+        'beverages-other': 'Другие напитки',
         'frozen': 'Замороженная продукция',
         'aromatic-oils': 'Ароматное масло',
         'masterclass': 'Мастер класс',
