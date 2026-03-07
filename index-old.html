@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pizza Napoli RSC — Каталог дизайнов</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .header {
+            text-align: center;
+            color: white;
+            margin-bottom: 60px;
+        }
+
+        .header h1 {
+            font-size: 48px;
+            margin-bottom: 10px;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.2);
+        }
+
+        .header p {
+            font-size: 20px;
+            opacity: 0.9;
+        }
+
+        .stats {
+            background: rgba(255,255,255,0.2);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 40px;
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .stat-item {
+            text-align: center;
+            color: white;
+        }
+
+        .stat-number {
+            font-size: 48px;
+            font-weight: 700;
+            display: block;
+        }
+
+        .stat-label {
+            font-size: 16px;
+            opacity: 0.9;
+        }
+
+        .designs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+        }
+
+        .design-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            transition: transform 0.3s, box-shadow 0.3s;
+            cursor: pointer;
+        }
+
+        .design-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+
+        .card-preview {
+            height: 250px;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 80px;
+        }
+
+        .card-content {
+            padding: 30px;
+        }
+
+        .card-title {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: #1a1a1a;
+        }
+
+        .card-description {
+            font-size: 16px;
+            color: #666;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+
+        .card-features {
+            list-style: none;
+            margin-bottom: 25px;
+        }
+
+        .card-features li {
+            padding: 8px 0;
+            color: #333;
+            font-size: 14px;
+        }
+
+        .card-features li:before {
+            content: "✓ ";
+            color: #4CAF50;
+            font-weight: bold;
+            margin-right: 8px;
+        }
+
+        .card-button {
+            display: inline-block;
+            padding: 15px 40px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: 600;
+            transition: transform 0.3s;
+        }
+
+        .card-button:hover {
+            transform: scale(1.05);
+        }
+
+        .footer {
+            text-align: center;
+            color: white;
+            margin-top: 60px;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255,255,255,0.2);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🍕 Pizza Napoli RSC</h1>
+            <p>Выберите дизайн каталога</p>
+        </div>
+
+        <div class="stats">
+            <div class="stat-item">
+                <span class="stat-number">333</span>
+                <span class="stat-label">Товара</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number">13</span>
+                <span class="stat-label">Категорий</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number">100%</span>
+                <span class="stat-label">С фото</span>
+            </div>
+        </div>
+
+        <div class="designs-grid">
+            <!-- Delivery UX Design -->
+            <div class="design-card">
+                <div class="card-preview" style="background: linear-gradient(135deg, #ff2e55 0%, #ff6b6b 100%);">
+                    🚀
+                </div>
+                <div class="card-content">
+                    <h3 class="card-title">Modern Delivery</h3>
+                    <p class="card-description">
+                        Двухколоночный layout как в современных delivery приложениях.
+                    </p>
+                    <ul class="card-features">
+                        <li>Сайдбар навигация</li>
+                        <li>Sticky категории</li>
+                        <li>Компактные карточки</li>
+                        <li>Минимализм</li>
+                    </ul>
+                    <a href="catalog-delivery.html" class="card-button">Открыть каталог</a>
+                </div>
+            </div>
+
+            <!-- Tabbed UX Design -->
+            <div class="design-card">
+                <div class="card-preview" style="background: linear-gradient(135deg, #ff6b6b 0%, #ee5a6f 100%);">
+                    📑
+                </div>
+                <div class="card-content">
+                    <h3 class="card-title">Tabbed Navigation</h3>
+                    <p class="card-description">
+                        Удобное меню с навигацией по вкладкам и постраничной пагинацией.
+                    </p>
+                    <ul class="card-features">
+                        <li>Вкладки категорий</li>
+                        <li>Пагинация</li>
+                        <li>List view</li>
+                        <li>Быстрый поиск</li>
+                    </ul>
+                    <a href="catalog-tabbed.html" class="card-button">Открыть каталог</a>
+                </div>
+            </div>
+
+            <!-- Accordion UX Design -->
+            <div class="design-card">
+                <div class="card-preview" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
+                    🎯
+                </div>
+                <div class="card-content">
+                    <h3 class="card-title">Accordion Progressive</h3>
+                    <p class="card-description">
+                        Меню-аккордеон с постепенным раскрытием и загрузкой контента.
+                    </p>
+                    <ul class="card-features">
+                        <li>Прогрессивное раскрытие</li>
+                        <li>Плавные анимации</li>
+                        <li>Загрузка порциями</li>
+                        <li>Фокус на категории</li>
+                    </ul>
+                    <a href="catalog-accordion.html" class="card-button">Открыть каталог</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>&copy; 2026 Pizza Napoli RSC. Все права защищены.</p>
+            <p style="margin-top: 10px; opacity: 0.7; font-size: 14px;">
+                Единая база данных: menu-complete.json (333 товара, 13 категорий)
+            </p>
+        </div>
+    </div>
+</body>
+</html>
