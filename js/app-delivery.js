@@ -2,6 +2,8 @@
 let menu = [];
 let cart = [];
 let visibleCategories = new Set();
+let lazyLoadObservers = new Map(); // Хранилище для IntersectionObserver
+const PRODUCTS_PER_LOAD = 12; // Количество товаров для первоначальной загрузки
 
 async function loadMenu() {
     try {
@@ -40,12 +42,11 @@ async function loadMenu() {
         
         initSidebar();
         initMobileMenu(); // Инициализация мобильного меню
-        renderContent();
+        renderContentWithLazyLoad();
         setupSearch();
+        restoreState(); // Восстанавливаем состояние после загрузки контента
         
-        // Активируем первую категорию (Пицца 30 см)
-        setActiveNav('pizza-30cm');
-        console.log('First category activated: pizza-30cm');
+        console.log('Menu initialization complete');
     } catch (error) {
         console.error('Error loading menu:', error);
     }
@@ -636,5 +637,416 @@ function selectMobileCategory(categoryId) {
     // Переключаем категорию
     scrollToCategory(categoryId);
 }
+
+// ========================================
+// STATE PERSISTENCE FUNCTIONS
+// ========================================
+
+function saveState() {
+    const activeCategory = document.querySelector('.nav-category.active');
+    if (activeCategory) {
+        const categoryId = activeCategory.dataset.category;
+        localStorage.setItem('pizzaMenu_activeCategory', categoryId);
+        localStorage.setItem('pizzaMenu_scrollPosition', window.scrollY);
+        console.log('State saved:', categoryId, window.scrollY);
+    }
+}
+
+function restoreState() {
+    const savedCategory = localStorage.getItem('pizzaMenu_activeCategory');
+    const savedPosition = localStorage.getItem('pizzaMenu_scrollPosition');
+    
+    if (savedCategory) {
+        console.log('Restoring category:', savedCategory);
+        setActiveNav(savedCategory);
+        
+        // Показываем только сохраненную категорию
+        document.querySelectorAll('.category-section').forEach(section => {
+            section.style.display = 'none';
+        });
+        const activeSection = document.getElementById(`category-${savedCategory}`);
+        if (activeSection) {
+            activeSection.style.display = '';
+        }
+    }
+    
+    if (savedPosition) {
+        console.log('Restoring scroll position:', savedPosition);
+        setTimeout(() => {
+            window.scrollTo({
+                top: parseInt(savedPosition),
+                behavior: 'auto'
+            });
+        }, 100); // Небольшая задержка чтобы контент успел отрендериться
+    }
+}
+
+// Сохраняем состояние перед выгрузкой страницы
+window.addEventListener('beforeunload', saveState);
+
+// ========================================
+// LAZY LOADING FUNCTIONS
+// ========================================
+
+function renderContentWithLazyLoad() {
+    const content = document.getElementById('content');
+    
+    // Используем тот же порядок, что и в сайдбаре
+    const menuGroups = [
+        {
+            title: '🍕 ПИЦЦА',
+            categories: ['pizza-30cm', 'piccolo-20cm', 'calzone']
+        },
+        {
+            title: '🥗 ЗАКУСКИ',
+            categories: ['bread-focaccia-bread', 'bread-focaccia-focaccia', 'sauce', 'rolls-sushi', 'rolls-rolls']
+        },
+        {
+            title: '🍱 КОМБО НАБОРЫ',
+            categories: ['combo']
+        },
+        {
+            title: '🍰 ДЕССЕРТЫ',
+            categories: ['confectionery']
+        },
+        {
+            title: '🥤 НАПИТКИ',
+            categories: ['mors', 'juice', 'water', 'soda', 'beverages-other']
+        },
+        {
+            title: 'ℹ️ ИНФОРМАЦИЯ',
+            categories: ['frozen', 'aromatic-oils', 'masterclass', 'franchise', 'contacts']
+        }
+    ];
+    
+    // Карта русских названий
+    const categoryMap = {
+        'pizza-30cm': 'Пицца 30 см',
+        'piccolo-20cm': 'Pizza Piccolo 20 см',
+        'calzone': 'Кальцоне',
+        'bread-focaccia-bread': 'Хлеб',
+        'bread-focaccia-focaccia': 'Фокачча',
+        'sauce': 'Соусы',
+        'rolls-sushi': 'Суши',
+        'rolls-rolls': 'Роллы',
+        'combo': 'Комбо наборы',
+        'confectionery': 'Кондитерские изделия',
+        'mors': 'Морсы',
+        'juice': 'Соки',
+        'water': 'Вода',
+        'soda': 'Газировка',
+        'beverages-other': 'Другие напитки',
+        'frozen': 'Замороженная продукция',
+        'aromatic-oils': 'Ароматное масло',
+        'masterclass': 'Мастер класс',
+        'franchise': 'Франшиза',
+        'contacts': 'Контакты'
+    };
+    
+    // Собираем все категории в правильном порядке
+    const orderedCategories = [];
+    menuGroups.forEach(group => {
+        group.categories.forEach(cat => {
+            if (cat === 'contacts' || menu.some(item => item.category === cat)) {
+                orderedCategories.push(cat);
+            }
+        });
+    });
+    
+    console.log('Rendering categories in order:', orderedCategories.length);
+    
+    // Рендерим все категории с display:none кроме первой
+    content.innerHTML = orderedCategories.map((cat, index) => {
+        const productsInCategory = menu.filter(item => {
+            return item.category === cat;
+        });
+        
+        console.log(`Category ${cat}: ${productsInCategory.length} products`);
+        
+        const displayName = categoryMap[cat] || cat;
+        const isActive = index === 0 ? '' : 'display: none;';
+        
+        // Для контактов - специальный рендеринг
+        if (cat === 'contacts') {
+            return `
+                <div class="category-section" id="category-${cat}" style="${isActive}">
+                    <div class="category-header">
+                        <h2 class="category-title">📍 Контакты</h2>
+                        <p class="category-subtitle">Наши пиццерии и способы связи</p>
+                    </div>
+                    <div class="contacts-grid">
+                        <!-- Location 1 (Main) -->
+                        <div class="contact-card primary">
+                            <h3 class="contact-card-title">🍕 Pizza Napoli 1</h3>
+                            <div class="contact-info-item">
+                                <span class="contact-icon">📞</span>
+                                <div>
+                                    <div class="contact-label">Телефон:</div>
+                                    <div class="contact-value"><a href="tel:+79991699839" style="color: inherit; text-decoration: none;">+7 (999) 169-98-39</a></div>
+                                </div>
+                            </div>
+                            <div class="contact-info-item">
+                                <span class="contact-icon">📍</span>
+                                <div>
+                                    <div class="contact-label">Адрес:</div>
+                                    <div class="contact-value">Санкт-Петербург, улица Бабушкина 53, стр. 1, Невский район</div>
+                                </div>
+                            </div>
+                            <div class="contact-info-item">
+                                <span class="contact-icon">⏰</span>
+                                <div>
+                                    <div class="contact-label">Режим работы:</div>
+                                    <div class="contact-value">с 10:00 до 22:00 без выходных</div>
+                                </div>
+                            </div>
+                            <div class="contact-info-item">
+                                <span class="contact-icon">💳</span>
+                                <div>
+                                    <div class="contact-label">Оплата:</div>
+                                    <div class="payment-methods">
+                                        <span class="payment-badge">Наличными</span>
+                                        <span class="payment-badge">Картой</span>
+                                        <span class="payment-badge">Переводом</span>
+                                        <span class="payment-badge">Безналичным платежом</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Location 2 (Opening Soon) -->
+                        <div class="contact-card opening-soon">
+                            <div class="opening-badge">🎉 Скоро открытие!</div>
+                            <h3 class="contact-card-title">🍕 Pizza Napoli 2.0</h3>
+                            <div class="contact-info-item">
+                                <span class="contact-icon">📍</span>
+                                <div>
+                                    <div class="contact-label">Адрес:</div>
+                                    <div class="contact-value">Санкт-Петербург, Московский район</div>
+                                </div>
+                            </div>
+                            <div class="contact-info-item">
+                                <span class="contact-icon">🎯</span>
+                                <div>
+                                    <div class="contact-label">Особенности:</div>
+                                    <div class="contact-value">Большой зал, летняя веранда, детская комната</div>
+                                </div>
+                            </div>
+                            <div class="contact-info-item">
+                                <span class="contact-icon">🎁</span>
+                                <div>
+                                    <div class="contact-label">Открытие:</div>
+                                    <div class="contact-value">Следите за новостями! Скидки до 50% в день открытия</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Location 3 (New) -->
+                        <div class="contact-card">
+                            <h3 class="contact-card-title">🍕 Pizza Napoli 3</h3>
+                            <div class="contact-info-item">
+                                <span class="contact-icon">📍</span>
+                                <div>
+                                    <div class="contact-label">Адрес:</div>
+                                    <div class="contact-value">Санкт-Петербург, Приморский район</div>
+                                </div>
+                            </div>
+                            <div class="contact-info-item">
+                                <span class="contact-icon">🎯</span>
+                                <div>
+                                    <div class="contact-label">Особенности:</div>
+                                    <div class="contact-value">Просторный зал, панорамные окна, уютная атмосфера</div>
+                                </div>
+                            </div>
+                            <div class="contact-info-item">
+                                <span class="contact-icon">⏰</span>
+                                <div>
+                                    <div class="contact-label">Режим работы:</div>
+                                    <div class="contact-value">с 10:00 до 23:00 без выходных</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Map -->
+                        <div class="map-container">
+                            <div class="map-placeholder">
+                                <div class="map-pin location-1" title="Pizza Napoli 1 - ул. Бабушкина 53">📍</div>
+                                <div class="map-pin location-2" title="Pizza Napoli 2.0 - Московский район (скоро)">📍</div>
+                                <div class="map-pin location-3" title="Pizza Napoli 3 - Приморский район">📍</div>
+                                <span>Интерактивная карта с локациями пиццерий</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `;
+        }
+        
+        // Обычный рендеринг для категорий с товарами
+        return `
+            <div class="category-section" id="category-${cat}" style="${isActive}" data-category="${cat}">
+                <div class="category-header">
+                    <h2 class="category-title">${displayName}</h2>
+                    <p class="category-subtitle">${productsInCategory.length} товаров</p>
+                </div>
+                <div class="products-grid" id="grid-${cat}" data-loaded="0">
+                    ${renderProductsLazy(productsInCategory)}
+                </div>
+                ${productsInCategory.length > PRODUCTS_PER_LOAD ? `<div class="lazy-load-more" style="text-align: center; padding: 40px 20px;"><button class="load-more-btn" onclick="loadMoreProducts('${cat}')" style="padding: 12px 40px; background: #2a582c; color: white; border: none; border-radius: 8px; cursor: pointer; font-weight: 600; font-size: 16px;">Показать еще</button></div>` : ''}
+            </div>
+        `;
+    }).join('');
+    
+    // Инициализируем lazy loading для каждой категории
+    orderedCategories.forEach(cat => {
+        if (cat !== 'contacts') {
+            setupLazyLoading(cat);
+        }
+    });
+}
+
+function renderProductsLazy(products) {
+    if (!products || products.length === 0) {
+        console.warn('No products to render!');
+        return '<p style="color: #86868b; padding: 40px;">В этой категории пока нет товаров</p>';
+    }
+    
+    // Рендерим только первую порцию товаров
+    const initialProducts = products.slice(0, PRODUCTS_PER_LOAD);
+    
+    console.log(`Rendering ${initialProducts.length} of ${products.length} products (lazy load)`);
+    
+    return initialProducts.map((product, idx) => {
+        if (idx < 2) {
+            console.log('Product sample:', product);
+        }
+        return `
+            <div class="product-card" data-id="${product.id}" style="opacity: 0; transform: translateY(20px); animation: fadeInUp 0.5s ease forwards; animation-delay: ${idx * 0.05}s;">
+                <div class="product-image-wrapper">
+                    <img src="${product.image}" alt="${product.title}" class="product-image" onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 260 200%22><rect fill=%22%23f5f5f7%22 width=%22260%22 height=%22200%22/><text x=%22130%22 y=%22105%22 text-anchor=%22middle%22 fill=%22%2386868b%22 font-size=%2214%22>No Photo</text></svg>'">
+                </div>
+                <div class="product-info">
+                    <h3 class="product-name">${product.title}</h3>
+                    <p class="product-description">${product.description || ''}</p>
+                    <div class="product-footer">
+                        <span class="product-price">${product.price} ₽</span>
+                        <button class="add-btn" onclick="addToCart(${product.id})">+</button>
+                    </div>
+                </div>
+            </div>
+        `;
+    }).join('');
+}
+
+function setupLazyLoading(categoryId) {
+    const gridElement = document.getElementById(`grid-${categoryId}`);
+    if (!gridElement) return;
+    
+    const productsInCategory = menu.filter(item => item.category === categoryId);
+    const totalProducts = productsInCategory.length;
+    let loadedCount = parseInt(gridElement.dataset.loaded) || PRODUCTS_PER_LOAD;
+    
+    // Создаем observer для отслеживания видимости последних карточек
+    const options = {
+        root: null,
+        rootMargin: '100px',
+        threshold: 0.1
+    };
+    
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting && loadedCount < totalProducts) {
+                // Пользователь доскроллил до конца - загружаем еще
+                loadMoreProducts(categoryId, false); // false = не через кнопку, а автоматически
+            }
+        });
+    }, options);
+    
+    // Наблюдаем за последними карточками
+    const productCards = gridElement.querySelectorAll('.product-card');
+    if (productCards.length > 0) {
+        const lastCard = productCards[productCards.length - 1];
+        observer.observe(lastCard);
+        lazyLoadObservers.set(categoryId, { observer, loadedCount });
+    }
+}
+
+function loadMoreProducts(categoryId, manual = true) {
+    const gridElement = document.getElementById(`grid-${categoryId}`);
+    if (!gridElement) return;
+    
+    const productsInCategory = menu.filter(item => item.category === categoryId);
+    const totalProducts = productsInCategory.length;
+    
+    const observerData = lazyLoadObservers.get(categoryId);
+    let loadedCount = observerData ? observerData.loadedCount : PRODUCTS_PER_LOAD;
+    
+    // Загружаем следующую порцию
+    const nextBatch = productsInCategory.slice(loadedCount, loadedCount + PRODUCTS_PER_LOAD);
+    
+    if (nextBatch.length === 0) {
+        console.log('No more products to load');
+        return;
+    }
+    
+    console.log(`Loading ${nextBatch.length} more products for ${categoryId}`);
+    
+    // Рендерим новые карточки
+    const tempDiv = document.createElement('div');
+    tempDiv.innerHTML = nextBatch.map((product, idx) => `
+        <div class="product-card" data-id="${product.id}" style="opacity: 0; transform: translateY(20px); animation: fadeInUp 0.5s ease forwards; animation-delay: ${idx * 0.05}s;">
+            <div class="product-image-wrapper">
+                <img src="${product.image}" alt="${product.title}" class="product-image" onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 260 200%22><rect fill=%22%23f5f5f7%22 width=%22260%22 height=%22200%22/><text x=%22130%22 y=%22105%22 text-anchor=%22middle%22 fill=%22%2386868b%22 font-size=%2214%22>No Photo</text></svg>'">
+            </div>
+            <div class="product-info">
+                <h3 class="product-name">${product.title}</h3>
+                <p class="product-description">${product.description || ''}</p>
+                <div class="product-footer">
+                    <span class="product-price">${product.price} ₽</span>
+                    <button class="add-btn" onclick="addToCart(${product.id})">+</button>
+                </div>
+            </div>
+        </div>
+    `).join('');
+    
+    Array.from(tempDiv.children).forEach(card => {
+        gridElement.appendChild(card);
+    });
+    
+    loadedCount += nextBatch.length;
+    gridElement.dataset.loaded = loadedCount;
+    
+    console.log(`Loaded ${loadedCount}/${totalProducts} products for ${categoryId}`);
+    
+    // Обновляем observer
+    if (observerData) {
+        observerData.observer.disconnect();
+    }
+    
+    // Пересоздаем observer для новых карточек
+    setupLazyLoading(categoryId);
+    
+    // Если загрузили все товары - убираем кнопку
+    if (loadedCount >= totalProducts && manual) {
+        const loadMoreBtn = gridElement.parentElement.querySelector('.lazy-load-more');
+        if (loadMoreBtn) {
+            loadMoreBtn.remove();
+        }
+    }
+}
+
+// Анимация появления карточек
+const style = document.createElement('style');
+style.textContent = `
+    @keyframes fadeInUp {
+        from {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+`;
+document.head.appendChild(style);
 
 document.addEventListener('DOMContentLoaded', loadMenu);

@@ -334,7 +334,36 @@ body {
         justify-content: flex-start;
     }
     
+    /* Mobile: 2 columns for products */
     .products-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+    
+    /* Smaller product cards on mobile */
+    .product-card {
+        font-size: 14px;
+    }
+    
+    .product-image {
+        height: 140px;
+    }
+    
+    .product-info {
+        padding: 12px;
+    }
+    
+    .product-name {
+        font-size: 15px;
+        margin-bottom: 8px;
+    }
+    
+    .product-price {
+        font-size: 18px;
+    }
+    
+    .add-btn {
+        padding: 8px 16px;
+        font-size: 18px;
     }
 }
