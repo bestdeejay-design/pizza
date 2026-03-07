@@ -66,15 +66,19 @@ function initSidebar() {
             categories: ['pizza-30cm', 'piccolo-20cm', 'calzone']
         },
         {
-            title: '🥗 ЗАКУСКИ',
-            categories: ['bread-focaccia', 'sauce', 'rolls']
+            title: '🍣 СУШИ & РОЛЛЫ',
+            categories: ['rolls']
         },
         {
-            title: '🍱 КОМБО НАБОРЫ',
+            title: '🍞 ХЛЕБ',
+            categories: ['bread-focaccia']
+        },
+        {
+            title: '🍱 НАБОРЫ',
             categories: ['combo']
         },
         {
-            title: '🍰 ДЕССЕРТЫ',
+            title: '🍰 ДЕСЕРТЫ',
             categories: ['confectionery']
         },
         {
@@ -82,8 +86,12 @@ function initSidebar() {
             categories: ['beverages']
         },
         {
+            title: '👨‍🍳 ГОТОВИМ ДОМА',
+            categories: ['frozen', 'aromatic-oils']
+        },
+        {
             title: 'ℹ️ ИНФОРМАЦИЯ',
-            categories: ['frozen', 'aromatic-oils', 'masterclass', 'franchise', 'contacts']
+            categories: ['masterclass', 'franchise', 'contacts']
         }
     ];
     
@@ -506,15 +514,19 @@ function initMobileMenu() {
             categories: ['pizza-30cm', 'piccolo-20cm', 'calzone']
         },
         {
-            title: '🥗 ЗАКУСКИ',
-            categories: ['bread-focaccia', 'sauce', 'rolls']
+            title: '🍣 СУШИ & РОЛЛЫ',
+            categories: ['rolls']
         },
         {
-            title: '🍱 КОМБО НАБОРЫ',
+            title: '🍞 ХЛЕБ',
+            categories: ['bread-focaccia']
+        },
+        {
+            title: '🍱 НАБОРЫ',
             categories: ['combo']
         },
         {
-            title: '🍰 ДЕССЕРТЫ',
+            title: '🍰 ДЕСЕРТЫ',
             categories: ['confectionery']
         },
         {
@@ -522,8 +534,12 @@ function initMobileMenu() {
             categories: ['beverages']
         },
         {
+            title: '👨‍🍳 ГОТОВИМ ДОМА',
+            categories: ['frozen', 'aromatic-oils']
+        },
+        {
             title: 'ℹ️ ИНФОРМАЦИЯ',
-            categories: ['frozen', 'aromatic-oils', 'masterclass', 'franchise', 'contacts']
+            categories: ['masterclass', 'franchise', 'contacts']
         }
     ];
     
