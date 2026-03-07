@@ -992,8 +992,6 @@ function loadMoreProducts(categoryId, event = null) {
     
     if (nextBatch.length === 0) {
         console.log('No more products to load');
-        // Все товары загружены - переходим к следующей категории
-        navigateToNextCategory(categoryId);
         return;
     }
     
@@ -1034,13 +1032,15 @@ function loadMoreProducts(categoryId, event = null) {
     // Пересоздаем observer для новых карточек
     setupLazyLoading(categoryId);
     
-    // Если загрузили все товары - убираем кнопку
+    // Если загрузили все товары - убираем кнопку и переходим к следующей категории
     if (loadedCount >= totalProducts) {
         const loadMoreContainer = gridElement.parentElement.querySelector('.lazy-load-more');
         if (loadMoreContainer) {
             loadMoreContainer.remove();
             console.log(`Removed load more button for ${categoryId} - all products loaded`);
         }
+        // Все товары загружены - переходим к следующей категории
+        navigateToNextCategory(categoryId);
     }
 }
 
