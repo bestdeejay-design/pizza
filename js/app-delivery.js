@@ -34,19 +34,14 @@ async function loadMenu() {
         
         initSidebar();
         renderContent();
+        setupSearch();
         
-        // Небольшая задержка для Observer
-        setTimeout(() => {
-            setupIntersectionObserver();
-            setupSearch();
-            
-            // Активируем первую категорию при загрузке
-            const firstCategory = getUniqueCategories()[0];
-            if (firstCategory) {
-                setActiveNav(firstCategory);
-                console.log('First category activated:', firstCategory);
-            }
-        }, 100);
+        // Активируем первую категорию при загрузке
+        const firstCategory = getUniqueCategories()[0];
+        if (firstCategory) {
+            setActiveNav(firstCategory);
+            console.log('First category activated:', firstCategory);
+        }
     } catch (error) {
         console.error('Error loading menu:', error);
     }
@@ -124,7 +119,8 @@ function renderContent() {
         'franchise': 'Франшиза'
     };
     
-    content.innerHTML = categories.map(cat => {
+    // Рендерим все категории с display:none кроме первой
+    content.innerHTML = categories.map((cat, index) => {
         const productsInCategory = menu.filter(item => {
             return item.category === cat;
         });
@@ -132,9 +128,10 @@ function renderContent() {
         console.log(`Category ${cat}: ${productsInCategory.length} products`);
         
         const displayName = categoryMap[cat] || cat;
+        const isActive = index === 0 ? '' : 'display: none;';
         
         return `
-            <div class="category-section" id="category-${cat}">
+            <div class="category-section" id="category-${cat}" style="${isActive}">
                 <div class="category-header">
                     <h2 class="category-title">${displayName}</h2>
                     <p class="category-subtitle">${productsInCategory.length} товаров</p>
@@ -226,6 +223,13 @@ function scrollToCategory(categoryId) {
         // Активируем навигацию сразу при клике
         setActiveNav(categoryId);
         console.log('Navigation activated for:', categoryId);
+        
+        // Показываем только выбранную категорию
+        document.querySelectorAll('.category-section').forEach(section => {
+            section.style.display = 'none';
+        });
+        element.style.display = '';
+        console.log('Category displayed:', categoryId);
         
         const offset = 100;
         const bodyRect = document.body.getBoundingClientRect().top;
