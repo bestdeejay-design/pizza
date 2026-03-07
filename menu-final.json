@@ -142,343 +142,343 @@
       {
         "title": "Пицца месяца с 01-31 марта : Пицца \"Болоньеза\"",
         "price": 950,
-        "image": "img/0000-f0530b993edeb20e72e555caddc7fbde.png",
+        "image": "img/0000-f0530b993edeb20e72e555caddc7fbde.webp",
         "id": 1,
         "category": "pizza-30cm"
       },
       {
         "title": "Пицца месяца с 01-28 февраля: Pizza alla Diavola",
         "price": 950,
-        "image": "img/0001-f8f29b6a93fa6e1194828d74a7d08aa2.jpg",
+        "image": "img/0001-f8f29b6a93fa6e1194828d74a7d08aa2.webp",
         "id": 2,
         "category": "pizza-30cm"
       },
       {
         "title": "Пицца Маргарита 1/4",
         "price": 200,
-        "image": "img/0002-57836abce33e460be8c6f13d6c39806b.jpg",
+        "image": "img/0002-57836abce33e460be8c6f13d6c39806b.webp",
         "id": 3,
         "category": "pizza-30cm"
       },
       {
         "title": "Пицца Пепперони 1/4",
         "price": 200,
-        "image": "img/0003-9f6cad1f7ee1c2d7cbcbb0e32ee886d8.jpg",
+        "image": "img/0003-9f6cad1f7ee1c2d7cbcbb0e32ee886d8.webp",
         "id": 4,
         "category": "pizza-30cm"
       },
       {
         "title": "Пицца кура/перец 1/4",
         "price": 200,
-        "image": "img/0004-03edfe5754b9fcfecfda85ac3fd985d0.jpg",
+        "image": "img/0004-03edfe5754b9fcfecfda85ac3fd985d0.webp",
         "id": 5,
         "category": "pizza-30cm"
       },
       {
         "title": "Пицца 4 сыра 1/4",
         "price": 200,
-        "image": "img/0005-be693f514bc635136042f7ceaf0dfbce.jpg",
+        "image": "img/0005-be693f514bc635136042f7ceaf0dfbce.webp",
         "id": 6,
         "category": "pizza-30cm"
       },
       {
         "title": "Пицца Суприм 1/4",
         "price": 200,
-        "image": "img/0006-dd3ceb8390ae20da2a5ecea3f5b2ec43.jpg",
+        "image": "img/0006-dd3ceb8390ae20da2a5ecea3f5b2ec43.webp",
         "id": 7,
         "category": "pizza-30cm"
       },
       {
         "title": "Пицца \"Я сам Шеф\"",
         "price": 450,
-        "image": "img/0007-33609650.jpg",
+        "image": "img/0007-33609650.webp",
         "id": 8,
         "category": "masterclass"
       },
       {
         "title": "Пицца \"Маргарита\"",
         "price": 750,
-        "image": "img/0008-ead3882745fa013324b56844cf2a560a.jpg",
+        "image": "img/0008-ead3882745fa013324b56844cf2a560a.webp",
         "id": 9,
         "category": "pizza-30cm"
       },
       {
         "title": "Пицца Пепперони",
         "price": 750,
-        "image": "img/0009-18027452e983e6723778dd66f82e6753.jpg",
+        "image": "img/0009-18027452e983e6723778dd66f82e6753.webp",
         "id": 10,
         "category": "pizza-30cm"
       },
       {
         "title": "Пицца Ветчина/грибы",
         "price": 750,
-        "image": "img/0010-5f09de652ff7d0ed82dd9195c1e4348c.jpg",
+        "image": "img/0010-5f09de652ff7d0ed82dd9195c1e4348c.webp",
         "id": 11,
         "category": "pizza-30cm"
       },
       {
         "title": "Пицца Кура с печеным перцем",
         "price": 750,
-        "image": "img/0011-d94e5c9e3cfa2008875ee4fa491c65b9.jpg",
+        "image": "img/0011-d94e5c9e3cfa2008875ee4fa491c65b9.webp",
         "id": 12,
         "category": "pizza-30cm"
       },
       {
         "title": "Pizza Salvata Mila",
         "price": 850,
-        "image": "img/0012-e24d8343f20719050b97495b5a292f0a.jpg",
+        "image": "img/0012-e24d8343f20719050b97495b5a292f0a.webp",
         "id": 13,
         "category": "pizza-30cm"
       },
       {
         "title": "Пицца с лисичками, шампиньонами и красным луком",
         "price": 850,
-        "image": "img/0013-30ee7ddeb445e3cb717bf2f37c1d037f.jpg",
+        "image": "img/0013-30ee7ddeb445e3cb717bf2f37c1d037f.webp",
         "id": 14,
         "category": "pizza-30cm"
       },
       {
         "title": "Pizza Chicken BBQ",
         "price": 850,
-        "image": "img/0014-20b3067fe1bdf345a778e05ad4e0d672.jpg",
+        "image": "img/0014-20b3067fe1bdf345a778e05ad4e0d672.webp",
         "id": 15,
         "category": "pizza-30cm"
       },
       {
         "title": "Пицца \"Капричоза\"",
         "price": 850,
-        "image": "img/0015-e03df4dca0692e3279e80e7345802bc7.jpg",
+        "image": "img/0015-e03df4dca0692e3279e80e7345802bc7.webp",
         "id": 16,
         "category": "pizza-30cm"
       },
       {
         "title": "Пицца \"Классическая Маргарита\"",
         "price": 850,
-        "image": "img/0016-960c8e8e9376a4b8564d6b2dbc217f66.jpg",
+        "image": "img/0016-960c8e8e9376a4b8564d6b2dbc217f66.webp",
         "id": 17,
         "category": "pizza-30cm"
       },
       {
         "title": "Пицца \"4 сыра\"",
         "price": 850,
-        "image": "img/0017-719c04e0f6486ad575c942b9dcfa187e.jpg",
+        "image": "img/0017-719c04e0f6486ad575c942b9dcfa187e.webp",
         "id": 18,
         "category": "pizza-30cm"
       },
       {
         "title": "Пицца Свинина BBQ с ананасами",
         "price": 850,
-        "image": "img/0018-bac95b9185dd75f27d4c0c3dfa9bb07f.jpg",
+        "image": "img/0018-bac95b9185dd75f27d4c0c3dfa9bb07f.webp",
         "id": 19,
         "category": "pizza-30cm"
       },
       {
         "title": "Пицца Говядина «Терияки»",
         "price": 850,
-        "image": "img/0019-8d915ce130b1ef0bdb802fc375702b67.jpg",
+        "image": "img/0019-8d915ce130b1ef0bdb802fc375702b67.webp",
         "id": 20,
         "category": "pizza-30cm"
       },
       {
         "title": "Пицца \"Карбонара\"",
         "price": 850,
-        "image": "img/0020-8f8b471cf7e79bcafa8c88a3338fab8f.jpg",
+        "image": "img/0020-8f8b471cf7e79bcafa8c88a3338fab8f.webp",
         "id": 21,
         "category": "pizza-30cm"
       },
       {
         "title": "Пицца с мясными шариками",
         "price": 850,
-        "image": "img/0021-0b063ec4b2940340d4539f2c946365d1.jpg",
+        "image": "img/0021-0b063ec4b2940340d4539f2c946365d1.webp",
         "id": 22,
         "category": "pizza-30cm"
       },
       {
         "title": "Пицца \"Пера\" с грушей и сыром Горгонзола",
         "price": 850,
-        "image": "img/0022-02cc88ff553b6528572e666c4b96fec3.jpg",
+        "image": "img/0022-02cc88ff553b6528572e666c4b96fec3.webp",
         "id": 23,
         "category": "pizza-30cm"
       },
       {
         "title": "Пицца \"Монтенегро\"",
         "price": 850,
-        "image": "img/0023-f7ce1267caff557596b7760cf6ddda5f.jpg",
+        "image": "img/0023-f7ce1267caff557596b7760cf6ddda5f.webp",
         "id": 24,
         "category": "pizza-30cm"
       },
       {
         "title": "Пицца \"Суприм\"",
         "price": 850,
-        "image": "img/0024-656a331b6abbf7889da0e7611bbe47e0.jpg",
+        "image": "img/0024-656a331b6abbf7889da0e7611bbe47e0.webp",
         "id": 25,
         "category": "pizza-30cm"
       },
       {
         "title": "Пицца \"Вегетариано\"",
         "price": 850,
-        "image": "img/0025-8ed85445f59c25b1226d809afcaf140e.jpg",
+        "image": "img/0025-8ed85445f59c25b1226d809afcaf140e.webp",
         "id": 26,
         "category": "pizza-30cm"
       },
       {
         "title": "Пицца \"Кокорита\"",
         "price": 850,
-        "image": "img/0026-3454e4b0028e82eb434cc06397fa4fd0.jpg",
+        "image": "img/0026-3454e4b0028e82eb434cc06397fa4fd0.webp",
         "id": 27,
         "category": "pizza-30cm"
       },
       {
         "title": "Пицца \"4 сезона: Ультра\"",
         "price": 850,
-        "image": "img/0027-cf95bfe4a1c8b0cfcd84f15319c193a4.jpg",
+        "image": "img/0027-cf95bfe4a1c8b0cfcd84f15319c193a4.webp",
         "id": 28,
         "category": "pizza-30cm"
       },
       {
         "title": "Пицца \"Salsicciotti\"",
         "price": 950,
-        "image": "img/0028-2d5028b683e6348c6ba3e8a6bab0997c.jpg",
+        "image": "img/0028-2d5028b683e6348c6ba3e8a6bab0997c.webp",
         "id": 29,
         "category": "pizza-30cm"
       },
       {
         "title": "Пицца с колбасой Мортаделла, сыром Страчателла и жареными фисташками",
         "price": 950,
-        "image": "img/0029-4d3d66e3a82fd2d98db2866207832ba0.jpg",
+        "image": "img/0029-4d3d66e3a82fd2d98db2866207832ba0.webp",
         "id": 30,
         "category": "pizza-30cm"
       },
       {
         "title": "Пицца \"Italy\"",
         "price": 950,
-        "image": "img/0030-d988119e6ba116c16a3d2a8588ab8359.jpg",
+        "image": "img/0030-d988119e6ba116c16a3d2a8588ab8359.webp",
         "id": 31,
         "category": "pizza-30cm"
       },
       {
         "title": "Пицца «Мехико»",
         "price": 950,
-        "image": "img/0031-16de1e7574ba0a632a2b5a07abaa2c1f.jpg",
+        "image": "img/0031-16de1e7574ba0a632a2b5a07abaa2c1f.webp",
         "id": 32,
         "category": "pizza-30cm"
       },
       {
         "title": "Пицца \"Реджина\"",
         "price": 950,
-        "image": "img/0032-7a6ab42747f9d5b00dd03e698efc45ca.jpg",
+        "image": "img/0032-7a6ab42747f9d5b00dd03e698efc45ca.webp",
         "id": 33,
         "category": "pizza-30cm"
       },
       {
         "title": "Пицца \"4 сезона: Мясная\"",
         "price": 950,
-        "image": "img/0033-32f5dacf4cf62b9bd951b778d7d34795.jpg",
+        "image": "img/0033-32f5dacf4cf62b9bd951b778d7d34795.webp",
         "id": 34,
         "category": "pizza-30cm"
       },
       {
         "title": "Пицца с тунцом Блюфин",
         "price": 950,
-        "image": "img/0034-f4e7a05a55f82f4819965efc409bc63e.jpg",
+        "image": "img/0034-f4e7a05a55f82f4819965efc409bc63e.webp",
         "id": 35,
         "category": "pizza-30cm"
       },
       {
         "title": "Пицца с Лососем и сыром Бри и зеленой спаржей",
         "price": 950,
-        "image": "img/0035-65cfa584968acd44853f77d6477b9840.jpg",
+        "image": "img/0035-65cfa584968acd44853f77d6477b9840.webp",
         "id": 36,
         "category": "pizza-30cm"
       },
       {
         "title": "Пицца «Ди Парма»",
         "price": 1100,
-        "image": "img/0036-8b377ec68bcfc9d10d0d7ee7c144d1ad.jpg",
+        "image": "img/0036-8b377ec68bcfc9d10d0d7ee7c144d1ad.webp",
         "id": 37,
         "category": "pizza-30cm"
       },
       {
         "title": "Пицца \"Сицилийская\" с анчоусами и каперсами",
         "price": 1100,
-        "image": "img/0037-27e771f4b24f5ff50d94159e6a6e3a40.jpg",
+        "image": "img/0037-27e771f4b24f5ff50d94159e6a6e3a40.webp",
         "id": 38,
         "category": "pizza-30cm"
       },
       {
         "title": "Пицца с Олениной",
         "price": 1100,
-        "image": "img/0038-15f9fa1767eacd6734826c8bd98cc1aa.jpg",
+        "image": "img/0038-15f9fa1767eacd6734826c8bd98cc1aa.webp",
         "id": 39,
         "category": "pizza-30cm"
       },
       {
         "title": "Пицца \"Frutti di Mare\" с морепродуктами",
         "price": 1100,
-        "image": "img/0039-f7b4e026d5c86c5390631323688e1af6.jpg",
+        "image": "img/0039-f7b4e026d5c86c5390631323688e1af6.webp",
         "id": 40,
         "category": "pizza-30cm"
       },
       {
         "title": "Пицца с Камчатскими крабами, морскими гребешками, креветками и раками",
         "price": 2500,
-        "image": "img/0040-edaf502f8ce2a73456a0bd23d96fc483.jpg",
+        "image": "img/0040-edaf502f8ce2a73456a0bd23d96fc483.webp",
         "id": 41,
         "category": "pizza-30cm"
       },
       {
         "title": "Пицца с Уткой и Фуа гра",
         "price": 2500,
-        "image": "img/0041-7255ecf4820bade14b286284f4f26f1d.jpg",
+        "image": "img/0041-7255ecf4820bade14b286284f4f26f1d.webp",
         "id": 42,
         "category": "pizza-30cm"
       },
       {
         "title": "Пицца с чесночными креветками, вялеными томатами, сыром Пармезан и петрушкой",
         "price": 2500,
-        "image": "img/0042-e06ea73d9d3510a34a39ec7619637805.jpg",
+        "image": "img/0042-e06ea73d9d3510a34a39ec7619637805.webp",
         "id": 43,
         "category": "pizza-30cm"
       },
       {
         "title": "Пицца с сыром Буратто и прошутто",
         "price": 2500,
-        "image": "img/0043-13412f63e62355514e1714338d177098.jpg",
+        "image": "img/0043-13412f63e62355514e1714338d177098.webp",
         "id": 44,
         "category": "pizza-30cm"
       },
       {
         "title": "Пицца с форелью, шпинатом, сыром Пармезан, красной икрой и сыром Страчателла",
         "price": 2500,
-        "image": "img/0044-e7644983c9cd42936e8679e380c633f2.jpg",
+        "image": "img/0044-e7644983c9cd42936e8679e380c633f2.webp",
         "id": 45,
         "category": "pizza-30cm"
       },
       {
         "title": "Pizza Piccola alla Diavola 20 см",
         "price": 800,
-        "image": "img/0001-f8f29b6a93fa6e1194828d74a7d08aa2.jpg",
+        "image": "img/0001-f8f29b6a93fa6e1194828d74a7d08aa2.webp",
         "id": 46,
         "category": "pizza-30cm"
       },
       {
         "title": "Pizza Piccola с Уткой и Фуа гра",
         "price": 2000,
-        "image": "img/0041-7255ecf4820bade14b286284f4f26f1d.jpg",
+        "image": "img/0041-7255ecf4820bade14b286284f4f26f1d.webp",
         "id": 47,
         "category": "pizza-30cm"
       },
       {
         "title": "Пицца с ягненком в кокосовом соусе Карри",
         "price": 2500,
-        "image": "img/0045-07bad0766e0878d9d24eba16629e3faa.jpg",
+        "image": "img/0045-07bad0766e0878d9d24eba16629e3faa.webp",
         "id": 48,
         "category": "pizza-30cm"
       },
       {
         "title": "Пицца с мраморной говядиной маринованное в соусе Ворчестер с лисичками",
         "price": 2500,
-        "image": "img/0046-6ac84b8930c5e532bf30184bfe407cb8.jpg",
+        "image": "img/0046-6ac84b8930c5e532bf30184bfe407cb8.webp",
         "id": 49,
         "category": "pizza-30cm"
       }
@@ -487,273 +487,273 @@
       {
         "title": "Pizza Piccolo Пепперони",
         "price": 600,
-        "image": "img/0009-18027452e983e6723778dd66f82e6753.jpg",
+        "image": "img/0009-18027452e983e6723778dd66f82e6753.webp",
         "id": 50,
         "category": "piccolo-20cm"
       },
       {
         "title": "Pizza Piccolo Маргарита",
         "price": 600,
-        "image": "img/0008-ead3882745fa013324b56844cf2a560a.jpg",
+        "image": "img/0008-ead3882745fa013324b56844cf2a560a.webp",
         "id": 51,
         "category": "piccolo-20cm"
       },
       {
         "title": "Pizza Piccolo Ветчина/грибы",
         "price": 600,
-        "image": "img/0010-5f09de652ff7d0ed82dd9195c1e4348c.jpg",
+        "image": "img/0010-5f09de652ff7d0ed82dd9195c1e4348c.webp",
         "id": 52,
         "category": "piccolo-20cm"
       },
       {
         "title": "Pizza Piccolo Кура/Перец",
         "price": 600,
-        "image": "img/0011-d94e5c9e3cfa2008875ee4fa491c65b9.jpg",
+        "image": "img/0011-d94e5c9e3cfa2008875ee4fa491c65b9.webp",
         "id": 53,
         "category": "piccolo-20cm"
       },
       {
         "title": "Pizza Piccolo Chicken BBQ",
         "price": 700,
-        "image": "img/0014-20b3067fe1bdf345a778e05ad4e0d672.jpg",
+        "image": "img/0014-20b3067fe1bdf345a778e05ad4e0d672.webp",
         "id": 54,
         "category": "piccolo-20cm"
       },
       {
         "title": "Pizza Piccolo Карбонара",
         "price": 700,
-        "image": "img/0020-8f8b471cf7e79bcafa8c88a3338fab8f.jpg",
+        "image": "img/0020-8f8b471cf7e79bcafa8c88a3338fab8f.webp",
         "id": 55,
         "category": "piccolo-20cm"
       },
       {
         "title": "Pizza Piccolo 4 сыра",
         "price": 700,
-        "image": "img/0017-719c04e0f6486ad575c942b9dcfa187e.jpg",
+        "image": "img/0017-719c04e0f6486ad575c942b9dcfa187e.webp",
         "id": 56,
         "category": "piccolo-20cm"
       },
       {
         "title": "Pizza Piccolo 4 сезона: Ультра",
         "price": 700,
-        "image": "img/0027-cf95bfe4a1c8b0cfcd84f15319c193a4.jpg",
+        "image": "img/0027-cf95bfe4a1c8b0cfcd84f15319c193a4.webp",
         "id": 57,
         "category": "piccolo-20cm"
       },
       {
         "title": "Pizza Piccolo Вегетариано",
         "price": 700,
-        "image": "img/0025-8ed85445f59c25b1226d809afcaf140e.jpg",
+        "image": "img/0025-8ed85445f59c25b1226d809afcaf140e.webp",
         "id": 58,
         "category": "piccolo-20cm"
       },
       {
         "title": "Pizza Piccolo Кокорита",
         "price": 700,
-        "image": "img/0026-3454e4b0028e82eb434cc06397fa4fd0.jpg",
+        "image": "img/0026-3454e4b0028e82eb434cc06397fa4fd0.webp",
         "id": 59,
         "category": "piccolo-20cm"
       },
       {
         "title": "Pizza Piccolo Капричоза",
         "price": 700,
-        "image": "img/0015-e03df4dca0692e3279e80e7345802bc7.jpg",
+        "image": "img/0015-e03df4dca0692e3279e80e7345802bc7.webp",
         "id": 60,
         "category": "piccolo-20cm"
       },
       {
         "title": "Pizza Piccolo Классическая Маргарита",
         "price": 700,
-        "image": "img/0016-960c8e8e9376a4b8564d6b2dbc217f66.jpg",
+        "image": "img/0016-960c8e8e9376a4b8564d6b2dbc217f66.webp",
         "id": 61,
         "category": "piccolo-20cm"
       },
       {
         "title": "Pizza Piccolo Salvata Mila",
         "price": 700,
-        "image": "img/0012-e24d8343f20719050b97495b5a292f0a.jpg",
+        "image": "img/0012-e24d8343f20719050b97495b5a292f0a.webp",
         "id": 62,
         "category": "piccolo-20cm"
       },
       {
         "title": "Pizza Piccolo Монтенегро",
         "price": 700,
-        "image": "img/0023-f7ce1267caff557596b7760cf6ddda5f.jpg",
+        "image": "img/0023-f7ce1267caff557596b7760cf6ddda5f.webp",
         "id": 63,
         "category": "piccolo-20cm"
       },
       {
         "title": "Pizza Piccolo Говядина Терияки",
         "price": 700,
-        "image": "img/0019-8d915ce130b1ef0bdb802fc375702b67.jpg",
+        "image": "img/0019-8d915ce130b1ef0bdb802fc375702b67.webp",
         "id": 64,
         "category": "piccolo-20cm"
       },
       {
         "title": "Pizza Piccolo Пера с грушей и Горгонзолой",
         "price": 700,
-        "image": "img/0022-02cc88ff553b6528572e666c4b96fec3.jpg",
+        "image": "img/0022-02cc88ff553b6528572e666c4b96fec3.webp",
         "id": 65,
         "category": "piccolo-20cm"
       },
       {
         "title": "Pizza Piccolo с мясными шариками",
         "price": 700,
-        "image": "img/0021-0b063ec4b2940340d4539f2c946365d1.jpg",
+        "image": "img/0021-0b063ec4b2940340d4539f2c946365d1.webp",
         "id": 66,
         "category": "piccolo-20cm"
       },
       {
         "title": "Pizza Piccolo Суприм",
         "price": 700,
-        "image": "img/0024-656a331b6abbf7889da0e7611bbe47e0.jpg",
+        "image": "img/0024-656a331b6abbf7889da0e7611bbe47e0.webp",
         "id": 67,
         "category": "piccolo-20cm"
       },
       {
         "title": "Pizza Piccolo Italy",
         "price": 800,
-        "image": "img/0030-d988119e6ba116c16a3d2a8588ab8359.jpg",
+        "image": "img/0030-d988119e6ba116c16a3d2a8588ab8359.webp",
         "id": 68,
         "category": "piccolo-20cm"
       },
       {
         "title": "Pizza piccolo 4 сезона: Мясная",
         "price": 800,
-        "image": "img/0033-32f5dacf4cf62b9bd951b778d7d34795.jpg",
+        "image": "img/0033-32f5dacf4cf62b9bd951b778d7d34795.webp",
         "id": 69,
         "category": "piccolo-20cm"
       },
       {
         "title": "Pizza Piccolo Мортаделла с сыром Страчателла и жареными фисташками",
         "price": 800,
-        "image": "img/0029-4d3d66e3a82fd2d98db2866207832ba0.jpg",
+        "image": "img/0029-4d3d66e3a82fd2d98db2866207832ba0.webp",
         "id": 70,
         "category": "piccolo-20cm"
       },
       {
         "title": "Pizza Piccolo с Олениной",
         "price": 900,
-        "image": "img/0038-15f9fa1767eacd6734826c8bd98cc1aa.jpg",
+        "image": "img/0038-15f9fa1767eacd6734826c8bd98cc1aa.webp",
         "id": 71,
         "category": "piccolo-20cm"
       },
       {
         "title": "Pizza Piccolo с лососем и зеленый спаржей",
         "price": 800,
-        "image": "img/0035-65cfa584968acd44853f77d6477b9840.jpg",
+        "image": "img/0035-65cfa584968acd44853f77d6477b9840.webp",
         "id": 72,
         "category": "piccolo-20cm"
       },
       {
         "title": "Pizza Piccolo Salsicciotti",
         "price": 800,
-        "image": "img/0028-2d5028b683e6348c6ba3e8a6bab0997c.jpg",
+        "image": "img/0028-2d5028b683e6348c6ba3e8a6bab0997c.webp",
         "id": 73,
         "category": "piccolo-20cm"
       },
       {
         "title": "Pizza Piccolo Мехико",
         "price": 800,
-        "image": "img/0031-16de1e7574ba0a632a2b5a07abaa2c1f.jpg",
+        "image": "img/0031-16de1e7574ba0a632a2b5a07abaa2c1f.webp",
         "id": 74,
         "category": "piccolo-20cm"
       },
       {
         "title": "Pizza Piccolo с Тунцом",
         "price": 800,
-        "image": "img/0034-f4e7a05a55f82f4819965efc409bc63e.jpg",
+        "image": "img/0034-f4e7a05a55f82f4819965efc409bc63e.webp",
         "id": 75,
         "category": "piccolo-20cm"
       },
       {
         "title": "Pizza Piccolo Реджина",
         "price": 800,
-        "image": "img/0032-7a6ab42747f9d5b00dd03e698efc45ca.jpg",
+        "image": "img/0032-7a6ab42747f9d5b00dd03e698efc45ca.webp",
         "id": 76,
         "category": "piccolo-20cm"
       },
       {
         "title": "Pizza Piccolo Ди Парма",
         "price": 900,
-        "image": "img/0036-8b377ec68bcfc9d10d0d7ee7c144d1ad.jpg",
+        "image": "img/0036-8b377ec68bcfc9d10d0d7ee7c144d1ad.webp",
         "id": 77,
         "category": "piccolo-20cm"
       },
       {
         "title": "Pizza Piccolo Сицилийская с анчоусами и каперсами",
         "price": 900,
-        "image": "img/0037-27e771f4b24f5ff50d94159e6a6e3a40.jpg",
+        "image": "img/0037-27e771f4b24f5ff50d94159e6a6e3a40.webp",
         "id": 78,
         "category": "piccolo-20cm"
       },
       {
         "title": "Pizza Piccolo Fruti de Mare",
         "price": 900,
-        "image": "img/0039-f7b4e026d5c86c5390631323688e1af6.jpg",
+        "image": "img/0039-f7b4e026d5c86c5390631323688e1af6.webp",
         "id": 79,
         "category": "piccolo-20cm"
       },
       {
         "title": "Pizza Piccolo с черным итальянским трюфелем",
         "price": 2000,
-        "image": "img/0047-1822a00bcffa8c6e1fb80faa2b1eb463.jpg",
+        "image": "img/0047-1822a00bcffa8c6e1fb80faa2b1eb463.webp",
         "id": 80,
         "category": "piccolo-20cm"
       },
       {
         "title": "Pizza Piccolo с Камчатскими крабами, морскими гребешками, креветками и раками",
         "price": 2000,
-        "image": "img/0040-edaf502f8ce2a73456a0bd23d96fc483.jpg",
+        "image": "img/0040-edaf502f8ce2a73456a0bd23d96fc483.webp",
         "id": 81,
         "category": "piccolo-20cm"
       },
       {
         "title": "Pizza Piccolo с форелью, шпинатом, красной икрой и сыром Страчателла",
         "price": 2000,
-        "image": "img/0044-e7644983c9cd42936e8679e380c633f2.jpg",
+        "image": "img/0044-e7644983c9cd42936e8679e380c633f2.webp",
         "id": 82,
         "category": "piccolo-20cm"
       },
       {
         "title": "Pizza Piccolo с чесночными креветками и петрушкой",
         "price": 2000,
-        "image": "img/0042-e06ea73d9d3510a34a39ec7619637805.jpg",
+        "image": "img/0042-e06ea73d9d3510a34a39ec7619637805.webp",
         "id": 83,
         "category": "piccolo-20cm"
       },
       {
         "title": "Pizza Piccolo с сыром Буратто и Прошутто",
         "price": 2000,
-        "image": "img/0043-13412f63e62355514e1714338d177098.jpg",
+        "image": "img/0043-13412f63e62355514e1714338d177098.webp",
         "id": 84,
         "category": "piccolo-20cm"
       },
       {
         "title": "Pizza Piccolo \"Болоньеза\"",
         "price": 800,
-        "image": "img/0048-18403d3ed6ef44c144f00bf19034fc50.jpg",
+        "image": "img/0048-18403d3ed6ef44c144f00bf19034fc50.webp",
         "id": 85,
         "category": "piccolo-20cm"
       },
       {
         "title": "Pizza Piccolo свинина с ананасами и соусом BBQ",
         "price": 700,
-        "image": "img/0018-bac95b9185dd75f27d4c0c3dfa9bb07f.jpg",
+        "image": "img/0018-bac95b9185dd75f27d4c0c3dfa9bb07f.webp",
         "id": 86,
         "category": "piccolo-20cm"
       },
       {
         "title": "Pizza Piccolo с ягненком(баранина) в кокосовом соусе Карри",
         "price": 2000,
-        "image": "img/0045-07bad0766e0878d9d24eba16629e3faa.jpg",
+        "image": "img/0045-07bad0766e0878d9d24eba16629e3faa.webp",
         "id": 87,
         "category": "piccolo-20cm"
       },
       {
         "title": "Pizza Piccolo с Мраморной говядиной, маринованной в соусе Ворчестер, и лисичками",
         "price": 2000,
-        "image": "img/0046-6ac84b8930c5e532bf30184bfe407cb8.jpg",
+        "image": "img/0046-6ac84b8930c5e532bf30184bfe407cb8.webp",
         "id": 88,
         "category": "piccolo-20cm"
       }
@@ -762,483 +762,483 @@
       {
         "title": "Кальцоне \"Маргарита\"",
         "price": 750,
-        "image": "img/0049-4c20faeea22fd46d18e656e75f382a98.jpg",
+        "image": "img/0049-4c20faeea22fd46d18e656e75f382a98.webp",
         "id": 89,
         "category": "calzone"
       },
       {
         "title": "Кальцоне-мини \"Маргарита\"",
         "price": 350,
-        "image": "img/0049-4c20faeea22fd46d18e656e75f382a98.jpg",
+        "image": "img/0049-4c20faeea22fd46d18e656e75f382a98.webp",
         "id": 90,
         "category": "calzone"
       },
       {
         "title": "Кальцоне \"Пепперони\"",
         "price": 750,
-        "image": "img/0050-69a1a1536e27d8f96c4ca40246b47ac2.jpg",
+        "image": "img/0050-69a1a1536e27d8f96c4ca40246b47ac2.webp",
         "id": 91,
         "category": "calzone"
       },
       {
         "title": "Кальцоне-мини \"Пепперони\"",
         "price": 350,
-        "image": "img/0050-69a1a1536e27d8f96c4ca40246b47ac2.jpg",
+        "image": "img/0050-69a1a1536e27d8f96c4ca40246b47ac2.webp",
         "id": 92,
         "category": "calzone"
       },
       {
         "title": "Кальцоне \"Ветчина/грибы\"",
         "price": 750,
-        "image": "img/0051-945072c9bfdbc04ea31fec906a4f2524.jpg",
+        "image": "img/0051-945072c9bfdbc04ea31fec906a4f2524.webp",
         "id": 93,
         "category": "calzone"
       },
       {
         "title": "Кальцоне-мини \"Ветчина/грибы\"",
         "price": 350,
-        "image": "img/0051-945072c9bfdbc04ea31fec906a4f2524.jpg",
+        "image": "img/0051-945072c9bfdbc04ea31fec906a4f2524.webp",
         "id": 94,
         "category": "calzone"
       },
       {
         "title": "Кальцоне \"Кура/печенный перец\"",
         "price": 750,
-        "image": "img/0052-66f79304a001f94743d4a17d69fc79dc.jpg",
+        "image": "img/0052-66f79304a001f94743d4a17d69fc79dc.webp",
         "id": 95,
         "category": "calzone"
       },
       {
         "title": "Кальцоне-мини Кура/печенный перец",
         "price": 350,
-        "image": "img/0052-66f79304a001f94743d4a17d69fc79dc.jpg",
+        "image": "img/0052-66f79304a001f94743d4a17d69fc79dc.webp",
         "id": 96,
         "category": "calzone"
       },
       {
         "title": "Кальцоне Капричоза",
         "price": 850,
-        "image": "img/0053-29abe073cd5e1881ade176d7e7d0ea1d.jpg",
+        "image": "img/0053-29abe073cd5e1881ade176d7e7d0ea1d.webp",
         "id": 97,
         "category": "calzone"
       },
       {
         "title": "Мини кальцоне Капричоза",
         "price": 400,
-        "image": "img/0053-29abe073cd5e1881ade176d7e7d0ea1d.jpg",
+        "image": "img/0053-29abe073cd5e1881ade176d7e7d0ea1d.webp",
         "id": 98,
         "category": "calzone"
       },
       {
         "title": "Кальцоне с Лисичками",
         "price": 850,
-        "image": "img/0054-7b19a7919eb49bb6a4a8aece4edc81d1.jpg",
+        "image": "img/0054-7b19a7919eb49bb6a4a8aece4edc81d1.webp",
         "id": 99,
         "category": "calzone"
       },
       {
         "title": "Мини кальцоне с лисичками",
         "price": 400,
-        "image": "img/0054-7b19a7919eb49bb6a4a8aece4edc81d1.jpg",
+        "image": "img/0054-7b19a7919eb49bb6a4a8aece4edc81d1.webp",
         "id": 100,
         "category": "calzone"
       },
       {
         "title": "Кальцоне \"4 сыра\"",
         "price": 850,
-        "image": "img/0055-7888bbb63b1a544730e09c892674fe61.jpg",
+        "image": "img/0055-7888bbb63b1a544730e09c892674fe61.webp",
         "id": 101,
         "category": "calzone"
       },
       {
         "title": "Кальцоне-мини \"4 сыра\"",
         "price": 400,
-        "image": "img/0055-7888bbb63b1a544730e09c892674fe61.jpg",
+        "image": "img/0055-7888bbb63b1a544730e09c892674fe61.webp",
         "id": 102,
         "category": "calzone"
       },
       {
         "title": "Кальцоне \"Карбонара\"",
         "price": 850,
-        "image": "img/0056-9a228495dcd80452e101b652d9a26279.jpg",
+        "image": "img/0056-9a228495dcd80452e101b652d9a26279.webp",
         "id": 103,
         "category": "calzone"
       },
       {
         "title": "Кальцоне-мини \"Карбонара\"",
         "price": 400,
-        "image": "img/0056-9a228495dcd80452e101b652d9a26279.jpg",
+        "image": "img/0056-9a228495dcd80452e101b652d9a26279.webp",
         "id": 104,
         "category": "calzone"
       },
       {
         "title": "Кальцоне с мясными шариками",
         "price": 850,
-        "image": "img/0057-ee9f8cab31ccb36c762966094f657823.jpg",
+        "image": "img/0057-ee9f8cab31ccb36c762966094f657823.webp",
         "id": 105,
         "category": "calzone"
       },
       {
         "title": "Кальцоне Salvata Mila",
         "price": 850,
-        "image": "img/0058-175a10ea08f4a2162fb62669e64cc52a.jpg",
+        "image": "img/0058-175a10ea08f4a2162fb62669e64cc52a.webp",
         "id": 106,
         "category": "calzone"
       },
       {
         "title": "Кальцоне-мини Salvata Mila",
         "price": 400,
-        "image": "img/0058-175a10ea08f4a2162fb62669e64cc52a.jpg",
+        "image": "img/0058-175a10ea08f4a2162fb62669e64cc52a.webp",
         "id": 107,
         "category": "calzone"
       },
       {
         "title": "Кальцоне-мини с мясными шариками",
         "price": 400,
-        "image": "img/0057-ee9f8cab31ccb36c762966094f657823.jpg",
+        "image": "img/0057-ee9f8cab31ccb36c762966094f657823.webp",
         "id": 108,
         "category": "calzone"
       },
       {
         "title": "Кальцоне \"Вегетариано\"",
         "price": 850,
-        "image": "img/0059-47fbb3a3712e4cc85c15d9b1ca14e3e9.jpg",
+        "image": "img/0059-47fbb3a3712e4cc85c15d9b1ca14e3e9.webp",
         "id": 109,
         "category": "calzone"
       },
       {
         "title": "Кальцоне-мини \"Вегетариано\"",
         "price": 400,
-        "image": "img/0059-47fbb3a3712e4cc85c15d9b1ca14e3e9.jpg",
+        "image": "img/0059-47fbb3a3712e4cc85c15d9b1ca14e3e9.webp",
         "id": 110,
         "category": "calzone"
       },
       {
         "title": "Кальцоне \"Свинина BBQ с ананасами\"",
         "price": 850,
-        "image": "img/0060-90e6d7745cfef26011b70523b75cdc41.jpg",
+        "image": "img/0060-90e6d7745cfef26011b70523b75cdc41.webp",
         "id": 111,
         "category": "calzone"
       },
       {
         "title": "Кальцоне-мини \"Свинина BBQ с ананасами\"",
         "price": 400,
-        "image": "img/0060-90e6d7745cfef26011b70523b75cdc41.jpg",
+        "image": "img/0060-90e6d7745cfef26011b70523b75cdc41.webp",
         "id": 112,
         "category": "calzone"
       },
       {
         "title": "Кальцоне \"Говядина Терияки\"",
         "price": 850,
-        "image": "img/0061-1e382c734ba8063fda315b7bda533f5f.jpg",
+        "image": "img/0061-1e382c734ba8063fda315b7bda533f5f.webp",
         "id": 113,
         "category": "calzone"
       },
       {
         "title": "Кальцоне-мини \"Говядина Терияки\"",
         "price": 400,
-        "image": "img/0061-1e382c734ba8063fda315b7bda533f5f.jpg",
+        "image": "img/0061-1e382c734ba8063fda315b7bda533f5f.webp",
         "id": 114,
         "category": "calzone"
       },
       {
         "title": "Кальцоне \"Пера\" с грушей и горгонзолой",
         "price": 850,
-        "image": "img/0062-ee6ef6b5af689241364a6b7a90e1cb55.jpg",
+        "image": "img/0062-ee6ef6b5af689241364a6b7a90e1cb55.webp",
         "id": 115,
         "category": "calzone"
       },
       {
         "title": "Кальцоне-мини \"Пера\" с грушей и Горгонзолой",
         "price": 400,
-        "image": "img/0062-ee6ef6b5af689241364a6b7a90e1cb55.jpg",
+        "image": "img/0062-ee6ef6b5af689241364a6b7a90e1cb55.webp",
         "id": 116,
         "category": "calzone"
       },
       {
         "title": "Кальцоне \"Кокорита\"",
         "price": 850,
-        "image": "img/0063-cceb6721a2bc7eb8dd6998e80b41c5e5.jpg",
+        "image": "img/0063-cceb6721a2bc7eb8dd6998e80b41c5e5.webp",
         "id": 117,
         "category": "calzone"
       },
       {
         "title": "Кальцоне-мини \"Кокорита\"",
         "price": 400,
-        "image": "img/0063-cceb6721a2bc7eb8dd6998e80b41c5e5.jpg",
+        "image": "img/0063-cceb6721a2bc7eb8dd6998e80b41c5e5.webp",
         "id": 118,
         "category": "calzone"
       },
       {
         "title": "Кальцоне \"Суприм\"",
         "price": 850,
-        "image": "img/0064-b4dae0f030a92ffabc85d3871ca046f9.jpg",
+        "image": "img/0064-b4dae0f030a92ffabc85d3871ca046f9.webp",
         "id": 119,
         "category": "calzone"
       },
       {
         "title": "Кальцоне-мини \"Суприм\"",
         "price": 400,
-        "image": "img/0064-b4dae0f030a92ffabc85d3871ca046f9.jpg",
+        "image": "img/0064-b4dae0f030a92ffabc85d3871ca046f9.webp",
         "id": 120,
         "category": "calzone"
       },
       {
         "title": "Кальцоне \"Монтенегро\"",
         "price": 850,
-        "image": "img/0065-528bea7fb6c75a1f8f3143cd6fafb177.jpg",
+        "image": "img/0065-528bea7fb6c75a1f8f3143cd6fafb177.webp",
         "id": 121,
         "category": "calzone"
       },
       {
         "title": "Кальцоне-мини \"Монтенегро\"",
         "price": 400,
-        "image": "img/0065-528bea7fb6c75a1f8f3143cd6fafb177.jpg",
+        "image": "img/0065-528bea7fb6c75a1f8f3143cd6fafb177.webp",
         "id": 122,
         "category": "calzone"
       },
       {
         "title": "Кальцоне \"Классическая Маргарита\"",
         "price": 850,
-        "image": "img/0066-90fd997acd439aff63797d17e7ef1770.jpg",
+        "image": "img/0066-90fd997acd439aff63797d17e7ef1770.webp",
         "id": 123,
         "category": "calzone"
       },
       {
         "title": "Кальцоне-мини \"Классическая Маргарита\"",
         "price": 400,
-        "image": "img/0066-90fd997acd439aff63797d17e7ef1770.jpg",
+        "image": "img/0066-90fd997acd439aff63797d17e7ef1770.webp",
         "id": 124,
         "category": "calzone"
       },
       {
         "title": "Кальцоне «Salsicciotti»",
         "price": 950,
-        "image": "img/0067-bddecf8036c09db1df36d9768f1383e5.jpg",
+        "image": "img/0067-bddecf8036c09db1df36d9768f1383e5.webp",
         "id": 125,
         "category": "calzone"
       },
       {
         "title": "Кальцоне-мини «Salsicciotti»",
         "price": 450,
-        "image": "img/0067-bddecf8036c09db1df36d9768f1383e5.jpg",
+        "image": "img/0067-bddecf8036c09db1df36d9768f1383e5.webp",
         "id": 126,
         "category": "calzone"
       },
       {
         "title": "Кальцоне \"Мехико\"",
         "price": 950,
-        "image": "img/0068-4de58ce697b6cd3161044a65b416272a.jpg",
+        "image": "img/0068-4de58ce697b6cd3161044a65b416272a.webp",
         "id": 127,
         "category": "calzone"
       },
       {
         "title": "Кальцоне-мини \"Мехико\"",
         "price": 450,
-        "image": "img/0068-4de58ce697b6cd3161044a65b416272a.jpg",
+        "image": "img/0068-4de58ce697b6cd3161044a65b416272a.webp",
         "id": 128,
         "category": "calzone"
       },
       {
         "title": "Кальцоне \"Italy\"",
         "price": 950,
-        "image": "img/0069-e65342eb67c4c90d17d86a55a4bc8e39.jpg",
+        "image": "img/0069-e65342eb67c4c90d17d86a55a4bc8e39.webp",
         "id": 129,
         "category": "calzone"
       },
       {
         "title": "Кальцоне мини Italy",
         "price": 450,
-        "image": "img/0069-e65342eb67c4c90d17d86a55a4bc8e39.jpg",
+        "image": "img/0069-e65342eb67c4c90d17d86a55a4bc8e39.webp",
         "id": 130,
         "category": "calzone"
       },
       {
         "title": "Кальцоне с колбасой Мортаделла, сыром Страчателла и жареными фисташками",
         "price": 950,
-        "image": "img/0070-c6007c2da52dd285f99acd9c85be6315.jpg",
+        "image": "img/0070-c6007c2da52dd285f99acd9c85be6315.webp",
         "id": 131,
         "category": "calzone"
       },
       {
         "title": "Кальцоне-Мини колбасой Мортаделла , сыром Страчателла и жареными фисташками",
         "price": 450,
-        "image": "img/0070-c6007c2da52dd285f99acd9c85be6315.jpg",
+        "image": "img/0070-c6007c2da52dd285f99acd9c85be6315.webp",
         "id": 132,
         "category": "calzone"
       },
       {
         "title": "Кальцоне с тунцом",
         "price": 950,
-        "image": "img/0071-72801bc91272b14848b8dbadc55320de.jpg",
+        "image": "img/0071-72801bc91272b14848b8dbadc55320de.webp",
         "id": 133,
         "category": "calzone"
       },
       {
         "title": "Кальцоне-мини с тунцом Блюфин",
         "price": 450,
-        "image": "img/0071-72801bc91272b14848b8dbadc55320de.jpg",
+        "image": "img/0071-72801bc91272b14848b8dbadc55320de.webp",
         "id": 134,
         "category": "calzone"
       },
       {
         "title": "Кальцоне с лососем сыром Бри и зеленой спаржей",
         "price": 950,
-        "image": "img/0072-88903722ecbf3a9ae1b81cbc0d62b91b.jpg",
+        "image": "img/0072-88903722ecbf3a9ae1b81cbc0d62b91b.webp",
         "id": 135,
         "category": "calzone"
       },
       {
         "title": "Кальцоне-мини с лососем сыром Бри и спаржей",
         "price": 450,
-        "image": "img/0072-88903722ecbf3a9ae1b81cbc0d62b91b.jpg",
+        "image": "img/0072-88903722ecbf3a9ae1b81cbc0d62b91b.webp",
         "id": 136,
         "category": "calzone"
       },
       {
         "title": "Кальцоне \"Реджина\"",
         "price": 950,
-        "image": "img/0073-fac66171427a91795b1465687d24eb46.jpg",
+        "image": "img/0073-fac66171427a91795b1465687d24eb46.webp",
         "id": 137,
         "category": "calzone"
       },
       {
         "title": "Кальцоне-мини \"Реджина\"",
         "price": 450,
-        "image": "img/0073-fac66171427a91795b1465687d24eb46.jpg",
+        "image": "img/0073-fac66171427a91795b1465687d24eb46.webp",
         "id": 138,
         "category": "calzone"
       },
       {
         "title": "Кальцоне \"Ди Парма\"",
         "price": 1100,
-        "image": "img/0074-6eebf52bc2ae2a26e63313478abf46e7.jpg",
+        "image": "img/0074-6eebf52bc2ae2a26e63313478abf46e7.webp",
         "id": 139,
         "category": "calzone"
       },
       {
         "title": "Кальцоне-мини \"Ди Парма\"",
         "price": 550,
-        "image": "img/0074-6eebf52bc2ae2a26e63313478abf46e7.jpg",
+        "image": "img/0074-6eebf52bc2ae2a26e63313478abf46e7.webp",
         "id": 140,
         "category": "calzone"
       },
       {
         "title": "Кальцоне с Олениной",
         "price": 1100,
-        "image": "img/0075-d7c2bee58f662079b34e3329cfe0db75.jpg",
+        "image": "img/0075-d7c2bee58f662079b34e3329cfe0db75.webp",
         "id": 141,
         "category": "calzone"
       },
       {
         "title": "Кальцоне-мини с олениной",
         "price": 550,
-        "image": "img/0075-d7c2bee58f662079b34e3329cfe0db75.jpg",
+        "image": "img/0075-d7c2bee58f662079b34e3329cfe0db75.webp",
         "id": 142,
         "category": "calzone"
       },
       {
         "title": "Кальцоне \"Frutti di Mare\" с морепродуктами",
         "price": 1100,
-        "image": "img/0076-37f0741fae1b941cbb7e5bc0df00377e.jpg",
+        "image": "img/0076-37f0741fae1b941cbb7e5bc0df00377e.webp",
         "id": 143,
         "category": "calzone"
       },
       {
         "title": "Кальцоне-мини \"Frutti di Mare\" с морепродуктами",
         "price": 550,
-        "image": "img/0076-37f0741fae1b941cbb7e5bc0df00377e.jpg",
+        "image": "img/0076-37f0741fae1b941cbb7e5bc0df00377e.webp",
         "id": 144,
         "category": "calzone"
       },
       {
         "title": "Кальцоне alla Diavola 300*200",
         "price": 950,
-        "image": "img/0077-5f4a16d442a29e922952a47b391b5f4e.jpg",
+        "image": "img/0077-5f4a16d442a29e922952a47b391b5f4e.webp",
         "id": 145,
         "category": "calzone"
       },
       {
         "title": "Кальцоне-мини alla Diavola 250*120",
         "price": 450,
-        "image": "img/0077-5f4a16d442a29e922952a47b391b5f4e.jpg",
+        "image": "img/0077-5f4a16d442a29e922952a47b391b5f4e.webp",
         "id": 146,
         "category": "calzone"
       },
       {
         "title": "Кальцоне с Мраморной говядиной, маринованной в соусе Ворчестер, и лисичками",
         "price": 2500,
-        "image": "img/0078-6366f3a3a3779382caea655ac4b2f89c.jpg",
+        "image": "img/0078-6366f3a3a3779382caea655ac4b2f89c.webp",
         "id": 147,
         "category": "calzone"
       },
       {
         "title": "Кальцоне-мини с Мраморной говядиной, маринованной в соусе Ворчестер, и лисичками",
         "price": 1250,
-        "image": "img/0078-6366f3a3a3779382caea655ac4b2f89c.jpg",
+        "image": "img/0078-6366f3a3a3779382caea655ac4b2f89c.webp",
         "id": 148,
         "category": "calzone"
       },
       {
         "title": "Кальцоне с черным трюфелем, сыром пармезан и трюфельным маслом",
         "price": 2500,
-        "image": "img/0079-6740db5f7d9b9a9449e0d40f191d09b3.jpg",
+        "image": "img/0079-6740db5f7d9b9a9449e0d40f191d09b3.webp",
         "id": 149,
         "category": "calzone"
       },
       {
         "title": "Кальцоне мини с черным трюфелем, сыром Пармезан и трюфельным маслом",
         "price": 1250,
-        "image": "img/0079-6740db5f7d9b9a9449e0d40f191d09b3.jpg",
+        "image": "img/0079-6740db5f7d9b9a9449e0d40f191d09b3.webp",
         "id": 150,
         "category": "calzone"
       },
       {
         "title": "Кальцоне \"Сицилийская\" с анчоусами и каперсами",
         "price": 1100,
-        "image": "img/0080-b6a22d742089771cf73ea4d21b72a793.jpg",
+        "image": "img/0080-b6a22d742089771cf73ea4d21b72a793.webp",
         "id": 151,
         "category": "calzone"
       },
       {
         "title": "Кальцоне мини \"Сицилийская\" с анчоусами и каперсами",
         "price": 550,
-        "image": "img/0080-b6a22d742089771cf73ea4d21b72a793.jpg",
+        "image": "img/0080-b6a22d742089771cf73ea4d21b72a793.webp",
         "id": 152,
         "category": "calzone"
       },
       {
         "title": "Кальцоне с сыром Буратто и Прошутто",
         "price": 2500,
-        "image": "img/0081-02f22713bb64c986ba0702befbc34e25.jpg",
+        "image": "img/0081-02f22713bb64c986ba0702befbc34e25.webp",
         "id": 153,
         "category": "calzone"
       },
       {
         "title": "Кальцоне с ягненком в кокосовом соусе Карри",
         "price": 2500,
-        "image": "img/0082-f6bc676f95e35c1e703260c7e05af0a3.jpg",
+        "image": "img/0082-f6bc676f95e35c1e703260c7e05af0a3.webp",
         "id": 154,
         "category": "calzone"
       },
       {
         "title": "Кальцоне мини с ягненком в кокосовом соусе Карри",
         "price": 1250,
-        "image": "img/0082-f6bc676f95e35c1e703260c7e05af0a3.jpg",
+        "image": "img/0082-f6bc676f95e35c1e703260c7e05af0a3.webp",
         "id": 155,
         "category": "calzone"
       },
       {
         "title": "Кальцоне с чесночными креветками, вялеными томатами и петрушкой",
         "price": 2500,
-        "image": "img/0083-03560306615fbd2ae66e2fff7372f57d.jpg",
+        "image": "img/0083-03560306615fbd2ae66e2fff7372f57d.webp",
         "id": 156,
         "category": "calzone"
       },
       {
         "title": "Кальцоне мини с чесночными креветками, вялеными томатами и петрушкой",
         "price": 1250,
-        "image": "img/0083-03560306615fbd2ae66e2fff7372f57d.jpg",
+        "image": "img/0083-03560306615fbd2ae66e2fff7372f57d.webp",
         "id": 157,
         "category": "calzone"
       }
@@ -1248,266 +1248,266 @@
         "title": "Набор классических хлебушков",
         "price": 250,
         "category": "bread-focaccia-bread",
-        "image": "img/0084-d30036f5844615f953e278f10cd8108b.jpg",
+        "image": "img/0084-d30036f5844615f953e278f10cd8108b.webp",
         "id": 158
       },
       {
         "title": "Набор сладких хлебушков",
         "price": 350,
         "category": "bread-focaccia-bread",
-        "image": "img/0085-5aae14e5fe8c7e39f6fe22a6ce70b584.jpg",
+        "image": "img/0085-5aae14e5fe8c7e39f6fe22a6ce70b584.webp",
         "id": 159
       },
       {
         "title": "Набор сырных хлебушков",
         "price": 350,
         "category": "bread-focaccia-bread",
-        "image": "img/0086-ca3c0ae12e7f9201853b0707931319a0.jpg",
+        "image": "img/0086-ca3c0ae12e7f9201853b0707931319a0.webp",
         "id": 160
       },
       {
         "title": "Набор мясных хлебушков",
         "price": 350,
         "category": "bread-focaccia-bread",
-        "image": "img/0087-2cf70b52cc264869945d4d4c4a15994b.jpg",
+        "image": "img/0087-2cf70b52cc264869945d4d4c4a15994b.webp",
         "id": 161
       },
       {
         "title": "Набор итальянских хлебушков",
         "price": 350,
         "category": "bread-focaccia-bread",
-        "image": "img/0088-cb9bbab6403053a4896a47562dc16824.jpg",
+        "image": "img/0088-cb9bbab6403053a4896a47562dc16824.webp",
         "id": 162
       },
       {
         "title": "Набор вегетарианских хлебушков",
         "price": 350,
         "category": "bread-focaccia-bread",
-        "image": "img/0089-99240fa6c0b05e819cd0d290c552ba86.jpg",
+        "image": "img/0089-99240fa6c0b05e819cd0d290c552ba86.webp",
         "id": 163
       },
       {
         "title": "Набор Итальяно хлебушков",
         "price": 350,
         "category": "bread-focaccia-bread",
-        "image": "img/0090-a7964b12e7b1773a8b739819418ee81a.jpg",
+        "image": "img/0090-a7964b12e7b1773a8b739819418ee81a.webp",
         "id": 164
       },
       {
         "title": "Набор мясо/сыр хлебушков",
         "price": 350,
         "category": "bread-focaccia-bread",
-        "image": "img/0091-120c7ddbf1c515e3c84c36e06a651698.jpg",
+        "image": "img/0091-120c7ddbf1c515e3c84c36e06a651698.webp",
         "id": 165
       },
       {
         "title": "Неаполитанский хлеб Классический",
         "price": 100,
         "category": "bread-focaccia-bread",
-        "image": "img/0092-c00c7078bc0b82dceb29e0a9bdbc587e.jpg",
+        "image": "img/0092-c00c7078bc0b82dceb29e0a9bdbc587e.webp",
         "id": 166
       },
       {
         "title": "Неаполитанский ржаной хлебушек",
         "price": 100,
         "category": "bread-focaccia-bread",
-        "image": "img/0093-7b87511971a74c9e8607116af74a83a9.jpg",
+        "image": "img/0093-7b87511971a74c9e8607116af74a83a9.webp",
         "id": 167
       },
       {
         "title": "Неаполитанский томатный хлеб",
         "price": 100,
         "category": "bread-focaccia-bread",
-        "image": "img/0094-b18f0d18c5998fa832cf24439510654b.jpg",
+        "image": "img/0094-b18f0d18c5998fa832cf24439510654b.webp",
         "id": 168
       },
       {
         "title": "Неаполитанский хлеб с семечками подсолнуха",
         "price": 110,
         "category": "bread-focaccia-bread",
-        "image": "img/0095-92866f0b7cd43e95ec7ae8539fb6bd9e.jpg",
+        "image": "img/0095-92866f0b7cd43e95ec7ae8539fb6bd9e.webp",
         "id": 169
       },
       {
         "title": "Неаполитанский хлеб с тыквенными семечками",
         "price": 110,
         "category": "bread-focaccia-bread",
-        "image": "img/0096-cb600cbae2cd92a2e0ffd9a48e7997f3.jpg",
+        "image": "img/0096-cb600cbae2cd92a2e0ffd9a48e7997f3.webp",
         "id": 170
       },
       {
         "title": "Неаполитанский хлеб с фисташками",
         "price": 110,
         "category": "bread-focaccia-bread",
-        "image": "img/0097-cffb1b986a86885b5d1687027c231c3a.jpg",
+        "image": "img/0097-cffb1b986a86885b5d1687027c231c3a.webp",
         "id": 171
       },
       {
         "title": "Неаполитанский хлеб с кунжутом",
         "price": 110,
         "category": "bread-focaccia-bread",
-        "image": "img/0098-2a0ce427a64ebcce01bbbdcf5b2facb9.jpg",
+        "image": "img/0098-2a0ce427a64ebcce01bbbdcf5b2facb9.webp",
         "id": 172
       },
       {
         "title": "Неаполитанский хлеб с розмарином",
         "price": 110,
         "category": "bread-focaccia-bread",
-        "image": "img/0099-2821dcf7585703eba239e716d697a9b8.jpg",
+        "image": "img/0099-2821dcf7585703eba239e716d697a9b8.webp",
         "id": 173
       },
       {
         "title": "Неаполитанский хлеб с тимьяном",
         "price": 110,
         "category": "bread-focaccia-bread",
-        "image": "img/0100-7f5c6a18edf89f8b6da6b90c1712cef0.jpg",
+        "image": "img/0100-7f5c6a18edf89f8b6da6b90c1712cef0.webp",
         "id": 174
       },
       {
         "title": "Неаполитанский хлеб с сыром Моцарелла",
         "price": 110,
         "category": "bread-focaccia-bread",
-        "image": "img/0101-73bb42cc401399cb2e47aea0c0f29121.jpg",
+        "image": "img/0101-73bb42cc401399cb2e47aea0c0f29121.webp",
         "id": 175
       },
       {
         "title": "Неаполитанский хлеб с сыром Бри",
         "price": 110,
         "category": "bread-focaccia-bread",
-        "image": "img/0102-da8ac45eff0c5a846cbfa588d7d36f41.jpg",
+        "image": "img/0102-da8ac45eff0c5a846cbfa588d7d36f41.webp",
         "id": 176
       },
       {
         "title": "Неаполитанский хлеб с сыром Чеддер",
         "price": 110,
         "category": "bread-focaccia-bread",
-        "image": "img/0103-2590ab502e9ca73c5f2ff5d55436f82a.jpg",
+        "image": "img/0103-2590ab502e9ca73c5f2ff5d55436f82a.webp",
         "id": 177
       },
       {
         "title": "Неаполитанский хлеб с сыром Пармезан",
         "price": 110,
         "category": "bread-focaccia-bread",
-        "image": "img/0104-0594dc336be0d1656b7addadd35c96ae.jpg",
+        "image": "img/0104-0594dc336be0d1656b7addadd35c96ae.webp",
         "id": 178
       },
       {
         "title": "Неаполитанский хлеб с сыром Горгонзола",
         "price": 110,
         "category": "bread-focaccia-bread",
-        "image": "img/0105-c83cfe35a5181d74844998032b2c1555.jpg",
+        "image": "img/0105-c83cfe35a5181d74844998032b2c1555.webp",
         "id": 179
       },
       {
         "title": "Неаполитанский хлеб с лисичками",
         "price": 110,
         "category": "bread-focaccia-bread",
-        "image": "img/0106-f9c4ea4af9799a4253a539eedea90fc7.jpg",
+        "image": "img/0106-f9c4ea4af9799a4253a539eedea90fc7.webp",
         "id": 180
       },
       {
         "title": "Неаполитанский хлеб с шампиньонами",
         "price": 110,
         "category": "bread-focaccia-bread",
-        "image": "img/0107-7a40cd9b0f0c4dd5fb1e14455a7000f1.jpg",
+        "image": "img/0107-7a40cd9b0f0c4dd5fb1e14455a7000f1.webp",
         "id": 181
       },
       {
         "title": "Неаполитанский хлеб с маслинами",
         "price": 110,
         "category": "bread-focaccia-bread",
-        "image": "img/0108-6758d5408b7b48464b8317235407256c.jpg",
+        "image": "img/0108-6758d5408b7b48464b8317235407256c.webp",
         "id": 182
       },
       {
         "title": "Неаполитанский хлеб с вялеными помидорами",
         "price": 110,
         "category": "bread-focaccia-bread",
-        "image": "img/0109-589b8a8b2ae031045e631c47f556468b.jpg",
+        "image": "img/0109-589b8a8b2ae031045e631c47f556468b.webp",
         "id": 183
       },
       {
         "title": "Неаполитанский хлеб с артишоками",
         "price": 110,
         "category": "bread-focaccia-bread",
-        "image": "img/0110-39460f03a7f36cfc392e0b267216edcc.jpg",
+        "image": "img/0110-39460f03a7f36cfc392e0b267216edcc.webp",
         "id": 184
       },
       {
         "title": "Неаполитанский хлеб с каперсами",
         "price": 110,
         "category": "bread-focaccia-bread",
-        "image": "img/0111-16ba1dc9a0ed1ff339082613bedfb2c9.jpg",
+        "image": "img/0111-16ba1dc9a0ed1ff339082613bedfb2c9.webp",
         "id": 185
       },
       {
         "title": "Неаполитанский хлеб с Халапеньо",
         "price": 110,
         "category": "bread-focaccia-bread",
-        "image": "img/0112-d3c7e2b4c7820c6d6988f502a8f1beff.jpg",
+        "image": "img/0112-d3c7e2b4c7820c6d6988f502a8f1beff.webp",
         "id": 186
       },
       {
         "title": "Неаполитанский хлеб с охотничьими колбасками",
         "price": 110,
         "category": "bread-focaccia-bread",
-        "image": "img/0113-5cbcff5aea4e4df9fce4cce2fc2f2a43.jpg",
+        "image": "img/0113-5cbcff5aea4e4df9fce4cce2fc2f2a43.webp",
         "id": 187
       },
       {
         "title": "Неаполитанский хлеб с беконом",
         "price": 110,
         "category": "bread-focaccia-bread",
-        "image": "img/0114-4d0874db9d6c8e90b7e774bf9a06dcdf.jpg",
+        "image": "img/0114-4d0874db9d6c8e90b7e774bf9a06dcdf.webp",
         "id": 188
       },
       {
         "title": "Неаполитанский хлеб с ветчиной",
         "price": 110,
         "category": "bread-focaccia-bread",
-        "image": "img/0115-cfec41931fbfe2744e749e0aacb4ea26.jpg",
+        "image": "img/0115-cfec41931fbfe2744e749e0aacb4ea26.webp",
         "id": 189
       },
       {
         "title": "Неаполитанский хлеб с пепперони",
         "price": 110,
         "category": "bread-focaccia-bread",
-        "image": "img/0116-bb48e89a7f8c2a70f46388e1d184ee80.jpg",
+        "image": "img/0116-bb48e89a7f8c2a70f46388e1d184ee80.webp",
         "id": 190
       },
       {
         "title": "Неаполитанский хлеб с грушей",
         "price": 110,
         "category": "bread-focaccia-bread",
-        "image": "img/0117-6b641b1575d49bd93d9a28ecc2b48459.jpg",
+        "image": "img/0117-6b641b1575d49bd93d9a28ecc2b48459.webp",
         "id": 191
       },
       {
         "title": "Неаполитанский хлеб с бананом",
         "price": 110,
         "category": "bread-focaccia-bread",
-        "image": "img/0118-3064d4e96b395362548fb4b8f24400be.jpg",
+        "image": "img/0118-3064d4e96b395362548fb4b8f24400be.webp",
         "id": 192
       },
       {
         "title": "Неаполитанский хлеб с темным шоколадом",
         "price": 110,
         "category": "bread-focaccia-bread",
-        "image": "img/0119-5a8f7a09e72bd89b858f829e6e8c8550.jpg",
+        "image": "img/0119-5a8f7a09e72bd89b858f829e6e8c8550.webp",
         "id": 193
       },
       {
         "title": "Неаполитанский хлеб с яблоками, изюмом и корицей",
         "price": 110,
         "category": "bread-focaccia-bread",
-        "image": "img/0120-71c172fd38fdf225d16963c7dc0ddcbf.jpg",
+        "image": "img/0120-71c172fd38fdf225d16963c7dc0ddcbf.webp",
         "id": 194
       },
       {
         "title": "Неаполитанский хлебушек с маком",
         "price": 110,
         "category": "bread-focaccia-bread",
-        "image": "img/0121-5db2ef34a8d64028fe51aae44d5fe596.jpg",
+        "image": "img/0121-5db2ef34a8d64028fe51aae44d5fe596.webp",
         "id": 195
       }
     ],
@@ -1516,42 +1516,42 @@
         "title": "Фокачча с оливковым маслом",
         "price": 100,
         "category": "bread-focaccia-focaccia",
-        "image": "img/0122-4dbb8d83355dd6f919a812378fd79699.jpg",
+        "image": "img/0122-4dbb8d83355dd6f919a812378fd79699.webp",
         "id": 196
       },
       {
         "title": "Фокачча с чесноком",
         "price": 100,
         "category": "bread-focaccia-focaccia",
-        "image": "img/0123-66e417cba82383e922440ddbdfef71e9.jpg",
+        "image": "img/0123-66e417cba82383e922440ddbdfef71e9.webp",
         "id": 197
       },
       {
         "title": "Фокачча с розмарином",
         "price": 100,
         "category": "bread-focaccia-focaccia",
-        "image": "img/0124-3f7bb7c67125804a84d06075fa0a999c.jpg",
+        "image": "img/0124-3f7bb7c67125804a84d06075fa0a999c.webp",
         "id": 198
       },
       {
         "title": "Фокачча с тимьяном",
         "price": 100,
         "category": "bread-focaccia-focaccia",
-        "image": "img/0125-8babbfaa39d161b88a3f19f162bc7d85.jpg",
+        "image": "img/0125-8babbfaa39d161b88a3f19f162bc7d85.webp",
         "id": 199
       },
       {
         "title": "Фокачча красная",
         "price": 200,
         "category": "bread-focaccia-focaccia",
-        "image": "img/0126-1147f80fdfc2072e419e6ad3c4f5c53c.jpg",
+        "image": "img/0126-1147f80fdfc2072e419e6ad3c4f5c53c.webp",
         "id": 200
       },
       {
         "title": "Фокачча зеленая",
         "price": 200,
         "category": "bread-focaccia-focaccia",
-        "image": "img/0127-37ab02a70e241e9f93d6b5e031e71c0b.jpg",
+        "image": "img/0127-37ab02a70e241e9f93d6b5e031e71c0b.webp",
         "id": 201
       }
     ],
@@ -1560,77 +1560,77 @@
         "title": "Соус Унаги",
         "price": 60,
         "category": "sauce",
-        "image": "img/0128-beb93595addc3b4a86dca78697accfa7.jpg",
+        "image": "img/0128-beb93595addc3b4a86dca78697accfa7.webp",
         "id": 202
       },
       {
         "title": "Соус для корочек \"Песто\"",
         "price": 60,
         "category": "sauce",
-        "image": "img/0129-38cbd3a2d18bf74faaf38831d539e252.jpg",
+        "image": "img/0129-38cbd3a2d18bf74faaf38831d539e252.webp",
         "id": 203
       },
       {
         "title": "Соус для корочек \"Кунжутный\"",
         "price": 60,
         "category": "sauce",
-        "image": "img/0130-cc62efc3570afdb809e972ba4fab9a40.jpg",
+        "image": "img/0130-cc62efc3570afdb809e972ba4fab9a40.webp",
         "id": 204
       },
       {
         "title": "Соус для корочек \"Чесночный\"",
         "price": 60,
         "category": "sauce",
-        "image": "img/0131-f8ee8a0189ed1ce5e51ffb82b9daf0f0.jpg",
+        "image": "img/0131-f8ee8a0189ed1ce5e51ffb82b9daf0f0.webp",
         "id": 205
       },
       {
         "title": "Соус для корочек \"BBQ\"",
         "price": 60,
         "category": "sauce",
-        "image": "img/0132-5ed32c15ab47af0736b024a431489ae8.jpg",
+        "image": "img/0132-5ed32c15ab47af0736b024a431489ae8.webp",
         "id": 206
       },
       {
         "title": "Соус для корочек \"Терияки\"",
         "price": 60,
         "category": "sauce",
-        "image": "img/0133-eaa969849b4315ae9314fe8a34bacd8c.jpg",
+        "image": "img/0133-eaa969849b4315ae9314fe8a34bacd8c.webp",
         "id": 207
       },
       {
         "title": "Соус для корочек Спайси",
         "price": 60,
         "category": "sauce",
-        "image": "img/0134-71937ba4dd7b90aed961a247edf59dd4.jpg",
+        "image": "img/0134-71937ba4dd7b90aed961a247edf59dd4.webp",
         "id": 208
       },
       {
         "title": "Соус для корочек \"Медово-горчичный\"",
         "price": 60,
         "category": "sauce",
-        "image": "img/0135-2dd8d2746fac8c6a75b5665a6a2f3201.jpg",
+        "image": "img/0135-2dd8d2746fac8c6a75b5665a6a2f3201.webp",
         "id": 209
       },
       {
         "title": "Соус для корочек \"Томатный\"",
         "price": 60,
         "category": "sauce",
-        "image": "img/0136-c2dc12f066db38c3e91e25534e96077a.jpg",
+        "image": "img/0136-c2dc12f066db38c3e91e25534e96077a.webp",
         "id": 210
       },
       {
         "title": "Соус для корочек \"Сырный\"",
         "price": 60,
         "category": "sauce",
-        "image": "img/0137-31f3a0bea3d9330589be265933f2cefa.jpg",
+        "image": "img/0137-31f3a0bea3d9330589be265933f2cefa.webp",
         "id": 211
       },
       {
         "title": "Соевый соус",
         "price": 60,
         "category": "sauce",
-        "image": "img/0138-fa39cb2eb262c6afc951b168e3d25080.jpg",
+        "image": "img/0138-fa39cb2eb262c6afc951b168e3d25080.webp",
         "id": 212
       }
     ],
@@ -1639,161 +1639,161 @@
         "title": "Суши Нигири с лососем",
         "price": 150,
         "category": "rolls-sushi",
-        "image": "img/0142-b6883db400b64368d6dc419762f539d6.jpg",
+        "image": "img/0142-b6883db400b64368d6dc419762f539d6.webp",
         "id": 213
       },
       {
         "title": "Суши Нигири с угрем",
         "price": 150,
         "category": "rolls-sushi",
-        "image": "img/0143-71501a91d69a583d8171bc210279eee0.jpg",
+        "image": "img/0143-71501a91d69a583d8171bc210279eee0.webp",
         "id": 214
       },
       {
         "title": "Суши Нигири с осьминогом",
         "price": 150,
         "category": "rolls-sushi",
-        "image": "img/0144-047ff5d2db7efcb5a2d455c59f94eaab.jpg",
+        "image": "img/0144-047ff5d2db7efcb5a2d455c59f94eaab.webp",
         "id": 215
       },
       {
         "title": "Суши Нигири с креветкой",
         "price": 150,
         "category": "rolls-sushi",
-        "image": "img/0145-f774a995889f749e12cbf2f7f9db4532.jpg",
+        "image": "img/0145-f774a995889f749e12cbf2f7f9db4532.webp",
         "id": 216
       },
       {
         "title": "Суши Нигири с тунцом",
         "price": 150,
         "category": "rolls-sushi",
-        "image": "img/0146-ffad9a7631d15208d12f3b78bfe83271.jpg",
+        "image": "img/0146-ffad9a7631d15208d12f3b78bfe83271.webp",
         "id": 217
       },
       {
         "title": "Суши Гункан с красной икрой",
         "price": 450,
         "category": "rolls-sushi",
-        "image": "img/0147-d34383a59566515fbc5c18f0e304b1b5.jpg",
+        "image": "img/0147-d34383a59566515fbc5c18f0e304b1b5.webp",
         "id": 218
       },
       {
         "title": "Суши Гункан с анчоусами",
         "price": 150,
         "category": "rolls-sushi",
-        "image": "img/0148-127522b3625e07884d6363ffbd12f7e4.jpg",
+        "image": "img/0148-127522b3625e07884d6363ffbd12f7e4.webp",
         "id": 219
       },
       {
         "title": "Суши Гункан с икрой Масага",
         "price": 150,
         "category": "rolls-sushi",
-        "image": "img/0149-3320fc6ab6987e398764f2c27b44a322.png",
+        "image": "img/0149-3320fc6ab6987e398764f2c27b44a322.webp",
         "id": 220
       },
       {
         "title": "Суши Гункан с черной икрой",
         "price": 150,
         "category": "rolls-sushi",
-        "image": "img/0150-772169c8fe43bbc908e06569224a8443.jpg",
+        "image": "img/0150-772169c8fe43bbc908e06569224a8443.webp",
         "id": 221
       },
       {
         "title": "Суши Гункан с лососем",
         "price": 150,
         "category": "rolls-sushi",
-        "image": "img/0151-01d670f9bdfbd8cb7a76283224bcd447.jpg",
+        "image": "img/0151-01d670f9bdfbd8cb7a76283224bcd447.webp",
         "id": 222
       },
       {
         "title": "Суши Гункан с крабом",
         "price": 150,
         "category": "rolls-sushi",
-        "image": "img/0152-06bc0d4450edb7e2a787fbe810c8c1bd.jpg",
+        "image": "img/0152-06bc0d4450edb7e2a787fbe810c8c1bd.webp",
         "id": 223
       },
       {
         "title": "Суши Гункан с тунцом",
         "price": 150,
         "category": "rolls-sushi",
-        "image": "img/0153-6bf98f9c9b7aed6c3f035cf92dc1ec62.jpg",
+        "image": "img/0153-6bf98f9c9b7aed6c3f035cf92dc1ec62.webp",
         "id": 224
       },
       {
         "title": "Суши Гункан с угрем",
         "price": 150,
         "category": "rolls-sushi",
-        "image": "img/0154-404fb047a0485c01eed3137f0749f45b.jpg",
+        "image": "img/0154-404fb047a0485c01eed3137f0749f45b.webp",
         "id": 225
       },
       {
         "title": "Суши Гункан с креветкой",
         "price": 150,
         "category": "rolls-sushi",
-        "image": "img/0155-5f6dc0527d5c2fc8c618888c91cdc548.jpg",
+        "image": "img/0155-5f6dc0527d5c2fc8c618888c91cdc548.webp",
         "id": 226
       },
       {
         "title": "Суши Гункан с осьминогом",
         "price": 150,
         "category": "rolls-sushi",
-        "image": "img/0156-3768f4f49cf4f4e7e8acfd47f66c1bfb.jpg",
+        "image": "img/0156-3768f4f49cf4f4e7e8acfd47f66c1bfb.webp",
         "id": 227
       },
       {
         "title": "Суши Темаки с огурцом и авокадо",
         "price": 250,
         "category": "rolls-sushi",
-        "image": "img/0157-d2132452bdd820b1f06ea1532035bed6.png",
+        "image": "img/0157-d2132452bdd820b1f06ea1532035bed6.webp",
         "id": 228
       },
       {
         "title": "Суши Темаки с анчоусами",
         "price": 250,
         "category": "rolls-sushi",
-        "image": "img/0158-ceb8895746150b75e62ad911f2ea86d7.jpg",
+        "image": "img/0158-ceb8895746150b75e62ad911f2ea86d7.webp",
         "id": 229
       },
       {
         "title": "Суши Темаки с лососем",
         "price": 250,
         "category": "rolls-sushi",
-        "image": "img/0159-f8d157fd373cd36a3bf51147deba1c8d.jpg",
+        "image": "img/0159-f8d157fd373cd36a3bf51147deba1c8d.webp",
         "id": 230
       },
       {
         "title": "Суши Темаки с угрем",
         "price": 250,
         "category": "rolls-sushi",
-        "image": "img/0160-46400a95681caee7e71f09bd0942fb70.jpg",
+        "image": "img/0160-46400a95681caee7e71f09bd0942fb70.webp",
         "id": 231
       },
       {
         "title": "Суши Темаки с тунцом",
         "price": 250,
         "category": "rolls-sushi",
-        "image": "img/0161-cda94b3a5509bcea17cb9d102e595814.jpg",
+        "image": "img/0161-cda94b3a5509bcea17cb9d102e595814.webp",
         "id": 232
       },
       {
         "title": "Суши Темаки с крабами",
         "price": 250,
         "category": "rolls-sushi",
-        "image": "img/0162-3741123e9a245b26bb882611d1b1e78e.jpg",
+        "image": "img/0162-3741123e9a245b26bb882611d1b1e78e.webp",
         "id": 233
       },
       {
         "title": "Суши Темаки с осьминогом",
         "price": 250,
         "category": "rolls-sushi",
-        "image": "img/0163-0ef1326d4c03edb1d3027c0a5f5833b1.jpg",
+        "image": "img/0163-0ef1326d4c03edb1d3027c0a5f5833b1.webp",
         "id": 234
       },
       {
         "title": "Суши Темаки с креветками",
         "price": 250,
         "category": "rolls-sushi",
-        "image": "img/0164-bc654322c33cc8870c6f8aae8c5f744b.jpg",
+        "image": "img/0164-bc654322c33cc8870c6f8aae8c5f744b.webp",
         "id": 235
       }
     ],
@@ -1802,224 +1802,224 @@
         "title": "Ролл Калифорния с анчоусом",
         "price": 850,
         "category": "rolls-rolls",
-        "image": "img/0139-8d949b570a027e9101d97e69f108cb6b.jpg",
+        "image": "img/0139-8d949b570a027e9101d97e69f108cb6b.webp",
         "id": 236
       },
       {
         "title": "Люкс Ролл Филадельфия с лососем и тунцом, итальянским черным трюфелем и красной икрой",
         "price": 2500,
         "category": "rolls-rolls",
-        "image": "img/0140-9ffe3325a07b6bcb39b3cf28d81bfc69.jpg",
+        "image": "img/0140-9ffe3325a07b6bcb39b3cf28d81bfc69.webp",
         "id": 237
       },
       {
         "title": "Люкс ролл Филадельфия с Тунцом и лососем с итальянским черным трюфелем и красной икрой",
         "price": 2500,
         "category": "rolls-rolls",
-        "image": "img/0141-99547acc3e7c9a5208ed2a4a952675cb.jpg",
+        "image": "img/0141-99547acc3e7c9a5208ed2a4a952675cb.webp",
         "id": 238
       },
       {
         "title": "Маки ролл огурец",
         "price": 350,
         "category": "rolls-rolls",
-        "image": "img/0165-0acfb8b02d71fc2f490e8e46b4c9cbd4.jpg",
+        "image": "img/0165-0acfb8b02d71fc2f490e8e46b4c9cbd4.webp",
         "id": 239
       },
       {
         "title": "Маки ролл с авокадо",
         "price": 350,
         "category": "rolls-rolls",
-        "image": "img/0166-6d61f3957ba4b8e586934bd06372415a.jpg",
+        "image": "img/0166-6d61f3957ba4b8e586934bd06372415a.webp",
         "id": 240
       },
       {
         "title": "Маки ролл с анчоусом",
         "price": 450,
         "category": "rolls-rolls",
-        "image": "img/0167-901091ca0582382c9d98a6e6d816d7b0.jpg",
+        "image": "img/0167-901091ca0582382c9d98a6e6d816d7b0.webp",
         "id": 241
       },
       {
         "title": "Маки ролл лосось",
         "price": 450,
         "category": "rolls-rolls",
-        "image": "img/0168-3ae808bd2558b467d538d5846cbd7fa4.jpg",
+        "image": "img/0168-3ae808bd2558b467d538d5846cbd7fa4.webp",
         "id": 242
       },
       {
         "title": "Маки ролл с Угрем",
         "price": 450,
         "category": "rolls-rolls",
-        "image": "img/0169-a50ac9cdfbe9079385b7d6b6865d3177.jpg",
+        "image": "img/0169-a50ac9cdfbe9079385b7d6b6865d3177.webp",
         "id": 243
       },
       {
         "title": "Маки ролл с креветкой",
         "price": 450,
         "category": "rolls-rolls",
-        "image": "img/0170-948ad550bcef70b1914126e7d0beb867.jpg",
+        "image": "img/0170-948ad550bcef70b1914126e7d0beb867.webp",
         "id": 244
       },
       {
         "title": "Маки ролл с крабами",
         "price": 450,
         "category": "rolls-rolls",
-        "image": "img/0171-2e2da577619861781d5c1dcd3b74f18d.jpg",
+        "image": "img/0171-2e2da577619861781d5c1dcd3b74f18d.webp",
         "id": 245
       },
       {
         "title": "Маки ролл тунец",
         "price": 450,
         "category": "rolls-rolls",
-        "image": "img/0172-b40f59fdc0e48db5979745ab9b7538ab.jpg",
+        "image": "img/0172-b40f59fdc0e48db5979745ab9b7538ab.webp",
         "id": 246
       },
       {
         "title": "Ролл Филадельфия с лососем",
         "price": 850,
         "category": "rolls-rolls",
-        "image": "img/0173-fa915e52ffa93eddd7b9c9f80ac31cc8.jpg",
+        "image": "img/0173-fa915e52ffa93eddd7b9c9f80ac31cc8.webp",
         "id": 247
       },
       {
         "title": "Ролл Филадельфия с тунцом",
         "price": 850,
         "category": "rolls-rolls",
-        "image": "img/0174-3ae36605eda6d2e11c310121130b018e.jpg",
+        "image": "img/0174-3ae36605eda6d2e11c310121130b018e.webp",
         "id": 248
       },
       {
         "title": "Ролл Филадельфия с креветками",
         "price": 850,
         "category": "rolls-rolls",
-        "image": "img/0175-071c533a8b39bfb48c0f03c37bf6fc83.jpg",
+        "image": "img/0175-071c533a8b39bfb48c0f03c37bf6fc83.webp",
         "id": 249
       },
       {
         "title": "Ролл Калифорния с крабами",
         "price": 850,
         "category": "rolls-rolls",
-        "image": "img/0176-d02847e7019a4643a64fcf4a1be8ca1a.jpg",
+        "image": "img/0176-d02847e7019a4643a64fcf4a1be8ca1a.webp",
         "id": 250
       },
       {
         "title": "Ролл Калифорния с тунцом",
         "price": 850,
         "category": "rolls-rolls",
-        "image": "img/0177-48ad5ddd9aa0776f90d8358b898d0dee.jpg",
+        "image": "img/0177-48ad5ddd9aa0776f90d8358b898d0dee.webp",
         "id": 251
       },
       {
         "title": "Ролл Калифорния с лососем",
         "price": 850,
         "category": "rolls-rolls",
-        "image": "img/0178-a295370a274017574d2871b1d158d0a8.jpg",
+        "image": "img/0178-a295370a274017574d2871b1d158d0a8.webp",
         "id": 252
       },
       {
         "title": "Ролл Калифорния с копченным угрем",
         "price": 850,
         "category": "rolls-rolls",
-        "image": "img/0179-b8a548861b24d1a13871f8e243d6c947.jpg",
+        "image": "img/0179-b8a548861b24d1a13871f8e243d6c947.webp",
         "id": 253
       },
       {
         "title": "Запеченный ролл с мидиями",
         "price": 800,
         "category": "rolls-rolls",
-        "image": "img/0180-9d911ed480fd82c212580abcbe3607e6.jpg",
+        "image": "img/0180-9d911ed480fd82c212580abcbe3607e6.webp",
         "id": 254
       },
       {
         "title": "Запеченный ролл с анчоусом",
         "price": 800,
         "category": "rolls-rolls",
-        "image": "img/0181-3812fd49bda1497c76b426069e6d89d3.jpg",
+        "image": "img/0181-3812fd49bda1497c76b426069e6d89d3.webp",
         "id": 255
       },
       {
         "title": "Запеченный ролл Лосось",
         "price": 800,
         "category": "rolls-rolls",
-        "image": "img/0182-06115474575f9ab8e17c61dd526cf56d.jpg",
+        "image": "img/0182-06115474575f9ab8e17c61dd526cf56d.webp",
         "id": 256
       },
       {
         "title": "Запеченный ролл с Угрем",
         "price": 800,
         "category": "rolls-rolls",
-        "image": "img/0183-955e8c36ef1652a062b9df569e358514.jpg",
+        "image": "img/0183-955e8c36ef1652a062b9df569e358514.webp",
         "id": 257
       },
       {
         "title": "Запеченный ролл с крабами",
         "price": 800,
         "category": "rolls-rolls",
-        "image": "img/0184-f67a32f427a4d421243f470174745bec.jpg",
+        "image": "img/0184-f67a32f427a4d421243f470174745bec.webp",
         "id": 258
       },
       {
         "title": "Запеченный ролл с тунцом",
         "price": 800,
         "category": "rolls-rolls",
-        "image": "img/0185-609753294fcda1685defd271bfe632c3.jpg",
+        "image": "img/0185-609753294fcda1685defd271bfe632c3.webp",
         "id": 259
       },
       {
         "title": "Запеченный ролл с осьминогом",
         "price": 800,
         "category": "rolls-rolls",
-        "image": "img/0186-84baf58b89514e259415c2c6cf2db228.jpg",
+        "image": "img/0186-84baf58b89514e259415c2c6cf2db228.webp",
         "id": 260
       },
       {
         "title": "Запеченный ролл с креветкой",
         "price": 800,
         "category": "rolls-rolls",
-        "image": "img/0187-df37b96ec1be0909bce6481d7270ffe7.jpg",
+        "image": "img/0187-df37b96ec1be0909bce6481d7270ffe7.webp",
         "id": 261
       },
       {
         "title": "Спайси ролл с лососем",
         "price": 700,
         "category": "rolls-rolls",
-        "image": "img/0188-7b572f21cf2b864e76bec85a5bd08113.png",
+        "image": "img/0188-7b572f21cf2b864e76bec85a5bd08113.webp",
         "id": 262
       },
       {
         "title": "Спайси-ролл с анчоусом",
         "price": 700,
         "category": "rolls-rolls",
-        "image": "img/0189-55628cae461851be3b7da87e4b2f8aa6.png",
+        "image": "img/0189-55628cae461851be3b7da87e4b2f8aa6.webp",
         "id": 263
       },
       {
         "title": "Спайси ролл с креветкой",
         "price": 700,
         "category": "rolls-rolls",
-        "image": "img/0190-0abd87a0fca9019a6d94af625ba578c4.png",
+        "image": "img/0190-0abd87a0fca9019a6d94af625ba578c4.webp",
         "id": 264
       },
       {
         "title": "Спайси ролл с угрем",
         "price": 700,
         "category": "rolls-rolls",
-        "image": "img/0191-5e0302b59e4e6c17cf2c37696f210a0f.png",
+        "image": "img/0191-5e0302b59e4e6c17cf2c37696f210a0f.webp",
         "id": 265
       },
       {
         "title": "Спайси ролл с тунцом",
         "price": 700,
         "category": "rolls-rolls",
-        "image": "img/0189-55628cae461851be3b7da87e4b2f8aa6.png",
+        "image": "img/0189-55628cae461851be3b7da87e4b2f8aa6.webp",
         "id": 266
       },
       {
         "title": "Спайси ролл с осьминогом",
         "price": 700,
         "category": "rolls-rolls",
-        "image": "img/0192-379c3434c23e2fe7d6c467382d6a9d8c.png",
+        "image": "img/0192-379c3434c23e2fe7d6c467382d6a9d8c.webp",
         "id": 267
       }
     ],
@@ -2031,7 +2031,7 @@
         "description": "",
         "price": 500,
         "category": "confectionery",
-        "image": "img/0193-1dcd9c5fbbd711e4f0a4a05bcac84e09.jpg"
+        "image": "img/0193-1dcd9c5fbbd711e4f0a4a05bcac84e09.webp"
       },
       {
         "id": 269,
@@ -2040,7 +2040,7 @@
         "description": "",
         "price": 250,
         "category": "confectionery",
-        "image": "img/0194-e2fe52f5e5d97f4c6477541a8a3d09e4.jpg"
+        "image": "img/0194-e2fe52f5e5d97f4c6477541a8a3d09e4.webp"
       },
       {
         "id": 270,
@@ -2049,7 +2049,7 @@
         "description": "",
         "price": 400,
         "category": "confectionery",
-        "image": "img/0195-c5f600192306658f946824eb0e1f7abc.jpg"
+        "image": "img/0195-c5f600192306658f946824eb0e1f7abc.webp"
       }
     ],
     "mors": [
@@ -2060,7 +2060,7 @@
         "description": "",
         "price": 150,
         "category": "mors",
-        "image": "img/0196-e681b6ffb61fc9cbe2d436b55944c91c.jpg"
+        "image": "img/0196-e681b6ffb61fc9cbe2d436b55944c91c.webp"
       },
       {
         "id": 272,
@@ -2069,7 +2069,7 @@
         "description": "",
         "price": 150,
         "category": "mors",
-        "image": "img/0197-d1d47ce7d22f8633f5a026d92434a87e.jpg"
+        "image": "img/0197-d1d47ce7d22f8633f5a026d92434a87e.webp"
       },
       {
         "id": 273,
@@ -2078,7 +2078,7 @@
         "description": "",
         "price": 150,
         "category": "mors",
-        "image": "img/0198-ced58a46f3396e1a95b9d0c8ef70843a.jpg"
+        "image": "img/0198-ced58a46f3396e1a95b9d0c8ef70843a.webp"
       },
       {
         "id": 274,
@@ -2087,7 +2087,7 @@
         "description": "",
         "price": 150,
         "category": "mors",
-        "image": "img/0199-6f7d91f58f46b0e5ecd2d16fad1c17dc.jpg"
+        "image": "img/0199-6f7d91f58f46b0e5ecd2d16fad1c17dc.webp"
       },
       {
         "id": 275,
@@ -2096,7 +2096,7 @@
         "description": "",
         "price": 150,
         "category": "mors",
-        "image": "img/0200-5f73206ecfc665a4419ce7159194e603.jpg"
+        "image": "img/0200-5f73206ecfc665a4419ce7159194e603.webp"
       },
       {
         "id": 276,
@@ -2105,7 +2105,7 @@
         "description": "",
         "price": 150,
         "category": "mors",
-        "image": "img/0201-35108a55daf03bbb265be05c37af5645.jpg"
+        "image": "img/0201-35108a55daf03bbb265be05c37af5645.webp"
       }
     ],
     "juice": [
@@ -2116,7 +2116,7 @@
         "description": "",
         "price": 150,
         "category": "juice",
-        "image": "img/0202-2e67105f1eeec7a147b9cb049319e60a.jpg"
+        "image": "img/0202-2e67105f1eeec7a147b9cb049319e60a.webp"
       },
       {
         "id": 278,
@@ -2125,7 +2125,7 @@
         "description": "",
         "price": 150,
         "category": "juice",
-        "image": "img/0203-3717b13ee13cd2b2813ffc6f1be16fe8.jpg"
+        "image": "img/0203-3717b13ee13cd2b2813ffc6f1be16fe8.webp"
       },
       {
         "id": 279,
@@ -2134,7 +2134,7 @@
         "description": "",
         "price": 150,
         "category": "juice",
-        "image": "img/0204-61955f1b3c198c5090de413cb0ddc296.jpg"
+        "image": "img/0204-61955f1b3c198c5090de413cb0ddc296.webp"
       }
     ],
     "water": [
@@ -2145,7 +2145,7 @@
         "description": "",
         "price": 100,
         "category": "water",
-        "image": "img/0205-b047a6ea418465642d5c71fb76ded4b0.png"
+        "image": "img/0205-b047a6ea418465642d5c71fb76ded4b0.webp"
       },
       {
         "id": 281,
@@ -2154,7 +2154,7 @@
         "description": "",
         "price": 100,
         "category": "water",
-        "image": "img/0206-580edc8de2d3fd0d2cd42b0a6f900c5f.png"
+        "image": "img/0206-580edc8de2d3fd0d2cd42b0a6f900c5f.webp"
       }
     ],
     "beverages-other": [
@@ -2165,7 +2165,7 @@
         "description": "",
         "price": 150,
         "category": "beverages-other",
-        "image": "img/0207-30b30f68968af990afb5ece56bffe277.png"
+        "image": "img/0207-30b30f68968af990afb5ece56bffe277.webp"
       }
     ],
     "frozen": [
@@ -2176,7 +2176,7 @@
         "description": "",
         "price": 750,
         "category": "frozen",
-        "image": "img/0008-ead3882745fa013324b56844cf2a560a.jpg"
+        "image": "img/0008-ead3882745fa013324b56844cf2a560a.webp"
       },
       {
         "id": 284,
@@ -2185,7 +2185,7 @@
         "description": "",
         "price": 750,
         "category": "frozen",
-        "image": "img/0009-18027452e983e6723778dd66f82e6753.jpg"
+        "image": "img/0009-18027452e983e6723778dd66f82e6753.webp"
       },
       {
         "id": 285,
@@ -2194,7 +2194,7 @@
         "description": "",
         "price": 850,
         "category": "frozen",
-        "image": "img/0017-719c04e0f6486ad575c942b9dcfa187e.jpg"
+        "image": "img/0017-719c04e0f6486ad575c942b9dcfa187e.webp"
       },
       {
         "id": 286,
@@ -2203,7 +2203,7 @@
         "description": "",
         "price": 450,
         "category": "frozen",
-        "image": "img/0208-54971df1329825abfc9de18450a88786.jpg"
+        "image": "img/0208-54971df1329825abfc9de18450a88786.webp"
       },
       {
         "id": 287,
@@ -2212,7 +2212,7 @@
         "description": "",
         "price": 90,
         "category": "frozen",
-        "image": "img/0209-1e58c303fdbbd79cd3c8fc4a371a5eea.jpg"
+        "image": "img/0209-1e58c303fdbbd79cd3c8fc4a371a5eea.webp"
       },
       {
         "id": 288,
@@ -2221,7 +2221,7 @@
         "description": "",
         "price": 90,
         "category": "frozen",
-        "image": "img/0210-a660f31e1483210e709617a57bffe0cb.jpg"
+        "image": "img/0210-a660f31e1483210e709617a57bffe0cb.webp"
       },
       {
         "id": 289,
@@ -2230,7 +2230,7 @@
         "description": "",
         "price": 300,
         "category": "frozen",
-        "image": "img/0136-c2dc12f066db38c3e91e25534e96077a.jpg"
+        "image": "img/0136-c2dc12f066db38c3e91e25534e96077a.webp"
       }
     ],
     "masterclass": [
@@ -2241,7 +2241,7 @@
         "description": "",
         "price": 2500,
         "category": "masterclass",
-        "image": "img/0211-18598516.jpg"
+        "image": "img/0211-18598516.webp"
       }
     ],
     "franchise": [
@@ -2252,7 +2252,7 @@
         "description": "",
         "price": 250000,
         "category": "franchise",
-        "image": "img/0212-23531454.jpg"
+        "image": "img/0212-23531454.webp"
       },
       {
         "id": 292,
@@ -2261,7 +2261,7 @@
         "description": "",
         "price": 350000,
         "category": "franchise",
-        "image": "img/0213-92491393.jpg"
+        "image": "img/0213-92491393.webp"
       },
       {
         "id": 293,
@@ -2270,7 +2270,7 @@
         "description": "",
         "price": 550000,
         "category": "franchise",
-        "image": "img/0214-62040519.jpg"
+        "image": "img/0214-62040519.webp"
       }
     ],
     "aromatic-oils": [
@@ -2281,7 +2281,7 @@
         "description": "",
         "price": 500,
         "category": "aromatic-oils",
-        "image": "img/0215-c293246704e149995443ebb3649cd824.jpg"
+        "image": "img/0215-c293246704e149995443ebb3649cd824.webp"
       },
       {
         "id": 295,
@@ -2290,7 +2290,7 @@
         "description": "",
         "price": 500,
         "category": "aromatic-oils",
-        "image": "img/0216-7061f1c25d22c694da9ca7619f1a84cd.jpg"
+        "image": "img/0216-7061f1c25d22c694da9ca7619f1a84cd.webp"
       },
       {
         "id": 296,
@@ -2299,7 +2299,7 @@
         "description": "",
         "price": 500,
         "category": "aromatic-oils",
-        "image": "img/0217-f5c55987083c294ea4e1d144fc89769e.jpg"
+        "image": "img/0217-f5c55987083c294ea4e1d144fc89769e.webp"
       },
       {
         "id": 297,
@@ -2308,7 +2308,7 @@
         "description": "",
         "price": 500,
         "category": "aromatic-oils",
-        "image": "img/0218-a3e230f849b401d1e01637dd98694ad7.jpg"
+        "image": "img/0218-a3e230f849b401d1e01637dd98694ad7.webp"
       },
       {
         "id": 298,
@@ -2317,7 +2317,7 @@
         "description": "",
         "price": 500,
         "category": "aromatic-oils",
-        "image": "img/0219-b9f1bd1087e11441dbdb12e61b75c106.jpg"
+        "image": "img/0219-b9f1bd1087e11441dbdb12e61b75c106.webp"
       }
     ],
     "combo": [
@@ -2328,7 +2328,7 @@
         "description": "",
         "price": 1250,
         "category": "combo",
-        "image": "img/0220-8c1aa33248b79a057e8d80e2777eccc2.jpg"
+        "image": "img/0220-8c1aa33248b79a057e8d80e2777eccc2.webp"
       },
       {
         "id": 300,
@@ -2337,7 +2337,7 @@
         "description": "",
         "price": 1150,
         "category": "combo",
-        "image": "img/0221-3801ca919174ffd6045fe0edb507b47c.jpg"
+        "image": "img/0221-3801ca919174ffd6045fe0edb507b47c.webp"
       },
       {
         "id": 301,
@@ -2346,7 +2346,7 @@
         "description": "",
         "price": 1250,
         "category": "combo",
-        "image": "img/0222-f096ed60b1f8dd72865677d4d0ff7674.jpg"
+        "image": "img/0222-f096ed60b1f8dd72865677d4d0ff7674.webp"
       },
       {
         "id": 302,
@@ -2355,7 +2355,7 @@
         "description": "",
         "price": 750,
         "category": "combo",
-        "image": "img/0223-e064dd90b4f38e484b96fca4d8d95ec9.jpg"
+        "image": "img/0223-e064dd90b4f38e484b96fca4d8d95ec9.webp"
       },
       {
         "id": 303,
@@ -2364,7 +2364,7 @@
         "description": "",
         "price": 750,
         "category": "combo",
-        "image": "img/0224-af9584c457ed271c151999d1aeb57020.jpg"
+        "image": "img/0224-af9584c457ed271c151999d1aeb57020.webp"
       },
       {
         "id": 304,
@@ -2373,7 +2373,7 @@
         "description": "",
         "price": 750,
         "category": "combo",
-        "image": "img/0225-5821fd4b195ca5428e30c6d656ab56cd.jpg"
+        "image": "img/0225-5821fd4b195ca5428e30c6d656ab56cd.webp"
       },
       {
         "id": 305,
@@ -2382,7 +2382,7 @@
         "description": "",
         "price": 750,
         "category": "combo",
-        "image": "img/0226-10d733cd3cf3e613060c1f9c96335b8b.jpg"
+        "image": "img/0226-10d733cd3cf3e613060c1f9c96335b8b.webp"
       },
       {
         "id": 306,
@@ -2391,7 +2391,7 @@
         "description": "",
         "price": 750,
         "category": "combo",
-        "image": "img/0227-43ee41a1d696934f555cef51775edf1d.jpg"
+        "image": "img/0227-43ee41a1d696934f555cef51775edf1d.webp"
       },
       {
         "id": 307,
@@ -2400,7 +2400,7 @@
         "description": "",
         "price": 800,
         "category": "combo",
-        "image": "img/0228-57d6302eb372273e08c786f204e22641.jpg"
+        "image": "img/0228-57d6302eb372273e08c786f204e22641.webp"
       },
       {
         "id": 308,
@@ -2409,7 +2409,7 @@
         "description": "",
         "price": 2025,
         "category": "combo",
-        "image": "img/0229-a65222ed91c68946230038f26d78565e.jpg"
+        "image": "img/0229-a65222ed91c68946230038f26d78565e.webp"
       },
       {
         "id": 309,
@@ -2418,7 +2418,7 @@
         "description": "",
         "price": 1850,
         "category": "combo",
-        "image": "img/0230-ea352d947e4747e72d6ff545174bda6f.jpg"
+        "image": "img/0230-ea352d947e4747e72d6ff545174bda6f.webp"
       },
       {
         "id": 310,
@@ -2427,7 +2427,7 @@
         "description": "",
         "price": 1700,
         "category": "combo",
-        "image": "img/0231-1badc276c66a4cf5ac4f477bf589af77.png"
+        "image": "img/0231-1badc276c66a4cf5ac4f477bf589af77.webp"
       },
       {
         "id": 311,
@@ -2436,7 +2436,7 @@
         "description": "",
         "price": 1700,
         "category": "combo",
-        "image": "img/0232-0f7bc57f50f4539bfafb367d83e67fc6.png"
+        "image": "img/0232-0f7bc57f50f4539bfafb367d83e67fc6.webp"
       },
       {
         "id": 312,
@@ -2445,7 +2445,7 @@
         "description": "",
         "price": 1700,
         "category": "combo",
-        "image": "img/0233-6ed098e899a26f2d0f41fea520564c50.png"
+        "image": "img/0233-6ed098e899a26f2d0f41fea520564c50.webp"
       },
       {
         "id": 313,
@@ -2454,7 +2454,7 @@
         "description": "",
         "price": 3800,
         "category": "combo",
-        "image": "img/0234-aa0c89d6ecb718d94b7bdcd414eb9231.jpg"
+        "image": "img/0234-aa0c89d6ecb718d94b7bdcd414eb9231.webp"
       },
       {
         "id": 314,
@@ -2463,7 +2463,7 @@
         "description": "",
         "price": 1950,
         "category": "combo",
-        "image": "img/0235-1a2366f6b9ba529c19cda00a21028269.jpg"
+        "image": "img/0235-1a2366f6b9ba529c19cda00a21028269.webp"
       },
       {
         "id": 315,
@@ -2472,7 +2472,7 @@
         "description": "",
         "price": 3700,
         "category": "combo",
-        "image": "img/0236-f8922552aba4ca4d9c87cdbef52d219e.jpg"
+        "image": "img/0236-f8922552aba4ca4d9c87cdbef52d219e.webp"
       },
       {
         "id": 316,
@@ -2481,7 +2481,7 @@
         "description": "",
         "price": 1900,
         "category": "combo",
-        "image": "img/0237-98e2d81f6ed5c7b4abef670ba5c24fbd.jpg"
+        "image": "img/0237-98e2d81f6ed5c7b4abef670ba5c24fbd.webp"
       },
       {
         "id": 317,
@@ -2490,7 +2490,7 @@
         "description": "",
         "price": 1800,
         "category": "combo",
-        "image": "img/0238-9da6049d0d62e187a7134629823d55a1.jpg"
+        "image": "img/0238-9da6049d0d62e187a7134629823d55a1.webp"
       },
       {
         "id": 318,
@@ -2499,7 +2499,7 @@
         "description": "",
         "price": 3550,
         "category": "combo",
-        "image": "img/0239-aaeecb65bcf784956bff2fb0f2352602.png"
+        "image": "img/0239-aaeecb65bcf784956bff2fb0f2352602.webp"
       },
       {
         "id": 319,
@@ -2508,7 +2508,7 @@
         "description": "",
         "price": 4750,
         "category": "combo",
-        "image": "img/0240-86a9a885f13ffc896eb0678fce0a4ac1.png"
+        "image": "img/0240-86a9a885f13ffc896eb0678fce0a4ac1.webp"
       },
       {
         "id": 320,
@@ -2517,7 +2517,7 @@
         "description": "",
         "price": 4100,
         "category": "combo",
-        "image": "img/0241-e9de2fca8e6447e62c0ccede4e2154d0.png"
+        "image": "img/0241-e9de2fca8e6447e62c0ccede4e2154d0.webp"
       },
       {
         "id": 321,
@@ -2526,7 +2526,7 @@
         "description": "",
         "price": 5100,
         "category": "combo",
-        "image": "img/0242-8ec381c89bcc8b37338ad0a58e3d770f.png"
+        "image": "img/0242-8ec381c89bcc8b37338ad0a58e3d770f.webp"
       },
       {
         "id": 322,
@@ -2535,7 +2535,7 @@
         "description": "",
         "price": 7200,
         "category": "combo",
-        "image": "img/0243-3ba4216ec72ec0114b148710534c2b67.png"
+        "image": "img/0243-3ba4216ec72ec0114b148710534c2b67.webp"
       },
       {
         "id": 323,
@@ -2544,7 +2544,7 @@
         "description": "",
         "price": 3900,
         "category": "combo",
-        "image": "img/0244-d7338567965dd8e1f45830388f9943a2.jpg"
+        "image": "img/0244-d7338567965dd8e1f45830388f9943a2.webp"
       },
       {
         "id": 324,
@@ -2553,7 +2553,7 @@
         "description": "",
         "price": 2500,
         "category": "combo",
-        "image": "img/0245-f349902bb3daa42a4146f5868ea3d8c0.jpg"
+        "image": "img/0245-f349902bb3daa42a4146f5868ea3d8c0.webp"
       },
       {
         "id": 325,
@@ -2562,7 +2562,7 @@
         "description": "",
         "price": 2700,
         "category": "combo",
-        "image": "img/0246-2bf74b1971b9bb9beddfeff8c8bcee8a.jpg"
+        "image": "img/0246-2bf74b1971b9bb9beddfeff8c8bcee8a.webp"
       },
       {
         "id": 326,
@@ -2571,7 +2571,7 @@
         "description": "",
         "price": 2900,
         "category": "combo",
-        "image": "img/0247-8707ab9ab776c6fe484c10b510126449.jpg"
+        "image": "img/0247-8707ab9ab776c6fe484c10b510126449.webp"
       },
       {
         "id": 327,
@@ -2580,7 +2580,7 @@
         "description": "",
         "price": 3300,
         "category": "combo",
-        "image": "img/0248-2bd889f07063dec59105bb8aa5972c50.png"
+        "image": "img/0248-2bd889f07063dec59105bb8aa5972c50.webp"
       },
       {
         "id": 328,
@@ -2589,7 +2589,7 @@
         "description": "",
         "price": 2900,
         "category": "combo",
-        "image": "img/0249-28a13ac7a5aae8a264fc10ab36b25d3b.png"
+        "image": "img/0249-28a13ac7a5aae8a264fc10ab36b25d3b.webp"
       },
       {
         "id": 329,
@@ -2598,7 +2598,7 @@
         "description": "",
         "price": 1700,
         "category": "combo",
-        "image": "img/0250-a5ba31328e65bc1be823b04ff2ec6b6c.png"
+        "image": "img/0250-a5ba31328e65bc1be823b04ff2ec6b6c.webp"
       },
       {
         "id": 330,
@@ -2607,7 +2607,7 @@
         "description": "",
         "price": 1800,
         "category": "combo",
-        "image": "img/0251-8dfb89c3fb7625bf27558e48d64889c3.png"
+        "image": "img/0251-8dfb89c3fb7625bf27558e48d64889c3.webp"
       },
       {
         "id": 331,
@@ -2616,7 +2616,7 @@
         "description": "",
         "price": 1900,
         "category": "combo",
-        "image": "img/0252-c94bb8197067ecf1f767205b60740cf0.png"
+        "image": "img/0252-c94bb8197067ecf1f767205b60740cf0.webp"
       },
       {
         "id": 332,
@@ -2625,7 +2625,7 @@
         "description": "",
         "price": 1900,
         "category": "combo",
-        "image": "img/0253-fb4ebe16e54f6d78b3f6182d2987ff13.png"
+        "image": "img/0253-fb4ebe16e54f6d78b3f6182d2987ff13.webp"
       },
       {
         "id": 333,
@@ -2634,7 +2634,7 @@
         "description": "",
         "price": 2300,
         "category": "combo",
-        "image": "img/0254-eea5f304b6bf5d9bd18ed25f63f4689c.png"
+        "image": "img/0254-eea5f304b6bf5d9bd18ed25f63f4689c.webp"
       }
     ]
   }
