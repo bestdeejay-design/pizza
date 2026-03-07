@@ -417,7 +417,10 @@ function showBackToAllMenuButton() {
         backBtn = document.createElement('div');
         backBtn.id = 'back-to-all-menu';
         backBtn.innerHTML = '<i class="fas fa-list"></i> Все меню';
-        backBtn.onclick = () => scrollToCategory('all-menu');
+        backBtn.onclick = () => {
+            // Скроллим к первой категории (пицца)
+            scrollToCategory('pizza-30cm');
+        };
         backBtn.style.cssText = `
             position: fixed;
             bottom: 90px;
@@ -453,31 +456,6 @@ function showBackToAllMenuButton() {
 function scrollToCategory(categoryId) {
     console.log('Scrolling to category:', categoryId);
     
-    // Специальная обработка для all-menu
-    if (categoryId === 'all-menu') {
-        const element = document.getElementById(`category-${categoryId}`);
-        if (element) {
-            setActiveNav(categoryId);
-            document.querySelectorAll('.category-section').forEach(section => {
-                section.style.display = 'none';
-            });
-            element.style.display = '';
-            console.log('All-menu category displayed');
-            
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
-            
-            // Скрываем кнопку "Все меню" когда в общем меню
-            const backToAllMenuBtn = document.getElementById('back-to-all-menu');
-            if (backToAllMenuBtn) {
-                backToAllMenuBtn.style.display = 'none';
-            }
-        }
-        return;
-    }
-    
     const element = document.getElementById(`category-${categoryId}`);
     if (element) {
         // Активируем навигацию сразу при клике
@@ -494,16 +472,29 @@ function scrollToCategory(categoryId) {
         // Показываем кнопку "Все меню" когда в конкретной категории
         showBackToAllMenuButton();
         
-        const offset = 100;
-        const bodyRect = document.body.getBoundingClientRect().top;
-        const elementRect = element.getBoundingClientRect().top;
-        const elementPosition = elementRect.top - bodyRect;
-        const offsetPosition = elementPosition - offset;
-        
-        window.scrollTo({
-            top: offsetPosition,
-            behavior: 'smooth'
-        });
+        // Если это первая категория (пицца) - скрываем кнопку и скроллим вверх
+        if (categoryId === 'pizza-30cm') {
+            const backBtn = document.getElementById('back-to-all-menu');
+            if (backBtn) {
+                backBtn.style.display = 'none';
+            }
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        } else {
+            // Для остальных категорий делаем отступ
+            const offset = 100;
+            const bodyRect = document.body.getBoundingClientRect().top;
+            const elementRect = element.getBoundingClientRect().top;
+            const elementPosition = elementRect.top - bodyRect;
+            const offsetPosition = elementPosition - offset;
+            
+            window.scrollTo({
+                top: offsetPosition,
+                behavior: 'smooth'
+            });
+        }
     } else {
         console.error('Category element not found:', categoryId);
     }
@@ -791,12 +782,8 @@ window.addEventListener('beforeunload', saveState);
 function renderContentWithLazyLoad() {
     const content = document.getElementById('content');
     
-    // Используем тот же порядок, что и в сайдбаре
+    // Используем тот же порядок, что и в сайдбаре (без all-menu)
     const menuGroups = [
-        {
-            title: '📋 МЕНЮ',
-            categories: ['all-menu'] // Все товары одной лентой
-        },
         {
             title: '🍕 ПИЦЦА',
             categories: ['pizza-30cm', 'piccolo-20cm', 'calzone']
