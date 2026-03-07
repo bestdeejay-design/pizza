@@ -67,7 +67,7 @@ function initSidebar() {
         },
         {
             title: '🍣 СУШИ & РОЛЛЫ',
-            categories: ['rolls']
+            categories: ['rolls']  // В JSON все роллы+суши в одной категории
         },
         {
             title: '🍞 ХЛЕБ',
@@ -83,7 +83,7 @@ function initSidebar() {
         },
         {
             title: '🥤 НАПИТКИ',
-            categories: ['beverages']
+            categories: ['beverages']  // В JSON все напитки в одной категории
         },
         {
             title: '👨‍🍳 ГОТОВИМ ДОМА',
@@ -515,7 +515,7 @@ function initMobileMenu() {
         },
         {
             title: '🍣 СУШИ & РОЛЛЫ',
-            categories: ['rolls']
+            categories: ['rolls']  // В JSON все роллы+суши в одной категории
         },
         {
             title: '🍞 ХЛЕБ',
@@ -531,7 +531,7 @@ function initMobileMenu() {
         },
         {
             title: '🥤 НАПИТКИ',
-            categories: ['beverages']
+            categories: ['beverages']  // В JSON все напитки в одной категории
         },
         {
             title: '👨‍🍳 ГОТОВИМ ДОМА',
