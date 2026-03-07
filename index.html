@@ -273,6 +273,9 @@
             cursor: pointer;
             position: relative;
             box-shadow: var(--shadow-card);
+            display: flex;
+            flex-direction: column;
+            height: 100%;
         }
 
         .product-card:hover {
@@ -302,6 +305,9 @@
 
         .product-info {
             padding: 20px;
+            display: flex;
+            flex-direction: column;
+            flex: 1;
         }
 
         .product-name {
@@ -318,12 +324,14 @@
             margin-bottom: 16px;
             line-height: 1.5;
             min-height: 36px;
+            flex-grow: 1;
         }
 
         .product-footer {
             display: flex;
             justify-content: space-between;
             align-items: center;
+            margin-top: auto;
         }
 
         .product-price {
