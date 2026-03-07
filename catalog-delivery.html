@@ -728,6 +728,7 @@
         }
 
         /* <= 360px - Small Phone */
+        /* <= 360px - Small Phone */
         @media (max-width: 360px) {
             .main-container {
                 grid-template-columns: 1fr;
@@ -832,6 +833,170 @@
                 padding: 3px 8px;
             }
         }
+
+        /* Contacts Section Styles */
+        .contacts-section {
+            padding: 60px;
+            background: linear-gradient(135deg, #f5f5f7 0%, #e5e5ea 100%);
+            margin-top: 60px;
+        }
+
+        .contacts-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .contact-card {
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(20px);
+            border-radius: 24px;
+            padding: 30px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+            transition: all 0.3s;
+        }
+
+        .contact-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 40px rgba(0,0,0,0.15);
+        }
+
+        .contact-card.primary {
+            background: linear-gradient(135deg, rgba(255,46,85,0.05) 0%, rgba(255,107,107,0.05) 100%);
+            border: 2px solid #ff2e55;
+        }
+
+        .contact-card.opening-soon {
+            background: linear-gradient(135deg, rgba(86,219,64,0.05) 0%, rgba(135,230,106,0.05) 100%);
+            border: 2px solid #56db40;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .opening-badge {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: linear-gradient(135deg, #56db40 0%, #87e66a 100%);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .contact-card-title {
+            font-size: 24px;
+            font-weight: 800;
+            color: #1d1d1f;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .contact-info-item {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 16px;
+            font-size: 15px;
+            line-height: 1.6;
+        }
+
+        .contact-icon {
+            font-size: 20px;
+            flex-shrink: 0;
+        }
+
+        .contact-label {
+            font-weight: 600;
+            color: #86868b;
+            min-width: 80px;
+        }
+
+        .contact-value {
+            color: #1d1d1f;
+            font-weight: 500;
+        }
+
+        .payment-methods {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 12px;
+        }
+
+        .payment-badge {
+            background: rgba(0,0,0,0.05);
+            padding: 6px 12px;
+            border-radius: 8px;
+            font-size: 13px;
+            font-weight: 600;
+        }
+
+        .map-container {
+            grid-column: 1 / -1;
+            background: white;
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+            margin-top: 30px;
+        }
+
+        .map-placeholder {
+            height: 400px;
+            background: linear-gradient(135deg, #e0e0e0 0%, #f5f5f7 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            color: #86868b;
+            position: relative;
+        }
+
+        .map-pin {
+            position: absolute;
+            font-size: 32px;
+            cursor: pointer;
+            transition: all 0.3s;
+            animation: bounce 2s infinite;
+        }
+
+        .map-pin:hover {
+            transform: scale(1.2);
+        }
+
+        .map-pin.location-1 {
+            left: 30%;
+            top: 40%;
+        }
+
+        .map-pin.location-2 {
+            right: 30%;
+            top: 60%;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        @media (max-width: 1024px) {
+            .contacts-section {
+                padding: 40px 20px;
+            }
+
+            .contacts-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .map-container {
+                grid-column: 1;
+            }
+        }
     </style>
 </head>
 <body>
@@ -878,6 +1043,90 @@
             <h2 class="modal-title">Ваш заказ</h2>
             <div id="cart-items"></div>
             <button class="close-modal" onclick="hideCart()">Закрыть</button>
+        </div>
+    </div>
+
+    <!-- Contacts Section -->
+    <div class="contacts-section" id="category-contacts">
+        <div class="category-header">
+            <h2 class="category-title">📍 Контакты</h2>
+            <p class="category-subtitle">Наши пиццерии и способы связи</p>
+        </div>
+
+        <div class="contacts-grid">
+            <!-- Location 1 (Main) -->
+            <div class="contact-card primary">
+                <h3 class="contact-card-title">🍕 Pizza Napoli 1</h3>
+                <div class="contact-info-item">
+                    <span class="contact-icon">📞</span>
+                    <div>
+                        <div class="contact-label">Телефон:</div>
+                        <div class="contact-value"><a href="tel:+79991699839" style="color: inherit; text-decoration: none;">+7 (999) 169-98-39</a></div>
+                    </div>
+                </div>
+                <div class="contact-info-item">
+                    <span class="contact-icon">📍</span>
+                    <div>
+                        <div class="contact-label">Адрес:</div>
+                        <div class="contact-value">Санкт-Петербург, улица Бабушкина 53, стр. 1, Невский район</div>
+                    </div>
+                </div>
+                <div class="contact-info-item">
+                    <span class="contact-icon">⏰</span>
+                    <div>
+                        <div class="contact-label">Режим работы:</div>
+                        <div class="contact-value">с 10:00 до 22:00 без выходных</div>
+                    </div>
+                </div>
+                <div class="contact-info-item">
+                    <span class="contact-icon">💳</span>
+                    <div>
+                        <div class="contact-label">Оплата:</div>
+                        <div class="payment-methods">
+                            <span class="payment-badge">Наличными</span>
+                            <span class="payment-badge">Картой</span>
+                            <span class="payment-badge">Переводом</span>
+                            <span class="payment-badge">Безналичным платежом</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Location 2 (Opening Soon) -->
+            <div class="contact-card opening-soon">
+                <div class="opening-badge">🎉 Скоро открытие!</div>
+                <h3 class="contact-card-title">🍕 Pizza Napoli 2.0</h3>
+                <div class="contact-info-item">
+                    <span class="contact-icon">📍</span>
+                    <div>
+                        <div class="contact-label">Адрес:</div>
+                        <div class="contact-value">Санкт-Петербург, Московский район</div>
+                    </div>
+                </div>
+                <div class="contact-info-item">
+                    <span class="contact-icon">🎯</span>
+                    <div>
+                        <div class="contact-label">Особенности:</div>
+                        <div class="contact-value">Большой зал, летняя веранда, детская комната</div>
+                    </div>
+                </div>
+                <div class="contact-info-item">
+                    <span class="contact-icon">🎁</span>
+                    <div>
+                        <div class="contact-label">Открытие:</div>
+                        <div class="contact-value">Следите за новостями! Скидки до 50% в день открытия</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Map -->
+            <div class="map-container">
+                <div class="map-placeholder">
+                    <div class="map-pin location-1" title="Pizza Napoli 1 - ул. Бабушкина 53">📍</div>
+                    <div class="map-pin location-2" title="Pizza Napoli 2.0 - Московский район (скоро)">📍</div>
+                    <span>Интерактивная карта с локациями пиццерий</span>
+                </div>
+            </div>
         </div>
     </div>
 

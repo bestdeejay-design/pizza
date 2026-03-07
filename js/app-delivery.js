@@ -84,6 +84,10 @@ function initSidebar() {
         {
             title: 'ℹ️ ИНФОРМАЦИЯ',
             categories: ['frozen', 'aromatic-oils', 'masterclass', 'franchise']
+        },
+        {
+            title: '📍 КОНТАКТЫ',
+            categories: ['contacts']
         }
     ];
     
@@ -101,7 +105,8 @@ function initSidebar() {
         'frozen': 'Замороженная продукция',
         'aromatic-oils': 'Ароматное масло',
         'masterclass': 'Мастер класс',
-        'franchise': 'Франшиза'
+        'franchise': 'Франшиза',
+        'contacts': 'Контакты'
     };
     
     // Рендерим сгруппированное меню
@@ -162,6 +167,10 @@ function renderContent() {
         {
             title: 'ℹ️ ИНФОРМАЦИЯ',
             categories: ['frozen', 'aromatic-oils', 'masterclass', 'franchise']
+        },
+        {
+            title: '📍 КОНТАКТЫ',
+            categories: ['contacts']
         }
     ];
     
@@ -179,14 +188,15 @@ function renderContent() {
         'frozen': 'Замороженная продукция',
         'aromatic-oils': 'Ароматное масло',
         'masterclass': 'Мастер класс',
-        'franchise': 'Франшиза'
+        'franchise': 'Франшиза',
+        'contacts': 'Контакты'
     };
     
     // Собираем все категории в правильном порядке
     const orderedCategories = [];
     menuGroups.forEach(group => {
         group.categories.forEach(cat => {
-            if (menu.some(item => item.category === cat)) {
+            if (cat === 'contacts' || menu.some(item => item.category === cat)) {
                 orderedCategories.push(cat);
             }
         });
@@ -299,11 +309,18 @@ function scrollToCategory(categoryId) {
         setActiveNav(categoryId);
         console.log('Navigation activated for:', categoryId);
         
-        // Показываем только выбранную категорию
-        document.querySelectorAll('.category-section').forEach(section => {
-            section.style.display = 'none';
-        });
-        element.style.display = '';
+        // Показываем только выбранную категорию (кроме контактов)
+        if (categoryId !== 'contacts') {
+            document.querySelectorAll('.category-section').forEach(section => {
+                section.style.display = 'none';
+            });
+            element.style.display = '';
+        } else {
+            // Для контактов - показаем все меню и скроллим вниз
+            document.querySelectorAll('.category-section').forEach(section => {
+                section.style.display = '';
+            });
+        }
         console.log('Category displayed:', categoryId);
         
         const offset = 100;
@@ -433,6 +450,10 @@ function initMobileMenu() {
         {
             title: 'ℹ️ ИНФОРМАЦИЯ',
             categories: ['frozen', 'aromatic-oils', 'masterclass', 'franchise']
+        },
+        {
+            title: '📍 КОНТАКТЫ',
+            categories: ['contacts']
         }
     ];
     
@@ -450,7 +471,8 @@ function initMobileMenu() {
         'frozen': 'Замороженная продукция',
         'aromatic-oils': 'Ароматное масло',
         'masterclass': 'Мастер класс',
-        'franchise': 'Франшиза'
+        'franchise': 'Франшиза',
+        'contacts': 'Контакты'
     };
     
     // Рендерим мобильное меню
