@@ -241,12 +241,20 @@ body {
     overflow: hidden;
 }
 
+.product-description {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 15px;
+    line-height: 1.4;
+    flex-grow: 1; /* Описание занимает всё свободное место */
+}
+
 .product-price {
     font-size: 24px;
     font-weight: 700;
     color: #2a582c;
-    margin-bottom: 15px;
-    margin-top: auto; /* Прижимает кнопку к низу если контента мало */
+    margin-top: auto; /* Прижимает цену к низу */
+    margin-bottom: 10px; /* Фиксированный отступ до кнопки */
 }
 
 .add-to-cart {
@@ -259,6 +267,7 @@ body {
     cursor: pointer;
     font-weight: 600;
     transition: background 0.3s;
+    margin-top: 0; /* Кнопка всегда в конце */
 }
 
 .add-to-cart:hover {
@@ -379,12 +388,15 @@ body {
     .product-price {
         font-size: 16px;
         font-weight: 700;
+        margin-top: auto; /* Прижимает цену к низу на мобильных */
+        margin-bottom: 8px; /* Фиксированный отступ до кнопки */
     }
     
     .add-btn {
         padding: 6px 12px;
         font-size: 16px;
         min-width: 32px;
+        margin-top: 0; /* Кнопка всегда в конце */
     }
 }
 
