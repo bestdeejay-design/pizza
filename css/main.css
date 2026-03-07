@@ -804,12 +804,13 @@ body {
     
     .header {
         padding: 12px 20px;
-        flex-wrap: wrap;
+        flex-wrap: nowrap; /* Не переносить */
+        align-items: center;
     }
     
     .logo-link {
-        flex: 1;
-        min-width: 0; /* Позволяет сжиматься */
+        flex: 0 0 auto; /* Не растягивать */
+        min-width: 0;
     }
     
     .logo h1 {
@@ -822,14 +823,17 @@ body {
     }
     
     .header-actions {
-        width: 100%;
+        flex: 0 0 auto; /* Не растягивать */
+        display: flex;
         justify-content: flex-end;
-        margin-top: 12px;
+        align-items: center;
+        margin-top: 0;
         gap: 8px;
     }
     
     .cart-mini {
-        order: 1;
+        padding: 8px 16px;
+        font-size: 14px;
     }
     
     .content {
