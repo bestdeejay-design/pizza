@@ -83,11 +83,7 @@ function initSidebar() {
         },
         {
             title: 'ℹ️ ИНФОРМАЦИЯ',
-            categories: ['frozen', 'aromatic-oils', 'masterclass', 'franchise']
-        },
-        {
-            title: '📍 КОНТАКТЫ',
-            categories: ['contacts']
+            categories: ['frozen', 'aromatic-oils', 'masterclass', 'franchise', 'contacts']
         }
     ];
     
@@ -166,11 +162,7 @@ function renderContent() {
         },
         {
             title: 'ℹ️ ИНФОРМАЦИЯ',
-            categories: ['frozen', 'aromatic-oils', 'masterclass', 'franchise']
-        },
-        {
-            title: '📍 КОНТАКТЫ',
-            categories: ['contacts']
+            categories: ['frozen', 'aromatic-oils', 'masterclass', 'franchise', 'contacts']
         }
     ];
     
@@ -530,11 +522,7 @@ function initMobileMenu() {
         },
         {
             title: 'ℹ️ ИНФОРМАЦИЯ',
-            categories: ['frozen', 'aromatic-oils', 'masterclass', 'franchise']
-        },
-        {
-            title: '📍 КОНТАКТЫ',
-            categories: ['contacts']
+            categories: ['frozen', 'aromatic-oils', 'masterclass', 'franchise', 'contacts']
         }
     ];
     
