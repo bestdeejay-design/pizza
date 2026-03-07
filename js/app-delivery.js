@@ -860,7 +860,7 @@ function renderContentWithLazyLoad() {
     
     // Инициализируем lazy loading для каждой категории кроме контактов
     orderedCategories.forEach(cat => {
-        if (cat !== 'contacts' && cat !== 'all-menu') {
+        if (cat !== 'contacts') {
             setupLazyLoading(cat);
         }
     });
