@@ -9,9 +9,12 @@
 </head>
 <body>
     <div class="header">
-        <div class="logo">
-            <h1>Pizza Napoli</h1>
-        </div>
+        <a href="/" class="logo-link">
+            <div class="logo">
+                <h1>Pizza Napoli</h1>
+                <p class="site-description">Лучшая пицца в городе</p>
+            </div>
+        </a>
         <div class="header-actions">
             <input type="text" class="search-mini" placeholder="Поиск блюд...">
             <button class="theme-toggle" id="themeToggle">
@@ -48,6 +51,13 @@
         <div id="mobile-menu-content">
             <!-- Mobile menu will be inserted here -->
         </div>
+        <!-- Theme Toggle in Mobile Menu -->
+        <div class="mobile-theme-toggle">
+            <button class="theme-toggle-mobile" id="mobileThemeToggle">
+                <i class="fas fa-sun" id="mobileThemeIcon"></i>
+                <span id="mobileThemeText">Светлая тема</span>
+            </button>
+        </div>
     </div>
 
     <!-- Cart Modal -->
@@ -64,6 +74,17 @@
 
     <script src="js/app-delivery.js"></script>
     <script>
+        // Logo Click Handler - Reset to index and clear content
+        const logoLink = document.querySelector('.logo-link');
+        if (logoLink) {
+            logoLink.addEventListener('click', (e) => {
+                e.preventDefault();
+                window.location.href = '/';
+                localStorage.removeItem('lastCategory'); // Сбрасываем состояние
+                console.log('Reset to index page');
+            });
+        }
+        
         // Theme Toggle
         const themeToggle = document.getElementById('themeToggle');
         const themeIcon = document.getElementById('themeIcon');
@@ -89,6 +110,31 @@
             } else {
                 themeIcon.className = 'fas fa-moon';
                 themeText.textContent = 'Темная';
+            }
+        }
+        
+        // Mobile Theme Toggle
+        const mobileThemeToggle = document.getElementById('mobileThemeToggle');
+        const mobileThemeIcon = document.getElementById('mobileThemeIcon');
+        const mobileThemeText = document.getElementById('mobileThemeText');
+        
+        if (mobileThemeToggle) {
+            mobileThemeToggle.addEventListener('click', () => {
+                const currentTheme = document.documentElement.getAttribute('data-theme');
+                const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+                document.documentElement.setAttribute('data-theme', newTheme);
+                localStorage.setItem('pizzaTheme', newTheme);
+                updateMobileThemeUI(newTheme);
+            });
+        }
+        
+        function updateMobileThemeUI(theme) {
+            if (theme === 'dark') {
+                mobileThemeIcon.className = 'fas fa-sun';
+                mobileThemeText.textContent = 'Светлая тема';
+            } else {
+                mobileThemeIcon.className = 'fas fa-moon';
+                mobileThemeText.textContent = 'Темная тема';
             }
         }
     </script>

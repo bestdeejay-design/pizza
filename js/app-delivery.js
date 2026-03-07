@@ -428,8 +428,8 @@ function renderProducts(products) {
                 </div>
                 <div class="product-info">
                     <h3 class="product-name">${product.title}</h3>
-                    <p class="product-description">${product.description || ''}</p>
                     <div class="product-actions">
+                        <div class="product-weight">${product.weight || ''}${product.weight ? ' г' : ''}</div>
                         <div class="product-price">${product.price} ₽</div>
                         <button class="add-to-cart" onclick="addToCart(${product.id})">В корзину</button>
                     </div>

@@ -97,6 +97,18 @@ body {
     background-clip: text;
 }
 
+.logo-link {
+    text-decoration: none;
+    display: block;
+}
+
+.site-description {
+    font-size: 12px;
+    color: var(--color-text-secondary);
+    margin-top: 4px;
+    font-weight: 400;
+}
+
 .header-actions {
     display: flex;
     gap: 12px;
@@ -167,6 +179,37 @@ body {
 
 .theme-toggle i {
     font-size: 16px;
+}
+
+/* Mobile Theme Toggle */
+.mobile-theme-toggle {
+    padding: 20px;
+    border-top: 1px solid var(--border-subtle);
+    margin-top: auto;
+}
+
+.theme-toggle-mobile {
+    width: 100%;
+    background: var(--color-bg-card);
+    border: 1px solid var(--border-subtle);
+    border-radius: 12px;
+    padding: 12px 16px;
+    cursor: pointer;
+    color: var(--color-text-primary);
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    box-shadow: var(--shadow-card);
+    transition: 0.3s;
+    font-size: 14px;
+}
+
+.theme-toggle-mobile:hover {
+    border-color: var(--color-primary);
+    color: var(--color-primary);
+    transform: scale(1.02);
 }
 
 /* Main Layout */
@@ -327,6 +370,13 @@ body {
     font-size: 20px;
     font-weight: 800;
     color: var(--color-primary);
+}
+
+.product-weight {
+    font-size: 13px;
+    color: var(--color-text-secondary);
+    margin-bottom: 8px;
+    font-weight: 500;
 }
 
 .add-btn {
@@ -749,23 +799,51 @@ body {
     }
     
     .mobile-menu-btn {
-        display: flex;
+        display: flex !important; /* Принудительно показываем бургер */
     }
     
     .header {
         padding: 12px 20px;
+        flex-wrap: wrap;
+    }
+    
+    .logo-link {
+        flex: 1;
+        min-width: 0; /* Позволяет сжиматься */
     }
     
     .logo h1 {
-        font-size: 22px;
+        font-size: 20px;
+    }
+    
+    .site-description {
+        font-size: 11px;
+        display: block; /* Показываем на мобильных */
+    }
+    
+    .header-actions {
+        width: 100%;
+        justify-content: space-between;
+        margin-top: 12px;
+        gap: 8px;
     }
     
     .search-mini {
-        width: 180px;
+        width: calc(100% - 100px);
+        order: 1;
+    }
+    
+    .theme-toggle {
+        order: 2;
+        padding: 8px 12px;
+    }
+    
+    .cart-mini {
+        order: 3;
     }
     
     .search-mini:focus {
-        width: 220px;
+        width: calc(100% - 120px);
     }
     
     .content {
