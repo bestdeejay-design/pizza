@@ -823,27 +823,13 @@ body {
     
     .header-actions {
         width: 100%;
-        justify-content: space-between;
+        justify-content: flex-end;
         margin-top: 12px;
         gap: 8px;
     }
     
-    .search-mini {
-        width: calc(100% - 100px);
-        order: 1;
-    }
-    
-    .theme-toggle {
-        order: 2;
-        padding: 8px 12px;
-    }
-    
     .cart-mini {
-        order: 3;
-    }
-    
-    .search-mini:focus {
-        width: calc(100% - 120px);
+        order: 1;
     }
     
     .content {
