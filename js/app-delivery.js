@@ -66,12 +66,8 @@ function initSidebar() {
     const sidebar = document.getElementById('sidebar');
     const categories = getUniqueCategories();
     
-    // Логическая группировка категорий пиццерии
+    // Логическая группировка категорий пиццерии (убрали 📋 МЕНЮ)
     const menuGroups = [
-        {
-            title: '📋 МЕНЮ',
-            categories: ['all-menu'] // Новый пункт - все товары одной лентой
-        },
         {
             title: '🍕 ПИЦЦА',
             categories: ['pizza-30cm', 'piccolo-20cm', 'calzone']
@@ -600,12 +596,8 @@ function initMobileMenu() {
     const mobileMenuContent = document.getElementById('mobile-menu-content');
     const categories = getUniqueCategories();
     
-    // Логическая группировка категорий пиццерии
+    // Логическая группировка категорий пиццерии (убрали 📋 МЕНЮ)
     const menuGroups = [
-        {
-            title: '📋 МЕНЮ',
-            categories: ['all-menu'] // Новый пункт - все товары одной лентой
-        },
         {
             title: '🍕 ПИЦЦА',
             categories: ['pizza-30cm', 'piccolo-20cm', 'calzone']
@@ -765,10 +757,17 @@ function restoreState() {
             activeSection.style.display = '';
         }
     } else {
-        // Первый вход - открываем all-menu по умолчанию
-        console.log('First visit - showing all-menu by default');
-        setActiveNav('all-menu');
+        // Первый вход - открываем первую категорию (пицца)
+        console.log('First visit - showing first category (pizza-30cm)');
+        setActiveNav('pizza-30cm');
         sessionStorage.setItem('pizzaMenu_visited', 'true');
+        
+        // Скрываем все категории кроме первой
+        document.querySelectorAll('.category-section').forEach((section, index) => {
+            if (index > 0) {
+                section.style.display = 'none';
+            }
+        });
     }
     
     if (savedPosition && hasVisitedBefore) {
@@ -852,7 +851,7 @@ function renderContentWithLazyLoad() {
     const orderedCategories = [];
     menuGroups.forEach(group => {
         group.categories.forEach(cat => {
-            if (cat === 'contacts' || cat === 'all-menu' || menu.some(item => item.category === cat)) {
+            if (cat === 'contacts' || menu.some(item => item.category === cat)) {
                 orderedCategories.push(cat);
             }
         });
@@ -862,21 +861,14 @@ function renderContentWithLazyLoad() {
     
     // Рендерим все категории с display:none кроме первой
     content.innerHTML = orderedCategories.map((cat, index) => {
-        let productsInCategory = [];
-        
-        // Специальная обработка для "all-menu" - все товары одной лентой
-        if (cat === 'all-menu') {
-            productsInCategory = menu; // Все товары подряд
-        } else {
-            productsInCategory = menu.filter(item => {
-                return item.category === cat;
-            });
-        }
+        const productsInCategory = menu.filter(item => {
+            return item.category === cat;
+        });
         
         console.log(`Category ${cat}: ${productsInCategory.length} products`);
         
-        const displayName = cat === 'all-menu' ? '📋 Общее меню' : (categoryMap[cat] || cat);
-        const isActive = index === 0 ? '' : 'display: none;';
+        const displayName = categoryMap[cat] || cat;
+        const isActive = index === 0 ? '' : 'display: none;'; // Первая категория активна
         
         // Для контактов - специальный рендеринг (лента карточек)
         if (cat === 'contacts') {
@@ -1022,8 +1014,8 @@ function setupLazyLoading(categoryId) {
     const gridElement = document.getElementById(`grid-${categoryId}`);
     if (!gridElement) return;
     
-    // Для all-menu берем все товары, иначе фильтруем по категории
-    const productsInCategory = categoryId === 'all-menu' ? menu : menu.filter(item => item.category === categoryId);
+    // Фильтруем по категории
+    const productsInCategory = menu.filter(item => item.category === categoryId);
     const totalProducts = productsInCategory.length;
     let loadedCount = parseInt(gridElement.dataset.loaded) || PRODUCTS_PER_LOAD;
     
@@ -1061,8 +1053,8 @@ function loadMoreProducts(categoryId, event = null) {
     const gridElement = document.getElementById(`grid-${categoryId}`);
     if (!gridElement) return;
     
-    // Для all-menu берем все товары, иначе фильтруем по категории
-    const productsInCategory = categoryId === 'all-menu' ? menu : menu.filter(item => item.category === categoryId);
+    // Фильтруем по категории
+    const productsInCategory = menu.filter(item => item.category === categoryId);
     const totalProducts = productsInCategory.length;
     
     const observerData = lazyLoadObservers.get(categoryId);
