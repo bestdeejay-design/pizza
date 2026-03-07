@@ -851,7 +851,7 @@ function renderProductsLazy(products) {
             console.log('Product sample:', product);
         }
         return `
-            <div class="product-card" data-id="${product.id}" style="opacity: 0; transform: translateY(20px); animation: fadeInUp 0.5s ease forwards; animation-delay: ${idx * 0.05}s;">
+            <div class="product-card" data-id="${product.id}" style="opacity: 0; transform: translateY(20px); animation: fadeInUp 0.5s ease forwards; animation-delay: ${idx * 0.05}s;" onclick="showProductModal(${product.id})">
                 <div class="product-image-wrapper">
                     <img src="${product.image}" alt="${product.title}" class="product-image" onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 260 200%22><rect fill=%22%23f5f5f7%22 width=%22260%22 height=%22200%22/><text x=%22130%22 y=%22105%22 text-anchor=%22middle%22 fill=%22%2386868b%22 font-size=%2214%22>No Photo</text></svg>'">
                 </div>
@@ -860,7 +860,7 @@ function renderProductsLazy(products) {
                     <p class="product-description">${product.description || ''}</p>
                     <div class="product-footer">
                         <span class="product-price">${product.price} ₽</span>
-                        <button class="add-btn" onclick="addToCart(${product.id})">+</button>
+                        <button class="add-btn" onclick="event.stopPropagation(); addToCart(${product.id})">+</button>
                     </div>
                 </div>
             </div>
@@ -992,6 +992,8 @@ function loadMoreProducts(categoryId, event = null) {
     
     if (nextBatch.length === 0) {
         console.log('No more products to load');
+        // Все товары загружены - переходим к следующей категории
+        navigateToNextCategory(categoryId);
         return;
     }
     
@@ -1000,7 +1002,7 @@ function loadMoreProducts(categoryId, event = null) {
     // Рендерим новые карточки
     const tempDiv = document.createElement('div');
     tempDiv.innerHTML = nextBatch.map((product, idx) => `
-        <div class="product-card" data-id="${product.id}" style="opacity: 0; transform: translateY(20px); animation: fadeInUp 0.5s ease forwards; animation-delay: ${idx * 0.05}s;">
+        <div class="product-card" data-id="${product.id}" style="opacity: 0; transform: translateY(20px); animation: fadeInUp 0.5s ease forwards; animation-delay: ${idx * 0.05}s;" onclick="showProductModal(${product.id})">
             <div class="product-image-wrapper">
                 <img src="${product.image}" alt="${product.title}" class="product-image" onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 260 200%22><rect fill=%22%23f5f5f7%22 width=%22260%22 height=%22200%22/><text x=%22130%22 y=%22105%22 text-anchor=%22middle%22 fill=%22%2386868b%22 font-size=%2214%22>No Photo</text></svg>'">
             </div>
@@ -1009,7 +1011,7 @@ function loadMoreProducts(categoryId, event = null) {
                 <p class="product-description">${product.description || ''}</p>
                 <div class="product-footer">
                     <span class="product-price">${product.price} ₽</span>
-                    <button class="add-btn" onclick="addToCart(${product.id})">+</button>
+                    <button class="add-btn" onclick="event.stopPropagation(); addToCart(${product.id})">+</button>
                 </div>
             </div>
         </div>
@@ -1040,6 +1042,149 @@ function loadMoreProducts(categoryId, event = null) {
             console.log(`Removed load more button for ${categoryId} - all products loaded`);
         }
     }
+}
+
+// Переход к следующей категории когда все товары загружены
+function navigateToNextCategory(currentCategoryId) {
+    const orderedCategories = getOrderedCategories();
+    const currentIndex = orderedCategories.indexOf(currentCategoryId);
+    
+    if (currentIndex !== -1 && currentIndex < orderedCategories.length - 1) {
+        const nextCategoryId = orderedCategories[currentIndex + 1];
+        console.log(`Auto-navigating to next category: ${nextCategoryId}`);
+        
+        // Небольшая задержка для плавности
+        setTimeout(() => {
+            scrollToCategory(nextCategoryId);
+        }, 800);
+    }
+}
+
+// Получение списка категорий в правильном порядке
+function getOrderedCategories() {
+    const menuGroups = [
+        { title: '🍕 ПИЦЦА', categories: ['pizza-30cm', 'piccolo-20cm', 'calzone'] },
+        { title: '🍣 СУШИ & РОЛЛЫ', categories: ['rolls-sushi', 'rolls-rolls'] },
+        { title: '🍞 ХЛЕБ И ФОКАЧЧА', categories: ['bread-focaccia-bread', 'bread-focaccia-focaccia'] },
+        { title: '🍱 НАБОРЫ', categories: ['combo'] },
+        { title: '🍰 ДЕСЕРТЫ', categories: ['confectionery'] },
+        { title: '🥤 НАПИТКИ', categories: ['mors', 'juice', 'water', 'soda', 'beverages-other'] },
+        { title: '👨‍🍳 ГОТОВИМ ДОМА', categories: ['frozen', 'aromatic-oils'] },
+        { title: 'ℹ️ ИНФОРМАЦИЯ', categories: ['masterclass', 'franchise', 'contacts'] }
+    ];
+    
+    const orderedCategories = [];
+    const uniqueCategories = getUniqueCategories();
+    
+    menuGroups.forEach(group => {
+        group.categories.forEach(cat => {
+            if (cat === 'contacts' || uniqueCategories.includes(cat)) {
+                orderedCategories.push(cat);
+            }
+        });
+    });
+    
+    return orderedCategories;
+}
+
+// Модальное окно с подробной информацией о товаре
+function showProductModal(productId) {
+    const product = menu.find(p => p.id === productId);
+    if (!product) return;
+    
+    const modal = document.getElementById('product-modal');
+    if (!modal) {
+        // Создаем модальное окно если его нет
+        createProductModal();
+    }
+    
+    const modalElement = document.getElementById('product-modal');
+    const contentDiv = document.getElementById('product-modal-content');
+    
+    // Формируем расширенную карточку
+    contentDiv.innerHTML = `
+        <div style="max-width: 600px; margin: 0 auto;">
+            <div style="position: relative; width: 100%; height: 400px; margin-bottom: 24px; border-radius: 20px; overflow: hidden; background: var(--color-bg-card-hover);">
+                <img src="${product.image}" alt="${product.title}" style="width: 100%; height: 100%; object-fit: cover;">
+                <button onclick="closeProductModal()" style="position: absolute; top: 16px; right: 16px; background: rgba(0,0,0,0.7); border: none; border-radius: 50%; width: 40px; height: 40px; cursor: pointer; display: flex; align-items: center; justify-content: center; color: white; font-size: 20px; backdrop-filter: blur(10px); z-index: 10;">✕</button>
+            </div>
+            
+            <h2 style="font-size: 28px; font-weight: 800; color: var(--color-text-heading); margin-bottom: 16px;">${product.title}</h2>
+            
+            ${product.description ? `<p style="font-size: 16px; line-height: 1.6; color: var(--color-text-secondary); margin-bottom: 24px;">${product.description}</p>` : ''}
+            
+            <div style="display: flex; justify-content: space-between; align-items: center; padding: 20px; background: var(--color-bg-card); border-radius: 16px; margin-bottom: 24px;">
+                <div>
+                    <div style="font-size: 14px; color: var(--color-text-secondary); margin-bottom: 4px;">Цена</div>
+                    <div style="font-size: 32px; font-weight: 800; color: var(--color-primary);">${product.price} ₽</div>
+                </div>
+                ${product.weight ? `
+                <div style="text-align: right;">
+                    <div style="font-size: 14px; color: var(--color-text-secondary); margin-bottom: 4px;">Вес</div>
+                    <div style="font-size: 18px; font-weight: 700; color: var(--color-text-heading);">${product.weight} г</div>
+                </div>
+                ` : ''}
+            </div>
+            
+            <button onclick="addToCart(${product.id}); closeProductModal();" style="width: 100%; padding: 18px; background: var(--gradient-primary); color: white; border: none; border-radius: 16px; font-weight: 700; font-size: 18px; cursor: pointer; box-shadow: var(--shadow-glow); transition: all 0.3s;" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 8px 25px rgba(255, 46, 85, 0.45)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='var(--shadow-glow)';">
+                Добавить в корзину • ${product.price} ₽
+            </button>
+        </div>
+    `;
+    
+    modalElement.style.display = 'flex';
+    document.body.style.overflow = 'hidden';
+}
+
+function closeProductModal() {
+    const modal = document.getElementById('product-modal');
+    if (modal) {
+        modal.style.display = 'none';
+        document.body.style.overflow = '';
+    }
+}
+
+function createProductModal() {
+    const modal = document.createElement('div');
+    modal.id = 'product-modal';
+    modal.className = 'modal-overlay';
+    modal.style.cssText = `
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background: rgba(0,0,0,0.8);
+        display: none;
+        align-items: center;
+        justify-content: center;
+        z-index: 2000;
+        overflow-y: auto;
+        padding: 20px;
+    `;
+    
+    const modalContent = document.createElement('div');
+    modalContent.id = 'product-modal-content';
+    modalContent.style.cssText = `
+        background: var(--color-bg-card);
+        border-radius: 24px;
+        padding: 40px;
+        max-width: 600px;
+        width: 100%;
+        max-height: 90vh;
+        overflow-y: auto;
+        box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+    `;
+    
+    modal.appendChild(modalContent);
+    document.body.appendChild(modal);
+    
+    // Закрытие по клику на overlay
+    modal.addEventListener('click', (e) => {
+        if (e.target === modal) {
+            closeProductModal();
+        }
+    });
 }
 
 // Анимация появления карточек
