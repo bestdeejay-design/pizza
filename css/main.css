@@ -367,7 +367,7 @@ body {
 }
 
 .product-price {
-    font-size: 30px;
+    font-size: 21px;
     font-weight: 800;
     color: var(--color-primary);
 }
@@ -513,7 +513,7 @@ body {
     cursor: pointer;
     transition: all 0.3s;
     color: var(--color-text-primary);
-    font-weight: 500;
+    font-weight: 800;
 }
 
 .mobile-nav-category:hover {
