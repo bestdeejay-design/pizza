@@ -1240,13 +1240,13 @@ function showProductModal(productId) {
     contentDiv.innerHTML = `
         <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px; max-width: 900px; margin: 0 auto;">
             <!-- Левая колонка - Картинка -->
-            <div style="position: relative; width: 100%; height: 500px; border-radius: 20px; overflow: hidden; background: var(--color-bg-card-hover);">
+            <div style="position: relative; width: 100%; height: min(500px, 25vh); border-radius: 20px; overflow: hidden; background: var(--color-bg-card-hover); margin: 0 16px;">
                 <img src="${product.image}" alt="${product.title}" style="width: 100%; height: 100%; object-fit: cover;">
                 <button onclick="closeProductModal()" style="position: absolute; top: 16px; right: 16px; background: rgba(0,0,0,0.7); border: none; border-radius: 50%; width: 40px; height: 40px; cursor: pointer; display: flex; align-items: center; justify-content: center; color: white; font-size: 20px; backdrop-filter: blur(10px); z-index: 10;">✕</button>
             </div>
             
             <!-- Правая колонка - Информация -->
-            <div style="display: flex; flex-direction: column; justify-content: center;">
+            <div style="display: flex; flex-direction: column; justify-content: center; padding: 0 16px;">
                 <h2 style="font-size: 32px; font-weight: 800; color: var(--color-text-heading); margin-bottom: 20px; line-height: 1.2;">${product.title}</h2>
                 
                 ${product.description ? `<p style="font-size: 16px; line-height: 1.6; color: var(--color-text-secondary); margin-bottom: 24px;">${product.description}</p>` : ''}
@@ -1254,7 +1254,7 @@ function showProductModal(productId) {
                 <div style="display: flex; gap: 20px; margin-bottom: 30px;">
                     <div style="flex: 1; padding: 20px; background: var(--color-bg-card); border-radius: 16px;">
                         <div style="font-size: 14px; color: var(--color-text-secondary); margin-bottom: 8px;">Цена</div>
-                        <div style="font-size: 36px; font-weight: 800; color: var(--color-primary);">${product.price} ₽</div>
+                        <div style="font-size: 30px; font-weight: 800; color: var(--color-primary);">${product.price} ₽</div>
                     </div>
                     ${product.weight ? `
                     <div style="flex: 1; padding: 20px; background: var(--color-bg-card); border-radius: 16px;">
@@ -1335,10 +1335,17 @@ function createProductModal() {
         @media (max-width: 768px) {
             #product-modal-content > div {
                 grid-template-columns: 1fr !important;
+                gap: 0 !important;
             }
             #product-modal-content img {
-                height: 300px !important;
+                height: 25vh !important;
+                max-height: 300px !important;
             }
+            #product-modal-content h2 {
+                font-size: 24px !important;
+                margin-top: 16px;
+            }
+            .price-block { font-size: 28px !important; }
         }
     `;
     modalContent.appendChild(style);
