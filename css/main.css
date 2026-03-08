@@ -849,3 +849,224 @@ body {
         font-size: 24px;
     }
 }
+
+/* ===== PRODUCT MODAL ===== */
+#product-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: rgba(0,0,0,0.8);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 2000;
+    overflow-y: auto;
+    padding: 20px;
+}
+
+#product-modal-content {
+    background: var(--color-bg-card);
+    border-radius: 24px;
+    padding: 40px;
+    max-width: 900px;
+    width: 100%;
+    max-height: 90vh;
+    overflow-y: auto;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+}
+
+.product-modal-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.product-modal-image-wrapper {
+    position: relative;
+    width: 100%;
+    height: min(500px, 25vh);
+    border-radius: 20px;
+    overflow: hidden;
+    background: var(--color-bg-card-hover);
+    margin: 0 16px;
+}
+
+.product-modal-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.product-modal-close-btn {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    background: rgba(0,0,0,0.7);
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 20px;
+    backdrop-filter: blur(10px);
+    z-index: 10;
+}
+
+.product-modal-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 16px;
+}
+
+.product-modal-title {
+    font-size: 32px;
+    font-weight: 800;
+    color: var(--color-text-heading);
+    margin-bottom: 20px;
+    line-height: 1.2;
+}
+
+.product-modal-description {
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--color-text-secondary);
+    margin-bottom: 24px;
+}
+
+.price-weight-blocks {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.price-block,
+.weight-block {
+    flex: 1;
+    padding: 20px;
+    background: var(--color-bg-card);
+    border-radius: 16px;
+}
+
+.price-label,
+.weight-label {
+    font-size: 14px;
+    color: var(--color-text-secondary);
+    margin-bottom: 8px;
+}
+
+.price-value {
+    font-size: 30px;
+    font-weight: 800;
+    color: var(--color-primary);
+}
+
+.weight-value {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--color-text-heading);
+}
+
+.addons-block {
+    margin-bottom: 30px;
+}
+
+.addons-title {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--color-text-heading);
+    margin-bottom: 12px;
+}
+
+.addons-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.addon-item {
+    padding: 8px 16px;
+    background: var(--color-bg-card-hover);
+    border-radius: 20px;
+    font-size: 14px;
+    color: var(--color-text-secondary);
+}
+
+.product-modal-add-btn {
+    width: 100%;
+    padding: 20px;
+    background: var(--gradient-primary);
+    color: white;
+    border: none;
+    border-radius: 16px;
+    font-weight: 700;
+    font-size: 18px;
+    cursor: pointer;
+    box-shadow: var(--shadow-glow);
+    transition: all 0.3s;
+}
+
+.product-modal-add-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(255, 46, 85, 0.45);
+}
+
+/* Mobile Modal Styles */
+@media (max-width: 768px) {
+    #product-modal-content {
+        padding: 20px;
+    }
+    
+    .product-modal-grid {
+        grid-template-columns: 1fr !important;
+        gap: 0 !important;
+    }
+    
+    .product-modal-image-wrapper {
+        height: 25vh !important;
+        max-height: 300px !important;
+        margin: 0 16px !important;
+    }
+    
+    .product-modal-title {
+        font-size: 24px !important;
+        margin-top: 16px;
+    }
+    
+    .product-modal-info {
+        justify-content: flex-start !important;
+        padding: 16px !important;
+    }
+    
+    .price-weight-blocks {
+        flex-direction: column !important;
+        gap: 12px !important;
+        padding: 0 !important;
+        margin-bottom: 20px !important;
+    }
+    
+    .price-block,
+    .weight-block {
+        width: 100% !important;
+        flex: none !important;
+    }
+    
+    .addons-block {
+        padding: 0 !important;
+        margin-bottom: 20px !important;
+    }
+    
+    .product-modal-add-btn {
+        margin: 0 !important;
+        width: 100% !important;
+        padding: 16px !important;
+    }
+}

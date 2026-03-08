@@ -1238,47 +1238,45 @@ function showProductModal(productId) {
     
     // Формируем расширенную карточку с горизонтальной компоновкой
     contentDiv.innerHTML = `
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px; max-width: 900px; margin: 0 auto;">
+        <div class="product-modal-grid">
             <!-- Левая колонка - Картинка -->
-            <div style="position: relative; width: 100%; height: min(500px, 25vh); border-radius: 20px; overflow: hidden; background: var(--color-bg-card-hover); margin: 0 16px;">
-                <img src="${product.image}" alt="${product.title}" style="width: 100%; height: 100%; object-fit: cover;">
-                <button onclick="closeProductModal()" style="position: absolute; top: 16px; right: 16px; background: rgba(0,0,0,0.7); border: none; border-radius: 50%; width: 40px; height: 40px; cursor: pointer; display: flex; align-items: center; justify-content: center; color: white; font-size: 20px; backdrop-filter: blur(10px); z-index: 10;">✕</button>
+            <div class="product-modal-image-wrapper">
+                <img src="${product.image}" alt="${product.title}" class="product-modal-image">
+                <button onclick="closeProductModal()" class="product-modal-close-btn">✕</button>
             </div>
             
             <!-- Правая колонка - Информация -->
-            <div style="display: flex; flex-direction: column; justify-content: center; padding: 0 16px;">
-                <h2 style="font-size: 32px; font-weight: 800; color: var(--color-text-heading); margin-bottom: 20px; line-height: 1.2;">${product.title}</h2>
+            <div class="product-modal-info">
+                <h2 class="product-modal-title">${product.title}</h2>
                 
-                ${product.description ? `<p style="font-size: 16px; line-height: 1.6; color: var(--color-text-secondary); margin-bottom: 24px;">${product.description}</p>` : ''}
+                ${product.description ? `<p class="product-modal-description">${product.description}</p>` : ''}
                 
-                <div style="display: flex; gap: 20px; margin-bottom: 30px;" class="price-weight-blocks">
-                    <div style="flex: 1; padding: 20px; background: var(--color-bg-card); border-radius: 16px;" class="price-block">
-                        <div style="font-size: 14px; color: var(--color-text-secondary); margin-bottom: 8px;">Цена</div>
-                        <div style="font-size: 30px; font-weight: 800; color: var(--color-primary);">${product.price} ₽</div>
+                <div class="price-weight-blocks">
+                    <div class="price-block">
+                        <div class="price-label">Цена</div>
+                        <div class="price-value">${product.price} ₽</div>
                     </div>
                     ${product.weight ? `
-                    <div style="flex: 1; padding: 20px; background: var(--color-bg-card); border-radius: 16px;" class="weight-block">
-                        <div style="font-size: 14px; color: var(--color-text-secondary); margin-bottom: 8px;">Вес</div>
-                        <div style="font-size: 24px; font-weight: 700; color: var(--color-text-heading);">${product.weight} г</div>
+                    <div class="weight-block">
+                        <div class="weight-label">Вес</div>
+                        <div class="weight-value">${product.weight} г</div>
                     </div>
                     ` : ''}
                 </div>
                 
                 <!-- Дополнения (если есть) -->
                 ${product.addons ? `
-                <div style="margin-bottom: 30px;" class="addons-block">
-                    <h3 style="font-size: 18px; font-weight: 700; color: var(--color-text-heading); margin-bottom: 12px;">Дополнения:</h3>
-                    <div style="display: flex; flex-wrap: wrap; gap: 8px;">
+                <div class="addons-block">
+                    <h3 class="addons-title">Дополнения:</h3>
+                    <div class="addons-list">
                         ${product.addons.map(addon => `
-                            <span style="padding: 8px 16px; background: var(--color-bg-card-hover); border-radius: 20px; font-size: 14px; color: var(--color-text-secondary);">
-                                ${addon}
-                            </span>
+                            <span class="addon-item">${addon}</span>
                         `).join('')}
                     </div>
                 </div>
                 ` : ''}
                 
-                <button onclick="addToCart(${product.id}); closeProductModal();" style="width: 100%; padding: 20px; background: var(--gradient-primary); color: white; border: none; border-radius: 16px; font-weight: 700; font-size: 18px; cursor: pointer; box-shadow: var(--shadow-glow); transition: all 0.3s;" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 8px 25px rgba(255, 46, 85, 0.45)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='var(--shadow-glow)';">
+                <button onclick="addToCart(${product.id}); closeProductModal();" class="product-modal-add-btn">
                     Добавить в корзину • ${product.price} ₽
                 </button>
             </div>
@@ -1318,65 +1316,6 @@ function createProductModal() {
     
     const modalContent = document.createElement('div');
     modalContent.id = 'product-modal-content';
-    modalContent.style.cssText = `
-        background: var(--color-bg-card);
-        border-radius: 24px;
-        padding: 40px;
-        max-width: 900px;
-        width: 100%;
-        max-height: 90vh;
-        overflow-y: auto;
-        box-shadow: 0 20px 60px rgba(0,0,0,0.5);
-    `;
-    
-    // Добавляем медиа-запрос для мобильных
-    const style = document.createElement('style');
-    style.textContent = `
-        @media (max-width: 768px) {
-            #product-modal-content > div {
-                grid-template-columns: 1fr !important;
-                gap: 0 !important;
-            }
-            #product-modal-content img {
-                height: 25vh !important;
-                max-height: 300px !important;
-                margin: 0 16px !important;
-            }
-            #product-modal-content h2 {
-                font-size: 24px !important;
-                margin-top: 16px;
-                padding: 0 16px;
-            }
-            #product-modal-content p {
-                padding: 0 16px;
-            }
-            /* Правая колонка - отменяем justify-content: center */
-            #product-modal-content > div > div:last-child {
-                justify-content: flex-start !important;
-                padding: 16px !important;
-            }
-            #product-modal-content .price-weight-blocks {
-                flex-direction: column !important;
-                gap: 12px !important;
-                padding: 0 !important;
-                margin-bottom: 20px !important;
-            }
-            #product-modal-content .addons-block {
-                padding: 0 !important;
-                margin-bottom: 20px !important;
-            }
-            #product-modal-content button {
-                margin: 0 !important;
-                width: 100% !important;
-                padding: 16px !important;
-            }
-            .price-block, .weight-block {
-                width: 100% !important;
-                flex: none !important;
-            }
-        }
-    `;
-    modalContent.appendChild(style);
     
     modal.appendChild(modalContent);
     document.body.appendChild(modal);
