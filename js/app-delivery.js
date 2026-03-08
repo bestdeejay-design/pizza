@@ -1247,21 +1247,27 @@ function showProductModal(productId) {
             
             <!-- Правая колонка - Информация -->
             <div class="product-modal-info">
-                <h2 class="product-modal-title">${product.title}</h2>
+                <h2 class="product-modal-title">
+                    ${product.title}
+                    ${product.weight ? `<span class="product-modal-title-inline-weight">${product.weight} г</span>` : ''}
+                </h2>
                 
-                ${product.description ? `<p class="product-modal-description">${product.description}</p>` : ''}
+                ${product.description ? `
+                    <div class="product-modal-description" id="modal-desc-${product.id}">
+                        ${product.description.length > 150 ? product.description.substring(0, 150) + '...' : product.description}
+                        ${product.description.length > 150 ? `
+                            <button class="product-modal-description-expand-btn" onclick="toggleDescription(${product.id})">
+                                Показать полностью
+                            </button>
+                        ` : ''}
+                    </div>
+                ` : ''}
                 
                 <div class="price-weight-blocks">
                     <div class="price-block">
-                        <div class="price-label">Цена</div>
-                        <div class="price-value">${product.price} ₽</div>
+                        <span class="price-label">Цена:</span>
+                        <span class="price-value">${product.price} ₽</span>
                     </div>
-                    ${product.weight ? `
-                    <div class="weight-block">
-                        <div class="weight-label">Вес</div>
-                        <div class="weight-value">${product.weight} г</div>
-                    </div>
-                    ` : ''}
                 </div>
                 
                 <!-- Дополнения (если есть) -->
@@ -1277,7 +1283,8 @@ function showProductModal(productId) {
                 ` : ''}
                 
                 <button onclick="addToCart(${product.id}); closeProductModal();" class="product-modal-add-btn">
-                    Добавить в корзину • ${product.price} ₽
+                    <span>Добавить в корзину</span>
+                    <span>${product.price} ₽</span>
                 </button>
             </div>
         </div>
@@ -1292,6 +1299,39 @@ function closeProductModal() {
     if (modal) {
         modal.style.display = 'none';
         document.body.style.overflow = '';
+    }
+}
+
+// Toggle description expand/collapse
+function toggleDescription(productId) {
+    const descElement = document.getElementById(`modal-desc-${productId}`);
+    if (!descElement) return;
+    
+    const isExpanded = descElement.classList.contains('expanded');
+    const btn = descElement.querySelector('.product-modal-description-expand-btn');
+    
+    if (isExpanded) {
+        // Collapse
+        descElement.classList.remove('expanded');
+        // Re-truncate text
+        const fullText = descElement.dataset.fullText || descElement.textContent;
+        descElement.innerHTML = `
+            ${fullText.substring(0, 150)}...
+            <button class="product-modal-description-expand-btn" onclick="toggleDescription(${productId})">
+                Показать полностью
+            </button>
+        `;
+    } else {
+        // Expand - store full text and show all
+        const currentText = descElement.textContent.replace('Показать полностью', '').trim();
+        descElement.dataset.fullText = currentText;
+        descElement.classList.add('expanded');
+        descElement.innerHTML = `
+            ${currentText}
+            <button class="product-modal-description-expand-btn" onclick="toggleDescription(${productId})">
+                Свернуть
+            </button>
+        `;
     }
 }
 
