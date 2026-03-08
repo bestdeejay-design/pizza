@@ -1,8 +1,0 @@
-# Вспомогательные файлы разработки
-*.js
-*.json
-*.txt
-*.md
-node_modules/
-package*.json
-raw-content/

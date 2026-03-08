@@ -4,6 +4,15 @@ __pycache__/
 *.pyc
 *.pyo
 
+# Node.js
+node_modules/
+package-lock.json
+
+# Парсеры и вспомогательные скрипты
+parsers/
+scripts/*.js
+*.log
+
 # Оптимизация изображений (резервные копии)
 img-old/
 img-backup/
@@ -12,6 +21,9 @@ img-backup/
 *.log
 .DS_Store
 Thumbs.db
+
+# Бэкапы меню
+menu-final.backup*.json
 
 # Скрипты оптимизации (можно не коммитить)
 optimize-images.py
