@@ -1251,13 +1251,13 @@ function showProductModal(productId) {
                 
                 ${product.description ? `<p style="font-size: 16px; line-height: 1.6; color: var(--color-text-secondary); margin-bottom: 24px;">${product.description}</p>` : ''}
                 
-                <div style="display: flex; gap: 20px; margin-bottom: 30px;">
-                    <div style="flex: 1; padding: 20px; background: var(--color-bg-card); border-radius: 16px;">
+                <div style="display: flex; gap: 20px; margin-bottom: 30px;" class="price-weight-blocks">
+                    <div style="flex: 1; padding: 20px; background: var(--color-bg-card); border-radius: 16px;" class="price-block">
                         <div style="font-size: 14px; color: var(--color-text-secondary); margin-bottom: 8px;">Цена</div>
                         <div style="font-size: 30px; font-weight: 800; color: var(--color-primary);">${product.price} ₽</div>
                     </div>
                     ${product.weight ? `
-                    <div style="flex: 1; padding: 20px; background: var(--color-bg-card); border-radius: 16px;">
+                    <div style="flex: 1; padding: 20px; background: var(--color-bg-card); border-radius: 16px;" class="weight-block">
                         <div style="font-size: 14px; color: var(--color-text-secondary); margin-bottom: 8px;">Вес</div>
                         <div style="font-size: 24px; font-weight: 700; color: var(--color-text-heading);">${product.weight} г</div>
                     </div>
@@ -1266,7 +1266,7 @@ function showProductModal(productId) {
                 
                 <!-- Дополнения (если есть) -->
                 ${product.addons ? `
-                <div style="margin-bottom: 30px;">
+                <div style="margin-bottom: 30px;" class="addons-block">
                     <h3 style="font-size: 18px; font-weight: 700; color: var(--color-text-heading); margin-bottom: 12px;">Дополнения:</h3>
                     <div style="display: flex; flex-wrap: wrap; gap: 8px;">
                         ${product.addons.map(addon => `
@@ -1340,12 +1340,31 @@ function createProductModal() {
             #product-modal-content img {
                 height: 25vh !important;
                 max-height: 300px !important;
+                margin: 0 16px !important;
             }
             #product-modal-content h2 {
                 font-size: 24px !important;
                 margin-top: 16px;
+                padding: 0 16px;
             }
-            .price-block { font-size: 28px !important; }
+            #product-modal-content p {
+                padding: 0 16px;
+            }
+            #product-modal-content .price-weight-blocks {
+                flex-direction: column !important;
+                gap: 12px !important;
+                padding: 0 16px;
+            }
+            #product-modal-content .addons-block {
+                padding: 0 16px;
+            }
+            #product-modal-content button {
+                margin: 0 16px;
+                width: calc(100% - 32px);
+            }
+            .price-block, .weight-block {
+                width: 100% !important;
+            }
         }
     `;
     modalContent.appendChild(style);
