@@ -1350,20 +1350,29 @@ function createProductModal() {
             #product-modal-content p {
                 padding: 0 16px;
             }
+            /* Правая колонка - отменяем justify-content: center */
+            #product-modal-content > div > div:last-child {
+                justify-content: flex-start !important;
+                padding: 16px !important;
+            }
             #product-modal-content .price-weight-blocks {
                 flex-direction: column !important;
                 gap: 12px !important;
-                padding: 0 16px;
+                padding: 0 !important;
+                margin-bottom: 20px !important;
             }
             #product-modal-content .addons-block {
-                padding: 0 16px;
+                padding: 0 !important;
+                margin-bottom: 20px !important;
             }
             #product-modal-content button {
-                margin: 0 16px;
-                width: calc(100% - 32px);
+                margin: 0 !important;
+                width: 100% !important;
+                padding: 16px !important;
             }
             .price-block, .weight-block {
                 width: 100% !important;
+                flex: none !important;
             }
         }
     `;
