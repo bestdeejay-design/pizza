@@ -28,6 +28,16 @@ add-*.js
 
 # Локальные файлы разработки
 dev-local/
+original-site-data/
+yandex-eda/
+results/
+backups/
+docs/
+dev-tools/
+img-backup/
+img-old/
+node_modules/
+venv/
 
 # Оптимизация изображений (резервные копии)
 img-old/
