@@ -13,10 +13,12 @@ package.json
 parsers/
 scripts/
 *.log
-yandex-eda-*.js
-*collector*.js
-*Tampermonkey*.js
-*selector-finder*.js
+yandex-eda-console-collector.js
+yandex-eda-direct-collector.js
+yandex-eda-hybrid-collector.js
+yandex-eda-tampermonkey-script.js
+yandex-eda-selector-finder.js
+# yandex-eda-auto-collector.js - ОСТАВИТЬ (основной парсер)
 
 # Оптимизация изображений (резервные копии)
 img-old/
