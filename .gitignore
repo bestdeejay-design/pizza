@@ -23,6 +23,8 @@ yandex-eda-selector-finder.js
 # Оптимизация изображений (резервные копии)
 img-old/
 img-backup/
+css/*backup*.css
+css/*-optimized*.css
 
 # Временные файлы
 *.log
