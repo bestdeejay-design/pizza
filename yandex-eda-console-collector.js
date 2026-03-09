@@ -106,21 +106,46 @@
         };
     }
     
-    // Find all products
+    // Find all products - EXPANDED SELECTORS
     function findProductCards() {
         const selectors = [
-            '[id*="product-card"]',
+            // Yandex Eda specific
             '[class*="ProductCard"]',
+            '[class*="product-card"]',
+            '[class*="ProductCardV2"]',
+            '[class*="product-card-v2"]',
+            
+            // Generic cards
+            '[class*="card"]',
+            '[class*="Card"]',
+            '[class*="item"]',
+            '[class*="Item"]',
+            
+            // ID based
+            '[id*="product"]',
+            '[id*="card"]',
+            
+            // Data attributes
             '[data-testid="product-card"]',
-            '[class*="product-card"]'
+            '[data-product-id]',
+            
+            // Semantic HTML
+            'article',
+            'section[class*="card"]',
+            'div[class*="menu-item"]',
+            'div[class*="catalog-item"]'
         ];
         
         let cards = [];
         for (const selector of selectors) {
-            cards = document.querySelectorAll(selector);
-            if (cards.length > 0) {
-                console.log(`✅ Found ${cards.length} products by selector: ${selector}`);
-                break;
+            try {
+                cards = document.querySelectorAll(selector);
+                if (cards.length > 0) {
+                    console.log(`✅ Found ${cards.length} products by selector: ${selector}`);
+                    break;
+                }
+            } catch (error) {
+                // Skip invalid selectors
             }
         }
         
