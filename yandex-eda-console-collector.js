@@ -209,14 +209,34 @@
                 
                 // Scroll to card
                 card.scrollIntoView({ behavior: 'smooth', block: 'center' });
-                await new Promise(r => setTimeout(r, 800));
+                await new Promise(r => setTimeout(r, 1000));
                 
-                // Click to open modal
-                card.click();
+                // Click to open modal - use card itself or link inside
+                let clicked = false;
+                const link = card.querySelector('a[href*="/product/"]');
+                if (link) {
+                    link.click();
+                    clicked = true;
+                    console.log(`Clicked on link inside card ${i + 1}`);
+                } else {
+                    card.click();
+                    console.log(`Clicked on card ${i + 1}`);
+                }
+                
                 console.log(`▶️  Opening product ${i + 1}/${totalProducts}...`);
                 
-                // Wait for modal to open
-                await new Promise(r => setTimeout(r, CONFIG.delay));
+                // Wait longer for modal to open
+                await new Promise(r => setTimeout(r, 5000));
+                
+                // Check if modal opened
+                const modal = document.querySelector('[role="dialog"]');
+                if (!modal) {
+                    console.warn(`⚠️ Modal did not open for product ${i + 1}. Trying again...`);
+                    // Try clicking again
+                    if (link) link.click();
+                    else card.click();
+                    await new Promise(r => setTimeout(r, 3000));
+                }
                 
                 // Extract data
                 const data = extractProductData();
