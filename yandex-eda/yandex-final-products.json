@@ -1,0 +1,238 @@
+[
+  {
+    "id": 1,
+    "title": "-10%801 ₽890 ₽Кальцоне Маргарита450 г",
+    "priceFromCard": 801,
+    "weightFromCard": 450,
+    "modalData": null
+  },
+  {
+    "id": 2,
+    "title": "-10%",
+    "priceFromCard": null,
+    "weightFromCard": null,
+    "modalData": null
+  },
+  {
+    "id": 3,
+    "title": "-10%",
+    "priceFromCard": null,
+    "weightFromCard": null,
+    "modalData": null
+  },
+  {
+    "id": 4,
+    "title": "801 ₽",
+    "priceFromCard": 801,
+    "weightFromCard": null,
+    "modalData": null
+  },
+  {
+    "id": 5,
+    "title": "890 ₽",
+    "priceFromCard": 890,
+    "weightFromCard": null,
+    "modalData": null
+  },
+  {
+    "id": 6,
+    "title": "Кальцоне Маргарита",
+    "priceFromCard": null,
+    "weightFromCard": null,
+    "modalData": null
+  },
+  {
+    "id": 7,
+    "title": "450 г",
+    "priceFromCard": null,
+    "weightFromCard": 450,
+    "modalData": null
+  },
+  {
+    "id": 8,
+    "title": "-10%801 ₽890 ₽Кальцоне Пеперони450 г",
+    "priceFromCard": 801,
+    "weightFromCard": 450,
+    "modalData": null
+  },
+  {
+    "id": 9,
+    "title": "-10%",
+    "priceFromCard": null,
+    "weightFromCard": null,
+    "modalData": null
+  },
+  {
+    "id": 10,
+    "title": "-10%",
+    "priceFromCard": null,
+    "weightFromCard": null,
+    "modalData": null
+  },
+  {
+    "id": 11,
+    "title": "801 ₽",
+    "priceFromCard": 801,
+    "weightFromCard": null,
+    "modalData": {
+      "fullText": "Куда доставить заказ?Ок © ЯндексУсловия использования",
+      "description": null,
+      "ingredients": null,
+      "nutrition": null
+    }
+  },
+  {
+    "id": 12,
+    "title": "890 ₽",
+    "priceFromCard": 890,
+    "weightFromCard": null,
+    "modalData": null
+  },
+  {
+    "id": 13,
+    "title": "Кальцоне Пеперони",
+    "priceFromCard": null,
+    "weightFromCard": null,
+    "modalData": {
+      "fullText": "Куда доставить заказ?Ок © ЯндексУсловия использования",
+      "description": null,
+      "ingredients": null,
+      "nutrition": null
+    }
+  },
+  {
+    "id": 14,
+    "title": "450 г",
+    "priceFromCard": null,
+    "weightFromCard": 450,
+    "modalData": null
+  },
+  {
+    "id": 15,
+    "title": "-10%855 ₽950 ₽Кальцоне Курица с печеным перцем 500 г",
+    "priceFromCard": 855,
+    "weightFromCard": 500,
+    "modalData": null
+  },
+  {
+    "id": 16,
+    "title": "-10%",
+    "priceFromCard": null,
+    "weightFromCard": null,
+    "modalData": null
+  },
+  {
+    "id": 17,
+    "title": "-10%",
+    "priceFromCard": null,
+    "weightFromCard": null,
+    "modalData": {
+      "fullText": "Куда доставить заказ?Ок © ЯндексУсловия использования",
+      "description": null,
+      "ingredients": null,
+      "nutrition": null
+    }
+  },
+  {
+    "id": 18,
+    "title": "855 ₽",
+    "priceFromCard": 855,
+    "weightFromCard": null,
+    "modalData": null
+  },
+  {
+    "id": 19,
+    "title": "950 ₽",
+    "priceFromCard": 950,
+    "weightFromCard": null,
+    "modalData": null
+  },
+  {
+    "id": 20,
+    "title": "Кальцоне Курица с печеным перцем",
+    "priceFromCard": null,
+    "weightFromCard": null,
+    "modalData": null
+  },
+  {
+    "id": 21,
+    "title": "500 г",
+    "priceFromCard": null,
+    "weightFromCard": 500,
+    "modalData": {
+      "fullText": "Куда доставить заказ?                  Ок © ЯндексУсловия использования",
+      "description": null,
+      "ingredients": null,
+      "nutrition": null
+    }
+  },
+  {
+    "id": 22,
+    "title": "-10%855 ₽950 ₽Кальцоне Ветчина-грибы 500 г",
+    "priceFromCard": 855,
+    "weightFromCard": 500,
+    "modalData": {
+      "fullText": "Куда доставить заказ?                  Ок © ЯндексУсловия использования",
+      "description": null,
+      "ingredients": null,
+      "nutrition": null
+    }
+  },
+  {
+    "id": 23,
+    "title": "-10%",
+    "priceFromCard": null,
+    "weightFromCard": null,
+    "modalData": null
+  },
+  {
+    "id": 24,
+    "title": "-10%",
+    "priceFromCard": null,
+    "weightFromCard": null,
+    "modalData": {
+      "fullText": "Куда доставить заказ?Ок © ЯндексУсловия использования",
+      "description": null,
+      "ingredients": null,
+      "nutrition": null
+    }
+  },
+  {
+    "id": 25,
+    "title": "855 ₽",
+    "priceFromCard": 855,
+    "weightFromCard": null,
+    "modalData": {
+      "fullText": "Куда доставить заказ?Ок © ЯндексУсловия использования",
+      "description": null,
+      "ingredients": null,
+      "nutrition": null
+    }
+  },
+  {
+    "id": 26,
+    "title": "950 ₽",
+    "priceFromCard": 950,
+    "weightFromCard": null,
+    "modalData": null
+  },
+  {
+    "id": 27,
+    "title": "Кальцоне Ветчина-грибы",
+    "priceFromCard": null,
+    "weightFromCard": null,
+    "modalData": {
+      "fullText": "Куда доставить заказ?Ок © ЯндексУсловия использования",
+      "description": null,
+      "ingredients": null,
+      "nutrition": null
+    }
+  },
+  {
+    "id": 28,
+    "title": "500 г",
+    "priceFromCard": null,
+    "weightFromCard": 500,
+    "modalData": null
+  }
+]
