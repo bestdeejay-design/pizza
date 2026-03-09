@@ -41,39 +41,64 @@
         }
         
         const modalText = modal.innerText;
+        console.log('Modal text length:', modalText.length);
         
         // Title
         const titleEl = modal.querySelector('h1, h2, [class*="title"]');
         const title = titleEl ? titleEl.textContent.trim() : 'Unknown';
+        console.log('Title:', title);
         
-        // Weight
-        const weightMatch = modalText.match(/(\d+(?:\.\d+)?)\s*г/i);
-        const weight = weightMatch ? `${weightMatch[1]} г` : null;
+        // Weight - try multiple patterns
+        let weight = null;
+        const weightPatterns = [
+            /(\d+(?:\.\d+)?)\s*г/i,
+            /(\d+(?:\.\d+)?)\s*грамм/i,
+            /(\d+(?:\.\d+)?)\s*gramm/i
+        ];
+        for (const pattern of weightPatterns) {
+            const match = modalText.match(pattern);
+            if (match) {
+                weight = `${match[1]} г`;
+                break;
+            }
+        }
+        console.log('Weight:', weight);
         
         // Price
         const priceMatch = modalText.match(/(\d+)\s*₽/);
         const price = priceMatch ? parseInt(priceMatch[1]) : null;
+        console.log('Price:', price);
         
-        // Description
+        // Description - look for longer text blocks
         let description = '';
-        const descSelectors = ['[class*="description"]', '.description', 'p'];
-        for (const selector of descSelectors) {
-            const descEl = modal.querySelector(selector);
-            if (descEl && descEl.textContent.trim().length > 10) {
-                description = descEl.textContent.trim();
+        const paragraphs = modal.querySelectorAll('p, [class*="text"], [class*="desc"]');
+        for (const p of paragraphs) {
+            const text = p.textContent.trim();
+            if (text.length > 50 && !text.match(/\d+\s*г|\d+\s*₽|белки|жиры|углеводы/i)) {
+                description = text;
                 break;
             }
         }
+        console.log('Description:', description.substring(0, 100));
         
         // Ingredients
         let ingredients = [];
-        const ingredientEl = modal.querySelector('[class*="ingredient"], .ingredients');
-        if (ingredientEl) {
-            ingredients = ingredientEl.textContent
-                .split(',')
-                .map(i => i.trim())
-                .filter(i => i.length > 0);
+        const ingredientSelectors = [
+            '[class*="ingredient"]',
+            '[class*="composition"]',
+            '[class*="состав"]'
+        ];
+        for (const selector of ingredientSelectors) {
+            const ingredientEl = modal.querySelector(selector);
+            if (ingredientEl) {
+                ingredients = ingredientEl.textContent
+                    .split(/[,,]/)
+                    .map(i => i.trim())
+                    .filter(i => i.length > 0 && i.length < 50);
+                if (ingredients.length > 0) break;
+            }
         }
+        console.log('Ingredients:', ingredients.length);
         
         // Nutrition (КБЖУ)
         const nutrition = {
@@ -85,13 +110,14 @@
         
         const proteinMatch = modalText.match(/белки?[:\s]*(\d+(?:\.\d+)?)\s*г/i);
         const fatMatch = modalText.match(/жиры?[:\s]*(\d+(?:\.\d+)?)\s*г/i);
-        const carbMatch = modalText.match(/углеводы?[:\s]*(\d+(?:\.\d+)?)\s*г/i);
+        const carbMatch = modalText.match(/углеводы?[:\s]*(\d+(?:\.\д+)?)\s*г/i);
         const calorieMatch = modalText.match(/калории?[:\s]*(\d+(?:\.\d+)?)\s*(?:ккал|кал)/i);
         
         if (proteinMatch) nutrition.proteins = parseFloat(proteinMatch[1]);
         if (fatMatch) nutrition.fats = parseFloat(fatMatch[1]);
         if (carbMatch) nutrition.carbs = parseFloat(carbMatch[1]);
         if (calorieMatch) nutrition.calories = parseFloat(calorieMatch[1]);
+        console.log('Nutrition:', nutrition);
         
         return {
             title: title,
