@@ -11,8 +11,12 @@ package.json
 
 # Парсеры и вспомогательные скрипты
 parsers/
-scripts/*.js
+scripts/
 *.log
+yandex-eda-*.js
+*collector*.js
+*Tampermonkey*.js
+*selector-finder*.js
 
 # Оптимизация изображений (резервные копии)
 img-old/
@@ -25,8 +29,18 @@ Thumbs.db
 
 # Бэкапы меню
 menu-final.backup*.json
+*-old.json
+*-backup.json
 
-# Скрипты оптимизации (можно не коммитить)
-optimize-images.py
-replace-images.sh
-update-image-extensions.js
+# Документация для разработчиков
+docs/
+archive/
+backups/
+*.md
+!README.md
+
+# Прочее
+.qoder/
+*.swp
+*.swo
+*~
