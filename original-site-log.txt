@@ -1,0 +1,853 @@
+🍕 Парсинг оригинального сайта pizzanapolirsc.ru...
+
+1. Открываем главную страницу...
+   ⏳ Ждем загрузки контента...
+
+2. Ищем категории меню...
+   Найдено категорий: 7
+   1) О нас (#rec1267136501)
+   2) Меню (#rec1271358691)
+   3) Мастер класс (#rec1267136511)
+   4) Акции (#rec1295268231)
+   5) Статьи (#rec1267136501)
+   6) Контакты (#rec1397996031)
+   7) Заказать #rec1271358691 .t-btnflex.t-btnflex_type_button {color:#ffffff;background-color:#2a582c;border-style:solid !important;border-color:#ffffff !important;--border-width:1px;border-radius:4px;box-shadow:none !important;transition-duration:0.2s;transition-property:background-color,color,border-color,box-shadow,opacity,transform,gap;transition-timing-function:ease-in-out;} (#order)
+
+📁 Категория: О нас
+   ✅ Найдено товаров: 424
+   1/424. Пицца месяца с 01-31 марта : Пицца "Болоньеза"
+      ❌ Ошибка модалки: closeBtn.click is not a function
+   2/424. Пицца месяца с 01-28 февраля: Pizza alla Diavola
+      ❌ Ошибка модалки: closeBtn.click is not a function
+   3/424. Выбрать бесплатно
+      ❌ Ошибка модалки: closeBtn.click is not a function
+   4/424. Выбрать бесплатно
+      ❌ Ошибка модалки: closeBtn.click is not a function
+   5/424. тесто классическое и соус томатный
+      ❌ Ошибка модалки: closeBtn.click is not a function
+   6/424. тесто классическое и соус томатный
+      ❌ Ошибка модалки: closeBtn.click is not a function
+   7/424. тесто классическое и соус белый
+      ❌ Ошибка модалки: closeBtn.click is not a function
+   8/424. тесто томатное и соус томатный
+      ❌ Ошибка модалки: closeBtn.click is not a function
+   9/424. тесто томатное соус и белый
+      ❌ Ошибка модалки: closeBtn.click is not a function
+   10/424. Дополнительно
+      ❌ Ошибка модалки: closeBtn.click is not a function
+   11/424. Пицца Маргарита 1/4
+      ❌ Ошибка модалки: closeBtn.click is not a function
+   12/424. Дополнительно
+      ❌ Ошибка модалки: closeBtn.click is not a function
+   13/424. Дополнительно
+      ❌ Ошибка модалки: closeBtn.click is not a function
+   14/424. Пицца Пепперони 1/4
+      ❌ Ошибка модалки: closeBtn.click is not a function
+   15/424. Дополнительно
+      ❌ Ошибка модалки: closeBtn.click is not a function
+   16/424. Дополнительно
+      ❌ Ошибка модалки: closeBtn.click is not a function
+   17/424. Пицца кура/перец 1/4
+      ❌ Ошибка модалки: closeBtn.click is not a function
+   18/424. Дополнительно
+      ❌ Ошибка модалки: closeBtn.click is not a function
+   19/424. Дополнительно
+      ❌ Ошибка модалки: closeBtn.click is not a function
+   20/424. Пицца 4 сыра 1/4
+      ❌ Ошибка модалки: closeBtn.click is not a function
+   21/424. Дополнительно
+      ❌ Ошибка модалки: closeBtn.click is not a function
+   22/424. Дополнительно
+      ❌ Ошибка модалки: closeBtn.click is not a function
+   23/424. Пицца Суприм 1/4
+      ❌ Ошибка модалки: closeBtn.click is not a function
+   24/424. Дополнительно
+      ❌ Ошибка модалки: closeBtn.click is not a function
+   25/424. Дополнительно
+      ❌ Ошибка модалки: closeBtn.click is not a function
+   26/424. Шоколадный трюфель с миндальным амаретто
+      ❌ Ошибка модалки: closeBtn.click is not a function
+   27/424. Тосканский томатный крем-суп с говядиной, сыром Пармезан и чесночными гренками
+      ❌ Ошибка модалки: closeBtn.click is not a function
+   28/424. Итальянские печенья Бискотти с миндальными лепестками и изюмом
+      ❌ Ошибка модалки: closeBtn.click is not a function
+   29/424. Неаполитанское тесто для пиццы
+      ❌ Ошибка модалки: closeBtn.click is not a function
+   30/424. Красное Неаполитанское тесто с томатами
+      ❌ Ошибка модалки: closeBtn.click is not a function
+   31/424. Пицца "Я сам Шеф"
+      ❌ Ошибка модалки: closeBtn.click is not a function
+   32/424. Выбрать бесплатно
+      ❌ Ошибка модалки: closeBtn.click is not a function
+   33/424. Выбрать бесплатно
+      ❌ Ошибка модалки: closeBtn.click is not a function
+   34/424. тесто классическое и соус белый
+      ❌ Ошибка модалки: closeBtn.click is not a function
+   35/424. тесто классическое и соус белый
+      ❌ Ошибка модалки: closeBtn.click is not a function
+   36/424. тесто классическое и соус томатный
+      ❌ Ошибка модалки: closeBtn.click is not a function
+   37/424. тесто томатное соус и белый
+      ❌ Ошибка модалки: closeBtn.click is not a function
+   38/424. тесто томатное соус и томатный
+      ❌ Ошибка модалки: closeBtn.click is not a function
+   39/424. Дополнительно
+      ❌ Ошибка модалки: closeBtn.click is not a function
+   40/424. Дополнительно 2
+      ❌ Ошибка модалки: closeBtn.click is not a function
+   41/424. Дополнительно 3
+      ❌ Ошибка модалки: closeBtn.click is not a function
+   42/424. Сырные палки с соусом BBQ
+      ❌ Ошибка модалки: closeBtn.click is not a function
+   43/424. Выбрать бесплатно
+      ❌ Ошибка модалки: closeBtn.click is not a function
+   44/424. Выбрать бесплатно
+      ❌ Ошибка модалки: closeBtn.click is not a function
+   45/424. Тесто классическое
+      ❌ Ошибка модалки: closeBtn.click is not a function
+   46/424. Тесто классическое
+      ❌ Ошибка модалки: closeBtn.click is not a function
+   47/424. Тесто томатное
+      ❌ Ошибка модалки: closeBtn.click is not a function
+   48/424. Дополнительно
+      ❌ Ошибка модалки: closeBtn.click is not a function
+   49/424. Соус Унаги
+      ❌ Ошибка модалки: closeBtn.click is not a function
+   50/424. Соус для корочек "Песто"
+      ❌ Ошибка модалки: closeBtn.click is not a function
+   51/424. Соус для корочек "Кунжутный"
+      ❌ Ошибка модалки: closeBtn.click is not a function
+   52/424. Соус для корочек "Чесночный"
+      ❌ Ошибка модалки: closeBtn.click is not a function
+   53/424. Соус для корочек "BBQ"
+      ❌ Ошибка модалки: closeBtn.click is not a function
+   54/424. Соус для корочек "Терияки"
+      ❌ Ошибка модалки: closeBtn.click is not a function
+   55/424. Соус для корочек Спайси
+      ❌ Ошибка модалки: closeBtn.click is not a function
+   56/424. Соус для корочек "Медово-горчичный"
+      ❌ Ошибка модалки: closeBtn.click is not a function
+   57/424. Соус для корочек "Томатный"
+      ❌ Ошибка модалки: closeBtn.click is not a function
+   58/424. Пицца "Маргарита"
+      ❌ Ошибка модалки: closeBtn.click is not a function
+   59/424. Выбрать бесплатно
+      ❌ Ошибка модалки: closeBtn.click is not a function
+   60/424. Выбрать бесплатно
+      ❌ Ошибка модалки: closeBtn.click is not a function
+   61/424. тесто классическое и соус томатный
+      ❌ Ошибка модалки: closeBtn.click is not a function
+   62/424. тесто классическое и соус томатный
+      ❌ Ошибка модалки: closeBtn.click is not a function
+   63/424. тесто классическое и соус белый
+      ❌ Ошибка модалки: closeBtn.click is not a function
+   64/424. тесто томатное соус белый
+      ❌ Ошибка модалки: closeBtn.click is not a function
+   65/424. тесто томатное соус и томатный
+      ❌ Ошибка модалки: closeBtn.click is not a function
+   66/424. Дополнительно
+      ❌ Ошибка модалки: closeBtn.click is not a function
+   67/424. Пицца Пепперони
+      ❌ Ошибка модалки: closeBtn.click is not a function
+   68/424. Выбрать бесплатно
+      ❌ Ошибка модалки: closeBtn.click is not a function
+   69/424. Выбрать бесплатно
+      ❌ Ошибка модалки: closeBtn.click is not a function
+   70/424. тесто классическое и соус томатный
+      ❌ Ошибка модалки: closeBtn.click is not a function
+   71/424. тесто классическое и соус томатный
+      ❌ Ошибка модалки: closeBtn.click is not a function
+   72/424. тесто классическое и соус белый
+      ❌ Ошибка модалки: closeBtn.click is not a function
+   73/424. тесто томатное соус белый
+      ❌ Ошибка модалки: closeBtn.click is not a function
+   74/424. тесто томатное соус томатный
+      ❌ Ошибка модалки: closeBtn.click is not a function
+   75/424. Дополнительно
+      ❌ Ошибка модалки: closeBtn.click is not a function
+   76/424. Пицца Ветчина/грибы
+   77/424. Выбрать бесплатно
+   78/424. Выбрать бесплатно
+   79/424. тесто классическое и соус томатный
+      ❌ Ошибка модалки: closeBtn.click is not a function
+   80/424. тесто классическое и соус томатный
+      ❌ Ошибка модалки: closeBtn.click is not a function
+   81/424. тесто классическое и соус белый
+      ❌ Ошибка модалки: closeBtn.click is not a function
+   82/424. тесто томатное соус белый
+      ❌ Ошибка модалки: closeBtn.click is not a function
+   83/424. тесто томатное соус томатный
+      ❌ Ошибка модалки: closeBtn.click is not a function
+   84/424. Дополнительно
+      ❌ Ошибка модалки: closeBtn.click is not a function
+   85/424. Пицца Кура с печеным перцем
+      ❌ Ошибка модалки: closeBtn.click is not a function
+   86/424. Выбрать бесплатно
+      ❌ Ошибка модалки: closeBtn.click is not a function
+   87/424. Выбрать бесплатно
+      ❌ Ошибка модалки: closeBtn.click is not a function
+   88/424. тесто классическое и соус томатный
+      ❌ Ошибка модалки: closeBtn.click is not a function
+   89/424. тесто классическое и соус томатный
+      ❌ Ошибка модалки: closeBtn.click is not a function
+   90/424. тесто классическое и соус белый
+      ❌ Ошибка модалки: closeBtn.click is not a function
+   91/424. тесто томатное соус белый
+   92/424. тесто томатное соус и томатный
+   93/424. Дополнительно
+   94/424. Pizza Salvata Mila
+      ❌ Ошибка модалки: closeBtn.click is not a function
+   95/424. Дополнительно
+      ❌ Ошибка модалки: closeBtn.click is not a function
+   96/424. Дополнительно
+   97/424. Пицца с лисичками, шампиньонами и красным луком
+   98/424. Выбрать бесплатно
+   99/424. Выбрать бесплатно
+      ❌ Ошибка модалки: closeBtn.click is not a function
+   100/424. тесто классическое и соус белый
+      ❌ Ошибка модалки: closeBtn.click is not a function
+   101/424. тесто классическое и соус белый
+      ❌ Ошибка модалки: closeBtn.click is not a function
+   102/424. тесто классическое и соус томатный
+      ❌ Ошибка модалки: closeBtn.click is not a function
+   103/424. тесто томатное соус белый
+      ❌ Ошибка модалки: closeBtn.click is not a function
+   104/424. тесто томатное и соус томатный
+      ❌ Ошибка модалки: closeBtn.click is not a function
+   105/424. Дополнительно
+      ❌ Ошибка модалки: closeBtn.click is not a function
+   106/424. Pizza Chicken BBQ
+      ❌ Ошибка модалки: closeBtn.click is not a function
+   107/424. Выбрать бесплатно
+      ❌ Ошибка модалки: closeBtn.click is not a function
+   108/424. Выбрать бесплатно
+      ❌ Ошибка модалки: closeBtn.click is not a function
+   109/424. тесто классическое и соус томатный
+      ❌ Ошибка модалки: closeBtn.click is not a function
+   110/424. тесто классическое и соус томатный
+      ❌ Ошибка модалки: closeBtn.click is not a function
+   111/424. тесто классическое и соус белый
+      ❌ Ошибка модалки: closeBtn.click is not a function
+   112/424. тесто томатное и соус томатный
+      ❌ Ошибка модалки: closeBtn.click is not a function
+   113/424. тесто томатное соус белый
+      ❌ Ошибка модалки: closeBtn.click is not a function
+   114/424. Дополнительно
+      ❌ Ошибка модалки: closeBtn.click is not a function
+   115/424. Пицца "Капричоза"
+      ❌ Ошибка модалки: closeBtn.click is not a function
+   116/424. Выбрать бесплатно
+      ❌ Ошибка модалки: closeBtn.click is not a function
+   117/424. Выбрать бесплатно
+      ❌ Ошибка модалки: closeBtn.click is not a function
+   118/424. тесто классическое и соус томатный
+      ❌ Ошибка модалки: closeBtn.click is not a function
+   119/424. тесто классическое и соус томатный
+      ❌ Ошибка модалки: closeBtn.click is not a function
+   120/424. тесто классическое и соус белый
+      ❌ Ошибка модалки: closeBtn.click is not a function
+   121/424. тесто томатное соус и белый
+      ❌ Ошибка модалки: closeBtn.click is not a function
+   122/424. тесто томатное соус и томатный
+      ❌ Ошибка модалки: closeBtn.click is not a function
+   123/424. Дополнительно
+      ❌ Ошибка модалки: closeBtn.click is not a function
+   124/424. Пицца "Классическая Маргарита"
+      ❌ Ошибка модалки: closeBtn.click is not a function
+   125/424. Выбрать бесплатно
+      ❌ Ошибка модалки: closeBtn.click is not a function
+   126/424. Выбрать бесплатно
+      ❌ Ошибка модалки: closeBtn.click is not a function
+   127/424. тесто классическое и соус томатный
+      ❌ Ошибка модалки: closeBtn.click is not a function
+   128/424. тесто классическое и соус томатный
+      ❌ Ошибка модалки: closeBtn.click is not a function
+   129/424. тесто классическое и соус белый
+      ❌ Ошибка модалки: closeBtn.click is not a function
+   130/424. тесто томатное соус и белый
+      ❌ Ошибка модалки: closeBtn.click is not a function
+   131/424. тесто томатное соус и томатный
+      ❌ Ошибка модалки: closeBtn.click is not a function
+   132/424. Дополнительно
+      ❌ Ошибка модалки: closeBtn.click is not a function
+   133/424. Пицца "4 сыра"
+      ❌ Ошибка модалки: closeBtn.click is not a function
+   134/424. Выбрать бесплатно
+      ❌ Ошибка модалки: closeBtn.click is not a function
+   135/424. Выбрать бесплатно
+      ❌ Ошибка модалки: closeBtn.click is not a function
+   136/424. тесто классическое и соус белый
+      ❌ Ошибка модалки: closeBtn.click is not a function
+   137/424. тесто классическое и соус белый
+      ❌ Ошибка модалки: closeBtn.click is not a function
+   138/424. тесто классическое и соус томатный
+      ❌ Ошибка модалки: closeBtn.click is not a function
+   139/424. тесто томатное соус и белый
+      ❌ Ошибка модалки: closeBtn.click is not a function
+   140/424. тесто томатное соус и томатный
+      ❌ Ошибка модалки: closeBtn.click is not a function
+   141/424. Дополнительно
+      ❌ Ошибка модалки: closeBtn.click is not a function
+   142/424. Пицца Свинина BBQ с ананасами
+      ❌ Ошибка модалки: closeBtn.click is not a function
+   143/424. Выбрать бесплатно
+      ❌ Ошибка модалки: closeBtn.click is not a function
+   144/424. Выбрать бесплатно
+      ❌ Ошибка модалки: closeBtn.click is not a function
+   145/424. тесто классическое и соус томатный
+      ❌ Ошибка модалки: closeBtn.click is not a function
+   146/424. тесто классическое и соус томатный
+      ❌ Ошибка модалки: closeBtn.click is not a function
+   147/424. тесто классическое и соус белый
+      ❌ Ошибка модалки: closeBtn.click is not a function
+   148/424. тесто томатное соус и белый
+      ❌ Ошибка модалки: closeBtn.click is not a function
+   149/424. тесто томатное соус и томатный
+      ❌ Ошибка модалки: closeBtn.click is not a function
+   150/424. Дополнительно
+      ❌ Ошибка модалки: closeBtn.click is not a function
+   151/424. Пицца Говядина «Терияки»
+      ❌ Ошибка модалки: closeBtn.click is not a function
+   152/424. Выбрать бесплатно
+      ❌ Ошибка модалки: closeBtn.click is not a function
+   153/424. Выбрать бесплатно
+      ❌ Ошибка модалки: closeBtn.click is not a function
+   154/424. тесто классическое и соус томатный
+      ❌ Ошибка модалки: closeBtn.click is not a function
+   155/424. тесто классическое и соус томатный
+      ❌ Ошибка модалки: closeBtn.click is not a function
+   156/424. тесто классическое и соус белый
+      ❌ Ошибка модалки: closeBtn.click is not a function
+   157/424. тесто томатное соус белый
+   158/424. тесто томатное соус и томатный
+   159/424. Дополнительно
+   160/424. Пицца "Карбонара"
+      ❌ Ошибка модалки: closeBtn.click is not a function
+   161/424. Выбрать бесплатно
+      ❌ Ошибка модалки: closeBtn.click is not a function
+   162/424. Выбрать бесплатно
+   163/424. тесто классическое и соус белый
+   164/424. тесто классическое и соус белый
+   165/424. тесто классическое и соус томатный
+      ❌ Ошибка модалки: closeBtn.click is not a function
+   166/424. тесто томатное соус и белый
+      ❌ Ошибка модалки: closeBtn.click is not a function
+   167/424. тесто томатное соус и томатный
+   168/424. Дополнительно
+   169/424. Пицца с мясными шариками
+   170/424. Выбрать бесплатно
+      ❌ Ошибка модалки: closeBtn.click is not a function
+   171/424. Выбрать бесплатно
+      ❌ Ошибка модалки: closeBtn.click is not a function
+   172/424. тесто классическое и соус томатный
+   173/424. тесто классическое и соус томатный
+   174/424. тесто классическое и соус белый
+   175/424. тесто томатное соус и белый
+      ❌ Ошибка модалки: closeBtn.click is not a function
+   176/424. тесто томатное соус и томатный
+      ❌ Ошибка модалки: closeBtn.click is not a function
+   177/424. Дополнительно
+   178/424. Пицца "Пера" с грушей и сыром Горгонзола
+   179/424. Выбрать бесплатно
+   180/424. Выбрать бесплатно
+      ❌ Ошибка модалки: closeBtn.click is not a function
+   181/424. тесто классическое и соус белый
+      ❌ Ошибка модалки: closeBtn.click is not a function
+   182/424. тесто классическое и соус белый
+   183/424. тесто классическое и соус томатный
+   184/424. тесто томатное соус и белый
+   185/424. тесто томатное соус томатный
+      ❌ Ошибка модалки: closeBtn.click is not a function
+   186/424. Дополнительно
+      ❌ Ошибка модалки: closeBtn.click is not a function
+   187/424. Пицца "Монтенегро"
+   188/424. Выбрать бесплатно
+   189/424. Выбрать бесплатно
+   190/424. Тесто классическое
+      ❌ Ошибка модалки: closeBtn.click is not a function
+   191/424. Тесто классическое
+      ❌ Ошибка модалки: closeBtn.click is not a function
+   192/424. Тесто томатное
+   193/424. Дополнительно
+   194/424. Пицца "Суприм"
+   195/424. Выбрать бесплатно
+      ❌ Ошибка модалки: closeBtn.click is not a function
+   196/424. Выбрать бесплатно
+      ❌ Ошибка модалки: closeBtn.click is not a function
+   197/424. тесто классическое и соус томатный
+   198/424. тесто классическое и соус томатный
+   199/424. тесто классическое и соус белый
+   200/424. тесто томатное соус и белый
+      ❌ Ошибка модалки: closeBtn.click is not a function
+   201/424. тесто томатное соус и томатный
+      ❌ Ошибка модалки: closeBtn.click is not a function
+   202/424. Дополнительно
+      ❌ Ошибка модалки: closeBtn.click is not a function
+   203/424. Пицца "Вегетариано"
+      ❌ Ошибка модалки: closeBtn.click is not a function
+   204/424. Выбрать бесплатно
+      ❌ Ошибка модалки: closeBtn.click is not a function
+   205/424. Выбрать бесплатно
+      ❌ Ошибка модалки: closeBtn.click is not a function
+   206/424. тесто классическое и соус томатный
+      ❌ Ошибка модалки: closeBtn.click is not a function
+   207/424. тесто классическое и соус томатный
+      ❌ Ошибка модалки: closeBtn.click is not a function
+   208/424. тесто классическое и соус белый
+      ❌ Ошибка модалки: closeBtn.click is not a function
+   209/424. тесто томатное соус белый
+      ❌ Ошибка модалки: closeBtn.click is not a function
+   210/424. тесто томатное соус и томатный
+      ❌ Ошибка модалки: closeBtn.click is not a function
+   211/424. Дополнительно
+      ❌ Ошибка модалки: closeBtn.click is not a function
+   212/424. Пицца "Кокорита"
+      ❌ Ошибка модалки: closeBtn.click is not a function
+   213/424. Выбрать бесплатно
+      ❌ Ошибка модалки: closeBtn.click is not a function
+   214/424. Выбрать бесплатно
+      ❌ Ошибка модалки: closeBtn.click is not a function
+   215/424. тесто классическое и соус белый
+      ❌ Ошибка модалки: closeBtn.click is not a function
+   216/424. тесто классическое и соус белый
+      ❌ Ошибка модалки: closeBtn.click is not a function
+   217/424. тесто классическое и соус томатный
+      ❌ Ошибка модалки: closeBtn.click is not a function
+   218/424. тесто томатное соус и белый
+      ❌ Ошибка модалки: closeBtn.click is not a function
+   219/424. тесто томатное соус и томатный
+      ❌ Ошибка модалки: closeBtn.click is not a function
+   220/424. Дополнительно
+      ❌ Ошибка модалки: closeBtn.click is not a function
+   221/424. Пицца "4 сезона: Ультра"
+      ❌ Ошибка модалки: closeBtn.click is not a function
+   222/424. Выбрать бесплатно
+      ❌ Ошибка модалки: closeBtn.click is not a function
+   223/424. Выбрать бесплатно
+      ❌ Ошибка модалки: closeBtn.click is not a function
+   224/424. тесто классическое и соус томатный
+      ❌ Ошибка модалки: closeBtn.click is not a function
+   225/424. тесто классическое и соус томатный
+      ❌ Ошибка модалки: closeBtn.click is not a function
+   226/424. тесто классическое и соус белый
+      ❌ Ошибка модалки: closeBtn.click is not a function
+   227/424. тесто томатное соус и белый
+      ❌ Ошибка модалки: closeBtn.click is not a function
+   228/424. тесто томатное соус и томатный
+      ❌ Ошибка модалки: closeBtn.click is not a function
+   229/424. Дополнительно
+      ❌ Ошибка модалки: closeBtn.click is not a function
+   230/424. Пицца "Salsicciotti"
+      ❌ Ошибка модалки: closeBtn.click is not a function
+   231/424. Выбрать бесплатно
+      ❌ Ошибка модалки: closeBtn.click is not a function
+   232/424. Выбрать бесплатно
+      ❌ Ошибка модалки: closeBtn.click is not a function
+   233/424. тесто классическое и соус томатный
+      ❌ Ошибка модалки: closeBtn.click is not a function
+   234/424. тесто классическое и соус томатный
+      ❌ Ошибка модалки: closeBtn.click is not a function
+   235/424. тесто классическое и соус белый
+      ❌ Ошибка модалки: closeBtn.click is not a function
+   236/424. тесто томатное соус и белый
+      ❌ Ошибка модалки: closeBtn.click is not a function
+   237/424. тесто томатное соус и томатный
+      ❌ Ошибка модалки: closeBtn.click is not a function
+   238/424. Дополнительно
+      ❌ Ошибка модалки: closeBtn.click is not a function
+   239/424. Пицца с колбасой Мортаделла, сыром Страчателла и жареными фисташками
+      ❌ Ошибка модалки: closeBtn.click is not a function
+   240/424. Выбрать бесплатно
+      ❌ Ошибка модалки: closeBtn.click is not a function
+   241/424. Выбрать бесплатно
+      ❌ Ошибка модалки: closeBtn.click is not a function
+   242/424. тесто классическое и соус томатный
+      ❌ Ошибка модалки: closeBtn.click is not a function
+   243/424. тесто классическое и соус томатный
+      ❌ Ошибка модалки: closeBtn.click is not a function
+   244/424. тесто классическое и соус белый
+      ❌ Ошибка модалки: closeBtn.click is not a function
+   245/424. тесто томатное соус и белый
+      ❌ Ошибка модалки: closeBtn.click is not a function
+   246/424. тесто томатное соус и томатный
+      ❌ Ошибка модалки: closeBtn.click is not a function
+   247/424. Дополнительно
+      ❌ Ошибка модалки: closeBtn.click is not a function
+   248/424. Пицца "Italy"
+      ❌ Ошибка модалки: closeBtn.click is not a function
+   249/424. Выбрать бесплатно
+      ❌ Ошибка модалки: closeBtn.click is not a function
+   250/424. Выбрать бесплатно
+      ❌ Ошибка модалки: closeBtn.click is not a function
+   251/424. тесто классическое и соус томатный
+      ❌ Ошибка модалки: closeBtn.click is not a function
+   252/424. тесто классическое и соус томатный
+      ❌ Ошибка модалки: closeBtn.click is not a function
+   253/424. тесто классическое и соус белый
+      ❌ Ошибка модалки: closeBtn.click is not a function
+   254/424. тесто томатное соус и белый
+      ❌ Ошибка модалки: closeBtn.click is not a function
+   255/424. тесто томатное соус и томатный
+      ❌ Ошибка модалки: closeBtn.click is not a function
+   256/424. Дополнительно
+      ❌ Ошибка модалки: closeBtn.click is not a function
+   257/424. Пицца «Мехико»
+      ❌ Ошибка модалки: closeBtn.click is not a function
+   258/424. Выбрать бесплатно
+      ❌ Ошибка модалки: closeBtn.click is not a function
+   259/424. Выбрать бесплатно
+      ❌ Ошибка модалки: closeBtn.click is not a function
+   260/424. тесто классическое и соус томатный
+      ❌ Ошибка модалки: closeBtn.click is not a function
+   261/424. тесто классическое и соус томатный
+      ❌ Ошибка модалки: closeBtn.click is not a function
+   262/424. тесто классическое и соус белый
+      ❌ Ошибка модалки: closeBtn.click is not a function
+   263/424. тесто томатное соус и белый
+      ❌ Ошибка модалки: closeBtn.click is not a function
+   264/424. тесто томатное соус и томатный
+      ❌ Ошибка модалки: closeBtn.click is not a function
+   265/424. Дополнительно
+      ❌ Ошибка модалки: closeBtn.click is not a function
+   266/424. Пицца "Реджина"
+      ❌ Ошибка модалки: closeBtn.click is not a function
+   267/424. Выбрать бесплатно
+      ❌ Ошибка модалки: closeBtn.click is not a function
+   268/424. Выбрать бесплатно
+      ❌ Ошибка модалки: closeBtn.click is not a function
+   269/424. тесто классическое и соус белый
+      ❌ Ошибка модалки: closeBtn.click is not a function
+   270/424. тесто классическое и соус белый
+      ❌ Ошибка модалки: closeBtn.click is not a function
+   271/424. тесто классическое и соус томатный
+      ❌ Ошибка модалки: closeBtn.click is not a function
+   272/424. тесто томатное соус и белый
+      ❌ Ошибка модалки: closeBtn.click is not a function
+   273/424. тесто томатное соус томатный
+      ❌ Ошибка модалки: closeBtn.click is not a function
+   274/424. Дополнительно
+      ❌ Ошибка модалки: closeBtn.click is not a function
+   275/424. Пицца "4 сезона: Мясная"
+      ❌ Ошибка модалки: closeBtn.click is not a function
+   276/424. Выбрать бесплатно
+      ❌ Ошибка модалки: closeBtn.click is not a function
+   277/424. Выбрать бесплатно
+      ❌ Ошибка модалки: closeBtn.click is not a function
+   278/424. тесто классическое и соус томатный
+      ❌ Ошибка модалки: closeBtn.click is not a function
+   279/424. тесто классическое и соус томатный
+      ❌ Ошибка модалки: closeBtn.click is not a function
+   280/424. тесто классическое и соус белый
+      ❌ Ошибка модалки: closeBtn.click is not a function
+   281/424. тесто томатное соус и белый
+      ❌ Ошибка модалки: closeBtn.click is not a function
+   282/424. тесто томатное соус и томатный
+      ❌ Ошибка модалки: closeBtn.click is not a function
+   283/424. Дополнительно
+      ❌ Ошибка модалки: closeBtn.click is not a function
+   284/424. Пицца с тунцом Блюфин
+      ❌ Ошибка модалки: closeBtn.click is not a function
+   285/424. Выбрать бесплатно
+      ❌ Ошибка модалки: closeBtn.click is not a function
+   286/424. Выбрать бесплатно
+      ❌ Ошибка модалки: closeBtn.click is not a function
+   287/424. тесто классическое и соус томатный
+      ❌ Ошибка модалки: closeBtn.click is not a function
+   288/424. тесто классическое и соус томатный
+      ❌ Ошибка модалки: closeBtn.click is not a function
+   289/424. тесто классическое и соус белый
+      ❌ Ошибка модалки: closeBtn.click is not a function
+   290/424. тесто томатное соус и белый
+      ❌ Ошибка модалки: closeBtn.click is not a function
+   291/424. тесто томатное соус и томатный
+      ❌ Ошибка модалки: closeBtn.click is not a function
+   292/424. Дополнительно
+      ❌ Ошибка модалки: closeBtn.click is not a function
+   293/424. Пицца с Лососем и сыром Бри и зеленой спаржей
+      ❌ Ошибка модалки: closeBtn.click is not a function
+   294/424. Выбрать бесплатно
+      ❌ Ошибка модалки: closeBtn.click is not a function
+   295/424. Выбрать бесплатно
+      ❌ Ошибка модалки: closeBtn.click is not a function
+   296/424. тесто классическое и соус белый
+      ❌ Ошибка модалки: closeBtn.click is not a function
+   297/424. тесто классическое и соус белый
+      ❌ Ошибка модалки: closeBtn.click is not a function
+   298/424. тесто классическое и соус томатный
+      ❌ Ошибка модалки: closeBtn.click is not a function
+   299/424. тесто томатное соус и белый
+      ❌ Ошибка модалки: closeBtn.click is not a function
+   300/424. тесто томатное соус и томатный
+      ❌ Ошибка модалки: closeBtn.click is not a function
+   301/424. Дополнительно
+      ❌ Ошибка модалки: closeBtn.click is not a function
+   302/424. Пицца «Ди Парма»
+      ❌ Ошибка модалки: closeBtn.click is not a function
+   303/424. Выбрать бесплатно
+      ❌ Ошибка модалки: closeBtn.click is not a function
+   304/424. Выбрать бесплатно
+      ❌ Ошибка модалки: closeBtn.click is not a function
+   305/424. тесто классическое и соус белый
+      ❌ Ошибка модалки: closeBtn.click is not a function
+   306/424. тесто классическое и соус белый
+      ❌ Ошибка модалки: closeBtn.click is not a function
+   307/424. тесто классическое и соус томатный
+      ❌ Ошибка модалки: closeBtn.click is not a function
+   308/424. тесто томатное соус и белый
+      ❌ Ошибка модалки: closeBtn.click is not a function
+   309/424. тесто томатное соус и томатный
+      ❌ Ошибка модалки: closeBtn.click is not a function
+   310/424. Дополнительно
+      ❌ Ошибка модалки: closeBtn.click is not a function
+   311/424. Пицца "Сицилийская" с анчоусами и каперсами
+      ❌ Ошибка модалки: closeBtn.click is not a function
+   312/424. Выбрать бесплатно
+      ❌ Ошибка модалки: Execution context was destroyed
+   313/424. Выбрать бесплатно
+      ❌ Ошибка модалки: Attempted to use detached Frame '84C8CF750417D0EB9F536217BA2947CA'.
+   314/424. тесто классическое и соус томатный
+      ❌ Ошибка модалки: Attempted to use detached Frame '84C8CF750417D0EB9F536217BA2947CA'.
+   315/424. тесто классическое и соус томатный
+      ❌ Ошибка модалки: Attempted to use detached Frame '84C8CF750417D0EB9F536217BA2947CA'.
+   316/424. тесто классическое и соус сливочный
+      ❌ Ошибка модалки: Attempted to use detached Frame '84C8CF750417D0EB9F536217BA2947CA'.
+   317/424. тесто томатное и соус томатный
+      ❌ Ошибка модалки: Attempted to use detached Frame '84C8CF750417D0EB9F536217BA2947CA'.
+   318/424. тесто томатное и соус сливочный
+      ❌ Ошибка модалки: Attempted to use detached Frame '84C8CF750417D0EB9F536217BA2947CA'.
+   319/424. Дополнительно
+      ❌ Ошибка модалки: Attempted to use detached Frame '84C8CF750417D0EB9F536217BA2947CA'.
+   320/424. Пицца с Олениной
+      ❌ Ошибка модалки: Attempted to use detached Frame '84C8CF750417D0EB9F536217BA2947CA'.
+   321/424. Выбрать бесплатно
+      ❌ Ошибка модалки: Attempted to use detached Frame '84C8CF750417D0EB9F536217BA2947CA'.
+   322/424. Выбрать бесплатно
+      ❌ Ошибка модалки: Attempted to use detached Frame '84C8CF750417D0EB9F536217BA2947CA'.
+   323/424. тесто классическое и соус белый
+      ❌ Ошибка модалки: Attempted to use detached Frame '84C8CF750417D0EB9F536217BA2947CA'.
+   324/424. тесто классическое и соус белый
+      ❌ Ошибка модалки: Attempted to use detached Frame '84C8CF750417D0EB9F536217BA2947CA'.
+   325/424. тесто классическое и соус томатный
+      ❌ Ошибка модалки: Attempted to use detached Frame '84C8CF750417D0EB9F536217BA2947CA'.
+   326/424. тесто томатное соус и белый
+      ❌ Ошибка модалки: Attempted to use detached Frame '84C8CF750417D0EB9F536217BA2947CA'.
+   327/424. тесто томатное соус и томатный
+      ❌ Ошибка модалки: Attempted to use detached Frame '84C8CF750417D0EB9F536217BA2947CA'.
+   328/424. Дополнительно
+      ❌ Ошибка модалки: Attempted to use detached Frame '84C8CF750417D0EB9F536217BA2947CA'.
+   329/424. Пицца "Frutti di Mare" с морепродуктами
+      ❌ Ошибка модалки: Attempted to use detached Frame '84C8CF750417D0EB9F536217BA2947CA'.
+   330/424. Выбрать бесплатно
+      ❌ Ошибка модалки: Attempted to use detached Frame '84C8CF750417D0EB9F536217BA2947CA'.
+   331/424. Выбрать бесплатно
+      ❌ Ошибка модалки: Attempted to use detached Frame '84C8CF750417D0EB9F536217BA2947CA'.
+   332/424. тесто классическое и соус томатный
+      ❌ Ошибка модалки: Attempted to use detached Frame '84C8CF750417D0EB9F536217BA2947CA'.
+   333/424. тесто классическое и соус томатный
+      ❌ Ошибка модалки: Attempted to use detached Frame '84C8CF750417D0EB9F536217BA2947CA'.
+   334/424. тесто классическое и соус белый
+      ❌ Ошибка модалки: Attempted to use detached Frame '84C8CF750417D0EB9F536217BA2947CA'.
+   335/424. тесто томатное соус и белый
+      ❌ Ошибка модалки: Attempted to use detached Frame '84C8CF750417D0EB9F536217BA2947CA'.
+   336/424. тесто томатное соус и томатный
+      ❌ Ошибка модалки: Attempted to use detached Frame '84C8CF750417D0EB9F536217BA2947CA'.
+   337/424. Дополнительно
+      ❌ Ошибка модалки: Attempted to use detached Frame '84C8CF750417D0EB9F536217BA2947CA'.
+   338/424. Пицца с итальянским черным трюфелем, сыром Пармезан и трюфельным маслом
+      ❌ Ошибка модалки: Attempted to use detached Frame '84C8CF750417D0EB9F536217BA2947CA'.
+   339/424. Выбрать бесплатно
+      ❌ Ошибка модалки: Attempted to use detached Frame '84C8CF750417D0EB9F536217BA2947CA'.
+   340/424. Выбрать бесплатно
+      ❌ Ошибка модалки: Attempted to use detached Frame '84C8CF750417D0EB9F536217BA2947CA'.
+   341/424. тесто классическое и соус белый
+      ❌ Ошибка модалки: Attempted to use detached Frame '84C8CF750417D0EB9F536217BA2947CA'.
+   342/424. тесто классическое и соус белый
+      ❌ Ошибка модалки: Attempted to use detached Frame '84C8CF750417D0EB9F536217BA2947CA'.
+   343/424. тесто классическое и соус томатный
+      ❌ Ошибка модалки: Attempted to use detached Frame '84C8CF750417D0EB9F536217BA2947CA'.
+   344/424. тесто томатное и соус сливочный
+      ❌ Ошибка модалки: Attempted to use detached Frame '84C8CF750417D0EB9F536217BA2947CA'.
+   345/424. тесто томатное и соус томатный
+      ❌ Ошибка модалки: Attempted to use detached Frame '84C8CF750417D0EB9F536217BA2947CA'.
+   346/424. Дополнительно
+      ❌ Ошибка модалки: Attempted to use detached Frame '84C8CF750417D0EB9F536217BA2947CA'.
+   347/424. Пицца с Камчатскими крабами, морскими гребешками, креветками и раками
+      ❌ Ошибка модалки: Attempted to use detached Frame '84C8CF750417D0EB9F536217BA2947CA'.
+   348/424. Выбрать бесплатно
+      ❌ Ошибка модалки: Attempted to use detached Frame '84C8CF750417D0EB9F536217BA2947CA'.
+   349/424. Выбрать бесплатно
+      ❌ Ошибка модалки: Attempted to use detached Frame '84C8CF750417D0EB9F536217BA2947CA'.
+   350/424. тесто классическое и соус сливочный
+      ❌ Ошибка модалки: Attempted to use detached Frame '84C8CF750417D0EB9F536217BA2947CA'.
+   351/424. тесто классическое и соус сливочный
+      ❌ Ошибка модалки: Attempted to use detached Frame '84C8CF750417D0EB9F536217BA2947CA'.
+   352/424. тесто классическое и соус томатный
+      ❌ Ошибка модалки: Attempted to use detached Frame '84C8CF750417D0EB9F536217BA2947CA'.
+   353/424. тесто томатное и соус сливочный
+      ❌ Ошибка модалки: Attempted to use detached Frame '84C8CF750417D0EB9F536217BA2947CA'.
+   354/424. тесто томатное и соус томатный
+      ❌ Ошибка модалки: Attempted to use detached Frame '84C8CF750417D0EB9F536217BA2947CA'.
+   355/424. Дополнительно
+      ❌ Ошибка модалки: Attempted to use detached Frame '84C8CF750417D0EB9F536217BA2947CA'.
+   356/424. Пицца с Уткой и Фуа гра
+      ❌ Ошибка модалки: Attempted to use detached Frame '84C8CF750417D0EB9F536217BA2947CA'.
+   357/424. Выбрать бесплатно
+      ❌ Ошибка модалки: Attempted to use detached Frame '84C8CF750417D0EB9F536217BA2947CA'.
+   358/424. Выбрать бесплатно
+      ❌ Ошибка модалки: Attempted to use detached Frame '84C8CF750417D0EB9F536217BA2947CA'.
+   359/424. тесто классическое и соус томатный
+      ❌ Ошибка модалки: Attempted to use detached Frame '84C8CF750417D0EB9F536217BA2947CA'.
+   360/424. тесто классическое и соус томатный
+      ❌ Ошибка модалки: Attempted to use detached Frame '84C8CF750417D0EB9F536217BA2947CA'.
+   361/424. тесто классическое и соус сливочный
+      ❌ Ошибка модалки: Attempted to use detached Frame '84C8CF750417D0EB9F536217BA2947CA'.
+   362/424. тесто томатное и соус томатный
+      ❌ Ошибка модалки: Attempted to use detached Frame '84C8CF750417D0EB9F536217BA2947CA'.
+   363/424. тесто томатное и соус сливочный
+      ❌ Ошибка модалки: Attempted to use detached Frame '84C8CF750417D0EB9F536217BA2947CA'.
+   364/424. Дополнительно
+      ❌ Ошибка модалки: Attempted to use detached Frame '84C8CF750417D0EB9F536217BA2947CA'.
+   365/424. Пицца с чесночными креветками, вялеными томатами, сыром Пармезан и петрушкой
+      ❌ Ошибка модалки: Attempted to use detached Frame '84C8CF750417D0EB9F536217BA2947CA'.
+   366/424. Выбрать бесплатно
+      ❌ Ошибка модалки: Attempted to use detached Frame '84C8CF750417D0EB9F536217BA2947CA'.
+   367/424. Выбрать бесплатно
+      ❌ Ошибка модалки: Attempted to use detached Frame '84C8CF750417D0EB9F536217BA2947CA'.
+   368/424. тесто классическое и соус сливочный
+      ❌ Ошибка модалки: Attempted to use detached Frame '84C8CF750417D0EB9F536217BA2947CA'.
+   369/424. тесто классическое и соус сливочный
+      ❌ Ошибка модалки: Attempted to use detached Frame '84C8CF750417D0EB9F536217BA2947CA'.
+   370/424. тесто классическое и соус томатный
+      ❌ Ошибка модалки: Attempted to use detached Frame '84C8CF750417D0EB9F536217BA2947CA'.
+   371/424. тесто томатное и соус сливочный
+      ❌ Ошибка модалки: Attempted to use detached Frame '84C8CF750417D0EB9F536217BA2947CA'.
+   372/424. тесто томатное и соус томатный
+      ❌ Ошибка модалки: Attempted to use detached Frame '84C8CF750417D0EB9F536217BA2947CA'.
+   373/424. Дополнительно
+      ❌ Ошибка модалки: Attempted to use detached Frame '84C8CF750417D0EB9F536217BA2947CA'.
+   374/424. Пицца с ягненком в кокосовом соусе Карри
+      ❌ Ошибка модалки: Attempted to use detached Frame '84C8CF750417D0EB9F536217BA2947CA'.
+   375/424. Выбрать бесплатно
+      ❌ Ошибка модалки: Attempted to use detached Frame '84C8CF750417D0EB9F536217BA2947CA'.
+   376/424. Выбрать бесплатно
+      ❌ Ошибка модалки: Attempted to use detached Frame '84C8CF750417D0EB9F536217BA2947CA'.
+   377/424. Тесто классическое
+      ❌ Ошибка модалки: Attempted to use detached Frame '84C8CF750417D0EB9F536217BA2947CA'.
+   378/424. Тесто классическое
+      ❌ Ошибка модалки: Attempted to use detached Frame '84C8CF750417D0EB9F536217BA2947CA'.
+   379/424. Тесто томатное
+      ❌ Ошибка модалки: Attempted to use detached Frame '84C8CF750417D0EB9F536217BA2947CA'.
+   380/424. Дополнительно
+      ❌ Ошибка модалки: Attempted to use detached Frame '84C8CF750417D0EB9F536217BA2947CA'.
+   381/424. Пицца с сыром Буратто и прошутто
+      ❌ Ошибка модалки: Attempted to use detached Frame '84C8CF750417D0EB9F536217BA2947CA'.
+   382/424. Выбрать бесплатно
+      ❌ Ошибка модалки: Attempted to use detached Frame '84C8CF750417D0EB9F536217BA2947CA'.
+   383/424. Выбрать бесплатно
+      ❌ Ошибка модалки: Attempted to use detached Frame '84C8CF750417D0EB9F536217BA2947CA'.
+   384/424. тесто классическое и соус томатный
+      ❌ Ошибка модалки: Attempted to use detached Frame '84C8CF750417D0EB9F536217BA2947CA'.
+   385/424. тесто классическое и соус томатный
+      ❌ Ошибка модалки: Attempted to use detached Frame '84C8CF750417D0EB9F536217BA2947CA'.
+   386/424. тесто классическое и соус сливочный
+      ❌ Ошибка модалки: Attempted to use detached Frame '84C8CF750417D0EB9F536217BA2947CA'.
+   387/424. тесто томатное и соус томатный
+      ❌ Ошибка модалки: Attempted to use detached Frame '84C8CF750417D0EB9F536217BA2947CA'.
+   388/424. тесто томатное и соус сливочный
+      ❌ Ошибка модалки: Attempted to use detached Frame '84C8CF750417D0EB9F536217BA2947CA'.
+   389/424. Дополнительно
+      ❌ Ошибка модалки: Attempted to use detached Frame '84C8CF750417D0EB9F536217BA2947CA'.
+   390/424. Пицца с форелью, шпинатом, сыром Пармезан, красной икрой и сыром Страчателла
+      ❌ Ошибка модалки: Attempted to use detached Frame '84C8CF750417D0EB9F536217BA2947CA'.
+   391/424. Выбрать бесплатно
+      ❌ Ошибка модалки: Attempted to use detached Frame '84C8CF750417D0EB9F536217BA2947CA'.
+   392/424. Выбрать бесплатно
+      ❌ Ошибка модалки: Attempted to use detached Frame '84C8CF750417D0EB9F536217BA2947CA'.
+   393/424. тесто классическое и соус сливочный
+      ❌ Ошибка модалки: Attempted to use detached Frame '84C8CF750417D0EB9F536217BA2947CA'.
+   394/424. тесто классическое и соус сливочный
+      ❌ Ошибка модалки: Attempted to use detached Frame '84C8CF750417D0EB9F536217BA2947CA'.
+   395/424. тесто классическое и соус томатный
+      ❌ Ошибка модалки: Attempted to use detached Frame '84C8CF750417D0EB9F536217BA2947CA'.
+   396/424. тесто томатное и соус сливочный
+      ❌ Ошибка модалки: Attempted to use detached Frame '84C8CF750417D0EB9F536217BA2947CA'.
+   397/424. тесто томатное и соус томатный
+      ❌ Ошибка модалки: Attempted to use detached Frame '84C8CF750417D0EB9F536217BA2947CA'.
+   398/424. Дополнительно
+      ❌ Ошибка модалки: Attempted to use detached Frame '84C8CF750417D0EB9F536217BA2947CA'.
+   399/424. Пицца с мраморной говядиной маринованное в соусе Ворчестер с лисичками
+      ❌ Ошибка модалки: Attempted to use detached Frame '84C8CF750417D0EB9F536217BA2947CA'.
+   400/424. Выбрать бесплатно
+      ❌ Ошибка модалки: Attempted to use detached Frame '84C8CF750417D0EB9F536217BA2947CA'.
+   401/424. Выбрать бесплатно
+      ❌ Ошибка модалки: Attempted to use detached Frame '84C8CF750417D0EB9F536217BA2947CA'.
+   402/424. Тесто классическое
+      ❌ Ошибка модалки: Attempted to use detached Frame '84C8CF750417D0EB9F536217BA2947CA'.
+   403/424. Тесто классическое
+      ❌ Ошибка модалки: Attempted to use detached Frame '84C8CF750417D0EB9F536217BA2947CA'.
+   404/424. Тесто томатное
+      ❌ Ошибка модалки: Attempted to use detached Frame '84C8CF750417D0EB9F536217BA2947CA'.
+   405/424. Дополнительно
+      ❌ Ошибка модалки: Attempted to use detached Frame '84C8CF750417D0EB9F536217BA2947CA'.
+   406/424. Pizza Piccola alla Diavola 20 см
+      ❌ Ошибка модалки: Attempted to use detached Frame '84C8CF750417D0EB9F536217BA2947CA'.
+   407/424. Дополнительно
+      ❌ Ошибка модалки: Attempted to use detached Frame '84C8CF750417D0EB9F536217BA2947CA'.
+   408/424. Дополнительно
+      ❌ Ошибка модалки: Attempted to use detached Frame '84C8CF750417D0EB9F536217BA2947CA'.
+   409/424. Pizza Piccolo Пепперони
+      ❌ Ошибка модалки: Attempted to use detached Frame '84C8CF750417D0EB9F536217BA2947CA'.
+   410/424. Дополнительно
+      ❌ Ошибка модалки: Attempted to use detached Frame '84C8CF750417D0EB9F536217BA2947CA'.
+   411/424. Дополнительно
+      ❌ Ошибка модалки: Attempted to use detached Frame '84C8CF750417D0EB9F536217BA2947CA'.
+   412/424. Pizza Piccolo Маргарита
+      ❌ Ошибка модалки: Attempted to use detached Frame '84C8CF750417D0EB9F536217BA2947CA'.
+   413/424. Дополнительно
+      ❌ Ошибка модалки: Attempted to use detached Frame '84C8CF750417D0EB9F536217BA2947CA'.
+   414/424. Дополнительно
+      ❌ Ошибка модалки: Attempted to use detached Frame '84C8CF750417D0EB9F536217BA2947CA'.
+   415/424. Pizza Piccolo Ветчина/грибы
+      ❌ Ошибка модалки: Attempted to use detached Frame '84C8CF750417D0EB9F536217BA2947CA'.
+   416/424. Дополнительно
+      ❌ Ошибка модалки: Attempted to use detached Frame '84C8CF750417D0EB9F536217BA2947CA'.
+   417/424. Дополнительно
+      ❌ Ошибка модалки: Attempted to use detached Frame '84C8CF750417D0EB9F536217BA2947CA'.
+   418/424. Pizza Piccolo Кура/Перец
+      ❌ Ошибка модалки: Attempted to use detached Frame '84C8CF750417D0EB9F536217BA2947CA'.
+   419/424. Дополнительно
+      ❌ Ошибка модалки: Attempted to use detached Frame '84C8CF750417D0EB9F536217BA2947CA'.
+   420/424. Дополнительно
+      ❌ Ошибка модалки: Attempted to use detached Frame '84C8CF750417D0EB9F536217BA2947CA'.
+   421/424. Pizza Piccolo Chicken BBQ
+      ❌ Ошибка модалки: Attempted to use detached Frame '84C8CF750417D0EB9F536217BA2947CA'.
+   422/424. Дополнительно
+      ❌ Ошибка модалки: Attempted to use detached Frame '84C8CF750417D0EB9F536217BA2947CA'.
+   423/424. Дополнительно
+      ❌ Ошибка модалки: Attempted to use detached Frame '84C8CF750417D0EB9F536217BA2947CA'.
+   424/424. Артикул:
+      ❌ Ошибка модалки: Attempted to use detached Frame '84C8CF750417D0EB9F536217BA2947CA'.
+
+📁 Категория: Меню
+   ❌ Ошибка категории: Attempted to use detached Frame '84C8CF750417D0EB9F536217BA2947CA'.
+
+📁 Категория: Мастер класс
+   ❌ Ошибка категории: Attempted to use detached Frame '84C8CF750417D0EB9F536217BA2947CA'.
+
+📁 Категория: Акции
+   ❌ Ошибка категории: Attempted to use detached Frame '84C8CF750417D0EB9F536217BA2947CA'.
+
+📁 Категория: Статьи
+   ❌ Ошибка категории: Attempted to use detached Frame '84C8CF750417D0EB9F536217BA2947CA'.
+
+📁 Категория: Контакты
+   ❌ Ошибка категории: Attempted to use detached Frame '84C8CF750417D0EB9F536217BA2947CA'.
+
+📁 Категория: Заказать #rec1271358691 .t-btnflex.t-btnflex_type_button {color:#ffffff;background-color:#2a582c;border-style:solid !important;border-color:#ffffff !important;--border-width:1px;border-radius:4px;box-shadow:none !important;transition-duration:0.2s;transition-property:background-color,color,border-color,box-shadow,opacity,transform,gap;transition-timing-function:ease-in-out;}
+   ❌ Ошибка категории: Attempted to use detached Frame '84C8CF750417D0EB9F536217BA2947CA'.
+
+📊 ИТОГИ:
+   Всего товаров: 699
+   С данными из модалок: 0
+
+💾 Сохранено в /Users/admin/Documents/GitHub/pizza/parsers/original-site-data/complete-menu.json

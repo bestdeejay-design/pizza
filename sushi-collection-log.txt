@@ -1,0 +1,21 @@
+🚀 ПОШАГОВЫЙ СБОР ДАННЫХ
+
+Категория: suchi-rolls
+URL: https://pizzanapolirsc.ru/?tfc_quantity%5B1271358691%5D=y&tfc_storepartuid%5B1271358691%5D=Suchi+&+Rolls&tfc_div=:::
+
+📂 Открываю категорию...
+📋 Получаю список товаров...
+
+✅ Найдено товаров: 0
+
+
+🎉 СБОР ЗАВЕРШЕН!
+
+📊 ИТОГИ:
+   Всего товаров: 0
+   С весом: 0
+   С описанием: 0
+   С составом: 0
+   С калориями: 0
+
+💾 Файл: /Users/admin/Documents/GitHub/pizza/parsers/original-site-data/step-by-step-collection.json

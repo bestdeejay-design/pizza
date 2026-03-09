@@ -1,0 +1,15 @@
+🔄 Обновление весов...
+
+Создано 38 уникальных записей с весами
+
+
+📊 ИТОГИ:
+   Обновлено весов: 0
+   Не найдено совпадений: 0
+
+💾 Бэкап: /Users/admin/Documents/GitHub/pizza/menu-final.backup.json
+💾 Обновлено: /Users/admin/Documents/GitHub/pizza/menu-final.json
+
+🍕 ПИЦЦЫ БЕЗ ВЕСОВ (нужно прокликать):
+
+Всего пицц без весов: 0

@@ -1,0 +1,113 @@
+🚀 МАССОВЫЙ СБОР ДАННЫХ В НОВЫХ ОКНАХ
+
+
+📁 КАТЕГОРИЯ: pizza-30cm
+   Найдено товаров: 51
+   1/51 Пицца месяца с 01-31 марта : Пицца "Боло
+      ✅ Вес: ?гр
+   2/51 Пицца месяца с 01-28 февраля: Pizza alla
+      ✅ Вес: ?гр
+   3/51 Пицца Маргарита 1/4
+      ✅ Вес: ?гр
+   4/51 Пицца Пепперони 1/4
+      ✅ Вес: ?гр
+   5/51 Пицца кура/перец 1/4
+      ✅ Вес: ?гр
+   6/51 Пицца 4 сыра 1/4
+      ✅ Вес: ?гр
+   7/51 Пицца Суприм 1/4
+      ✅ Вес: ?гр
+   8/51 Неаполитанское тесто для пиццы
+      ✅ Вес: ?гр
+   9/51 Красное Неаполитанское тесто с томатами
+      ✅ Вес: ?гр
+   10/51 Пицца "Я сам Шеф"
+      ✅ Вес: ?гр
+   11/51 Сырные палки с соусом BBQ
+      ❌ Ошибка: Attempted to use detached Frame '0F606ED1690D46882A3C743FCD232ABB'.
+   12/51 Пицца "Маргарита"
+      ❌ Ошибка: Protocol error (Network.getCookies): Session closed. Most likely the page has been closed.
+   13/51 Пицца Пепперони
+      ❌ Ошибка: Protocol error (Network.getCookies): Session closed. Most likely the page has been closed.
+   14/51 Пицца Ветчина/грибы
+      ❌ Ошибка: Protocol error (Network.getCookies): Session closed. Most likely the page has been closed.
+   15/51 Пицца Кура с печеным перцем
+      ❌ Ошибка: Protocol error (Network.getCookies): Session closed. Most likely the page has been closed.
+   16/51 Pizza Salvata Mila
+      ❌ Ошибка: Protocol error (Network.getCookies): Session closed. Most likely the page has been closed.
+   17/51 Пицца с лисичками, шампиньонами и красны
+      ❌ Ошибка: Protocol error (Network.getCookies): Session closed. Most likely the page has been closed.
+   18/51 Pizza Chicken BBQ
+      ❌ Ошибка: Protocol error (Network.getCookies): Session closed. Most likely the page has been closed.
+   19/51 Пицца "Капричоза"
+      ❌ Ошибка: Protocol error (Network.getCookies): Session closed. Most likely the page has been closed.
+   20/51 Пицца "Классическая Маргарита"
+      ❌ Ошибка: Protocol error (Network.getCookies): Session closed. Most likely the page has been closed.
+   21/51 Пицца "4 сыра"
+      ❌ Ошибка: Protocol error (Network.getCookies): Session closed. Most likely the page has been closed.
+   22/51 Пицца Свинина BBQ с ананасами
+      ❌ Ошибка: Protocol error (Network.getCookies): Session closed. Most likely the page has been closed.
+   23/51 Пицца Говядина «Терияки»
+      ❌ Ошибка: Protocol error (Network.getCookies): Session closed. Most likely the page has been closed.
+   24/51 Пицца "Карбонара"
+      ❌ Ошибка: Protocol error (Network.getCookies): Session closed. Most likely the page has been closed.
+   25/51 Пицца с мясными шариками
+      ❌ Ошибка: Protocol error (Network.getCookies): Session closed. Most likely the page has been closed.
+   26/51 Пицца "Пера" с грушей и сыром Горгонзола
+      ❌ Ошибка: Protocol error (Network.getCookies): Session closed. Most likely the page has been closed.
+   27/51 Пицца "Монтенегро"
+      ❌ Ошибка: Protocol error (Network.getCookies): Session closed. Most likely the page has been closed.
+   28/51 Пицца "Суприм"
+      ❌ Ошибка: Protocol error (Network.getCookies): Session closed. Most likely the page has been closed.
+   29/51 Пицца "Вегетариано"
+      ❌ Ошибка: Protocol error (Network.getCookies): Session closed. Most likely the page has been closed.
+   30/51 Пицца "Кокорита"
+      ❌ Ошибка: Protocol error (Network.getCookies): Session closed. Most likely the page has been closed.
+   31/51 Пицца "4 сезона: Ультра"
+      ❌ Ошибка: Protocol error (Network.getCookies): Session closed. Most likely the page has been closed.
+   32/51 Пицца "Salsicciotti"
+      ❌ Ошибка: Protocol error (Network.getCookies): Session closed. Most likely the page has been closed.
+   33/51 Пицца с колбасой Мортаделла, сыром Страч
+      ❌ Ошибка: Protocol error (Network.getCookies): Session closed. Most likely the page has been closed.
+   34/51 Пицца "Italy"
+      ❌ Ошибка: Protocol error (Network.getCookies): Session closed. Most likely the page has been closed.
+   35/51 Пицца «Мехико»
+      ❌ Ошибка: Protocol error (Network.getCookies): Session closed. Most likely the page has been closed.
+   36/51 Пицца "Реджина"
+      ❌ Ошибка: Protocol error (Network.getCookies): Session closed. Most likely the page has been closed.
+   37/51 Пицца "4 сезона: Мясная"
+      ❌ Ошибка: Protocol error (Network.getCookies): Session closed. Most likely the page has been closed.
+   38/51 Пицца с тунцом Блюфин
+      ❌ Ошибка: Protocol error (Network.getCookies): Session closed. Most likely the page has been closed.
+   39/51 Пицца с Лососем и сыром Бри и зеленой сп
+      ❌ Ошибка: Protocol error (Network.getCookies): Session closed. Most likely the page has been closed.
+   40/51 Пицца «Ди Парма»
+      ❌ Ошибка: Protocol error (Network.getCookies): Session closed. Most likely the page has been closed.
+   41/51 Пицца "Сицилийская" с анчоусами и каперс
+      ❌ Ошибка: Protocol error (Network.getCookies): Session closed. Most likely the page has been closed.
+   42/51 Пицца с Олениной
+      ❌ Ошибка: Protocol error (Network.getCookies): Session closed. Most likely the page has been closed.
+   43/51 Пицца "Frutti di Mare" с морепродуктами
+      ❌ Ошибка: Protocol error (Network.getCookies): Session closed. Most likely the page has been closed.
+   44/51 Пицца с итальянским черным трюфелем, сыр
+      ❌ Ошибка: Protocol error (Network.getCookies): Session closed. Most likely the page has been closed.
+   45/51 Пицца с Камчатскими крабами, морскими гр
+      ❌ Ошибка: Protocol error (Network.getCookies): Session closed. Most likely the page has been closed.
+   46/51 Пицца с Уткой и Фуа гра
+      ❌ Ошибка: Protocol error (Network.getCookies): Session closed. Most likely the page has been closed.
+   47/51 Пицца с чесночными креветками, вялеными 
+      ❌ Ошибка: Protocol error (Network.getCookies): Session closed. Most likely the page has been closed.
+   48/51 Пицца с ягненком в кокосовом соусе Карри
+      ❌ Ошибка: Protocol error (Network.getCookies): Session closed. Most likely the page has been closed.
+   49/51 Пицца с сыром Буратто и прошутто
+      ❌ Ошибка: Protocol error (Network.getCookies): Session closed. Most likely the page has been closed.
+   50/51 Пицца с форелью, шпинатом, сыром Пармеза
+      ❌ Ошибка: Protocol error (Network.getCookies): Session closed. Most likely the page has been closed.
+   51/51 Пицца с мраморной говядиной маринованное
+      ❌ Ошибка: Protocol error (Network.getCookies): Session closed. Most likely the page has been closed.
+
+📁 КАТЕГОРИЯ: pizza-piccolo-20cm
+Error: Attempted to use detached Frame 'C3C3ED97E496AAFE31ED01D22CB338AE'.
+    at CdpFrame.<anonymous> (/Users/admin/Documents/GitHub/pizza/node_modules/puppeteer-core/lib/cjs/puppeteer/util/decorators.js:107:23)
+    at CdpPage.goto (/Users/admin/Documents/GitHub/pizza/node_modules/puppeteer-core/lib/cjs/puppeteer/api/Page.js:580:43)
+    at massCollect (/Users/admin/Documents/GitHub/pizza/parsers/mass-new-window-collector.js:49:28)

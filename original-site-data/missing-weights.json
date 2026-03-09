@@ -1,0 +1,12 @@
+{
+  "collectedAt": "2026-03-08T20:30:31.944Z",
+  "total": 1,
+  "needed": 15,
+  "products": [
+    {
+      "title": "#rec1271358691 .t-slds__arrow_wrapper:hover .t-slds__arrow-withbg{border-color:#ffffff !important;background-color:rgba(51,208,205,1) !important;}#rec1271358691 .t-slds__arrow-withbg:focus-visible{border-color:#ffffff !important;background-color:rgba(51,208,205,1) !important;}     #rec1271358691 .t-slds__arrow_wrapper polyline{-webkit-transition:stroke ease-in-out .2s;-moz-transition:stroke ease-in-out .2s;-o-transition:stroke ease-in-out .2s;transition:stroke ease-in-out .2s;}#rec1271358691 .t-slds__arrow_wrapper:hover polyline{stroke:#ffffff !important;}#rec1271358691 .t-slds__arrow:focus-visible polyline{stroke:#ffffff !important;}                                              Пицца кура/перец 1/4        Артикул:     200р.р.     Дополнительно                        Трюфель черный итальянский (5гр) 900 руб",
+      "weight": 120,
+      "price": 200
+    }
+  ]
+}

@@ -9,16 +9,22 @@ node_modules/
 package-lock.json
 package.json
 
-# Парсеры и вспомогательные скрипты
+# Парсеры и вспомогательные скрипты (оставляем только авто-парсер)
 parsers/
 scripts/
 *.log
-yandex-eda-console-collector.js
-yandex-eda-direct-collector.js
-yandex-eda-hybrid-collector.js
-yandex-eda-tampermonkey-script.js
-yandex-eda-selector-finder.js
-# yandex-eda-auto-collector.js - ОСТАВИТЬ (основной парсер)
+*collector*.js
+*Tampermonkey*.js
+*selector-finder*.js
+!yandex-eda-auto-collector.js
+!yandex-eda-auto-collector-clean.js
+*.py
+*.sh
+analyze-*.js
+clean-*.js
+check-*.js
+create-*.js
+add-*.js
 
 # Оптимизация изображений (резервные копии)
 img-old/
@@ -35,6 +41,12 @@ Thumbs.db
 menu-final.backup*.json
 *-old.json
 *-backup.json
+all-modal-data-merged.json
+ALL-PRODUCTS-COMPLETE.json
+PRODUCTS-WITH-FULL-DATA.json
+*-collect*.json
+*-complete*.json
+data-completeness-report.json
 
 # Документация для разработчиков
 docs/

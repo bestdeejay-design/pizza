@@ -1,0 +1,4175 @@
+{
+  "collectedAt": "2026-03-08T19:36:22.618Z",
+  "totalProducts": 585,
+  "products": [
+    {
+      "title": "Пицца месяца с 01-31 марта : Пицца \"Болоньеза\"",
+      "price": "950р.р.",
+      "weight": null,
+      "category": "О нас"
+    },
+    {
+      "title": "Пицца месяца с 01-31 марта : Пицца \"Болоньеза\"",
+      "price": "950р.р.",
+      "weight": null,
+      "error": "closeBtn.click is not a function"
+    },
+    {
+      "title": "Пицца месяца с 01-28 февраля: Pizza alla Diavola",
+      "price": "950р.р.",
+      "weight": 5,
+      "category": "О нас"
+    },
+    {
+      "title": "Пицца месяца с 01-28 февраля: Pizza alla Diavola",
+      "price": "950р.р.",
+      "weight": 5,
+      "error": "closeBtn.click is not a function"
+    },
+    {
+      "title": "Выбрать бесплатно",
+      "weight": 5,
+      "category": "О нас"
+    },
+    {
+      "title": "Выбрать бесплатно",
+      "weight": 5,
+      "error": "closeBtn.click is not a function"
+    },
+    {
+      "title": "Выбрать бесплатно",
+      "weight": null,
+      "category": "О нас"
+    },
+    {
+      "title": "Выбрать бесплатно",
+      "weight": null,
+      "error": "closeBtn.click is not a function"
+    },
+    {
+      "title": "тесто классическое и соус томатный",
+      "weight": null,
+      "category": "О нас"
+    },
+    {
+      "title": "тесто классическое и соус томатный",
+      "weight": null,
+      "error": "closeBtn.click is not a function"
+    },
+    {
+      "title": "тесто классическое и соус томатный",
+      "weight": null,
+      "category": "О нас"
+    },
+    {
+      "title": "тесто классическое и соус томатный",
+      "weight": null,
+      "error": "closeBtn.click is not a function"
+    },
+    {
+      "title": "тесто классическое и соус белый",
+      "weight": null,
+      "category": "О нас"
+    },
+    {
+      "title": "тесто классическое и соус белый",
+      "weight": null,
+      "error": "closeBtn.click is not a function"
+    },
+    {
+      "title": "тесто томатное и соус томатный",
+      "weight": null,
+      "category": "О нас"
+    },
+    {
+      "title": "тесто томатное и соус томатный",
+      "weight": null,
+      "error": "closeBtn.click is not a function"
+    },
+    {
+      "title": "тесто томатное соус и белый",
+      "weight": null,
+      "category": "О нас"
+    },
+    {
+      "title": "тесто томатное соус и белый",
+      "weight": null,
+      "error": "closeBtn.click is not a function"
+    },
+    {
+      "title": "Дополнительно",
+      "weight": 5,
+      "category": "О нас"
+    },
+    {
+      "title": "Дополнительно",
+      "weight": 5,
+      "error": "closeBtn.click is not a function"
+    },
+    {
+      "title": "Пицца Маргарита 1/4",
+      "price": "200р.р.",
+      "weight": 5,
+      "category": "О нас"
+    },
+    {
+      "title": "Пицца Маргарита 1/4",
+      "price": "200р.р.",
+      "weight": 5,
+      "error": "closeBtn.click is not a function"
+    },
+    {
+      "title": "Дополнительно",
+      "weight": 5,
+      "category": "О нас"
+    },
+    {
+      "title": "Дополнительно",
+      "weight": 5,
+      "error": "closeBtn.click is not a function"
+    },
+    {
+      "title": "Дополнительно",
+      "weight": 5,
+      "category": "О нас"
+    },
+    {
+      "title": "Дополнительно",
+      "weight": 5,
+      "error": "closeBtn.click is not a function"
+    },
+    {
+      "title": "Пицца Пепперони 1/4",
+      "price": "200р.р.",
+      "weight": 5,
+      "category": "О нас"
+    },
+    {
+      "title": "Пицца Пепперони 1/4",
+      "price": "200р.р.",
+      "weight": 5,
+      "error": "closeBtn.click is not a function"
+    },
+    {
+      "title": "Дополнительно",
+      "weight": 5,
+      "category": "О нас"
+    },
+    {
+      "title": "Дополнительно",
+      "weight": 5,
+      "error": "closeBtn.click is not a function"
+    },
+    {
+      "title": "Дополнительно",
+      "weight": 5,
+      "category": "О нас"
+    },
+    {
+      "title": "Дополнительно",
+      "weight": 5,
+      "error": "closeBtn.click is not a function"
+    },
+    {
+      "title": "Пицца кура/перец 1/4",
+      "price": "200р.р.",
+      "weight": 5,
+      "category": "О нас"
+    },
+    {
+      "title": "Пицца кура/перец 1/4",
+      "price": "200р.р.",
+      "weight": 5,
+      "error": "closeBtn.click is not a function"
+    },
+    {
+      "title": "Дополнительно",
+      "weight": 5,
+      "category": "О нас"
+    },
+    {
+      "title": "Дополнительно",
+      "weight": 5,
+      "error": "closeBtn.click is not a function"
+    },
+    {
+      "title": "Дополнительно",
+      "weight": 5,
+      "category": "О нас"
+    },
+    {
+      "title": "Дополнительно",
+      "weight": 5,
+      "error": "closeBtn.click is not a function"
+    },
+    {
+      "title": "Пицца 4 сыра 1/4",
+      "price": "200р.р.",
+      "weight": 5,
+      "category": "О нас"
+    },
+    {
+      "title": "Пицца 4 сыра 1/4",
+      "price": "200р.р.",
+      "weight": 5,
+      "error": "closeBtn.click is not a function"
+    },
+    {
+      "title": "Дополнительно",
+      "weight": 5,
+      "category": "О нас"
+    },
+    {
+      "title": "Дополнительно",
+      "weight": 5,
+      "error": "closeBtn.click is not a function"
+    },
+    {
+      "title": "Дополнительно",
+      "weight": 5,
+      "category": "О нас"
+    },
+    {
+      "title": "Дополнительно",
+      "weight": 5,
+      "error": "closeBtn.click is not a function"
+    },
+    {
+      "title": "Пицца Суприм 1/4",
+      "price": "200р.р.",
+      "weight": 5,
+      "category": "О нас"
+    },
+    {
+      "title": "Пицца Суприм 1/4",
+      "price": "200р.р.",
+      "weight": 5,
+      "error": "closeBtn.click is not a function"
+    },
+    {
+      "title": "Дополнительно",
+      "weight": 5,
+      "category": "О нас"
+    },
+    {
+      "title": "Дополнительно",
+      "weight": 5,
+      "error": "closeBtn.click is not a function"
+    },
+    {
+      "title": "Дополнительно",
+      "weight": 5,
+      "category": "О нас"
+    },
+    {
+      "title": "Дополнительно",
+      "weight": 5,
+      "error": "closeBtn.click is not a function"
+    },
+    {
+      "title": "Шоколадный трюфель с миндальным амаретто",
+      "price": "500р.р.",
+      "weight": null,
+      "category": "О нас"
+    },
+    {
+      "title": "Шоколадный трюфель с миндальным амаретто",
+      "price": "500р.р.",
+      "weight": null,
+      "error": "closeBtn.click is not a function"
+    },
+    {
+      "title": "Тосканский томатный крем-суп с говядиной, сыром Пармезан и чесночными гренками",
+      "price": "450р.р.",
+      "weight": null,
+      "category": "О нас"
+    },
+    {
+      "title": "Тосканский томатный крем-суп с говядиной, сыром Пармезан и чесночными гренками",
+      "price": "450р.р.",
+      "weight": null,
+      "error": "closeBtn.click is not a function"
+    },
+    {
+      "title": "Итальянские печенья Бискотти с миндальными лепестками и изюмом",
+      "price": "250р.р.",
+      "weight": null,
+      "category": "О нас"
+    },
+    {
+      "title": "Итальянские печенья Бискотти с миндальными лепестками и изюмом",
+      "price": "250р.р.",
+      "weight": null,
+      "error": "closeBtn.click is not a function"
+    },
+    {
+      "title": "Неаполитанское тесто для пиццы",
+      "price": "90р.р.",
+      "weight": null,
+      "category": "О нас"
+    },
+    {
+      "title": "Неаполитанское тесто для пиццы",
+      "price": "90р.р.",
+      "weight": null,
+      "error": "closeBtn.click is not a function"
+    },
+    {
+      "title": "Красное Неаполитанское тесто с томатами",
+      "price": "90р.р.",
+      "weight": null,
+      "category": "О нас"
+    },
+    {
+      "title": "Красное Неаполитанское тесто с томатами",
+      "price": "90р.р.",
+      "weight": null,
+      "error": "closeBtn.click is not a function"
+    },
+    {
+      "title": "Пицца \"Я сам Шеф\"",
+      "price": "450р.р.",
+      "weight": 5,
+      "category": "О нас"
+    },
+    {
+      "title": "Пицца \"Я сам Шеф\"",
+      "price": "450р.р.",
+      "weight": 5,
+      "error": "closeBtn.click is not a function"
+    },
+    {
+      "title": "Выбрать бесплатно",
+      "weight": 5,
+      "category": "О нас"
+    },
+    {
+      "title": "Выбрать бесплатно",
+      "weight": 5,
+      "error": "closeBtn.click is not a function"
+    },
+    {
+      "title": "Выбрать бесплатно",
+      "weight": null,
+      "category": "О нас"
+    },
+    {
+      "title": "Выбрать бесплатно",
+      "weight": null,
+      "error": "closeBtn.click is not a function"
+    },
+    {
+      "title": "тесто классическое и соус белый",
+      "weight": null,
+      "category": "О нас"
+    },
+    {
+      "title": "тесто классическое и соус белый",
+      "weight": null,
+      "error": "closeBtn.click is not a function"
+    },
+    {
+      "title": "тесто классическое и соус белый",
+      "weight": null,
+      "category": "О нас"
+    },
+    {
+      "title": "тесто классическое и соус белый",
+      "weight": null,
+      "error": "closeBtn.click is not a function"
+    },
+    {
+      "title": "тесто классическое и соус томатный",
+      "weight": null,
+      "category": "О нас"
+    },
+    {
+      "title": "тесто классическое и соус томатный",
+      "weight": null,
+      "error": "closeBtn.click is not a function"
+    },
+    {
+      "title": "тесто томатное соус и белый",
+      "weight": null,
+      "category": "О нас"
+    },
+    {
+      "title": "тесто томатное соус и белый",
+      "weight": null,
+      "error": "closeBtn.click is not a function"
+    },
+    {
+      "title": "тесто томатное соус и томатный",
+      "weight": null,
+      "category": "О нас"
+    },
+    {
+      "title": "тесто томатное соус и томатный",
+      "weight": null,
+      "error": "closeBtn.click is not a function"
+    },
+    {
+      "title": "Дополнительно",
+      "weight": null,
+      "category": "О нас"
+    },
+    {
+      "title": "Дополнительно",
+      "weight": null,
+      "error": "closeBtn.click is not a function"
+    },
+    {
+      "title": "Дополнительно 2",
+      "weight": null,
+      "category": "О нас"
+    },
+    {
+      "title": "Дополнительно 2",
+      "weight": null,
+      "error": "closeBtn.click is not a function"
+    },
+    {
+      "title": "Дополнительно 3",
+      "weight": 5,
+      "category": "О нас"
+    },
+    {
+      "title": "Дополнительно 3",
+      "weight": 5,
+      "error": "closeBtn.click is not a function"
+    },
+    {
+      "title": "Сырные палки с соусом BBQ",
+      "price": "600р./400 гр./400 г",
+      "weight": 400,
+      "category": "О нас"
+    },
+    {
+      "title": "Сырные палки с соусом BBQ",
+      "price": "600р./400 гр./400 г",
+      "weight": 400,
+      "error": "closeBtn.click is not a function"
+    },
+    {
+      "title": "Выбрать бесплатно",
+      "weight": 5,
+      "category": "О нас"
+    },
+    {
+      "title": "Выбрать бесплатно",
+      "weight": 5,
+      "error": "closeBtn.click is not a function"
+    },
+    {
+      "title": "Выбрать бесплатно",
+      "weight": null,
+      "category": "О нас"
+    },
+    {
+      "title": "Выбрать бесплатно",
+      "weight": null,
+      "error": "closeBtn.click is not a function"
+    },
+    {
+      "title": "Тесто классическое",
+      "weight": null,
+      "category": "О нас"
+    },
+    {
+      "title": "Тесто классическое",
+      "weight": null,
+      "error": "closeBtn.click is not a function"
+    },
+    {
+      "title": "Тесто классическое",
+      "weight": null,
+      "category": "О нас"
+    },
+    {
+      "title": "Тесто классическое",
+      "weight": null,
+      "error": "closeBtn.click is not a function"
+    },
+    {
+      "title": "Тесто томатное",
+      "weight": null,
+      "category": "О нас"
+    },
+    {
+      "title": "Тесто томатное",
+      "weight": null,
+      "error": "closeBtn.click is not a function"
+    },
+    {
+      "title": "Дополнительно",
+      "weight": 5,
+      "category": "О нас"
+    },
+    {
+      "title": "Дополнительно",
+      "weight": 5,
+      "error": "closeBtn.click is not a function"
+    },
+    {
+      "title": "Соус Унаги",
+      "price": "60р.р.",
+      "weight": null,
+      "category": "О нас"
+    },
+    {
+      "title": "Соус Унаги",
+      "price": "60р.р.",
+      "weight": null,
+      "error": "closeBtn.click is not a function"
+    },
+    {
+      "title": "Соус для корочек \"Песто\"",
+      "price": "60р.р.",
+      "weight": null,
+      "category": "О нас"
+    },
+    {
+      "title": "Соус для корочек \"Песто\"",
+      "price": "60р.р.",
+      "weight": null,
+      "error": "closeBtn.click is not a function"
+    },
+    {
+      "title": "Соус для корочек \"Кунжутный\"",
+      "price": "60р.р.",
+      "weight": null,
+      "category": "О нас"
+    },
+    {
+      "title": "Соус для корочек \"Кунжутный\"",
+      "price": "60р.р.",
+      "weight": null,
+      "error": "closeBtn.click is not a function"
+    },
+    {
+      "title": "Соус для корочек \"Чесночный\"",
+      "price": "60р.р.",
+      "weight": null,
+      "category": "О нас"
+    },
+    {
+      "title": "Соус для корочек \"Чесночный\"",
+      "price": "60р.р.",
+      "weight": null,
+      "error": "closeBtn.click is not a function"
+    },
+    {
+      "title": "Соус для корочек \"BBQ\"",
+      "price": "60р.р.",
+      "weight": null,
+      "category": "О нас"
+    },
+    {
+      "title": "Соус для корочек \"BBQ\"",
+      "price": "60р.р.",
+      "weight": null,
+      "error": "closeBtn.click is not a function"
+    },
+    {
+      "title": "Соус для корочек \"Терияки\"",
+      "price": "60р.р.",
+      "weight": null,
+      "category": "О нас"
+    },
+    {
+      "title": "Соус для корочек \"Терияки\"",
+      "price": "60р.р.",
+      "weight": null,
+      "error": "closeBtn.click is not a function"
+    },
+    {
+      "title": "Соус для корочек Спайси",
+      "price": "60р.р.",
+      "weight": null,
+      "category": "О нас"
+    },
+    {
+      "title": "Соус для корочек Спайси",
+      "price": "60р.р.",
+      "weight": null,
+      "error": "closeBtn.click is not a function"
+    },
+    {
+      "title": "Соус для корочек \"Медово-горчичный\"",
+      "price": "60р.р.",
+      "weight": null,
+      "category": "О нас"
+    },
+    {
+      "title": "Соус для корочек \"Медово-горчичный\"",
+      "price": "60р.р.",
+      "weight": null,
+      "error": "closeBtn.click is not a function"
+    },
+    {
+      "title": "Соус для корочек \"Томатный\"",
+      "price": "60р.р.",
+      "weight": null,
+      "category": "О нас"
+    },
+    {
+      "title": "Соус для корочек \"Томатный\"",
+      "price": "60р.р.",
+      "weight": null,
+      "error": "closeBtn.click is not a function"
+    },
+    {
+      "title": "Пицца \"Маргарита\"",
+      "price": "750р.р.",
+      "weight": 5,
+      "category": "О нас"
+    },
+    {
+      "title": "Пицца \"Маргарита\"",
+      "price": "750р.р.",
+      "weight": 5,
+      "error": "closeBtn.click is not a function"
+    },
+    {
+      "title": "Выбрать бесплатно",
+      "weight": 5,
+      "category": "О нас"
+    },
+    {
+      "title": "Выбрать бесплатно",
+      "weight": 5,
+      "error": "closeBtn.click is not a function"
+    },
+    {
+      "title": "Выбрать бесплатно",
+      "weight": null,
+      "category": "О нас"
+    },
+    {
+      "title": "Выбрать бесплатно",
+      "weight": null,
+      "error": "closeBtn.click is not a function"
+    },
+    {
+      "title": "тесто классическое и соус томатный",
+      "weight": null,
+      "category": "О нас"
+    },
+    {
+      "title": "тесто классическое и соус томатный",
+      "weight": null,
+      "error": "closeBtn.click is not a function"
+    },
+    {
+      "title": "тесто классическое и соус томатный",
+      "weight": null,
+      "category": "О нас"
+    },
+    {
+      "title": "тесто классическое и соус томатный",
+      "weight": null,
+      "error": "closeBtn.click is not a function"
+    },
+    {
+      "title": "тесто классическое и соус белый",
+      "weight": null,
+      "category": "О нас"
+    },
+    {
+      "title": "тесто классическое и соус белый",
+      "weight": null,
+      "error": "closeBtn.click is not a function"
+    },
+    {
+      "title": "тесто томатное соус белый",
+      "weight": null,
+      "category": "О нас"
+    },
+    {
+      "title": "тесто томатное соус белый",
+      "weight": null,
+      "error": "closeBtn.click is not a function"
+    },
+    {
+      "title": "тесто томатное соус и томатный",
+      "weight": null,
+      "category": "О нас"
+    },
+    {
+      "title": "тесто томатное соус и томатный",
+      "weight": null,
+      "error": "closeBtn.click is not a function"
+    },
+    {
+      "title": "Дополнительно",
+      "weight": 5,
+      "category": "О нас"
+    },
+    {
+      "title": "Дополнительно",
+      "weight": 5,
+      "error": "closeBtn.click is not a function"
+    },
+    {
+      "title": "Пицца Пепперони",
+      "price": "750р.р.",
+      "weight": 5,
+      "category": "О нас"
+    },
+    {
+      "title": "Пицца Пепперони",
+      "price": "750р.р.",
+      "weight": 5,
+      "error": "closeBtn.click is not a function"
+    },
+    {
+      "title": "Выбрать бесплатно",
+      "weight": 5,
+      "category": "О нас"
+    },
+    {
+      "title": "Выбрать бесплатно",
+      "weight": 5,
+      "error": "closeBtn.click is not a function"
+    },
+    {
+      "title": "Выбрать бесплатно",
+      "weight": null,
+      "category": "О нас"
+    },
+    {
+      "title": "Выбрать бесплатно",
+      "weight": null,
+      "error": "closeBtn.click is not a function"
+    },
+    {
+      "title": "тесто классическое и соус томатный",
+      "weight": null,
+      "category": "О нас"
+    },
+    {
+      "title": "тесто классическое и соус томатный",
+      "weight": null,
+      "error": "closeBtn.click is not a function"
+    },
+    {
+      "title": "тесто классическое и соус томатный",
+      "weight": null,
+      "category": "О нас"
+    },
+    {
+      "title": "тесто классическое и соус томатный",
+      "weight": null,
+      "error": "closeBtn.click is not a function"
+    },
+    {
+      "title": "тесто классическое и соус белый",
+      "weight": null,
+      "category": "О нас"
+    },
+    {
+      "title": "тесто классическое и соус белый",
+      "weight": null,
+      "error": "closeBtn.click is not a function"
+    },
+    {
+      "title": "тесто томатное соус белый",
+      "weight": null,
+      "category": "О нас"
+    },
+    {
+      "title": "тесто томатное соус белый",
+      "weight": null,
+      "error": "closeBtn.click is not a function"
+    },
+    {
+      "title": "тесто томатное соус томатный",
+      "weight": null,
+      "category": "О нас"
+    },
+    {
+      "title": "тесто томатное соус томатный",
+      "weight": null,
+      "error": "closeBtn.click is not a function"
+    },
+    {
+      "title": "Дополнительно",
+      "weight": 5,
+      "category": "О нас"
+    },
+    {
+      "title": "Дополнительно",
+      "weight": 5,
+      "error": "closeBtn.click is not a function"
+    },
+    {
+      "title": "Пицца Ветчина/грибы",
+      "price": "750р.р.",
+      "weight": null,
+      "productId": null,
+      "description": null,
+      "ingredients": null,
+      "nutrition": null,
+      "fullText": "",
+      "category": "О нас"
+    },
+    {
+      "title": "Выбрать бесплатно",
+      "weight": null,
+      "productId": null,
+      "description": null,
+      "ingredients": null,
+      "nutrition": null,
+      "fullText": "",
+      "category": "О нас"
+    },
+    {
+      "title": "Выбрать бесплатно",
+      "weight": null,
+      "category": "О нас"
+    },
+    {
+      "title": "тесто классическое и соус томатный",
+      "weight": null,
+      "productId": null,
+      "description": null,
+      "ingredients": null,
+      "nutrition": null,
+      "fullText": "",
+      "category": "О нас"
+    },
+    {
+      "title": "тесто классическое и соус томатный",
+      "weight": null,
+      "error": "closeBtn.click is not a function"
+    },
+    {
+      "title": "тесто классическое и соус томатный",
+      "weight": null,
+      "productId": null,
+      "description": null,
+      "ingredients": null,
+      "nutrition": null,
+      "fullText": "",
+      "category": "О нас"
+    },
+    {
+      "title": "тесто классическое и соус томатный",
+      "weight": null,
+      "error": "closeBtn.click is not a function"
+    },
+    {
+      "title": "тесто классическое и соус белый",
+      "weight": null,
+      "productId": null,
+      "description": null,
+      "ingredients": null,
+      "nutrition": null,
+      "fullText": "",
+      "category": "О нас"
+    },
+    {
+      "title": "тесто классическое и соус белый",
+      "weight": null,
+      "error": "closeBtn.click is not a function"
+    },
+    {
+      "title": "тесто томатное соус белый",
+      "weight": null,
+      "productId": null,
+      "description": null,
+      "ingredients": null,
+      "nutrition": null,
+      "fullText": "",
+      "category": "О нас"
+    },
+    {
+      "title": "тесто томатное соус белый",
+      "weight": null,
+      "error": "closeBtn.click is not a function"
+    },
+    {
+      "title": "тесто томатное соус томатный",
+      "weight": null,
+      "productId": null,
+      "description": null,
+      "ingredients": null,
+      "nutrition": null,
+      "fullText": "",
+      "category": "О нас"
+    },
+    {
+      "title": "тесто томатное соус томатный",
+      "weight": null,
+      "error": "closeBtn.click is not a function"
+    },
+    {
+      "title": "Дополнительно",
+      "weight": null,
+      "productId": null,
+      "description": null,
+      "ingredients": null,
+      "nutrition": null,
+      "fullText": "",
+      "category": "О нас"
+    },
+    {
+      "title": "Дополнительно",
+      "weight": 5,
+      "error": "closeBtn.click is not a function"
+    },
+    {
+      "title": "Пицца Кура с печеным перцем",
+      "price": "750р.р.",
+      "weight": null,
+      "productId": null,
+      "description": null,
+      "ingredients": null,
+      "nutrition": null,
+      "fullText": "",
+      "category": "О нас"
+    },
+    {
+      "title": "Пицца Кура с печеным перцем",
+      "price": "750р.р.",
+      "weight": 5,
+      "error": "closeBtn.click is not a function"
+    },
+    {
+      "title": "Выбрать бесплатно",
+      "weight": null,
+      "productId": null,
+      "description": null,
+      "ingredients": null,
+      "nutrition": null,
+      "fullText": "",
+      "category": "О нас"
+    },
+    {
+      "title": "Выбрать бесплатно",
+      "weight": 5,
+      "error": "closeBtn.click is not a function"
+    },
+    {
+      "title": "Выбрать бесплатно",
+      "weight": null,
+      "productId": null,
+      "description": null,
+      "ingredients": null,
+      "nutrition": null,
+      "fullText": "",
+      "category": "О нас"
+    },
+    {
+      "title": "Выбрать бесплатно",
+      "weight": null,
+      "error": "closeBtn.click is not a function"
+    },
+    {
+      "title": "тесто классическое и соус томатный",
+      "weight": null,
+      "productId": null,
+      "description": null,
+      "ingredients": null,
+      "nutrition": null,
+      "fullText": "",
+      "category": "О нас"
+    },
+    {
+      "title": "тесто классическое и соус томатный",
+      "weight": null,
+      "error": "closeBtn.click is not a function"
+    },
+    {
+      "title": "тесто классическое и соус томатный",
+      "weight": null,
+      "productId": null,
+      "description": null,
+      "ingredients": null,
+      "nutrition": null,
+      "fullText": "",
+      "category": "О нас"
+    },
+    {
+      "title": "тесто классическое и соус томатный",
+      "weight": null,
+      "error": "closeBtn.click is not a function"
+    },
+    {
+      "title": "тесто классическое и соус белый",
+      "weight": null,
+      "productId": null,
+      "description": null,
+      "ingredients": null,
+      "nutrition": null,
+      "fullText": "",
+      "category": "О нас"
+    },
+    {
+      "title": "тесто классическое и соус белый",
+      "weight": null,
+      "error": "closeBtn.click is not a function"
+    },
+    {
+      "title": "тесто томатное соус белый",
+      "weight": null,
+      "productId": null,
+      "description": null,
+      "ingredients": null,
+      "nutrition": null,
+      "fullText": "",
+      "category": "О нас"
+    },
+    {
+      "title": "тесто томатное соус и томатный",
+      "weight": null,
+      "productId": null,
+      "description": null,
+      "ingredients": null,
+      "nutrition": null,
+      "fullText": "",
+      "category": "О нас"
+    },
+    {
+      "title": "Дополнительно",
+      "weight": null,
+      "productId": null,
+      "description": null,
+      "ingredients": null,
+      "nutrition": null,
+      "fullText": "",
+      "category": "О нас"
+    },
+    {
+      "title": "Pizza Salvata Mila",
+      "price": "850р.р.",
+      "weight": null,
+      "productId": null,
+      "description": null,
+      "ingredients": null,
+      "nutrition": null,
+      "fullText": "",
+      "category": "О нас"
+    },
+    {
+      "title": "Pizza Salvata Mila",
+      "price": "850р.р.",
+      "weight": 5,
+      "error": "closeBtn.click is not a function"
+    },
+    {
+      "title": "Дополнительно",
+      "weight": null,
+      "productId": null,
+      "description": null,
+      "ingredients": null,
+      "nutrition": null,
+      "fullText": "",
+      "category": "О нас"
+    },
+    {
+      "title": "Дополнительно",
+      "weight": 5,
+      "error": "closeBtn.click is not a function"
+    },
+    {
+      "title": "Дополнительно",
+      "weight": null,
+      "productId": null,
+      "description": null,
+      "ingredients": null,
+      "nutrition": null,
+      "fullText": "",
+      "category": "О нас"
+    },
+    {
+      "title": "Пицца с лисичками, шампиньонами и красным луком",
+      "price": "850р.р.",
+      "weight": null,
+      "productId": null,
+      "description": null,
+      "ingredients": null,
+      "nutrition": null,
+      "fullText": "",
+      "category": "О нас"
+    },
+    {
+      "title": "Выбрать бесплатно",
+      "weight": 5,
+      "category": "О нас"
+    },
+    {
+      "title": "Выбрать бесплатно",
+      "weight": null,
+      "productId": null,
+      "description": null,
+      "ingredients": null,
+      "nutrition": null,
+      "fullText": "",
+      "category": "О нас"
+    },
+    {
+      "title": "Выбрать бесплатно",
+      "weight": null,
+      "error": "closeBtn.click is not a function"
+    },
+    {
+      "title": "тесто классическое и соус белый",
+      "weight": null,
+      "productId": null,
+      "description": null,
+      "ingredients": null,
+      "nutrition": null,
+      "fullText": "",
+      "category": "О нас"
+    },
+    {
+      "title": "тесто классическое и соус белый",
+      "weight": null,
+      "error": "closeBtn.click is not a function"
+    },
+    {
+      "title": "тесто классическое и соус белый",
+      "weight": null,
+      "productId": null,
+      "description": null,
+      "ingredients": null,
+      "nutrition": null,
+      "fullText": "",
+      "category": "О нас"
+    },
+    {
+      "title": "тесто классическое и соус белый",
+      "weight": null,
+      "error": "closeBtn.click is not a function"
+    },
+    {
+      "title": "тесто классическое и соус томатный",
+      "weight": null,
+      "productId": null,
+      "description": null,
+      "ingredients": null,
+      "nutrition": null,
+      "fullText": "",
+      "category": "О нас"
+    },
+    {
+      "title": "тесто классическое и соус томатный",
+      "weight": null,
+      "error": "closeBtn.click is not a function"
+    },
+    {
+      "title": "тесто томатное соус белый",
+      "weight": null,
+      "productId": null,
+      "description": null,
+      "ingredients": null,
+      "nutrition": null,
+      "fullText": "",
+      "category": "О нас"
+    },
+    {
+      "title": "тесто томатное соус белый",
+      "weight": null,
+      "error": "closeBtn.click is not a function"
+    },
+    {
+      "title": "тесто томатное и соус томатный",
+      "weight": null,
+      "productId": null,
+      "description": null,
+      "ingredients": null,
+      "nutrition": null,
+      "fullText": "",
+      "category": "О нас"
+    },
+    {
+      "title": "тесто томатное и соус томатный",
+      "weight": null,
+      "error": "closeBtn.click is not a function"
+    },
+    {
+      "title": "Дополнительно",
+      "weight": null,
+      "productId": null,
+      "description": null,
+      "ingredients": null,
+      "nutrition": null,
+      "fullText": "",
+      "category": "О нас"
+    },
+    {
+      "title": "Дополнительно",
+      "weight": 5,
+      "error": "closeBtn.click is not a function"
+    },
+    {
+      "title": "Pizza Chicken BBQ",
+      "price": "850р.р.",
+      "weight": null,
+      "productId": null,
+      "description": null,
+      "ingredients": null,
+      "nutrition": null,
+      "fullText": "",
+      "category": "О нас"
+    },
+    {
+      "title": "Pizza Chicken BBQ",
+      "price": "850р.р.",
+      "weight": 5,
+      "error": "closeBtn.click is not a function"
+    },
+    {
+      "title": "Выбрать бесплатно",
+      "weight": null,
+      "productId": null,
+      "description": null,
+      "ingredients": null,
+      "nutrition": null,
+      "fullText": "",
+      "category": "О нас"
+    },
+    {
+      "title": "Выбрать бесплатно",
+      "weight": 5,
+      "error": "closeBtn.click is not a function"
+    },
+    {
+      "title": "Выбрать бесплатно",
+      "weight": null,
+      "productId": null,
+      "description": null,
+      "ingredients": null,
+      "nutrition": null,
+      "fullText": "",
+      "category": "О нас"
+    },
+    {
+      "title": "Выбрать бесплатно",
+      "weight": null,
+      "error": "closeBtn.click is not a function"
+    },
+    {
+      "title": "тесто классическое и соус томатный",
+      "weight": null,
+      "productId": null,
+      "description": null,
+      "ingredients": null,
+      "nutrition": null,
+      "fullText": "",
+      "category": "О нас"
+    },
+    {
+      "title": "тесто классическое и соус томатный",
+      "weight": null,
+      "error": "closeBtn.click is not a function"
+    },
+    {
+      "title": "тесто классическое и соус томатный",
+      "weight": null,
+      "productId": null,
+      "description": null,
+      "ingredients": null,
+      "nutrition": null,
+      "fullText": "",
+      "category": "О нас"
+    },
+    {
+      "title": "тесто классическое и соус томатный",
+      "weight": null,
+      "error": "closeBtn.click is not a function"
+    },
+    {
+      "title": "тесто классическое и соус белый",
+      "weight": null,
+      "productId": null,
+      "description": null,
+      "ingredients": null,
+      "nutrition": null,
+      "fullText": "",
+      "category": "О нас"
+    },
+    {
+      "title": "тесто классическое и соус белый",
+      "weight": null,
+      "error": "closeBtn.click is not a function"
+    },
+    {
+      "title": "тесто томатное и соус томатный",
+      "weight": null,
+      "productId": null,
+      "description": null,
+      "ingredients": null,
+      "nutrition": null,
+      "fullText": "",
+      "category": "О нас"
+    },
+    {
+      "title": "тесто томатное и соус томатный",
+      "weight": null,
+      "error": "closeBtn.click is not a function"
+    },
+    {
+      "title": "тесто томатное соус белый",
+      "weight": null,
+      "productId": null,
+      "description": null,
+      "ingredients": null,
+      "nutrition": null,
+      "fullText": "",
+      "category": "О нас"
+    },
+    {
+      "title": "тесто томатное соус белый",
+      "weight": null,
+      "error": "closeBtn.click is not a function"
+    },
+    {
+      "title": "Дополнительно",
+      "weight": null,
+      "productId": null,
+      "description": null,
+      "ingredients": null,
+      "nutrition": null,
+      "fullText": "",
+      "category": "О нас"
+    },
+    {
+      "title": "Дополнительно",
+      "weight": 5,
+      "error": "closeBtn.click is not a function"
+    },
+    {
+      "title": "Пицца \"Капричоза\"",
+      "price": "850р.р.",
+      "weight": null,
+      "productId": null,
+      "description": null,
+      "ingredients": null,
+      "nutrition": null,
+      "fullText": "",
+      "category": "О нас"
+    },
+    {
+      "title": "Пицца \"Капричоза\"",
+      "price": "850р.р.",
+      "weight": 5,
+      "error": "closeBtn.click is not a function"
+    },
+    {
+      "title": "Выбрать бесплатно",
+      "weight": null,
+      "productId": null,
+      "description": null,
+      "ingredients": null,
+      "nutrition": null,
+      "fullText": "",
+      "category": "О нас"
+    },
+    {
+      "title": "Выбрать бесплатно",
+      "weight": 5,
+      "error": "closeBtn.click is not a function"
+    },
+    {
+      "title": "Выбрать бесплатно",
+      "weight": null,
+      "productId": null,
+      "description": null,
+      "ingredients": null,
+      "nutrition": null,
+      "fullText": "",
+      "category": "О нас"
+    },
+    {
+      "title": "Выбрать бесплатно",
+      "weight": null,
+      "error": "closeBtn.click is not a function"
+    },
+    {
+      "title": "тесто классическое и соус томатный",
+      "weight": null,
+      "productId": null,
+      "description": null,
+      "ingredients": null,
+      "nutrition": null,
+      "fullText": "",
+      "category": "О нас"
+    },
+    {
+      "title": "тесто классическое и соус томатный",
+      "weight": null,
+      "error": "closeBtn.click is not a function"
+    },
+    {
+      "title": "тесто классическое и соус томатный",
+      "weight": null,
+      "productId": null,
+      "description": null,
+      "ingredients": null,
+      "nutrition": null,
+      "fullText": "",
+      "category": "О нас"
+    },
+    {
+      "title": "тесто классическое и соус томатный",
+      "weight": null,
+      "error": "closeBtn.click is not a function"
+    },
+    {
+      "title": "тесто классическое и соус белый",
+      "weight": null,
+      "productId": null,
+      "description": null,
+      "ingredients": null,
+      "nutrition": null,
+      "fullText": "",
+      "category": "О нас"
+    },
+    {
+      "title": "тесто классическое и соус белый",
+      "weight": null,
+      "error": "closeBtn.click is not a function"
+    },
+    {
+      "title": "тесто томатное соус и белый",
+      "weight": null,
+      "productId": null,
+      "description": null,
+      "ingredients": null,
+      "nutrition": null,
+      "fullText": "",
+      "category": "О нас"
+    },
+    {
+      "title": "тесто томатное соус и белый",
+      "weight": null,
+      "error": "closeBtn.click is not a function"
+    },
+    {
+      "title": "тесто томатное соус и томатный",
+      "weight": null,
+      "productId": null,
+      "description": null,
+      "ingredients": null,
+      "nutrition": null,
+      "fullText": "",
+      "category": "О нас"
+    },
+    {
+      "title": "тесто томатное соус и томатный",
+      "weight": null,
+      "error": "closeBtn.click is not a function"
+    },
+    {
+      "title": "Дополнительно",
+      "weight": null,
+      "productId": null,
+      "description": null,
+      "ingredients": null,
+      "nutrition": null,
+      "fullText": "",
+      "category": "О нас"
+    },
+    {
+      "title": "Дополнительно",
+      "weight": 5,
+      "error": "closeBtn.click is not a function"
+    },
+    {
+      "title": "Пицца \"Классическая Маргарита\"",
+      "price": "850р.р.",
+      "weight": null,
+      "productId": null,
+      "description": null,
+      "ingredients": null,
+      "nutrition": null,
+      "fullText": "",
+      "category": "О нас"
+    },
+    {
+      "title": "Пицца \"Классическая Маргарита\"",
+      "price": "850р.р.",
+      "weight": 5,
+      "error": "closeBtn.click is not a function"
+    },
+    {
+      "title": "Выбрать бесплатно",
+      "weight": null,
+      "productId": null,
+      "description": null,
+      "ingredients": null,
+      "nutrition": null,
+      "fullText": "",
+      "category": "О нас"
+    },
+    {
+      "title": "Выбрать бесплатно",
+      "weight": 5,
+      "error": "closeBtn.click is not a function"
+    },
+    {
+      "title": "Выбрать бесплатно",
+      "weight": null,
+      "productId": null,
+      "description": null,
+      "ingredients": null,
+      "nutrition": null,
+      "fullText": "",
+      "category": "О нас"
+    },
+    {
+      "title": "Выбрать бесплатно",
+      "weight": null,
+      "error": "closeBtn.click is not a function"
+    },
+    {
+      "title": "тесто классическое и соус томатный",
+      "weight": null,
+      "productId": null,
+      "description": null,
+      "ingredients": null,
+      "nutrition": null,
+      "fullText": "",
+      "category": "О нас"
+    },
+    {
+      "title": "тесто классическое и соус томатный",
+      "weight": null,
+      "error": "closeBtn.click is not a function"
+    },
+    {
+      "title": "тесто классическое и соус томатный",
+      "weight": null,
+      "productId": null,
+      "description": null,
+      "ingredients": null,
+      "nutrition": null,
+      "fullText": "",
+      "category": "О нас"
+    },
+    {
+      "title": "тесто классическое и соус томатный",
+      "weight": null,
+      "error": "closeBtn.click is not a function"
+    },
+    {
+      "title": "тесто классическое и соус белый",
+      "weight": null,
+      "productId": null,
+      "description": null,
+      "ingredients": null,
+      "nutrition": null,
+      "fullText": "",
+      "category": "О нас"
+    },
+    {
+      "title": "тесто классическое и соус белый",
+      "weight": null,
+      "error": "closeBtn.click is not a function"
+    },
+    {
+      "title": "тесто томатное соус и белый",
+      "weight": null,
+      "productId": null,
+      "description": null,
+      "ingredients": null,
+      "nutrition": null,
+      "fullText": "",
+      "category": "О нас"
+    },
+    {
+      "title": "тесто томатное соус и белый",
+      "weight": null,
+      "error": "closeBtn.click is not a function"
+    },
+    {
+      "title": "тесто томатное соус и томатный",
+      "weight": null,
+      "productId": null,
+      "description": null,
+      "ingredients": null,
+      "nutrition": null,
+      "fullText": "",
+      "category": "О нас"
+    },
+    {
+      "title": "тесто томатное соус и томатный",
+      "weight": null,
+      "error": "closeBtn.click is not a function"
+    },
+    {
+      "title": "Дополнительно",
+      "weight": null,
+      "productId": null,
+      "description": null,
+      "ingredients": null,
+      "nutrition": null,
+      "fullText": "",
+      "category": "О нас"
+    },
+    {
+      "title": "Дополнительно",
+      "weight": 5,
+      "error": "closeBtn.click is not a function"
+    },
+    {
+      "title": "Пицца \"4 сыра\"",
+      "price": "850р.р.",
+      "weight": null,
+      "productId": null,
+      "description": null,
+      "ingredients": null,
+      "nutrition": null,
+      "fullText": "",
+      "category": "О нас"
+    },
+    {
+      "title": "Пицца \"4 сыра\"",
+      "price": "850р.р.",
+      "weight": 5,
+      "error": "closeBtn.click is not a function"
+    },
+    {
+      "title": "Выбрать бесплатно",
+      "weight": null,
+      "productId": null,
+      "description": null,
+      "ingredients": null,
+      "nutrition": null,
+      "fullText": "",
+      "category": "О нас"
+    },
+    {
+      "title": "Выбрать бесплатно",
+      "weight": 5,
+      "error": "closeBtn.click is not a function"
+    },
+    {
+      "title": "Выбрать бесплатно",
+      "weight": null,
+      "productId": null,
+      "description": null,
+      "ingredients": null,
+      "nutrition": null,
+      "fullText": "",
+      "category": "О нас"
+    },
+    {
+      "title": "Выбрать бесплатно",
+      "weight": null,
+      "error": "closeBtn.click is not a function"
+    },
+    {
+      "title": "тесто классическое и соус белый",
+      "weight": null,
+      "productId": null,
+      "description": null,
+      "ingredients": null,
+      "nutrition": null,
+      "fullText": "",
+      "category": "О нас"
+    },
+    {
+      "title": "тесто классическое и соус белый",
+      "weight": null,
+      "error": "closeBtn.click is not a function"
+    },
+    {
+      "title": "тесто классическое и соус белый",
+      "weight": null,
+      "productId": null,
+      "description": null,
+      "ingredients": null,
+      "nutrition": null,
+      "fullText": "",
+      "category": "О нас"
+    },
+    {
+      "title": "тесто классическое и соус белый",
+      "weight": null,
+      "error": "closeBtn.click is not a function"
+    },
+    {
+      "title": "тесто классическое и соус томатный",
+      "weight": null,
+      "productId": null,
+      "description": null,
+      "ingredients": null,
+      "nutrition": null,
+      "fullText": "",
+      "category": "О нас"
+    },
+    {
+      "title": "тесто классическое и соус томатный",
+      "weight": null,
+      "error": "closeBtn.click is not a function"
+    },
+    {
+      "title": "тесто томатное соус и белый",
+      "weight": null,
+      "productId": null,
+      "description": null,
+      "ingredients": null,
+      "nutrition": null,
+      "fullText": "",
+      "category": "О нас"
+    },
+    {
+      "title": "тесто томатное соус и белый",
+      "weight": null,
+      "error": "closeBtn.click is not a function"
+    },
+    {
+      "title": "тесто томатное соус и томатный",
+      "weight": null,
+      "productId": null,
+      "description": null,
+      "ingredients": null,
+      "nutrition": null,
+      "fullText": "",
+      "category": "О нас"
+    },
+    {
+      "title": "тесто томатное соус и томатный",
+      "weight": null,
+      "error": "closeBtn.click is not a function"
+    },
+    {
+      "title": "Дополнительно",
+      "weight": null,
+      "productId": null,
+      "description": null,
+      "ingredients": null,
+      "nutrition": null,
+      "fullText": "",
+      "category": "О нас"
+    },
+    {
+      "title": "Дополнительно",
+      "weight": 5,
+      "error": "closeBtn.click is not a function"
+    },
+    {
+      "title": "Пицца Свинина BBQ с ананасами",
+      "price": "850р.р.",
+      "weight": null,
+      "productId": null,
+      "description": null,
+      "ingredients": null,
+      "nutrition": null,
+      "fullText": "",
+      "category": "О нас"
+    },
+    {
+      "title": "Пицца Свинина BBQ с ананасами",
+      "price": "850р.р.",
+      "weight": 5,
+      "error": "closeBtn.click is not a function"
+    },
+    {
+      "title": "Выбрать бесплатно",
+      "weight": null,
+      "productId": null,
+      "description": null,
+      "ingredients": null,
+      "nutrition": null,
+      "fullText": "",
+      "category": "О нас"
+    },
+    {
+      "title": "Выбрать бесплатно",
+      "weight": 5,
+      "error": "closeBtn.click is not a function"
+    },
+    {
+      "title": "Выбрать бесплатно",
+      "weight": null,
+      "productId": null,
+      "description": null,
+      "ingredients": null,
+      "nutrition": null,
+      "fullText": "",
+      "category": "О нас"
+    },
+    {
+      "title": "Выбрать бесплатно",
+      "weight": null,
+      "error": "closeBtn.click is not a function"
+    },
+    {
+      "title": "тесто классическое и соус томатный",
+      "weight": null,
+      "productId": null,
+      "description": null,
+      "ingredients": null,
+      "nutrition": null,
+      "fullText": "",
+      "category": "О нас"
+    },
+    {
+      "title": "тесто классическое и соус томатный",
+      "weight": null,
+      "error": "closeBtn.click is not a function"
+    },
+    {
+      "title": "тесто классическое и соус томатный",
+      "weight": null,
+      "productId": null,
+      "description": null,
+      "ingredients": null,
+      "nutrition": null,
+      "fullText": "",
+      "category": "О нас"
+    },
+    {
+      "title": "тесто классическое и соус томатный",
+      "weight": null,
+      "error": "closeBtn.click is not a function"
+    },
+    {
+      "title": "тесто классическое и соус белый",
+      "weight": null,
+      "productId": null,
+      "description": null,
+      "ingredients": null,
+      "nutrition": null,
+      "fullText": "",
+      "category": "О нас"
+    },
+    {
+      "title": "тесто классическое и соус белый",
+      "weight": null,
+      "error": "closeBtn.click is not a function"
+    },
+    {
+      "title": "тесто томатное соус и белый",
+      "weight": null,
+      "productId": null,
+      "description": null,
+      "ingredients": null,
+      "nutrition": null,
+      "fullText": "",
+      "category": "О нас"
+    },
+    {
+      "title": "тесто томатное соус и белый",
+      "weight": null,
+      "error": "closeBtn.click is not a function"
+    },
+    {
+      "title": "тесто томатное соус и томатный",
+      "weight": null,
+      "productId": null,
+      "description": null,
+      "ingredients": null,
+      "nutrition": null,
+      "fullText": "",
+      "category": "О нас"
+    },
+    {
+      "title": "тесто томатное соус и томатный",
+      "weight": null,
+      "error": "closeBtn.click is not a function"
+    },
+    {
+      "title": "Дополнительно",
+      "weight": null,
+      "productId": null,
+      "description": null,
+      "ingredients": null,
+      "nutrition": null,
+      "fullText": "",
+      "category": "О нас"
+    },
+    {
+      "title": "Дополнительно",
+      "weight": 5,
+      "error": "closeBtn.click is not a function"
+    },
+    {
+      "title": "Пицца Говядина «Терияки»",
+      "price": "850р.р.",
+      "weight": null,
+      "productId": null,
+      "description": null,
+      "ingredients": null,
+      "nutrition": null,
+      "fullText": "",
+      "category": "О нас"
+    },
+    {
+      "title": "Пицца Говядина «Терияки»",
+      "price": "850р.р.",
+      "weight": 5,
+      "error": "closeBtn.click is not a function"
+    },
+    {
+      "title": "Выбрать бесплатно",
+      "weight": null,
+      "productId": null,
+      "description": null,
+      "ingredients": null,
+      "nutrition": null,
+      "fullText": "",
+      "category": "О нас"
+    },
+    {
+      "title": "Выбрать бесплатно",
+      "weight": 5,
+      "error": "closeBtn.click is not a function"
+    },
+    {
+      "title": "Выбрать бесплатно",
+      "weight": null,
+      "productId": null,
+      "description": null,
+      "ingredients": null,
+      "nutrition": null,
+      "fullText": "",
+      "category": "О нас"
+    },
+    {
+      "title": "Выбрать бесплатно",
+      "weight": null,
+      "error": "closeBtn.click is not a function"
+    },
+    {
+      "title": "тесто классическое и соус томатный",
+      "weight": null,
+      "productId": null,
+      "description": null,
+      "ingredients": null,
+      "nutrition": null,
+      "fullText": "",
+      "category": "О нас"
+    },
+    {
+      "title": "тесто классическое и соус томатный",
+      "weight": null,
+      "error": "closeBtn.click is not a function"
+    },
+    {
+      "title": "тесто классическое и соус томатный",
+      "weight": null,
+      "productId": null,
+      "description": null,
+      "ingredients": null,
+      "nutrition": null,
+      "fullText": "",
+      "category": "О нас"
+    },
+    {
+      "title": "тесто классическое и соус томатный",
+      "weight": null,
+      "error": "closeBtn.click is not a function"
+    },
+    {
+      "title": "тесто классическое и соус белый",
+      "weight": null,
+      "productId": null,
+      "description": null,
+      "ingredients": null,
+      "nutrition": null,
+      "fullText": "",
+      "category": "О нас"
+    },
+    {
+      "title": "тесто классическое и соус белый",
+      "weight": null,
+      "error": "closeBtn.click is not a function"
+    },
+    {
+      "title": "тесто томатное соус белый",
+      "weight": null,
+      "productId": null,
+      "description": null,
+      "ingredients": null,
+      "nutrition": null,
+      "fullText": "",
+      "category": "О нас"
+    },
+    {
+      "title": "тесто томатное соус и томатный",
+      "weight": null,
+      "category": "О нас"
+    },
+    {
+      "title": "Дополнительно",
+      "weight": null,
+      "productId": null,
+      "description": null,
+      "ingredients": null,
+      "nutrition": null,
+      "fullText": "",
+      "category": "О нас"
+    },
+    {
+      "title": "Пицца \"Карбонара\"",
+      "price": "850р.р.",
+      "weight": null,
+      "productId": null,
+      "description": null,
+      "ingredients": null,
+      "nutrition": null,
+      "fullText": "",
+      "category": "О нас"
+    },
+    {
+      "title": "Пицца \"Карбонара\"",
+      "price": "850р.р.",
+      "weight": 5,
+      "error": "closeBtn.click is not a function"
+    },
+    {
+      "title": "Выбрать бесплатно",
+      "weight": null,
+      "productId": null,
+      "description": null,
+      "ingredients": null,
+      "nutrition": null,
+      "fullText": "",
+      "category": "О нас"
+    },
+    {
+      "title": "Выбрать бесплатно",
+      "weight": 5,
+      "error": "closeBtn.click is not a function"
+    },
+    {
+      "title": "Выбрать бесплатно",
+      "weight": null,
+      "productId": null,
+      "description": null,
+      "ingredients": null,
+      "nutrition": null,
+      "fullText": "",
+      "category": "О нас"
+    },
+    {
+      "title": "тесто классическое и соус белый",
+      "weight": null,
+      "productId": null,
+      "description": null,
+      "ingredients": null,
+      "nutrition": null,
+      "fullText": "",
+      "category": "О нас"
+    },
+    {
+      "title": "тесто классическое и соус белый",
+      "weight": null,
+      "productId": null,
+      "description": null,
+      "ingredients": null,
+      "nutrition": null,
+      "fullText": "",
+      "category": "О нас"
+    },
+    {
+      "title": "тесто классическое и соус томатный",
+      "weight": null,
+      "productId": null,
+      "description": null,
+      "ingredients": null,
+      "nutrition": null,
+      "fullText": "",
+      "category": "О нас"
+    },
+    {
+      "title": "тесто классическое и соус томатный",
+      "weight": null,
+      "error": "closeBtn.click is not a function"
+    },
+    {
+      "title": "тесто томатное соус и белый",
+      "weight": null,
+      "productId": null,
+      "description": null,
+      "ingredients": null,
+      "nutrition": null,
+      "fullText": "",
+      "category": "О нас"
+    },
+    {
+      "title": "тесто томатное соус и белый",
+      "weight": null,
+      "error": "closeBtn.click is not a function"
+    },
+    {
+      "title": "тесто томатное соус и томатный",
+      "weight": null,
+      "productId": null,
+      "description": null,
+      "ingredients": null,
+      "nutrition": null,
+      "fullText": "",
+      "category": "О нас"
+    },
+    {
+      "title": "Дополнительно",
+      "weight": null,
+      "productId": null,
+      "description": null,
+      "ingredients": null,
+      "nutrition": null,
+      "fullText": "",
+      "category": "О нас"
+    },
+    {
+      "title": "Пицца с мясными шариками",
+      "price": "850р.р.",
+      "weight": null,
+      "productId": null,
+      "description": null,
+      "ingredients": null,
+      "nutrition": null,
+      "fullText": "",
+      "category": "О нас"
+    },
+    {
+      "title": "Выбрать бесплатно",
+      "weight": null,
+      "productId": null,
+      "description": null,
+      "ingredients": null,
+      "nutrition": null,
+      "fullText": "",
+      "category": "О нас"
+    },
+    {
+      "title": "Выбрать бесплатно",
+      "weight": 5,
+      "error": "closeBtn.click is not a function"
+    },
+    {
+      "title": "Выбрать бесплатно",
+      "weight": null,
+      "productId": null,
+      "description": null,
+      "ingredients": null,
+      "nutrition": null,
+      "fullText": "",
+      "category": "О нас"
+    },
+    {
+      "title": "Выбрать бесплатно",
+      "weight": null,
+      "error": "closeBtn.click is not a function"
+    },
+    {
+      "title": "тесто классическое и соус томатный",
+      "weight": null,
+      "productId": null,
+      "description": null,
+      "ingredients": null,
+      "nutrition": null,
+      "fullText": "",
+      "category": "О нас"
+    },
+    {
+      "title": "тесто классическое и соус томатный",
+      "weight": null,
+      "category": "О нас"
+    },
+    {
+      "title": "тесто классическое и соус белый",
+      "weight": null,
+      "productId": null,
+      "description": null,
+      "ingredients": null,
+      "nutrition": null,
+      "fullText": "",
+      "category": "О нас"
+    },
+    {
+      "title": "тесто томатное соус и белый",
+      "weight": null,
+      "productId": null,
+      "description": null,
+      "ingredients": null,
+      "nutrition": null,
+      "fullText": "",
+      "category": "О нас"
+    },
+    {
+      "title": "тесто томатное соус и белый",
+      "weight": null,
+      "error": "closeBtn.click is not a function"
+    },
+    {
+      "title": "тесто томатное соус и томатный",
+      "weight": null,
+      "productId": null,
+      "description": null,
+      "ingredients": null,
+      "nutrition": null,
+      "fullText": "",
+      "category": "О нас"
+    },
+    {
+      "title": "тесто томатное соус и томатный",
+      "weight": null,
+      "error": "closeBtn.click is not a function"
+    },
+    {
+      "title": "Дополнительно",
+      "weight": 5,
+      "category": "О нас"
+    },
+    {
+      "title": "Пицца \"Пера\" с грушей и сыром Горгонзола",
+      "price": "850р.р.",
+      "weight": null,
+      "productId": null,
+      "description": null,
+      "ingredients": null,
+      "nutrition": null,
+      "fullText": "",
+      "category": "О нас"
+    },
+    {
+      "title": "Выбрать бесплатно",
+      "weight": null,
+      "productId": null,
+      "description": null,
+      "ingredients": null,
+      "nutrition": null,
+      "fullText": "",
+      "category": "О нас"
+    },
+    {
+      "title": "Выбрать бесплатно",
+      "weight": null,
+      "productId": null,
+      "description": null,
+      "ingredients": null,
+      "nutrition": null,
+      "fullText": "",
+      "category": "О нас"
+    },
+    {
+      "title": "Выбрать бесплатно",
+      "weight": null,
+      "error": "closeBtn.click is not a function"
+    },
+    {
+      "title": "тесто классическое и соус белый",
+      "weight": null,
+      "productId": null,
+      "description": null,
+      "ingredients": null,
+      "nutrition": null,
+      "fullText": "",
+      "category": "О нас"
+    },
+    {
+      "title": "тесто классическое и соус белый",
+      "weight": null,
+      "error": "closeBtn.click is not a function"
+    },
+    {
+      "title": "тесто классическое и соус белый",
+      "weight": null,
+      "productId": null,
+      "description": null,
+      "ingredients": null,
+      "nutrition": null,
+      "fullText": "",
+      "category": "О нас"
+    },
+    {
+      "title": "тесто классическое и соус томатный",
+      "weight": null,
+      "productId": null,
+      "description": null,
+      "ingredients": null,
+      "nutrition": null,
+      "fullText": "",
+      "category": "О нас"
+    },
+    {
+      "title": "тесто томатное соус и белый",
+      "weight": null,
+      "productId": null,
+      "description": null,
+      "ingredients": null,
+      "nutrition": null,
+      "fullText": "",
+      "category": "О нас"
+    },
+    {
+      "title": "тесто томатное соус томатный",
+      "weight": null,
+      "productId": null,
+      "description": null,
+      "ingredients": null,
+      "nutrition": null,
+      "fullText": "",
+      "category": "О нас"
+    },
+    {
+      "title": "тесто томатное соус томатный",
+      "weight": null,
+      "error": "closeBtn.click is not a function"
+    },
+    {
+      "title": "Дополнительно",
+      "weight": null,
+      "productId": null,
+      "description": null,
+      "ingredients": null,
+      "nutrition": null,
+      "fullText": "",
+      "category": "О нас"
+    },
+    {
+      "title": "Дополнительно",
+      "weight": 5,
+      "error": "closeBtn.click is not a function"
+    },
+    {
+      "title": "Пицца \"Монтенегро\"",
+      "price": "850р.р.",
+      "weight": null,
+      "productId": null,
+      "description": null,
+      "ingredients": null,
+      "nutrition": null,
+      "fullText": "",
+      "category": "О нас"
+    },
+    {
+      "title": "Выбрать бесплатно",
+      "weight": null,
+      "productId": null,
+      "description": null,
+      "ingredients": null,
+      "nutrition": null,
+      "fullText": "",
+      "category": "О нас"
+    },
+    {
+      "title": "Выбрать бесплатно",
+      "weight": null,
+      "productId": null,
+      "description": null,
+      "ingredients": null,
+      "nutrition": null,
+      "fullText": "",
+      "category": "О нас"
+    },
+    {
+      "title": "Тесто классическое",
+      "weight": null,
+      "productId": null,
+      "description": null,
+      "ingredients": null,
+      "nutrition": null,
+      "fullText": "",
+      "category": "О нас"
+    },
+    {
+      "title": "Тесто классическое",
+      "weight": null,
+      "error": "closeBtn.click is not a function"
+    },
+    {
+      "title": "Тесто классическое",
+      "weight": null,
+      "productId": null,
+      "description": null,
+      "ingredients": null,
+      "nutrition": null,
+      "fullText": "",
+      "category": "О нас"
+    },
+    {
+      "title": "Тесто классическое",
+      "weight": null,
+      "error": "closeBtn.click is not a function"
+    },
+    {
+      "title": "Тесто томатное",
+      "weight": null,
+      "category": "О нас"
+    },
+    {
+      "title": "Дополнительно",
+      "weight": null,
+      "productId": null,
+      "description": null,
+      "ingredients": null,
+      "nutrition": null,
+      "fullText": "",
+      "category": "О нас"
+    },
+    {
+      "title": "Пицца \"Суприм\"",
+      "price": "850р.р.",
+      "weight": null,
+      "productId": null,
+      "description": null,
+      "ingredients": null,
+      "nutrition": null,
+      "fullText": "",
+      "category": "О нас"
+    },
+    {
+      "title": "Выбрать бесплатно",
+      "weight": null,
+      "productId": null,
+      "description": null,
+      "ingredients": null,
+      "nutrition": null,
+      "fullText": "",
+      "category": "О нас"
+    },
+    {
+      "title": "Выбрать бесплатно",
+      "weight": 5,
+      "error": "closeBtn.click is not a function"
+    },
+    {
+      "title": "Выбрать бесплатно",
+      "weight": null,
+      "productId": null,
+      "description": null,
+      "ingredients": null,
+      "nutrition": null,
+      "fullText": "",
+      "category": "О нас"
+    },
+    {
+      "title": "Выбрать бесплатно",
+      "weight": null,
+      "error": "closeBtn.click is not a function"
+    },
+    {
+      "title": "тесто классическое и соус томатный",
+      "weight": null,
+      "productId": null,
+      "description": null,
+      "ingredients": null,
+      "nutrition": null,
+      "fullText": "",
+      "category": "О нас"
+    },
+    {
+      "title": "тесто классическое и соус томатный",
+      "weight": null,
+      "productId": null,
+      "description": null,
+      "ingredients": null,
+      "nutrition": null,
+      "fullText": "",
+      "category": "О нас"
+    },
+    {
+      "title": "тесто классическое и соус белый",
+      "weight": null,
+      "category": "О нас"
+    },
+    {
+      "title": "тесто томатное соус и белый",
+      "weight": null,
+      "productId": null,
+      "description": null,
+      "ingredients": null,
+      "nutrition": null,
+      "fullText": "",
+      "category": "О нас"
+    },
+    {
+      "title": "тесто томатное соус и белый",
+      "weight": null,
+      "error": "closeBtn.click is not a function"
+    },
+    {
+      "title": "тесто томатное соус и томатный",
+      "weight": null,
+      "productId": null,
+      "description": null,
+      "ingredients": null,
+      "nutrition": null,
+      "fullText": "",
+      "category": "О нас"
+    },
+    {
+      "title": "тесто томатное соус и томатный",
+      "weight": null,
+      "error": "closeBtn.click is not a function"
+    },
+    {
+      "title": "Дополнительно",
+      "weight": null,
+      "productId": null,
+      "description": null,
+      "ingredients": null,
+      "nutrition": null,
+      "fullText": "",
+      "category": "О нас"
+    },
+    {
+      "title": "Дополнительно",
+      "weight": 5,
+      "error": "closeBtn.click is not a function"
+    },
+    {
+      "title": "Пицца \"Вегетариано\"",
+      "price": "850р.р.",
+      "weight": null,
+      "productId": null,
+      "description": null,
+      "ingredients": null,
+      "nutrition": null,
+      "fullText": "",
+      "category": "О нас"
+    },
+    {
+      "title": "Пицца \"Вегетариано\"",
+      "price": "850р.р.",
+      "weight": 5,
+      "error": "closeBtn.click is not a function"
+    },
+    {
+      "title": "Выбрать бесплатно",
+      "weight": null,
+      "productId": null,
+      "description": null,
+      "ingredients": null,
+      "nutrition": null,
+      "fullText": "",
+      "category": "О нас"
+    },
+    {
+      "title": "Выбрать бесплатно",
+      "weight": 5,
+      "error": "closeBtn.click is not a function"
+    },
+    {
+      "title": "Выбрать бесплатно",
+      "weight": null,
+      "productId": null,
+      "description": null,
+      "ingredients": null,
+      "nutrition": null,
+      "fullText": "",
+      "category": "О нас"
+    },
+    {
+      "title": "Выбрать бесплатно",
+      "weight": null,
+      "error": "closeBtn.click is not a function"
+    },
+    {
+      "title": "тесто классическое и соус томатный",
+      "weight": null,
+      "productId": null,
+      "description": null,
+      "ingredients": null,
+      "nutrition": null,
+      "fullText": "",
+      "category": "О нас"
+    },
+    {
+      "title": "тесто классическое и соус томатный",
+      "weight": null,
+      "error": "closeBtn.click is not a function"
+    },
+    {
+      "title": "тесто классическое и соус томатный",
+      "weight": null,
+      "productId": null,
+      "description": null,
+      "ingredients": null,
+      "nutrition": null,
+      "fullText": "",
+      "category": "О нас"
+    },
+    {
+      "title": "тесто классическое и соус томатный",
+      "weight": null,
+      "error": "closeBtn.click is not a function"
+    },
+    {
+      "title": "тесто классическое и соус белый",
+      "weight": null,
+      "productId": null,
+      "description": null,
+      "ingredients": null,
+      "nutrition": null,
+      "fullText": "",
+      "category": "О нас"
+    },
+    {
+      "title": "тесто классическое и соус белый",
+      "weight": null,
+      "error": "closeBtn.click is not a function"
+    },
+    {
+      "title": "тесто томатное соус белый",
+      "weight": null,
+      "productId": null,
+      "description": null,
+      "ingredients": null,
+      "nutrition": null,
+      "fullText": "",
+      "category": "О нас"
+    },
+    {
+      "title": "тесто томатное соус белый",
+      "weight": null,
+      "error": "closeBtn.click is not a function"
+    },
+    {
+      "title": "тесто томатное соус и томатный",
+      "weight": null,
+      "productId": null,
+      "description": null,
+      "ingredients": null,
+      "nutrition": null,
+      "fullText": "",
+      "category": "О нас"
+    },
+    {
+      "title": "тесто томатное соус и томатный",
+      "weight": null,
+      "error": "closeBtn.click is not a function"
+    },
+    {
+      "title": "Дополнительно",
+      "weight": null,
+      "productId": null,
+      "description": null,
+      "ingredients": null,
+      "nutrition": null,
+      "fullText": "",
+      "category": "О нас"
+    },
+    {
+      "title": "Дополнительно",
+      "weight": 5,
+      "error": "closeBtn.click is not a function"
+    },
+    {
+      "title": "Пицца \"Кокорита\"",
+      "price": "850р.р.",
+      "weight": null,
+      "productId": null,
+      "description": null,
+      "ingredients": null,
+      "nutrition": null,
+      "fullText": "",
+      "category": "О нас"
+    },
+    {
+      "title": "Пицца \"Кокорита\"",
+      "price": "850р.р.",
+      "weight": 5,
+      "error": "closeBtn.click is not a function"
+    },
+    {
+      "title": "Выбрать бесплатно",
+      "weight": null,
+      "productId": null,
+      "description": null,
+      "ingredients": null,
+      "nutrition": null,
+      "fullText": "",
+      "category": "О нас"
+    },
+    {
+      "title": "Выбрать бесплатно",
+      "weight": 5,
+      "error": "closeBtn.click is not a function"
+    },
+    {
+      "title": "Выбрать бесплатно",
+      "weight": null,
+      "productId": null,
+      "description": null,
+      "ingredients": null,
+      "nutrition": null,
+      "fullText": "",
+      "category": "О нас"
+    },
+    {
+      "title": "Выбрать бесплатно",
+      "weight": null,
+      "error": "closeBtn.click is not a function"
+    },
+    {
+      "title": "тесто классическое и соус белый",
+      "weight": null,
+      "productId": null,
+      "description": null,
+      "ingredients": null,
+      "nutrition": null,
+      "fullText": "",
+      "category": "О нас"
+    },
+    {
+      "title": "тесто классическое и соус белый",
+      "weight": null,
+      "error": "closeBtn.click is not a function"
+    },
+    {
+      "title": "тесто классическое и соус белый",
+      "weight": null,
+      "productId": null,
+      "description": null,
+      "ingredients": null,
+      "nutrition": null,
+      "fullText": "",
+      "category": "О нас"
+    },
+    {
+      "title": "тесто классическое и соус белый",
+      "weight": null,
+      "error": "closeBtn.click is not a function"
+    },
+    {
+      "title": "тесто классическое и соус томатный",
+      "weight": null,
+      "productId": null,
+      "description": null,
+      "ingredients": null,
+      "nutrition": null,
+      "fullText": "",
+      "category": "О нас"
+    },
+    {
+      "title": "тесто классическое и соус томатный",
+      "weight": null,
+      "error": "closeBtn.click is not a function"
+    },
+    {
+      "title": "тесто томатное соус и белый",
+      "weight": null,
+      "productId": null,
+      "description": null,
+      "ingredients": null,
+      "nutrition": null,
+      "fullText": "",
+      "category": "О нас"
+    },
+    {
+      "title": "тесто томатное соус и белый",
+      "weight": null,
+      "error": "closeBtn.click is not a function"
+    },
+    {
+      "title": "тесто томатное соус и томатный",
+      "weight": null,
+      "productId": null,
+      "description": null,
+      "ingredients": null,
+      "nutrition": null,
+      "fullText": "",
+      "category": "О нас"
+    },
+    {
+      "title": "тесто томатное соус и томатный",
+      "weight": null,
+      "error": "closeBtn.click is not a function"
+    },
+    {
+      "title": "Дополнительно",
+      "weight": null,
+      "productId": null,
+      "description": null,
+      "ingredients": null,
+      "nutrition": null,
+      "fullText": "",
+      "category": "О нас"
+    },
+    {
+      "title": "Дополнительно",
+      "weight": 5,
+      "error": "closeBtn.click is not a function"
+    },
+    {
+      "title": "Пицца \"4 сезона: Ультра\"",
+      "price": "850р.р.",
+      "weight": null,
+      "productId": null,
+      "description": null,
+      "ingredients": null,
+      "nutrition": null,
+      "fullText": "",
+      "category": "О нас"
+    },
+    {
+      "title": "Пицца \"4 сезона: Ультра\"",
+      "price": "850р.р.",
+      "weight": 5,
+      "error": "closeBtn.click is not a function"
+    },
+    {
+      "title": "Выбрать бесплатно",
+      "weight": null,
+      "productId": null,
+      "description": null,
+      "ingredients": null,
+      "nutrition": null,
+      "fullText": "",
+      "category": "О нас"
+    },
+    {
+      "title": "Выбрать бесплатно",
+      "weight": 5,
+      "error": "closeBtn.click is not a function"
+    },
+    {
+      "title": "Выбрать бесплатно",
+      "weight": null,
+      "productId": null,
+      "description": null,
+      "ingredients": null,
+      "nutrition": null,
+      "fullText": "",
+      "category": "О нас"
+    },
+    {
+      "title": "Выбрать бесплатно",
+      "weight": null,
+      "error": "closeBtn.click is not a function"
+    },
+    {
+      "title": "тесто классическое и соус томатный",
+      "weight": null,
+      "productId": null,
+      "description": null,
+      "ingredients": null,
+      "nutrition": null,
+      "fullText": "",
+      "category": "О нас"
+    },
+    {
+      "title": "тесто классическое и соус томатный",
+      "weight": null,
+      "error": "closeBtn.click is not a function"
+    },
+    {
+      "title": "тесто классическое и соус томатный",
+      "weight": null,
+      "productId": null,
+      "description": null,
+      "ingredients": null,
+      "nutrition": null,
+      "fullText": "",
+      "category": "О нас"
+    },
+    {
+      "title": "тесто классическое и соус томатный",
+      "weight": null,
+      "error": "closeBtn.click is not a function"
+    },
+    {
+      "title": "тесто классическое и соус белый",
+      "weight": null,
+      "productId": null,
+      "description": null,
+      "ingredients": null,
+      "nutrition": null,
+      "fullText": "",
+      "category": "О нас"
+    },
+    {
+      "title": "тесто классическое и соус белый",
+      "weight": null,
+      "error": "closeBtn.click is not a function"
+    },
+    {
+      "title": "тесто томатное соус и белый",
+      "weight": null,
+      "productId": null,
+      "description": null,
+      "ingredients": null,
+      "nutrition": null,
+      "fullText": "",
+      "category": "О нас"
+    },
+    {
+      "title": "тесто томатное соус и белый",
+      "weight": null,
+      "error": "closeBtn.click is not a function"
+    },
+    {
+      "title": "тесто томатное соус и томатный",
+      "weight": null,
+      "productId": null,
+      "description": null,
+      "ingredients": null,
+      "nutrition": null,
+      "fullText": "",
+      "category": "О нас"
+    },
+    {
+      "title": "тесто томатное соус и томатный",
+      "weight": null,
+      "error": "closeBtn.click is not a function"
+    },
+    {
+      "title": "Дополнительно",
+      "weight": null,
+      "productId": null,
+      "description": null,
+      "ingredients": null,
+      "nutrition": null,
+      "fullText": "",
+      "category": "О нас"
+    },
+    {
+      "title": "Дополнительно",
+      "weight": 5,
+      "error": "closeBtn.click is not a function"
+    },
+    {
+      "title": "Пицца \"Salsicciotti\"",
+      "price": "950р.р.",
+      "weight": null,
+      "productId": null,
+      "description": null,
+      "ingredients": null,
+      "nutrition": null,
+      "fullText": "",
+      "category": "О нас"
+    },
+    {
+      "title": "Пицца \"Salsicciotti\"",
+      "price": "950р.р.",
+      "weight": 5,
+      "error": "closeBtn.click is not a function"
+    },
+    {
+      "title": "Выбрать бесплатно",
+      "weight": null,
+      "productId": null,
+      "description": null,
+      "ingredients": null,
+      "nutrition": null,
+      "fullText": "",
+      "category": "О нас"
+    },
+    {
+      "title": "Выбрать бесплатно",
+      "weight": 5,
+      "error": "closeBtn.click is not a function"
+    },
+    {
+      "title": "Выбрать бесплатно",
+      "weight": null,
+      "productId": null,
+      "description": null,
+      "ingredients": null,
+      "nutrition": null,
+      "fullText": "",
+      "category": "О нас"
+    },
+    {
+      "title": "Выбрать бесплатно",
+      "weight": null,
+      "error": "closeBtn.click is not a function"
+    },
+    {
+      "title": "тесто классическое и соус томатный",
+      "weight": null,
+      "productId": null,
+      "description": null,
+      "ingredients": null,
+      "nutrition": null,
+      "fullText": "",
+      "category": "О нас"
+    },
+    {
+      "title": "тесто классическое и соус томатный",
+      "weight": null,
+      "error": "closeBtn.click is not a function"
+    },
+    {
+      "title": "тесто классическое и соус томатный",
+      "weight": null,
+      "productId": null,
+      "description": null,
+      "ingredients": null,
+      "nutrition": null,
+      "fullText": "",
+      "category": "О нас"
+    },
+    {
+      "title": "тесто классическое и соус томатный",
+      "weight": null,
+      "error": "closeBtn.click is not a function"
+    },
+    {
+      "title": "тесто классическое и соус белый",
+      "weight": null,
+      "productId": null,
+      "description": null,
+      "ingredients": null,
+      "nutrition": null,
+      "fullText": "",
+      "category": "О нас"
+    },
+    {
+      "title": "тесто классическое и соус белый",
+      "weight": null,
+      "error": "closeBtn.click is not a function"
+    },
+    {
+      "title": "тесто томатное соус и белый",
+      "weight": null,
+      "productId": null,
+      "description": null,
+      "ingredients": null,
+      "nutrition": null,
+      "fullText": "",
+      "category": "О нас"
+    },
+    {
+      "title": "тесто томатное соус и белый",
+      "weight": null,
+      "error": "closeBtn.click is not a function"
+    },
+    {
+      "title": "тесто томатное соус и томатный",
+      "weight": null,
+      "productId": null,
+      "description": null,
+      "ingredients": null,
+      "nutrition": null,
+      "fullText": "",
+      "category": "О нас"
+    },
+    {
+      "title": "тесто томатное соус и томатный",
+      "weight": null,
+      "error": "closeBtn.click is not a function"
+    },
+    {
+      "title": "Дополнительно",
+      "weight": null,
+      "productId": null,
+      "description": null,
+      "ingredients": null,
+      "nutrition": null,
+      "fullText": "",
+      "category": "О нас"
+    },
+    {
+      "title": "Дополнительно",
+      "weight": 5,
+      "error": "closeBtn.click is not a function"
+    },
+    {
+      "title": "Пицца с колбасой Мортаделла, сыром Страчателла и жареными фисташками",
+      "price": "950р.р.",
+      "weight": null,
+      "productId": null,
+      "description": null,
+      "ingredients": null,
+      "nutrition": null,
+      "fullText": "",
+      "category": "О нас"
+    },
+    {
+      "title": "Пицца с колбасой Мортаделла, сыром Страчателла и жареными фисташками",
+      "price": "950р.р.",
+      "weight": 5,
+      "error": "closeBtn.click is not a function"
+    },
+    {
+      "title": "Выбрать бесплатно",
+      "weight": null,
+      "productId": null,
+      "description": null,
+      "ingredients": null,
+      "nutrition": null,
+      "fullText": "",
+      "category": "О нас"
+    },
+    {
+      "title": "Выбрать бесплатно",
+      "weight": 5,
+      "error": "closeBtn.click is not a function"
+    },
+    {
+      "title": "Выбрать бесплатно",
+      "weight": null,
+      "productId": null,
+      "description": null,
+      "ingredients": null,
+      "nutrition": null,
+      "fullText": "",
+      "category": "О нас"
+    },
+    {
+      "title": "Выбрать бесплатно",
+      "weight": null,
+      "error": "closeBtn.click is not a function"
+    },
+    {
+      "title": "тесто классическое и соус томатный",
+      "weight": null,
+      "productId": null,
+      "description": null,
+      "ingredients": null,
+      "nutrition": null,
+      "fullText": "",
+      "category": "О нас"
+    },
+    {
+      "title": "тесто классическое и соус томатный",
+      "weight": null,
+      "error": "closeBtn.click is not a function"
+    },
+    {
+      "title": "тесто классическое и соус томатный",
+      "weight": null,
+      "productId": null,
+      "description": null,
+      "ingredients": null,
+      "nutrition": null,
+      "fullText": "",
+      "category": "О нас"
+    },
+    {
+      "title": "тесто классическое и соус томатный",
+      "weight": null,
+      "error": "closeBtn.click is not a function"
+    },
+    {
+      "title": "тесто классическое и соус белый",
+      "weight": null,
+      "productId": null,
+      "description": null,
+      "ingredients": null,
+      "nutrition": null,
+      "fullText": "",
+      "category": "О нас"
+    },
+    {
+      "title": "тесто классическое и соус белый",
+      "weight": null,
+      "error": "closeBtn.click is not a function"
+    },
+    {
+      "title": "тесто томатное соус и белый",
+      "weight": null,
+      "productId": null,
+      "description": null,
+      "ingredients": null,
+      "nutrition": null,
+      "fullText": "",
+      "category": "О нас"
+    },
+    {
+      "title": "тесто томатное соус и белый",
+      "weight": null,
+      "error": "closeBtn.click is not a function"
+    },
+    {
+      "title": "тесто томатное соус и томатный",
+      "weight": null,
+      "productId": null,
+      "description": null,
+      "ingredients": null,
+      "nutrition": null,
+      "fullText": "",
+      "category": "О нас"
+    },
+    {
+      "title": "тесто томатное соус и томатный",
+      "weight": null,
+      "error": "closeBtn.click is not a function"
+    },
+    {
+      "title": "Дополнительно",
+      "weight": null,
+      "productId": null,
+      "description": null,
+      "ingredients": null,
+      "nutrition": null,
+      "fullText": "",
+      "category": "О нас"
+    },
+    {
+      "title": "Дополнительно",
+      "weight": 5,
+      "error": "closeBtn.click is not a function"
+    },
+    {
+      "title": "Пицца \"Italy\"",
+      "price": "950р.р.",
+      "weight": null,
+      "productId": null,
+      "description": null,
+      "ingredients": null,
+      "nutrition": null,
+      "fullText": "",
+      "category": "О нас"
+    },
+    {
+      "title": "Пицца \"Italy\"",
+      "price": "950р.р.",
+      "weight": 5,
+      "error": "closeBtn.click is not a function"
+    },
+    {
+      "title": "Выбрать бесплатно",
+      "weight": null,
+      "productId": null,
+      "description": null,
+      "ingredients": null,
+      "nutrition": null,
+      "fullText": "",
+      "category": "О нас"
+    },
+    {
+      "title": "Выбрать бесплатно",
+      "weight": 5,
+      "error": "closeBtn.click is not a function"
+    },
+    {
+      "title": "Выбрать бесплатно",
+      "weight": null,
+      "productId": null,
+      "description": null,
+      "ingredients": null,
+      "nutrition": null,
+      "fullText": "",
+      "category": "О нас"
+    },
+    {
+      "title": "Выбрать бесплатно",
+      "weight": null,
+      "error": "closeBtn.click is not a function"
+    },
+    {
+      "title": "тесто классическое и соус томатный",
+      "weight": null,
+      "productId": null,
+      "description": null,
+      "ingredients": null,
+      "nutrition": null,
+      "fullText": "",
+      "category": "О нас"
+    },
+    {
+      "title": "тесто классическое и соус томатный",
+      "weight": null,
+      "error": "closeBtn.click is not a function"
+    },
+    {
+      "title": "тесто классическое и соус томатный",
+      "weight": null,
+      "productId": null,
+      "description": null,
+      "ingredients": null,
+      "nutrition": null,
+      "fullText": "",
+      "category": "О нас"
+    },
+    {
+      "title": "тесто классическое и соус томатный",
+      "weight": null,
+      "error": "closeBtn.click is not a function"
+    },
+    {
+      "title": "тесто классическое и соус белый",
+      "weight": null,
+      "productId": null,
+      "description": null,
+      "ingredients": null,
+      "nutrition": null,
+      "fullText": "",
+      "category": "О нас"
+    },
+    {
+      "title": "тесто классическое и соус белый",
+      "weight": null,
+      "error": "closeBtn.click is not a function"
+    },
+    {
+      "title": "тесто томатное соус и белый",
+      "weight": null,
+      "productId": null,
+      "description": null,
+      "ingredients": null,
+      "nutrition": null,
+      "fullText": "",
+      "category": "О нас"
+    },
+    {
+      "title": "тесто томатное соус и белый",
+      "weight": null,
+      "error": "closeBtn.click is not a function"
+    },
+    {
+      "title": "тесто томатное соус и томатный",
+      "weight": null,
+      "productId": null,
+      "description": null,
+      "ingredients": null,
+      "nutrition": null,
+      "fullText": "",
+      "category": "О нас"
+    },
+    {
+      "title": "тесто томатное соус и томатный",
+      "weight": null,
+      "error": "closeBtn.click is not a function"
+    },
+    {
+      "title": "Дополнительно",
+      "weight": null,
+      "productId": null,
+      "description": null,
+      "ingredients": null,
+      "nutrition": null,
+      "fullText": "",
+      "category": "О нас"
+    },
+    {
+      "title": "Дополнительно",
+      "weight": 5,
+      "error": "closeBtn.click is not a function"
+    },
+    {
+      "title": "Пицца «Мехико»",
+      "price": "950р.р.",
+      "weight": null,
+      "productId": null,
+      "description": null,
+      "ingredients": null,
+      "nutrition": null,
+      "fullText": "",
+      "category": "О нас"
+    },
+    {
+      "title": "Пицца «Мехико»",
+      "price": "950р.р.",
+      "weight": 5,
+      "error": "closeBtn.click is not a function"
+    },
+    {
+      "title": "Выбрать бесплатно",
+      "weight": null,
+      "productId": null,
+      "description": null,
+      "ingredients": null,
+      "nutrition": null,
+      "fullText": "",
+      "category": "О нас"
+    },
+    {
+      "title": "Выбрать бесплатно",
+      "weight": 5,
+      "error": "closeBtn.click is not a function"
+    },
+    {
+      "title": "Выбрать бесплатно",
+      "weight": null,
+      "productId": null,
+      "description": null,
+      "ingredients": null,
+      "nutrition": null,
+      "fullText": "",
+      "category": "О нас"
+    },
+    {
+      "title": "Выбрать бесплатно",
+      "weight": null,
+      "error": "closeBtn.click is not a function"
+    },
+    {
+      "title": "тесто классическое и соус томатный",
+      "weight": null,
+      "productId": null,
+      "description": null,
+      "ingredients": null,
+      "nutrition": null,
+      "fullText": "",
+      "category": "О нас"
+    },
+    {
+      "title": "тесто классическое и соус томатный",
+      "weight": null,
+      "error": "closeBtn.click is not a function"
+    },
+    {
+      "title": "тесто классическое и соус томатный",
+      "weight": null,
+      "productId": null,
+      "description": null,
+      "ingredients": null,
+      "nutrition": null,
+      "fullText": "",
+      "category": "О нас"
+    },
+    {
+      "title": "тесто классическое и соус томатный",
+      "weight": null,
+      "error": "closeBtn.click is not a function"
+    },
+    {
+      "title": "тесто классическое и соус белый",
+      "weight": null,
+      "productId": null,
+      "description": null,
+      "ingredients": null,
+      "nutrition": null,
+      "fullText": "",
+      "category": "О нас"
+    },
+    {
+      "title": "тесто классическое и соус белый",
+      "weight": null,
+      "error": "closeBtn.click is not a function"
+    },
+    {
+      "title": "тесто томатное соус и белый",
+      "weight": null,
+      "productId": null,
+      "description": null,
+      "ingredients": null,
+      "nutrition": null,
+      "fullText": "",
+      "category": "О нас"
+    },
+    {
+      "title": "тесто томатное соус и белый",
+      "weight": null,
+      "error": "closeBtn.click is not a function"
+    },
+    {
+      "title": "тесто томатное соус и томатный",
+      "weight": null,
+      "productId": null,
+      "description": null,
+      "ingredients": null,
+      "nutrition": null,
+      "fullText": "",
+      "category": "О нас"
+    },
+    {
+      "title": "тесто томатное соус и томатный",
+      "weight": null,
+      "error": "closeBtn.click is not a function"
+    },
+    {
+      "title": "Дополнительно",
+      "weight": null,
+      "productId": null,
+      "description": null,
+      "ingredients": null,
+      "nutrition": null,
+      "fullText": "",
+      "category": "О нас"
+    },
+    {
+      "title": "Дополнительно",
+      "weight": 5,
+      "error": "closeBtn.click is not a function"
+    },
+    {
+      "title": "Пицца \"Реджина\"",
+      "price": "950р.р.",
+      "weight": null,
+      "productId": null,
+      "description": null,
+      "ingredients": null,
+      "nutrition": null,
+      "fullText": "",
+      "category": "О нас"
+    },
+    {
+      "title": "Пицца \"Реджина\"",
+      "price": "950р.р.",
+      "weight": 5,
+      "error": "closeBtn.click is not a function"
+    },
+    {
+      "title": "Выбрать бесплатно",
+      "weight": null,
+      "productId": null,
+      "description": null,
+      "ingredients": null,
+      "nutrition": null,
+      "fullText": "",
+      "category": "О нас"
+    },
+    {
+      "title": "Выбрать бесплатно",
+      "weight": 5,
+      "error": "closeBtn.click is not a function"
+    },
+    {
+      "title": "Выбрать бесплатно",
+      "weight": null,
+      "productId": null,
+      "description": null,
+      "ingredients": null,
+      "nutrition": null,
+      "fullText": "",
+      "category": "О нас"
+    },
+    {
+      "title": "Выбрать бесплатно",
+      "weight": null,
+      "error": "closeBtn.click is not a function"
+    },
+    {
+      "title": "тесто классическое и соус белый",
+      "weight": null,
+      "productId": null,
+      "description": null,
+      "ingredients": null,
+      "nutrition": null,
+      "fullText": "",
+      "category": "О нас"
+    },
+    {
+      "title": "тесто классическое и соус белый",
+      "weight": null,
+      "error": "closeBtn.click is not a function"
+    },
+    {
+      "title": "тесто классическое и соус белый",
+      "weight": null,
+      "productId": null,
+      "description": null,
+      "ingredients": null,
+      "nutrition": null,
+      "fullText": "",
+      "category": "О нас"
+    },
+    {
+      "title": "тесто классическое и соус белый",
+      "weight": null,
+      "error": "closeBtn.click is not a function"
+    },
+    {
+      "title": "тесто классическое и соус томатный",
+      "weight": null,
+      "productId": null,
+      "description": null,
+      "ingredients": null,
+      "nutrition": null,
+      "fullText": "",
+      "category": "О нас"
+    },
+    {
+      "title": "тесто классическое и соус томатный",
+      "weight": null,
+      "error": "closeBtn.click is not a function"
+    },
+    {
+      "title": "тесто томатное соус и белый",
+      "weight": null,
+      "productId": null,
+      "description": null,
+      "ingredients": null,
+      "nutrition": null,
+      "fullText": "",
+      "category": "О нас"
+    },
+    {
+      "title": "тесто томатное соус и белый",
+      "weight": null,
+      "error": "closeBtn.click is not a function"
+    },
+    {
+      "title": "тесто томатное соус томатный",
+      "weight": null,
+      "productId": null,
+      "description": null,
+      "ingredients": null,
+      "nutrition": null,
+      "fullText": "",
+      "category": "О нас"
+    },
+    {
+      "title": "тесто томатное соус томатный",
+      "weight": null,
+      "error": "closeBtn.click is not a function"
+    },
+    {
+      "title": "Дополнительно",
+      "weight": null,
+      "productId": null,
+      "description": null,
+      "ingredients": null,
+      "nutrition": null,
+      "fullText": "",
+      "category": "О нас"
+    },
+    {
+      "title": "Дополнительно",
+      "weight": 5,
+      "error": "closeBtn.click is not a function"
+    },
+    {
+      "title": "Пицца \"4 сезона: Мясная\"",
+      "price": "950р.р.",
+      "weight": null,
+      "productId": null,
+      "description": null,
+      "ingredients": null,
+      "nutrition": null,
+      "fullText": "",
+      "category": "О нас"
+    },
+    {
+      "title": "Пицца \"4 сезона: Мясная\"",
+      "price": "950р.р.",
+      "weight": 5,
+      "error": "closeBtn.click is not a function"
+    },
+    {
+      "title": "Выбрать бесплатно",
+      "weight": null,
+      "productId": null,
+      "description": null,
+      "ingredients": null,
+      "nutrition": null,
+      "fullText": "",
+      "category": "О нас"
+    },
+    {
+      "title": "Выбрать бесплатно",
+      "weight": 5,
+      "error": "closeBtn.click is not a function"
+    },
+    {
+      "title": "Выбрать бесплатно",
+      "weight": null,
+      "productId": null,
+      "description": null,
+      "ingredients": null,
+      "nutrition": null,
+      "fullText": "",
+      "category": "О нас"
+    },
+    {
+      "title": "Выбрать бесплатно",
+      "weight": null,
+      "error": "closeBtn.click is not a function"
+    },
+    {
+      "title": "тесто классическое и соус томатный",
+      "weight": null,
+      "productId": null,
+      "description": null,
+      "ingredients": null,
+      "nutrition": null,
+      "fullText": "",
+      "category": "О нас"
+    },
+    {
+      "title": "тесто классическое и соус томатный",
+      "weight": null,
+      "error": "closeBtn.click is not a function"
+    },
+    {
+      "title": "тесто классическое и соус томатный",
+      "weight": null,
+      "productId": null,
+      "description": null,
+      "ingredients": null,
+      "nutrition": null,
+      "fullText": "",
+      "category": "О нас"
+    },
+    {
+      "title": "тесто классическое и соус томатный",
+      "weight": null,
+      "error": "closeBtn.click is not a function"
+    },
+    {
+      "title": "тесто классическое и соус белый",
+      "weight": null,
+      "productId": null,
+      "description": null,
+      "ingredients": null,
+      "nutrition": null,
+      "fullText": "",
+      "category": "О нас"
+    },
+    {
+      "title": "тесто классическое и соус белый",
+      "weight": null,
+      "error": "closeBtn.click is not a function"
+    },
+    {
+      "title": "тесто томатное соус и белый",
+      "weight": null,
+      "productId": null,
+      "description": null,
+      "ingredients": null,
+      "nutrition": null,
+      "fullText": "",
+      "category": "О нас"
+    },
+    {
+      "title": "тесто томатное соус и белый",
+      "weight": null,
+      "error": "closeBtn.click is not a function"
+    },
+    {
+      "title": "тесто томатное соус и томатный",
+      "weight": null,
+      "productId": null,
+      "description": null,
+      "ingredients": null,
+      "nutrition": null,
+      "fullText": "",
+      "category": "О нас"
+    },
+    {
+      "title": "тесто томатное соус и томатный",
+      "weight": null,
+      "error": "closeBtn.click is not a function"
+    },
+    {
+      "title": "Дополнительно",
+      "weight": null,
+      "productId": null,
+      "description": null,
+      "ingredients": null,
+      "nutrition": null,
+      "fullText": "",
+      "category": "О нас"
+    },
+    {
+      "title": "Дополнительно",
+      "weight": 5,
+      "error": "closeBtn.click is not a function"
+    },
+    {
+      "title": "Пицца с тунцом Блюфин",
+      "price": "950р.р.",
+      "weight": null,
+      "productId": null,
+      "description": null,
+      "ingredients": null,
+      "nutrition": null,
+      "fullText": "",
+      "category": "О нас"
+    },
+    {
+      "title": "Пицца с тунцом Блюфин",
+      "price": "950р.р.",
+      "weight": 5,
+      "error": "closeBtn.click is not a function"
+    },
+    {
+      "title": "Выбрать бесплатно",
+      "weight": null,
+      "productId": null,
+      "description": null,
+      "ingredients": null,
+      "nutrition": null,
+      "fullText": "",
+      "category": "О нас"
+    },
+    {
+      "title": "Выбрать бесплатно",
+      "weight": 5,
+      "error": "closeBtn.click is not a function"
+    },
+    {
+      "title": "Выбрать бесплатно",
+      "weight": null,
+      "productId": null,
+      "description": null,
+      "ingredients": null,
+      "nutrition": null,
+      "fullText": "",
+      "category": "О нас"
+    },
+    {
+      "title": "Выбрать бесплатно",
+      "weight": null,
+      "error": "closeBtn.click is not a function"
+    },
+    {
+      "title": "тесто классическое и соус томатный",
+      "weight": null,
+      "productId": null,
+      "description": null,
+      "ingredients": null,
+      "nutrition": null,
+      "fullText": "",
+      "category": "О нас"
+    },
+    {
+      "title": "тесто классическое и соус томатный",
+      "weight": null,
+      "error": "closeBtn.click is not a function"
+    },
+    {
+      "title": "тесто классическое и соус томатный",
+      "weight": null,
+      "productId": null,
+      "description": null,
+      "ingredients": null,
+      "nutrition": null,
+      "fullText": "",
+      "category": "О нас"
+    },
+    {
+      "title": "тесто классическое и соус томатный",
+      "weight": null,
+      "error": "closeBtn.click is not a function"
+    },
+    {
+      "title": "тесто классическое и соус белый",
+      "weight": null,
+      "productId": null,
+      "description": null,
+      "ingredients": null,
+      "nutrition": null,
+      "fullText": "",
+      "category": "О нас"
+    },
+    {
+      "title": "тесто классическое и соус белый",
+      "weight": null,
+      "error": "closeBtn.click is not a function"
+    },
+    {
+      "title": "тесто томатное соус и белый",
+      "weight": null,
+      "productId": null,
+      "description": null,
+      "ingredients": null,
+      "nutrition": null,
+      "fullText": "",
+      "category": "О нас"
+    },
+    {
+      "title": "тесто томатное соус и белый",
+      "weight": null,
+      "error": "closeBtn.click is not a function"
+    },
+    {
+      "title": "тесто томатное соус и томатный",
+      "weight": null,
+      "productId": null,
+      "description": null,
+      "ingredients": null,
+      "nutrition": null,
+      "fullText": "",
+      "category": "О нас"
+    },
+    {
+      "title": "тесто томатное соус и томатный",
+      "weight": null,
+      "error": "closeBtn.click is not a function"
+    },
+    {
+      "title": "Дополнительно",
+      "weight": null,
+      "productId": null,
+      "description": null,
+      "ingredients": null,
+      "nutrition": null,
+      "fullText": "",
+      "category": "О нас"
+    },
+    {
+      "title": "Дополнительно",
+      "weight": 5,
+      "error": "closeBtn.click is not a function"
+    },
+    {
+      "title": "Пицца с Лососем и сыром Бри и зеленой спаржей",
+      "price": "950р.р.",
+      "weight": null,
+      "productId": null,
+      "description": null,
+      "ingredients": null,
+      "nutrition": null,
+      "fullText": "",
+      "category": "О нас"
+    },
+    {
+      "title": "Пицца с Лососем и сыром Бри и зеленой спаржей",
+      "price": "950р.р.",
+      "weight": 5,
+      "error": "closeBtn.click is not a function"
+    },
+    {
+      "title": "Выбрать бесплатно",
+      "weight": null,
+      "productId": null,
+      "description": null,
+      "ingredients": null,
+      "nutrition": null,
+      "fullText": "",
+      "category": "О нас"
+    },
+    {
+      "title": "Выбрать бесплатно",
+      "weight": 5,
+      "error": "closeBtn.click is not a function"
+    },
+    {
+      "title": "Выбрать бесплатно",
+      "weight": null,
+      "productId": null,
+      "description": null,
+      "ingredients": null,
+      "nutrition": null,
+      "fullText": "",
+      "category": "О нас"
+    },
+    {
+      "title": "Выбрать бесплатно",
+      "weight": null,
+      "error": "closeBtn.click is not a function"
+    },
+    {
+      "title": "тесто классическое и соус белый",
+      "weight": null,
+      "productId": null,
+      "description": null,
+      "ingredients": null,
+      "nutrition": null,
+      "fullText": "",
+      "category": "О нас"
+    },
+    {
+      "title": "тесто классическое и соус белый",
+      "weight": null,
+      "error": "closeBtn.click is not a function"
+    },
+    {
+      "title": "тесто классическое и соус белый",
+      "weight": null,
+      "productId": null,
+      "description": null,
+      "ingredients": null,
+      "nutrition": null,
+      "fullText": "",
+      "category": "О нас"
+    },
+    {
+      "title": "тесто классическое и соус белый",
+      "weight": null,
+      "error": "closeBtn.click is not a function"
+    },
+    {
+      "title": "тесто классическое и соус томатный",
+      "weight": null,
+      "productId": null,
+      "description": null,
+      "ingredients": null,
+      "nutrition": null,
+      "fullText": "",
+      "category": "О нас"
+    },
+    {
+      "title": "тесто классическое и соус томатный",
+      "weight": null,
+      "error": "closeBtn.click is not a function"
+    },
+    {
+      "title": "тесто томатное соус и белый",
+      "weight": null,
+      "productId": null,
+      "description": null,
+      "ingredients": null,
+      "nutrition": null,
+      "fullText": "",
+      "category": "О нас"
+    },
+    {
+      "title": "тесто томатное соус и белый",
+      "weight": null,
+      "error": "closeBtn.click is not a function"
+    },
+    {
+      "title": "тесто томатное соус и томатный",
+      "weight": null,
+      "productId": null,
+      "description": null,
+      "ingredients": null,
+      "nutrition": null,
+      "fullText": "",
+      "category": "О нас"
+    },
+    {
+      "title": "тесто томатное соус и томатный",
+      "weight": null,
+      "error": "closeBtn.click is not a function"
+    },
+    {
+      "title": "Дополнительно",
+      "weight": null,
+      "productId": null,
+      "description": null,
+      "ingredients": null,
+      "nutrition": null,
+      "fullText": "",
+      "category": "О нас"
+    },
+    {
+      "title": "Дополнительно",
+      "weight": 5,
+      "error": "closeBtn.click is not a function"
+    },
+    {
+      "title": "Пицца «Ди Парма»",
+      "price": "1 100р.р.",
+      "weight": null,
+      "productId": null,
+      "description": null,
+      "ingredients": null,
+      "nutrition": null,
+      "fullText": "",
+      "category": "О нас"
+    },
+    {
+      "title": "Пицца «Ди Парма»",
+      "price": "1 100р.р.",
+      "weight": 5,
+      "error": "closeBtn.click is not a function"
+    },
+    {
+      "title": "Выбрать бесплатно",
+      "weight": null,
+      "productId": null,
+      "description": null,
+      "ingredients": null,
+      "nutrition": null,
+      "fullText": "",
+      "category": "О нас"
+    },
+    {
+      "title": "Выбрать бесплатно",
+      "weight": 5,
+      "error": "closeBtn.click is not a function"
+    },
+    {
+      "title": "Выбрать бесплатно",
+      "weight": null,
+      "productId": null,
+      "description": null,
+      "ingredients": null,
+      "nutrition": null,
+      "fullText": "",
+      "category": "О нас"
+    },
+    {
+      "title": "Выбрать бесплатно",
+      "weight": null,
+      "error": "closeBtn.click is not a function"
+    },
+    {
+      "title": "тесто классическое и соус белый",
+      "weight": null,
+      "productId": null,
+      "description": null,
+      "ingredients": null,
+      "nutrition": null,
+      "fullText": "",
+      "category": "О нас"
+    },
+    {
+      "title": "тесто классическое и соус белый",
+      "weight": null,
+      "error": "closeBtn.click is not a function"
+    },
+    {
+      "title": "тесто классическое и соус белый",
+      "weight": null,
+      "productId": null,
+      "description": null,
+      "ingredients": null,
+      "nutrition": null,
+      "fullText": "",
+      "category": "О нас"
+    },
+    {
+      "title": "тесто классическое и соус белый",
+      "weight": null,
+      "error": "closeBtn.click is not a function"
+    },
+    {
+      "title": "тесто классическое и соус томатный",
+      "weight": null,
+      "productId": null,
+      "description": null,
+      "ingredients": null,
+      "nutrition": null,
+      "fullText": "",
+      "category": "О нас"
+    },
+    {
+      "title": "тесто классическое и соус томатный",
+      "weight": null,
+      "error": "closeBtn.click is not a function"
+    },
+    {
+      "title": "тесто томатное соус и белый",
+      "weight": null,
+      "productId": null,
+      "description": null,
+      "ingredients": null,
+      "nutrition": null,
+      "fullText": "",
+      "category": "О нас"
+    },
+    {
+      "title": "тесто томатное соус и белый",
+      "weight": null,
+      "error": "closeBtn.click is not a function"
+    },
+    {
+      "title": "тесто томатное соус и томатный",
+      "weight": null,
+      "productId": null,
+      "description": null,
+      "ingredients": null,
+      "nutrition": null,
+      "fullText": "",
+      "category": "О нас"
+    },
+    {
+      "title": "тесто томатное соус и томатный",
+      "weight": null,
+      "error": "closeBtn.click is not a function"
+    },
+    {
+      "title": "Дополнительно",
+      "weight": null,
+      "productId": null,
+      "description": null,
+      "ingredients": null,
+      "nutrition": null,
+      "fullText": "",
+      "category": "О нас"
+    },
+    {
+      "title": "Дополнительно",
+      "weight": 5,
+      "error": "closeBtn.click is not a function"
+    },
+    {
+      "title": "Пицца \"Сицилийская\" с анчоусами и каперсами",
+      "price": "1 100р.р.",
+      "weight": null,
+      "productId": null,
+      "description": null,
+      "ingredients": null,
+      "nutrition": null,
+      "fullText": "",
+      "category": "О нас"
+    }
+  ]
+}
