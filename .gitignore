@@ -26,6 +26,9 @@ check-*.js
 create-*.js
 add-*.js
 
+# Локальные файлы разработки
+dev-local/
+
 # Оптимизация изображений (резервные копии)
 img-old/
 img-backup/
