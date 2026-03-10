@@ -43,6 +43,10 @@ add-*.js
 *Tampermonkey*.js
 *selector-finder*.js
 
+# Явные исключения для парсеров Yandex Eda (теперь не публикуются)
+yandex-eda-auto-collector.js
+yandex-eda-auto-collector-clean.js
+
 # Node.js и Python окружение
 node_modules/
 venv/
@@ -73,15 +77,13 @@ test-one-product.json
 *.md
 !README.md
 
-# ===========================================
+# ==========================================
 # ЧТО ОСТАЁТСЯ НА GITHUB:
-# ===========================================
+# ==========================================
 # ✅ index.html
 # ✅ css/
 # ✅ js/
 # ✅ img/
 # ✅ menu-final.json
 # ✅ README.md
-# ✅ yandex-eda-auto-collector.js
-# ✅ yandex-eda-auto-collector-clean.js
-# ===========================================
+# ==========================================
