@@ -1296,7 +1296,10 @@ function showProductModal(productId) {
         </div>
     `;
     
-    modalElement.style.display = 'flex';
+    modalElement.classList.add('active');
+    setTimeout(() => {
+        modalElement.style.display = 'flex';
+    }, 0);
     document.body.style.overflow = 'hidden';
 }
 
