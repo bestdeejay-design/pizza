@@ -1290,7 +1290,6 @@ function showProductModal(productId) {
                 
                 <button onclick="addToCart(${product.id}); closeProductModal();" class="product-modal-add-btn">
                     <span>Добавить в корзину</span>
-                    <span>${product.price} ₽</span>
                 </button>
             </div>
         </div>

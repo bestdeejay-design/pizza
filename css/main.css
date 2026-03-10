@@ -1104,15 +1104,16 @@ body {
   margin-top: auto;
     padding: 18px 32px;
     background: var(--gradient-primary);
-    color: white;
+  color: white;
   border: none;
   border-radius: 12px;
     font-size: 18px;
     font-weight: 700;
     cursor: pointer;
   display: flex;
-    justify-content: space-between;
+   justify-content: center;
     align-items: center;
+    gap: 12px;
     transition: all 0.3s;
   box-shadow: var(--shadow-glow);
 }
