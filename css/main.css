@@ -80,14 +80,15 @@ body {
     border-bottom: 1px solid var(--border-subtle);
     padding: 16px 40px;
     position: sticky;
-    top: 0;
+   top: 0;
     z-index: 100;
     box-shadow: var(--shadow-card);
-   display: flex;
+  display: flex;
     justify-content: space-between;
     align-items: center;
     transition: all 0.3s;
-    width: 100%; /* Header на всю ширину */
+  max-width: 1600px; /* Ограничиваем ширину как у контента */
+  margin: 0 auto; /* Центрируем */
 }
 
 .logo h1 {
@@ -223,14 +224,6 @@ body {
   margin: 0 auto;
     width: 100%;
     overflow-x: hidden; /* Предотвращаем горизонтальную прокрутку */
-}
-
-/* Контейнер для центрирования контента на широких экранах */
-@media (min-width: 1600px) {
-    .header {
-        padding-left: calc((100vw - 1600px) / 2 +40px);
-        padding-right: calc((100vw - 1600px) / 2 +40px);
-    }
 }
 
 /* Sidebar Navigation */
