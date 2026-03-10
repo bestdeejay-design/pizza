@@ -83,10 +83,11 @@ body {
     top: 0;
     z-index: 100;
     box-shadow: var(--shadow-card);
-    display: flex;
+   display: flex;
     justify-content: space-between;
     align-items: center;
     transition: all 0.3s;
+    width: 100%; /* Header на всю ширину */
 }
 
 .logo h1 {
@@ -215,13 +216,21 @@ body {
 
 /* Main Layout */
 .main-container {
-   display: grid;
+  display: grid;
     grid-template-columns: 280px 1fr;
     gap: 0;
-   max-width: 1600px;
-   margin: 0 auto;
+  max-width: 1600px;
+  margin: 0 auto;
     width: 100%;
     overflow-x: hidden; /* Предотвращаем горизонтальную прокрутку */
+}
+
+/* Контейнер для центрирования контента на широких экранах */
+@media (min-width: 1600px) {
+    .header {
+        padding-left: calc((100vw - 1600px) / 2 +40px);
+        padding-right: calc((100vw - 1600px) / 2 +40px);
+    }
 }
 
 /* Sidebar Navigation */
