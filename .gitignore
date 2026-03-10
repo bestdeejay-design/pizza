@@ -13,6 +13,7 @@ docs/
 original-site-data/
 yandex-eda/
 results/
+scripts/
 
 # Резервные копии изображений
 img-backup/
@@ -29,23 +30,8 @@ Thumbs.db
 *.swo
 *~
 
-# Скрипты разработки (оставляем только 2 авто-парсера)
-parsers/
-scripts/
-*.py
-*.sh
-analyze-*.js
-clean-*.js
-check-*.js
-create-*.js
-add-*.js
-*collector*.js
-*Tampermonkey*.js
-*selector-finder*.js
-
-# Явные исключения для парсеров Yandex Eda (теперь не публикуются)
-yandex-eda-auto-collector.js
-yandex-eda-auto-collector-clean.js
+# Скрипты разработки (все в папке scripts/)
+# scripts/ уже исключён выше
 
 # Node.js и Python окружение
 node_modules/
