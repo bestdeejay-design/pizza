@@ -955,7 +955,7 @@ body {
   display: flex;
     align-items: center;
     justify-content: center;
-    background: var(--color-bg-card-hover);
+   background: transparent; /* Убираем фон - используем общий фон модалки */
 }
 
 .product-modal-image {
