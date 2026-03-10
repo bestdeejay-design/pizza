@@ -1491,3 +1491,4 @@ function getVisibleCategory() {
 }
 
 document.addEventListener('DOMContentLoaded', loadMenu);
+
