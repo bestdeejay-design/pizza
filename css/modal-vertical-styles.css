@@ -31,8 +31,7 @@
     flex-direction: column;
     gap: 16px;
     margin: 16px 0;
-    padding: 20px;
-    background: var(--color-bg-card-hover);
+    padding: 20px 0;
     border-radius: 16px;
 }
 
@@ -137,8 +136,7 @@
 
 /* Compact Addons */
 .addons-block-compact {
-    padding: 14px;
-    background: var(--color-bg-card-hover);
+    padding: 14px 0;
     border-radius: 12px;
     margin: 8px 0;
 }
@@ -219,7 +217,7 @@
     
     /* Price block */
     .price-quantity-block {
-        padding: 16px;
+        padding: 16px 0;
         gap: 14px;
     }
     
@@ -269,7 +267,7 @@
     
     /* Addons */
     .addons-block-compact {
-        padding: 12px;
+        padding: 12px 0;
     }
     
     .addon-item-small {
