@@ -1261,10 +1261,15 @@ function showProductModal(productId) {
                     ${product.weight ? `<span class="product-weight-badge">${product.weight} г</span>` : ''}
                 </h2>
                 
-                ${product.description ? `
-                    <div class="product-modal-description-compact">
-                        ${product.description.length > 250 ? product.description.substring(0, 250) + '...' : product.description}
+                <!-- Дополнения (если есть) -->
+                ${product.addons && product.addons.length > 1 ? `
+                <div class="addons-block-compact">
+                    <div class="addons-list">
+                        ${product.addons.map(addon => `
+                            <span class="addon-item-small">${addon}</span>
+                        `).join('')}
                     </div>
+                </div>
                 ` : ''}
                 
                 <div class="price-quantity-block">
@@ -1280,20 +1285,15 @@ function showProductModal(productId) {
                     </div>
                 </div>
                 
-                <!-- Дополнения (если есть) -->
-                ${product.addons && product.addons.length > 1 ? `
-                <div class="addons-block-compact">
-                    <div class="addons-list">
-                        ${product.addons.map(addon => `
-                            <span class="addon-item-small">${addon}</span>
-                        `).join('')}
-                    </div>
-                </div>
-                ` : ''}
-                
                 <button onclick="addToCartFromModal(${product.id})" class="product-modal-add-btn-large">
                     <span>Добавить в корзину</span>
                 </button>
+                
+                ${product.description ? `
+                    <div class="product-modal-description-compact">
+                        ${product.description.length > 250 ? product.description.substring(0, 250) + '...' : product.description}
+                    </div>
+                ` : ''}
             </div>
         </div>
     `;
