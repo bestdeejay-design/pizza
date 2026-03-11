@@ -1291,7 +1291,7 @@ function showProductModal(productId) {
                 
                 ${product.description ? `
                     <div class="product-modal-description-compact">
-                        ${product.description.length > 250 ? product.description.substring(0, 250) + '...' : product.description}
+                        ${product.description}
                     </div>
                 ` : ''}
             </div>
