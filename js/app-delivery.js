@@ -1258,6 +1258,7 @@ function showProductModal(productId) {
             <div class="product-modal-info-bottom">
                 <h2 class="product-modal-title-bottom">
                     ${product.title}
+                    ${product.weight ? `<span class="product-weight-badge">${product.weight} г</span>` : ''}
                 </h2>
                 
                 ${product.description ? `
@@ -1269,7 +1270,6 @@ function showProductModal(productId) {
                 <div class="price-quantity-block">
                     <div class="price-section">
                         <span class="price-value-large">${product.price} ₽</span>
-                        ${product.weight ? `<span class="product-weight-badge">${product.weight} г</span>` : ''}
                     </div>
                     
                     <!-- Счётчик количества -->
@@ -1278,12 +1278,6 @@ function showProductModal(productId) {
                         <span class="quantity-value" id="quantity-value">1</span>
                         <button class="quantity-btn plus" onclick="increaseQuantity()" aria-label="Увеличить">+</button>
                     </div>
-                </div>
-                
-                <!-- Итоговая сумма -->
-                <div class="total-price-section">
-                    <span class="total-label">Итого:</span>
-                    <span class="total-price-value" id="total-price">${product.price} ₽</span>
                 </div>
                 
                 <!-- Дополнения (если есть) -->
@@ -1347,15 +1341,9 @@ function decreaseQuantity() {
 
 function updateQuantityDisplay() {
     const quantityEl = document.getElementById('quantity-value');
-    const totalPriceEl = document.getElementById('total-price');
     
-    if (quantityEl && currentProductId) {
+    if (quantityEl) {
         quantityEl.textContent = productQuantity;
-        
-        const product = menu.find(p => p.id === currentProductId);
-        if (product && totalPriceEl) {
-            totalPriceEl.textContent = (product.price * productQuantity) + ' ₽';
-        }
     }
 }
 

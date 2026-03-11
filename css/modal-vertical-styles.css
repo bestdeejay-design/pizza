@@ -110,30 +110,6 @@
     text-align: center;
 }
 
-/* Total Price Section */
-.total-price-section {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 16px 20px;
-    background: var(--color-primary-light);
-    border-radius: 12px;
-    border: 1px solid var(--color-primary);
-}
-
-.total-label {
-    font-size: 16px;
-    font-weight: 600;
-    color: var(--color-text-secondary);
-}
-
-.total-price-value {
-    font-size: 32px;
-    font-weight: 800;
-    color: var(--color-primary);
-    line-height: 1;
-}
-
 /* Compact Addons */
 .addons-block-compact {
     padding: 14px 0;
@@ -250,19 +226,6 @@
     .quantity-value {
         font-size: 20px;
         min-width: 36px;
-    }
-    
-    /* Total price */
-    .total-price-section {
-        padding: 14px 16px;
-    }
-    
-    .total-label {
-        font-size: 14px;
-    }
-    
-    .total-price-value {
-        font-size: 28px;
     }
     
     /* Addons */
