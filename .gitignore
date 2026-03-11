@@ -1,0 +1,76 @@
+# ===========================================
+# .gitignore для Pizza Napoli Website
+# ===========================================
+
+# Исключаем ВСЁ кроме essential файлов сайта
+# -------------------------------------------
+
+# Папки с данными и разработкой
+backups/
+dev-local/
+dev-tools/
+docs/
+original-site-data/
+yandex-eda/
+results/
+scripts/
+img-jpg/
+
+# Резервные копии изображений
+img-backup/
+img-old/
+
+# Временные файлы и логи
+*.log
+*.txt
+*.pyc
+__pycache__/
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*~
+
+# Скрипты разработки (все в папке scripts/)
+# scripts/ уже исключён выше
+
+# Node.js и Python окружение
+node_modules/
+venv/
+package-lock.json
+package.json
+
+# JSON файлы данных (кроме menu-final.json)
+*-collect*.json
+*-complete*.json
+*-data*.json
+all-modal-data-merged.json
+ALL-PRODUCTS-COMPLETE.json
+PRODUCTS-WITH-FULL-DATA.json
+pizza-weights.json
+product-descriptions.json
+menu-analysis-from-docs.json
+menu-with-user-weights.json
+merged-modal-data.json
+missing-modal-data*.json
+missing-products.json
+modal-data-from-urls*.json
+network-requests.json
+retry-modal-data*.json
+test-modal-data.json
+test-one-product.json
+
+# Markdown файлы (кроме README.md)
+*.md
+!README.md
+
+# ==========================================
+# ЧТО ОСТАЁТСЯ НА GITHUB:
+# ==========================================
+# ✅ index.html
+# ✅ css/
+# ✅ js/
+# ✅ img/
+# ✅ menu-final.json
+# ✅ README.md
+# ==========================================
