@@ -173,14 +173,14 @@
     
     /* Image */
     .product-modal-image-top {
-        height: 250px;
+        height: 200px;
         border-radius: 20px 20px 0 0;
     }
     
-    /* Info section */
+    /* Info section - компактные отступы */
     .product-modal-info-bottom {
-        padding: 24px 20px calc(24px + env(safe-area-inset-bottom));
-        gap: 14px;
+        padding: 16px 16px calc(16px + env(safe-area-inset-bottom));
+        gap: 12px;
     }
     
     /* Title */
@@ -195,7 +195,7 @@
     
     /* Price block */
     .price-quantity-block {
-        gap: 16px;
+        gap: 12px;
     }
     
     /* Price */
