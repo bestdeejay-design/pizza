@@ -957,6 +957,7 @@ body {
     align-items: center;
     justify-content: center;
    background: transparent;
+    padding: 30px;
 }
 
 .product-modal-image {
@@ -964,6 +965,7 @@ body {
     height: 100%;
   object-fit: contain;
     transition: transform 0.4s;
+    border-radius: 12px;
 }
 
 .product-modal-image:hover {
@@ -1014,101 +1016,90 @@ body {
     padding: 40px;
   display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 16px;
 }
 
 /* Title */
 .product-modal-title {
-    font-size: 32px;
+    font-size: 28px;
     font-weight: 800;
     color: var(--color-text-heading);
-    line-height: 1.2;
-  margin-bottom: 8px;
+    line-height: 1.3;
+    margin-bottom: 0;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 12px;
 }
 
 .product-modal-title-inline-weight {
   display: inline-block;
-  margin-left: 12px;
-    padding: 6px 16px;
+  margin-left: 0;
+    padding: 4px 12px;
     background: var(--color-primary-light);
     color: var(--color-primary);
-  border-radius: 20px;
-    font-size: 18px;
+  border-radius: 12px;
+    font-size: 14px;
     font-weight: 600;
 }
 
 /* Description */
 .product-modal-description {
     font-size: 15px;
-    line-height: 1.6;
+    line-height: 1.7;
   color: var(--color-text-secondary);
-  max-height: 150px;
-    overflow: hidden;
-    transition: max-height 0.4s ease;
-}
-
-.product-modal-description.expanded {
-  max-height: 500px;
-}
-
-.product-modal-description-expand-btn {
-    background: none;
-  border: none;
-  color: var(--color-primary);
-    cursor: pointer;
-    font-size: 14px;
-    font-weight: 600;
-    padding: 8px 0;
-  margin-top: 8px;
-    transition: all 0.3s;
-  opacity: 0.9;
-}
-
-.product-modal-description-expand-btn:hover {
-  color: var(--color-primary-hover);
-  opacity: 1;
-  text-decoration: underline;
+    margin-top: 8px;
 }
 
 /* Price & Weight Blocks */
 .price-weight-blocks {
   display: flex;
-    gap: 20px;
-  margin: 20px 0;
+    align-items: center;
+    gap: 16px;
+  margin: 12px 0;
+    padding: 16px 0;
+    border-top: 1px solid var(--border-subtle);
+    border-bottom: 1px solid var(--border-subtle);
 }
 
 .price-block {
   display: flex;
-    align-items: baseline;
-    gap: 12px;
+    align-items: center;
 }
 
 .price-label {
-    font-size: 16px;
+    font-size: 14px;
     color: var(--color-text-secondary);
     font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
 }
 
 .price-value {
-    font-size: 36px;
+    font-size: 42px;
     font-weight: 800;
     color: var(--color-primary);
+    line-height: 1;
+}
+
+.product-modal-weight {
+    font-size: 15px;
+    color: var(--color-text-secondary);
+    font-weight: 500;
+    background: var(--color-bg-card-hover);
+    padding: 6px 12px;
+    border-radius: 8px;
 }
 
 /* Addons */
 .addons-block {
-    padding: 20px;
+    padding: 16px;
     background: var(--color-bg-card-hover);
   border-radius: 12px;
-  margin: 20px 0;
+  margin: 8px 0;
 }
 
-.addons-title {
-    font-size: 18px;
-    font-weight: 700;
-    color: var(--color-text-heading);
-  margin-bottom: 12px;
-}
+
 
 .addons-list {
   display: flex;
@@ -1117,12 +1108,19 @@ body {
 }
 
 .addon-item {
-    padding: 8px 16px;
+    padding: 6px 12px;
     background: var(--color-bg-card);
   border-radius: 8px;
-    font-size: 14px;
+    font-size: 13px;
     color: var(--color-text-primary);
   border: 1px solid var(--border-subtle);
+    transition: all 0.2s;
+}
+
+.addon-item:hover {
+    background: var(--color-primary-light);
+    border-color: var(--color-primary);
+    transform: translateY(-1px);
 }
 
 /* Add Button */

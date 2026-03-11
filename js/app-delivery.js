@@ -1261,27 +1261,21 @@ function showProductModal(productId) {
                 </h2>
                 
                 ${product.description ? `
-                    <div class="product-modal-description" id="modal-desc-${product.id}">
-                        ${product.description.length > 150 ? product.description.substring(0, 150) + '...' : product.description}
-                        ${product.description.length > 150 ? `
-                            <button class="product-modal-description-expand-btn" onclick="toggleDescription(${product.id})">
-                                Показать полностью
-                            </button>
-                        ` : ''}
+                    <div class="product-modal-description">
+                        ${product.description.length > 300 ? product.description.substring(0, 300) + '...' : product.description}
                     </div>
                 ` : ''}
                 
                 <div class="price-weight-blocks">
                     <div class="price-block">
-                        <span class="price-label">Цена:</span>
                         <span class="price-value">${product.price} ₽</span>
                     </div>
+                    ${product.weight ? `<span class="product-modal-weight">${product.weight} г</span>` : ''}
                 </div>
                 
                 <!-- Дополнения (если есть) -->
-                ${product.addons ? `
+                ${product.addons && product.addons.length > 1 ? `
                 <div class="addons-block">
-                    <h3 class="addons-title">Дополнения:</h3>
                     <div class="addons-list">
                         ${product.addons.map(addon => `
                             <span class="addon-item">${addon}</span>
@@ -1314,39 +1308,6 @@ function closeProductModal() {
     if (modal) {
         modal.style.display = 'none';
         document.body.style.overflow = '';
-    }
-}
-
-// Toggle description expand/collapse
-function toggleDescription(productId) {
-    const descElement = document.getElementById(`modal-desc-${productId}`);
-    if (!descElement) return;
-    
-    const isExpanded = descElement.classList.contains('expanded');
-    const btn = descElement.querySelector('.product-modal-description-expand-btn');
-    
-    if (isExpanded) {
-        // Collapse
-        descElement.classList.remove('expanded');
-        // Re-truncate text
-        const fullText = descElement.dataset.fullText || descElement.textContent;
-        descElement.innerHTML = `
-            ${fullText.substring(0, 150)}...
-            <button class="product-modal-description-expand-btn" onclick="toggleDescription(${productId})">
-                Показать полностью
-            </button>
-        `;
-    } else {
-        // Expand - store full text and show all
-        const currentText = descElement.textContent.replace('Показать полностью', '').trim();
-        descElement.dataset.fullText = currentText;
-        descElement.classList.add('expanded');
-        descElement.innerHTML = `
-            ${currentText}
-            <button class="product-modal-description-expand-btn" onclick="toggleDescription(${productId})">
-                Свернуть
-            </button>
-        `;
     }
 }
 
