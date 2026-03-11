@@ -1246,10 +1246,12 @@ function showProductModal(productId) {
     contentDiv.innerHTML = `
         <div class="product-modal-grid">
             <!-- Левая колонка - Картинка -->
-            <div class="product-modal-image-wrapper">
+            <div class="product-modal-image-container">
                 <img src="${product.image}" alt="${product.title}" class="product-modal-image">
-                <button onclick="closeProductModal()" class="product-modal-close-btn">✕</button>
             </div>
+            
+            <!-- Кнопка закрытия в правом верхнем углу модального окна -->
+            <button onclick="closeProductModal()" class="product-modal-close-btn" aria-label="Закрыть">✕</button>
             
             <!-- Правая колонка - Информация -->
             <div class="product-modal-info">
@@ -1298,6 +1300,11 @@ function showProductModal(productId) {
     modalElement.classList.add('active');
     setTimeout(() => {
         modalElement.style.display = 'flex';
+        // Устанавливаем фокус на кнопку закрытия для доступности
+        const closeBtn = modalElement.querySelector('.product-modal-close-btn');
+        if (closeBtn) {
+            closeBtn.focus();
+        }
     }, 0);
     document.body.style.overflow = 'hidden';
 }
@@ -1371,6 +1378,13 @@ function createProductModal() {
     // Закрытие по клику на overlay
     modal.addEventListener('click', (e) => {
         if (e.target === modal) {
+            closeProductModal();
+        }
+    });
+    
+    // Закрытие по клавише ESC
+    modal.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' || e.keyCode === 27) {
             closeProductModal();
         }
     });
