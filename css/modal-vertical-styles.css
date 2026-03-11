@@ -163,10 +163,12 @@
 
 /* ===== MOBILE ADAPTATION ===== */
 @media (max-width: 768px) {
-    /* Modal container */
+    /* Modal container - 95% viewport height */
     #product-modal-content {
         max-width: 100%;
+        max-height: 95vh;
         border-radius: 20px 20px 0 0;
+        overflow-y: auto; /* Внутренний скролл контента */
     }
     
     /* Image */
@@ -177,7 +179,7 @@
     
     /* Info section */
     .product-modal-info-bottom {
-        padding: 24px 20px;
+        padding: 24px 20px calc(24px + env(safe-area-inset-bottom));
         gap: 14px;
     }
     
