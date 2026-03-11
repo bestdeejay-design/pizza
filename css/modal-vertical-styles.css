@@ -1,0 +1,294 @@
+/* ===== NEW VERTICAL LAYOUT STYLES - Insert after line 1008 ===== */
+
+/* Bottom Info Section */
+.product-modal-info-bottom {
+    padding: 32px 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+/* Title Bottom */
+.product-modal-title-bottom {
+    font-size: 26px;
+    font-weight: 800;
+    color: var(--color-text-heading);
+    line-height: 1.3;
+    margin-bottom: 0;
+}
+
+/* Compact Description */
+.product-modal-description-compact {
+    font-size: 15px;
+    line-height: 1.6;
+    color: var(--color-text-secondary);
+    margin-top: 4px;
+}
+
+/* Price & Quantity Block */
+.price-quantity-block {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin: 16px 0;
+    padding: 20px;
+    background: var(--color-bg-card-hover);
+    border-radius: 16px;
+}
+
+.price-section {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.price-value-large {
+    font-size: 42px;
+    font-weight: 800;
+    color: var(--color-primary);
+    line-height: 1;
+}
+
+.product-weight-badge {
+    font-size: 14px;
+    color: var(--color-text-secondary);
+    font-weight: 500;
+    background: var(--border-subtle);
+    padding: 4px 10px;
+    border-radius: 8px;
+}
+
+/* Quantity Selector */
+.quantity-selector {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    background: var(--color-bg-card);
+    padding: 12px;
+    border-radius: 12px;
+    border: 1px solid var(--border-subtle);
+}
+
+.quantity-btn {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    background: var(--gradient-primary);
+    color: white;
+    border: none;
+    font-size: 24px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s;
+    box-shadow: var(--shadow-glow);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    line-height: 1;
+}
+
+.quantity-btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 8px 25px rgba(255, 46, 85, 0.45);
+}
+
+.quantity-btn:active {
+    transform: scale(0.95);
+}
+
+.quantity-btn.minus {
+    font-size: 28px;
+    padding-bottom: 2px;
+}
+
+.quantity-value {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--color-text-heading);
+    min-width: 40px;
+    text-align: center;
+}
+
+/* Total Price Section */
+.total-price-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 20px;
+    background: var(--color-primary-light);
+    border-radius: 12px;
+    border: 1px solid var(--color-primary);
+}
+
+.total-label {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--color-text-secondary);
+}
+
+.total-price-value {
+    font-size: 32px;
+    font-weight: 800;
+    color: var(--color-primary);
+    line-height: 1;
+}
+
+/* Compact Addons */
+.addons-block-compact {
+    padding: 14px;
+    background: var(--color-bg-card-hover);
+    border-radius: 12px;
+    margin: 8px 0;
+}
+
+.addon-item-small {
+    padding: 6px 12px;
+    background: var(--color-bg-card);
+    border-radius: 8px;
+    font-size: 13px;
+    color: var(--color-text-primary);
+    border: 1px solid var(--border-subtle);
+    transition: all 0.2s;
+}
+
+.addon-item-small:hover {
+    background: var(--color-primary-light);
+    border-color: var(--color-primary);
+    transform: translateY(-1px);
+}
+
+/* Large Add Button */
+.product-modal-add-btn-large {
+    margin-top: 8px;
+    padding: 20px 32px;
+    background: var(--gradient-primary);
+    color: white;
+    border: none;
+    border-radius: 16px;
+    font-size: 20px;
+    font-weight: 700;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    transition: all 0.3s;
+    box-shadow: var(--shadow-glow);
+}
+
+.product-modal-add-btn-large:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 30px rgba(255, 46, 85, 0.4);
+}
+
+.product-modal-add-btn-large:active {
+    transform: translateY(0);
+}
+
+/* ===== MOBILE ADAPTATION ===== */
+@media (max-width: 768px) {
+    /* Modal container */
+    #product-modal-content {
+        max-width: 100%;
+        border-radius: 20px 20px 0 0;
+    }
+    
+    /* Image */
+    .product-modal-image-top {
+        height: 250px;
+        border-radius: 20px 20px 0 0;
+    }
+    
+    /* Info section */
+    .product-modal-info-bottom {
+        padding: 24px 20px;
+        gap: 14px;
+    }
+    
+    /* Title */
+    .product-modal-title-bottom {
+        font-size: 22px;
+    }
+    
+    /* Description */
+    .product-modal-description-compact {
+        font-size: 14px;
+    }
+    
+    /* Price block */
+    .price-quantity-block {
+        padding: 16px;
+        gap: 14px;
+    }
+    
+    /* Price */
+    .price-value-large {
+        font-size: 32px;
+    }
+    
+    .product-weight-badge {
+        font-size: 13px;
+        padding: 3px 8px;
+    }
+    
+    /* Quantity selector */
+    .quantity-selector {
+        gap: 16px;
+        padding: 10px;
+    }
+    
+    .quantity-btn {
+        width: 36px;
+        height: 36px;
+        font-size: 22px;
+    }
+    
+    .quantity-btn.minus {
+        font-size: 26px;
+    }
+    
+    .quantity-value {
+        font-size: 20px;
+        min-width: 36px;
+    }
+    
+    /* Total price */
+    .total-price-section {
+        padding: 14px 16px;
+    }
+    
+    .total-label {
+        font-size: 14px;
+    }
+    
+    .total-price-value {
+        font-size: 28px;
+    }
+    
+    /* Addons */
+    .addons-block-compact {
+        padding: 12px;
+    }
+    
+    .addon-item-small {
+        padding: 5px 10px;
+        font-size: 12px;
+    }
+    
+    /* Add button */
+    .product-modal-add-btn-large {
+        padding: 18px 24px;
+        font-size: 18px;
+    }
+    
+    /* Close button */
+    .product-modal-close-btn {
+        top: 12px;
+        right: 12px;
+        width: 40px;
+        height: 40px;
+        font-size: 24px;
+    }
+}

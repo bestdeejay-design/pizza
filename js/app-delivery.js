@@ -1242,48 +1242,62 @@ function showProductModal(productId) {
     const modalElement = document.getElementById('product-modal');
     const contentDiv = document.getElementById('product-modal-content');
     
-    // Формируем расширенную карточку с горизонтальной компоновкой
+    // Инициализируем количество товара
+    let productQuantity = 1;
+    
+    // Формируем расширенную карточку с вертикальной компоновкой
     contentDiv.innerHTML = `
-        <div class="product-modal-grid">
-            <!-- Левая колонка - Картинка -->
-            <div class="product-modal-image-container">
-                <img src="${product.image}" alt="${product.title}" class="product-modal-image">
+        <div class="product-modal-vertical">
+            <!-- Верхняя часть - Изображение -->
+            <div class="product-modal-image-top">
+                <img src="${product.image}" alt="${product.title}" class="product-modal-image-top-img">
+                <button onclick="closeProductModal()" class="product-modal-close-btn" aria-label="Закрыть">✕</button>
             </div>
             
-            <!-- Кнопка закрытия в правом верхнем углу модального окна -->
-            <button onclick="closeProductModal()" class="product-modal-close-btn" aria-label="Закрыть">✕</button>
-            
-            <!-- Правая колонка - Информация -->
-            <div class="product-modal-info">
-                <h2 class="product-modal-title">
+            <!-- Нижняя часть - Информация -->
+            <div class="product-modal-info-bottom">
+                <h2 class="product-modal-title-bottom">
                     ${product.title}
-                    ${product.weight ? `<span class="product-modal-weight">${product.weight} г</span>` : ''}
                 </h2>
                 
                 ${product.description ? `
-                    <div class="product-modal-description">
-                        ${product.description.length > 300 ? product.description.substring(0, 300) + '...' : product.description}
+                    <div class="product-modal-description-compact">
+                        ${product.description.length > 250 ? product.description.substring(0, 250) + '...' : product.description}
                     </div>
                 ` : ''}
                 
-                <div class="price-weight-blocks">
-                    <div class="price-block">
-                        <span class="price-value">${product.price} ₽</span>
+                <div class="price-quantity-block">
+                    <div class="price-section">
+                        <span class="price-value-large">${product.price} ₽</span>
+                        ${product.weight ? `<span class="product-weight-badge">${product.weight} г</span>` : ''}
                     </div>
+                    
+                    <!-- Счётчик количества -->
+                    <div class="quantity-selector">
+                        <button class="quantity-btn minus" onclick="decreaseQuantity()" aria-label="Уменьшить">−</button>
+                        <span class="quantity-value" id="quantity-value">1</span>
+                        <button class="quantity-btn plus" onclick="increaseQuantity()" aria-label="Увеличить">+</button>
+                    </div>
+                </div>
+                
+                <!-- Итоговая сумма -->
+                <div class="total-price-section">
+                    <span class="total-label">Итого:</span>
+                    <span class="total-price-value" id="total-price">${product.price} ₽</span>
                 </div>
                 
                 <!-- Дополнения (если есть) -->
                 ${product.addons && product.addons.length > 1 ? `
-                <div class="addons-block">
+                <div class="addons-block-compact">
                     <div class="addons-list">
                         ${product.addons.map(addon => `
-                            <span class="addon-item">${addon}</span>
+                            <span class="addon-item-small">${addon}</span>
                         `).join('')}
                     </div>
                 </div>
                 ` : ''}
                 
-                <button onclick="addToCart(${product.id}); closeProductModal();" class="product-modal-add-btn">
+                <button onclick="addToCartFromModal(${product.id})" class="product-modal-add-btn-large">
                     <span>Добавить в корзину</span>
                 </button>
             </div>
@@ -1293,6 +1307,9 @@ function showProductModal(productId) {
     modalElement.classList.add('active');
     setTimeout(() => {
         modalElement.style.display = 'flex';
+        // Сохраняем ID текущего товара
+        currentProductId = productId;
+        productQuantity = 1;
         // Устанавливаем фокус на кнопку закрытия для доступности
         const closeBtn = modalElement.querySelector('.product-modal-close-btn');
         if (closeBtn) {
@@ -1308,6 +1325,49 @@ function closeProductModal() {
         modal.style.display = 'none';
         document.body.style.overflow = '';
     }
+}
+
+// Управление количеством товара в модальном окне
+let currentProductId = null;
+let productQuantity = 1;
+
+function increaseQuantity() {
+    if (productQuantity < 99) {
+        productQuantity++;
+        updateQuantityDisplay();
+    }
+}
+
+function decreaseQuantity() {
+    if (productQuantity > 1) {
+        productQuantity--;
+        updateQuantityDisplay();
+    }
+}
+
+function updateQuantityDisplay() {
+    const quantityEl = document.getElementById('quantity-value');
+    const totalPriceEl = document.getElementById('total-price');
+    
+    if (quantityEl && currentProductId) {
+        quantityEl.textContent = productQuantity;
+        
+        const product = menu.find(p => p.id === currentProductId);
+        if (product && totalPriceEl) {
+            totalPriceEl.textContent = (product.price * productQuantity) + ' ₽';
+        }
+    }
+}
+
+function addToCartFromModal(productId) {
+    // Добавляем товар нужное количество раз
+    for (let i = 0; i < productQuantity; i++) {
+        addToCart(productId);
+    }
+    // Сбрасываем количество и закрываем
+    productQuantity = 1;
+    updateQuantityDisplay();
+    closeProductModal();
 }
 
 function createProductModal() {

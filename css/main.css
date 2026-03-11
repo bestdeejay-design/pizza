@@ -893,7 +893,7 @@ body {
     }
 }
 
-/* ===== PRODUCT MODAL - FULL STYLES ===== */
+/* ===== PRODUCT MODAL - VERTICAL LAYOUT v2.0 ===== */
 
 /* Modal Overlay */
 .modal-overlay {
@@ -914,6 +914,97 @@ body {
 
 .modal-overlay.active {
   display: flex;
+}
+
+/* Modal Content - Vertical Layout */
+#product-modal-content {
+    background: var(--color-bg-card);
+  border-radius: 24px;
+  max-width: 600px;
+    width: 100%;
+  max-height: 90vh;
+    overflow-y: auto;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+    position: relative;
+    animation: modalSlideIn 0.3s ease-out;
+}
+
+@keyframes modalSlideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-30px) scale(0.95);
+    }
+  to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* Vertical Container */
+.product-modal-vertical {
+  display: flex;
+    flex-direction: column;
+}
+
+/* Top Image Section */
+.product-modal-image-top {
+  position: relative;
+    width: 100%;
+    height: 320px;
+    flex-shrink: 0;
+    background: var(--color-bg-card-hover);
+    border-radius: 24px 24px 0 0;
+    overflow: hidden;
+}
+
+.product-modal-image-top-img {
+    width: 100%;
+    height: 100%;
+  object-fit: contain;
+    transition: transform 0.4s;
+}
+
+.product-modal-image-top-img:hover {
+    transform: scale(1.05);
+}
+
+/* Close Button in Image */
+.product-modal-close-btn {
+    position: absolute;
+  top: 16px;
+    right: 16px;
+    width: 44px;
+    height: 44px;
+  border-radius: 50%;
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+    font-size: 28px;
+    cursor: pointer;
+  display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 10;
+    padding: 0;
+    line-height: 1;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.product-modal-close-btn:hover {
+    background: var(--color-primary);
+    border-color: transparent;
+    transform: scale(1.1) rotate(90deg);
+    box-shadow: 0 6px 20px rgba(255, 46, 85, 0.5);
+}
+
+.product-modal-close-btn:active {
+    transform: scale(0.95);
+}
+
+.product-modal-close-btn:focus {
+    outline: 3px solid var(--color-primary);
+    outline-offset: 2px;
 }
 
 /* Modal Content */
