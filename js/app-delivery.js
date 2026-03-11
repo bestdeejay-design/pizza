@@ -1272,11 +1272,11 @@ function showProductModal(productId) {
                         <span class="price-value-large">${product.price} ₽</span>
                     </div>
                     
-                    <!-- Счётчик количества -->
-                    <div class="quantity-selector">
-                        <button class="quantity-btn minus" onclick="decreaseQuantity()" aria-label="Уменьшить">−</button>
-                        <span class="quantity-value" id="quantity-value">1</span>
-                        <button class="quantity-btn plus" onclick="increaseQuantity()" aria-label="Увеличить">+</button>
+                    <!-- Компактный счётчик количества справа от цены -->
+                    <div class="quantity-selector-compact">
+                        <button class="quantity-btn-small minus" onclick="decreaseQuantity()" aria-label="Уменьшить">−</button>
+                        <span class="quantity-value-small" id="quantity-value">1</span>
+                        <button class="quantity-btn-small plus" onclick="increaseQuantity()" aria-label="Увеличить">+</button>
                     </div>
                 </div>
                 
