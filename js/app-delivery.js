@@ -1257,7 +1257,7 @@ function showProductModal(productId) {
             <div class="product-modal-info">
                 <h2 class="product-modal-title">
                     ${product.title}
-                    ${product.weight ? `<span class="product-modal-title-inline-weight">${product.weight} г</span>` : ''}
+                    ${product.weight ? `<span class="product-modal-weight">${product.weight} г</span>` : ''}
                 </h2>
                 
                 ${product.description ? `
@@ -1270,7 +1270,6 @@ function showProductModal(productId) {
                     <div class="price-block">
                         <span class="price-value">${product.price} ₽</span>
                     </div>
-                    ${product.weight ? `<span class="product-modal-weight">${product.weight} г</span>` : ''}
                 </div>
                 
                 <!-- Дополнения (если есть) -->
