@@ -99,12 +99,40 @@ const PRODUCTS_PER_LOAD = 12;
 const SCROLL_THRESHOLD = 50;
 const DELAY_BEFORE_NAVIGATE = 1500;
 
+// localStorage keys
+const CART_STORAGE_KEY = 'pizzaCart';
+
 // ========================================
 // GLOBAL VARIABLES
 // ========================================
 let menu = [];
-let cart = [];
+let cart = loadCartFromStorage();
 let lazyLoadObservers = new Map(); // Хранилище для IntersectionObserver
+
+function loadCartFromStorage() {
+    try {
+        const raw = localStorage.getItem(CART_STORAGE_KEY);
+        const parsed = raw ? JSON.parse(raw) : [];
+        return Array.isArray(parsed) ? parsed : [];
+    } catch (e) {
+        console.warn('Cart restore failed, starting empty:', e);
+        return [];
+    }
+}
+
+function saveCart() {
+    try {
+        localStorage.setItem(CART_STORAGE_KEY, JSON.stringify(cart));
+    } catch (e) {
+        console.warn('Cart save failed:', e);
+    }
+}
+
+function clearCart() {
+    cart = [];
+    saveCart();
+    updateCartTotal();
+}
 
 // Auto-navigation state
 let lastScrollY = window.scrollY;
@@ -167,9 +195,9 @@ async function loadMenu() {
         initSidebar();
         initMobileMenu(); // Инициализация мобильного меню
         renderContentWithLazyLoad();
-        setupSearch();
         restoreState(); // Восстанавливаем состояние после загрузки контента
-        
+        updateCartTotal(); // Отрисовать счётчик корзины из localStorage
+
         console.log('Menu initialization complete');
     } catch (error) {
         console.error('Error loading menu:', error);
@@ -281,164 +309,6 @@ function initSidebar() {
     console.log('Sidebar initialized with grouped menu');
 }
 
-function renderContent() {
-    const content = document.getElementById('content');
-    
-    // Собираем все категории в правильном порядке
-    const orderedCategories = [];
-    MENU_GROUPS.forEach(group => {
-        group.categories.forEach(cat => {
-            if (cat === 'contacts' || menu.some(item => item.category === cat)) {
-                orderedCategories.push(cat);
-            }
-        });
-    });
-    
-    console.log('Rendering categories in order:', orderedCategories.length);
-    
-    // Рендерим все категории с display:none кроме первой
-    content.innerHTML = orderedCategories.map((cat, index) => {
-        const productsInCategory = menu.filter(item => {
-            return item.category === cat;
-        });
-        
-        console.log(`Category ${cat}: ${productsInCategory.length} products`);
-        
-        const displayName = categoryMap[cat] || cat;
-        const isActive = index === 0 ? '' : 'display: none;';
-        
-        // Для контактов - специальный рендеринг
-        if (cat === 'contacts') {
-            return `
-                <div class="category-section" id="category-${cat}" style="${isActive}">
-                    <div class="category-header">
-                        <h2 class="category-title">📍 Контакты</h2>
-                        <p class="category-subtitle">Наши пиццерии и способы связи</p>
-                    </div>
-                    <div class="contacts-grid">
-                        <!-- Location 1 (Main) -->
-                        <div class="contact-card primary">
-                            <h3 class="contact-card-title">🍕 Pizza Napoli 1</h3>
-                            <div class="contact-info-item">
-                                <span class="contact-icon">📞</span>
-                                <div>
-                                    <div class="contact-label">Телефон:</div>
-                                    <div class="contact-value"><a href="tel:+79991699839" style="color: inherit; text-decoration: none;">+7 (999) 169-98-39</a></div>
-                                </div>
-                            </div>
-                            <div class="contact-info-item">
-                                <span class="contact-icon">📍</span>
-                                <div>
-                                    <div class="contact-label">Адрес:</div>
-                                    <div class="contact-value">Санкт-Петербург, улица Бабушкина 53, стр. 1, Невский район</div>
-                                </div>
-                            </div>
-                            <div class="contact-info-item">
-                                <span class="contact-icon">⏰</span>
-                                <div>
-                                    <div class="contact-label">Режим работы:</div>
-                                    <div class="contact-value">с 10:00 до 22:00 без выходных</div>
-                                </div>
-                            </div>
-                            <div class="contact-info-item">
-                                <span class="contact-icon">💳</span>
-                                <div>
-                                    <div class="contact-label">Оплата:</div>
-                                    <div class="payment-methods">
-                                        <span class="payment-badge">Наличными</span>
-                                        <span class="payment-badge">Картой</span>
-                                        <span class="payment-badge">Переводом</span>
-                                        <span class="payment-badge">Безналичным платежом</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Location 2 (Opening Soon) -->
-                        <div class="contact-card opening-soon">
-                            <div class="opening-badge">🎉 Скоро открытие!</div>
-                            <h3 class="contact-card-title">🍕 Pizza Napoli 2.0</h3>
-                            <div class="contact-info-item">
-                                <span class="contact-icon">📍</span>
-                                <div>
-                                    <div class="contact-label">Адрес:</div>
-                                    <div class="contact-value">Санкт-Петербург, Московский район</div>
-                                </div>
-                            </div>
-                            <div class="contact-info-item">
-                                <span class="contact-icon">🎯</span>
-                                <div>
-                                    <div class="contact-label">Особенности:</div>
-                                    <div class="contact-value">Большой зал, летняя веранда, детская комната</div>
-                                </div>
-                            </div>
-                            <div class="contact-info-item">
-                                <span class="contact-icon">🎁</span>
-                                <div>
-                                    <div class="contact-label">Открытие:</div>
-                                    <div class="contact-value">Следите за новостями! Скидки до 50% в день открытия</div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Map -->
-                        <div class="map-container">
-                            <div class="map-placeholder">
-                                <div class="map-pin location-1" title="Pizza Napoli 1 - ул. Бабушкина 53">📍</div>
-                                <div class="map-pin location-2" title="Pizza Napoli 2.0 - Московский район (скоро)">📍</div>
-                                <span>Интерактивная карта с локациями пиццерий</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            `;
-        }
-        
-        // Обычный рендеринг для категорий с товарами
-        return `
-            <div class="category-section" id="category-${cat}" style="${isActive}">
-                <div class="category-header">
-                    <h2 class="category-title">${displayName}</h2>
-                    <p class="category-subtitle">${productsInCategory.length} товаров</p>
-                </div>
-                <div class="products-grid">
-                    ${renderProducts(productsInCategory)}
-                </div>
-            </div>
-        `;
-    }).join('');
-}
-
-function renderProducts(products) {
-    if (!products || products.length === 0) {
-        console.warn('No products to render!');
-        return '<p style="color: #86868b; padding: 40px;">В этой категории пока нет товаров</p>';
-    }
-    
-    console.log(`Rendering ${products.length} products`);
-    
-    return products.map((product, idx) => {
-        if (idx < 2) {
-            console.log('Product sample:', product);
-        }
-        return `
-            <div class="product-card" data-id="${product.id}">
-                <div class="product-image-wrapper">
-                    <img src="${product.image}" alt="${product.title}" class="product-image" onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 260 200%22><rect fill=%22%23f5f5f7%22 width=%22260%22 height=%22200%22/><text x=%22130%22 y=%22105%22 text-anchor=%22middle%22 fill=%22%2386868b%22 font-size=%2214%22>No Photo</text></svg>'">
-                </div>
-                <div class="product-info">
-                    <h3 class="product-name">${product.title}</h3>
-                    <div class="product-actions">
-                        <div class="product-weight">${product.weight || ''}${product.weight ? ' г' : ''}</div>
-                        <div class="product-price">${product.price} ₽</div>
-                        <button class="add-to-cart" onclick="addToCart(${product.id})">В корзину</button>
-                    </div>
-                </div>
-            </div>
-        `;
-    }).join('');
-}
-
 function setupIntersectionObserver() {
     console.log('Setting up Intersection Observer');
     
@@ -527,7 +397,8 @@ function addToCart(productId) {
     } else {
         cart.push({ ...product, quantity: 1 });
     }
-    
+
+    saveCart();
     updateCartTotal();
     animateCartButton();
 }
@@ -548,11 +419,16 @@ function animateCartButton() {
 function showCart() {
     const modal = document.getElementById('cart-modal');
     const itemsContainer = document.getElementById('cart-items');
-    
+
     if (cart.length === 0) {
-        itemsContainer.innerHTML = '<p style="text-align: center; color: #86868b; padding: 40px 0;">Корзина пуста</p>';
+        itemsContainer.innerHTML = `
+            <p style="text-align: center; color: #86868b; padding: 40px 0;">Корзина пуста</p>
+            <div class="cart-actions">
+                <button class="btn btn-secondary" onclick="hideCart()">Закрыть</button>
+            </div>
+        `;
     } else {
-        itemsContainer.innerHTML = cart.map(item => `
+        const itemsHtml = cart.map(item => `
             <div class="cart-item">
                 <div>
                     <div style="font-weight: 700; font-size: 16px; margin-bottom: 4px;">${item.title}</div>
@@ -561,8 +437,32 @@ function showCart() {
                 <div style="font-weight: 800; color: #ff2e55;">${item.quantity * item.price} ₽</div>
             </div>
         `).join('');
+
+        const total = cart.reduce((s, i) => s + i.price * i.quantity, 0);
+
+        itemsContainer.innerHTML = `
+            ${itemsHtml}
+            <div class="cart-total-row" style="display:flex; justify-content:space-between; align-items:center; padding:16px 0; border-top:1px solid var(--border-subtle); margin-top:12px;">
+                <span style="font-weight:700; font-size:18px;">Итого</span>
+                <span style="font-weight:800; font-size:22px; color:#ff2e55;">${total} ₽</span>
+            </div>
+            <form class="order-form" onsubmit="event.preventDefault(); submitOrder();" style="display:flex; flex-direction:column; gap:12px; margin-top:12px;">
+                <label style="display:flex; flex-direction:column; gap:6px; font-weight:600;">
+                    Номер столика
+                    <input type="text" id="order-table-number" required maxlength="10" placeholder="Например, 5" style="padding:12px; border:1px solid var(--border-strong); border-radius:8px; background:var(--color-bg-card); color:var(--color-text-primary); font-size:16px;">
+                </label>
+                <label style="display:flex; flex-direction:column; gap:6px; font-weight:600;">
+                    Комментарий к заказу (необязательно)
+                    <textarea id="order-comment" rows="3" maxlength="500" placeholder="Пожелания, аллергии и т.п." style="padding:12px; border:1px solid var(--border-strong); border-radius:8px; background:var(--color-bg-card); color:var(--color-text-primary); font-size:15px; resize:vertical; font-family:inherit;"></textarea>
+                </label>
+                <div class="cart-actions">
+                    <button type="button" class="btn btn-secondary" onclick="hideCart()">Закрыть</button>
+                    <button type="submit" id="order-submit-btn" class="btn btn-primary">Оформить заказ</button>
+                </div>
+            </form>
+        `;
     }
-    
+
     modal.style.display = 'flex';
 }
 
@@ -570,34 +470,151 @@ function hideCart() {
     document.getElementById('cart-modal').style.display = 'none';
 }
 
+// ========================================
+// ORDER SUBMISSION
+// ========================================
+
+const CATEGORY_EMOJI = {
+    'pizza-30cm': '🍕',
+    'piccolo-20cm': '🍕',
+    'calzone': '🥟',
+    'bread-focaccia-bread': '🍞',
+    'bread-focaccia-focaccia': '🥖',
+    'sauce': '🥫',
+    'rolls-sushi': '🍣',
+    'rolls-rolls': '🍣',
+    'combo': '🍱',
+    'confectionery': '🍰',
+    'mors': '🥤',
+    'juice': '🧃',
+    'water': '💧',
+    'soda': '🥤',
+    'beverages-other': '🥤',
+    'frozen': '❄️',
+    'aromatic-oils': '🫒',
+    'masterclass': '🎓',
+    'franchise': '💼'
+};
+
+function escapeHtml(s) {
+    return String(s)
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;');
+}
+
+function formatOrderMessage(tableNumber, comment) {
+    const now = new Date();
+    const time = now.toLocaleTimeString('ru-RU', { hour: '2-digit', minute: '2-digit' });
+    const date = now.toLocaleDateString('ru-RU', { day: '2-digit', month: '2-digit' });
+    const sep = '━━━━━━━━━━━━━━━';
+
+    const totalSum = cart.reduce((s, i) => s + i.price * i.quantity, 0);
+    const totalPieces = cart.reduce((s, i) => s + i.quantity, 0);
+
+    const lines = [
+        '🍕 <b>НОВЫЙ ЗАКАЗ</b>',
+        `🪑 Стол: <b>№${escapeHtml(tableNumber)}</b>`,
+        `🕑 ${date}, ${time}`,
+        '',
+        sep,
+        '📋 <b>СОСТАВ ЗАКАЗА</b>',
+        ''
+    ];
+
+    cart.forEach((item, idx) => {
+        const emoji = CATEGORY_EMOJI[item.category] || '•';
+        const lineSum = item.price * item.quantity;
+        lines.push(`${idx + 1}. ${emoji} ${escapeHtml(item.title)}`);
+        lines.push(`    ${item.quantity} × ${item.price} ₽ = <b>${lineSum} ₽</b>`);
+        lines.push('');
+    });
+
+    lines.push(sep);
+    lines.push(`🛒 Позиций: ${cart.length} (всего ${totalPieces} шт.)`);
+    lines.push(`💰 <b>ИТОГО: ${totalSum} ₽</b>`);
+
+    if (comment && comment.trim()) {
+        lines.push('');
+        lines.push('💬 <b>Комментарий:</b>');
+        lines.push(escapeHtml(comment.trim()));
+    }
+
+    return lines.join('\n');
+}
+
+async function sendToTelegram(text) {
+    const cfg = window.TELEGRAM_CONFIG;
+    if (!cfg || !cfg.botToken || !cfg.chatId
+        || cfg.botToken === 'YOUR_BOT_TOKEN_HERE'
+        || cfg.chatId === 'YOUR_CHAT_ID_HERE') {
+        throw new Error('Не настроен Telegram (см. js/config.js)');
+    }
+
+    const url = `https://api.telegram.org/bot${cfg.botToken}/sendMessage`;
+    const response = await fetch(url, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+            chat_id: cfg.chatId,
+            text,
+            parse_mode: 'HTML',
+            disable_web_page_preview: true
+        })
+    });
+
+    let data = null;
+    try { data = await response.json(); } catch (_) { /* ignore */ }
+
+    if (!response.ok || !data || data.ok !== true) {
+        const desc = data && data.description ? data.description : `HTTP ${response.status}`;
+        throw new Error(`Telegram API: ${desc}`);
+    }
+    return data;
+}
+
+async function submitOrder() {
+    const tableInput = document.getElementById('order-table-number');
+    const commentInput = document.getElementById('order-comment');
+    const btn = document.getElementById('order-submit-btn');
+
+    const tableNumber = (tableInput?.value || '').trim();
+    const comment = commentInput?.value || '';
+
+    if (!tableNumber) {
+        tableInput?.focus();
+        alert('Укажите номер столика');
+        return;
+    }
+
+    if (cart.length === 0) {
+        alert('Корзина пуста');
+        return;
+    }
+
+    const originalLabel = btn.textContent;
+    btn.disabled = true;
+    btn.textContent = 'Отправляем...';
+
+    try {
+        const message = formatOrderMessage(tableNumber, comment);
+        await sendToTelegram(message);
+        clearCart();
+        hideCart();
+        alert('Заказ отправлен! Ожидайте подтверждения.');
+    } catch (err) {
+        console.error('Order submission failed:', err);
+        alert(`Не удалось отправить заказ: ${err.message}`);
+        btn.disabled = false;
+        btn.textContent = originalLabel;
+    }
+}
+
 document.getElementById('cart-modal')?.addEventListener('click', (e) => {
     if (e.target.classList.contains('modal-overlay')) {
         hideCart();
     }
 });
-
-function setupSearch() {
-    const searchInput = document.querySelector('.search-mini');
-    if (!searchInput) return;
-    
-    searchInput.addEventListener('input', (e) => {
-        const query = e.target.value.toLowerCase().trim();
-        
-        if (query.length < 2) {
-            document.querySelectorAll('.product-card').forEach(card => {
-                card.style.display = '';
-            });
-            return;
-        }
-        
-        document.querySelectorAll('.product-card').forEach(card => {
-            const name = card.querySelector('.product-name').textContent.toLowerCase();
-            const desc = card.querySelector('.product-description').textContent.toLowerCase();
-            const matches = name.includes(query) || desc.includes(query);
-            card.style.display = matches ? '' : 'none';
-        });
-    });
-}
 
 // Mobile Menu Functions
 function initMobileMenu() {
