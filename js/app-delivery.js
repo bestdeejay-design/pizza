@@ -473,102 +473,27 @@ function hideCart() {
 // ========================================
 // ORDER SUBMISSION
 // ========================================
+// Заказ уходит на серверный прокси (pizza-order.php), который форматирует
+// сообщение и шлёт его в Telegram-канал. Токен бота на фронте не хранится.
 
-const CATEGORY_EMOJI = {
-    'pizza-30cm': '🍕',
-    'piccolo-20cm': '🍕',
-    'calzone': '🥟',
-    'bread-focaccia-bread': '🍞',
-    'bread-focaccia-focaccia': '🥖',
-    'sauce': '🥫',
-    'rolls-sushi': '🍣',
-    'rolls-rolls': '🍣',
-    'combo': '🍱',
-    'confectionery': '🍰',
-    'mors': '🥤',
-    'juice': '🧃',
-    'water': '💧',
-    'soda': '🥤',
-    'beverages-other': '🥤',
-    'frozen': '❄️',
-    'aromatic-oils': '🫒',
-    'masterclass': '🎓',
-    'franchise': '💼'
-};
-
-function escapeHtml(s) {
-    return String(s)
-        .replace(/&/g, '&amp;')
-        .replace(/</g, '&lt;')
-        .replace(/>/g, '&gt;');
-}
-
-function formatOrderMessage(tableNumber, comment) {
-    const now = new Date();
-    const time = now.toLocaleTimeString('ru-RU', { hour: '2-digit', minute: '2-digit' });
-    const date = now.toLocaleDateString('ru-RU', { day: '2-digit', month: '2-digit' });
-    const sep = '━━━━━━━━━━━━━━━';
-
-    const totalSum = cart.reduce((s, i) => s + i.price * i.quantity, 0);
-    const totalPieces = cart.reduce((s, i) => s + i.quantity, 0);
-
-    const lines = [
-        '🍕 <b>НОВЫЙ ЗАКАЗ</b>',
-        `🪑 Стол: <b>№${escapeHtml(tableNumber)}</b>`,
-        `🕑 ${date}, ${time}`,
-        '',
-        sep,
-        '📋 <b>СОСТАВ ЗАКАЗА</b>',
-        ''
-    ];
-
-    cart.forEach((item, idx) => {
-        const emoji = CATEGORY_EMOJI[item.category] || '•';
-        const lineSum = item.price * item.quantity;
-        lines.push(`${idx + 1}. ${emoji} ${escapeHtml(item.title)}`);
-        lines.push(`    ${item.quantity} × ${item.price} ₽ = <b>${lineSum} ₽</b>`);
-        lines.push('');
-    });
-
-    lines.push(sep);
-    lines.push(`🛒 Позиций: ${cart.length} (всего ${totalPieces} шт.)`);
-    lines.push(`💰 <b>ИТОГО: ${totalSum} ₽</b>`);
-
-    if (comment && comment.trim()) {
-        lines.push('');
-        lines.push('💬 <b>Комментарий:</b>');
-        lines.push(escapeHtml(comment.trim()));
+async function sendOrder(payload) {
+    const cfg = window.ORDER_CONFIG;
+    if (!cfg || !cfg.endpoint) {
+        throw new Error('Не настроен endpoint заказа (см. js/config.js)');
     }
 
-    return lines.join('\n');
-}
-
-async function sendToTelegram(text) {
-    const cfg = window.TELEGRAM_CONFIG;
-    if (!cfg || !cfg.botToken || !cfg.chatId
-        || cfg.botToken === 'YOUR_BOT_TOKEN_HERE'
-        || cfg.chatId === 'YOUR_CHAT_ID_HERE') {
-        throw new Error('Не настроен Telegram (см. js/config.js)');
-    }
-
-    const url = `https://api.telegram.org/bot${cfg.botToken}/sendMessage`;
-    const response = await fetch(url, {
+    const response = await fetch(cfg.endpoint, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-            chat_id: cfg.chatId,
-            text,
-            parse_mode: 'HTML',
-            disable_web_page_preview: true
-        })
+        body: JSON.stringify(payload)
     });
 
     let data = null;
     try { data = await response.json(); } catch (_) { /* ignore */ }
 
     if (!response.ok || !data || data.ok !== true) {
-        const desc = data && data.description ? data.description : `HTTP ${response.status}`;
-        throw new Error(`Telegram API: ${desc}`);
+        const desc = data && data.error ? data.error : `HTTP ${response.status}`;
+        throw new Error(desc);
     }
     return data;
 }
@@ -597,8 +522,16 @@ async function submitOrder() {
     btn.textContent = 'Отправляем...';
 
     try {
-        const message = formatOrderMessage(tableNumber, comment);
-        await sendToTelegram(message);
+        await sendOrder({
+            tableNumber,
+            comment,
+            items: cart.map(i => ({
+                title: i.title,
+                price: i.price,
+                quantity: i.quantity,
+                category: i.category
+            }))
+        });
         clearCart();
         hideCart();
         alert('Заказ отправлен! Ожидайте подтверждения.');
