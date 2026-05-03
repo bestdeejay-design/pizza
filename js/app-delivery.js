@@ -597,6 +597,7 @@ async function submitOrder() {
         await sendOrder({
             tableNumber,
             comment: fullComment,
+            location: source !== sourceKey ? source : null,
             source,
             sourceKey,
             items: cart.map(i => ({
