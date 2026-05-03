@@ -579,10 +579,22 @@ async function submitOrder() {
     btn.disabled = true;
     btn.textContent = 'Отправляем...';
 
+    const urlParams = new URLSearchParams(window.location.search);
+    const sourceKey = urlParams.get('source') || '12rooms';
+    
+    const locations = {
+        '12rooms': '12 комнат',
+        'MGarryPotter': 'Музей Гарри Поттера'
+    };
+    
+    const source = locations[sourceKey] || sourceKey;
+
     try {
         await sendOrder({
             tableNumber,
             comment,
+            source,
+            sourceKey,
             items: cart.map(i => ({
                 title: i.title,
                 price: i.price,
