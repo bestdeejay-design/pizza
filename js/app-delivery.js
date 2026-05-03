@@ -1516,49 +1516,44 @@ function getVisibleCategory() {
 }
 
 function showLegalSection() {
-    setActiveNav('legal');
-    document.querySelectorAll('.category-section').forEach(section => {
-        section.style.display = 'none';
-    });
+    console.log('showLegalSection called');
     
-    let section = document.getElementById('category-legal');
-    if (!section) {
-        section = document.createElement('div');
-        section.id = 'category-legal';
-        section.className = 'category-section';
-        section.innerHTML = `
-            <div style="padding: 20px; max-width: 800px; margin: 0 auto;">
-                <h2 style="font-size: 28px; margin-bottom: 24px; color: #1a1a1a; text-align: center;">Юридическая информация</h2>
-                <div style="background: #f8f9fa; padding: 30px; border-radius: 16px;">
-                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px;">
-                        <div>
-                            <div style="font-size: 12px; color: #666; text-transform: uppercase; margin-bottom: 6px;">Полное наименование</div>
-                            <div style="font-size: 16px; font-weight: 600; color: #1a1a1a;">ООО "АТМОСФЕРА"</div>
-                        </div>
-                        <div>
-                            <div style="font-size: 12px; color: #666; text-transform: uppercase; margin-bottom: 6px;">ИНН</div>
-                            <div style="font-size: 16px; font-weight: 600; color: #1a1a1a;">7842216839</div>
-                        </div>
-                        <div>
-                            <div style="font-size: 12px; color: #666; text-transform: uppercase; margin-bottom: 6px;">ОГРН</div>
-                            <div style="font-size: 16px; font-weight: 600; color: #1a1a1a;">1237800084158</div>
-                        </div>
-                        <div>
-                            <div style="font-size: 12px; color: #666; text-transform: uppercase; margin-bottom: 6px;">Телефон</div>
-                            <div style="font-size: 16px; font-weight: 600; color: #1a1a1a;">+7 (993) 978-60-13</div>
-                        </div>
-                        <div>
-                            <div style="font-size: 12px; color: #666; text-transform: uppercase; margin-bottom: 6px;">Email</div>
-                            <div style="font-size: 16px; font-weight: 600; color: #1a1a1a;">pizzanapolirsc2@gmail.com</div>
-                        </div>
+    const content = document.getElementById('content');
+    if (!content) {
+        console.error('Content element not found');
+        return;
+    }
+    
+    content.innerHTML = `
+        <div class="category-section" style="padding: 20px; max-width: 800px; margin: 0 auto;">
+            <h2 style="font-size: 28px; margin-bottom: 24px; color: #1a1a1a; text-align: center;">Юридическая информация</h2>
+            <div style="background: #f8f9fa; padding: 30px; border-radius: 16px;">
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px;">
+                    <div>
+                        <div style="font-size: 12px; color: #666; text-transform: uppercase; margin-bottom: 6px;">Полное наименование</div>
+                        <div style="font-size: 16px; font-weight: 600; color: #1a1a1a;">ООО "АТМОСФЕРА"</div>
+                    </div>
+                    <div>
+                        <div style="font-size: 12px; color: #666; text-transform: uppercase; margin-bottom: 6px;">ИНН</div>
+                        <div style="font-size: 16px; font-weight: 600; color: #1a1a1a;">7842216839</div>
+                    </div>
+                    <div>
+                        <div style="font-size: 12px; color: #666; text-transform: uppercase; margin-bottom: 6px;">ОГРН</div>
+                        <div style="font-size: 16px; font-weight: 600; color: #1a1a1a;">1237800084158</div>
+                    </div>
+                    <div>
+                        <div style="font-size: 12px; color: #666; text-transform: uppercase; margin-bottom: 6px;">Телефон</div>
+                        <div style="font-size: 16px; font-weight: 600; color: #1a1a1a;">+7 (993) 978-60-13</div>
+                    </div>
+                    <div>
+                        <div style="font-size: 12px; color: #666; text-transform: uppercase; margin-bottom: 6px;">Email</div>
+                        <div style="font-size: 16px; font-weight: 600; color: #1a1a1a;">pizzanapolirsc2@gmail.com</div>
                     </div>
                 </div>
             </div>
-        `;
-        document.getElementById('content').appendChild(section);
-    }
-    section.style.display = '';
-    section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        </div>
+    `;
+    window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
 document.addEventListener('DOMContentLoaded', loadMenu);
