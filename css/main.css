@@ -594,9 +594,17 @@ body {
     padding: 30px;
     max-width: 500px;
     width: 90%;
-    max-height: 80vh;
+    max-height: 85vh;
     overflow-y: auto;
     box-shadow: var(--shadow-card-hover);
+    padding-bottom: env(safe-area-inset-bottom, 20px);
+}
+
+@media (max-width: 600px) {
+    .cart-modal {
+        padding: 20px;
+        max-height: 90vh;
+    }
 }
 
 .cart-modal h2 {
@@ -608,6 +616,7 @@ body {
 
 #cart-items {
     margin-bottom: 20px;
+    padding-bottom: 20px;
 }
 
 .cart-actions {
