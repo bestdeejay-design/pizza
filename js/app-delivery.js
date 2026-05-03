@@ -474,11 +474,15 @@ function showCart() {
         if (timeStatus === 'waiting') {
             timeMessage = `
                 <div style="background: linear-gradient(135deg, #ff9a3c 0%, #ff6b35 100%); padding: 14px; border-radius: 12px; margin-bottom: 16px; text-align: center;">
-                    <div style="color: #fff; font-weight: 700; font-size: 14px; margin-bottom: 8px;">🚴 Доставка ресторана работает до 22:00</div>
-                    <div style="color: #fff; font-size: 12px; line-height: 1.5;">
-                        Приходите к нам в гости на Думской 4<br>
-                        Вход со стороны Думской, деревянная дверь<br>
-                        <strong>Pizza Napoli</strong> — 2 этаж 🏠
+                    <div style="color: #fff; font-weight: 700; font-size: 14px; margin-bottom: 8px;">🚴 Доставка ресторана через этот сервис работает до 22:00</div>
+                    <div style="color: #fff; font-size: 12px; line-height: 1.6;">
+                        Приходите к нам в гости<br>
+                        в ресторан Pizza Napoli,<br>
+                        Думская 4<br><br>
+                        <strong>Как нас найти:</strong><br>
+                        Вход со стороны Думской,<br>
+                        деревянная дверь, 2 этаж.<br>
+                        Pizza Napoli
                     </div>
                 </div>
             `;
