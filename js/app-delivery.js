@@ -589,10 +589,14 @@ async function submitOrder() {
     
     const source = locations[sourceKey] || sourceKey;
 
+    const fullComment = source !== sourceKey 
+        ? `📍 ${source}\n${comment}` 
+        : comment;
+
     try {
         await sendOrder({
             tableNumber,
-            comment,
+            comment: fullComment,
             source,
             sourceKey,
             items: cart.map(i => ({
