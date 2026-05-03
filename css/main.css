@@ -604,6 +604,10 @@ body {
     .cart-modal {
         padding: 20px;
         max-height: 90vh;
+        padding-bottom: 40px;
+    }
+    .cart-modal .order-form {
+        padding-bottom: 20px;
     }
 }
 

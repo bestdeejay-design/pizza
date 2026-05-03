@@ -466,7 +466,7 @@ function showCart() {
                     Комментарий к заказу (необязательно)
                     <textarea id="order-comment" rows="3" maxlength="500" placeholder="Пожелания, аллергии и т.п." style="padding:12px; border:1px solid var(--border-strong); border-radius:8px; background:var(--color-bg-card); color:var(--color-text-primary); font-size:15px; resize:vertical; font-family:inherit;"></textarea>
                 </label>
-                <div style="background: linear-gradient(135deg, #2a582c 0%, #1e3d21 100%); padding:16px; border-radius:12px; margin-top:4px;">
+                <div style="background: linear-gradient(135deg, #2a582c 0%, #1e3d21 100%); padding:16px; border-radius:12px; margin-top:4px; margin-bottom:16px;">
                     <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
                         <span style="font-size:24px;">🚚</span>
                         <span style="color:#fff; font-weight:700; font-size:15px;">Доставка курьером</span>
