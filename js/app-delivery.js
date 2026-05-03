@@ -290,7 +290,7 @@ function initSidebar() {
         group.categories.forEach(cat => {
             // Контакты и юридическая информация всегда показываем, остальные только если есть товары
             if (cat === 'contacts' || cat === 'legal' || categories.includes(cat)) {
-                const count = cat === 'legal' ? 0 : (cat === 'contacts' ? 2 : menu.filter(item => item.category === cat).length);
+                const count = cat === 'legal' ? 1 : (cat === 'contacts' ? 2 : menu.filter(item => item.category === cat).length);
                 const displayName = categoryMap[cat] || cat;
                 
                 html += `
@@ -683,7 +683,7 @@ function initMobileMenu() {
         group.categories.forEach(cat => {
             // Контакты и юридическая информация всегда показываем, остальные только если есть товары
             if (cat === 'contacts' || cat === 'legal' || categories.includes(cat)) {
-                const count = cat === 'legal' ? 0 : (cat === 'contacts' ? 2 : menu.filter(item => item.category === cat).length);
+                const count = cat === 'legal' ? 1 : (cat === 'contacts' ? 2 : menu.filter(item => item.category === cat).length);
                 const displayName = categoryMap[cat] || cat;
                 
                 html += `
@@ -908,7 +908,8 @@ title: 'ℹ️ ИНФОРМАЦИЯ',
                         <p class="category-subtitle">Реквизиты для оплаты</p>
                     </div>
                     <div style="padding: 20px; max-width: 800px; margin: 0 auto;">
-                        <div style="background: #f8f9fa; padding: 30px; border-radius: 16px;">
+                        <h3 style="font-size: 18px; margin: 0 0 16px; color: #1a1a1a;">Наша компания</h3>
+                        <div style="background: #f8f9fa; padding: 24px; border-radius: 16px; margin-bottom: 24px;">
                             <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px;">
                                 <div>
                                     <div style="font-size: 12px; color: #666; text-transform: uppercase; margin-bottom: 6px;">Полное наименование</div>
@@ -929,6 +930,27 @@ title: 'ℹ️ ИНФОРМАЦИЯ',
                                 <div>
                                     <div style="font-size: 12px; color: #666; text-transform: uppercase; margin-bottom: 6px;">Email</div>
                                     <div style="font-size: 16px; font-weight: 600; color: #1a1a1a;">pizzanapolirsc2@gmail.com</div>
+                                </div>
+                            </div>
+                        </div>
+                        <h3 style="font-size: 18px; margin: 0 0 16px; color: #1a1a1a;">Франшиза Pizza Napoli</h3>
+                        <div style="background: #f0f7f0; padding: 24px; border-radius: 16px; border: 2px solid #2a582c;">
+                            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px;">
+                                <div>
+                                    <div style="font-size: 12px; color: #666; text-transform: uppercase; margin-bottom: 6px;">Франшиза</div>
+                                    <div style="font-size: 16px; font-weight: 600; color: #1a1a1a;">Pizza Napoli от Родионов Групп</div>
+                                </div>
+                                <div>
+                                    <div style="font-size: 12px; color: #666; text-transform: uppercase; margin-bottom: 6px;">Владелец бренда</div>
+                                    <div style="font-size: 16px; font-weight: 600; color: #1a1a1a;">ООО "РОДИОНОВ ГРУПП"</div>
+                                </div>
+                                <div>
+                                    <div style="font-size: 12px; color: #666; text-transform: uppercase; margin-bottom: 6px;">Основатель</div>
+                                    <div style="font-size: 16px; font-weight: 600; color: #1a1a1a;">Родионов Виталий Викторович</div>
+                                </div>
+                                <div>
+                                    <div style="font-size: 12px; color: #666; text-transform: uppercase; margin-bottom: 6px;">Телефон</div>
+                                    <div style="font-size: 16px; font-weight: 600; color: #1a1a1a;">+7 (999) 169-98-39</div>
                                 </div>
                             </div>
                         </div>
