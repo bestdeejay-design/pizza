@@ -432,15 +432,15 @@ function showCart() {
     } else {
         const itemsHtml = cart.map((item, idx) => `
             <div class="cart-item">
-                <div style="display:flex; align-items:center; gap:8px;">
-                    <button type="button" onclick="changeQuantity(${idx}, -1)" style="width:32px; height:32px; border-radius:8px; border:1px solid #e5e5ea; background:#fff; font-size:18px; cursor:pointer; color:#ff2e55;">−</button>
+                <div style="display:flex; align-items:center; gap:10px;">
+                    <button type="button" class="quantity-btn-small minus" onclick="changeQuantity(${idx}, -1)">−</button>
                     <div>
                         <div style="font-weight: 700; font-size: 16px; margin-bottom: 4px;">${item.title}</div>
-                        <div style="color: #86868b; font-size: 14px;">${item.quantity} × ${item.price} ₽</div>
+                        <div style="color: var(--color-text-secondary); font-size: 14px;">${item.quantity} × ${item.price} ₽</div>
                     </div>
-                    <button type="button" onclick="changeQuantity(${idx}, 1)" style="width:32px; height:32px; border-radius:8px; border:1px solid #e5e5ea; background:#fff; font-size:18px; cursor:pointer; color:#2a582c;">+</button>
+                    <button type="button" class="quantity-btn-small" onclick="changeQuantity(${idx}, 1)">+</button>
                 </div>
-                <div style="font-weight: 800; color: #ff2e55;">${item.quantity * item.price} ₽</div>
+                <div style="font-weight: 800; color: var(--color-primary);">${item.quantity * item.price} ₽</div>
             </div>
         `).join('');
 
