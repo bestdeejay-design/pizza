@@ -68,17 +68,6 @@
     <script src="js/config.js"></script>
     <script src="js/app-delivery.js"></script>
     <script>
-        // Logo Click Handler - Reset to index and clear content
-        const logoLink = document.querySelector('.logo-link');
-        if (logoLink) {
-            logoLink.addEventListener('click', (e) => {
-                e.preventDefault();
-                window.location.href = '/pizza/';
-                localStorage.removeItem('lastCategory'); // Сбрасываем состояние
-                console.log('Reset to index page');
-            });
-        }
-        
         // Apply saved theme on load (mobile toggle переключает её ниже)
         const savedTheme = localStorage.getItem('pizzaTheme') || 'dark';
         document.documentElement.setAttribute('data-theme', savedTheme);
