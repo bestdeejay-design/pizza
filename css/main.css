@@ -602,12 +602,25 @@ body {
 
 @media (max-width: 600px) {
     .cart-modal {
-        padding: 20px;
-        max-height: 90vh;
-        padding-bottom: 40px;
+        padding: 16px;
+        max-height: 92vh;
     }
     .cart-modal .order-form {
-        padding-bottom: 20px;
+        gap: 8px !important;
+    }
+    .cart-modal label {
+        font-size: 13px !important;
+    }
+    .cart-modal input, .cart-modal textarea {
+        padding: 8px !important;
+        font-size: 14px !important;
+    }
+    .cart-actions {
+        margin-top: 8px;
+    }
+    .cart-actions .btn {
+        padding: 12px 16px;
+        font-size: 14px;
     }
 }
 
