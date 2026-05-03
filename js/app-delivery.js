@@ -431,16 +431,17 @@ function showCart() {
         `;
     } else {
         const itemsHtml = cart.map((item, idx) => `
-            <div class="cart-item">
-                <div style="display:flex; align-items:center; gap:10px;">
-                    <button type="button" class="quantity-btn-small minus" onclick="changeQuantity(${idx}, -1)">−</button>
-                    <div>
-                        <div style="font-weight: 700; font-size: 16px; margin-bottom: 4px;">${item.title}</div>
-                        <div style="color: var(--color-text-secondary); font-size: 14px;">${item.quantity} × ${item.price} ₽</div>
+            <div class="cart-item" style="display:flex; justify-content:space-between; align-items:center; padding:12px 0; border-bottom:1px solid var(--border-subtle); flex-wrap:wrap; gap:10px;">
+                <div style="flex:1; min-width:180px;">
+                    <div style="font-weight: 700; font-size: 15px; margin-bottom: 6px; line-height:1.3;">${item.title}</div>
+                    <div style="display:flex; align-items:center; gap:8px;">
+                        <button type="button" class="quantity-btn-small minus" onclick="changeQuantity(${idx}, -1)">−</button>
+                        <span style="font-weight:600; font-size:16px; min-width:24px; text-align:center;">${item.quantity}</span>
+                        <button type="button" class="quantity-btn-small" onclick="changeQuantity(${idx}, 1)">+</button>
+                        <span style="color: var(--color-text-secondary); font-size: 13px; margin-left:4px;">× ${item.price} ₽</span>
                     </div>
-                    <button type="button" class="quantity-btn-small" onclick="changeQuantity(${idx}, 1)">+</button>
                 </div>
-                <div style="font-weight: 800; color: var(--color-primary);">${item.quantity * item.price} ₽</div>
+                <div style="font-weight: 800; color: var(--color-primary); font-size: 16px; white-space:nowrap;">${item.quantity * item.price} ₽</div>
             </div>
         `).join('');
 
