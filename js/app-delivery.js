@@ -688,7 +688,7 @@ function initMobileMenu() {
         group.categories.forEach(cat => {
             // Контакты и юридическая информация всегда показываем, остальные только если есть товары
             if (cat === 'contacts' || cat === 'legal' || categories.includes(cat)) {
-                const count = cat === 'contacts' ? 3 : menu.filter(item => item.category === cat).length;
+                const count = cat === 'contacts' ? 2 : menu.filter(item => item.category === cat).length;
                 const displayName = categoryMap[cat] || cat;
                 
                 html += `
@@ -969,9 +969,9 @@ function renderContactsLazy() {
     const contacts = [
         {
             id: 'contact-1',
-            title: '🍕 Pizza Napoli 1',
+            title: '🍕 Pizza Napoli',
             subtitle: 'Основная пиццерия',
-            image: 'data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 260 200%22><rect fill=%22%23ff2e55%22 width=%22260%22 height=%22200%22/><text x=%22130%22 y=%2290%22 text-anchor=%22middle%22 fill=%22white%22 font-size=%2260%22 font-weight=%22bold%22>🍕</text><text x=%22130%22 y=%22140%22 text-anchor=%22middle%22 fill=%22white%22 font-size=%2216%22>Pizza Napoli 1</text></svg>',
+            image: 'data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 260 200%22><rect fill=%22%23ff2e55%22 width=%22260%22 height=%22200%22/><text x=%22130%22 y=%2290%22 text-anchor=%22middle%22 fill=%22white%22 font-size=%2260%22 font-weight=%22bold%22>🍕</text><text x=%22130%22 y=%22140%22 text-anchor=%22middle%22 fill=%22white%22 font-size=%2216%22>Pizza Napoli</text></svg>',
             description: 'ул. Думская 4, Центральный район',
             phone: '+7 (993) 978-60-13',
             hours: 'с 10:00 до 22:00 без выходных',
@@ -980,35 +980,13 @@ function renderContactsLazy() {
         },
         {
             id: 'contact-2',
-            title: '🍕 Pizza Napoli 2',
+            title: '🍕 Pizza Napoli',
             subtitle: 'Вторая локация',
-            image: 'data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 260 200%22><rect fill=%22%23ff6b6b%22 width=%22260%22 height=%22200%22/><text x=%22130%22 y=%2290%22 text-anchor=%22middle%22 fill=%22white%22 font-size=%2260%22 font-weight=%22bold%22>🍕</text><text x=%22130%22 y=%22140%22 text-anchor=%22middle%22 fill=%22white%22 font-size=%2216%22>Pizza Napoli 2</text></svg>',
+            image: 'data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 260 200%22><rect fill=%22%23ff6b6b%22 width=%22260%22 height=%22200%22/><text x=%22130%22 y=%2290%22 text-anchor=%22middle%22 fill=%22white%22 font-size=%2260%22 font-weight=%22bold%22>🍕</text><text x=%22130%22 y=%22140%22 text-anchor=%22middle%22 fill=%22white%22 font-size=%2216%22>Pizza Napoli</text></svg>',
             description: 'ул. Бабушкина 53, стр. 1, Невский район',
             phone: '+7 (999) 169-98-39',
             hours: 'с 10:00 до 22:00 без выходных',
             payment: 'Наличными • Картой • Переводом • Безналичным платежом',
-            badge: null
-        },
-        {
-            id: 'contact-4',
-            title: '🍕 Pizza Napoli 2.0',
-            subtitle: 'Скоро открытие!',
-            image: 'data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 260 200%22><rect fill=%22%23ff6b6b%22 width=%22260%22 height=%22200%22/><text x=%22130%22 y=%2290%22 text-anchor=%22middle%22 fill=%22white%22 font-size=%2260%22 font-weight=%22bold%22>🎉</text><text x=%22130%22 y=%22140%22 text-anchor=%22middle%22 fill=%22white%22 font-size=%2216%22>Скоро!</text></svg>',
-            description: 'Московский район • Большой зал, летняя веранда, детская комната',
-            phone: null,
-            hours: 'Открытие скоро!',
-            payment: 'Следите за новостями! Скидки до 50%',
-            badge: '🎉 Скоро открытие!'
-        },
-        {
-            id: 'contact-3',
-            title: '🍕 Pizza Napoli 3',
-            subtitle: 'Новая локация',
-            image: 'data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 260 200%22><rect fill=%22%232a582c%22 width=%22260%22 height=%22200%22/><text x=%22130%22 y=%2290%22 text-anchor=%22middle%22 fill=%22white%22 font-size=%2260%22 font-weight=%22bold%22>🍕</text><text x=%22130%22 y=%22140%22 text-anchor=%22middle%22 fill=%22white%22 font-size=%2216%22>Pizza Napoli 3</text></svg>',
-            description: 'Приморский район • Просторный зал, панорамные окна, уютная атмосфера',
-            phone: null,
-            hours: 'с 10:00 до 23:00 без выходных',
-            payment: null,
             badge: null
         }
     ];
