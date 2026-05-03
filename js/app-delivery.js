@@ -470,7 +470,7 @@ function showCart() {
                     <button type="button" class="btn btn-secondary" onclick="hideCart()">Закрыть</button>
                     <button type="submit" id="order-submit-btn" class="btn btn-primary">Оформить заказ</button>
                 </div>
-                <div style="background: linear-gradient(135deg, #2a582c 0%, #1e3d21 100%); padding:12px; border-radius:10px; margin-top:4px;">
+                <div style="background: linear-gradient(135deg, #2a582c 0%, #1e3d21 100%); padding:12px; border-radius:10px; margin-top:4px; margin-bottom:200px;">
                     <div style="display:flex; align-items:center; gap:8px; margin-bottom:6px;">
                         <span style="font-size:20px;">🚚</span>
                         <span style="color:#fff; font-weight:700; font-size:14px;">Доставка курьером</span>
