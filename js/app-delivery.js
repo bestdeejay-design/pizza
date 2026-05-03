@@ -580,14 +580,15 @@ async function submitOrder() {
     btn.textContent = 'Отправляем...';
 
     const urlParams = new URLSearchParams(window.location.search);
-    const sourceKey = urlParams.get('source') || '12rooms';
+    const sourceParam = urlParams.get('source');
+    const sourceKey = sourceParam || '12rooms';
     
     const locations = {
         '12rooms': '12 комнат',
         'MGarryPotter': 'Музей Гарри Поттера'
     };
     
-    const source = locations[sourceKey] || sourceKey;
+    const source = locations[sourceKey] || '12 комнат';
 
     const fullComment = source !== sourceKey 
         ? `📍 ${source}\n${comment}` 
