@@ -649,7 +649,7 @@ function initMobileMenu() {
         },
         {
             title: 'ℹ️ ИНФОРМАЦИЯ',
-            categories: ['masterclass', 'franchise', 'contacts']
+            categories: ['masterclass', 'franchise', 'contacts', 'legal']
         }
     ];
     
@@ -688,7 +688,7 @@ function initMobileMenu() {
         group.categories.forEach(cat => {
             // Контакты и юридическая информация всегда показываем, остальные только если есть товары
             if (cat === 'contacts' || cat === 'legal' || categories.includes(cat)) {
-                const count = cat === 'contacts' ? 2 : menu.filter(item => item.category === cat).length;
+                const count = (cat === 'contacts' || cat === 'legal') ? 0 : menu.filter(item => item.category === cat).length;
                 const displayName = categoryMap[cat] || cat;
                 
                 html += `
