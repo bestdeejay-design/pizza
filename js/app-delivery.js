@@ -245,13 +245,13 @@ function initSidebar() {
             title: '🥤 НАПИТКИ',
             categories: ['mors', 'juice', 'water', 'soda', 'beverages-other']
         },
-        {
+{
             title: '👨‍🍳 ГОТОВИМ ДОМА',
             categories: ['frozen', 'aromatic-oils']
         },
         {
             title: 'ℹ️ ИНФОРМАЦИЯ',
-            categories: ['masterclass', 'franchise', 'contacts']
+            categories: ['masterclass', 'franchise', 'contacts', 'legal']
         }
     ];
     
@@ -870,7 +870,7 @@ title: 'ℹ️ ИНФОРМАЦИЯ',
     const orderedCategories = [];
     menuGroups.forEach(group => {
         group.categories.forEach(cat => {
-            if (cat === 'contacts' || menu.some(item => item.category === cat)) {
+            if (cat === 'contacts' || cat === 'legal' || menu.some(item => item.category === cat)) {
                 orderedCategories.push(cat);
             }
         });
