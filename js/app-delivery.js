@@ -26,7 +26,7 @@
 // Menu groups structure (used in sidebar, mobile menu, content rendering)
 const MENU_GROUPS = [
     {
-        title: '🍕 ПИЦЦА',
+        title: '<i class="fas fa-pizza-slice" style="color:#ff2e55;"></i> ПИЦЦА',
         categories: ['pizza-30cm', 'piccolo-20cm', 'calzone']
     },
     {
@@ -222,7 +222,7 @@ function initSidebar() {
     // Логическая группировка категорий пиццерии
     const menuGroups = [
         {
-            title: '🍕 ПИЦЦА',
+            title: '<i class="fas fa-pizza-slice" style="color:#ff2e55;"></i> ПИЦЦА',
             categories: ['pizza-30cm', 'piccolo-20cm', 'calzone']
         },
         {
@@ -486,7 +486,7 @@ function showCart() {
         if (timeStatus === 'waiting') {
             timeMessage = `
                 <div style="background: linear-gradient(135deg, #ff9a3c 0%, #ff6b35 100%); padding: 14px; border-radius: 12px; margin-bottom: 16px; text-align: center;">
-                    <div style="color: #fff; font-weight: 700; font-size: 14px;">🚴 Доставка ресторана работает до 22:00</div>
+                    <div style="color: #fff; font-weight: 700; font-size: 14px;"><i class="fas fa-bicycle" style="margin-right:6px;"></i>Доставка ресторана работает до 22:00</div>
                     <div style="color: #fff; font-size: 12px; margin-top: 6px;">Ждем вас в ресторане Pizza Napoli на Думской 4</div>
                     ${howToFindUs}
                 </div>
@@ -494,12 +494,12 @@ function showCart() {
         } else if (timeStatus === 'closing') {
             timeMessage = `
                 <div style="background: linear-gradient(135deg, #ff9a3c 0%, #ff6b35 100%); padding: 14px; border-radius: 12px; margin-bottom: 16px; text-align: center;">
-                    <div style="color: #fff; font-weight: 700; font-size: 14px;">🚴 Доставка ресторана работает до 22:00</div>
+                    <div style="color: #fff; font-weight: 700; font-size: 14px;"><i class="fas fa-bicycle" style="margin-right:6px;"></i>Доставка ресторана работает до 22:00</div>
                     <div style="color: #fff; font-size: 12px; margin-top: 6px;">Ждем вас в ресторане Pizza Napoli на Думской 4</div>
                     ${howToFindUs}
                     <div style="margin-top: 12px;">
                         <a href="https://eda.yandex.ru/r/pizza_napoli_bmroq?placeSlug=pizza_napoli__gr3t5" target="_blank" style="display: inline-block; background: #FFAB00; color: #000; font-weight: 700; padding: 10px 20px; border-radius: 8px; text-decoration: none; font-size: 13px;">
-                            🍕 Заказать на Яндекс Еде
+                            <i class="fas fa-pizza-slice" style="margin-right:6px;"></i>Заказать на Яндекс Еде
                         </a>
                     </div>
                 </div>
@@ -507,12 +507,12 @@ function showCart() {
         } else if (timeStatus === 'closed') {
             timeMessage = `
                 <div style="background: linear-gradient(135deg, #ff6b6b 0%, #ff2e55 100%); padding: 14px; border-radius: 12px; margin-bottom: 16px; text-align: center;">
-                    <div style="color: #fff; font-weight: 700; font-size: 14px;">🚴 Доставка ресторана закрыта</div>
+                    <div style="color: #fff; font-weight: 700; font-size: 14px;"><i class="fas fa-bicycle" style="margin-right:6px;"></i>Доставка ресторана закрыта</div>
                     <div style="color: #fff; font-size: 12px; margin-top: 6px;">Но ресторан работает! Ждем вас в гости</div>
                     ${howToFindUs}
                     <div style="margin-top: 12px;">
                         <a href="https://eda.yandex.ru/r/pizza_napoli_bmroq?placeSlug=pizza_napoli__gr3t5" target="_blank" style="display: inline-block; background: #FFAB00; color: #000; font-weight: 700; padding: 10px 20px; border-radius: 8px; text-decoration: none; font-size: 13px;">
-                            🍕 Заказать на Яндекс Еде
+                            <i class="fas fa-pizza-slice" style="margin-right:6px;"></i>Заказать на Яндекс Еде
                         </a>
                     </div>
                 </div>
@@ -520,12 +520,12 @@ function showCart() {
         } else if (timeStatus === 'yandex') {
             timeMessage = `
                 <div style="background: linear-gradient(135deg, #2a582c 0%, #1e3d21 100%); padding: 16px; border-radius: 12px; margin-bottom: 16px; text-align: center;">
-                    <div style="color: #fff; font-weight: 700; font-size: 14px;">🌙 Ресторан закрыт</div>
+                    <div style="color: #fff; font-weight: 700; font-size: 14px;"><i class="fas fa-moon" style="margin-right:6px;"></i>Ресторан закрыт</div>
                     <div style="color: #c8e6c9; font-size: 12px; margin-top: 6px;">Приходите завтра с 10:00!</div>
                     ${howToFindUs}
                     <div style="margin-top: 12px;">
                         <a href="https://eda.yandex.ru/r/pizza_napoli_bmroq?placeSlug=pizza_napoli__gr3t5" target="_blank" style="display: inline-block; background: #FFAB00; color: #000; font-weight: 700; padding: 10px 20px; border-radius: 8px; text-decoration: none; font-size: 13px;">
-                            🍕 Заказать на Яндекс Еде
+                            <i class="fas fa-pizza-slice" style="margin-right:6px;"></i>Заказать на Яндекс Еде
                         </a>
                     </div>
                 </div>
@@ -558,12 +558,12 @@ function showCart() {
                 </div>
                 <div style="background: linear-gradient(135deg, #2a582c 0%, #1e3d21 100%); padding:12px; border-radius:10px; margin-top:4px; margin-bottom:200px;">
                     <div style="display:flex; align-items:center; gap:8px; margin-bottom:6px;">
-                        <span style="font-size:20px;">🚚</span>
+                        <i class="fas fa-motorcycle" style="font-size:20px; color:#fff;"></i>
                         <span style="color:#fff; font-weight:700; font-size:14px;">Доставка курьером</span>
                     </div>
                     <div style="color:#c8e6c9; font-size:12px; line-height:1.4;">
                         К вам приедет курьер из Pizza Napoli<br>
-                        🖨️ <strong>С терминалом</strong> 💳 Картой или QR
+                        <i class="fas fa-print" style="margin-right:4px;"></i><strong>С терминалом</strong> <i class="fas fa-credit-card" style="margin-left:8px; margin-right:4px;"></i>для оплаты Картой или QR и выдаст чек
                     </div>
                 </div>
                 <div style="text-align:center; padding: 20px 0; color: var(--color-text-secondary); font-size: 14px;">
@@ -602,7 +602,7 @@ function showThankYou() {
             <h2 style="margin:0 0 20px; font-size:26px; color:var(--color-text-primary);">Спасибо за заказ!</h2>
             <div style="background: linear-gradient(135deg, #2a582c 0%, #1e3d21 100%); padding:20px; border-radius:12px; margin-bottom:20px;">
                 <div style="display:flex; align-items:center; gap:10px; margin-bottom:10px;">
-                    <span style="font-size:24px;">🚚</span>
+                    <i class="fas fa-motorcycle" style="font-size:24px; color:#fff;"></i>
                     <span style="color:#fff; font-weight:700; font-size:16px;">Доставка курьером</span>
                 </div>
                 <div style="color:#c8e6c9; font-size:14px; line-height:1.6; text-align:left;">
@@ -707,7 +707,7 @@ async function submitOrder() {
     const source = locations[sourceKey] || '12 комнат';
 
     const fullComment = source !== sourceKey 
-        ? `📍 ${source}\n${comment}` 
+        ? `<i class="fas fa-map-marker-alt"></i> ${source}\n${comment}` 
         : comment;
 
     try {
@@ -749,7 +749,7 @@ function initMobileMenu() {
     // Логическая группировка категорий пиццерии
     const menuGroups = [
         {
-            title: '🍕 ПИЦЦА',
+            title: '<i class="fas fa-pizza-slice" style="color:#ff2e55;"></i> ПИЦЦА',
             categories: ['pizza-30cm', 'piccolo-20cm', 'calzone']
         },
         {
@@ -946,7 +946,7 @@ function renderContentWithLazyLoad() {
     // Используем тот же порядок, что и в сайдбаре
     const menuGroups = [
         {
-            title: '🍕 ПИЦЦА',
+            title: '<i class="fas fa-pizza-slice" style="color:#ff2e55;"></i> ПИЦЦА',
             categories: ['pizza-30cm', 'piccolo-20cm', 'calzone']
         },
         {
@@ -1027,7 +1027,7 @@ function renderContentWithLazyLoad() {
             return `
                 <div class="category-section" id="category-${cat}" style="${isActive}">
                     <div class="category-header">
-                        <h2 class="category-title">📍 Контакты</h2>
+                        <h2 class="category-title"><i class="fas fa-map-marker-alt" style="margin-right:8px; color:#ff2e55;"></i>Контакты</h2>
                         <p class="category-subtitle">Наши пиццерии и способы связи</p>
                     </div>
                     <div class="products-grid" id="grid-${cat}" data-loaded="0">
@@ -1042,7 +1042,7 @@ function renderContentWithLazyLoad() {
             return `
                 <div class="category-section" id="category-${cat}" style="${isActive}">
                     <div class="category-header">
-                        <h2 class="category-title">📋 Юридическая информация</h2>
+                        <h2 class="category-title"><i class="fas fa-file-alt" style="margin-right:8px; color:#ff2e55;"></i>Юридическая информация</h2>
                         <p class="category-subtitle">Реквизиты для оплаты</p>
                     </div>
                     <div style="padding: 20px; max-width: 800px; margin: 0 auto;">
@@ -1164,7 +1164,7 @@ function renderContactsLazy() {
             id: 'contact-1',
             title: '🍕 Pizza Napoli',
             subtitle: 'Основная пиццерия',
-            image: 'data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 260 200%22><rect fill=%22%23ff2e55%22 width=%22260%22 height=%22200%22/><text x=%22130%22 y=%2290%22 text-anchor=%22middle%22 fill=%22white%22 font-size=%2260%22 font-weight=%22bold%22>🍕</text><text x=%22130%22 y=%22140%22 text-anchor=%22middle%22 fill=%22white%22 font-size=%2216%22>Pizza Napoli</text></svg>',
+            image: 'data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 260 200%22><rect fill=%22%23ff2e55%22 width=%22260%22 height=%22200%22/><text x=%22130%22 y=%2280%22 text-anchor=%22middle%22 fill=%22white%22 font-size=%2250%22>Pizza Slice</text><text x=%22130%22 y=%22140%22 text-anchor=%22middle%22 fill=%22white%22 font-size=%2216%22>Pizza Napoli</text></svg>',
             description: 'ул. Думская 4, Центральный район',
             phone: '+7 (993) 978-60-13',
             hours: 'с 10:00 до 22:00 без выходных',
@@ -1400,7 +1400,7 @@ function navigateToPreviousCategory(currentCategoryId) {
 // Получение списка категорий в правильном порядке
 function getOrderedCategories() {
     const menuGroups = [
-        { title: '🍕 ПИЦЦА', categories: ['pizza-30cm', 'piccolo-20cm', 'calzone'] },
+        { title: '<i class="fas fa-pizza-slice" style="color:#ff2e55;"></i> ПИЦЦА', categories: ['pizza-30cm', 'piccolo-20cm', 'calzone'] },
         { title: '🍣 СУШИ & РОЛЛЫ', categories: ['rolls-sushi', 'rolls-rolls'] },
         { title: '🍞 ХЛЕБ И ФОКАЧЧА', categories: ['bread-focaccia-bread', 'bread-focaccia-focaccia'] },
         { title: '🍱 НАБОРЫ', categories: ['combo'] },
