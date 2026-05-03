@@ -453,31 +453,30 @@ function showCart() {
                 <span style="font-weight:700; font-size:18px;">Итого</span>
                 <span style="font-weight:800; font-size:22px; color:#ff2e55;">${total} ₽</span>
             </div>
-            <form class="order-form" onsubmit="event.preventDefault(); submitOrder();" style="display:flex; flex-direction:column; gap:12px; margin-top:12px;">
-                <label style="display:flex; flex-direction:column; gap:6px; font-weight:600;">
+            <form class="order-form" onsubmit="event.preventDefault(); submitOrder();" style="display:flex; flex-direction:column; gap:10px; margin-top:8px;">
+                <label style="display:flex; flex-direction:column; gap:4px; font-weight:600; font-size:14px;">
                     Номер столика
-                    <input type="text" id="order-table-number" required maxlength="10" placeholder="Например, 5" style="padding:12px; border:1px solid var(--border-strong); border-radius:8px; background:var(--color-bg-card); color:var(--color-text-primary); font-size:16px;">
+                    <input type="text" id="order-table-number" required maxlength="10" placeholder="Например, 5" style="padding:10px; border:1px solid var(--border-strong); border-radius:8px; background:var(--color-bg-card); color:var(--color-text-primary); font-size:15px;">
                 </label>
-                <label style="display:flex; flex-direction:column; gap:6px; font-weight:600;">
+                <label style="display:flex; flex-direction:column; gap:4px; font-weight:600; font-size:14px;">
                     Номер телефона
-                    <input type="tel" id="order-phone" required maxlength="20" placeholder="+7 (999) 123-45-67" style="padding:12px; border:1px solid var(--border-strong); border-radius:8px; background:var(--color-bg-card); color:var(--color-text-primary); font-size:16px;">
+                    <input type="tel" id="order-phone" required maxlength="20" placeholder="+7 (999) 123-45-67" style="padding:10px; border:1px solid var(--border-strong); border-radius:8px; background:var(--color-bg-card); color:var(--color-text-primary); font-size:15px;">
                 </label>
-                <label style="display:flex; flex-direction:column; gap:6px; font-weight:600;">
-                    Комментарий к заказу (необязательно)
-                    <textarea id="order-comment" rows="3" maxlength="500" placeholder="Пожелания, аллергии и т.п." style="padding:12px; border:1px solid var(--border-strong); border-radius:8px; background:var(--color-bg-card); color:var(--color-text-primary); font-size:15px; resize:vertical; font-family:inherit;"></textarea>
+                <label style="display:flex; flex-direction:column; gap:4px; font-weight:600; font-size:14px;">
+                    Комментарий (необязательно)
+                    <textarea id="order-comment" rows="2" maxlength="500" placeholder="Пожелания, аллергии" style="padding:10px; border:1px solid var(--border-strong); border-radius:8px; background:var(--color-bg-card); color:var(--color-text-primary); font-size:14px; resize:vertical; font-family:inherit;"></textarea>
                 </label>
-                <div style="background: linear-gradient(135deg, #2a582c 0%, #1e3d21 100%); padding:16px; border-radius:12px; margin-top:4px; margin-bottom:16px;">
-                    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
-                        <span style="font-size:24px;">🚚</span>
-                        <span style="color:#fff; font-weight:700; font-size:15px;">Доставка курьером</span>
+                <div style="background: linear-gradient(135deg, #2a582c 0%, #1e3d21 100%); padding:12px; border-radius:10px; margin:4px 0 8px 0;">
+                    <div style="display:flex; align-items:center; gap:8px; margin-bottom:6px;">
+                        <span style="font-size:20px;">🚚</span>
+                        <span style="color:#fff; font-weight:700; font-size:14px;">Доставка курьером</span>
                     </div>
-                    <div style="color:#c8e6c9; font-size:13px; line-height:1.5;">
-                        К вам приедет курьер из ресторана Pizza Napoli<br>
-                        🖨️ <strong>С собой терминал</strong><br>
-                        💳 Оплата картой или по QR-коду
+                    <div style="color:#c8e6c9; font-size:12px; line-height:1.4;">
+                        К вам приедет курьер из Pizza Napoli<br>
+                        🖨️ <strong>С терминалом</strong> 💳 Картой или QR
                     </div>
                 </div>
-                <div class="cart-actions">
+                <div class="cart-actions" style="margin-top:4px;">
                     <button type="button" class="btn btn-secondary" onclick="hideCart()">Закрыть</button>
                     <button type="submit" id="order-submit-btn" class="btn btn-primary">Оформить заказ</button>
                 </div>
