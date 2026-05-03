@@ -54,16 +54,16 @@ const MENU_GROUPS = [
         categories: ['frozen', 'aromatic-oils']
     },
 {
-            title: 'ℹ️ ИНФОРМАЦИЯ',
+title: 'ℹ️ ИНФОРМАЦИЯ',
             categories: ['masterclass', 'franchise', 'contacts', 'legal']
         }
-];
-
-// Category display names mapping
-const CATEGORY_MAP = {
-    'pizza-30cm': 'Пицца 30 см',
-    'piccolo-20cm': 'Pizza Piccolo 20 см',
-    'calzone': 'Кальцоне',
+    ];
+    
+    // Карта русских названий
+    const categoryMap = {
+        'pizza-30cm': 'Пицца 30 см',
+        'piccolo-20cm': 'Pizza Piccolo 20 см',
+        'calzone': 'Кальцоне',
     'bread-focaccia-bread': 'Хлеб',
     'bread-focaccia-focaccia': 'Фокачча',
     'sauce': 'Соусы',
@@ -276,7 +276,8 @@ function initSidebar() {
         'aromatic-oils': 'Ароматное масло',
         'masterclass': 'Мастер класс',
         'franchise': 'Франшиза',
-        'contacts': 'Контакты'
+        'contacts': 'Контакты',
+        'legal': 'Юридическая информация'
     };
     
     // Рендерим сгруппированное меню
