@@ -418,6 +418,28 @@ function animateCartButton() {
     }, 10);
 }
 
+function getTimeStatus() {
+    const now = new Date();
+    const hours = now.getHours();
+    const minutes = now.getMinutes();
+    const timeValue = hours * 60 + minutes;
+    
+    const startMorning = 10 * 60;
+    const startEveningWarning = 21 * 60;
+    const startEveningYandex = 21 * 60 + 30;
+    const endNight = 6 * 60;
+    
+    if (timeValue >= startMorning && timeValue < startEveningWarning) {
+        return 'normal';
+    } else if (timeValue >= startEveningWarning && timeValue < startEveningYandex) {
+        return 'waiting';
+    } else if (timeValue >= startEveningYandex || timeValue < endNight) {
+        return 'yandex';
+    } else {
+        return 'closed';
+    }
+}
+
 function showCart() {
     const modal = document.getElementById('cart-modal');
     const itemsContainer = document.getElementById('cart-items');
@@ -446,8 +468,32 @@ function showCart() {
         `).join('');
 
         const total = cart.reduce((s, i) => s + i.price * i.quantity, 0);
-
+        const timeStatus = getTimeStatus();
+        
+        let timeMessage = '';
+        if (timeStatus === 'waiting') {
+            timeMessage = `
+                <div style="background: linear-gradient(135deg, #ff9a3c 0%, #ff6b35 100%); padding: 14px; border-radius: 12px; margin-bottom: 16px; text-align: center;">
+                    <div style="font-size: 24px; margin-bottom: 6px;">🕘</div>
+                    <div style="color: #fff; font-weight: 700; font-size: 15px; margin-bottom: 4px;">Уже скоро закроемся!</div>
+                    <div style="color: #fff; font-size: 13px;">Ждём вас в гости на Думской 4 до 22:00</div>
+                </div>
+            `;
+        } else if (timeStatus === 'yandex') {
+            timeMessage = `
+                <div style="background: linear-gradient(135deg, #2a582c 0%, #1e3d21 100%); padding: 16px; border-radius: 12px; margin-bottom: 16px; text-align: center;">
+                    <div style="font-size: 28px; margin-bottom: 8px;">🌙</div>
+                    <div style="color: #fff; font-weight: 700; font-size: 15px; margin-bottom: 8px;">Ночная доставка закрыта</div>
+                    <div style="color: #c8e6c9; font-size: 13px; margin-bottom: 12px;">Приходите завтра с 10:00!</div>
+                    <a href="https://eda.yandex.ru/r/pizza_napoli_bmroq?placeSlug=pizza_napoli__gr3t5" target="_blank" style="display: inline-block; background: #FFAB00; color: #000; font-weight: 700; padding: 12px 24px; border-radius: 8px; text-decoration: none; font-size: 14px;">
+                        🍕 Заказать на Яндекс Еде
+                    </a>
+                </div>
+            `;
+        }
+        
         itemsContainer.innerHTML = `
+            ${timeMessage}
             ${itemsHtml}
             <div class="cart-total-row" style="display:flex; justify-content:space-between; align-items:center; padding:16px 0; border-top:1px solid var(--border-subtle); margin-top:12px;">
                 <span style="font-weight:700; font-size:18px;">Итого</span>
@@ -566,6 +612,15 @@ async function sendOrder(payload) {
 }
 
 async function submitOrder() {
+    const timeStatus = getTimeStatus();
+    
+    if (timeStatus === 'yandex') {
+        if (confirm('Мы уже закрыты. Заказать на Яндекс Еде?')) {
+            window.open('https://eda.yandex.ru/r/pizza_napoli_bmroq?placeSlug=pizza_napoli__gr3t5', '_blank');
+        }
+        return;
+    }
+    
     const tableInput = document.getElementById('order-table-number');
     const phoneInput = document.getElementById('order-phone');
     const commentInput = document.getElementById('order-comment');
