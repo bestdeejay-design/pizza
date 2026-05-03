@@ -452,6 +452,10 @@ function showCart() {
                     <input type="text" id="order-table-number" required maxlength="10" placeholder="Например, 5" style="padding:12px; border:1px solid var(--border-strong); border-radius:8px; background:var(--color-bg-card); color:var(--color-text-primary); font-size:16px;">
                 </label>
                 <label style="display:flex; flex-direction:column; gap:6px; font-weight:600;">
+                    Номер телефона
+                    <input type="tel" id="order-phone" required maxlength="20" placeholder="+7 (999) 123-45-67" style="padding:12px; border:1px solid var(--border-strong); border-radius:8px; background:var(--color-bg-card); color:var(--color-text-primary); font-size:16px;">
+                </label>
+                <label style="display:flex; flex-direction:column; gap:6px; font-weight:600;">
                     Комментарий к заказу (необязательно)
                     <textarea id="order-comment" rows="3" maxlength="500" placeholder="Пожелания, аллергии и т.п." style="padding:12px; border:1px solid var(--border-strong); border-radius:8px; background:var(--color-bg-card); color:var(--color-text-primary); font-size:15px; resize:vertical; font-family:inherit;"></textarea>
                 </label>
@@ -500,11 +504,13 @@ async function sendOrder(payload) {
 
 async function submitOrder() {
     const tableInput = document.getElementById('order-table-number');
+    const phoneInput = document.getElementById('order-phone');
     const commentInput = document.getElementById('order-comment');
     const btn = document.getElementById('order-submit-btn');
 
     const tableNumber = (tableInput?.value || '').trim();
-    const comment = commentInput?.value || '';
+    const phone = (phoneInput?.value || '').trim();
+    let comment = commentInput?.value || '';
 
     if (!tableNumber) {
         tableInput?.focus();
@@ -512,10 +518,20 @@ async function submitOrder() {
         return;
     }
 
+    if (!phone) {
+        phoneInput?.focus();
+        alert('Укажите номер телефона');
+        return;
+    }
+
     if (cart.length === 0) {
         alert('Корзина пуста');
         return;
     }
+
+    comment = comment.trim() 
+        ? `📞 Телефон: ${phone}\n💬 Комментарий: ${comment}` 
+        : `📞 Телефон: ${phone}`;
 
     const originalLabel = btn.textContent;
     btn.disabled = true;
