@@ -836,7 +836,7 @@ function renderContentWithLazyLoad() {
             categories: ['mors', 'juice', 'water', 'soda', 'beverages-other']
         },
 {
-            title: 'ℹ️ ИНФОРМАЦИЯ',
+title: 'ℹ️ ИНФОРМАЦИЯ',
             categories: ['masterclass', 'franchise', 'contacts', 'legal']
         }
     ];
