@@ -1562,7 +1562,7 @@ function showLegalInfo() {
                     </div>
                     <div style="margin-bottom:16px;">
                         <div style="font-size:12px;color:#666;text-transform:uppercase;margin-bottom:4px;">Телефон</div>
-                        <div style="font-size:15px;font-weight:600;color:#1a1a1a;">+7 (999) 169-98-39</div>
+                        <div style="font-size:15px;font-weight:600;color:#1a1a1a;">+7 (993) 978-60-13</div>
                     </div>
                     <div>
                         <div style="font-size:12px;color:#666;text-transform:uppercase;margin-bottom:4px;">Email</div>
