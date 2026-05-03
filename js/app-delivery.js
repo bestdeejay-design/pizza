@@ -909,7 +909,7 @@ function renderContactsLazy() {
             subtitle: 'Основная пиццерия',
             image: 'data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 260 200%22><rect fill=%22%23ff2e55%22 width=%22260%22 height=%22200%22/><text x=%22130%22 y=%2290%22 text-anchor=%22middle%22 fill=%22white%22 font-size=%2260%22 font-weight=%22bold%22>🍕</text><text x=%22130%22 y=%22140%22 text-anchor=%22middle%22 fill=%22white%22 font-size=%2216%22>Pizza Napoli 1</text></svg>',
             description: 'ул. Думская 4, Центральный район',
-            phone: '+7 (999) 169-98-39',
+            phone: '+7 (993) 978-60-13',
             hours: 'с 10:00 до 22:00 без выходных',
             payment: 'Наличными • Картой • Переводом • Безналичным платежом',
             badge: null
