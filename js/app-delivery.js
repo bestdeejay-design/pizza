@@ -430,11 +430,15 @@ function showCart() {
             </div>
         `;
     } else {
-        const itemsHtml = cart.map(item => `
+        const itemsHtml = cart.map((item, idx) => `
             <div class="cart-item">
-                <div>
-                    <div style="font-weight: 700; font-size: 16px; margin-bottom: 4px;">${item.title}</div>
-                    <div style="color: #86868b; font-size: 14px;">${item.quantity} × ${item.price} ₽</div>
+                <div style="display:flex; align-items:center; gap:8px;">
+                    <button type="button" onclick="changeQuantity(${idx}, -1)" style="width:32px; height:32px; border-radius:8px; border:1px solid #e5e5ea; background:#fff; font-size:18px; cursor:pointer; color:#ff2e55;">−</button>
+                    <div>
+                        <div style="font-weight: 700; font-size: 16px; margin-bottom: 4px;">${item.title}</div>
+                        <div style="color: #86868b; font-size: 14px;">${item.quantity} × ${item.price} ₽</div>
+                    </div>
+                    <button type="button" onclick="changeQuantity(${idx}, 1)" style="width:32px; height:32px; border-radius:8px; border:1px solid #e5e5ea; background:#fff; font-size:18px; cursor:pointer; color:#2a582c;">+</button>
                 </div>
                 <div style="font-weight: 800; color: #ff2e55;">${item.quantity * item.price} ₽</div>
             </div>
@@ -485,6 +489,18 @@ function showCart() {
 
 function hideCart() {
     document.getElementById('cart-modal').style.display = 'none';
+}
+
+function changeQuantity(index, delta) {
+    if (cart[index]) {
+        cart[index].quantity += delta;
+        if (cart[index].quantity <= 0) {
+            cart.splice(index, 1);
+        }
+        saveCart();
+        updateCartTotal();
+        showCart();
+    }
 }
 
 function showThankYou() {
