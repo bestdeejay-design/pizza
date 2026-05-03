@@ -427,16 +427,19 @@ function getTimeStatus() {
     const startMorning = 10 * 60;
     const startEveningWarning = 21 * 60;
     const startEveningYandex = 21 * 60 + 30;
+    const endDelivery = 22 * 60;
     const endNight = 6 * 60;
     
     if (timeValue >= startMorning && timeValue < startEveningWarning) {
         return 'normal';
     } else if (timeValue >= startEveningWarning && timeValue < startEveningYandex) {
         return 'waiting';
-    } else if (timeValue >= startEveningYandex || timeValue < endNight) {
-        return 'yandex';
-    } else {
+    } else if (timeValue >= startEveningYandex && timeValue < endDelivery) {
+        return 'closing';
+    } else if (timeValue >= endDelivery || timeValue < endNight) {
         return 'closed';
+    } else {
+        return 'yandex';
     }
 }
 
@@ -471,31 +474,60 @@ function showCart() {
         const timeStatus = getTimeStatus();
         
         let timeMessage = '';
+        const howToFindUs = `
+            <div style="color: #fff; font-size: 11px; line-height: 1.5; margin-top: 8px; padding-top: 8px; border-top: 1px solid rgba(255,255,255,0.2);">
+                <strong>Как нас найти:</strong><br>
+                ТЦ "Перинные ряды", Думская 4<br>
+                Вход со стороны Думской, деревянная дверь,<br>
+                ближе к ул. Ломоносова, 2 этаж. Pizza Napoli
+            </div>
+        `;
+        
         if (timeStatus === 'waiting') {
             timeMessage = `
                 <div style="background: linear-gradient(135deg, #ff9a3c 0%, #ff6b35 100%); padding: 14px; border-radius: 12px; margin-bottom: 16px; text-align: center;">
-                    <div style="color: #fff; font-weight: 700; font-size: 14px; margin-bottom: 8px;">🚴 Доставка ресторана через этот сервис работает до 22:00</div>
-                    <div style="color: #fff; font-size: 12px; line-height: 1.6;">
-                        Приходите к нам в гости<br>
-                        в ресторан Pizza Napoli,<br>
-                        Думская 4<br><br>
-                        <strong>Как нас найти:</strong><br>
-                        Торговый центр "Перинные ряды"<br>
-                        Вход со стороны Думской,<br>
-                        деревянная дверь, ближе к улице Ломоносова,<br>
-                        2 этаж. Pizza Napoli
+                    <div style="color: #fff; font-weight: 700; font-size: 14px;">🚴 Доставка ресторана работает до 22:00</div>
+                    <div style="color: #fff; font-size: 12px; margin-top: 6px;">Ждем вас в ресторане Pizza Napoli на Думской 4</div>
+                    ${howToFindUs}
+                </div>
+            `;
+        } else if (timeStatus === 'closing') {
+            timeMessage = `
+                <div style="background: linear-gradient(135deg, #ff9a3c 0%, #ff6b35 100%); padding: 14px; border-radius: 12px; margin-bottom: 16px; text-align: center;">
+                    <div style="color: #fff; font-weight: 700; font-size: 14px;">🚴 Доставка ресторана работает до 22:00</div>
+                    <div style="color: #fff; font-size: 12px; margin-top: 6px;">Ждем вас в ресторане Pizza Napoli на Думской 4</div>
+                    ${howToFindUs}
+                    <div style="margin-top: 12px;">
+                        <a href="https://eda.yandex.ru/r/pizza_napoli_bmroq?placeSlug=pizza_napoli__gr3t5" target="_blank" style="display: inline-block; background: #FFAB00; color: #000; font-weight: 700; padding: 10px 20px; border-radius: 8px; text-decoration: none; font-size: 13px;">
+                            🍕 Заказать на Яндекс Еде
+                        </a>
+                    </div>
+                </div>
+            `;
+        } else if (timeStatus === 'closed') {
+            timeMessage = `
+                <div style="background: linear-gradient(135deg, #ff6b6b 0%, #ff2e55 100%); padding: 14px; border-radius: 12px; margin-bottom: 16px; text-align: center;">
+                    <div style="color: #fff; font-weight: 700; font-size: 14px;">🚴 Доставка ресторана закрыта</div>
+                    <div style="color: #fff; font-size: 12px; margin-top: 6px;">Но ресторан работает! Ждем вас в гости</div>
+                    ${howToFindUs}
+                    <div style="margin-top: 12px;">
+                        <a href="https://eda.yandex.ru/r/pizza_napoli_bmroq?placeSlug=pizza_napoli__gr3t5" target="_blank" style="display: inline-block; background: #FFAB00; color: #000; font-weight: 700; padding: 10px 20px; border-radius: 8px; text-decoration: none; font-size: 13px;">
+                            🍕 Заказать на Яндекс Еде
+                        </a>
                     </div>
                 </div>
             `;
         } else if (timeStatus === 'yandex') {
             timeMessage = `
                 <div style="background: linear-gradient(135deg, #2a582c 0%, #1e3d21 100%); padding: 16px; border-radius: 12px; margin-bottom: 16px; text-align: center;">
-                    <div style="font-size: 28px; margin-bottom: 8px;">🌙</div>
-                    <div style="color: #fff; font-weight: 700; font-size: 15px; margin-bottom: 8px;">Ночная доставка закрыта</div>
-                    <div style="color: #c8e6c9; font-size: 13px; margin-bottom: 12px;">Приходите завтра с 10:00!</div>
-                    <a href="https://eda.yandex.ru/r/pizza_napoli_bmroq?placeSlug=pizza_napoli__gr3t5" target="_blank" style="display: inline-block; background: #FFAB00; color: #000; font-weight: 700; padding: 12px 24px; border-radius: 8px; text-decoration: none; font-size: 14px;">
-                        🍕 Заказать на Яндекс Еде
-                    </a>
+                    <div style="color: #fff; font-weight: 700; font-size: 14px;">🌙 Ресторан закрыт</div>
+                    <div style="color: #c8e6c9; font-size: 12px; margin-top: 6px;">Приходите завтра с 10:00!</div>
+                    ${howToFindUs}
+                    <div style="margin-top: 12px;">
+                        <a href="https://eda.yandex.ru/r/pizza_napoli_bmroq?placeSlug=pizza_napoli__gr3t5" target="_blank" style="display: inline-block; background: #FFAB00; color: #000; font-weight: 700; padding: 10px 20px; border-radius: 8px; text-decoration: none; font-size: 13px;">
+                            🍕 Заказать на Яндекс Еде
+                        </a>
+                    </div>
                 </div>
             `;
         }
@@ -622,8 +654,8 @@ async function sendOrder(payload) {
 async function submitOrder() {
     const timeStatus = getTimeStatus();
     
-    if (timeStatus === 'yandex') {
-        if (confirm('Мы уже закрыты. Заказать на Яндекс Еде?')) {
+    if (timeStatus === 'yandex' || timeStatus === 'closed' || timeStatus === 'closing') {
+        if (confirm('Доставка ресторана уже закрыта. Заказать на Яндекс Еде?')) {
             window.open('https://eda.yandex.ru/r/pizza_napoli_bmroq?placeSlug=pizza_napoli__gr3t5', '_blank');
         }
         return;
