@@ -1574,5 +1574,15 @@ function getVisibleCategory() {
     return null;
 }
 
-document.addEventListener('DOMContentLoaded', loadMenu);
+document.addEventListener('DOMContentLoaded', function() {
+    console.log('DOM loaded, starting menu load...');
+    if (typeof loadMenu === 'function') {
+        loadMenu().catch(function(err) {
+            console.error('Menu load error:', err);
+            document.getElementById('content').innerHTML = '<div style="padding:20px;text-align:center;color:#666;">Не удалось загрузить меню. Попробуйте обновить страницу.</div>';
+        });
+    } else {
+        console.error('loadMenu function not found');
+    }
+});
 
