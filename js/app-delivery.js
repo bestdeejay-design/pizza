@@ -53,10 +53,10 @@ const MENU_GROUPS = [
         title: '👨‍🍳 ГОТОВИМ ДОМА',
         categories: ['frozen', 'aromatic-oils']
     },
-    {
-        title: 'ℹ️ ИНФОРМАЦИЯ',
-        categories: ['masterclass', 'franchise', 'contacts']
-    }
+{
+            title: 'ℹ️ ИНФОРМАЦИЯ',
+            categories: ['masterclass', 'franchise', 'contacts', 'legal']
+        }
 ];
 
 // Category display names mapping
@@ -78,9 +78,10 @@ const CATEGORY_MAP = {
     'beverages-other': 'Другие напитки',
     'frozen': 'Замороженная продукция',
     'aromatic-oils': 'Ароматное масло',
-    'masterclass': 'Мастер класс',
-    'franchise': 'Франшиза',
-    'contacts': 'Контакты'
+'masterclass': 'Мастер класс',
+        'franchise': 'Франшиза',
+        'contacts': 'Контакты',
+        'legal': 'Юридическая информация'
 };
 
 // Expected menu categories for validation
@@ -286,9 +287,9 @@ function initSidebar() {
         
         // Добавляем категории группы
         group.categories.forEach(cat => {
-            // Контакты всегда показываем, остальные только если есть товары
-            if (cat === 'contacts' || categories.includes(cat)) {
-                const count = cat === 'contacts' ? 3 : menu.filter(item => item.category === cat).length;
+            // Контакты и юридическая информация всегда показываем, остальные только если есть товары
+            if (cat === 'contacts' || cat === 'legal' || categories.includes(cat)) {
+                const count = (cat === 'contacts' || cat === 'legal') ? 0 : menu.filter(item => item.category === cat).length;
                 const displayName = categoryMap[cat] || cat;
                 
                 html += `
@@ -353,6 +354,11 @@ function setActiveNav(categoryId) {
 
 function scrollToCategory(categoryId) {
     console.log('Scrolling to category:', categoryId);
+    
+    if (categoryId === 'legal') {
+        showLegalInfo();
+        return;
+    }
     
     const element = document.getElementById(`category-${categoryId}`);
     if (element) {
@@ -667,7 +673,8 @@ function initMobileMenu() {
         'aromatic-oils': 'Ароматное масло',
         'masterclass': 'Мастер класс',
         'franchise': 'Франшиза',
-        'contacts': 'Контакты'
+        'contacts': 'Контакты',
+        'legal': 'Юридическая информация'
     };
     
     // Рендерим мобильное меню
@@ -678,8 +685,8 @@ function initMobileMenu() {
         
         // Добавляем категории группы
         group.categories.forEach(cat => {
-            // Контакты всегда показываем, остальные только если есть товары
-            if (cat === 'contacts' || categories.includes(cat)) {
+            // Контакты и юридическая информация всегда показываем, остальные только если есть товары
+            if (cat === 'contacts' || cat === 'legal' || categories.includes(cat)) {
                 const count = cat === 'contacts' ? 3 : menu.filter(item => item.category === cat).length;
                 const displayName = categoryMap[cat] || cat;
                 
@@ -828,9 +835,9 @@ function renderContentWithLazyLoad() {
             title: '🥤 НАПИТКИ',
             categories: ['mors', 'juice', 'water', 'soda', 'beverages-other']
         },
-        {
+{
             title: 'ℹ️ ИНФОРМАЦИЯ',
-            categories: ['frozen', 'aromatic-oils', 'masterclass', 'franchise', 'contacts']
+            categories: ['masterclass', 'franchise', 'contacts', 'legal']
         }
     ];
     
@@ -1527,6 +1534,53 @@ function getVisibleCategory() {
     }
     
     return null;
+}
+
+function showLegalInfo() {
+    const legalContent = document.getElementById('legal-modal-content');
+    if (!legalContent) {
+        const modal = document.createElement('div');
+        modal.id = 'legal-modal';
+        modal.className = 'modal-overlay';
+        modal.style.cssText = 'position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.5);display:flex;align-items:center;justify-content:center;z-index:10000;';
+        modal.innerHTML = `
+            <div id="legal-modal-content" style="background:#fff;padding:30px;border-radius:16px;max-width:420px;width:90%;position:relative;max-height:80vh;overflow-y:auto;">
+                <button onclick="closeLegalModal()" style="position:absolute;top:12px;right:12px;background:none;border:none;font-size:24px;cursor:pointer;color:#666;">×</button>
+                <h2 style="margin:0 0 20px;font-size:22px;color:#1a1a1a;text-align:center;">Юридическая информация</h2>
+                <div style="background:#f8f9fa;padding:20px;border-radius:12px;">
+                    <div style="margin-bottom:16px;">
+                        <div style="font-size:12px;color:#666;text-transform:uppercase;margin-bottom:4px;">Полное наименование</div>
+                        <div style="font-size:15px;font-weight:600;color:#1a1a1a;">ООО "АТМОСФЕРА"</div>
+                    </div>
+                    <div style="margin-bottom:16px;">
+                        <div style="font-size:12px;color:#666;text-transform:uppercase;margin-bottom:4px;">ИНН</div>
+                        <div style="font-size:15px;font-weight:600;color:#1a1a1a;">7842216839</div>
+                    </div>
+                    <div style="margin-bottom:16px;">
+                        <div style="font-size:12px;color:#666;text-transform:uppercase;margin-bottom:4px;">ОГРН</div>
+                        <div style="font-size:15px;font-weight:600;color:#1a1a1a;">1237800084158</div>
+                    </div>
+                    <div style="margin-bottom:16px;">
+                        <div style="font-size:12px;color:#666;text-transform:uppercase;margin-bottom:4px;">Телефон</div>
+                        <div style="font-size:15px;font-weight:600;color:#1a1a1a;">+7 (999) 169-98-39</div>
+                    </div>
+                    <div>
+                        <div style="font-size:12px;color:#666;text-transform:uppercase;margin-bottom:4px;">Email</div>
+                        <div style="font-size:15px;font-weight:600;color:#1a1a1a;">pizzanapolirsc2@gmail.com</div>
+                    </div>
+                </div>
+                <div style="text-align:center;margin-top:20px;">
+                    <button onclick="closeLegalModal()" class="btn btn-primary" style="width:100%;">Закрыть</button>
+                </div>
+            </div>
+        `;
+        document.body.appendChild(modal);
+    }
+    document.getElementById('legal-modal').style.display = 'flex';
+}
+
+function closeLegalModal() {
+    document.getElementById('legal-modal').style.display = 'none';
 }
 
 document.addEventListener('DOMContentLoaded', loadMenu);
