@@ -483,6 +483,7 @@ function showCart() {
                 <div style="text-align:center; padding: 20px 0; color: var(--color-text-secondary); font-size: 14px;">
                     <div style="font-weight: 700; margin-bottom: 4px;">Приятного аппетита!</div>
                     <div>Сеть итальянских пиццерий</div>
+                    <div style="font-weight: 700; margin-top: 8px;">Pizza Napoli</div>
                 </div>
             </form>
         `;
