@@ -357,7 +357,7 @@ function scrollToCategory(categoryId) {
     console.log('Scrolling to category:', categoryId);
     
     if (categoryId === 'legal') {
-        showLegalInfo();
+        showLegalSection();
         return;
     }
     
@@ -1515,51 +1515,50 @@ function getVisibleCategory() {
     return null;
 }
 
-function showLegalInfo() {
-    const legalContent = document.getElementById('legal-modal-content');
-    if (!legalContent) {
-        const modal = document.createElement('div');
-        modal.id = 'legal-modal';
-        modal.className = 'modal-overlay';
-        modal.style.cssText = 'position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.5);display:flex;align-items:center;justify-content:center;z-index:10000;';
-        modal.innerHTML = `
-            <div id="legal-modal-content" style="background:#fff;padding:30px;border-radius:16px;max-width:420px;width:90%;position:relative;max-height:80vh;overflow-y:auto;">
-                <button onclick="closeLegalModal()" style="position:absolute;top:12px;right:12px;background:none;border:none;font-size:24px;cursor:pointer;color:#666;">×</button>
-                <h2 style="margin:0 0 20px;font-size:22px;color:#1a1a1a;text-align:center;">Юридическая информация</h2>
-                <div style="background:#f8f9fa;padding:20px;border-radius:12px;">
-                    <div style="margin-bottom:16px;">
-                        <div style="font-size:12px;color:#666;text-transform:uppercase;margin-bottom:4px;">Полное наименование</div>
-                        <div style="font-size:15px;font-weight:600;color:#1a1a1a;">ООО "АТМОСФЕРА"</div>
+function showLegalSection() {
+    setActiveNav('legal');
+    document.querySelectorAll('.category-section').forEach(section => {
+        section.style.display = 'none';
+    });
+    
+    let section = document.getElementById('category-legal');
+    if (!section) {
+        section = document.createElement('div');
+        section.id = 'category-legal';
+        section.className = 'category-section';
+        section.innerHTML = `
+            <div style="padding: 20px; max-width: 800px; margin: 0 auto;">
+                <h2 style="font-size: 28px; margin-bottom: 24px; color: #1a1a1a; text-align: center;">Юридическая информация</h2>
+                <div style="background: #f8f9fa; padding: 30px; border-radius: 16px;">
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px;">
+                        <div>
+                            <div style="font-size: 12px; color: #666; text-transform: uppercase; margin-bottom: 6px;">Полное наименование</div>
+                            <div style="font-size: 16px; font-weight: 600; color: #1a1a1a;">ООО "АТМОСФЕРА"</div>
+                        </div>
+                        <div>
+                            <div style="font-size: 12px; color: #666; text-transform: uppercase; margin-bottom: 6px;">ИНН</div>
+                            <div style="font-size: 16px; font-weight: 600; color: #1a1a1a;">7842216839</div>
+                        </div>
+                        <div>
+                            <div style="font-size: 12px; color: #666; text-transform: uppercase; margin-bottom: 6px;">ОГРН</div>
+                            <div style="font-size: 16px; font-weight: 600; color: #1a1a1a;">1237800084158</div>
+                        </div>
+                        <div>
+                            <div style="font-size: 12px; color: #666; text-transform: uppercase; margin-bottom: 6px;">Телефон</div>
+                            <div style="font-size: 16px; font-weight: 600; color: #1a1a1a;">+7 (993) 978-60-13</div>
+                        </div>
+                        <div>
+                            <div style="font-size: 12px; color: #666; text-transform: uppercase; margin-bottom: 6px;">Email</div>
+                            <div style="font-size: 16px; font-weight: 600; color: #1a1a1a;">pizzanapolirsc2@gmail.com</div>
+                        </div>
                     </div>
-                    <div style="margin-bottom:16px;">
-                        <div style="font-size:12px;color:#666;text-transform:uppercase;margin-bottom:4px;">ИНН</div>
-                        <div style="font-size:15px;font-weight:600;color:#1a1a1a;">7842216839</div>
-                    </div>
-                    <div style="margin-bottom:16px;">
-                        <div style="font-size:12px;color:#666;text-transform:uppercase;margin-bottom:4px;">ОГРН</div>
-                        <div style="font-size:15px;font-weight:600;color:#1a1a1a;">1237800084158</div>
-                    </div>
-                    <div style="margin-bottom:16px;">
-                        <div style="font-size:12px;color:#666;text-transform:uppercase;margin-bottom:4px;">Телефон</div>
-                        <div style="font-size:15px;font-weight:600;color:#1a1a1a;">+7 (993) 978-60-13</div>
-                    </div>
-                    <div>
-                        <div style="font-size:12px;color:#666;text-transform:uppercase;margin-bottom:4px;">Email</div>
-                        <div style="font-size:15px;font-weight:600;color:#1a1a1a;">pizzanapolirsc2@gmail.com</div>
-                    </div>
-                </div>
-                <div style="text-align:center;margin-top:20px;">
-                    <button onclick="closeLegalModal()" class="btn btn-primary" style="width:100%;">Закрыть</button>
                 </div>
             </div>
         `;
-        document.body.appendChild(modal);
+        document.getElementById('content').appendChild(section);
     }
-    document.getElementById('legal-modal').style.display = 'flex';
-}
-
-function closeLegalModal() {
-    document.getElementById('legal-modal').style.display = 'none';
+    section.style.display = '';
+    section.scrollIntoView({ behavior: 'smooth', block: 'start' });
 }
 
 document.addEventListener('DOMContentLoaded', loadMenu);
