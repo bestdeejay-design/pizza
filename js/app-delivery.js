@@ -459,6 +459,17 @@ function showCart() {
                     Комментарий к заказу (необязательно)
                     <textarea id="order-comment" rows="3" maxlength="500" placeholder="Пожелания, аллергии и т.п." style="padding:12px; border:1px solid var(--border-strong); border-radius:8px; background:var(--color-bg-card); color:var(--color-text-primary); font-size:15px; resize:vertical; font-family:inherit;"></textarea>
                 </label>
+                <div style="background: linear-gradient(135deg, #2a582c 0%, #1e3d21 100%); padding:16px; border-radius:12px; margin-top:4px;">
+                    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+                        <span style="font-size:24px;">🚚</span>
+                        <span style="color:#fff; font-weight:700; font-size:15px;">Доставка курьером</span>
+                    </div>
+                    <div style="color:#c8e6c9; font-size:13px; line-height:1.5;">
+                        К вам приедет курьер из ресторана Pizza Napoli<br>
+                        🖨️ <strong>С собой терминал</strong><br>
+                        💳 Оплата картой или по QR-коду
+                    </div>
+                </div>
                 <div class="cart-actions">
                     <button type="button" class="btn btn-secondary" onclick="hideCart()">Закрыть</button>
                     <button type="submit" id="order-submit-btn" class="btn btn-primary">Оформить заказ</button>
@@ -472,6 +483,35 @@ function showCart() {
 
 function hideCart() {
     document.getElementById('cart-modal').style.display = 'none';
+}
+
+function showThankYou() {
+    const modal = document.getElementById('cart-modal');
+    modal.innerHTML = `
+        <div class="modal-content" style="max-width:420px; text-align:center; padding:40px 30px;">
+            <div style="font-size:64px; margin-bottom:16px;">✅</div>
+            <h2 style="margin:0 0 20px; font-size:26px; color:var(--color-text-primary);">Спасибо за заказ!</h2>
+            <div style="background: linear-gradient(135deg, #2a582c 0%, #1e3d21 100%); padding:20px; border-radius:12px; margin-bottom:20px;">
+                <div style="display:flex; align-items:center; gap:10px; margin-bottom:10px;">
+                    <span style="font-size:24px;">🚚</span>
+                    <span style="color:#fff; font-weight:700; font-size:16px;">Доставка курьером</span>
+                </div>
+                <div style="color:#c8e6c9; font-size:14px; line-height:1.6; text-align:left;">
+                    К вам приедет курьер из ресторана Pizza Napoli<br><br>
+                    🖨️ <strong>С собой терминал</strong><br>
+                    💳 Оплата картой или по QR-коду
+                </div>
+            </div>
+            <p style="color:var(--color-text-secondary); font-size:15px; margin:0 0 24px;">Мы свяжемся с вами для подтверждения</p>
+            <button class="btn btn-primary" onclick="closeThankYou()" style="width:100%;">Понятно</button>
+        </div>
+    `;
+    modal.style.display = 'flex';
+}
+
+function closeThankYou() {
+    document.getElementById('cart-modal').style.display = 'none';
+    document.getElementById('cart-modal').innerHTML = '';
 }
 
 // ========================================
@@ -550,7 +590,7 @@ async function submitOrder() {
         });
         clearCart();
         hideCart();
-        alert('Заказ отправлен! Ожидайте подтверждения.');
+        showThankYou();
     } catch (err) {
         console.error('Order submission failed:', err);
         alert(`Не удалось отправить заказ: ${err.message}`);
