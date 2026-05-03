@@ -819,7 +819,7 @@ function renderContentWithLazyLoad() {
             title: '🥗 ЗАКУСКИ',
             categories: ['bread-focaccia-bread', 'bread-focaccia-focaccia', 'sauce', 'rolls-sushi', 'rolls-rolls']
         },
-        {
+{
             title: '🍱 КОМБО НАБОРЫ',
             categories: ['combo']
         },
@@ -831,8 +831,12 @@ function renderContentWithLazyLoad() {
             title: '🥤 НАПИТКИ',
             categories: ['mors', 'juice', 'water', 'soda', 'beverages-other']
         },
-{
-title: 'ℹ️ ИНФОРМАЦИЯ',
+        {
+            title: '👨‍🍳 ГОТОВИМ ДОМА',
+            categories: ['frozen', 'aromatic-oils']
+        },
+        {
+            title: 'ℹ️ ИНФОРМАЦИЯ',
             categories: ['masterclass', 'franchise', 'contacts', 'legal']
         }
     ];
