@@ -466,7 +466,11 @@ function showCart() {
                     Комментарий (необязательно)
                     <textarea id="order-comment" rows="2" maxlength="500" placeholder="Пожелания, аллергии" style="padding:10px; border:1px solid var(--border-strong); border-radius:8px; background:var(--color-bg-card); color:var(--color-text-primary); font-size:14px; resize:vertical; font-family:inherit;"></textarea>
                 </label>
-                <div style="background: linear-gradient(135deg, #2a582c 0%, #1e3d21 100%); padding:12px; border-radius:10px; margin:4px 0 8px 0;">
+                <div class="cart-actions">
+                    <button type="button" class="btn btn-secondary" onclick="hideCart()">Закрыть</button>
+                    <button type="submit" id="order-submit-btn" class="btn btn-primary">Оформить заказ</button>
+                </div>
+                <div style="background: linear-gradient(135deg, #2a582c 0%, #1e3d21 100%); padding:12px; border-radius:10px; margin-top:4px;">
                     <div style="display:flex; align-items:center; gap:8px; margin-bottom:6px;">
                         <span style="font-size:20px;">🚚</span>
                         <span style="color:#fff; font-weight:700; font-size:14px;">Доставка курьером</span>
@@ -475,10 +479,6 @@ function showCart() {
                         К вам приедет курьер из Pizza Napoli<br>
                         🖨️ <strong>С терминалом</strong> 💳 Картой или QR
                     </div>
-                </div>
-                <div class="cart-actions" style="margin-top:4px;">
-                    <button type="button" class="btn btn-secondary" onclick="hideCart()">Закрыть</button>
-                    <button type="submit" id="order-submit-btn" class="btn btn-primary">Оформить заказ</button>
                 </div>
             </form>
         `;
