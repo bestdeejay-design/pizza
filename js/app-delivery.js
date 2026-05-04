@@ -26,35 +26,35 @@
 // Menu groups structure (used in sidebar, mobile menu, content rendering)
 const MENU_GROUPS = [
     {
-        title: '<i class="fas fa-pizza-slice" style="color:#ff2e55;"></i> ПИЦЦА',
+        title: '<i class="fas fa-pizza-slice" style="color:#fff;"></i> ПИЦЦА',
         categories: ['pizza-30cm', 'piccolo-20cm', 'calzone']
     },
     {
-        title: '<i class="fas fa-fish" style="color:#ff6b6b;"></i> СУШИ & РОЛЛЫ',
+        title: '<i class="fas fa-fish" style="color:#fff;"></i> СУШИ & РОЛЛЫ',
         categories: ['rolls-sushi', 'rolls-rolls']
     },
     {
-        title: '<i class="fas fa-bread-slice" style="color:#f4a460;"></i> ХЛЕБ И ФОКАЧЧА',
+        title: '<i class="fas fa-bread-slice" style="color:#fff;"></i> ХЛЕБ И ФОКАЧЧА',
         categories: ['bread-focaccia-bread', 'bread-focaccia-focaccia']
     },
     {
-        title: '<i class="fas fa-box" style="color:#9b59b6;"></i> НАБОРЫ',
+        title: '<i class="fas fa-box" style="color:#fff;"></i> НАБОРЫ',
         categories: ['combo']
     },
     {
-        title: '<i class="fas fa-birthday-cake" style="color:#e91e63;"></i> ДЕСЕРТЫ',
+        title: '<i class="fas fa-birthday-cake" style="color:#fff;"></i> ДЕСЕРТЫ',
         categories: ['confectionery']
     },
     {
-        title: '<i class="fas fa-glass-cheers" style="color:#3498db;"></i> НАПИТКИ',
+        title: '<i class="fas fa-glass-cheers" style="color:#fff;"></i> НАПИТКИ',
         categories: ['mors', 'juice', 'water', 'soda', 'beverages-other']
     },
     {
-        title: '<i class="fas fa-chef-hat" style="color:#27ae60;"></i> ГОТОВИМ ДОМА',
+        title: '<i class="fas fa-chef-hat" style="color:#fff;"></i> ГОТОВИМ ДОМА',
         categories: ['frozen', 'aromatic-oils']
     },
 {
-title: '<i class="fas fa-info-circle" style="color:#95a5a6;"></i> ИНФОРМАЦИЯ',
+title: '<i class="fas fa-info-circle" style="color:#fff;"></i> ИНФОРМАЦИЯ',
             categories: ['masterclass', 'franchise', 'contacts', 'legal']
         }
     ];
@@ -222,35 +222,35 @@ function initSidebar() {
     // Логическая группировка категорий пиццерии
     const menuGroups = [
         {
-            title: '<i class="fas fa-pizza-slice" style="color:#ff2e55;"></i> ПИЦЦА',
+            title: '<i class="fas fa-pizza-slice" style="color:#fff;"></i> ПИЦЦА',
             categories: ['pizza-30cm', 'piccolo-20cm', 'calzone']
         },
         {
-            title: '<i class="fas fa-fish" style="color:#ff6b6b;"></i> СУШИ & РОЛЛЫ',
+            title: '<i class="fas fa-fish" style="color:#fff;"></i> СУШИ & РОЛЛЫ',
             categories: ['rolls-sushi', 'rolls-rolls']
         },
         {
-            title: '<i class="fas fa-bread-slice" style="color:#f4a460;"></i> ХЛЕБ И ФОКАЧЧА',
+            title: '<i class="fas fa-bread-slice" style="color:#fff;"></i> ХЛЕБ И ФОКАЧЧА',
             categories: ['bread-focaccia-bread', 'bread-focaccia-focaccia']
         },
         {
-            title: '<i class="fas fa-box" style="color:#9b59b6;"></i> НАБОРЫ',
+            title: '<i class="fas fa-box" style="color:#fff;"></i> НАБОРЫ',
             categories: ['combo']
         },
         {
-            title: '<i class="fas fa-birthday-cake" style="color:#e91e63;"></i> ДЕСЕРТЫ',
+            title: '<i class="fas fa-birthday-cake" style="color:#fff;"></i> ДЕСЕРТЫ',
             categories: ['confectionery']
         },
         {
-            title: '<i class="fas fa-glass-cheers" style="color:#3498db;"></i> НАПИТКИ',
+            title: '<i class="fas fa-glass-cheers" style="color:#fff;"></i> НАПИТКИ',
             categories: ['mors', 'juice', 'water', 'soda', 'beverages-other']
         },
 {
-            title: '<i class="fas fa-chef-hat" style="color:#27ae60;"></i> ГОТОВИМ ДОМА',
+            title: '<i class="fas fa-chef-hat" style="color:#fff;"></i> ГОТОВИМ ДОМА',
             categories: ['frozen', 'aromatic-oils']
         },
         {
-            title: '<i class="fas fa-info-circle" style="color:#95a5a6;"></i> ИНФОРМАЦИЯ',
+            title: '<i class="fas fa-info-circle" style="color:#fff;"></i> ИНФОРМАЦИЯ',
             categories: ['masterclass', 'franchise', 'contacts', 'legal']
         }
     ];
@@ -749,35 +749,35 @@ function initMobileMenu() {
     // Логическая группировка категорий пиццерии
     const menuGroups = [
         {
-            title: '<i class="fas fa-pizza-slice" style="color:#ff2e55;"></i> ПИЦЦА',
+            title: '<i class="fas fa-pizza-slice" style="color:#fff;"></i> ПИЦЦА',
             categories: ['pizza-30cm', 'piccolo-20cm', 'calzone']
         },
         {
-            title: '<i class="fas fa-fish" style="color:#ff6b6b;"></i> СУШИ & РОЛЛЫ',
+            title: '<i class="fas fa-fish" style="color:#fff;"></i> СУШИ & РОЛЛЫ',
             categories: ['rolls-sushi', 'rolls-rolls']
         },
         {
-            title: '<i class="fas fa-bread-slice" style="color:#f4a460;"></i> ХЛЕБ И ФОКАЧЧА',
+            title: '<i class="fas fa-bread-slice" style="color:#fff;"></i> ХЛЕБ И ФОКАЧЧА',
             categories: ['bread-focaccia-bread', 'bread-focaccia-focaccia']
         },
         {
-            title: '<i class="fas fa-box" style="color:#9b59b6;"></i> НАБОРЫ',
+            title: '<i class="fas fa-box" style="color:#fff;"></i> НАБОРЫ',
             categories: ['combo']
         },
         {
-            title: '<i class="fas fa-birthday-cake" style="color:#e91e63;"></i> ДЕСЕРТЫ',
+            title: '<i class="fas fa-birthday-cake" style="color:#fff;"></i> ДЕСЕРТЫ',
             categories: ['confectionery']
         },
         {
-            title: '<i class="fas fa-glass-cheers" style="color:#3498db;"></i> НАПИТКИ',
+            title: '<i class="fas fa-glass-cheers" style="color:#fff;"></i> НАПИТКИ',
             categories: ['mors', 'juice', 'water', 'soda', 'beverages-other']
         },
         {
-            title: '<i class="fas fa-chef-hat" style="color:#27ae60;"></i> ГОТОВИМ ДОМА',
+            title: '<i class="fas fa-chef-hat" style="color:#fff;"></i> ГОТОВИМ ДОМА',
             categories: ['frozen', 'aromatic-oils']
         },
         {
-            title: '<i class="fas fa-info-circle" style="color:#95a5a6;"></i> ИНФОРМАЦИЯ',
+            title: '<i class="fas fa-info-circle" style="color:#fff;"></i> ИНФОРМАЦИЯ',
             categories: ['masterclass', 'franchise', 'contacts', 'legal']
         }
     ];
@@ -946,11 +946,11 @@ function renderContentWithLazyLoad() {
     // Используем тот же порядок, что и в сайдбаре
     const menuGroups = [
         {
-            title: '<i class="fas fa-pizza-slice" style="color:#ff2e55;"></i> ПИЦЦА',
+            title: '<i class="fas fa-pizza-slice" style="color:#fff;"></i> ПИЦЦА',
             categories: ['pizza-30cm', 'piccolo-20cm', 'calzone']
         },
         {
-            title: '<i class="fas fa-carrot" style="color:#e67e22;"></i> ЗАКУСКИ',
+            title: '<i class="fas fa-carrot" style="color:#fff;"></i> ЗАКУСКИ',
             categories: ['bread-focaccia-bread', 'bread-focaccia-focaccia', 'sauce', 'rolls-sushi', 'rolls-rolls']
         },
 {
@@ -962,15 +962,15 @@ function renderContentWithLazyLoad() {
             categories: ['confectionery']
         },
         {
-            title: '<i class="fas fa-glass-cheers" style="color:#3498db;"></i> НАПИТКИ',
+            title: '<i class="fas fa-glass-cheers" style="color:#fff;"></i> НАПИТКИ',
             categories: ['mors', 'juice', 'water', 'soda', 'beverages-other']
         },
         {
-            title: '<i class="fas fa-chef-hat" style="color:#27ae60;"></i> ГОТОВИМ ДОМА',
+            title: '<i class="fas fa-chef-hat" style="color:#fff;"></i> ГОТОВИМ ДОМА',
             categories: ['frozen', 'aromatic-oils']
         },
         {
-            title: '<i class="fas fa-info-circle" style="color:#95a5a6;"></i> ИНФОРМАЦИЯ',
+            title: '<i class="fas fa-info-circle" style="color:#fff;"></i> ИНФОРМАЦИЯ',
             categories: ['masterclass', 'franchise', 'contacts', 'legal']
         }
     ];
@@ -1400,14 +1400,14 @@ function navigateToPreviousCategory(currentCategoryId) {
 // Получение списка категорий в правильном порядке
 function getOrderedCategories() {
     const menuGroups = [
-        { title: '<i class="fas fa-pizza-slice" style="color:#ff2e55;"></i> ПИЦЦА', categories: ['pizza-30cm', 'piccolo-20cm', 'calzone'] },
-        { title: '<i class="fas fa-fish" style="color:#ff6b6b;"></i> СУШИ & РОЛЛЫ', categories: ['rolls-sushi', 'rolls-rolls'] },
-        { title: '<i class="fas fa-bread-slice" style="color:#f4a460;"></i> ХЛЕБ И ФОКАЧЧА', categories: ['bread-focaccia-bread', 'bread-focaccia-focaccia'] },
-        { title: '<i class="fas fa-box" style="color:#9b59b6;"></i> НАБОРЫ', categories: ['combo'] },
-        { title: '<i class="fas fa-birthday-cake" style="color:#e91e63;"></i> ДЕСЕРТЫ', categories: ['confectionery'] },
-        { title: '<i class="fas fa-glass-cheers" style="color:#3498db;"></i> НАПИТКИ', categories: ['mors', 'juice', 'water', 'soda', 'beverages-other'] },
-        { title: '<i class="fas fa-chef-hat" style="color:#27ae60;"></i> ГОТОВИМ ДОМА', categories: ['frozen', 'aromatic-oils'] },
-        { title: '<i class="fas fa-info-circle" style="color:#95a5a6;"></i> ИНФОРМАЦИЯ', categories: ['masterclass', 'franchise', 'contacts'] }
+        { title: '<i class="fas fa-pizza-slice" style="color:#fff;"></i> ПИЦЦА', categories: ['pizza-30cm', 'piccolo-20cm', 'calzone'] },
+        { title: '<i class="fas fa-fish" style="color:#fff;"></i> СУШИ & РОЛЛЫ', categories: ['rolls-sushi', 'rolls-rolls'] },
+        { title: '<i class="fas fa-bread-slice" style="color:#fff;"></i> ХЛЕБ И ФОКАЧЧА', categories: ['bread-focaccia-bread', 'bread-focaccia-focaccia'] },
+        { title: '<i class="fas fa-box" style="color:#fff;"></i> НАБОРЫ', categories: ['combo'] },
+        { title: '<i class="fas fa-birthday-cake" style="color:#fff;"></i> ДЕСЕРТЫ', categories: ['confectionery'] },
+        { title: '<i class="fas fa-glass-cheers" style="color:#fff;"></i> НАПИТКИ', categories: ['mors', 'juice', 'water', 'soda', 'beverages-other'] },
+        { title: '<i class="fas fa-chef-hat" style="color:#fff;"></i> ГОТОВИМ ДОМА', categories: ['frozen', 'aromatic-oils'] },
+        { title: '<i class="fas fa-info-circle" style="color:#fff;"></i> ИНФОРМАЦИЯ', categories: ['masterclass', 'franchise', 'contacts'] }
     ];
     
     const orderedCategories = [];
