@@ -598,7 +598,7 @@ function showThankYou() {
     const modal = document.getElementById('cart-modal');
     modal.innerHTML = `
         <div class="modal-content" style="max-width:420px; text-align:center; padding:40px 30px;">
-            <div style="font-size:64px; margin-bottom:16px;">✅</div>
+            <div style="font-size:64px; margin-bottom:16px;"><i class="fas fa-check-circle" style="color:#27ae60;"></i></div>
             <h2 style="margin:0 0 20px; font-size:26px; color:var(--color-text-primary);">Спасибо за заказ!</h2>
             <div style="background: linear-gradient(135deg, #2a582c 0%, #1e3d21 100%); padding:20px; border-radius:12px; margin-bottom:20px;">
                 <div style="display:flex; align-items:center; gap:10px; margin-bottom:10px;">
@@ -607,7 +607,7 @@ function showThankYou() {
                 </div>
                 <div style="color:#c8e6c9; font-size:14px; line-height:1.6; text-align:left;">
                     К вам приедет курьер из ресторана Pizza Napoli<br><br>
-                    🖨️ <strong>С собой терминал</strong><br>
+                    <i class="fas fa-print"></i> <strong>С собой терминал</strong><br>
                     <i class="fas fa-credit-card"></i> Оплата картой или по QR-коду
                 </div>
             </div>
@@ -689,7 +689,7 @@ async function submitOrder() {
 
     comment = comment.trim() 
         ? `<i class="fas fa-phone-alt"></i> Телефон: ${phone}\n<i class="fas fa-comment"></i> Комментарий: ${comment}` 
-        : `📞 Телефон: ${phone}`;
+        : `<i class="fas fa-phone-alt"></i> Телефон: ${phone}`;
 
     const originalLabel = btn.textContent;
     btn.disabled = true;
@@ -954,11 +954,11 @@ function renderContentWithLazyLoad() {
             categories: ['bread-focaccia-bread', 'bread-focaccia-focaccia', 'sauce', 'rolls-sushi', 'rolls-rolls']
         },
 {
-            title: '🍱 КОМБО НАБОРЫ',
+            title: '<i class="fas fa-box-open" style="color:#fff;"></i> КОМБО НАБОРЫ',
             categories: ['combo']
         },
         {
-            title: '🍰 ДЕССЕРТЫ',
+            title: '<i class="fas fa-birthday-cake" style="color:#fff;"></i> ДЕССЕРТЫ',
             categories: ['confectionery']
         },
         {
@@ -1447,7 +1447,7 @@ function showProductModal(productId) {
             <!-- Верхняя часть - Изображение -->
             <div class="product-modal-image-top">
                 <img src="${product.image}" alt="${product.title}" class="product-modal-image-top-img">
-                <button onclick="closeProductModal()" class="product-modal-close-btn" aria-label="Закрыть">✕</button>
+                <button onclick="closeProductModal()" class="product-modal-close-btn" aria-label="Закрыть"><i class="fas fa-times"></i></button>
             </div>
             
             <!-- Нижняя часть - Информация -->
