@@ -608,7 +608,7 @@ function showThankYou() {
                 <div style="color:#c8e6c9; font-size:14px; line-height:1.6; text-align:left;">
                     К вам приедет курьер из ресторана Pizza Napoli<br><br>
                     🖨️ <strong>С собой терминал</strong><br>
-                    💳 Оплата картой или по QR-коду
+                    <i class="fas fa-credit-card"></i> Оплата картой или по QR-коду
                 </div>
             </div>
             <p style="color:var(--color-text-secondary); font-size:15px; margin:0 0 24px;">Мы свяжемся с вами для подтверждения</p>
@@ -688,7 +688,7 @@ async function submitOrder() {
     }
 
     comment = comment.trim() 
-        ? `📞 Телефон: ${phone}\n💬 Комментарий: ${comment}` 
+        ? `<i class="fas fa-phone-alt"></i> Телефон: ${phone}\n<i class="fas fa-comment"></i> Комментарий: ${comment}` 
         : `📞 Телефон: ${phone}`;
 
     const originalLabel = btn.textContent;
@@ -1196,19 +1196,19 @@ function renderContactsLazy() {
                 <p style="margin-bottom: 12px; line-height: 1.5;">${contact.description}</p>
                 ${contact.phone ? `
                     <div style="margin-bottom: 8px;">
-                        <strong style="color: #ff2e55;">📞 </strong>
+                        <i class="fas fa-phone-alt" style="color: #ff2e55; margin-right:4px;"></i>
                         <a href="tel:${contact.phone.replace(/\s/g, '')}" style="color: inherit; text-decoration: none; font-weight: 600;">${contact.phone}</a>
                     </div>
                 ` : ''}
                 ${contact.hours ? `
                     <div style="margin-bottom: 8px;">
-                        <strong style="color: #ff2e55;">⏰ </strong>
+                        <i class="fas fa-clock" style="color: #ff2e55; margin-right:4px;"></i>
                         <span>${contact.hours}</span>
                     </div>
                 ` : ''}
                 ${contact.payment ? `
                     <div style="margin-top: 12px; padding-top: 12px; border-top: 1px solid rgba(0,0,0,0.1); font-size: 12px; color: #86868b; line-height: 1.6;">
-                        <strong style="color: #ff2e55;">💳 Оплата:</strong> ${contact.payment}
+                        <i class="fas fa-credit-card" style="color: #ff2e55; margin-right:4px;"></i>Оплата: ${contact.payment}
                     </div>
                 ` : ''}
             </div>
