@@ -288,9 +288,9 @@ function initSidebar() {
         
         // Добавляем категории группы
         group.categories.forEach(cat => {
-            // Контакты и юридическая информация всегда показываем, остальные только если есть товары
-            if (cat === 'contacts' || cat === 'legal' || categories.includes(cat)) {
-                const count = cat === 'legal' ? 1 : (cat === 'contacts' ? 2 : menu.filter(item => item.category === cat).length);
+            // Информационные разделы показываем всегда
+            if (cat === 'contacts' || cat === 'legal' || cat === 'masterclass' || cat === 'franchise' || categories.includes(cat)) {
+                const count = (cat === 'legal' || cat === 'masterclass' || cat === 'franchise') ? 0 : (cat === 'contacts' ? 2 : menu.filter(item => item.category === cat).length);
                 const displayName = categoryMap[cat] || cat;
                 
                 html += `
@@ -815,9 +815,9 @@ function initMobileMenu() {
         
         // Добавляем категории группы
         group.categories.forEach(cat => {
-            // Контакты и юридическая информация всегда показываем, остальные только если есть товары
-            if (cat === 'contacts' || cat === 'legal' || categories.includes(cat)) {
-                const count = cat === 'legal' ? 1 : (cat === 'contacts' ? 2 : menu.filter(item => item.category === cat).length);
+            // Информационные разделы показываем всегда
+            if (cat === 'contacts' || cat === 'legal' || cat === 'masterclass' || cat === 'franchise' || categories.includes(cat)) {
+                const count = (cat === 'legal' || cat === 'masterclass' || cat === 'franchise') ? 0 : (cat === 'contacts' ? 2 : menu.filter(item => item.category === cat).length);
                 const displayName = categoryMap[cat] || cat;
                 
                 html += `
@@ -1003,7 +1003,7 @@ function renderContentWithLazyLoad() {
     const orderedCategories = [];
     menuGroups.forEach(group => {
         group.categories.forEach(cat => {
-            if (cat === 'contacts' || cat === 'legal' || menu.some(item => item.category === cat)) {
+            if (cat === 'contacts' || cat === 'legal' || cat === 'masterclass' || cat === 'franchise' || menu.some(item => item.category === cat)) {
                 orderedCategories.push(cat);
             }
         });
@@ -1032,6 +1032,65 @@ function renderContentWithLazyLoad() {
                     </div>
                     <div class="products-grid" id="grid-${cat}" data-loaded="0">
                         ${renderContactsLazy()}
+                    </div>
+                </div>
+            `;
+        }
+        
+        // Для мастер класса - информационная секция
+        if (cat === 'masterclass') {
+            return `
+                <div class="category-section" id="category-${cat}" style="${isActive}">
+                    <div class="category-header">
+                        <h2 class="category-title"><i class="fas fa-graduation-cap" style="margin-right:8px; color:#fff;"></i>Мастер класс</h2>
+                        <p class="category-subtitle">Обучение и мастер-классы</p>
+                    </div>
+                    <div style="padding: 20px; max-width: 800px; margin: 0 auto;">
+                        <div style="background: var(--color-bg-card); padding: 30px; border-radius: 16px; border: 1px solid var(--border-subtle);">
+                            <h3 style="font-size: 22px; margin: 0 0 16px; color: var(--color-text-heading);">🎓 Мастер-классы по приготовлению пиццы</h3>
+                            <p style="font-size: 15px; color: var(--color-text-secondary); line-height: 1.6; margin-bottom: 16px;">
+                                Приглашаем вас на увлекательные мастер-классы по приготовлению настоящей неаполитанской пиццы от нашего шеф-повара!
+                            </p>
+                            <ul style="font-size: 14px; color: var(--color-text-secondary); line-height: 1.8; padding-left: 20px;">
+                                <li>🍕 Техника приготовления теста для пиццы</li>
+                                <li>🧀 Подбор и сочетание ингредиентов</li>
+                                <li>🔥 Работа с дровяной печью</li>
+                                <li>👨‍🍳 Индивидуальный подход к каждому участнику</li>
+                            </ul>
+                            <p style="font-size: 14px; color: var(--color-text-secondary); margin-top: 20px; padding: 16px; background: var(--color-primary-light); border-radius: 8px;">
+                                <i class="fas fa-phone-alt" style="margin-right: 8px;"></i> Для записи на мастер-класс звоните: <strong>+7 (999) 169-98-39</strong>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            `;
+        }
+        
+        // Для франшизы - информационная секция
+        if (cat === 'franchise') {
+            return `
+                <div class="category-section" id="category-${cat}" style="${isActive}">
+                    <div class="category-header">
+                        <h2 class="category-title"><i class="fas fa-handshake" style="margin-right:8px; color:#fff;"></i>Франшиза</h2>
+                        <p class="category-subtitle">Откройте свою пиццерию</p>
+                    </div>
+                    <div style="padding: 20px; max-width: 800px; margin: 0 auto;">
+                        <div style="background: var(--color-bg-card); padding: 30px; border-radius: 16px; border: 1px solid var(--border-subtle);">
+                            <h3 style="font-size: 22px; margin: 0 0 16px; color: var(--color-text-heading);">🏪 Франшиза Pizza Napoli</h3>
+                            <p style="font-size: 15px; color: var(--color-text-secondary); line-height: 1.6; margin-bottom: 16px;">
+                                Откройте успешную пиццерию под брендом Pizza Napoli и станьте частью растущей сети!
+                            </p>
+                            <ul style="font-size: 14px; color: var(--color-text-secondary); line-height: 1.8; padding-left: 20px;">
+                                <li>📋 Полное сопровождение и поддержка</li>
+                                <li>🍕 Уникальные рецепты и технологии</li>
+                                <li>👨‍🍳 Обучение персонала и шеф-поваров</li>
+                                <li>📦 Закупка ингредиентов и оборудования</li>
+                                <li>📱 Маркетинговая поддержка</li>
+                            </ul>
+                            <p style="font-size: 14px; color: var(--color-text-secondary); margin-top: 20px; padding: 16px; background: var(--color-primary-light); border-radius: 8px;">
+                                <i class="fas fa-phone-alt" style="margin-right: 8px;"></i> Для получения информации о франшизе звоните: <strong>+7 (999) 169-98-39</strong>
+                            </p>
+                        </div>
                     </div>
                 </div>
             `;
