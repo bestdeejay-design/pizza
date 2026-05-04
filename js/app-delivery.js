@@ -1027,7 +1027,7 @@ function renderContentWithLazyLoad() {
             return `
                 <div class="category-section" id="category-${cat}" style="${isActive}">
                     <div class="category-header">
-                        <h2 class="category-title"><i class="fas fa-map-marker-alt" style="margin-right:8px; color:#ff2e55;"></i>Контакты</h2>
+                        <h2 class="category-title"><i class="fas fa-map-marker-alt" style="margin-right:8px; color:#fff;"></i>Контакты</h2>
                         <p class="category-subtitle">Наши пиццерии и способы связи</p>
                     </div>
                     <div class="products-grid" id="grid-${cat}" data-loaded="0">
@@ -1042,7 +1042,7 @@ function renderContentWithLazyLoad() {
             return `
                 <div class="category-section" id="category-${cat}" style="${isActive}">
                     <div class="category-header">
-                        <h2 class="category-title"><i class="fas fa-file-alt" style="margin-right:8px; color:#ff2e55;"></i>Юридическая информация</h2>
+                        <h2 class="category-title"><i class="fas fa-file-alt" style="margin-right:8px; color:#fff;"></i>Юридическая информация</h2>
                         <p class="category-subtitle">Реквизиты для оплаты</p>
                     </div>
                     <div style="padding: 20px; max-width: 800px; margin: 0 auto;">
