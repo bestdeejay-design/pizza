@@ -368,8 +368,16 @@ function showCart() {
             </div>
         `;
         
+        // Обычное время - показываем адрес
+        if (timeStatus === 'normal') {
+            timeMessage = `
+                <div style="background: linear-gradient(135deg, #2a582c 0%, #1e3d21 100%); padding: 12px; border-radius: 12px; margin-bottom: 16px; text-align: center;">
+                    <div style="color: #fff; font-weight: 600; font-size: 13px;"><i class="fas fa-store" style="margin-right:6px;"></i>Ждем вас в гости на Думской 4</div>
+                    <div style="color: #c8e6c9; font-size: 11px; margin-top: 4px;">Вход со стороны ул. Ломоносова, 2 этаж</div>
+                </div>
+            `;
         // 20:30-21:00 - предупреждение о времени
-        if (timeStatus === 'warning') {
+        } else if (timeStatus === 'warning') {
             timeMessage = `
                 <div style="background: linear-gradient(135deg, #ff9a3c 0%, #ff6b35 100%); padding: 14px; border-radius: 12px; margin-bottom: 16px; text-align: center;">
                     <div style="color: #fff; font-weight: 700; font-size: 14px;"><i class="fas fa-bicycle" style="margin-right:6px;"></i>Доставляем до 22:00</div>
