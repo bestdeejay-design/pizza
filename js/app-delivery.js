@@ -23,8 +23,11 @@
 // GLOBAL CONSTANTS
 // ========================================
 
+// Используем константы из config.js
+// MENU_GROUPS и CATEGORY_MAP доступны через window из config.js
+
 // Menu groups structure (used in sidebar, mobile menu, content rendering)
-const MENU_GROUPS = [
+const MENU_GROUPS = window.CATEGORY_GROUPS || [
     {
         title: '<i class="fas fa-pizza-slice" style="color:#fff;"></i> ПИЦЦА',
         categories: ['pizza-30cm', 'piccolo-20cm', 'calzone']
@@ -538,16 +541,8 @@ function showCart() {
     const sourceParam = urlParams.get('source');
     const sourceSelect = document.getElementById('order-source');
     if (sourceSelect && sourceParam) {
-        const locations = {
-            '12rooms': '12 комнат',
-            'MGarryPotter': 'Музей Гарри Поттера',
-            'SVO': 'Музей СВО',
-            'Lomonosov': 'Отель Ломоносов',
-            'PartyTime': 'Караоке Party Time',
-            'MusicSchool': 'Музыкальная Школа',
-            'SuperSonic': 'Супер Соник'
-        };
-        if (locations[sourceParam]) {
+        const sources = window.ORDER_SOURCES || {};
+        if (sources[sourceParam]) {
             sourceSelect.value = sourceParam;
         }
     }
@@ -683,24 +678,15 @@ async function submitOrder() {
     const selectedSourceKey = sourceSelect?.value || '12rooms';
     const customSourceValue = customSourceInput?.value?.trim() || '';
     
-    const locations = {
-        '12rooms': '12 комнат',
-        'MGarryPotter': 'Музей Гарри Поттера',
-        'SVO': 'Музей СВО',
-        'Lomonosov': 'Отель Ломоносов',
-        'PartyTime': 'Караоке Party Time',
-        'MusicSchool': 'Музыкальная Школа',
-        'SuperSonic': 'Супер Соник'
-    };
-    
     let sourceKey = selectedSourceKey;
     let source = '';
+    const sources = window.ORDER_SOURCES || locations;
     
     if (selectedSourceKey === 'custom' && customSourceValue) {
         sourceKey = 'custom';
         source = customSourceValue;
     } else {
-        source = locations[selectedSourceKey] || '12 комнат';
+        source = sources[selectedSourceKey] || '12 комнат';
     }
 
     const fullComment = source !== sourceKey 
@@ -899,7 +885,7 @@ function renderContentWithLazyLoad() {
         
         console.log(`Category ${cat}: ${productsInCategory.length} products`);
         
-        const displayName = categoryMap[cat] || cat;
+        const displayName = (window.CATEGORY_MAP || {})[cat] || cat;
         const isActive = index < 3 ? '' : 'display: none;';
         
         // Для контактов - специальный рендеринг (лента карточек)
