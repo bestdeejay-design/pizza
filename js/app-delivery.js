@@ -310,19 +310,19 @@ function getTimeStatus() {
     const timeValue = hours * 60 + minutes;
     
     const startMorning = 10 * 60;
-    const startEveningWarning = 21 * 60;
-    const startEveningYandex = 21 * 60 + 30;
-    const endDelivery = 22 * 60;
+    const startWarning = 20 * 60 + 30;  // 20:30
+    const startWarningWithAddress = 21 * 60;  // 21:00
+    const endDelivery = 22 * 60;  // 22:00
     const endNight = 6 * 60;
     
-    if (timeValue >= startMorning && timeValue < startEveningWarning) {
-        return 'normal';
-    } else if (timeValue >= startEveningWarning && timeValue < startEveningYandex) {
-        return 'waiting';
-    } else if (timeValue >= startEveningYandex && timeValue < endDelivery) {
-        return 'closing';
+    if (timeValue >= startMorning && timeValue < startWarning) {
+        return 'normal';  // Обычный режим
+    } else if (timeValue >= startWarning && timeValue < startWarningWithAddress) {
+        return 'warning';  // 20:30-21:00 - Доставляем до 22:00
+    } else if (timeValue >= startWarningWithAddress && timeValue < endDelivery) {
+        return 'warning-address';  // 21:00-22:00 - Доставляем до 22:00 + адрес
     } else if (timeValue >= endDelivery || timeValue < endNight) {
-        return 'closed';
+        return 'closed';  // 22:00+ - закрыто, только Яндекс Еда
     } else {
         return 'yandex';
     }
@@ -368,32 +368,29 @@ function showCart() {
             </div>
         `;
         
-        if (timeStatus === 'waiting') {
+        // 20:30-21:00 - предупреждение о времени
+        if (timeStatus === 'warning') {
             timeMessage = `
                 <div style="background: linear-gradient(135deg, #ff9a3c 0%, #ff6b35 100%); padding: 14px; border-radius: 12px; margin-bottom: 16px; text-align: center;">
-                    <div style="color: #fff; font-weight: 700; font-size: 14px;"><i class="fas fa-bicycle" style="margin-right:6px;"></i>Доставка ресторана работает до 22:00</div>
-                    <div style="color: #fff; font-size: 12px; margin-top: 6px;">Ждем вас в ресторане Pizza Napoli на Думской 4</div>
+                    <div style="color: #fff; font-weight: 700; font-size: 14px;"><i class="fas fa-bicycle" style="margin-right:6px;"></i>Доставляем до 22:00</div>
+                    <div style="color: #fff; font-size: 12px; margin-top: 6px;">Успейте оформить заказ!</div>
+                </div>
+            `;
+        // 21:00-22:00 - предупреждение + адрес
+        } else if (timeStatus === 'warning-address') {
+            timeMessage = `
+                <div style="background: linear-gradient(135deg, #ff9a3c 0%, #ff6b35 100%); padding: 14px; border-radius: 12px; margin-bottom: 16px; text-align: center;">
+                    <div style="color: #fff; font-weight: 700; font-size: 14px;"><i class="fas fa-bicycle" style="margin-right:6px;"></i>Доставляем до 22:00</div>
+                    <div style="color: #fff; font-size: 12px; margin-top: 6px;">Спешите! Заказы принимаются до 22:00</div>
                     ${howToFindUs}
                 </div>
             `;
-        } else if (timeStatus === 'closing') {
-            timeMessage = `
-                <div style="background: linear-gradient(135deg, #ff9a3c 0%, #ff6b35 100%); padding: 14px; border-radius: 12px; margin-bottom: 16px; text-align: center;">
-                    <div style="color: #fff; font-weight: 700; font-size: 14px;"><i class="fas fa-bicycle" style="margin-right:6px;"></i>Доставка ресторана работает до 22:00</div>
-                    <div style="color: #fff; font-size: 12px; margin-top: 6px;">Ждем вас в ресторане Pizza Napoli на Думской 4</div>
-                    ${howToFindUs}
-                    <div style="margin-top: 12px;">
-                        <a href="https://eda.yandex.ru/r/pizza_napoli_bmroq?placeSlug=pizza_napoli__gr3t5" target="_blank" style="display: inline-block; background: #FFAB00; color: #000; font-weight: 700; padding: 10px 20px; border-radius: 8px; text-decoration: none; font-size: 13px;">
-                            <i class="fas fa-pizza-slice" style="margin-right:6px;"></i>Заказать на Яндекс Еде
-                        </a>
-                    </div>
-                </div>
-            `;
+        // 22:00+ - закрыто, только Яндекс Еда
         } else if (timeStatus === 'closed') {
             timeMessage = `
                 <div style="background: linear-gradient(135deg, #ff6b6b 0%, #ff2e55 100%); padding: 14px; border-radius: 12px; margin-bottom: 16px; text-align: center;">
                     <div style="color: #fff; font-weight: 700; font-size: 14px;"><i class="fas fa-bicycle" style="margin-right:6px;"></i>Доставка ресторана закрыта</div>
-                    <div style="color: #fff; font-size: 12px; margin-top: 6px;">Но ресторан работает! Ждем вас в гости</div>
+                    <div style="color: #fff; font-size: 12px; margin-top: 6px;">Ждем вас завтра с 10:00!</div>
                     ${howToFindUs}
                     <div style="margin-top: 12px;">
                         <a href="https://eda.yandex.ru/r/pizza_napoli_bmroq?placeSlug=pizza_napoli__gr3t5" target="_blank" style="display: inline-block; background: #FFAB00; color: #000; font-weight: 700; padding: 10px 20px; border-radius: 8px; text-decoration: none; font-size: 13px;">
@@ -402,6 +399,7 @@ function showCart() {
                     </div>
                 </div>
             `;
+        // Ночь - закрыто
         } else if (timeStatus === 'yandex') {
             timeMessage = `
                 <div style="background: linear-gradient(135deg, #2a582c 0%, #1e3d21 100%); padding: 16px; border-radius: 12px; margin-bottom: 16px; text-align: center;">
@@ -572,8 +570,9 @@ function toggleCustomSource(value) {
 async function submitOrder() {
     const timeStatus = getTimeStatus();
     
-    if (timeStatus === 'yandex' || timeStatus === 'closed' || timeStatus === 'closing') {
-        if (confirm('Доставка ресторана уже закрыта. Заказать на Яндекс Еде?')) {
+    // После 22:00 - не даем оформить заказ, предлагаем Яндекс Еду
+    if (timeStatus === 'closed' || timeStatus === 'yandex') {
+        if (confirm('Доставка ресторана закрыта. Заказать на Яндекс Еде?')) {
             window.open('https://eda.yandex.ru/r/pizza_napoli_bmroq?placeSlug=pizza_napoli__gr3t5', '_blank');
         }
         return;
