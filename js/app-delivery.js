@@ -109,6 +109,8 @@ const CART_STORAGE_KEY = 'pizzaCart';
 let menu = [];
 let cart = loadCartFromStorage();
 let lazyLoadObservers = new Map(); // Хранилище для IntersectionObserver
+let loadedGroups = 3; // Сколько групп показывать сразу (для lazy loading)
+let totalGroups = 0;
 
 function loadCartFromStorage() {
     try {
@@ -1227,6 +1229,22 @@ function renderContentWithLazyLoad() {
         `;
     }).join('');
     
+    // Подсчитываем сколько групп уже показано
+    const visibleCategories = orderedCategories.length;
+    const categoriesInFirstGroups = 16; // Пицца(3) + Роллы(2) + Хлеб(2) + Наборы(1) = 8 категорий, но реально показываем ~16
+    
+    // Если есть ещё категории — добавляем кнопку "Показать ещё"
+    if (visibleCategories > 16) {
+        content.innerHTML += `
+            <div id="load-more-groups" style="text-align:center; padding: 40px 20px;">
+                <button onclick="loadMoreCategoryGroups()" style="padding: 14px 48px; background: linear-gradient(135deg, #ff2e55 0%, #ff6b6b 100%); color: white; border: none; border-radius: 12px; cursor: pointer; font-weight: 600; font-size: 16px; box-shadow: 0 4px 15px rgba(255,46,85,0.3);">
+                    <i class="fas fa-arrow-down" style="margin-right:8px;"></i>Показать ещё категории
+                </button>
+                <p style="color:#86868b; margin-top:12px; font-size:14px;">Осталось ${visibleCategories - 16} категорий</p>
+            </div>
+        `;
+    }
+    
     // Инициализируем lazy loading для каждой категории кроме контактов
     orderedCategories.forEach(cat => {
         if (cat !== 'contacts') {
@@ -1383,6 +1401,23 @@ function setupLazyLoading(categoryId) {
         observer.observe(lastCard);
         lazyLoadObservers.set(categoryId, { observer, loadedCount });
     }
+}
+
+function loadMoreCategoryGroups() {
+    const loadMoreBtn = document.getElementById('load-more-groups');
+    if (loadMoreBtn) {
+        loadMoreBtn.remove();
+    }
+    
+    const allSections = document.querySelectorAll('.category-section[style*="display: none"], .category-section[style*="display:none"]');
+    allSections.forEach(section => {
+        section.style.display = '';
+    });
+    
+    // Перезапускаем observer для отслеживания видимых категорий
+    setTimeout(() => {
+        setupIntersectionObserver();
+    }, 100);
 }
 
 function loadMoreProducts(categoryId, event = null) {
