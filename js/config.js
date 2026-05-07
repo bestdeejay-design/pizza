@@ -39,3 +39,42 @@ window.CATEGORY_GROUPS = [
     { title: '<i class="fas fa-chef-hat" style="color:#fff;"></i> ГОТОВИМ ДОМА', categories: ['frozen', 'aromatic-oils'] },
     { title: '<i class="fas fa-info-circle" style="color:#fff;"></i> ИНФОРМАЦИЯ', categories: ['masterclass', 'franchise', 'contacts', 'legal'] }
 ];
+
+// ========================================
+// CATEGORY NAMES MAP (Russian names)
+// ========================================
+
+window.CATEGORY_MAP = {
+    'pizza-30cm': 'Пицца 30 см',
+    'piccolo-20cm': 'Pizza Piccolo 20 см',
+    'calzone': 'Кальцоне',
+    'bread-focaccia-bread': 'Хлеб',
+    'bread-focaccia-focaccia': 'Фокачча',
+    'sauce': 'Соусы',
+    'rolls-sushi': 'Суши',
+    'rolls-rolls': 'Роллы',
+    'combo': 'Комбо наборы',
+    'confectionery': 'Кондитерские изделия',
+    'mors': 'Морсы',
+    'juice': 'Соки',
+    'water': 'Вода',
+    'soda': 'Газировка',
+    'beverages-other': 'Другие напитки',
+    'frozen': 'Замороженная продукция',
+    'aromatic-oils': 'Ароматное масло',
+    'masterclass': 'Мастер класс',
+    'franchise': 'Франшиза',
+    'contacts': 'Контакты',
+    'legal': 'Юридическая информация'
+};
+
+// ========================================
+// LAZY LOAD CONFIG
+// ========================================
+
+window.LAZY_LOAD_CONFIG = {
+    PRODUCTS_PER_LOAD: 12,
+    SCROLL_THRESHOLD: 50,
+    DELAY_BEFORE_NAVIGATE: 1500,
+    INITIAL_CATEGORIES: 3
+};

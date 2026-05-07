@@ -221,70 +221,9 @@ function initSidebar() {
     const sidebar = document.getElementById('sidebar');
     const categories = getUniqueCategories();
     
-    // Логическая группировка категорий пиццерии
-    const menuGroups = [
-        {
-            title: '<i class="fas fa-pizza-slice" style="color:#fff;"></i> ПИЦЦА',
-            categories: ['pizza-30cm', 'piccolo-20cm', 'calzone']
-        },
-        {
-            title: '<i class="fas fa-fish" style="color:#fff;"></i> СУШИ & РОЛЛЫ',
-            categories: ['rolls-sushi', 'rolls-rolls']
-        },
-        {
-            title: '<i class="fas fa-bread-slice" style="color:#fff;"></i> ХЛЕБ И ФОКАЧЧА',
-            categories: ['bread-focaccia-bread', 'bread-focaccia-focaccia']
-        },
-        {
-            title: '<i class="fas fa-box" style="color:#fff;"></i> НАБОРЫ',
-            categories: ['combo']
-        },
-        {
-            title: '<i class="fas fa-birthday-cake" style="color:#fff;"></i> ДЕСЕРТЫ',
-            categories: ['confectionery']
-        },
-        {
-            title: '<i class="fas fa-glass-cheers" style="color:#fff;"></i> НАПИТКИ',
-            categories: ['mors', 'juice', 'water', 'soda', 'beverages-other']
-        },
-{
-            title: '<i class="fas fa-chef-hat" style="color:#fff;"></i> ГОТОВИМ ДОМА',
-            categories: ['frozen', 'aromatic-oils']
-        },
-        {
-            title: '<i class="fas fa-info-circle" style="color:#fff;"></i> ИНФОРМАЦИЯ',
-            categories: ['masterclass', 'franchise', 'contacts', 'legal']
-        }
-    ];
-    
-    // Карта русских названий
-    const categoryMap = {
-        'pizza-30cm': 'Пицца 30 см',
-        'piccolo-20cm': 'Pizza Piccolo 20 см',
-        'calzone': 'Кальцоне',
-        'bread-focaccia-bread': 'Хлеб',
-        'bread-focaccia-focaccia': 'Фокачча',
-        'sauce': 'Соусы',
-        'rolls-sushi': 'Суши',
-        'rolls-rolls': 'Роллы',
-        'combo': 'Комбо наборы',
-        'confectionery': 'Кондитерские изделия',
-        'mors': 'Морсы',
-        'juice': 'Соки',
-        'water': 'Вода',
-        'soda': 'Газировка',
-        'beverages-other': 'Другие напитки',
-        'frozen': 'Замороженная продукция',
-        'aromatic-oils': 'Ароматное масло',
-        'masterclass': 'Мастер класс',
-        'franchise': 'Франшиза',
-        'contacts': 'Контакты',
-        'legal': 'Юридическая информация'
-    };
-    
     // Рендерим сгруппированное меню
     let html = '';
-    menuGroups.forEach(group => {
+    MENU_GROUPS.forEach(group => {
         // Добавляем заголовок группы
         html += `<div style="padding: 16px 20px 8px; font-size: 13px; font-weight: 700; color: #ff2e55; text-transform: uppercase; letter-spacing: 0.5px;">${group.title}</div>`;
         
@@ -293,7 +232,7 @@ function initSidebar() {
             // Информационные разделы показываем всегда
             if (cat === 'contacts' || cat === 'legal' || cat === 'masterclass' || cat === 'franchise' || categories.includes(cat)) {
                 const count = (cat === 'legal' || cat === 'masterclass' || cat === 'franchise') ? 0 : (cat === 'contacts' ? 2 : menu.filter(item => item.category === cat).length);
-                const displayName = categoryMap[cat] || cat;
+                const displayName = CATEGORY_MAP[cat] || cat;
                 
                 html += `
                     <div class="nav-category" data-category="${cat}" onclick="scrollToCategory('${cat}')">
@@ -804,70 +743,9 @@ function initMobileMenu() {
     const mobileMenuContent = document.getElementById('mobile-menu-content');
     const categories = getUniqueCategories();
     
-    // Логическая группировка категорий пиццерии
-    const menuGroups = [
-        {
-            title: '<i class="fas fa-pizza-slice" style="color:#fff;"></i> ПИЦЦА',
-            categories: ['pizza-30cm', 'piccolo-20cm', 'calzone']
-        },
-        {
-            title: '<i class="fas fa-fish" style="color:#fff;"></i> СУШИ & РОЛЛЫ',
-            categories: ['rolls-sushi', 'rolls-rolls']
-        },
-        {
-            title: '<i class="fas fa-bread-slice" style="color:#fff;"></i> ХЛЕБ И ФОКАЧЧА',
-            categories: ['bread-focaccia-bread', 'bread-focaccia-focaccia']
-        },
-        {
-            title: '<i class="fas fa-box" style="color:#fff;"></i> НАБОРЫ',
-            categories: ['combo']
-        },
-        {
-            title: '<i class="fas fa-birthday-cake" style="color:#fff;"></i> ДЕСЕРТЫ',
-            categories: ['confectionery']
-        },
-        {
-            title: '<i class="fas fa-glass-cheers" style="color:#fff;"></i> НАПИТКИ',
-            categories: ['mors', 'juice', 'water', 'soda', 'beverages-other']
-        },
-        {
-            title: '<i class="fas fa-chef-hat" style="color:#fff;"></i> ГОТОВИМ ДОМА',
-            categories: ['frozen', 'aromatic-oils']
-        },
-        {
-            title: '<i class="fas fa-info-circle" style="color:#fff;"></i> ИНФОРМАЦИЯ',
-            categories: ['masterclass', 'franchise', 'contacts', 'legal']
-        }
-    ];
-    
-    // Карта русских названий
-    const categoryMap = {
-        'pizza-30cm': 'Пицца 30 см',
-        'piccolo-20cm': 'Pizza Piccolo 20 см',
-        'calzone': 'Кальцоне',
-        'bread-focaccia-bread': 'Хлеб',
-        'bread-focaccia-focaccia': 'Фокачча',
-        'sauce': 'Соусы',
-        'rolls-sushi': 'Суши',
-        'rolls-rolls': 'Роллы',
-        'combo': 'Комбо наборы',
-        'confectionery': 'Кондитерские изделия',
-        'mors': 'Морсы',
-        'juice': 'Соки',
-        'water': 'Вода',
-        'soda': 'Газировка',
-        'beverages-other': 'Другие напитки',
-        'frozen': 'Замороженная продукция',
-        'aromatic-oils': 'Ароматное масло',
-        'masterclass': 'Мастер класс',
-        'franchise': 'Франшиза',
-        'contacts': 'Контакты',
-        'legal': 'Юридическая информация'
-    };
-    
     // Рендерим мобильное меню
     let html = '';
-    menuGroups.forEach(group => {
+    MENU_GROUPS.forEach(group => {
         // Добавляем заголовок группы
         html += `<div class="mobile-group-title">${group.title}</div>`;
         
@@ -876,7 +754,7 @@ function initMobileMenu() {
             // Информационные разделы показываем всегда
             if (cat === 'contacts' || cat === 'legal' || cat === 'masterclass' || cat === 'franchise' || categories.includes(cat)) {
                 const count = (cat === 'legal' || cat === 'masterclass' || cat === 'franchise') ? 0 : (cat === 'contacts' ? 2 : menu.filter(item => item.category === cat).length);
-                const displayName = categoryMap[cat] || cat;
+                const displayName = CATEGORY_MAP[cat] || cat;
                 
                 html += `
                     <div class="mobile-nav-category" data-category="${cat}" onclick="selectMobileCategory('${cat}')">
@@ -1001,65 +879,9 @@ window.addEventListener('beforeunload', saveState);
 function renderContentWithLazyLoad() {
     const content = document.getElementById('content');
     
-    // Используем тот же порядок, что и в сайдбаре
-    const menuGroups = [
-        {
-            title: '<i class="fas fa-pizza-slice" style="color:#fff;"></i> ПИЦЦА',
-            categories: ['pizza-30cm', 'piccolo-20cm', 'calzone']
-        },
-        {
-            title: '<i class="fas fa-carrot" style="color:#fff;"></i> ЗАКУСКИ',
-            categories: ['bread-focaccia-bread', 'bread-focaccia-focaccia', 'sauce', 'rolls-sushi', 'rolls-rolls']
-        },
-{
-            title: '<i class="fas fa-box-open" style="color:#fff;"></i> КОМБО НАБОРЫ',
-            categories: ['combo']
-        },
-        {
-            title: '<i class="fas fa-birthday-cake" style="color:#fff;"></i> ДЕССЕРТЫ',
-            categories: ['confectionery']
-        },
-        {
-            title: '<i class="fas fa-glass-cheers" style="color:#fff;"></i> НАПИТКИ',
-            categories: ['mors', 'juice', 'water', 'soda', 'beverages-other']
-        },
-        {
-            title: '<i class="fas fa-chef-hat" style="color:#fff;"></i> ГОТОВИМ ДОМА',
-            categories: ['frozen', 'aromatic-oils']
-        },
-        {
-            title: '<i class="fas fa-info-circle" style="color:#fff;"></i> ИНФОРМАЦИЯ',
-            categories: ['masterclass', 'franchise', 'contacts', 'legal']
-        }
-    ];
-    
-    // Карта русских названий
-    const categoryMap = {
-        'pizza-30cm': 'Пицца 30 см',
-        'piccolo-20cm': 'Pizza Piccolo 20 см',
-        'calzone': 'Кальцоне',
-        'bread-focaccia-bread': 'Хлеб',
-        'bread-focaccia-focaccia': 'Фокачча',
-        'sauce': 'Соусы',
-        'rolls-sushi': 'Суши',
-        'rolls-rolls': 'Роллы',
-        'combo': 'Комбо наборы',
-        'confectionery': 'Кондитерские изделия',
-        'mors': 'Морсы',
-        'juice': 'Соки',
-        'water': 'Вода',
-        'soda': 'Газировка',
-        'beverages-other': 'Другие напитки',
-        'frozen': 'Замороженная продукция',
-        'aromatic-oils': 'Ароматное масло',
-        'masterclass': 'Мастер класс',
-        'franchise': 'Франшиза',
-        'contacts': 'Контакты'
-    };
-    
     // Собираем все категории в правильном порядке
     const orderedCategories = [];
-    menuGroups.forEach(group => {
+    MENU_GROUPS.forEach(group => {
         group.categories.forEach(cat => {
             if (cat === 'contacts' || cat === 'legal' || cat === 'masterclass' || cat === 'franchise' || menu.some(item => item.category === cat)) {
                 orderedCategories.push(cat);
@@ -1549,21 +1371,10 @@ function navigateToPreviousCategory(currentCategoryId) {
 
 // Получение списка категорий в правильном порядке
 function getOrderedCategories() {
-    const menuGroups = [
-        { title: '<i class="fas fa-pizza-slice" style="color:#fff;"></i> ПИЦЦА', categories: ['pizza-30cm', 'piccolo-20cm', 'calzone'] },
-        { title: '<i class="fas fa-fish" style="color:#fff;"></i> СУШИ & РОЛЛЫ', categories: ['rolls-sushi', 'rolls-rolls'] },
-        { title: '<i class="fas fa-bread-slice" style="color:#fff;"></i> ХЛЕБ И ФОКАЧЧА', categories: ['bread-focaccia-bread', 'bread-focaccia-focaccia'] },
-        { title: '<i class="fas fa-box" style="color:#fff;"></i> НАБОРЫ', categories: ['combo'] },
-        { title: '<i class="fas fa-birthday-cake" style="color:#fff;"></i> ДЕСЕРТЫ', categories: ['confectionery'] },
-        { title: '<i class="fas fa-glass-cheers" style="color:#fff;"></i> НАПИТКИ', categories: ['mors', 'juice', 'water', 'soda', 'beverages-other'] },
-        { title: '<i class="fas fa-chef-hat" style="color:#fff;"></i> ГОТОВИМ ДОМА', categories: ['frozen', 'aromatic-oils'] },
-        { title: '<i class="fas fa-info-circle" style="color:#fff;"></i> ИНФОРМАЦИЯ', categories: ['masterclass', 'franchise', 'contacts'] }
-    ];
-    
     const orderedCategories = [];
     const uniqueCategories = getUniqueCategories();
     
-    menuGroups.forEach(group => {
+    MENU_GROUPS.forEach(group => {
         group.categories.forEach(cat => {
             if (cat === 'contacts' || uniqueCategories.includes(cat)) {
                 orderedCategories.push(cat);
