@@ -705,7 +705,8 @@ async function submitOrder() {
         'SVO': 'Музей СВО',
         'Lomonosov': 'Отель Ломоносов',
         'PartyTime': 'Караоке Party Time',
-        'MusicSchool': 'Музыкальная Школа'
+        'MusicSchool': 'Музыкальная Школа',
+        'SuperSonic': 'Супер Соник'
     };
     
     const source = locations[sourceKey] || '12 комнат';
