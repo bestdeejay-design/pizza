@@ -1078,7 +1078,7 @@ function renderContentWithLazyLoad() {
         console.log(`Category ${cat}: ${productsInCategory.length} products`);
         
         const displayName = categoryMap[cat] || cat;
-        const isActive = index === 0 ? '' : 'display: none;';
+        const isActive = index < 5 ? '' : 'display: none;';
         
         // Для контактов - специальный рендеринг (лента карточек)
         if (cat === 'contacts') {
@@ -1231,16 +1231,16 @@ function renderContentWithLazyLoad() {
     
     // Подсчитываем сколько групп уже показано
     const visibleCategories = orderedCategories.length;
-    const categoriesInFirstGroups = 16; // Пицца(3) + Роллы(2) + Хлеб(2) + Наборы(1) = 8 категорий, но реально показываем ~16
+    const categoriesInFirstGroups = 5; // Только Пицца (3 категории) + Роллы (2 категории) = 5
     
     // Если есть ещё категории — добавляем кнопку "Показать ещё"
-    if (visibleCategories > 16) {
+    if (visibleCategories > categoriesInFirstGroups) {
         content.innerHTML += `
             <div id="load-more-groups" style="text-align:center; padding: 40px 20px;">
                 <button onclick="loadMoreCategoryGroups()" style="padding: 14px 48px; background: linear-gradient(135deg, #ff2e55 0%, #ff6b6b 100%); color: white; border: none; border-radius: 12px; cursor: pointer; font-weight: 600; font-size: 16px; box-shadow: 0 4px 15px rgba(255,46,85,0.3);">
                     <i class="fas fa-arrow-down" style="margin-right:8px;"></i>Показать ещё категории
                 </button>
-                <p style="color:#86868b; margin-top:12px; font-size:14px;">Осталось ${visibleCategories - 16} категорий</p>
+                <p style="color:#86868b; margin-top:12px; font-size:14px;">Показано ${categoriesInFirstGroups} из ${visibleCategories} категорий</p>
             </div>
         `;
     }
@@ -1409,8 +1409,8 @@ function loadMoreCategoryGroups() {
         loadMoreBtn.remove();
     }
     
-    const allSections = document.querySelectorAll('.category-section[style*="display: none"], .category-section[style*="display:none"]');
-    allSections.forEach(section => {
+    // Показываем все скрытые категории
+    document.querySelectorAll('.category-section').forEach(section => {
         section.style.display = '';
     });
     
