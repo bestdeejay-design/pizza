@@ -592,6 +592,24 @@ function showCart() {
     }
 
     modal.style.display = 'flex';
+    
+    const urlParams = new URLSearchParams(window.location.search);
+    const sourceParam = urlParams.get('source');
+    const sourceSelect = document.getElementById('order-source');
+    if (sourceSelect && sourceParam) {
+        const locations = {
+            '12rooms': '12 комнат',
+            'MGarryPotter': 'Музей Гарри Поттера',
+            'SVO': 'Музей СВО',
+            'Lomonosov': 'Отель Ломоносов',
+            'PartyTime': 'Караоке Party Time',
+            'MusicSchool': 'Музыкальная Школа',
+            'SuperSonic': 'Супер Соник'
+        };
+        if (locations[sourceParam]) {
+            sourceSelect.value = sourceParam;
+        }
+    }
 }
 
 function hideCart() {
