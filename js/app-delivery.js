@@ -688,8 +688,8 @@ async function submitOrder() {
     }
 
     comment = comment.trim() 
-        ? `<i class="fas fa-phone-alt"></i> Телефон: ${phone}\n<i class="fas fa-comment"></i> Комментарий: ${comment}` 
-        : `<i class="fas fa-phone-alt"></i> Телефон: ${phone}`;
+        ? `Телефон: ${phone}\nКомментарий: ${comment}` 
+        : `Телефон: ${phone}`;
 
     const originalLabel = btn.textContent;
     btn.disabled = true;
@@ -711,7 +711,7 @@ async function submitOrder() {
     const source = locations[sourceKey] || '12 комнат';
 
     const fullComment = source !== sourceKey 
-        ? `<i class="fas fa-map-marker-alt"></i> ${source}\n${comment}` 
+        ? `Источник: ${source}\n${comment}` 
         : comment;
 
     try {
