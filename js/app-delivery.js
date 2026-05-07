@@ -701,7 +701,11 @@ async function submitOrder() {
     
     const locations = {
         '12rooms': '12 комнат',
-        'MGarryPotter': 'Музей Гарри Поттера'
+        'MGarryPotter': 'Музей Гарри Поттера',
+        'SVO': 'Музей СВО',
+        'Lomonosov': 'Отель Ломоносов',
+        'PartyTime': 'Караоке Party Time',
+        'MusicSchool': 'Музыкальная Школа'
     };
     
     const source = locations[sourceKey] || '12 комнат';
