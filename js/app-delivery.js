@@ -554,10 +554,10 @@ function showCart() {
                     </select>
                 </label>
                 <div id="custom-source-container" style="display:none; margin-top:8px;">
-                    <input type="text" id="order-source-custom" placeholder="Введите название места" style="padding:10px; border:1px solid var(--border-strong); border-radius:8px; background:var(--color-bg-card); color:var(--color-text-primary); font-size:15px;">
+                    <input type="text" id="order-source-custom" placeholder="Введите название места" style="padding:10px; border:1px solid var(--border-strong); border-radius:8px; background:var(--color-bg-card); color:var(--color-text-primary); font-size:15px; width:100%; box-sizing:border-box;">
                 </div>
                 <label style="display:flex; flex-direction:column; gap:4px; font-weight:600; font-size:14px;">
-                    Номер столика
+                    Номер столика или удобное для вас место где вас найти
                     <input type="text" id="order-table-number" required maxlength="10" placeholder="Например, 5" style="padding:10px; border:1px solid var(--border-strong); border-radius:8px; background:var(--color-bg-card); color:var(--color-text-primary); font-size:15px;">
                 </label>
                 <label style="display:flex; flex-direction:column; gap:4px; font-weight:600; font-size:14px;">
