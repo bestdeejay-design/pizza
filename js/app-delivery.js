@@ -23,72 +23,13 @@
 // GLOBAL CONSTANTS
 // ========================================
 
-// Используем константы из config.js
-// MENU_GROUPS и CATEGORY_MAP доступны через window из config.js
-
-// Menu groups structure (used in sidebar, mobile menu, content rendering)
-const MENU_GROUPS = window.CATEGORY_GROUPS || [
-    {
-        title: '<i class="fas fa-pizza-slice" style="color:#fff;"></i> ПИЦЦА',
-        categories: ['pizza-30cm', 'piccolo-20cm', 'calzone']
-    },
-    {
-        title: '<i class="fas fa-fish" style="color:#fff;"></i> СУШИ & РОЛЛЫ',
-        categories: ['rolls-sushi', 'rolls-rolls']
-    },
-    {
-        title: '<i class="fas fa-bread-slice" style="color:#fff;"></i> ХЛЕБ И ФОКАЧЧА',
-        categories: ['bread-focaccia-bread', 'bread-focaccia-focaccia']
-    },
-    {
-        title: '<i class="fas fa-box" style="color:#fff;"></i> НАБОРЫ',
-        categories: ['combo']
-    },
-    {
-        title: '<i class="fas fa-birthday-cake" style="color:#fff;"></i> ДЕСЕРТЫ',
-        categories: ['confectionery']
-    },
-    {
-        title: '<i class="fas fa-glass-cheers" style="color:#fff;"></i> НАПИТКИ',
-        categories: ['mors', 'juice', 'water', 'soda', 'beverages-other']
-    },
-    {
-        title: '<i class="fas fa-chef-hat" style="color:#fff;"></i> ГОТОВИМ ДОМА',
-        categories: ['frozen', 'aromatic-oils']
-    },
-{
-title: '<i class="fas fa-info-circle" style="color:#fff;"></i> ИНФОРМАЦИЯ',
-            categories: ['masterclass', 'franchise', 'contacts', 'legal']
-        }
-    ];
-    
-    // Карта русских названий
-    const categoryMap = {
-        'pizza-30cm': 'Пицца 30 см',
-        'piccolo-20cm': 'Pizza Piccolo 20 см',
-        'calzone': 'Кальцоне',
-    'bread-focaccia-bread': 'Хлеб',
-    'bread-focaccia-focaccia': 'Фокачча',
-    'sauce': 'Соусы',
-    'rolls-sushi': 'Суши',
-    'rolls-rolls': 'Роллы',
-    'combo': 'Комбо наборы',
-    'confectionery': 'Кондитерские изделия',
-    'mors': 'Морсы',
-    'juice': 'Соки',
-    'water': 'Вода',
-    'soda': 'Газировка',
-    'beverages-other': 'Другие напитки',
-    'frozen': 'Замороженная продукция',
-    'aromatic-oils': 'Ароматное масло',
-'masterclass': 'Мастер класс',
-        'franchise': 'Франшиза',
-        'contacts': 'Контакты',
-        'legal': 'Юридическая информация'
-};
+// Константы из config.js
+const MENU_GROUPS = window.CATEGORY_GROUPS || [];
+const CATEGORY_MAP = window.CATEGORY_MAP || {};
+const ORDER_SOURCES = window.ORDER_SOURCES || {};
 
 // Expected menu categories for validation
-const EXPECTED_CATEGORIES = [
+const EXPECTED_CATEGORIES = window.CATEGORY_MAP ? Object.keys(window.CATEGORY_MAP) : [
     'pizza-30cm', 'piccolo-20cm', 'calzone',
     'bread-focaccia-bread', 'bread-focaccia-focaccia', 'sauce',
     'rolls-sushi', 'rolls-rolls',
