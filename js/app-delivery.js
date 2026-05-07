@@ -1078,7 +1078,7 @@ function renderContentWithLazyLoad() {
         console.log(`Category ${cat}: ${productsInCategory.length} products`);
         
         const displayName = categoryMap[cat] || cat;
-        const isActive = index < 5 ? '' : 'display: none;';
+        const isActive = index < 3 ? '' : 'display: none;';
         
         // Для контактов - специальный рендеринг (лента карточек)
         if (cat === 'contacts') {
@@ -1231,7 +1231,7 @@ function renderContentWithLazyLoad() {
     
     // Подсчитываем сколько групп уже показано
     const visibleCategories = orderedCategories.length;
-    const categoriesInFirstGroups = 5; // Только Пицца (3 категории) + Роллы (2 категории) = 5
+    const categoriesInFirstGroups = 3; // Только Пицца (3 категории: 30см, 20см, Кальцоне)
     
     // Если есть ещё категории — добавляем кнопку "Показать ещё"
     if (visibleCategories > categoriesInFirstGroups) {
