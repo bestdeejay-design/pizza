@@ -541,6 +541,22 @@ function showCart() {
             </div>
             <form class="order-form" onsubmit="event.preventDefault(); submitOrder();" style="display:flex; flex-direction:column; gap:10px; margin-top:8px;">
                 <label style="display:flex; flex-direction:column; gap:4px; font-weight:600; font-size:14px;">
+                    Откуда заказ
+                    <select id="order-source" onchange="toggleCustomSource(this.value)" style="padding:10px; border:1px solid var(--border-strong); border-radius:8px; background:var(--color-bg-card); color:var(--color-text-primary); font-size:15px;">
+                        <option value="12rooms">12 комнат</option>
+                        <option value="MGarryPotter">Музей Гарри Поттера</option>
+                        <option value="SVO">Музей СВО</option>
+                        <option value="Lomonosov">Отель Ломоносов</option>
+                        <option value="PartyTime">Караоке Party Time</option>
+                        <option value="MusicSchool">Музыкальная Школа</option>
+                        <option value="SuperSonic">Супер Соник</option>
+                        <option value="custom">Другое</option>
+                    </select>
+                </label>
+                <div id="custom-source-container" style="display:none; margin-top:8px;">
+                    <input type="text" id="order-source-custom" placeholder="Введите название места" style="padding:10px; border:1px solid var(--border-strong); border-radius:8px; background:var(--color-bg-card); color:var(--color-text-primary); font-size:15px;">
+                </div>
+                <label style="display:flex; flex-direction:column; gap:4px; font-weight:600; font-size:14px;">
                     Номер столика
                     <input type="text" id="order-table-number" required maxlength="10" placeholder="Например, 5" style="padding:10px; border:1px solid var(--border-strong); border-radius:8px; background:var(--color-bg-card); color:var(--color-text-primary); font-size:15px;">
                 </label>
@@ -651,6 +667,13 @@ async function sendOrder(payload) {
     return data;
 }
 
+function toggleCustomSource(value) {
+    const customContainer = document.getElementById('custom-source-container');
+    if (customContainer) {
+        customContainer.style.display = value === 'custom' ? 'block' : 'none';
+    }
+}
+
 async function submitOrder() {
     const timeStatus = getTimeStatus();
     
@@ -695,9 +718,11 @@ async function submitOrder() {
     btn.disabled = true;
     btn.textContent = 'Отправляем...';
 
-    const urlParams = new URLSearchParams(window.location.search);
-    const sourceParam = urlParams.get('source');
-    const sourceKey = sourceParam || '12rooms';
+    const sourceSelect = document.getElementById('order-source');
+    const customSourceInput = document.getElementById('order-source-custom');
+    
+    const selectedSourceKey = sourceSelect?.value || '12rooms';
+    const customSourceValue = customSourceInput?.value?.trim() || '';
     
     const locations = {
         '12rooms': '12 комнат',
@@ -709,7 +734,15 @@ async function submitOrder() {
         'SuperSonic': 'Супер Соник'
     };
     
-    const source = locations[sourceKey] || '12 комнат';
+    let sourceKey = selectedSourceKey;
+    let source = '';
+    
+    if (selectedSourceKey === 'custom' && customSourceValue) {
+        sourceKey = 'custom';
+        source = customSourceValue;
+    } else {
+        source = locations[selectedSourceKey] || '12 комнат';
+    }
 
     const fullComment = source !== sourceKey 
         ? `Источник: ${source}\n${comment}` 
