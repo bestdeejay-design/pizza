@@ -472,6 +472,9 @@ function showCart() {
                         К вам приедет курьер из Pizza Napoli<br>
                         <i class="fas fa-print" style="margin-right:4px;"></i><strong>С терминалом</strong> <i class="fas fa-credit-card" style="margin-left:8px; margin-right:4px;"></i>для оплаты Картой или QR и выдаст чек
                     </div>
+                    <div style="color:#c8e6c9; font-size:11px; margin-top:10px; padding-top:8px; border-top:1px solid rgba(255,255,255,0.2);">
+                        <i class="fas fa-store" style="margin-right:4px;"></i>Ждем вас в гости на Думской 4<br>Вход со стороны ул. Ломоносова
+                    </div>
                 </div>
                 <div style="text-align:center; padding: 20px 0; color: var(--color-text-secondary); font-size: 14px;">
                     <div style="font-weight: 700; margin-bottom: 4px;">Приятного аппетита!</div>
