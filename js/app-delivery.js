@@ -66,7 +66,8 @@ const GIFT_THRESHOLDS = [
     { threshold: 1750, name: 'Сок яблочный собственного производства', price: 150, icon: 'fa-glass-cheers' },
     { threshold: 2250, name: 'Кальцоне-мини "4 сыра"', price: 400, icon: 'fa-pizza-slice' },
     { threshold: 2750, name: 'Pizza Piccolo 4 сыра', price: 700, icon: 'fa-pizza-slice' },
-    { threshold: 3250, name: 'Пицца 4 сыра', price: 850, icon: 'fa-pizza-slice' }
+    { threshold: 3250, name: 'Пицца 4 сыра', price: 850, icon: 'fa-pizza-slice' },
+    { threshold: 3750, name: 'Ролл Филадельфия с лососем', price: 850, icon: 'fa-fish' }
 ];
 
 function loadCartFromStorage() {
@@ -559,7 +560,7 @@ function showCart() {
                 ` : `
                     <div style="font-size: 12px; color: #4caf50; text-align: center; font-weight: 600;">
                         <i class="fas fa-star" style="margin-right: 4px;"></i>
-                        Все подарки получены!
+                        Доступны все подарки!
                     </div>
                 `}
             </div>
