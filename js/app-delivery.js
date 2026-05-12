@@ -489,23 +489,30 @@ function showCart() {
             
             ${/* Блок доставки */''}
             ${total < 750 ? `
-                <div style="background: linear-gradient(135deg, #fff3e0 0%, #ffe0b2 100%); padding: 12px; border-radius: 10px; margin-bottom: 12px;">
-                    <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 6px;">
-                        <span style="font-size: 13px; color: #e65100; font-weight: 600;">
+                <div style="background: linear-gradient(135deg, #fff3e0 0%, #ffe0b2 100%); padding: 14px; border-radius: 10px; margin-bottom: 12px;">
+                    <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 10px;">
+                        <span style="font-size: 14px; color: #e65100; font-weight: 600;">
                             <i class="fas fa-truck" style="margin-right: 6px;"></i>Доставка
                         </span>
-                        <span style="font-size: 14px; color: #e65100; font-weight: 700;">+${Math.min(250, 750 - total)} ₽</span>
+                        <span style="font-size: 16px; color: #e65100; font-weight: 700;">+${Math.min(250, 750 - total)} ₽</span>
                     </div>
-                    <div style="background: #ffcc80; height: 6px; border-radius: 3px; overflow: hidden; margin-bottom: 6px;">
-                        <div style="background: linear-gradient(90deg, #ff6b35, #ff2e55); height: 100%; width: ${Math.min(100, (total / 750) * 100)}%; border-radius: 3px;"></div>
+                    
+                    ${/* Шкала прогресса */''}
+                    <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 10px;">
+                        <span style="font-size: 12px; color: #e65100; font-weight: 600;">${total}₽</span>
+                        <div style="flex: 1; background: #ffcc80; height: 12px; border-radius: 6px; overflow: hidden; position: relative;">
+                            <div style="background: linear-gradient(90deg, #ff6b35, #ff2e55); height: 100%; width: ${Math.min(100, (total / 750) * 100)}%; border-radius: 6px; transition: width 0.3s ease;"></div>
+                        </div>
+                        <span style="font-size: 12px; color: #e65100; font-weight: 600;">750₽</span>
                     </div>
-                    <div style="font-size: 11px; color: #bf360c; text-align: center;">
-                        До бесплатной доставки осталось: ${750 - total} ₽
+                    
+                    <div style="font-size: 12px; color: #bf360c; text-align: center;">
+                        <i class="fas fa-arrow-up" style="margin-right: 4px;"></i>Добавьте ${750 - total} ₽ → доставка бесплатно + первый подарок!
                     </div>
                 </div>
             ` : `
-                <div style="background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%); padding: 10px; border-radius: 10px; margin-bottom: 12px; text-align: center;">
-                    <span style="font-size: 13px; color: #2e7d32; font-weight: 600;">
+                <div style="background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%); padding: 12px; border-radius: 10px; margin-bottom: 12px; text-align: center;">
+                    <span style="font-size: 14px; color: #2e7d32; font-weight: 600;">
                         <i class="fas fa-check-circle" style="margin-right: 6px;"></i>Бесплатная доставка ✓
                     </span>
                 </div>
