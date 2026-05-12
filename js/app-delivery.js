@@ -487,6 +487,30 @@ function showCart() {
                 <span style="font-weight:800; font-size:22px; color:#ff2e55;">${total} ₽</span>
             </div>
             
+            ${/* Блок доставки */''}
+            ${total < 750 ? `
+                <div style="background: linear-gradient(135deg, #fff3e0 0%, #ffe0b2 100%); padding: 12px; border-radius: 10px; margin-bottom: 12px;">
+                    <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 6px;">
+                        <span style="font-size: 13px; color: #e65100; font-weight: 600;">
+                            <i class="fas fa-truck" style="margin-right: 6px;"></i>Доставка
+                        </span>
+                        <span style="font-size: 14px; color: #e65100; font-weight: 700;">+${Math.min(250, 750 - total)} ₽</span>
+                    </div>
+                    <div style="background: #ffcc80; height: 6px; border-radius: 3px; overflow: hidden; margin-bottom: 6px;">
+                        <div style="background: linear-gradient(90deg, #ff6b35, #ff2e55); height: 100%; width: ${Math.min(100, (total / 750) * 100)}%; border-radius: 3px;"></div>
+                    </div>
+                    <div style="font-size: 11px; color: #bf360c; text-align: center;">
+                        До бесплатной доставки осталось: ${750 - total} ₽
+                    </div>
+                </div>
+            ` : `
+                <div style="background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%); padding: 10px; border-radius: 10px; margin-bottom: 12px; text-align: center;">
+                    <span style="font-size: 13px; color: #2e7d32; font-weight: 600;">
+                        <i class="fas fa-check-circle" style="margin-right: 6px;"></i>Бесплатная доставка ✓
+                    </span>
+                </div>
+            `}
+            
             ${/* Блок подарков */''}
             <div style="background: linear-gradient(135deg, #fff8e1 0%, #ffecb3 100%); padding: 14px; border-radius: 12px; margin-bottom: 12px;">
                 <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 12px;">
@@ -702,11 +726,6 @@ async function submitOrder() {
     const timeStatus = getTimeStatus();
     const cartTotal = cart.reduce((s, i) => s + i.price * i.quantity, 0);
     
-    if (cartTotal < 750) {
-        alert(`Минимальная сумма заказа — 750 ₽\n\nВаш заказ: ${cartTotal} ₽\nДобавьте ещё ${750 - cartTotal} ₽ для оформления`);
-        return;
-    }
-    
     // После 22:00 - не даем оформить заказ, предлагаем Яндекс Еду
     if (timeStatus === 'closed' || timeStatus === 'yandex') {
         if (confirm('Доставка ресторана закрыта. Заказать на Яндекс Еде?')) {
@@ -770,13 +789,24 @@ async function submitOrder() {
         ? `Источник: ${source}\n${comment}` 
         : comment;
     
-    // Формируем массив товаров, добавляя подарок если выбран
+    // Формируем массив товаров, добавляя подарок и доставку если нужно
     let orderItems = cart.map(i => ({
         title: i.title,
         price: i.price,
         quantity: i.quantity,
         category: i.category
     }));
+    
+    // Добавляем доставку если менее 750
+    const deliveryFee = total < 750 ? Math.min(250, 750 - total) : 0;
+    if (deliveryFee > 0) {
+        orderItems.push({
+            title: 'Доставка',
+            price: deliveryFee,
+            quantity: 1,
+            category: 'delivery'
+        });
+    }
     
     // Добавляем подарок в заказ если выбран
     if (selectedGift && selectedGift.threshold > 750) {
@@ -793,6 +823,7 @@ async function submitOrder() {
             tableNumber,
             comment: fullComment,
             gift: selectedGift ? `${selectedGift.name} (${selectedGift.threshold}₽)` : null,
+            deliveryFee: deliveryFee,
             location: source !== sourceKey ? source : null,
             source,
             sourceKey,
