@@ -430,6 +430,28 @@ function showCart() {
                 <span style="font-weight:700; font-size:18px;">Итого</span>
                 <span style="font-weight:800; font-size:22px; color:#ff2e55;">${total} ₽</span>
             </div>
+            ${total < 750 ? `
+                <div style="background: linear-gradient(135deg, #fff3e0 0%, #ffe0b2 100%); padding: 14px; border-radius: 10px; margin-bottom: 8px;">
+                    <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 8px;">
+                        <span style="font-size: 13px; color: #e65100; font-weight: 600;">
+                            <i class="fas fa-truck" style="margin-right: 6px;"></i>Бесплатная доставка от 750 ₽
+                        </span>
+                        <span style="font-size: 12px; color: #e65100;">${total} / 750 ₽</span>
+                    </div>
+                    <div style="background: #ffcc80; height: 8px; border-radius: 4px; overflow: hidden;">
+                        <div style="background: linear-gradient(90deg, #ff6b35, #ff2e55); height: 100%; width: ${Math.min(100, (total / 750) * 100)}%; border-radius: 4px;"></div>
+                    </div>
+                    <div style="font-size: 12px; color: #bf360c; margin-top: 8px;">
+                        <i class="fas fa-info-circle" style="margin-right: 4px;"></i>Добавьте ещё <strong>${750 - total}</strong> ₽ для бесплатной доставки
+                    </div>
+                </div>
+            ` : `
+                <div style="background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%); padding: 12px; border-radius: 10px; margin-bottom: 8px; text-align: center;">
+                    <span style="font-size: 14px; color: #2e7d32; font-weight: 600;">
+                        <i class="fas fa-check-circle" style="margin-right: 6px;"></i>Бесплатная доставка ✓
+                    </span>
+                </div>
+            `}
             <form class="order-form" onsubmit="event.preventDefault(); submitOrder();" style="display:flex; flex-direction:column; gap:10px; margin-top:8px;">
                 <label style="display:flex; flex-direction:column; gap:4px; font-weight:600; font-size:14px;">
                     Откуда заказ
@@ -580,6 +602,12 @@ function toggleCustomSource(value) {
 
 async function submitOrder() {
     const timeStatus = getTimeStatus();
+    const cartTotal = cart.reduce((s, i) => s + i.price * i.quantity, 0);
+    
+    if (cartTotal < 750) {
+        alert(`Минимальная сумма заказа — 750 ₽\n\nВаш заказ: ${cartTotal} ₽\nДобавьте ещё ${750 - cartTotal} ₽ для оформления`);
+        return;
+    }
     
     // После 22:00 - не даем оформить заказ, предлагаем Яндекс Еду
     if (timeStatus === 'closed' || timeStatus === 'yandex') {
