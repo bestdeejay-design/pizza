@@ -471,11 +471,13 @@ function showCart() {
         const giftOptionsHtml = availableGifts.slice(1).map((gift, idx) => {
             const isSelected = selectedGift && selectedGift.threshold === gift.threshold;
             return `
-                <label style="display: flex; align-items: center; gap: 8px; padding: 8px 10px; background: ${isSelected ? '#e8f5e9' : 'transparent'}; border: 1px solid ${isSelected ? '#4caf50' : '#e0e0e0'}; border-radius: 8px; cursor: pointer; transition: all 0.2s;">
-                    <input type="radio" name="gift" value="${gift.threshold}" ${isSelected ? 'checked' : ''} onchange="selectGift(${gift.threshold})" style="accent-color: #4caf50;">
-                    <i class="fas ${gift.icon}" style="color: #ff6b35;"></i>
-                    <span style="font-size: 13px; flex: 1;">${gift.name}</span>
-                    <span style="font-size: 11px; color: #4caf50; font-weight: 600;">🎁</span>
+                <label style="display: flex; align-items: center; gap: 12px; padding: 12px; background: ${isSelected ? '#e8f5e9' : '#fff'}; border: 2px solid ${isSelected ? '#4caf50' : '#e0e0e0'}; border-radius: 10px; cursor: pointer; transition: all 0.2s; margin-bottom: 8px;">
+                    <input type="radio" name="gift" value="${gift.threshold}" ${isSelected ? 'checked' : ''} onchange="selectGift(${gift.threshold})" style="accent-color: #4caf50; width: 20px; height: 20px;">
+                    <i class="fas ${gift.icon}" style="color: #ff6b35; font-size: 20px; width: 28px;"></i>
+                    <div style="flex: 1;">
+                        <span style="font-size: 14px; font-weight: 600; color: #333;">${gift.name}</span>
+                    </div>
+                    <span style="font-size: 18px; color: #4caf50;">🎁</span>
                 </label>
             `;
         }).join('');
