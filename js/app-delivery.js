@@ -541,7 +541,7 @@ function showCart() {
                 ${highestGift ? `
                     <div style="background: #4caf50; color: white; padding: 8px 12px; border-radius: 8px; margin-bottom: 10px; text-align: center;">
                         <i class="fas fa-check-circle" style="margin-right: 4px;"></i>
-                        Бесплатная доставка + Выберите подарок!
+                        ${availableGifts.length > 1 ? 'Бесплатная доставка + Выберите подарок!' : 'Бесплатная доставка!'}
                     </div>
                     
                     ${giftOptionsHtml ? `
