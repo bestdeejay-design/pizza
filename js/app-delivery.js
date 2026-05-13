@@ -704,8 +704,6 @@ function closeThankYou() {
 // ========================================
 // ORDER SUBMISSION
 // ========================================
-// Заказ уходит на серверный прокси (pizza-order.php), который форматирует
-// сообщение и шлёт его в Telegram-канал. Токен бота на фронте не хранится.
 
 async function sendOrder(payload) {
     const cfg = window.ORDER_CONFIG;
@@ -727,6 +725,73 @@ async function sendOrder(payload) {
         throw new Error(desc);
     }
     return data;
+}
+
+// ========================================
+// MAX BOT INTEGRATION
+// ========================================
+
+async function sendOrderToMax(payload) {
+    const maxCfg = window.MAX_CONFIG;
+    if (!maxCfg || !maxCfg.token || !maxCfg.chats.orders) {
+        console.error('Max config not found');
+        return;
+    }
+
+    const chatId = maxCfg.chats.orders;
+    
+    const messageText = formatOrderMessageForMax(payload);
+
+    try {
+        const response = await fetch('https://platform-api.max.ru/messages', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': maxCfg.token
+            },
+            body: JSON.stringify({
+                chat_id: parseInt(chatId),
+                text: messageText,
+                format: 'html'
+            })
+        });
+
+        if (!response.ok) {
+            console.error('Max API error:', response.status);
+        } else {
+            console.log('Order sent to Max bot');
+        }
+    } catch (err) {
+        console.error('Max sending failed:', err);
+    }
+}
+
+function formatOrderMessageForMax(payload) {
+    const items = payload.items || [];
+    const total = items.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+    const deliveryFee = payload.deliveryFee || 0;
+    
+    let text = `<b>🍕 НОВЫЙ ЗАКАЗ Pizza Napoli!</b>\n\n`;
+    text += `📍 <b>Источник:</b> ${payload.source || 'Не указан'}\n`;
+    text += `🪑 <b>Место:</b> ${payload.tableNumber}\n`;
+    text += `📱 <b>Телефон:</b> ${payload.comment?.replace('Телефон: ', '')?.split('\n')[0] || ''}\n\n`;
+    
+    text += `<b>🛒 Состав заказа:</b>\n`;
+    items.forEach(item => {
+        const price = item.price === 0 ? '🎁' : `${item.price} ₽`;
+        text += `• ${item.title} × ${item.quantity} — ${price}\n`;
+    });
+    
+    text += `\n<b>💰 Итого: ${total} ₽</b>`;
+    if (deliveryFee > 0) {
+        text += ` + доставка ${deliveryFee} ₽`;
+    }
+    
+    if (payload.gift) {
+        text += `\n🎁 <b>Подарок:</b> ${payload.gift}`;
+    }
+    
+    return text;
 }
 
 function toggleCustomSource(value) {
@@ -848,6 +913,17 @@ async function submitOrder() {
             sourceKey,
             items: orderItems
         });
+        
+        // Also send to Max bot
+        await sendOrderToMax({
+            tableNumber,
+            comment: fullComment,
+            gift: selectedGift ? `${selectedGift.name} (${selectedGift.threshold}₽)` : null,
+            deliveryFee: deliveryFee,
+            source,
+            items: orderItems
+        });
+        
         clearCart();
         hideCart();
         showThankYou();

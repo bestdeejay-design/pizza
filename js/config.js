@@ -12,6 +12,18 @@ window.ORDER_CONFIG = {
 };
 
 // ========================================
+// MAX BOT CONFIGURATION
+// ========================================
+
+window.MAX_CONFIG = {
+    token: 'REDACTED_MAX_TOKEN',
+    chats: {
+        orders: '-REDACTED_CHAT_ID',  // Pizza Lovii - канал для заказов
+        test: '-73303602691580'     // Лови - тестовый канал
+    }
+};
+
+// ========================================
 // ORDER SOURCES (Locations)
 // ========================================
 
