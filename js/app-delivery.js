@@ -524,7 +524,7 @@ function showCart() {
                         <div style="text-align: center; margin-top: 8px;">
                             <span style="font-size: 13px; color: #e65100;">
                                 <i class="fas fa-bullseye" style="margin-right: 4px;"></i>
-                                До <strong>${nextGift.name}</strong> — ${nextGift.threshold - total}₽
+                                До подарка <strong>${nextGift.name}</strong> — ${nextGift.threshold - total}₽
                             </span>
                         </div>
                     ` : `
