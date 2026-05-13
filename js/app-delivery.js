@@ -883,15 +883,15 @@ async function submitOrder() {
             items: orderItems
         });
         
-        // Also send to Max bot
-        await sendOrderToMax({
+        // Max бот отключен - заказы идут только в Telegram
+        /* await sendOrderToMax({
             tableNumber,
             comment: fullComment,
             gift: selectedGift ? `${selectedGift.name} (${selectedGift.threshold}₽)` : null,
             deliveryFee: deliveryFee,
             source,
             items: orderItems
-        });
+        }); */
         
         clearCart();
         hideCart();
