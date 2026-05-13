@@ -388,7 +388,7 @@ function showCart() {
             timeMessage = `
                 <div style="background: linear-gradient(135deg, #2a582c 0%, #1e3d21 100%); padding: 12px; border-radius: 12px; margin-bottom: 16px; text-align: center;">
                     <div style="color: #fff; font-weight: 600; font-size: 13px;"><i class="fas fa-store" style="margin-right:6px;"></i>Ждем вас в гости на Думской 4</div>
-                    <div style="color: #c8e6c9; font-size: 11px; margin-top: 4px;">Вход со стороны ул. Ломоносова, 2 этаж</div>
+                    <div style="color: #c8e6c9; font-size: 11px; margin-top: 4px;">ТЦ Перинные ряды, центральный вход со стороны ул. Ломоносова, 2 этаж</div>
                 </div>
             `;
         // 20:30-21:00 - предупреждение о времени
@@ -550,6 +550,11 @@ function showCart() {
                             <div style="display: flex; flex-direction: column; gap: 6px;">
                                 ${giftOptionsHtml}
                             </div>
+                            <div style="text-align: center; margin-top: 8px;">
+                                <span onclick="clearGiftSelection()" style="font-size: 12px; color: #999; cursor: pointer; text-decoration: underline;">
+                                    <i class="fas fa-times" style="margin-right: 4px;"></i>Без подарка
+                                </span>
+                            </div>
                         </div>
                     ` : ''}
                 ` : ''}
@@ -598,7 +603,7 @@ function showCart() {
                         <i class="fas fa-print" style="margin-right:4px;"></i><strong>С терминалом</strong> <i class="fas fa-credit-card" style="margin-left:8px; margin-right:4px;"></i>для оплаты Картой или QR и выдаст чек
                     </div>
                     <div style="color:#c8e6c9; font-size:11px; margin-top:10px; padding-top:8px; border-top:1px solid rgba(255,255,255,0.2);">
-                        <i class="fas fa-store" style="margin-right:4px;"></i>Ждем вас в гости на Думской 4<br>Вход со стороны ул. Ломоносова
+                        <i class="fas fa-store" style="margin-right:4px;"></i>Ждем вас в гости на Думской 4<br>ТЦ Перинные ряды, центральный вход со стороны ул. Ломоносова, 2 этаж
                     </div>
                 </div>
                 <div style="text-align:center; padding: 20px 0; color: var(--color-text-secondary); font-size: 14px;">
@@ -653,6 +658,17 @@ function selectGift(threshold) {
             label.style.background = 'transparent';
             label.style.borderColor = '#e0e0e0';
         }
+    });
+}
+
+function clearGiftSelection() {
+    selectedGift = null;
+    const radios = document.querySelectorAll('input[name="gift"]');
+    radios.forEach(radio => {
+        const label = radio.closest('label');
+        label.style.background = 'transparent';
+        label.style.borderColor = '#e0e0e0';
+        radio.checked = false;
     });
 }
 
