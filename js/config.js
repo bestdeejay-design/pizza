@@ -8,7 +8,8 @@
 // ========================================
 
 window.ORDER_CONFIG = {
-    endpoint: 'https://muz.re/pizza-order.php'
+    endpoint: 'https://muz.re/pizza-order.php',
+    maxEndpoint: 'https://pizzaloviiru.bestdeejay.workers.dev'
 };
 
 // ========================================

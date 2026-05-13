@@ -732,66 +732,32 @@ async function sendOrder(payload) {
 // ========================================
 
 async function sendOrderToMax(payload) {
-    const maxCfg = window.MAX_CONFIG;
-    if (!maxCfg || !maxCfg.token || !maxCfg.chats.orders) {
-        console.error('Max config not found');
+    const maxEndpoint = window.ORDER_CONFIG?.maxEndpoint;
+    if (!maxEndpoint) {
+        console.error('Max endpoint not configured');
         return;
     }
-
-    const chatId = maxCfg.chats.orders;
     
-    const messageText = formatOrderMessageForMax(payload);
+    console.log('Sending to Max via Cloudflare Worker:', maxEndpoint);
 
     try {
-        const response = await fetch('https://platform-api.max.ru/messages', {
+        const response = await fetch(maxEndpoint, {
             method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-                'Authorization': maxCfg.token
-            },
-            body: JSON.stringify({
-                chat_id: parseInt(chatId),
-                text: messageText,
-                format: 'html'
-            })
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(payload)
         });
 
+        const text = await response.text();
+        console.log('Max response:', response.status, text);
+
         if (!response.ok) {
-            console.error('Max API error:', response.status);
+            console.error('Max API error:', response.status, text);
         } else {
-            console.log('Order sent to Max bot');
+            console.log('Order sent to Max bot successfully');
         }
     } catch (err) {
         console.error('Max sending failed:', err);
     }
-}
-
-function formatOrderMessageForMax(payload) {
-    const items = payload.items || [];
-    const total = items.reduce((sum, item) => sum + (item.price * item.quantity), 0);
-    const deliveryFee = payload.deliveryFee || 0;
-    
-    let text = `<b>🍕 НОВЫЙ ЗАКАЗ Pizza Napoli!</b>\n\n`;
-    text += `📍 <b>Источник:</b> ${payload.source || 'Не указан'}\n`;
-    text += `🪑 <b>Место:</b> ${payload.tableNumber}\n`;
-    text += `📱 <b>Телефон:</b> ${payload.comment?.replace('Телефон: ', '')?.split('\n')[0] || ''}\n\n`;
-    
-    text += `<b>🛒 Состав заказа:</b>\n`;
-    items.forEach(item => {
-        const price = item.price === 0 ? '🎁' : `${item.price} ₽`;
-        text += `• ${item.title} × ${item.quantity} — ${price}\n`;
-    });
-    
-    text += `\n<b>💰 Итого: ${total} ₽</b>`;
-    if (deliveryFee > 0) {
-        text += ` + доставка ${deliveryFee} ₽`;
-    }
-    
-    if (payload.gift) {
-        text += `\n🎁 <b>Подарок:</b> ${payload.gift}`;
-    }
-    
-    return text;
 }
 
 function toggleCustomSource(value) {
