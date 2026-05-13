@@ -733,12 +733,15 @@ async function sendOrder(payload) {
 
 async function sendOrderToMax(payload) {
     const maxEndpoint = window.ORDER_CONFIG?.maxEndpoint;
-    if (!maxEndpoint) {
-        console.error('Max endpoint not configured');
+    const chatId = window.MAX_CONFIG?.chat_id;
+    if (!maxEndpoint || !chatId) {
+        console.error('Max endpoint or chat_id not configured');
         return;
     }
     
-    console.log('Sending to Max via Cloudflare Worker:', maxEndpoint);
+    payload.chat_id = chatId;
+    
+    console.log('Sending to Max:', maxEndpoint, payload);
 
     try {
         const response = await fetch(maxEndpoint, {

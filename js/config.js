@@ -1,27 +1,15 @@
 // ========================================
 // ORDER ENDPOINT CONFIGURATION
 // ========================================
-//
-// Заказы шлются на серверный прокси, который пересылает их
-// в Telegram-канал. Токен бота и chat_id хранятся ТАМ, а не здесь.
-// Исходник прокси — pizza-order.php в корне репозитория.
-// ========================================
 
 window.ORDER_CONFIG = {
     endpoint: 'https://muz.re/pizza-order.php',
-    maxEndpoint: 'https://pizzaloviiru.bestdeejay.workers.dev'
+    maxEndpoint: 'https://cold-smoke-bf4a.bestdeejay.workers.dev/send'
 };
-
-// ========================================
-// MAX BOT CONFIGURATION
-// ========================================
 
 window.MAX_CONFIG = {
     token: 'REDACTED_MAX_TOKEN',
-    chats: {
-        orders: '-REDACTED_CHAT_ID',  // Pizza Lovii - канал для заказов
-        test: '-73303602691580'     // Лови - тестовый канал
-    }
+    chat_id: '-73303602691580'
 };
 
 // ========================================
