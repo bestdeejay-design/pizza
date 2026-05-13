@@ -443,30 +443,6 @@ function showCart() {
         const nextGift = GIFT_THRESHOLDS.find(g => total < g.threshold);
         const highestGift = availableGifts.length > 0 ? availableGifts[availableGifts.length - 1] : null;
         
-        // Генерируем HTML для шкалы подарков
-        const giftScaleHtml = GIFT_THRESHOLDS.slice(1).map(gift => {
-            const isComplete = total >= gift.threshold;
-            const isNext = nextGift && nextGift.threshold === gift.threshold;
-            const prevThreshold = GIFT_THRESHOLDS[GIFT_THRESHOLDS.indexOf(gift) - 1].threshold;
-            const progress = isComplete ? 100 : isNext ? ((total - prevThreshold) / (gift.threshold - prevThreshold)) * 100 : 0;
-            
-            return `
-                <div style="text-align: center; flex: 1; min-width: 60px;">
-                    <div style="position: relative; height: 24px; margin-bottom: 4px;">
-                        ${isComplete ? 
-                            '<i class="fas fa-check-circle" style="color: #4caf50; font-size: 20px;"></i>' :
-                            isNext ? 
-                                `<div style="position: relative; width: 20px; height: 20px; border-radius: 50%; border: 2px solid #ff6b35; margin: 0 auto; background: white;">
-                                    <div style="position: absolute; top: 2px; left: 2px; width: 12px; height: 12px; border-radius: 50%; background: linear-gradient(90deg, #ff6b35, #ff2e55);"></div>
-                                </div>` :
-                                '<div style="width: 16px; height: 16px; border-radius: 50%; border: 2px solid #ddd; margin: 2px auto;"></div>'
-                        }
-                    </div>
-                    <div style="font-size: 10px; color: ${isComplete ? '#4caf50' : '#666'}; font-weight: ${isNext ? '600' : '400'};">${gift.threshold}₽</div>
-                </div>
-            `;
-        }).join('');
-        
         // Генерируем HTML для выбора подарка
         const giftOptionsHtml = availableGifts.slice(1).map((gift, idx) => {
             const isSelected = selectedGift && selectedGift.threshold === gift.threshold;
@@ -525,16 +501,40 @@ function showCart() {
             <div style="background: linear-gradient(135deg, #fff8e1 0%, #ffecb3 100%); padding: 14px; border-radius: 12px; margin-bottom: 12px;">
                 <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 12px;">
                     <i class="fas fa-gift" style="color: #ff6b35; font-size: 18px;"></i>
-                    <span style="font-size: 14px; color: #e65100; font-weight: 700;">Путь к подаркам</span>
+                    <span style="font-size: 14px; color: #e65100; font-weight: 700;">Подарки</span>
                 </div>
                 
-                ${/* Шкала прогресса */''}
-                <div style="display: flex; justify-content: space-between; margin-bottom: 8px;">
-                    <div style="text-align: center; flex: 1;">
-                        <i class="fas fa-truck" style="color: ${total >= 750 ? '#4caf50' : '#ccc'}; font-size: 18px;"></i>
-                        <div style="font-size: 10px; color: ${total >= 750 ? '#4caf50' : '#999'}; margin-top: 2px;">750₽</div>
+                ${/* Шкала прогресса - мобильная версия */''}
+                <div style="margin-bottom: 12px;">
+                    <div style="display: flex; align-items: center; gap: 4px; overflow-x: auto; padding: 4px 0; -webkit-overflow-scrolling: touch;">
+                        ${GIFT_THRESHOLDS.map((gift, idx) => {
+                            const isComplete = total >= gift.threshold;
+                            const isNext = nextGift && nextGift.threshold === gift.threshold;
+                            return `
+                                <div style="flex-shrink: 0; text-align: center; min-width: 50px;">
+                                    <i class="fas ${isComplete ? 'fa-check-circle' : (isNext ? 'fa-dot-circle' : 'fa-circle')}" style="color: ${isComplete ? '#4caf50' : (isNext ? '#ff6b35' : '#ccc')}; font-size: ${isNext ? '22px' : '16px'};"></i>
+                                </div>
+                                ${idx < GIFT_THRESHOLDS.length - 1 ? `<div style="flex: 1; min-width: 20px; height: 3px; background: ${total >= gift.threshold && total >= GIFT_THRESHOLDS[idx + 1].threshold ? '#4caf50' : (total >= gift.threshold ? '#ff9a3c' : '#e0e0e0')}; border-radius: 2px; margin: 0 -2px;"></div>` : ''}
+                            `;
+                        }).join('')}
                     </div>
-                    ${giftScaleHtml}
+                    
+                    ${/* Текущая цель */''}
+                    ${nextGift ? `
+                        <div style="text-align: center; margin-top: 8px;">
+                            <span style="font-size: 13px; color: #e65100;">
+                                <i class="fas fa-bullseye" style="margin-right: 4px;"></i>
+                                До <strong>${nextGift.name}</strong> — ${nextGift.threshold - total}₽
+                            </span>
+                        </div>
+                    ` : `
+                        <div style="text-align: center; margin-top: 8px;">
+                            <span style="font-size: 13px; color: #4caf50; font-weight: 600;">
+                                <i class="fas fa-star" style="margin-right: 4px;"></i>
+                                Все подарки доступны!
+                            </span>
+                        </div>
+                    `}
                 </div>
                 
                 ${/* Текущий статус */''}
@@ -546,25 +546,13 @@ function showCart() {
                     
                     ${giftOptionsHtml ? `
                         <div style="margin-bottom: 8px;">
-                            <div style="font-size: 12px; color: #666; margin-bottom: 6px;">Выберите один подарок:</div>
+                            <div style="font-size: 12px; color: #666; margin-bottom: 6px; font-weight: 600;">Выберите один подарок:</div>
                             <div style="display: flex; flex-direction: column; gap: 6px;">
                                 ${giftOptionsHtml}
                             </div>
                         </div>
                     ` : ''}
                 ` : ''}
-                
-                ${nextGift ? `
-                    <div style="font-size: 12px; color: #bf360c; text-align: center;">
-                        <i class="fas fa-arrow-right" style="margin-right: 4px;"></i>
-                        До следующего подарка: ${nextGift.name} — ещё ${nextGift.threshold - total}₽
-                    </div>
-                ` : `
-                    <div style="font-size: 12px; color: #4caf50; text-align: center; font-weight: 600;">
-                        <i class="fas fa-star" style="margin-right: 4px;"></i>
-                        Доступны все подарки!
-                    </div>
-                `}
             </div>
             
             <form class="order-form" onsubmit="event.preventDefault(); submitOrder();" style="display:flex; flex-direction:column; gap:10px; margin-top:8px;">
