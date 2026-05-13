@@ -812,7 +812,7 @@ async function submitOrder() {
     }));
     
     // Добавляем доставку если менее 750
-    const deliveryFee = total < 750 ? Math.min(250, 750 - total) : 0;
+    const deliveryFee = cartTotal < 750 ? Math.min(250, 750 - cartTotal) : 0;
     if (deliveryFee > 0) {
         orderItems.push({
             title: 'Доставка',
