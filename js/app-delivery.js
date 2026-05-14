@@ -1235,11 +1235,15 @@ function renderProductsLazy(products) {
         if (idx < 2) {
             console.log('Product sample:', product);
         }
-        // Проверка поддержки WebP и fallback для старых браузеров
+        // Проверка поддержки WebP и fallback для старых браузеров.
+        // Первые 4 карточки above-the-fold → eager + high priority (LCP).
         const imageSrc = product.image;
+        const loadingAttrs = idx < 4
+            ? 'loading="eager" fetchpriority="high" decoding="async"'
+            : 'loading="lazy" decoding="async"';
         const imageHtml = `<picture>
             <source srcset="${imageSrc}" type="image/webp">
-            <img src="${imageSrc.replace('.webp', '.jpg')}" alt="${product.title}" class="product-image" onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 260 200%22><rect fill=%22%23f5f5f7%22 width=%22260%22 height=%22200%22/><text x=%22130%22 y=%22105%22 text-anchor=%22middle%22 fill=%22%2386868b%22 font-size=%2214%22>No Photo</text></svg>'">
+            <img src="${imageSrc.replace('.webp', '.jpg')}" alt="${product.title}" class="product-image" ${loadingAttrs} onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 260 200%22><rect fill=%22%23f5f5f7%22 width=%22260%22 height=%22200%22/><text x=%22130%22 y=%22105%22 text-anchor=%22middle%22 fill=%22%2386868b%22 font-size=%2214%22>No Photo</text></svg>'">
         </picture>`;
         return `
             <div class="product-card" data-id="${product.id}" style="opacity: 0; transform: translateY(20px); animation: fadeInUp 0.5s ease forwards; animation-delay: ${idx * 0.05}s;" onclick="showProductModal(${product.id})">
@@ -1287,7 +1291,7 @@ function renderContactsLazy() {
     return contacts.map((contact, idx) => `
         <div class="product-card contact-card-lazy" style="opacity: 0; transform: translateY(20px); animation: fadeInUp 0.5s ease forwards; animation-delay: ${idx * 0.1}s;">
             <div class="product-image-wrapper" style="height: 160px; position: relative;">
-                <img src="${contact.image}" alt="${contact.title}" class="product-image">
+                <img src="${contact.image}" alt="${contact.title}" class="product-image" loading="lazy" decoding="async">
                 ${contact.badge ? `<div class="opening-badge" style="position: absolute; top: 10px; right: 10px;">${contact.badge}</div>` : ''}
             </div>
             <div class="product-info">
@@ -1418,7 +1422,7 @@ function loadMoreProducts(categoryId, event = null) {
     tempDiv.innerHTML = nextBatch.map((product, idx) => `
         <div class="product-card" data-id="${product.id}" style="opacity: 0; transform: translateY(20px); animation: fadeInUp 0.5s ease forwards; animation-delay: ${idx * 0.05}s;" onclick="showProductModal(${product.id})">
             <div class="product-image-wrapper">
-                <img src="${product.image}" alt="${product.title}" class="product-image" onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 260 200%22><rect fill=%22%23f5f5f7%22 width=%22260%22 height=%22200%22/><text x=%22130%22 y=%22105%22 text-anchor=%22middle%22 fill=%22%2386868b%22 font-size=%2214%22>No Photo</text></svg>'">
+                <img src="${product.image}" alt="${product.title}" class="product-image" loading="lazy" decoding="async" onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 260 200%22><rect fill=%22%23f5f5f7%22 width=%22260%22 height=%22200%22/><text x=%22130%22 y=%22105%22 text-anchor=%22middle%22 fill=%22%2386868b%22 font-size=%2214%22>No Photo</text></svg>'">
             </div>
             <div class="product-info">
                 <h3 class="product-name">${product.title}</h3>
@@ -1552,7 +1556,7 @@ function showProductModal(productId) {
         <div class="product-modal-vertical">
             <!-- Верхняя часть - Изображение -->
             <div class="product-modal-image-top">
-                <img src="${product.image}" alt="${product.title}" class="product-modal-image-top-img">
+                <img src="${product.image}" alt="${product.title}" class="product-modal-image-top-img" decoding="async">
                 <button onclick="closeProductModal()" class="product-modal-close-btn" aria-label="Закрыть"><i class="fas fa-times"></i></button>
             </div>
             
