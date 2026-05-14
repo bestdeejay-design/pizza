@@ -813,9 +813,9 @@ async function submitOrder() {
     let source = '';
     const sources = window.ORDER_SOURCES || locations;
     
-    if (selectedSourceKey === 'custom' && customSourceValue) {
+    if (selectedSourceKey === 'custom') {
         sourceKey = 'custom';
-        source = customSourceValue;
+        source = customSourceValue || 'Другое — место не указано';
     } else {
         source = sources[selectedSourceKey] || '12 комнат';
     }
