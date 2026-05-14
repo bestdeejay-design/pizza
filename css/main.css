@@ -913,6 +913,11 @@ body {
         grid-template-columns: repeat(2, 1fr);
         gap: 16px;
     }
+
+    /* Контактный раздел — одна карточка в ряд на мобильной */
+    .products-grid:has(> .contact-card-lazy) {
+        grid-template-columns: 1fr;
+    }
     
     .category-title {
         font-size: 24px;
