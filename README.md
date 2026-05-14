@@ -31,11 +31,16 @@ open index.html
 
 ```
 pizza/
-├── index.html                  # Главная страница сайта
+├── index.html                  # Главная страница сайта (хостится на GitHub Pages)
 ├── css/
-│   └── main.css                # Стили (24KB)
-├── img/                        # Изображения продуктов (255 файлов)
-├── menu-final.json             # Финальное меню (333 товара)
+│   ├── main.css                # Основные стили
+│   └── modal-vertical-styles.css
+├── js/
+│   ├── config.js               # ORDER_CONFIG, ORDER_SOURCES, CATEGORY_MAP, …
+│   └── app-delivery.js         # Логика корзины, рендеринг, отправка заказа
+├── img/                        # WebP-изображения продуктов (~224 файла)
+├── menu-final.json             # Меню (333 товара, 18 категорий)
+├── backend/                    # Yandex Cloud Function (тонкий транспорт в Max)
 └── README.md                   # Документация
 ```
 
@@ -92,7 +97,7 @@ pizza/
 
 - **Всего товаров**: 333
 - **Категорий**: 18
-- **Изображений**: 255
+- **Изображений**: ~224
 
 **Категории:**
 - Pizza 30 см (49 товаров)
@@ -105,7 +110,12 @@ pizza/
 
 ## ⚙️ Конфигурация
 
-Все настройки находятся в `index.html`
+Конфиг приложения — `js/config.js`:
+- `window.ORDER_CONFIG.maxEndpoint` — URL Yandex Cloud Function для отправки заказов в Max-канал
+- `window.ORDER_SOURCES` — справочник источников трафика (12 комнат, музеи и т.п.)
+- `window.CATEGORY_MAP`, `window.LABELS` — маппинг категорий товаров
+
+Backend (`backend/`) — отдельный модуль со своим `.env`, см. `backend/README.md`.
 
 ## 🤝 Как использовать
 
