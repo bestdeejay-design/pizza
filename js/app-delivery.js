@@ -702,65 +702,56 @@ function closeThankYou() {
 }
 
 // ========================================
-// ORDER SUBMISSION
+// MAX TRANSPORT (Yandex Cloud Function)
 // ========================================
+// Backend = тонкий транспорт. Любое форматирование делаем тут.
 
-async function sendOrder(payload) {
-    const cfg = window.ORDER_CONFIG;
-    if (!cfg || !cfg.endpoint) {
-        throw new Error('Не настроен endpoint заказа (см. js/config.js)');
-    }
-
-    const response = await fetch(cfg.endpoint, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(payload)
-    });
-
-    let data = null;
-    try { data = await response.json(); } catch (_) { /* ignore */ }
-
-    if (!response.ok || !data || data.ok !== true) {
-        const desc = data && data.error ? data.error : `HTTP ${response.status}`;
-        throw new Error(desc);
-    }
-    return data;
-}
-
-// ========================================
-// MAX BOT INTEGRATION
-// ========================================
-
-async function sendOrderToMax(payload) {
+async function sendToMax(text, format = 'html') {
     const maxEndpoint = window.ORDER_CONFIG?.maxEndpoint;
-    const chatId = window.MAX_CONFIG?.chat_id;
-    if (!maxEndpoint || !chatId) {
-        console.error('Max endpoint or chat_id not configured');
+    if (!maxEndpoint) {
+        console.error('Max endpoint not configured');
         return;
     }
-    
-    payload.chat_id = chatId;
-    
-    console.log('Sending to Max:', maxEndpoint, payload);
-
     try {
         const response = await fetch(maxEndpoint, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(payload)
+            body: JSON.stringify({ text, format })
         });
-
-        const text = await response.text();
-        console.log('Max response:', response.status, text);
-
+        const body = await response.text();
         if (!response.ok) {
-            console.error('Max API error:', response.status, text);
+            console.error('Max transport error:', response.status, body);
         } else {
-            console.log('Order sent to Max bot successfully');
+            console.log('Sent to Max successfully');
         }
     } catch (err) {
         console.error('Max sending failed:', err);
     }
+}
+
+function formatOrderHTML(order) {
+    const lines = ['<b>🍕 ЗАКАЗ Pizza Napoli!</b>', ''];
+
+    lines.push(`📍 Источник: ${order.source || '-'}`);
+    lines.push(`🪑 Место: ${order.tableNumber}`);
+    lines.push(`📱 Телефон: ${order.phone}`);
+    if (order.comment) {
+        lines.push(`💬 Комментарий: ${order.comment}`);
+    }
+
+    lines.push('', '<b>🛒 Состав:</b>');
+    let total = 0;
+    for (const item of order.items) {
+        const price = item.price === 0 ? '🎁' : `${item.price} ₽`;
+        lines.push(`• ${item.title} × ${item.quantity} — ${price}`);
+        total += item.price * item.quantity;
+    }
+
+    let footer = `\n<b>💰 Итого: ${total} ₽</b>`;
+    if (order.deliveryFee > 0) footer += ` + доставка ${order.deliveryFee} ₽`;
+    if (order.gift) footer += `\n🎁 Подарок: ${order.gift}`;
+
+    return lines.join('\n') + footer;
 }
 
 function toggleCustomSource(value) {
@@ -789,7 +780,7 @@ async function submitOrder() {
 
     const tableNumber = (tableInput?.value || '').trim();
     const phone = (phoneInput?.value || '').trim();
-    let comment = commentInput?.value || '';
+    const comment = (commentInput?.value || '').trim();
 
     if (!tableNumber) {
         tableInput?.focus();
@@ -807,10 +798,6 @@ async function submitOrder() {
         alert('Корзина пуста');
         return;
     }
-
-    comment = comment.trim() 
-        ? `Телефон: ${phone}\nКомментарий: ${comment}` 
-        : `Телефон: ${phone}`;
 
     const originalLabel = btn.textContent;
     btn.disabled = true;
@@ -833,10 +820,6 @@ async function submitOrder() {
         source = sources[selectedSourceKey] || '12 комнат';
     }
 
-    const fullComment = source !== sourceKey 
-        ? `Источник: ${source}\n${comment}` 
-        : comment;
-    
     // Формируем массив товаров, добавляя подарок и доставку если нужно
     let orderItems = cart.map(i => ({
         title: i.title,
@@ -872,26 +855,16 @@ async function submitOrder() {
 
     console.log('Submitting order:', { tableNumber, source, cartTotal, deliveryFee, itemCount: orderItems.length });
     try {
-        await sendOrder({
+        const message = formatOrderHTML({
             tableNumber,
-            comment: fullComment,
-            gift: selectedGift ? `${selectedGift.name} (${selectedGift.threshold}₽)` : null,
-            deliveryFee: deliveryFee,
-            location: source !== sourceKey ? source : null,
+            phone,
+            comment,
             source,
-            sourceKey,
+            gift: selectedGift ? `${selectedGift.name} (${selectedGift.threshold}₽)` : null,
+            deliveryFee,
             items: orderItems
         });
-        
-        // Max бот отключен - заказы идут только в Telegram
-        /* await sendOrderToMax({
-            tableNumber,
-            comment: fullComment,
-            gift: selectedGift ? `${selectedGift.name} (${selectedGift.threshold}₽)` : null,
-            deliveryFee: deliveryFee,
-            source,
-            items: orderItems
-        }); */
+        await sendToMax(message, 'html');
         
         clearCart();
         hideCart();

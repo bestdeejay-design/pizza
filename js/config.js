@@ -3,13 +3,8 @@
 // ========================================
 
 window.ORDER_CONFIG = {
-    endpoint: 'https://muz.re/pizza-order.php',
-    maxEndpoint: 'https://cold-smoke-bf4a.bestdeejay.workers.dev/send'
-};
-
-window.MAX_CONFIG = {
-    token: 'REDACTED_MAX_TOKEN',
-    chat_id: '-73303602691580'
+    // Yandex Cloud Function (см. backend/). Ротация: ./backend/deploy.sh.
+    maxEndpoint: 'https://functions.yandexcloud.net/d4ej5aejuk3upbv6u85n'
 };
 
 // ========================================
