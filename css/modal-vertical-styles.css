@@ -171,10 +171,14 @@
         overflow-y: auto; /* Внутренний скролл контента */
     }
     
-    /* Image */
+    /* Image — на мобиле растягиваем до краёв модалки */
     .product-modal-image-top {
-        height: 200px;
+        height: 280px;
+        padding: 0;
         border-radius: 20px 20px 0 0;
+    }
+    .product-modal-image-top-img {
+        object-fit: contain;
     }
     
     /* Info section - компактные отступы */
@@ -185,7 +189,7 @@
     
     /* Title */
     .product-modal-title-bottom {
-        font-size: 22px;
+        font-size: 18px;
     }
     
     /* Description */
@@ -200,7 +204,7 @@
     
     /* Price */
     .price-value-large {
-        font-size: 32px;
+        font-size: 26px;
     }
     
     .product-weight-badge {
