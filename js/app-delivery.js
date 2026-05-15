@@ -196,7 +196,7 @@ function initSidebar() {
                 html += `
                     <div class="nav-category" data-category="${cat}" onclick="scrollToCategory('${cat}')">
                         <span>${displayName}</span>
-                        <span class="nav-count">${count}</span>
+                        ${count > 0 ? `<span class="nav-count">${count}</span>` : ''}
                     </div>
                 `;
             }
@@ -906,7 +906,7 @@ function initMobileMenu() {
                 html += `
                     <div class="mobile-nav-category" data-category="${cat}" onclick="selectMobileCategory('${cat}')">
                         <span>${displayName}</span>
-                        <span class="mobile-nav-count">${count}</span>
+                        ${count > 0 ? `<span class="mobile-nav-count">${count}</span>` : ''}
                     </div>
                 `;
             }
