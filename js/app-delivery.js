@@ -752,12 +752,14 @@ function formatOrderHTML(order) {
     lines.push('', '<b>🛒 Состав:</b>');
     let total = 0;
     for (const item of order.items) {
-        const price = item.price === 0 ? '🎁' : `${item.price} ₽`;
-        lines.push(`• ${item.title} × ${item.quantity} — ${price}`);
-        total += item.price * item.quantity;
+        const subtotal = item.price * item.quantity;
+        const priceLine = item.price === 0 ? '🎁' : `<b>${subtotal} ₽</b>`;
+        lines.push(`• <b>${item.quantity}</b> × ${item.title}`);
+        lines.push(`  └─ ${priceLine}`);
+        total += subtotal;
     }
 
-    let footer = `\n<b>💰 Итого: ${total} ₽</b>`;
+    let footer = `\n💰 Итого: <b>${total} ₽</b>`;
     if (order.gift) footer += `\n🎁 Подарок: ${order.gift}`;
 
     return lines.join('\n') + footer;
