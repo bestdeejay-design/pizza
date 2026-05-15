@@ -699,8 +699,16 @@ function showThankYou() {
 }
 
 function closeThankYou() {
-    document.getElementById('cart-modal').style.display = 'none';
-    document.getElementById('cart-modal').innerHTML = '';
+    const modal = document.getElementById('cart-modal');
+    modal.style.display = 'none';
+    // showThankYou() перезаписал innerHTML модалки — восстанавливаем разметку из index.html,
+    // иначе следующий showCart() не найдёт #cart-items.
+    modal.innerHTML = `
+        <div class="cart-modal">
+            <h2><i class="fas fa-shopping-basket" style="margin-right:8px; color:#fff;"></i>Ваша корзина</h2>
+            <div id="cart-items"></div>
+        </div>
+    `;
 }
 
 // ========================================
@@ -750,7 +758,6 @@ function formatOrderHTML(order) {
     }
 
     let footer = `\n<b>💰 Итого: ${total} ₽</b>`;
-    if (order.deliveryFee > 0) footer += ` + доставка ${order.deliveryFee} ₽`;
     if (order.gift) footer += `\n🎁 Подарок: ${order.gift}`;
 
     return lines.join('\n') + footer;
@@ -844,7 +851,7 @@ async function submitOrder() {
     // Подарок попадает в сообщение только в footer (см. formatOrderHTML).
     // threshold === 750 = бесплатная доставка (не реальный подарок) — игнорим.
     const giftLine = (selectedGift && selectedGift.threshold > 750)
-        ? `${selectedGift.name} (${selectedGift.threshold}₽)`
+        ? `${selectedGift.name} (за заказ от ${selectedGift.threshold}₽)`
         : null;
 
     console.log('Submitting order:', { tableNumber, source, cartTotal, deliveryFee, itemCount: orderItems.length, gift: giftLine });
@@ -855,7 +862,6 @@ async function submitOrder() {
             comment,
             source,
             gift: giftLine,
-            deliveryFee,
             items: orderItems
         });
         await sendToMax(message, 'html');
