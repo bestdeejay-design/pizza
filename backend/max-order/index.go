@@ -103,34 +103,29 @@ const (
 	actionTake    action = "take"    // created → in_progress
 	actionDeliver action = "deliver" // in_progress → on_delivery
 	actionDone    action = "done"    // on_delivery → completed
-	actionCancel  action = "cancel"  // any → cancelled
 )
 
 func validAction(a action) bool {
-	return a == actionTake || a == actionDeliver || a == actionDone || a == actionCancel
+	return a == actionTake || a == actionDeliver || a == actionDone
 }
 
 // keyboardForState возвращает клавиатуру для следующего шага после `s`.
 // "" = только что созданный заказ.
-// done/cancel = терминал, nil = без клавиатуры.
-// 1 кнопка в ряд (вертикальная компоновка).
+// done = терминал, nil = без клавиатуры.
 func keyboardForState(s action) []maxAttachment {
 	var buttons [][]map[string]any
 	switch s {
 	case "":
 		buttons = [][]map[string]any{
 			{{"type": "callback", "text": "👨‍🍳 Взять в работу", "payload": string(actionTake), "intent": "positive"}},
-			{{"type": "callback", "text": "❌ Отменить", "payload": string(actionCancel), "intent": "negative"}},
 		}
 	case actionTake:
 		buttons = [][]map[string]any{
 			{{"type": "callback", "text": "🚚 Передать в доставку", "payload": string(actionDeliver), "intent": "positive"}},
-			{{"type": "callback", "text": "❌ Отменить", "payload": string(actionCancel), "intent": "negative"}},
 		}
 	case actionDeliver:
 		buttons = [][]map[string]any{
 			{{"type": "callback", "text": "✅ Закрыть заказ", "payload": string(actionDone), "intent": "positive"}},
-			{{"type": "callback", "text": "❌ Отменить", "payload": string(actionCancel), "intent": "negative"}},
 		}
 	default:
 		return nil
@@ -151,8 +146,6 @@ func trackingLine(a action, u maxUser, ts time.Time) string {
 		return fmt.Sprintf("🚚 На доставке: %s (%s)", who, stamp)
 	case actionDone:
 		return fmt.Sprintf("✅ Завершено: %s (%s)", who, stamp)
-	case actionCancel:
-		return fmt.Sprintf("❌ Отменено: %s (%s)", who, stamp)
 	}
 	return ""
 }
@@ -173,8 +166,6 @@ func notificationFor(a action) string {
 		return "Заказ передан в доставку"
 	case actionDone:
 		return "Заказ завершён"
-	case actionCancel:
-		return "Заказ отменён"
 	}
 	return ""
 }
