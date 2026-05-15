@@ -374,6 +374,8 @@ function showCart() {
         const timeStatus = getTimeStatus();
         
         let timeMessage = '';
+        // После 22:00 откроемся "завтра"; после полуночи и до открытия — уже "сегодня".
+        const opensWhen = new Date().getHours() >= 22 ? 'завтра' : 'сегодня';
         const howToFindUs = `
             <div style="color: #fff; font-size: 11px; line-height: 1.5; margin-top: 8px; padding-top: 8px; border-top: 1px solid rgba(255,255,255,0.2);">
                 <strong>Как нас найти:</strong><br>
@@ -413,7 +415,7 @@ function showCart() {
             timeMessage = `
                 <div style="background: linear-gradient(135deg, #ff6b6b 0%, #ff2e55 100%); padding: 14px; border-radius: 12px; margin-bottom: 16px; text-align: center;">
                     <div style="color: #fff; font-weight: 700; font-size: 14px;"><i class="fas fa-bicycle" style="margin-right:6px;"></i>Доставка ресторана закрыта</div>
-                    <div style="color: #fff; font-size: 12px; margin-top: 6px;">Ждем вас завтра с 10:00!</div>
+                    <div style="color: #fff; font-size: 12px; margin-top: 6px;">Ждем вас ${opensWhen} с 10:00!</div>
                     ${howToFindUs}
                     <div style="margin-top: 12px;">
                         <a href="https://eda.yandex.ru/r/pizza_napoli_bmroq?placeSlug=pizza_napoli__gr3t5" target="_blank" style="display: inline-block; background: #FFAB00; color: #000; font-weight: 700; padding: 10px 20px; border-radius: 8px; text-decoration: none; font-size: 13px;">
@@ -427,7 +429,7 @@ function showCart() {
             timeMessage = `
                 <div style="background: linear-gradient(135deg, #2a582c 0%, #1e3d21 100%); padding: 16px; border-radius: 12px; margin-bottom: 16px; text-align: center;">
                     <div style="color: #fff; font-weight: 700; font-size: 14px;"><i class="fas fa-moon" style="margin-right:6px;"></i>Ресторан закрыт</div>
-                    <div style="color: #c8e6c9; font-size: 12px; margin-top: 6px;">Приходите завтра с 10:00!</div>
+                    <div style="color: #c8e6c9; font-size: 12px; margin-top: 6px;">Приходите ${opensWhen} с 10:00!</div>
                     ${howToFindUs}
                     <div style="margin-top: 12px;">
                         <a href="https://eda.yandex.ru/r/pizza_napoli_bmroq?placeSlug=pizza_napoli__gr3t5" target="_blank" style="display: inline-block; background: #FFAB00; color: #000; font-weight: 700; padding: 10px 20px; border-radius: 8px; text-decoration: none; font-size: 13px;">
