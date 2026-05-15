@@ -841,28 +841,20 @@ async function submitOrder() {
         });
     }
     
-    // Добавляем подарок в заказ если выбран
-    const hasReachedGiftLevel = cartTotal >= 1250; // Больше 750, значит есть хотя бы 1 подарок
-    if (selectedGift && selectedGift.threshold > 750 && hasReachedGiftLevel) {
-        orderItems.push({
-            title: `${selectedGift.name} 🎁 В подарок`,
-            price: 0,
-            quantity: 1,
-            category: 'gift'
-        });
-        console.log('Gift added:', selectedGift.name);
-    } else {
-        console.log('No gift selected or not reached gift level. cartTotal:', cartTotal, 'selectedGift:', selectedGift);
-    }
+    // Подарок попадает в сообщение только в footer (см. formatOrderHTML).
+    // threshold === 750 = бесплатная доставка (не реальный подарок) — игнорим.
+    const giftLine = (selectedGift && selectedGift.threshold > 750)
+        ? `${selectedGift.name} (${selectedGift.threshold}₽)`
+        : null;
 
-    console.log('Submitting order:', { tableNumber, source, cartTotal, deliveryFee, itemCount: orderItems.length });
+    console.log('Submitting order:', { tableNumber, source, cartTotal, deliveryFee, itemCount: orderItems.length, gift: giftLine });
     try {
         const message = formatOrderHTML({
             tableNumber,
             phone,
             comment,
             source,
-            gift: selectedGift ? `${selectedGift.name} (${selectedGift.threshold}₽)` : null,
+            gift: giftLine,
             deliveryFee,
             items: orderItems
         });
