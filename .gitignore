@@ -63,11 +63,12 @@ retry-modal-data*.json
 test-modal-data.json
 test-one-product.json
 
-# Markdown файлы (кроме README.md и всего внутри docs/)
+# Markdown файлы (кроме README.md и docs/, но без docs/sessions/ — она локальная)
 *.md
 !README.md
 !docs/
 !docs/**/*.md
+docs/sessions/
 
 # ==========================================
 # ЧТО ОСТАЁТСЯ НА GITHUB:
