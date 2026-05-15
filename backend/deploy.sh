@@ -34,7 +34,8 @@ yc serverless function version create \
   --execution-timeout 10s \
   --service-account-id "$SA_ID" \
   --secret "environment-variable=MAX_TOKEN,id=$SECRET_ID,version-id=$SECRET_VERSION_ID,key=token" \
-  --secret "environment-variable=MAX_CHAT_ID,id=$SECRET_ID,version-id=$SECRET_VERSION_ID,key=chat_id"
+  --secret "environment-variable=MAX_CHAT_ID,id=$SECRET_ID,version-id=$SECRET_VERSION_ID,key=chat_id" \
+  --secret "environment-variable=MAX_WEBHOOK_SECRET,id=$SECRET_ID,version-id=$SECRET_VERSION_ID,key=webhook_secret"
 
 URL=$(yc serverless function get "$FN_NAME" --format json | jq -r .http_invoke_url)
 cat <<EOF
@@ -44,12 +45,15 @@ cat <<EOF
 URL функции:
   $URL
 
-Впиши его в frontend (repo/js/config.js, поле maxEndpoint):
+Впиши его в frontend (js/config.js, поле maxEndpoint):
   maxEndpoint: '$URL'
 
-Тест:
+Тест отправки заказа:
   curl -X POST '$URL' \\
     -H 'Origin: https://pizza.lovii.ru' \\
     -H 'Content-Type: application/json' \\
-    -d '{"text":"<b>тест</b>","format":"html"}'
+    -d '{"text":"<b>тестовый заказ</b>","format":"html"}'
+
+Подписать функцию на callback'и от Max:
+  ./subscribe.sh
 EOF

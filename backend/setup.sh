@@ -25,8 +25,8 @@ echo "    SA_ID=$SA_ID"
 
 echo "==> Lockbox secret (placeholder values, replace later)"
 yc lockbox secret create --name "$SECRET_NAME" \
-  --description "Max bot token & chat_id for pizza" \
-  --payload '[{"key":"token","text_value":"REPLACE_ME"},{"key":"chat_id","text_value":"REPLACE_ME"}]' \
+  --description "Max bot token + chat_id + webhook_secret для pizza" \
+  --payload '[{"key":"token","text_value":"REPLACE_ME"},{"key":"chat_id","text_value":"REPLACE_ME"},{"key":"webhook_secret","text_value":"REPLACE_ME"}]' \
   2>&1 | grep -v "already exists" || true
 SECRET_ID=$(yc lockbox secret get "$SECRET_NAME" --format json | jq -r .id)
 echo "    SECRET_ID=$SECRET_ID"
@@ -47,9 +47,17 @@ cat <<EOF
    SECRET_NAME=$SECRET_NAME
    SECRET_ID=$SECRET_ID
 
-2) Положи реальный токен и chat_id в Lockbox (создаст новую активную версию):
-   yc lockbox secret add-version $SECRET_NAME \\
-     --payload '[{"key":"token","text_value":"<НОВЫЙ_MAX_ТОКЕН>"},{"key":"chat_id","text_value":"-73303602691580"}]'
+2) Сгенерируй webhook secret:
+   openssl rand -hex 32
 
-3) Запусти ./deploy.sh
+3) Положи токен, chat_id и webhook_secret в Lockbox (новая активная версия):
+   yc lockbox secret add-version $SECRET_NAME --payload '[
+     {"key":"token","text_value":"<MAX_BOT_ТОКЕН>"},
+     {"key":"chat_id","text_value":"<CHAT_ID>"},
+     {"key":"webhook_secret","text_value":"<СЕКРЕТ_ИЗ_OPENSSL>"}
+   ]'
+
+4) Запусти ./deploy.sh — задеплоит функцию.
+
+5) Запусти ./subscribe.sh — подпишет функцию на callback'и от Max.
 EOF
