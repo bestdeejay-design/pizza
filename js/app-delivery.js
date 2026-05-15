@@ -1235,16 +1235,11 @@ function renderProductsLazy(products) {
         if (idx < 2) {
             console.log('Product sample:', product);
         }
-        // Проверка поддержки WebP и fallback для старых браузеров.
         // Первые 4 карточки above-the-fold → eager + high priority (LCP).
-        const imageSrc = product.image;
         const loadingAttrs = idx < 4
             ? 'loading="eager" fetchpriority="high" decoding="async"'
             : 'loading="lazy" decoding="async"';
-        const imageHtml = `<picture>
-            <source srcset="${imageSrc}" type="image/webp">
-            <img src="${imageSrc.replace('.webp', '.jpg')}" alt="${product.title}" class="product-image" ${loadingAttrs} onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 260 200%22><rect fill=%22%23f5f5f7%22 width=%22260%22 height=%22200%22/><text x=%22130%22 y=%22105%22 text-anchor=%22middle%22 fill=%22%2386868b%22 font-size=%2214%22>No Photo</text></svg>'">
-        </picture>`;
+        const imageHtml = `<img src="${product.image}" alt="${product.title}" class="product-image" ${loadingAttrs} onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 260 200%22><rect fill=%22%23f5f5f7%22 width=%22260%22 height=%22200%22/><text x=%22130%22 y=%22105%22 text-anchor=%22middle%22 fill=%22%2386868b%22 font-size=%2214%22>No Photo</text></svg>'">`;
         return `
             <div class="product-card" data-id="${product.id}" style="opacity: 0; transform: translateY(20px); animation: fadeInUp 0.5s ease forwards; animation-delay: ${idx * 0.05}s;" onclick="showProductModal(${product.id})">
                 <div class="product-image-wrapper">
