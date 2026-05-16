@@ -475,7 +475,7 @@ function showCart() {
                         <span style="font-size: 14px; color: #e65100; font-weight: 600;">
                             <i class="fas fa-truck" style="margin-right: 6px;"></i>Доставка
                         </span>
-                        <span style="font-size: 16px; color: #e65100; font-weight: 700;">+${Math.min(250, 750 - total)} ₽</span>
+                        <span style="font-size: 16px; color: #e65100; font-weight: 700;">+${Math.min(99, 750 - total)} ₽</span>
                     </div>
                     
                     ${/* Шкала прогресса */''}
@@ -840,7 +840,7 @@ async function submitOrder() {
     }));
     
     // Добавляем доставку если менее 750
-    const deliveryFee = cartTotal < 750 ? Math.min(250, 750 - cartTotal) : 0;
+    const deliveryFee = cartTotal < 750 ? Math.min(99, 750 - cartTotal) : 0;
     if (deliveryFee > 0) {
         orderItems.push({
             title: 'Доставка',
