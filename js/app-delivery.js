@@ -106,23 +106,68 @@ function initSortControls() {
     const mql = window.matchMedia('(max-width: 768px)');
     const isMobile = mql.matches;
 
-    // Desktop select в header-actions
+    // Desktop кастомный дропдаун в header-actions
     if (!isMobile) {
         const headerActions = document.querySelector('.header-actions');
-        if (headerActions && !document.getElementById('sort-select')) {
+        if (headerActions && !document.getElementById('sort-trigger')) {
             const wrap = document.createElement('div');
-            wrap.style.cssText = 'display:flex; align-items:center; margin-right:8px;';
+            wrap.style.cssText = 'position:relative; display:flex; align-items:center; margin-right:10px;';
             wrap.innerHTML = `
-                <select id="sort-select" onchange="changeSortMode(this.value)"
-                    style="padding:6px 10px; border:1px solid var(--border-strong); border-radius:6px;
-                           background:var(--color-bg-card); color:var(--color-text-primary);
-                           font-size:13px; cursor:pointer; max-width:150px;">
-                    ${SORT_MODES.map(m =>
-                        `<option value="${m.id}" ${m.id === currentSortMode ? 'selected' : ''}>${m.label}</option>`
-                    ).join('')}
-                </select>
+                <div id="sort-trigger" tabindex="0"
+                     style="display:flex; align-items:center; gap:6px; padding:6px 12px;
+                            background:var(--color-bg-card); border:1px solid var(--border-strong);
+                            border-radius:8px; cursor:pointer; font-size:13px;
+                            color:var(--color-text-primary); white-space:nowrap;
+                            transition:border-color 0.2s, box-shadow 0.2s;">
+                    <i class="fas fa-sort-amount-down" style="color:#ff2e55; font-size:13px;"></i>
+                    <span id="sort-current-label">${SORT_MODES.find(m => m.id === currentSortMode)?.label || 'Рекомендуем'}</span>
+                    <i class="fas fa-chevron-down" id="sort-arrow" style="font-size:10px; color:var(--color-text-secondary); transition:transform 0.2s;"></i>
+                </div>
+                <div id="sort-dropdown-menu"
+                     style="display:none; position:absolute; top:100%; right:0; margin-top:4px;
+                            background:var(--color-bg-card); border:1px solid var(--border-strong);
+                            border-radius:10px; box-shadow:0 8px 30px rgba(0,0,0,0.15);
+                            z-index:999; min-width:180px; overflow:hidden;">
+                    ${SORT_MODES.map(m => `
+                        <div class="sort-option" data-mode="${m.id}"
+                             style="padding:10px 14px; cursor:pointer; font-size:14px;
+                                    color:var(--color-text-primary);
+                                    background:${m.id === currentSortMode ? 'var(--color-primary-light)' : 'transparent'};
+                                    font-weight:${m.id === currentSortMode ? '700' : '400'};
+                                    display:flex; align-items:center; gap:10px;
+                                    transition:background 0.15s;"
+                             onmouseover="this.style.background='var(--color-primary-light)'"
+                             onmouseout="this.style.background='${m.id === currentSortMode ? 'var(--color-primary-light)' : 'transparent'}'"
+                             onclick="selectDesktopSort('${m.id}', event)">
+                            <i class="fas ${m.icon}" style="color:#ff2e55; font-size:13px; width:16px;"></i>
+                            <span style="flex:1;">${m.label}</span>
+                            ${m.id === currentSortMode ? '<i class="fas fa-check" style="color:#4caf50; font-size:12px;"></i>' : ''}
+                        </div>
+                    `).join('')}
+                </div>
             `;
             headerActions.insertBefore(wrap, headerActions.firstChild);
+
+            // Toggle dropdown
+            const trigger = document.getElementById('sort-trigger');
+            const menu = document.getElementById('sort-dropdown-menu');
+            trigger.addEventListener('click', (e) => {
+                e.stopPropagation();
+                const isOpen = menu.style.display === 'block';
+                menu.style.display = isOpen ? 'none' : 'block';
+                document.getElementById('sort-arrow').style.transform = isOpen ? 'rotate(0deg)' : 'rotate(180deg)';
+                if (!isOpen) trigger.style.borderColor = '#ff2e55';
+                else trigger.style.borderColor = '';
+            });
+
+            // Close on outside click
+            document.addEventListener('click', (e) => {
+                if (!wrap.contains(e.target)) {
+                    menu.style.display = 'none';
+                    document.getElementById('sort-arrow').style.transform = 'rotate(0deg)';
+                    trigger.style.borderColor = '';
+                }
+            });
         }
     }
 
@@ -185,9 +230,48 @@ function changeSortMode(mode) {
         }, 50);
     }
 
-    // Обновляем селект
-    const sel = document.getElementById('sort-select');
-    if (sel) sel.value = mode;
+    // Обновляем UI сортировки
+    const label = document.getElementById('sort-current-label');
+    if (label) {
+        const modeObj = SORT_MODES.find(m => m.id === mode);
+        if (modeObj) label.textContent = modeObj.label;
+    }
+
+    // Обновляем checkmark в дропдауне
+    document.querySelectorAll('.sort-option').forEach(el => {
+        const isActive = el.dataset.mode === mode;
+        el.style.background = isActive ? 'var(--color-primary-light)' : 'transparent';
+        el.style.fontWeight = isActive ? '700' : '400';
+        const check = el.querySelector('.fa-check');
+        if (check) check.remove();
+        if (isActive) {
+            const icon = document.createElement('i');
+            icon.className = 'fas fa-check';
+            icon.style.cssText = 'color:#4caf50; font-size:12px;';
+            el.appendChild(icon);
+        }
+        el.onmouseout = function() {
+            this.style.background = isActive ? 'var(--color-primary-light)' : 'transparent';
+        };
+    });
+
+    // Закрываем дропдаун
+    const menu = document.getElementById('sort-dropdown-menu');
+    if (menu) {
+        menu.style.display = 'none';
+        const arrow = document.getElementById('sort-arrow');
+        if (arrow) arrow.style.transform = 'rotate(0deg)';
+        const trigger = document.getElementById('sort-trigger');
+        if (trigger) trigger.style.borderColor = '';
+    }
+}
+
+function selectDesktopSort(mode, event) {
+    if (event) event.stopPropagation();
+    document.getElementById('sort-dropdown-menu').style.display = 'none';
+    document.getElementById('sort-arrow').style.transform = 'rotate(0deg)';
+    document.getElementById('sort-trigger').style.borderColor = '';
+    changeSortMode(mode);
 }
 
 function showMobileSortPicker() {
