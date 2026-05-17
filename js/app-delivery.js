@@ -60,19 +60,53 @@ let selectedGift = null; // Выбранный подарок
 
 // source=home mode
 const urlParams = new URLSearchParams(window.location.search);
-const IS_HOME_MODE = urlParams.get('source') === 'home';
-const HOME_CFG = window.HOME_CONFIG || {};
+
+// sessionStorage persistence для source
+const SOURCE_STORAGE_KEY = 'pizzaSource';
+function getSourceFromUrl() { return urlParams.get('source') || ''; }
+function getPersistedSource() { return sessionStorage.getItem(SOURCE_STORAGE_KEY) || getSourceFromUrl(); }
+
+const CURRENT_SOURCE = getPersistedSource();
+const SOURCE_CONFIGS = window.SOURCE_CONFIGS || {};
+const CURRENT_PROFILE = SOURCE_CONFIGS[CURRENT_SOURCE] || SOURCE_CONFIGS.default || {};
+const IS_HOME = CURRENT_PROFILE.type === 'home';
+const PAYMENT_LABELS = {
+    card: '💳 Картой курьеру',
+    sbp: '📱 QR-код (СБП)',
+    cash_no_change: '💰 Наличные (без сдачи)',
+    cash: '💰 Наличные'
+};
+const PROFILE_PAYMENTS = (CURRENT_PROFILE.paymentMethods || []).map(id => ({
+    id,
+    label: PAYMENT_LABELS[id] || id
+}));
+
+function getCurrentProfile() {
+    return CURRENT_PROFILE;
+}
+
+function persistSource(source) {
+    if (source) sessionStorage.setItem(SOURCE_STORAGE_KEY, source);
+}
+
+function filterByProfile(items) {
+    const patterns = CURRENT_PROFILE.hidePatterns || [];
+    return patterns.length ? items.filter(i => !patterns.some(p => (i.title || '').includes(p))) : items;
+}
+
+function persistSource(source) {
+    if (source) sessionStorage.setItem(SOURCE_STORAGE_KEY, source);
+}
 
 // Global sort state
 const SORT_MODES = window.SORT_MODES || [];
 const HIT_IDS = window.HIT_IDS || [];
 let currentSortMode = localStorage.getItem(SORT_STORAGE_KEY) || 'recommended';
 
-function filterForHome(items) {
-    const patterns = HOME_CFG.hidePatterns || ['1/4'];
-    return items.filter(item =>
-        !patterns.some(p => (item.title || '').includes(p))
-    );
+function filterByProfile(items) {
+    const profile = getCurrentProfile();
+    const patterns = profile.hidePatterns || [];
+    return patterns.length ? items.filter(i => !patterns.some(p => (i.title || '').includes(p))) : items;
 }
 
 function sortProducts(products, mode) {
@@ -99,23 +133,18 @@ function sortProducts(products, mode) {
 }
 
 // ========================================
-// DELIVERY CONFIG (зависит от source)
+// DELIVERY CONFIG (из профиля source)
 // ========================================
 
 function getDeliveryConfig() {
-    if (IS_HOME_MODE) {
-        return {
-            threshold: HOME_CFG.deliveryThreshold || 1500,
-            fee: HOME_CFG.deliveryFee || 199
-        };
-    }
-    return { threshold: 750, fee: 99 };
+    const p = getCurrentProfile();
+    return { threshold: p.freeDeliveryThreshold, fee: p.deliveryCost };
 }
 
 function calcDeliveryFee(cartTotal) {
     const cfg = getDeliveryConfig();
     if (cartTotal >= cfg.threshold) return 0;
-    return Math.min(cfg.fee, cfg.threshold - cartTotal);
+    return cfg.fee;
 }
 
 // ========================================
@@ -432,9 +461,10 @@ async function loadMenu() {
         console.log('Total products:', menu.length);
 
         // source=home: фильтруем низкомаржинальные (1/4 пиццы)
-        if (IS_HOME_MODE) {
-            menu = filterForHome(menu);
-            console.log('Home mode: filtered to', menu.length, 'products');
+        const profile = getCurrentProfile();
+        if (profile.hidePatterns && profile.hidePatterns.length) {
+            menu = filterByProfile(menu);
+            console.log(`${profile.id}: filtered to ${menu.length} products`);
         }
         
         initSidebar();
@@ -726,7 +756,7 @@ function showCart() {
         }
         
         // Определяем текущий уровень и доступные подарки
-        const giftThresholds = IS_HOME_MODE
+        const giftThresholds = IS_HOME
             ? GIFT_THRESHOLDS.filter(g => g.threshold > 750)  // home: "беспл. доставка" неактуальна
             : GIFT_THRESHOLDS;
         const availableGifts = giftThresholds.filter(g => total >= g.threshold);
@@ -759,7 +789,7 @@ function showCart() {
             ${/* Блок доставки */''}
             ${(() => {
                 const dc = getDeliveryConfig();
-                if (IS_HOME_MODE) {
+                if (IS_HOME) {
                     return total < dc.threshold ? `
                         <div style="background: linear-gradient(135deg, #fff3e0 0%, #ffe0b2 100%); padding: 14px; border-radius: 10px; margin-bottom: 12px;">
                             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 10px;">
@@ -879,7 +909,7 @@ function showCart() {
             </div>
             
             <form class="order-form" onsubmit="event.preventDefault(); submitOrder();" style="display:flex; flex-direction:column; gap:10px; margin-top:8px;">
-                ${IS_HOME_MODE ? `
+                ${IS_HOME ? `
                     <label style="display:flex; flex-direction:column; gap:4px; font-weight:600; font-size:14px;">
                         Имя <span style="color:#e65100;">*</span>
                         <input type="text" id="order-name" required maxlength="50" placeholder="Ваше имя" style="padding:10px; border:1px solid var(--border-strong); border-radius:8px; background:var(--color-bg-card); color:var(--color-text-primary); font-size:15px;">
@@ -898,7 +928,7 @@ function showCart() {
                     </label>
                     <div style="margin: 4px 0;">
                         <div style="font-size:13px; font-weight:600; margin-bottom:6px;">Способ оплаты:</div>
-                        ${(HOME_CFG.paymentMethods || []).map(m => `
+                        ${(PROFILE_PAYMENTS).map(m => `
                             <label style="display:flex; align-items:center; gap:8px; padding:10px; border:1px solid var(--border-strong); border-radius:8px; margin-bottom:6px; cursor:pointer; background:var(--color-bg-card);">
                                 <input type="radio" name="payment" value="${m.id}" ${m.id === 'card' ? 'checked' : ''} style="accent-color:#4caf50;">
                                 <span style="font-size:14px;">${m.label}</span>
@@ -939,7 +969,7 @@ function showCart() {
                     <button type="button" class="btn btn-secondary" onclick="hideCart()">Закрыть</button>
                     <button type="submit" id="order-submit-btn" class="btn btn-primary">Оформить заказ</button>
                 </div>
-                ${IS_HOME_MODE ? `
+                ${IS_HOME ? `
                     <div style="background: linear-gradient(135deg, #2a582c 0%, #1e3d21 100%); padding:12px; border-radius:10px; margin-top:4px; margin-bottom:200px;">
                         <div style="display:flex; align-items:center; gap:8px; margin-bottom:6px;">
                             <i class="fas fa-motorcycle" style="font-size:20px; color:#fff;"></i>
@@ -976,7 +1006,7 @@ function showCart() {
 
     modal.style.display = 'flex';
     
-    if (!IS_HOME_MODE) {
+    if (!IS_HOME) {
         const urlParams = new URLSearchParams(window.location.search);
         const sourceParam = urlParams.get('source');
         const sourceSelect = document.getElementById('order-source');
@@ -1154,7 +1184,7 @@ async function submitOrder() {
     let tableNumber, phone, comment, source;
     const originalLabel = btn.textContent;
     
-    if (IS_HOME_MODE) {
+    if (IS_HOME) {
         const nameInput = document.getElementById('order-name');
         const phoneInput = document.getElementById('order-phone');
         const addressInput = document.getElementById('order-address');
@@ -1167,7 +1197,7 @@ async function submitOrder() {
         
         const paymentInput = document.querySelector('input[name="payment"]:checked');
         const paymentLabel = paymentInput
-            ? (HOME_CFG.paymentMethods || []).find(m => m.id === paymentInput.value)?.label || paymentInput.value
+            ? (PROFILE_PAYMENTS).find(m => m.id === paymentInput.value)?.label || paymentInput.value
             : '';
         
         if (!name) {
@@ -1231,6 +1261,13 @@ async function submitOrder() {
         return;
     }
 
+    // Минимальная сумма заказа
+    const minOrder = CURRENT_PROFILE.minOrderAmount || 0;
+    if (cartTotal < minOrder) {
+        alert(`Минимальная сумма заказа: ${minOrder} ₽`);
+        return;
+    }
+
     btn.disabled = true;
     btn.textContent = 'Отправляем...';
 
@@ -1268,7 +1305,7 @@ async function submitOrder() {
             gift: giftLine,
             items: orderItems
         };
-        if (IS_HOME_MODE) {
+        if (IS_HOME) {
             const nameInput = document.getElementById('order-name');
             const addressInput = document.getElementById('order-address');
             orderData.name = (nameInput?.value || '').trim();

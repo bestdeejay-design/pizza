@@ -109,16 +109,30 @@ window.HIT_IDS = [
 ];
 
 // ========================================
-// HOME DELIVERY MODE (source=home)
+// SOURCE PROFILES (динамические настройки для source)
 // ========================================
 
-window.HOME_CONFIG = {
-    deliveryThreshold: 1500,
-    deliveryFee: 199,
-    hidePatterns: ['1/4'],   // подстроки в title для скрытия
-    paymentMethods: [
-        { id: 'card', label: '💳 Картой курьеру' },
-        { id: 'qr', label: '📱 QR-код (СБП)' },
-        { id: 'cash', label: '💰 Наличные (без сдачи)' }
-    ]
+window.SOURCE_CONFIGS = {
+    home: {
+        id: 'home',
+        type: 'home',
+        freeDeliveryThreshold: 1500,
+        deliveryCost: 199,
+        minOrderAmount: 750,
+        paymentMethods: ['card', 'sbp', 'cash_no_change'],
+        showPartnerList: false,
+        requireAddress: true,
+        hidePatterns: ['1/4']
+    },
+    default: {
+        id: 'default',
+        type: 'partner',
+        freeDeliveryThreshold: 750,
+        deliveryCost: 99,
+        minOrderAmount: 750,
+        paymentMethods: ['card', 'sbp', 'cash'],
+        showPartnerList: true,
+        requireAddress: false,
+        hidePatterns: []
+    }
 };
