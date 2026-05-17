@@ -103,37 +103,42 @@ function sortProducts(products, mode) {
 // ========================================
 
 function initSortControls() {
-    // Desktop: инжектим селект перед корзиной
     const headerActions = document.querySelector('.header-actions');
-    if (headerActions && !document.getElementById('sort-select')) {
-        const wrap = document.createElement('div');
-        wrap.style.cssText = 'position:relative; margin-right:10px;';
-        wrap.id = 'desktop-sort-wrap';
-        wrap.innerHTML = `
+    if (!headerActions || document.getElementById('sort-select')) return;
+
+    const wrap = document.createElement('div');
+    wrap.id = 'sort-control-wrap';
+    wrap.style.cssText = 'display:flex; align-items:center;';
+
+    wrap.innerHTML = `
+        <div class="sort-desktop" style="display:flex; align-items:center;">
             <select id="sort-select" onchange="changeSortMode(this.value)"
                 style="padding:6px 10px; border:1px solid var(--border-strong); border-radius:6px;
                        background:var(--color-bg-card); color:var(--color-text-primary);
                        font-size:13px; cursor:pointer; max-width:150px;">
                 ${SORT_MODES.map(m =>
-                    `<option value="${m.id}" ${m.id === currentSortMode ? 'selected' : ''}>
-                        <i class="fas ${m.icon}"></i> ${m.label}
-                    </option>`
+                    `<option value="${m.id}" ${m.id === currentSortMode ? 'selected' : ''}>${m.label}</option>`
                 ).join('')}
             </select>
-        `;
-        headerActions.insertBefore(wrap, headerActions.firstChild);
-    }
+        </div>
+        <div class="sort-mobile" style="display:none; align-items:center; cursor:pointer;"
+             onclick="showMobileSortPicker()" title="Сортировка">
+            <i class="fas fa-sort-amount-down" style="color:#fff; font-size:18px;"></i>
+        </div>
+    `;
 
-    // Mobile: кнопка сортировки рядом с бургером
-    const mobileBtn = document.querySelector('.mobile-menu-btn');
-    if (mobileBtn && !document.getElementById('mobile-sort-btn')) {
-        const btn = document.createElement('div');
-        btn.id = 'mobile-sort-btn';
-        btn.style.cssText = 'display:inline-flex; align-items:center; justify-content:center; width:36px; height:36px; cursor:pointer; margin-right:4px;';
-        btn.onclick = showMobileSortPicker;
-        btn.innerHTML = `<i class="fas fa-sort-amount-down" style="color:#fff; font-size:16px;"></i>`;
-        mobileBtn.parentNode.insertBefore(btn, mobileBtn);
+    headerActions.insertBefore(wrap, headerActions.firstChild);
+
+    // Responsive: на мобилках прячем select, показываем иконку
+    const mql = window.matchMedia('(max-width: 768px)');
+    const desktopEl = wrap.querySelector('.sort-desktop');
+    const mobileEl = wrap.querySelector('.sort-mobile');
+    function toggleSortUI(e) {
+        desktopEl.style.display = e.matches ? 'none' : 'flex';
+        mobileEl.style.display = e.matches ? 'flex' : 'none';
     }
+    mql.addEventListener('change', toggleSortUI);
+    toggleSortUI(mql);
 }
 
 function changeSortMode(mode) {
