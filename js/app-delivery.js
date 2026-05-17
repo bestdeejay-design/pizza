@@ -101,7 +101,12 @@ function persistSource(source) {
 // Global sort state
 const SORT_MODES = window.SORT_MODES || [];
 const HIT_IDS = window.HIT_IDS || [];
-let currentSortMode = localStorage.getItem(SORT_STORAGE_KEY) || 'recommended';
+let currentSortMode = localStorage.getItem(SORT_STORAGE_KEY);
+// Валидация: если в localStorage мусор — сбрасываем
+if (!currentSortMode || !SORT_MODES.some(m => m.id === currentSortMode)) {
+    currentSortMode = 'recommended';
+    localStorage.setItem(SORT_STORAGE_KEY, currentSortMode);
+}
 
 function filterByProfile(items) {
     const profile = getCurrentProfile();
@@ -248,6 +253,8 @@ function initSortControls() {
 
 function changeSortMode(mode) {
     if (mode === currentSortMode) return;
+    // Валидация режима
+    if (!SORT_MODES.some(m => m.id === mode)) mode = 'recommended';
     currentSortMode = mode;
     localStorage.setItem(SORT_STORAGE_KEY, mode);
 
