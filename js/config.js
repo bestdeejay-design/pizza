@@ -74,3 +74,19 @@ window.LAZY_LOAD_CONFIG = {
     DELAY_BEFORE_NAVIGATE: 1500,
     INITIAL_CATEGORIES: 3
 };
+
+// ========================================
+// HOME DELIVERY MODE (source=home)
+// ========================================
+
+window.HOME_CONFIG = {
+    deliveryThreshold: 1500,
+    deliveryFee: 199,
+    hidePatterns: ['1/4'],   // подстроки в title для скрытия
+    hitIds: [1, 6, 11, 16, 21, 26, 31, 36, 41],  // ID хитов (пример)
+    paymentMethods: [
+        { id: 'card', label: '💳 Картой курьеру' },
+        { id: 'qr', label: '📱 QR-код (СБП)' },
+        { id: 'cash', label: '💰 Наличные (без сдачи)' }
+    ]
+};

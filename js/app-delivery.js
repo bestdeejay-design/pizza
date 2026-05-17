@@ -57,6 +57,29 @@ let loadedGroups = 3; // Сколько групп показывать сраз
 let totalGroups = 0;
 let selectedGift = null; // Выбранный подарок
 
+// source=home mode
+const urlParams = new URLSearchParams(window.location.search);
+const IS_HOME_MODE = urlParams.get('source') === 'home';
+const HOME_CFG = window.HOME_CONFIG || {};
+
+function filterForHome(items) {
+    const patterns = HOME_CFG.hidePatterns || ['1/4'];
+    return items.filter(item =>
+        !patterns.some(p => (item.title || '').includes(p))
+    );
+}
+
+function sortMenuForHome(items, cat) {
+    const hits = HOME_CFG.hitIds || [];
+    const sorted = [...items].sort((a, b) => {
+        const aHit = hits.includes(a.id) ? 0 : 1;
+        const bHit = hits.includes(b.id) ? 0 : 1;
+        if (aHit !== bHit) return aHit - bHit;
+        return (b.price || 0) - (a.price || 0);
+    });
+    return sorted;
+}
+
 // ========================================
 // GIFT LEVELS CONFIG
 // ========================================
@@ -153,6 +176,20 @@ async function loadMenu() {
         ];
         
         console.log('Total products:', menu.length);
+
+        // source=home: фильтруем низкомаржинальные и сортируем (хиты → цена)
+        if (IS_HOME_MODE) {
+            const cats = [...new Set(menu.map(i => i.category))];
+            const filtered = [];
+            cats.forEach(cat => {
+                let items = menu.filter(i => i.category === cat);
+                items = filterForHome(items);
+                items = sortMenuForHome(items, cat);
+                filtered.push(...items);
+            });
+            menu = filtered;
+            console.log('Home mode: filtered to', menu.length, 'products');
+        }
         
         initSidebar();
         initMobileMenu(); // Инициализация мобильного меню
@@ -469,7 +506,34 @@ function showCart() {
             </div>
             
             ${/* Блок доставки */''}
-            ${total < 750 ? `
+            ${IS_HOME_MODE ? `
+                ${total < HOME_CFG.deliveryThreshold ? `
+                    <div style="background: linear-gradient(135deg, #fff3e0 0%, #ffe0b2 100%); padding: 14px; border-radius: 10px; margin-bottom: 12px;">
+                        <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 10px;">
+                            <span style="font-size: 14px; color: #e65100; font-weight: 600;">
+                                <i class="fas fa-truck" style="margin-right: 6px;"></i>Доставка до двери
+                            </span>
+                            <span style="font-size: 16px; color: #e65100; font-weight: 700;">+${Math.min(HOME_CFG.deliveryFee, HOME_CFG.deliveryThreshold - total)} ₽</span>
+                        </div>
+                        <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 10px;">
+                            <span style="font-size: 12px; color: #e65100; font-weight: 600;">${total}₽</span>
+                            <div style="flex: 1; background: #ffcc80; height: 12px; border-radius: 6px; overflow: hidden;">
+                                <div style="background: linear-gradient(90deg, #ff6b35, #ff2e55); height: 100%; width: ${Math.min(100, (total / HOME_CFG.deliveryThreshold) * 100)}%; border-radius: 6px; transition: width 0.3s ease;"></div>
+                            </div>
+                            <span style="font-size: 12px; color: #e65100; font-weight: 600;">${HOME_CFG.deliveryThreshold}₽</span>
+                        </div>
+                        <div style="font-size: 12px; color: #bf360c; text-align: center;">
+                            <i class="fas fa-arrow-up" style="margin-right: 4px;"></i>Добавьте ${HOME_CFG.deliveryThreshold - total} ₽ → бесплатная доставка!
+                        </div>
+                    </div>
+                ` : `
+                    <div style="background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%); padding: 12px; border-radius: 10px; margin-bottom: 12px; text-align: center;">
+                        <span style="font-size: 14px; color: #2e7d32; font-weight: 600;">
+                            <i class="fas fa-check-circle" style="margin-right: 6px;"></i>Бесплатная доставка ✓
+                        </span>
+                    </div>
+                `}
+            ` : (total < 750 ? `
                 <div style="background: linear-gradient(135deg, #fff3e0 0%, #ffe0b2 100%); padding: 14px; border-radius: 10px; margin-bottom: 12px;">
                     <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 10px;">
                         <span style="font-size: 14px; color: #e65100; font-weight: 600;">
@@ -477,16 +541,13 @@ function showCart() {
                         </span>
                         <span style="font-size: 16px; color: #e65100; font-weight: 700;">+${Math.min(99, 750 - total)} ₽</span>
                     </div>
-                    
-                    ${/* Шкала прогресса */''}
                     <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 10px;">
                         <span style="font-size: 12px; color: #e65100; font-weight: 600;">${total}₽</span>
-                        <div style="flex: 1; background: #ffcc80; height: 12px; border-radius: 6px; overflow: hidden; position: relative;">
+                        <div style="flex: 1; background: #ffcc80; height: 12px; border-radius: 6px; overflow: hidden;">
                             <div style="background: linear-gradient(90deg, #ff6b35, #ff2e55); height: 100%; width: ${Math.min(100, (total / 750) * 100)}%; border-radius: 6px; transition: width 0.3s ease;"></div>
                         </div>
                         <span style="font-size: 12px; color: #e65100; font-weight: 600;">750₽</span>
                     </div>
-                    
                     <div style="font-size: 12px; color: #bf360c; text-align: center;">
                         <i class="fas fa-arrow-up" style="margin-right: 4px;"></i>Добавьте ${750 - total} ₽ → доставка бесплатно + первый подарок!
                     </div>
@@ -497,7 +558,7 @@ function showCart() {
                         <i class="fas fa-check-circle" style="margin-right: 6px;"></i>Бесплатная доставка ✓
                     </span>
                 </div>
-            `}
+            `)}
             
             ${/* Блок подарков */''}
             <div style="background: linear-gradient(135deg, #fff8e1 0%, #ffecb3 100%); padding: 14px; border-radius: 12px; margin-bottom: 12px;">
@@ -563,51 +624,92 @@ function showCart() {
             </div>
             
             <form class="order-form" onsubmit="event.preventDefault(); submitOrder();" style="display:flex; flex-direction:column; gap:10px; margin-top:8px;">
-                <label style="display:flex; flex-direction:column; gap:4px; font-weight:600; font-size:14px;">
-                    Откуда заказ
-                    <select id="order-source" onchange="toggleCustomSource(this.value)" style="padding:10px; border:1px solid var(--border-strong); border-radius:8px; background:var(--color-bg-card); color:var(--color-text-primary); font-size:15px;">
-                        <option value="12rooms">12 комнат</option>
-                        <option value="MGarryPotter">Музей Гарри Поттера</option>
-                        <option value="SVO">Музей СВО</option>
-                        <option value="Lomonosov">Отель Ломоносов</option>
-                        <option value="PartyTime">Караоке Party Time</option>
-                        <option value="MusicSchool">Музыкальная Школа</option>
-                        <option value="SuperSonic">Супер Соник</option>
-                        <option value="custom">Другое</option>
-                    </select>
-                </label>
-                <div id="custom-source-container" style="display:none; margin-top:8px;">
-                    <input type="text" id="order-source-custom" placeholder="Введите название места" style="padding:10px; border:1px solid var(--border-strong); border-radius:8px; background:var(--color-bg-card); color:var(--color-text-primary); font-size:15px; width:100%; box-sizing:border-box;">
-                </div>
-                <label style="display:flex; flex-direction:column; gap:4px; font-weight:600; font-size:14px;">
-                    Номер столика или удобное для вас место где вас найти
-                    <input type="text" id="order-table-number" required maxlength="10" placeholder="Например, 5" style="padding:10px; border:1px solid var(--border-strong); border-radius:8px; background:var(--color-bg-card); color:var(--color-text-primary); font-size:15px;">
-                </label>
-                <label style="display:flex; flex-direction:column; gap:4px; font-weight:600; font-size:14px;">
-                    Номер телефона
-                    <input type="tel" id="order-phone" required maxlength="20" placeholder="+7 (999) 123-45-67" style="padding:10px; border:1px solid var(--border-strong); border-radius:8px; background:var(--color-bg-card); color:var(--color-text-primary); font-size:15px;">
-                </label>
-                <label style="display:flex; flex-direction:column; gap:4px; font-weight:600; font-size:14px;">
-                    Комментарий (необязательно)
-                    <textarea id="order-comment" rows="2" maxlength="500" placeholder="Пожелания, аллергии" style="padding:10px; border:1px solid var(--border-strong); border-radius:8px; background:var(--color-bg-card); color:var(--color-text-primary); font-size:14px; resize:vertical; font-family:inherit;"></textarea>
-                </label>
+                ${IS_HOME_MODE ? `
+                    <label style="display:flex; flex-direction:column; gap:4px; font-weight:600; font-size:14px;">
+                        Имя <span style="color:#e65100;">*</span>
+                        <input type="text" id="order-name" required maxlength="50" placeholder="Ваше имя" style="padding:10px; border:1px solid var(--border-strong); border-radius:8px; background:var(--color-bg-card); color:var(--color-text-primary); font-size:15px;">
+                    </label>
+                    <label style="display:flex; flex-direction:column; gap:4px; font-weight:600; font-size:14px;">
+                        Телефон <span style="color:#e65100;">*</span>
+                        <input type="tel" id="order-phone" required maxlength="20" placeholder="+7 (999) 123-45-67" style="padding:10px; border:1px solid var(--border-strong); border-radius:8px; background:var(--color-bg-card); color:var(--color-text-primary); font-size:15px;">
+                    </label>
+                    <label style="display:flex; flex-direction:column; gap:4px; font-weight:600; font-size:14px;">
+                        Адрес доставки <span style="color:#e65100;">*</span>
+                        <input type="text" id="order-address" required maxlength="200" placeholder="Улица, дом, квартира" style="padding:10px; border:1px solid var(--border-strong); border-radius:8px; background:var(--color-bg-card); color:var(--color-text-primary); font-size:15px;">
+                    </label>
+                    <label style="display:flex; flex-direction:column; gap:4px; font-weight:600; font-size:14px;">
+                        Комментарий для курьера
+                        <textarea id="order-comment" rows="2" maxlength="500" placeholder="Подъезд, этаж, домофон" style="padding:10px; border:1px solid var(--border-strong); border-radius:8px; background:var(--color-bg-card); color:var(--color-text-primary); font-size:14px; resize:vertical; font-family:inherit;"></textarea>
+                    </label>
+                    <div style="margin: 4px 0;">
+                        <div style="font-size:13px; font-weight:600; margin-bottom:6px;">Способ оплаты:</div>
+                        ${(HOME_CFG.paymentMethods || []).map(m => `
+                            <label style="display:flex; align-items:center; gap:8px; padding:10px; border:1px solid var(--border-strong); border-radius:8px; margin-bottom:6px; cursor:pointer; background:var(--color-bg-card);">
+                                <input type="radio" name="payment" value="${m.id}" ${m.id === 'card' ? 'checked' : ''} style="accent-color:#4caf50;">
+                                <span style="font-size:14px;">${m.label}</span>
+                            </label>
+                        `).join('')}
+                    </div>
+                ` : `
+                    <label style="display:flex; flex-direction:column; gap:4px; font-weight:600; font-size:14px;">
+                        Откуда заказ
+                        <select id="order-source" onchange="toggleCustomSource(this.value)" style="padding:10px; border:1px solid var(--border-strong); border-radius:8px; background:var(--color-bg-card); color:var(--color-text-primary); font-size:15px;">
+                            <option value="12rooms">12 комнат</option>
+                            <option value="MGarryPotter">Музей Гарри Поттера</option>
+                            <option value="SVO">Музей СВО</option>
+                            <option value="Lomonosov">Отель Ломоносов</option>
+                            <option value="PartyTime">Караоке Party Time</option>
+                            <option value="MusicSchool">Музыкальная Школа</option>
+                            <option value="SuperSonic">Супер Соник</option>
+                            <option value="custom">Другое</option>
+                        </select>
+                    </label>
+                    <div id="custom-source-container" style="display:none; margin-top:8px;">
+                        <input type="text" id="order-source-custom" placeholder="Введите название места" style="padding:10px; border:1px solid var(--border-strong); border-radius:8px; background:var(--color-bg-card); color:var(--color-text-primary); font-size:15px; width:100%; box-sizing:border-box;">
+                    </div>
+                    <label style="display:flex; flex-direction:column; gap:4px; font-weight:600; font-size:14px;">
+                        Номер столика или удобное для вас место где вас найти
+                        <input type="text" id="order-table-number" required maxlength="10" placeholder="Например, 5" style="padding:10px; border:1px solid var(--border-strong); border-radius:8px; background:var(--color-bg-card); color:var(--color-text-primary); font-size:15px;">
+                    </label>
+                    <label style="display:flex; flex-direction:column; gap:4px; font-weight:600; font-size:14px;">
+                        Номер телефона
+                        <input type="tel" id="order-phone" required maxlength="20" placeholder="+7 (999) 123-45-67" style="padding:10px; border:1px solid var(--border-strong); border-radius:8px; background:var(--color-bg-card); color:var(--color-text-primary); font-size:15px;">
+                    </label>
+                    <label style="display:flex; flex-direction:column; gap:4px; font-weight:600; font-size:14px;">
+                        Комментарий (необязательно)
+                        <textarea id="order-comment" rows="2" maxlength="500" placeholder="Пожелания, аллергии" style="padding:10px; border:1px solid var(--border-strong); border-radius:8px; background:var(--color-bg-card); color:var(--color-text-primary); font-size:14px; resize:vertical; font-family:inherit;"></textarea>
+                    </label>
+                `}
                 <div class="cart-actions">
                     <button type="button" class="btn btn-secondary" onclick="hideCart()">Закрыть</button>
                     <button type="submit" id="order-submit-btn" class="btn btn-primary">Оформить заказ</button>
                 </div>
-                <div style="background: linear-gradient(135deg, #2a582c 0%, #1e3d21 100%); padding:12px; border-radius:10px; margin-top:4px; margin-bottom:200px;">
-                    <div style="display:flex; align-items:center; gap:8px; margin-bottom:6px;">
-                        <i class="fas fa-motorcycle" style="font-size:20px; color:#fff;"></i>
-                        <span style="color:#fff; font-weight:700; font-size:14px;">Доставка курьером</span>
+                ${IS_HOME_MODE ? `
+                    <div style="background: linear-gradient(135deg, #2a582c 0%, #1e3d21 100%); padding:12px; border-radius:10px; margin-top:4px; margin-bottom:200px;">
+                        <div style="display:flex; align-items:center; gap:8px; margin-bottom:6px;">
+                            <i class="fas fa-motorcycle" style="font-size:20px; color:#fff;"></i>
+                            <span style="color:#fff; font-weight:700; font-size:14px;">Доставка домой</span>
+                        </div>
+                        <div style="color:#c8e6c9; font-size:12px; line-height:1.4;">
+                            К вам приедет курьер из Pizza Napoli<br>
+                            <i class="fas fa-print" style="margin-right:4px;"></i><strong>С терминалом</strong> для оплаты
+                        </div>
                     </div>
-                    <div style="color:#c8e6c9; font-size:12px; line-height:1.4;">
-                        К вам приедет курьер из Pizza Napoli<br>
-                        <i class="fas fa-print" style="margin-right:4px;"></i><strong>С терминалом</strong> <i class="fas fa-credit-card" style="margin-left:8px; margin-right:4px;"></i>для оплаты Картой или QR и выдаст чек
+                ` : `
+                    <div style="background: linear-gradient(135deg, #2a582c 0%, #1e3d21 100%); padding:12px; border-radius:10px; margin-top:4px; margin-bottom:200px;">
+                        <div style="display:flex; align-items:center; gap:8px; margin-bottom:6px;">
+                            <i class="fas fa-motorcycle" style="font-size:20px; color:#fff;"></i>
+                            <span style="color:#fff; font-weight:700; font-size:14px;">Доставка курьером</span>
+                        </div>
+                        <div style="color:#c8e6c9; font-size:12px; line-height:1.4;">
+                            К вам приедет курьер из Pizza Napoli<br>
+                            <i class="fas fa-print" style="margin-right:4px;"></i><strong>С терминалом</strong> <i class="fas fa-credit-card" style="margin-left:8px; margin-right:4px;"></i>для оплаты Картой или QR и выдаст чек
+                        </div>
+                        <div style="color:#c8e6c9; font-size:11px; margin-top:10px; padding-top:8px; border-top:1px solid rgba(255,255,255,0.2);">
+                            <i class="fas fa-store" style="margin-right:4px;"></i>Ждем вас в гости на Думской 4<br>ТЦ Перинные ряды, центральный вход со стороны ул. Ломоносова, 2 этаж
+                        </div>
                     </div>
-                    <div style="color:#c8e6c9; font-size:11px; margin-top:10px; padding-top:8px; border-top:1px solid rgba(255,255,255,0.2);">
-                        <i class="fas fa-store" style="margin-right:4px;"></i>Ждем вас в гости на Думской 4<br>ТЦ Перинные ряды, центральный вход со стороны ул. Ломоносова, 2 этаж
-                    </div>
-                </div>
+                `}
                 <div style="text-align:center; padding: 20px 0; color: var(--color-text-secondary); font-size: 14px;">
                     <div style="font-weight: 700; margin-bottom: 4px;">Приятного аппетита!</div>
                     <div>Сеть итальянских пиццерий</div>
@@ -619,13 +721,15 @@ function showCart() {
 
     modal.style.display = 'flex';
     
-    const urlParams = new URLSearchParams(window.location.search);
-    const sourceParam = urlParams.get('source');
-    const sourceSelect = document.getElementById('order-source');
-    if (sourceSelect && sourceParam) {
-        const sources = window.ORDER_SOURCES || {};
-        if (sources[sourceParam]) {
-            sourceSelect.value = sourceParam;
+    if (!IS_HOME_MODE) {
+        const urlParams = new URLSearchParams(window.location.search);
+        const sourceParam = urlParams.get('source');
+        const sourceSelect = document.getElementById('order-source');
+        if (sourceSelect && sourceParam) {
+            const sources = window.ORDER_SOURCES || {};
+            if (sources[sourceParam]) {
+                sourceSelect.value = sourceParam;
+            }
         }
     }
 }
@@ -740,10 +844,16 @@ async function sendToMax(text, format = 'html') {
 }
 
 function formatOrderHTML(order) {
+    const isHome = order.source && order.source.includes('home');
     const lines = ['<b>🍕 ЗАКАЗ Pizza Napoli!</b>', ''];
 
-    lines.push(`📍 Источник: ${order.source || '-'}`);
-    lines.push(`🪑 Место: ${order.tableNumber}`);
+    lines.push(`📍 ${isHome ? 'Доставка' : 'Источник'}: ${order.source || '-'}`);
+    if (isHome) {
+        lines.push(`👤 Имя: ${order.name || '-'}`);
+        lines.push(`🏠 Адрес: ${order.address || '-'}`);
+    } else {
+        lines.push(`🪑 Место: ${order.tableNumber}`);
+    }
     lines.push(`📱 Телефон: ${order.phone}`);
     if (order.comment) {
         lines.push(`💬 Комментарий: ${order.comment}`);
@@ -784,22 +894,78 @@ async function submitOrder() {
         return;
     }
     
-    const tableInput = document.getElementById('order-table-number');
-    const phoneInput = document.getElementById('order-phone');
-    const commentInput = document.getElementById('order-comment');
     const btn = document.getElementById('order-submit-btn');
+    
+    let tableNumber, phone, comment, source;
+    const originalLabel = btn.textContent;
+    
+    if (IS_HOME_MODE) {
+        const nameInput = document.getElementById('order-name');
+        const phoneInput = document.getElementById('order-phone');
+        const addressInput = document.getElementById('order-address');
+        const commentInput = document.getElementById('order-comment');
+        
+        const name = (nameInput?.value || '').trim();
+        phone = (phoneInput?.value || '').trim();
+        const address = (addressInput?.value || '').trim();
+        comment = (commentInput?.value || '').trim();
+        
+        const paymentInput = document.querySelector('input[name="payment"]:checked');
+        const paymentLabel = paymentInput
+            ? (HOME_CFG.paymentMethods || []).find(m => m.id === paymentInput.value)?.label || paymentInput.value
+            : '';
+        
+        if (!name) {
+            nameInput?.focus();
+            alert('Укажите ваше имя');
+            return;
+        }
+        if (!phone) {
+            phoneInput?.focus();
+            alert('Укажите номер телефона');
+            return;
+        }
+        if (!address) {
+            addressInput?.focus();
+            alert('Укажите адрес доставки');
+            return;
+        }
+        
+        tableNumber = `${name}, ${address}`;
+        source = 'Доставка домой (home)';
+        comment = comment
+            ? `Адрес: ${address}\nОплата: ${paymentLabel}\n${comment}`
+            : `Адрес: ${address}\nОплата: ${paymentLabel}`;
+    } else {
+        const tableInput = document.getElementById('order-table-number');
+        const phoneInput = document.getElementById('order-phone');
+        const commentInput = document.getElementById('order-comment');
 
-    const tableNumber = (tableInput?.value || '').trim();
-    const phone = (phoneInput?.value || '').trim();
-    const comment = (commentInput?.value || '').trim();
+        tableNumber = (tableInput?.value || '').trim();
+        phone = (phoneInput?.value || '').trim();
+        comment = (commentInput?.value || '').trim();
 
-    if (!tableNumber) {
-        tableInput?.focus();
-        alert('Укажите номер столика');
-        return;
+        if (!tableNumber) {
+            tableInput?.focus();
+            alert('Укажите номер столика');
+            return;
+        }
+
+        const sourceSelect = document.getElementById('order-source');
+        const customSourceInput = document.getElementById('order-source-custom');
+        const selectedSourceKey = sourceSelect?.value || '12rooms';
+        const customSourceValue = customSourceInput?.value?.trim() || '';
+        const sources = window.ORDER_SOURCES || {};
+        
+        if (selectedSourceKey === 'custom') {
+            source = customSourceValue || 'Другое — место не указано';
+        } else {
+            source = sources[selectedSourceKey] || '12 комнат';
+        }
     }
 
     if (!phone) {
+        const phoneInput = document.getElementById('order-phone');
         phoneInput?.focus();
         alert('Укажите номер телефона');
         return;
@@ -810,26 +976,8 @@ async function submitOrder() {
         return;
     }
 
-    const originalLabel = btn.textContent;
     btn.disabled = true;
     btn.textContent = 'Отправляем...';
-
-    const sourceSelect = document.getElementById('order-source');
-    const customSourceInput = document.getElementById('order-source-custom');
-    
-    const selectedSourceKey = sourceSelect?.value || '12rooms';
-    const customSourceValue = customSourceInput?.value?.trim() || '';
-    
-    let sourceKey = selectedSourceKey;
-    let source = '';
-    const sources = window.ORDER_SOURCES || locations;
-    
-    if (selectedSourceKey === 'custom') {
-        sourceKey = 'custom';
-        source = customSourceValue || 'Другое — место не указано';
-    } else {
-        source = sources[selectedSourceKey] || '12 комнат';
-    }
 
     // Формируем массив товаров, добавляя подарок и доставку если нужно
     let orderItems = cart.map(i => ({
@@ -839,8 +987,9 @@ async function submitOrder() {
         category: i.category
     }));
     
-    // Добавляем доставку если менее 750
-    const deliveryFee = cartTotal < 750 ? Math.min(99, 750 - cartTotal) : 0;
+    // Добавляем доставку если менее порога
+    const deliveryThreshold = IS_HOME_MODE ? HOME_CFG.deliveryThreshold : 750;
+    const deliveryFee = cartTotal < deliveryThreshold ? Math.min(IS_HOME_MODE ? HOME_CFG.deliveryFee : 99, deliveryThreshold - cartTotal) : 0;
     if (deliveryFee > 0) {
         orderItems.push({
             title: 'Доставка',
@@ -858,14 +1007,22 @@ async function submitOrder() {
 
     console.log('Submitting order:', { tableNumber, source, cartTotal, deliveryFee, itemCount: orderItems.length, gift: giftLine });
     try {
-        const message = formatOrderHTML({
-            tableNumber,
+        const orderData = {
             phone,
             comment,
             source,
             gift: giftLine,
             items: orderItems
-        });
+        };
+        if (IS_HOME_MODE) {
+            const nameInput = document.getElementById('order-name');
+            const addressInput = document.getElementById('order-address');
+            orderData.name = (nameInput?.value || '').trim();
+            orderData.address = (addressInput?.value || '').trim();
+        } else {
+            orderData.tableNumber = tableNumber;
+        }
+        const message = formatOrderHTML(orderData);
         await sendToMax(message, 'html');
         
         clearCart();
