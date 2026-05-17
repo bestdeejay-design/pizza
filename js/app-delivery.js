@@ -252,81 +252,84 @@ function initSortControls() {
 }
 
 function changeSortMode(mode) {
-    if (mode === currentSortMode) return;
-    // Валидация режима
-    if (!SORT_MODES.some(m => m.id === mode)) mode = 'recommended';
-    currentSortMode = mode;
-    localStorage.setItem(SORT_STORAGE_KEY, mode);
-
-    // Сортируем menu глобально по категориям
-    const cats = [...new Set(menu.map(i => i.category))];
-    const sorted = [];
-    cats.forEach(cat => {
-        const items = menu.filter(i => i.category === cat);
-        sorted.push(...sortProducts(items, mode));
-    });
-    menu = sorted;
-
-    // Запоминаем активную категорию
-    const activeNav = document.querySelector('.nav-category.active');
-    const activeCatId = activeNav ? activeNav.dataset.category : null;
-
-    // Перерисовываем контент
-    renderContentWithLazyLoad();
-
-    // Восстанавливаем категорию
-    if (activeCatId) {
-        setTimeout(() => {
-            setActiveNav(activeCatId);
-            const section = document.getElementById(`category-${activeCatId}`);
-            if (section) {
-                document.querySelectorAll('.category-section').forEach(s => s.style.display = 'none');
-                section.style.display = '';
-            }
-        }, 50);
-    }
-
-    // Обновляем UI сортировки
-    const label = document.getElementById('sort-current-label');
-    if (label) {
-        const modeObj = SORT_MODES.find(m => m.id === mode);
-        if (modeObj) label.textContent = modeObj.label;
-    }
-
-    // Обновляем checkmark в дропдауне
-    document.querySelectorAll('.sort-option').forEach(el => {
-        const isActive = el.dataset.mode === mode;
-        el.style.background = isActive ? 'var(--color-primary-light)' : 'transparent';
-        el.style.fontWeight = isActive ? '700' : '400';
-        const check = el.querySelector('.fa-check');
-        if (check) check.remove();
-        if (isActive) {
-            const icon = document.createElement('i');
-            icon.className = 'fas fa-check';
-            icon.style.cssText = 'color:#4caf50; font-size:12px;';
-            el.appendChild(icon);
+    try {
+        // Валидация
+        if (!SORT_MODES.length || !SORT_MODES.some(m => m.id === mode)) {
+            mode = 'recommended';
         }
-        el.onmouseout = function() {
-            this.style.background = isActive ? 'var(--color-primary-light)' : 'transparent';
-        };
-    });
+        if (mode === currentSortMode) return;
+        currentSortMode = mode;
+        localStorage.setItem(SORT_STORAGE_KEY, mode);
 
-    // Закрываем дропдаун
-    const menu = document.getElementById('sort-dropdown-menu');
-    if (menu) {
-        menu.style.display = 'none';
+        // Сортируем menu глобально по категориям
+        const cats = [...new Set(menu.map(i => i.category))];
+        const sorted = [];
+        cats.forEach(cat => {
+            const items = menu.filter(i => i.category === cat);
+            sorted.push(...sortProducts(items, mode));
+        });
+        menu = sorted;
+
+        // Запоминаем активную категорию
+        const activeNav = document.querySelector('.nav-category.active');
+        const activeCatId = activeNav ? activeNav.dataset.category : null;
+
+        // Перерисовываем контент
+        renderContentWithLazyLoad();
+
+        // Восстанавливаем категорию
+        if (activeCatId) {
+            setTimeout(() => {
+                setActiveNav(activeCatId);
+                const section = document.getElementById(`category-${activeCatId}`);
+                if (section) {
+                    document.querySelectorAll('.category-section').forEach(s => s.style.display = 'none');
+                    section.style.display = '';
+                }
+            }, 50);
+        }
+
+        // Обновляем текст на триггере
+        const label = document.getElementById('sort-current-label');
+        const modeObj = SORT_MODES.find(m => m.id === mode);
+        if (label && modeObj) label.textContent = modeObj.label;
+
+        // Обновляем checkmark + фон в дропдауне
+        document.querySelectorAll('.sort-option').forEach(el => {
+            const isActive = el.dataset.mode === mode;
+            el.style.background = isActive ? 'var(--color-primary-light)' : 'transparent';
+            el.style.fontWeight = isActive ? '700' : '400';
+            const check = el.querySelector('.fa-check');
+            if (check) check.remove();
+            if (isActive) {
+                const icon = document.createElement('i');
+                icon.className = 'fas fa-check';
+                icon.style.cssText = 'color:#4caf50; font-size:12px;';
+                el.appendChild(icon);
+                el.onmouseout = function() {
+                    this.style.background = 'var(--color-primary-light)';
+                };
+            } else {
+                el.onmouseout = function() {
+                    this.style.background = 'transparent';
+                };
+            }
+        });
+
+        // Закрываем дропдаун
+        const dd = document.getElementById('sort-dropdown-menu');
+        if (dd) dd.style.display = 'none';
         const arrow = document.getElementById('sort-arrow');
         if (arrow) arrow.style.transform = 'rotate(0deg)';
-        const trigger = document.getElementById('sort-trigger');
-        if (trigger) trigger.style.borderColor = '';
+        const trig = document.getElementById('sort-trigger');
+        if (trig) trig.style.borderColor = '';
+    } catch (err) {
+        console.error('Sort change failed:', err);
     }
 }
 
 function selectDesktopSort(mode, event) {
     if (event) event.stopPropagation();
-    document.getElementById('sort-dropdown-menu').style.display = 'none';
-    document.getElementById('sort-arrow').style.transform = 'rotate(0deg)';
-    document.getElementById('sort-trigger').style.borderColor = '';
     changeSortMode(mode);
 }
 
