@@ -46,6 +46,7 @@ const DELAY_BEFORE_NAVIGATE = 1500;
 
 // localStorage keys
 const CART_STORAGE_KEY = 'pizzaCart';
+const SORT_STORAGE_KEY = 'pizzaSortMode';
 
 // ========================================
 // GLOBAL VARIABLES
@@ -62,6 +63,11 @@ const urlParams = new URLSearchParams(window.location.search);
 const IS_HOME_MODE = urlParams.get('source') === 'home';
 const HOME_CFG = window.HOME_CONFIG || {};
 
+// Global sort state
+const SORT_MODES = window.SORT_MODES || [];
+const HIT_IDS = window.HIT_IDS || [];
+let currentSortMode = localStorage.getItem(SORT_STORAGE_KEY) || 'recommended';
+
 function filterForHome(items) {
     const patterns = HOME_CFG.hidePatterns || ['1/4'];
     return items.filter(item =>
@@ -69,18 +75,146 @@ function filterForHome(items) {
     );
 }
 
-function sortMenuForHome(items, cat) {
-    const hits = HOME_CFG.hitIds || [];
-    const sorted = [...items].sort((a, b) => {
-        const aHit = hits.includes(a.id) ? 0 : 1;
-        const bHit = hits.includes(b.id) ? 0 : 1;
-        if (aHit !== bHit) return aHit - bHit;
-        return (b.price || 0) - (a.price || 0);
-    });
+function sortProducts(products, mode) {
+    const hits = HIT_IDS;
+    const sorted = [...products];
+    switch (mode) {
+        case 'cheap':
+            sorted.sort((a, b) => (a.price || 0) - (b.price || 0));
+            break;
+        case 'expensive':
+            sorted.sort((a, b) => (b.price || 0) - (a.price || 0));
+            break;
+        case 'recommended':
+        default:
+            sorted.sort((a, b) => {
+                const aHit = hits.includes(a.id) ? 0 : 1;
+                const bHit = hits.includes(b.id) ? 0 : 1;
+                if (aHit !== bHit) return aHit - bHit;
+                return (b.price || 0) - (a.price || 0);
+            });
+            break;
+    }
     return sorted;
 }
 
 // ========================================
+// SORT CONTROLS
+// ========================================
+
+function initSortControls() {
+    // Desktop: инжектим селект перед корзиной
+    const headerActions = document.querySelector('.header-actions');
+    if (headerActions && !document.getElementById('sort-select')) {
+        const wrap = document.createElement('div');
+        wrap.style.cssText = 'position:relative; margin-right:10px;';
+        wrap.id = 'desktop-sort-wrap';
+        wrap.innerHTML = `
+            <select id="sort-select" onchange="changeSortMode(this.value)"
+                style="padding:6px 10px; border:1px solid var(--border-strong); border-radius:6px;
+                       background:var(--color-bg-card); color:var(--color-text-primary);
+                       font-size:13px; cursor:pointer; max-width:150px;">
+                ${SORT_MODES.map(m =>
+                    `<option value="${m.id}" ${m.id === currentSortMode ? 'selected' : ''}>
+                        <i class="fas ${m.icon}"></i> ${m.label}
+                    </option>`
+                ).join('')}
+            </select>
+        `;
+        headerActions.insertBefore(wrap, headerActions.firstChild);
+    }
+
+    // Mobile: кнопка сортировки рядом с бургером
+    const mobileBtn = document.querySelector('.mobile-menu-btn');
+    if (mobileBtn && !document.getElementById('mobile-sort-btn')) {
+        const btn = document.createElement('div');
+        btn.id = 'mobile-sort-btn';
+        btn.style.cssText = 'display:inline-flex; align-items:center; justify-content:center; width:36px; height:36px; cursor:pointer; margin-right:4px;';
+        btn.onclick = showMobileSortPicker;
+        btn.innerHTML = `<i class="fas fa-sort-amount-down" style="color:#fff; font-size:16px;"></i>`;
+        mobileBtn.parentNode.insertBefore(btn, mobileBtn);
+    }
+}
+
+function changeSortMode(mode) {
+    if (mode === currentSortMode) return;
+    currentSortMode = mode;
+    localStorage.setItem(SORT_STORAGE_KEY, mode);
+
+    // Сортируем menu глобально по категориям
+    const cats = [...new Set(menu.map(i => i.category))];
+    const sorted = [];
+    cats.forEach(cat => {
+        const items = menu.filter(i => i.category === cat);
+        sorted.push(...sortProducts(items, mode));
+    });
+    menu = sorted;
+
+    // Запоминаем активную категорию
+    const activeNav = document.querySelector('.nav-category.active');
+    const activeCatId = activeNav ? activeNav.dataset.category : null;
+
+    // Перерисовываем контент
+    renderContentWithLazyLoad();
+
+    // Восстанавливаем категорию
+    if (activeCatId) {
+        setTimeout(() => {
+            setActiveNav(activeCatId);
+            const section = document.getElementById(`category-${activeCatId}`);
+            if (section) {
+                document.querySelectorAll('.category-section').forEach(s => s.style.display = 'none');
+                section.style.display = '';
+            }
+        }, 50);
+    }
+
+    // Обновляем селект
+    const sel = document.getElementById('sort-select');
+    if (sel) sel.value = mode;
+}
+
+function showMobileSortPicker() {
+    const existing = document.getElementById('mobile-sort-picker');
+    if (existing) {
+        existing.remove();
+        return;
+    }
+    const overlay = document.createElement('div');
+    overlay.id = 'mobile-sort-picker';
+    overlay.style.cssText = 'position:fixed; inset:0; z-index:10000; background:rgba(0,0,0,0.5); display:flex; align-items:flex-end;';
+    overlay.onclick = (e) => { if (e.target === overlay) overlay.remove(); };
+
+    const sheet = document.createElement('div');
+    sheet.style.cssText = 'background:var(--color-bg-card); border-radius:16px 16px 0 0; padding:20px; width:100%; max-width:500px; margin:0 auto;';
+    sheet.innerHTML = `
+        <div style="text-align:center; font-size:16px; font-weight:700; margin-bottom:16px; color:var(--color-text-primary);">
+            <i class="fas fa-sort-amount-down" style="margin-right:8px;"></i>Сортировка
+        </div>
+        ${SORT_MODES.map(m => `
+            <div class="mobile-sort-option" data-mode="${m.id}"
+                 style="padding:14px 16px; border-radius:10px; margin-bottom:6px; cursor:pointer;
+                        background:${m.id === currentSortMode ? 'var(--color-primary-light)' : 'transparent'};
+                        color:var(--color-text-primary); font-size:15px; font-weight:${m.id === currentSortMode ? '700' : '400'};"
+                 onclick="selectMobileSort('${m.id}')">
+                <i class="fas ${m.icon}" style="margin-right:10px; color:#ff2e55;"></i>${m.label}
+                ${m.id === currentSortMode ? '<i class="fas fa-check" style="float:right; color:#4caf50;"></i>' : ''}
+            </div>
+        `).join('')}
+        <div style="text-align:center; margin-top:12px;">
+            <button onclick="document.getElementById('mobile-sort-picker')?.remove()"
+                    style="padding:12px 40px; border:none; border-radius:10px; background:var(--border-strong);
+                           color:var(--color-text-primary); font-size:14px; cursor:pointer;">Закрыть</button>
+        </div>
+    `;
+    overlay.appendChild(sheet);
+    document.body.appendChild(overlay);
+}
+
+function selectMobileSort(mode) {
+    document.getElementById('mobile-sort-picker')?.remove();
+    changeSortMode(mode);
+}
 // GIFT LEVELS CONFIG
 // ========================================
 const GIFT_THRESHOLDS = [
@@ -177,17 +311,9 @@ async function loadMenu() {
         
         console.log('Total products:', menu.length);
 
-        // source=home: фильтруем низкомаржинальные и сортируем (хиты → цена)
+        // source=home: фильтруем низкомаржинальные (1/4 пиццы)
         if (IS_HOME_MODE) {
-            const cats = [...new Set(menu.map(i => i.category))];
-            const filtered = [];
-            cats.forEach(cat => {
-                let items = menu.filter(i => i.category === cat);
-                items = filterForHome(items);
-                items = sortMenuForHome(items, cat);
-                filtered.push(...items);
-            });
-            menu = filtered;
+            menu = filterForHome(menu);
             console.log('Home mode: filtered to', menu.length, 'products');
         }
         
@@ -196,6 +322,8 @@ async function loadMenu() {
         renderContentWithLazyLoad();
         restoreState(); // Восстанавливаем состояние после загрузки контента
         updateCartTotal(); // Отрисовать счётчик корзины из localStorage
+
+        initSortControls(); // Инжектим кнопки сортировки в хедер
 
         console.log('Menu initialization complete');
     } catch (error) {
@@ -1197,9 +1325,10 @@ function renderContentWithLazyLoad() {
     
     // Рендерим все категории с display:none кроме первой
     content.innerHTML = orderedCategories.map((cat, index) => {
-        const productsInCategory = menu.filter(item => {
-            return item.category === cat;
-        });
+        const productsInCategory = sortProducts(
+            menu.filter(item => item.category === cat),
+            currentSortMode
+        );
         
         console.log(`Category ${cat}: ${productsInCategory.length} products`);
         
@@ -1555,7 +1684,10 @@ function loadMoreProducts(categoryId, event = null) {
     if (!gridElement) return;
     
     // Фильтруем по категории
-    const productsInCategory = menu.filter(item => item.category === categoryId);
+    const productsInCategory = sortProducts(
+        menu.filter(item => item.category === categoryId),
+        currentSortMode
+    );
     const totalProducts = productsInCategory.length;
     
     const observerData = lazyLoadObservers.get(categoryId);

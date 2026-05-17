@@ -76,6 +76,18 @@ window.LAZY_LOAD_CONFIG = {
 };
 
 // ========================================
+// GLOBAL SORT CONFIG
+// ========================================
+
+window.SORT_MODES = [
+    { id: 'recommended', label: 'Рекомендуем', icon: 'fa-star' },
+    { id: 'cheap', label: 'Сначала дешевые', icon: 'fa-arrow-up' },
+    { id: 'expensive', label: 'Сначала дорогие', icon: 'fa-arrow-down' }
+];
+
+window.HIT_IDS = [1, 6, 11, 16, 21, 26, 31, 36, 41];
+
+// ========================================
 // HOME DELIVERY MODE (source=home)
 // ========================================
 
@@ -83,7 +95,6 @@ window.HOME_CONFIG = {
     deliveryThreshold: 1500,
     deliveryFee: 199,
     hidePatterns: ['1/4'],   // подстроки в title для скрытия
-    hitIds: [1, 6, 11, 16, 21, 26, 31, 36, 41],  // ID хитов (пример)
     paymentMethods: [
         { id: 'card', label: '💳 Картой курьеру' },
         { id: 'qr', label: '📱 QR-код (СБП)' },
