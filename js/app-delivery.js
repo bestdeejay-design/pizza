@@ -103,42 +103,53 @@ function sortProducts(products, mode) {
 // ========================================
 
 function initSortControls() {
-    const headerActions = document.querySelector('.header-actions');
-    if (!headerActions || document.getElementById('sort-select')) return;
-
-    const wrap = document.createElement('div');
-    wrap.id = 'sort-control-wrap';
-    wrap.style.cssText = 'display:flex; align-items:center;';
-
-    wrap.innerHTML = `
-        <div class="sort-desktop" style="display:flex; align-items:center;">
-            <select id="sort-select" onchange="changeSortMode(this.value)"
-                style="padding:6px 10px; border:1px solid var(--border-strong); border-radius:6px;
-                       background:var(--color-bg-card); color:var(--color-text-primary);
-                       font-size:13px; cursor:pointer; max-width:150px;">
-                ${SORT_MODES.map(m =>
-                    `<option value="${m.id}" ${m.id === currentSortMode ? 'selected' : ''}>${m.label}</option>`
-                ).join('')}
-            </select>
-        </div>
-        <div class="sort-mobile" style="display:none; align-items:center; cursor:pointer;"
-             onclick="showMobileSortPicker()" title="Сортировка">
-            <i class="fas fa-sort-amount-down" style="color:#fff; font-size:18px;"></i>
-        </div>
-    `;
-
-    headerActions.insertBefore(wrap, headerActions.firstChild);
-
-    // Responsive: на мобилках прячем select, показываем иконку
     const mql = window.matchMedia('(max-width: 768px)');
-    const desktopEl = wrap.querySelector('.sort-desktop');
-    const mobileEl = wrap.querySelector('.sort-mobile');
-    function toggleSortUI(e) {
-        desktopEl.style.display = e.matches ? 'none' : 'flex';
-        mobileEl.style.display = e.matches ? 'flex' : 'none';
+    const isMobile = mql.matches;
+
+    // Desktop select в header-actions
+    if (!isMobile) {
+        const headerActions = document.querySelector('.header-actions');
+        if (headerActions && !document.getElementById('sort-select')) {
+            const wrap = document.createElement('div');
+            wrap.style.cssText = 'display:flex; align-items:center; margin-right:8px;';
+            wrap.innerHTML = `
+                <select id="sort-select" onchange="changeSortMode(this.value)"
+                    style="padding:6px 10px; border:1px solid var(--border-strong); border-radius:6px;
+                           background:var(--color-bg-card); color:var(--color-text-primary);
+                           font-size:13px; cursor:pointer; max-width:150px;">
+                    ${SORT_MODES.map(m =>
+                        `<option value="${m.id}" ${m.id === currentSortMode ? 'selected' : ''}>${m.label}</option>`
+                    ).join('')}
+                </select>
+            `;
+            headerActions.insertBefore(wrap, headerActions.firstChild);
+        }
     }
-    mql.addEventListener('change', toggleSortUI);
-    toggleSortUI(mql);
+
+    // Mobile FAB рядом с бургер-меню (один раз)
+    if (document.getElementById('mobile-sort-fab')) return;
+    const mobileBtn = document.querySelector('.mobile-menu-btn');
+    if (!mobileBtn) return;
+
+    const fab = document.createElement('div');
+    fab.id = 'mobile-sort-fab';
+    fab.style.cssText = `
+        position: fixed; bottom: 20px; right: 88px; z-index: 1000;
+        width: 56px; height: 56px;
+        background: linear-gradient(135deg, #ff2e55, #ff6b6b);
+        border-radius: 50%; cursor: pointer;
+        box-shadow: 0 8px 30px rgba(255,46,85,0.4);
+        display: ${isMobile ? 'flex' : 'none'};
+        align-items: center; justify-content: center;
+        transition: opacity 0.2s;
+    `;
+    fab.innerHTML = '<i class="fas fa-sort-amount-down" style="color:#fff; font-size:20px;"></i>';
+    fab.addEventListener('click', showMobileSortPicker);
+    mobileBtn.parentNode.insertBefore(fab, mobileBtn);
+
+    mql.addEventListener('change', (e) => {
+        fab.style.display = e.matches ? 'flex' : 'none';
+    });
 }
 
 function changeSortMode(mode) {
