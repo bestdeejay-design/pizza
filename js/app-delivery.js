@@ -99,6 +99,26 @@ function sortProducts(products, mode) {
 }
 
 // ========================================
+// DELIVERY CONFIG (зависит от source)
+// ========================================
+
+function getDeliveryConfig() {
+    if (IS_HOME_MODE) {
+        return {
+            threshold: HOME_CFG.deliveryThreshold || 1500,
+            fee: HOME_CFG.deliveryFee || 199
+        };
+    }
+    return { threshold: 750, fee: 99 };
+}
+
+function calcDeliveryFee(cartTotal) {
+    const cfg = getDeliveryConfig();
+    if (cartTotal >= cfg.threshold) return 0;
+    return Math.min(cfg.fee, cfg.threshold - cartTotal);
+}
+
+// ========================================
 // SORT CONTROLS
 // ========================================
 
@@ -706,8 +726,11 @@ function showCart() {
         }
         
         // Определяем текущий уровень и доступные подарки
-        const availableGifts = GIFT_THRESHOLDS.filter(g => total >= g.threshold);
-        const nextGift = GIFT_THRESHOLDS.find(g => total < g.threshold);
+        const giftThresholds = IS_HOME_MODE
+            ? GIFT_THRESHOLDS.filter(g => g.threshold > 750)  // home: "беспл. доставка" неактуальна
+            : GIFT_THRESHOLDS;
+        const availableGifts = giftThresholds.filter(g => total >= g.threshold);
+        const nextGift = giftThresholds.find(g => total < g.threshold);
         const highestGift = availableGifts.length > 0 ? availableGifts[availableGifts.length - 1] : null;
         
         // Генерируем HTML для выбора подарка
@@ -734,24 +757,53 @@ function showCart() {
             </div>
             
             ${/* Блок доставки */''}
-            ${IS_HOME_MODE ? `
-                ${total < HOME_CFG.deliveryThreshold ? `
+            ${(() => {
+                const dc = getDeliveryConfig();
+                if (IS_HOME_MODE) {
+                    return total < dc.threshold ? `
+                        <div style="background: linear-gradient(135deg, #fff3e0 0%, #ffe0b2 100%); padding: 14px; border-radius: 10px; margin-bottom: 12px;">
+                            <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 10px;">
+                                <span style="font-size: 14px; color: #e65100; font-weight: 600;">
+                                    <i class="fas fa-truck" style="margin-right: 6px;"></i>Доставка до двери
+                                </span>
+                                <span style="font-size: 16px; color: #e65100; font-weight: 700;">+${dc.fee} ₽</span>
+                            </div>
+                            <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 10px;">
+                                <span style="font-size: 12px; color: #e65100; font-weight: 600;">${total}₽</span>
+                                <div style="flex: 1; background: #ffcc80; height: 12px; border-radius: 6px; overflow: hidden;">
+                                    <div style="background: linear-gradient(90deg, #ff6b35, #ff2e55); height: 100%; width: ${Math.min(100, (total / dc.threshold) * 100)}%; border-radius: 6px; transition: width 0.3s ease;"></div>
+                                </div>
+                                <span style="font-size: 12px; color: #e65100; font-weight: 600;">${dc.threshold}₽</span>
+                            </div>
+                            <div style="font-size: 12px; color: #bf360c; text-align: center;">
+                                <i class="fas fa-arrow-up" style="margin-right: 4px;"></i>Добавьте ${dc.threshold - total} ₽ → бесплатная доставка!
+                            </div>
+                        </div>
+                    ` : `
+                        <div style="background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%); padding: 12px; border-radius: 10px; margin-bottom: 12px; text-align: center;">
+                            <span style="font-size: 14px; color: #2e7d32; font-weight: 600;">
+                                <i class="fas fa-check-circle" style="margin-right: 6px;"></i>Бесплатная доставка ✓
+                            </span>
+                        </div>
+                    `;
+                }
+                return total < dc.threshold ? `
                     <div style="background: linear-gradient(135deg, #fff3e0 0%, #ffe0b2 100%); padding: 14px; border-radius: 10px; margin-bottom: 12px;">
                         <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 10px;">
                             <span style="font-size: 14px; color: #e65100; font-weight: 600;">
-                                <i class="fas fa-truck" style="margin-right: 6px;"></i>Доставка до двери
+                                <i class="fas fa-truck" style="margin-right: 6px;"></i>Доставка
                             </span>
-                            <span style="font-size: 16px; color: #e65100; font-weight: 700;">+${Math.min(HOME_CFG.deliveryFee, HOME_CFG.deliveryThreshold - total)} ₽</span>
+                            <span style="font-size: 16px; color: #e65100; font-weight: 700;">+${calcDeliveryFee(total)} ₽</span>
                         </div>
                         <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 10px;">
                             <span style="font-size: 12px; color: #e65100; font-weight: 600;">${total}₽</span>
                             <div style="flex: 1; background: #ffcc80; height: 12px; border-radius: 6px; overflow: hidden;">
-                                <div style="background: linear-gradient(90deg, #ff6b35, #ff2e55); height: 100%; width: ${Math.min(100, (total / HOME_CFG.deliveryThreshold) * 100)}%; border-radius: 6px; transition: width 0.3s ease;"></div>
+                                <div style="background: linear-gradient(90deg, #ff6b35, #ff2e55); height: 100%; width: ${Math.min(100, (total / dc.threshold) * 100)}%; border-radius: 6px; transition: width 0.3s ease;"></div>
                             </div>
-                            <span style="font-size: 12px; color: #e65100; font-weight: 600;">${HOME_CFG.deliveryThreshold}₽</span>
+                            <span style="font-size: 12px; color: #e65100; font-weight: 600;">${dc.threshold}₽</span>
                         </div>
                         <div style="font-size: 12px; color: #bf360c; text-align: center;">
-                            <i class="fas fa-arrow-up" style="margin-right: 4px;"></i>Добавьте ${HOME_CFG.deliveryThreshold - total} ₽ → бесплатная доставка!
+                            <i class="fas fa-arrow-up" style="margin-right: 4px;"></i>Добавьте ${dc.threshold - total} ₽ → доставка бесплатно + первый подарок!
                         </div>
                     </div>
                 ` : `
@@ -760,33 +812,8 @@ function showCart() {
                             <i class="fas fa-check-circle" style="margin-right: 6px;"></i>Бесплатная доставка ✓
                         </span>
                     </div>
-                `}
-            ` : (total < 750 ? `
-                <div style="background: linear-gradient(135deg, #fff3e0 0%, #ffe0b2 100%); padding: 14px; border-radius: 10px; margin-bottom: 12px;">
-                    <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 10px;">
-                        <span style="font-size: 14px; color: #e65100; font-weight: 600;">
-                            <i class="fas fa-truck" style="margin-right: 6px;"></i>Доставка
-                        </span>
-                        <span style="font-size: 16px; color: #e65100; font-weight: 700;">+${Math.min(99, 750 - total)} ₽</span>
-                    </div>
-                    <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 10px;">
-                        <span style="font-size: 12px; color: #e65100; font-weight: 600;">${total}₽</span>
-                        <div style="flex: 1; background: #ffcc80; height: 12px; border-radius: 6px; overflow: hidden;">
-                            <div style="background: linear-gradient(90deg, #ff6b35, #ff2e55); height: 100%; width: ${Math.min(100, (total / 750) * 100)}%; border-radius: 6px; transition: width 0.3s ease;"></div>
-                        </div>
-                        <span style="font-size: 12px; color: #e65100; font-weight: 600;">750₽</span>
-                    </div>
-                    <div style="font-size: 12px; color: #bf360c; text-align: center;">
-                        <i class="fas fa-arrow-up" style="margin-right: 4px;"></i>Добавьте ${750 - total} ₽ → доставка бесплатно + первый подарок!
-                    </div>
-                </div>
-            ` : `
-                <div style="background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%); padding: 12px; border-radius: 10px; margin-bottom: 12px; text-align: center;">
-                    <span style="font-size: 14px; color: #2e7d32; font-weight: 600;">
-                        <i class="fas fa-check-circle" style="margin-right: 6px;"></i>Бесплатная доставка ✓
-                    </span>
-                </div>
-            `)}
+                `;
+            })()}
             
             ${/* Блок подарков */''}
             <div style="background: linear-gradient(135deg, #fff8e1 0%, #ffecb3 100%); padding: 14px; border-radius: 12px; margin-bottom: 12px;">
@@ -798,14 +825,14 @@ function showCart() {
                 ${/* Шкала прогресса - мобильная версия */''}
                 <div style="margin-bottom: 12px;">
                     <div style="display: flex; align-items: center; gap: 4px; overflow-x: auto; padding: 4px 0; -webkit-overflow-scrolling: touch;">
-                        ${GIFT_THRESHOLDS.map((gift, idx) => {
+                        ${giftThresholds.map((gift, idx) => {
                             const isComplete = total >= gift.threshold;
                             const isNext = nextGift && nextGift.threshold === gift.threshold;
                             return `
                                 <div style="flex-shrink: 0; text-align: center; min-width: 50px;">
                                     <i class="fas ${isComplete ? 'fa-check-circle' : (isNext ? 'fa-dot-circle' : 'fa-circle')}" style="color: ${isComplete ? '#4caf50' : (isNext ? '#ff6b35' : '#ccc')}; font-size: ${isNext ? '22px' : '16px'};"></i>
                                 </div>
-                                ${idx < GIFT_THRESHOLDS.length - 1 ? `<div style="flex: 1; min-width: 20px; height: 3px; background: ${total >= gift.threshold && total >= GIFT_THRESHOLDS[idx + 1].threshold ? '#4caf50' : (total >= gift.threshold ? '#ff9a3c' : '#e0e0e0')}; border-radius: 2px; margin: 0 -2px;"></div>` : ''}
+                                ${idx < giftThresholds.length - 1 ? `<div style="flex: 1; min-width: 20px; height: 3px; background: ${total >= gift.threshold && total >= giftThresholds[idx + 1].threshold ? '#4caf50' : (total >= gift.threshold ? '#ff9a3c' : '#e0e0e0')}; border-radius: 2px; margin: 0 -2px;"></div>` : ''}
                             `;
                         }).join('')}
                     </div>
@@ -1216,8 +1243,7 @@ async function submitOrder() {
     }));
     
     // Добавляем доставку если менее порога
-    const deliveryThreshold = IS_HOME_MODE ? HOME_CFG.deliveryThreshold : 750;
-    const deliveryFee = cartTotal < deliveryThreshold ? Math.min(IS_HOME_MODE ? HOME_CFG.deliveryFee : 99, deliveryThreshold - cartTotal) : 0;
+    const deliveryFee = calcDeliveryFee(cartTotal);
     if (deliveryFee > 0) {
         orderItems.push({
             title: 'Доставка',
