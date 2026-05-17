@@ -63,7 +63,15 @@ const urlParams = new URLSearchParams(window.location.search);
 
 // sessionStorage persistence для source
 const SOURCE_STORAGE_KEY = 'pizzaSource';
-function getSourceFromUrl() { return urlParams.get('source') || ''; }
+function getSourceFromUrl() {
+    const explicit = urlParams.get('source');
+    if (explicit) return explicit;
+    // Короткая форма: ?home, ?12rooms (ключ без значения)
+    for (const key of urlParams.keys()) {
+        if (key === 'home' || window.ORDER_SOURCES?.[key]) return key;
+    }
+    return '';
+}
 function getPersistedSource() { return sessionStorage.getItem(SOURCE_STORAGE_KEY) || getSourceFromUrl(); }
 
 const CURRENT_SOURCE = getPersistedSource();
